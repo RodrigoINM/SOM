@@ -100,6 +100,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Busca Rápida.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Ferramenta\3.1.3 - Tranferencia de Autor De-Para1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.3 - Tranferencia de Autor De-Para.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Ferramenta\3.1.3 - Transferência de Controle Editorial1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.3 - Transferência de Controle Editorial.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Ferramenta\3.1.3 - Transferência de DDA De-Para1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.3 - Transferência de DDA De-Para.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Ferramenta\3.1.3 - Transferência de Obra De-Para1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.3 - Transferência de Obra De-Para.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Ferramenta\Midia\3.1.3 - Alterar Mídia1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.3 - Alterar Mídia.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Ferramenta\Midia\3.1.3 - Buscar Mídia1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.3 - Buscar Mídia.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Ferramenta\Midia\3.1.3 - Cadastrar Mídia1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.3 - Cadastrar Mídia.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Login1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +144,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>3.1.1 - Consultar Obra.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\3.1.3 - Alterar Composição.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.3 - Alterar Composição.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\3.1.3 - Alterar Obra.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.3 - Alterar Obra.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Obra\3.1.3 - Cadastrar Obra e Composicao.feature.cs">
       <AutoGen>True</AutoGen>
@@ -310,6 +355,12 @@
     <Compile Include="Helpers\GetPath.cs" />
     <Compile Include="Hooks\FeatureHook.cs" />
     <Compile Include="Pages\BuscaRapidaPage.cs" />
+    <Compile Include="Pages\Ferramenta\Midia\AlterarMidiaPage.cs" />
+    <Compile Include="Pages\Ferramenta\Midia\CadastrarMidiaPage.cs" />
+    <Compile Include="Pages\Ferramenta\TransferenciaDeAutorPage.cs" />
+    <Compile Include="Pages\Ferramenta\TransferênciadeControleEditorialPage.cs" />
+    <Compile Include="Pages\Ferramenta\TransferênciadeDDAPage.cs" />
+    <Compile Include="Pages\Ferramenta\TransferênciadeObraDeParaPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\Obra\CadastrarObraEComposicaoPage.cs" />
     <Compile Include="Pages\Obra\Autor\AlterarAutorPage.cs" />
@@ -336,10 +387,19 @@
     <Compile Include="Pages\UsoEReporte\RelatorioUBEM\GerarRelatorioUBEM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\BuscaRapidaSteps.cs" />
+    <Compile Include="Steps\Ferramenta\Midia\AlterarMídiaSteps.cs" />
+    <Compile Include="Steps\Ferramenta\Midia\BuscarMídiaSteps.cs" />
+    <Compile Include="Steps\Ferramenta\Midia\CadastrarMidiaSteps.cs" />
+    <Compile Include="Steps\Ferramenta\TransferênciadeControleEditorialSteps.cs" />
+    <Compile Include="Steps\Ferramenta\TransferênciadeDDASteps.cs" />
+    <Compile Include="Steps\Ferramenta\TransferênciadeObraDeParaSteps.cs" />
+    <Compile Include="Steps\Ferramenta\TrasferenciaDeAutorSteps.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
     <Compile Include="Steps\Obra\3.1.1-ConsultarObraSteps.cs" />
+    <Compile Include="Steps\Obra\3.1.3-AlterarObraSteps.cs" />
     <Compile Include="Steps\Obra\3.1.3-CadastrarObraEComposicaoSteps.cs" />
     <Compile Include="Steps\Obra\3.1.3-ExcluirObraSteps.cs" />
+    <Compile Include="Steps\Obra\AlterarComposiçãoSteps.cs" />
     <Compile Include="Steps\Obra\Autor\AlterarAutorSteps.cs" />
     <Compile Include="Steps\Obra\Autor\CadastrarAutorSteps.cs" />
     <Compile Include="Steps\Obra\Autor\ExcluirAutorSteps.cs" />
@@ -390,6 +450,34 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Busca Rápida.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Ferramenta\3.1.3 - Tranferencia de Autor De-Para.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.3 - Tranferencia de Autor De-Para1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Ferramenta\3.1.3 - Transferência de Controle Editorial.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.3 - Transferência de Controle Editorial1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Ferramenta\3.1.3 - Transferência de DDA De-Para.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.3 - Transferência de DDA De-Para1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Ferramenta\3.1.3 - Transferência de Obra De-Para.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.3 - Transferência de Obra De-Para1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Ferramenta\Midia\3.1.3 - Alterar Mídia.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.3 - Alterar Mídia1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Ferramenta\Midia\3.1.3 - Buscar Mídia.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.3 - Buscar Mídia1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Ferramenta\Midia\3.1.3 - Cadastrar Mídia.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.3 - Cadastrar Mídia1.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login1.feature.cs</LastGenOutput>
@@ -397,6 +485,14 @@
     <None Include="Features\Obra\3.1.1 - Consultar Obra.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>3.1.1 - Consultar Obra.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\3.1.3 - Alterar Composição.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.3 - Alterar Composição.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\3.1.3 - Alterar Obra.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.3 - Alterar Obra.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Obra\3.1.3 - Cadastrar Obra e Composicao.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

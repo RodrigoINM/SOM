@@ -195,5 +195,5 @@ namespace SOM.BDD.Pages.Obra
                 ElementExtensions.IsElementVisible(Element.Xpath("//div[@ng-repeat='item in ObraDados.Fonogramas'][1]//h5[contains (., '" + Valor + "')]"), Browser);
         }
         
-    }
+        }
 }
