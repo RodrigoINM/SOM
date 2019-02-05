@@ -1,0 +1,38 @@
+﻿#language:pt
+#Author: Rodrigo Magno
+#Date: 19/11/2018
+#Version: 1.0
+
+@kill_Driver @Obra @ConsultarObraEComposicao
+Funcionalidade: 3.1.1 - Consultar detalhe da Obra
+
+Contexto: Acesso a tela de Detalhe da Obra
+	Dado que esteja logado no sistema SOM
+    E que esteja na tela de Obras
+
+@chrome @ConsultarObraEComposicaoCT01
+Esquema do Cenario: Consulta Avançada por Obra cadastrada no sistema
+	Quando faço uma busca avancada por uma obra <TITULO>, <SUBTITULO>, <AUTOR>, <TITULOALTERNATIVO>, <TIPO>, <DDA>
+	Entao visualizo a obra cadastrada no resultado da busca com sucesso <TITULO>, <AUTOR>, <DDA>, <NACIONALIDADE>, <TIPO>, <DOMINIOPUBLICO>
+	  
+  Exemplos:
+      | TITULO                    | SUBTITULO                    | AUTOR             | TITULOALTERNATIVO | TIPO                 | DDA            | NACIONALIDADE | DOMINIOPUBLICO |
+      | "TITULO CONSULTA SIMPLES" | "SUBTITULO CONSULTA SIMPLES" | "TESTE INM Autor" | " "               | "BIBLIOTECA MUSICAL" | "KOBALT MUSIC" | "Nacional"    | "Não"          |
+	  
+@chrome @ConsultarObraEComposicaoCT02
+Esquema do Cenario: Consulta Simples por Obra cadastrada no sistema
+	Quando faço uma busca simples por uma obra <TITULO>
+	Entao visualizo a obra cadastrada no resultado da busca com sucesso <TITULO>, <AUTOR>, <DDA>, <NACIONALIDADE>, <TIPO>, <DOMINIOPUBLICO>
+	  
+  Exemplos:
+      | TITULO                    | AUTOR             | TIPO                 | DDA            | NACIONALIDADE | DOMINIOPUBLICO |
+      | "TITULO CONSULTA SIMPLES" | "TESTE INM Autor" | "BIBLIOTECA MUSICAL" | "KOBALT MUSIC" | "Nacional"    | "Não"          |
+
+@chrome @ConsultarObraEComposicaoCT03
+Esquema do Cenario: Consultar detalhe de obra com fonograma
+	Quando faço uma busca simples por uma obra <Obra>
+    Entao visualizo a grid com os campos <Interpretes>, <Produtor_Fonografico>, <Submix>, <ISRC> preenchido com os dados do fonograma <Obra>
+
+  Exemplos:
+      | Obra               | Interpretes | Produtor_Fonografico | Submix     | ISRC            |
+      | "MUSICA DA HELEN1" | "ANITTA"    | "RGE"                | "FULL MIX" | "BRRGE10101010" |

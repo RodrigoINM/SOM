@@ -1,0 +1,172 @@
+﻿using Framework.Core.PageObjects;
+using Framework.Core.Interfaces;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Framework.Core.FrameworkActions;
+using System.Threading;
+using Framework.Core.Extensions.ElementExtensions;
+using System;
+using Framework.Core.Helpers;
+
+namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
+{
+    public class CadastrarCueSheetPage : PageBase
+    {
+        private string CadastroDeCueSheet { get; }
+
+        private string PageTitle => "SOM | Cue-Sheet";
+
+        //Cadastro de cue-sheet
+        public Element InpProduto { get; private set; }
+        public Element InpEpisodio { get; private set; }
+        public Element InpCapitulo { get; private set; }
+        public Element InpDataExibicao { get; private set; }
+        public Element SlctMidia { get; private set; }
+        public Element SlctRebatidaReprise { get; private set; }
+        public Element BtnSalvarCueSheet { get; private set; }
+        public Element BtnCancelarCriacaoDeCueSheet { get; private set; }
+        public Element BtnLiberarCueSheet { get; private set; }
+
+        public CadastrarCueSheetPage(IBrowser browser, string cadastroDeCueSheet) : base(browser)
+        {
+            CadastroDeCueSheet = cadastroDeCueSheet;
+
+            //Cadastro de cue-sheet
+            InpProduto = Element.Css("input[ng-model='DscProduto']");
+            InpEpisodio = Element.Css("input[ng-model='CueSheetDados.DscEpisodio']");
+            InpCapitulo = Element.Css("input[ng-model='CueSheetDados.Capitulo']");
+            InpDataExibicao = Element.Css("input[ng-model='CueSheetDados.DataExibicao']");
+            SlctMidia = Element.Css("select[ng-model='CueSheetDados.Midia.selected']");
+            SlctRebatidaReprise = Element.Css("select[ng-model='CueSheetDados.RepriseRebatida.selected']");
+            BtnSalvarCueSheet = Element.Css("a[ng-click='salvarCueSheet()']");
+            BtnCancelarCriacaoDeCueSheet = Element.Css("a[ng-click='voltarLista()']");
+            BtnLiberarCueSheet = Element.Css("a[ng-click='LiberarCueSheet()']");
+        }
+
+        public override void Navegar()
+        {
+            Browser.Abrir(CadastroDeCueSheet);
+            Assert.IsTrue(Browser.PageSource(PageTitle));
+        }
+
+       public void CadastrarCueSheet(string Produto, string Episodio, string Capitulo, string DataExibicao, string Midias, string RepriseRebatida)
+        {
+            if(Produto != "")
+            {
+                AutomatedActions.SendDataATM(Browser, InpProduto, Produto);
+                MouseActions.ClickATM(Browser, Element.Xpath("//a/strong[text()='" + Produto + "']"));
+            }
+            if(Episodio != "")
+            {
+                AutomatedActions.SendDataATM(Browser, InpEpisodio, Episodio);
+                MouseActions.ClickATM(Browser, Element.Xpath("//a/strong[text()='" + Episodio + "']"));
+            }
+            if(Capitulo != "")
+            {
+                AutomatedActions.SendDataATM(Browser, InpCapitulo, Capitulo);
+                MouseActions.ClickATM(Browser, Element.Xpath("//a/strong[text()='" + Capitulo + "']"));
+            }
+            if(DataExibicao != "")
+                AutomatedActions.SendData(Browser, InpDataExibicao, DataExibicao);
+            if (Midias != "")
+                MouseActions.SelectElementATM(Browser, SlctMidia, Midias);
+            if (RepriseRebatida != "" && RepriseRebatida != " ")
+                MouseActions.SelectElementATM(Browser, SlctRebatidaReprise, RepriseRebatida);
+
+            MouseActions.ClickATM(Browser, BtnSalvarCueSheet);
+
+
+        }
+
+        public void ValidarPopUpsDeCriticaDaCueSheet(string MensagemCritica, string Mensagem)
+        {
+            var texto = Element.Css("p[style='display: block;']");
+            Assert.AreEqual(MensagemCritica, ElementExtensions.GetValorAtributo(texto, "textContent", Browser));
+
+            Thread.Sleep(2000);
+            var BtnConfirmar = Element.Css("button[class='confirm']");
+            MouseActions.ClickATM(Browser, BtnConfirmar);
+
+            try
+            {
+                Thread.Sleep(2000);
+                var textoCritica = Element.Css("p[style='display: block;']");
+                Assert.AreEqual(Mensagem, ElementExtensions.GetValorAtributo(textoCritica, "textContent", Browser));
+            }
+            catch
+            {
+                Thread.Sleep(2000);
+                var textoCritica = Element.Css("p[style='display: block;']");
+                Assert.AreEqual(Mensagem, ElementExtensions.GetValorAtributo(textoCritica, "textContent", Browser));
+            }
+        }
+
+        public void ValidarDuplicidadeDeCueSheet(string MensagemCritica, string Mensagem)
+        {
+            var texto = Element.Css("p[style='display: block;']");
+            Assert.AreEqual(MensagemCritica, ElementExtensions.GetValorAtributo(texto, "textContent", Browser));
+
+            Thread.Sleep(2000);
+            var BtnConfirmar = Element.Css("button[class='confirm']");
+            MouseActions.ClickATM(Browser, BtnConfirmar);
+
+            var textoCritica = Element.Css("p[style='display: block;']");
+            Assert.AreEqual(Mensagem, ElementExtensions.GetValorAtributo(textoCritica, "textContent", Browser));
+        }
+
+        public void ValidarPopupSemImportacao(string MensagemCritica, string Mensagem)
+        {
+            var texto = Element.Css("p[style='display: block;']");
+            Assert.AreEqual(MensagemCritica, ElementExtensions.GetValorAtributo(texto, "textContent", Browser));
+
+            Thread.Sleep(2000);
+            var BtnConfirmar = Element.Css("button[class='confirm']");
+            MouseActions.ClickATM(Browser, BtnConfirmar);
+
+            var textoSucesso = Element.Css("div[ng-class='config.message']");
+            Assert.AreEqual(Mensagem, ElementExtensions.GetValorAtributo(textoSucesso, "textContent", Browser));
+        }
+
+        public void ValidarCueSheetCadastrada(string Produto, string DataExibicao, string Episodio, string Capitulo, string Midia)
+        {
+            ValidarDadosDaCueSheet("Produto", Produto);
+            ValidarDadosDaCueSheet("Data de Exibição", DataExibicao);
+            ValidarDadosDaCueSheet("Episódio", Episodio);
+            ValidarDadosDaCueSheet("Capítulo", Capitulo);
+            ValidarDadosDaCueSheet("Mídia", Midia);
+        }
+
+        private void ValidarDadosDaCueSheet(string Campo, string Valor)
+        {
+            if (Valor != "" && Valor != " ")
+            {
+                var text = Element.Xpath("//b[text()='" + Campo + ":']/../span");
+                Assert.AreEqual(Valor, ElementExtensions.GetValorAtributo(text, "textContent", Browser));
+            }
+        }
+
+        public void ValidarCapituloObrigatorio()
+        {
+            var capitulo = Element.Css("div[ng-class='classCapitulo'][class='has-error']");
+            Assert.IsTrue(ElementExtensions.IsClickable(capitulo, Browser));
+        }
+
+        public void ValidarArquivoDeImportacaoObrigatorio()
+        {
+            var texto = Element.Css("p[style='display: block;']");
+            Assert.AreEqual("Você não selecionou um arquivo. Deseja criar a cue-sheet mesmo assim?", ElementExtensions.GetValorAtributo(texto, "textContent", Browser));
+
+            Thread.Sleep(2000);
+            var BtnCancelar = Element.Css("button[class='cancel']");
+            MouseActions.ClickATM(Browser, BtnCancelar);
+
+            var arquivoDeImportacao = Element.Css("div[ng-class='classArquivoItemCueSheet'][class='has-error']");
+            Assert.IsTrue(ElementExtensions.IsClickable(arquivoDeImportacao, Browser));
+        }
+
+        public void LiberarCueSheet()
+        {
+            ElementExtensions.IsElementVisible(BtnLiberarCueSheet, Browser);
+            MouseActions.ClickATM(Browser, BtnLiberarCueSheet);
+        }
+    }
+}

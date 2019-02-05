@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\SpecRun.Runner.1.8.5\build\SpecRun.Runner.props" Condition="Exists('..\packages\SpecRun.Runner.1.8.5\build\SpecRun.Runner.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E73325B6-7564-475D-9B8B-CDEC69F97854}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SOM.BDD</RootNamespace>
+    <AssemblyName>SOM.BDD</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoItX3.Assembly, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a646454c8d475470, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoItX.Dotnet.3.3.14.2\lib\AutoItX3.Assembly.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.4.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.4.2\lib\net45\ExcelDataReader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.4.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.4.2\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SpecRun.SpecFlowPlugin, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecRun.SpecFlow.2-4-0.1.8.5\lib\net45\SpecRun.SpecFlowPlugin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.2.4.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TechTalk.SpecRun, Version=1.8.0.0, Culture=neutral, PublicKeyToken=d0fc5cc18b3b389b, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecRun.SpecFlow.2-4-0.1.8.5\lib\net45\TechTalk.SpecRun.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TechTalk.SpecRun.Common, Version=1.8.0.0, Culture=neutral, PublicKeyToken=d0fc5cc18b3b389b, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecRun.SpecFlow.2-4-0.1.8.5\lib\net45\TechTalk.SpecRun.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\Busca Rápida.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Busca Rápida.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Login1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\3.1.1 - Consultar Obra.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.1 - Consultar Obra.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\3.1.3 - Cadastrar Obra e Composicao.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.3 - Cadastrar Obra e Composicao.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\3.1.3 - Excluir Obra.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.3 - Excluir Obra.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\Autor\3.1.5 - Alterar Autor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.5 - Alterar Autor.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\Autor\3.1.5 - Cadastrar Autor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.5 - Cadastrar Autor.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\Autor\3.1.5 - Excluir Autor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.5 - Excluir Autor.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\DDA\3.1.4 - Cadastro de DDA1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.4 - Cadastro de DDA.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\DDA\3.1.4 - Consulta de DDA1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.4 - Consulta de DDA.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\DDA\3.1.4 - Exclusa de DDA1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.4 - Exclusa de DDA.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Autorização de Pagamento\Autorizacao de Pagamento.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Autorizacao de Pagamento.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Pedido - Cue-Sheet\6.1.1 - Gerar pedidos de pagamento - Cue-Sheet.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>6.1.1 - Gerar pedidos de pagamento - Cue-Sheet.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Pedido\6.1.10 - Exibir Valor Total do Pedido.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>6.1.10 - Exibir Valor Total do Pedido.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Pedido\6.1.2 - Alterar Item Pedido.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>6.1.2 - Alterar Item Pedido.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Pedido\6.1.3 - Consultar Pedido.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>6.1.3 - Consultar Pedido.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Pedido\6.1.6 - Consultar detalhe dos itens do Pedido.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>6.1.6 - Consultar detalhe dos itens do Pedido.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Pedido\6.1.7 - Criar Pedido Manualmente.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>6.1.7 - Criar Pedido Manualmente.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Pedido\6.1.8 - Criar itens para DNI.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>6.1.8 - Criar itens para DNI.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Pedido\Bloquear edição de item de pedido.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bloquear edição de item de pedido.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Pedido\Pagar para o Administrador.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pagar para o Administrador.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Pedido\Status PAV.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Status PAV.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Tabela de Preço\6.5.1 - Cadastro de Tabela de Precos.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>6.5.1 - Cadastro de Tabela de Precos.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Tabela de Preço\6.5.2 - Alterar Tabela de Preços.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>6.5.2 - Alterar Tabela de Preços.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Tabela de Preço\6.5.3 - Consultar Tabela de Preços.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>6.5.3 - Consultar Tabela de Preços.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pagamento\Tabela de Preço\6.5.4 - Tabelas de Preço - Fatores.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>6.5.4 - Tabelas de Preço - Fatores.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Produto\4.1.5 - Consulta Produto1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4.1.5 - Consulta Produto.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Produto\4.1.6 - Cadastro de Produto1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4.1.6 - Cadastro de Produto.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Produto\4.1.7 - Alterar Produto.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4.1.7 - Alterar Produto.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Produto\4.1.8 - Excluir Produto1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4.1.8 - Excluir Produto.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Produto\Capitulo\4.1.1 - Consulta Capítulo.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4.1.1 - Consulta Capítulo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Produto\Capitulo\4.1.2 - Cadastrar Capítulo.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4.1.2 - Cadastrar Capítulo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Produto\Capitulo\4.1.2 - Cadastrar Capítulos na tela de Detalhes do Produto.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4.1.2 - Cadastrar Capítulos na tela de Detalhes do Produto.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Produto\Capitulo\4.1.3 - Alterar Capítulo.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4.1.3 - Alterar Capítulo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Produto\Capitulo\4.1.4 - Excluir Capítulo.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4.1.4 - Excluir Capítulo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Produto\Template\4.1.10 - Alteração de Template.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4.1.10 - Alteração de Template.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Produto\Template\4.1.11 - Excluir Template.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4.1.11 - Excluir Template.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Produto\Template\4.1.9 - Cadastro de Template.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>4.1.9 - Cadastro de Template.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.1 - Cadastrar Cue-sheet.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>5.2.1 - Cadastrar Cue-sheet.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.4 - Buscar cue-sheet.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>5.2.4 - Buscar cue-sheet.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.6 - Liberar cue-sheet.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>5.2.6 - Liberar cue-sheet.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\UsoEReporte\RelatorioUBEM\5.6.1 - Gerar Relatório UBEM.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>5.6.1 - Gerar Relatório UBEM.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\AutoItHelper.cs" />
+    <Compile Include="Helpers\ExcelUtil.cs" />
+    <Compile Include="Helpers\GetPath.cs" />
+    <Compile Include="Hooks\FeatureHook.cs" />
+    <Compile Include="Pages\BuscaRapidaPage.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\Obra\CadastrarObraEComposicaoPage.cs" />
+    <Compile Include="Pages\Obra\Autor\AlterarAutorPage.cs" />
+    <Compile Include="Pages\Obra\Autor\CadastrarAutorPage.cs" />
+    <Compile Include="Pages\Obra\Autor\ExclusaoDeAutorPage.cs" />
+    <Compile Include="Pages\Obra\ConsultarObraPage.cs" />
+    <Compile Include="Pages\Obra\DDA\CadastroDeDDAPage.cs" />
+    <Compile Include="Pages\Obra\DDA\ConsultaDeDDAPage.cs" />
+    <Compile Include="Pages\Obra\DDA\ExclusaoDeDDAPage.cs" />
+    <Compile Include="Pages\Obra\ExcluirObraPage.cs" />
+    <Compile Include="Pages\Pagamento\Autorização de Pagamento\AutorizacaoDePagamentoPage.cs" />
+    <Compile Include="Pages\Pagamento\Pedido - Cue-Sheet\ConsultarCueSheetPage.cs" />
+    <Compile Include="Pages\Pagamento\Pedido - Cue-Sheet\GerarPedidosDePagamentoCueSheetPage.cs" />
+    <Compile Include="Pages\Pagamento\Pedido\AlterarItemPedidoPage.cs" />
+    <Compile Include="Pages\Pagamento\Pedido\CriarPedidoManualmentePage.cs" />
+    <Compile Include="Pages\Pagamento\Pedido\PedidoPage.cs" />
+    <Compile Include="Pages\Pagamento\Tabela de Preço\CadastroDeTabelaDePrecosPage.cs" />
+    <Compile Include="Pages\Produto\CadastroDeProdutoPage.cs" />
+    <Compile Include="Pages\Produto\Capitulo\CadastrarCapituloPage.cs" />
+    <Compile Include="Pages\Produto\ConsultaDeProdutoPage.cs" />
+    <Compile Include="Pages\Produto\ExclusaoDeProdutoPage.cs" />
+    <Compile Include="Pages\Produto\Template\CadastroDeTemplatePage.cs" />
+    <Compile Include="Pages\UsoEReporte\Cue-Sheet\CadastrarCueSheetPage.cs" />
+    <Compile Include="Pages\UsoEReporte\RelatorioUBEM\GerarRelatorioUBEM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\BuscaRapidaSteps.cs" />
+    <Compile Include="Steps\LoginSteps.cs" />
+    <Compile Include="Steps\Obra\3.1.1-ConsultarObraSteps.cs" />
+    <Compile Include="Steps\Obra\3.1.3-CadastrarObraEComposicaoSteps.cs" />
+    <Compile Include="Steps\Obra\3.1.3-ExcluirObraSteps.cs" />
+    <Compile Include="Steps\Obra\Autor\AlterarAutorSteps.cs" />
+    <Compile Include="Steps\Obra\Autor\CadastrarAutorSteps.cs" />
+    <Compile Include="Steps\Obra\Autor\ExcluirAutorSteps.cs" />
+    <Compile Include="Steps\Obra\DDA\3.1.4 -ConsultaDeDDASteps .cs" />
+    <Compile Include="Steps\Obra\DDA\3.1.4-CadastroDeDDASteps.cs" />
+    <Compile Include="Steps\Obra\DDA\3.1.4-ExclusaoDeDDASteps.cs" />
+    <Compile Include="Steps\Pagamento\Autorização de Pagamento\AutorizacaoDePagamentoSteps.cs" />
+    <Compile Include="Steps\Pagamento\Pedido - Cue-Sheet\GerarPedidosDePagamentoCueSheetSteps.cs" />
+    <Compile Include="Steps\Pagamento\Pedido\6.1.10-ExibirValorTotalDoPedidoSteps.cs" />
+    <Compile Include="Steps\Pagamento\Pedido\6.1.2-AlterarItemPedidoSteps.cs" />
+    <Compile Include="Steps\Pagamento\Pedido\6.1.3-ConsultarPedidoSteps.cs" />
+    <Compile Include="Steps\Pagamento\Pedido\6.1.6-ConsultarDetalheDosItensDoPedidoSteps.cs" />
+    <Compile Include="Steps\Pagamento\Pedido\6.1.7-CriarPedidoManualmenteSteps.cs" />
+    <Compile Include="Steps\Pagamento\Pedido\6.1.8-CriarItensParaDNISteps.cs" />
+    <Compile Include="Steps\Pagamento\Pedido\BloquearEdicaoDeItemDePedidoSteps.cs" />
+    <Compile Include="Steps\Pagamento\Pedido\PagarParaAdministradorSteps.cs" />
+    <Compile Include="Steps\Pagamento\Pedido\StatusPavSteps.cs" />
+    <Compile Include="Steps\Pagamento\Tabela de Preço\6.5.1-CadastroDeTabelaDePrecosSteps.cs" />
+    <Compile Include="Steps\Pagamento\Tabela de Preço\6.5.2-AlterarTabelaDePrecosSteps.cs" />
+    <Compile Include="Steps\Pagamento\Tabela de Preço\6.5.3-ConsultarTabelaDePrecosSteps.cs" />
+    <Compile Include="Steps\Pagamento\Tabela de Preço\6.5.4-TabelasDePrecoFatoresSteps.cs" />
+    <Compile Include="Steps\Produto\4.1.5-ConsultaDeProdutoSteps.cs" />
+    <Compile Include="Steps\Produto\4.1.6-CadastroDeProdutoSteps.cs" />
+    <Compile Include="Steps\Produto\4.1.8-ExclusaoDeProdutoSteps.cs" />
+    <Compile Include="Steps\Produto\4.1.7-AlterarProdutoSteps.cs" />
+    <Compile Include="Steps\Produto\Capitulo\4.1.1-ConsultaCapituloSteps.cs" />
+    <Compile Include="Steps\Produto\Capitulo\4.1.2-CadastrarCapitulosTelaDeDetalhesSteps.cs" />
+    <Compile Include="Steps\Produto\Capitulo\4.1.2-CadastrarCapituloSteps.cs" />
+    <Compile Include="Steps\Produto\Capitulo\4.1.3-AlterarCapituloSteps.cs" />
+    <Compile Include="Steps\Produto\Capitulo\4.1.4-ExcluirCapituloSteps.cs" />
+    <Compile Include="Steps\Produto\Template\4.1.10-AlteracaoDeTemplateSteps.cs" />
+    <Compile Include="Steps\Produto\Template\4.1.11-ExcluirTemplateSteps.cs" />
+    <Compile Include="Steps\Produto\Template\4.1.9-CadastroDeTemplateSteps.cs" />
+    <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.1-CadastrarCueSheetSteps.cs" />
+    <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.4-BuscarCueSheetSteps.cs" />
+    <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.6-LiberarCueSheetSteps.cs" />
+    <Compile Include="Steps\UsoEReporte\RelatorioUBEM\5.6.1-GerarRelatorioUBEMSteps.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Default.srprofile" />
+    <None Include="Execute.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Features\Busca Rápida.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Busca Rápida.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Login.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Login1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\3.1.1 - Consultar Obra.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.1 - Consultar Obra.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\3.1.3 - Cadastrar Obra e Composicao.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.3 - Cadastrar Obra e Composicao.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\3.1.3 - Excluir Obra.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.3 - Excluir Obra.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\Autor\3.1.5 - Alterar Autor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.5 - Alterar Autor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\Autor\3.1.5 - Cadastrar Autor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.5 - Cadastrar Autor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\Autor\3.1.5 - Excluir Autor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.5 - Excluir Autor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\DDA\3.1.4 - Cadastro de DDA.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.4 - Cadastro de DDA1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\DDA\3.1.4 - Consulta de DDA.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.4 - Consulta de DDA1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\DDA\3.1.4 - Exclusa de DDA.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.4 - Exclusa de DDA1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Autorização de Pagamento\Autorizacao de Pagamento.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Autorizacao de Pagamento.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Pedido - Cue-Sheet\6.1.1 - Gerar pedidos de pagamento - Cue-Sheet.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>6.1.1 - Gerar pedidos de pagamento - Cue-Sheet.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Pedido\6.1.10 - Exibir Valor Total do Pedido.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>6.1.10 - Exibir Valor Total do Pedido.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Pedido\6.1.2 - Alterar Item Pedido.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>6.1.2 - Alterar Item Pedido.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Pedido\6.1.3 - Consultar Pedido.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>6.1.3 - Consultar Pedido.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Pedido\6.1.6 - Consultar detalhe dos itens do Pedido.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>6.1.6 - Consultar detalhe dos itens do Pedido.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Pedido\6.1.7 - Criar Pedido Manualmente.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>6.1.7 - Criar Pedido Manualmente.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Pedido\6.1.8 - Criar itens para DNI.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>6.1.8 - Criar itens para DNI.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Pedido\Bloquear edição de item de pedido.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Bloquear edição de item de pedido.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Pedido\Pagar para o Administrador.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Pagar para o Administrador.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Pedido\Status PAV.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Status PAV.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Tabela de Preço\6.5.1 - Cadastro de Tabela de Precos.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>6.5.1 - Cadastro de Tabela de Precos.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Tabela de Preço\6.5.2 - Alterar Tabela de Preços.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>6.5.2 - Alterar Tabela de Preços.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Tabela de Preço\6.5.3 - Consultar Tabela de Preços.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>6.5.3 - Consultar Tabela de Preços.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Pagamento\Tabela de Preço\6.5.4 - Tabelas de Preço - Fatores.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>6.5.4 - Tabelas de Preço - Fatores.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Produto\4.1.5 - Consulta Produto.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4.1.5 - Consulta Produto1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Produto\4.1.6 - Cadastro de Produto.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4.1.6 - Cadastro de Produto1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Produto\4.1.7 - Alterar Produto.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4.1.7 - Alterar Produto.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Produto\4.1.8 - Excluir Produto.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4.1.8 - Excluir Produto1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Produto\Capitulo\4.1.1 - Consulta Capítulo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4.1.1 - Consulta Capítulo.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Produto\Capitulo\4.1.2 - Cadastrar Capítulo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4.1.2 - Cadastrar Capítulo.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Produto\Capitulo\4.1.2 - Cadastrar Capítulos na tela de Detalhes do Produto.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4.1.2 - Cadastrar Capítulos na tela de Detalhes do Produto.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Produto\Capitulo\4.1.3 - Alterar Capítulo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4.1.3 - Alterar Capítulo.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Produto\Capitulo\4.1.4 - Excluir Capítulo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4.1.4 - Excluir Capítulo.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Produto\Template\4.1.10 - Alteração de Template.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4.1.10 - Alteração de Template.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Produto\Template\4.1.11 - Excluir Template.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4.1.11 - Excluir Template.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Produto\Template\4.1.9 - Cadastro de Template.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>4.1.9 - Cadastro de Template.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UsoEReporte\Cue-Sheet\5.2.1 - Cadastrar Cue-sheet.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>5.2.1 - Cadastrar Cue-sheet.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UsoEReporte\Cue-Sheet\5.2.4 - Buscar cue-sheet.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>5.2.4 - Buscar cue-sheet.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UsoEReporte\Cue-Sheet\5.2.6 - Liberar cue-sheet.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>5.2.6 - Liberar cue-sheet.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UsoEReporte\RelatorioUBEM\5.6.1 - Gerar Relatório UBEM.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>5.6.1 - Gerar Relatório UBEM.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Resources\login.xlsx" />
+    <None Include="Resources\Massa.xlsx" />
+    <None Include="Resources\Relatorio_TODAS_ASSOCIACOES_102017.xlsx" />
+    <None Include="runtests.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SpecRunTestProfile.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SpecRunTestProfile_2011_09.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj">
+      <Project>{09f53078-9c29-40fc-bc51-bf83cf49d09d}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.IoC\Framework.IoC.csproj">
+      <Project>{7107ea78-98a7-46a2-8f4d-bcbb314cd3c9}</Project>
+      <Name>Framework.IoC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoItX.Dotnet.3.3.14.2\build\AutoItX.Dotnet.targets" Condition="Exists('..\packages\AutoItX.Dotnet.3.3.14.2\build\AutoItX.Dotnet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\AutoItX.Dotnet.3.3.14.2\build\AutoItX.Dotnet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AutoItX.Dotnet.3.3.14.2\build\AutoItX.Dotnet.targets'))" />
+    <Error Condition="!Exists('..\packages\SpecRun.Runner.1.8.5\build\SpecRun.Runner.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecRun.Runner.1.8.5\build\SpecRun.Runner.props'))" />
+    <Error Condition="!Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.0\build\SpecFlow.targets'))" />
+    <Error Condition="!Exists('..\packages\SpecRun.SpecFlow.2-4-0.1.8.5\build\SpecRun.SpecFlow.2-4-0.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecRun.SpecFlow.2-4-0.1.8.5\build\SpecRun.SpecFlow.2-4-0.targets'))" />
+  </Target>
+  <Import Project="..\packages\SpecFlow.2.4.0\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" />
+  <Import Project="..\packages\SpecRun.SpecFlow.2-4-0.1.8.5\build\SpecRun.SpecFlow.2-4-0.targets" Condition="Exists('..\packages\SpecRun.SpecFlow.2-4-0.1.8.5\build\SpecRun.SpecFlow.2-4-0.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
