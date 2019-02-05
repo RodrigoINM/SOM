@@ -95,4 +95,86 @@ Esquema do Cenario: Novo item ABERTURA ou TEMA em Dramaturgia com pedido existen
 #      | LINKCUESHEET | TITULO      | UTITLIZACAO       | SINCRONISMO | TEMPO | INTERPRETE | AUTORDDA                           |
 #      | "235830"     | "BANG BANG" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | "ANITTA"   | "RAHMAKAN TURNBOW-WARNER CHAPPELL" |
 #	  
-	  
+
+
+#################################################################################################################	  
+
+#É necessário selecionar as linhas que darão origem aos pedidos. Por padrão somente Obras comerciais geram pedido e aparecem selecionadas. Acredito que podemos colocar mais cenários de validação.
+#temos uma regra também que impede a geração de pedido quando a obra possui todos os autores falecidos a mais de 70 anos (domínio público).
+# 	Validar se o sistema está selecionando corretamente apenas linhas com músicas comerciais;
+# 	Validar se a soma dos itens está sendo realizada corretamente, principalmente no que diz respeito a regra de Adorno e Fundo
+# 	Validar as alterações na cue-sheet que afetam pedidos já gerados
+#   Validar geração de pedido para obras com todos os autores falecidos a mais de 70 anos
+  
+# Esquema do Cenario: Gerar pedido para planilha de cue-sheet 100% aprovada
+#     Dado que estou na tela de detalhe da cue-sheet
+#     E possuo todos os itens da massa de dados aprovada
+#     Quando gero um novo pedido
+#     Então visualizo a mensagem <Mensagem>
+#     E visualizo o icone de detalhes do pedido gerado com sucesso
+  
+#   Exemplos:
+#       | Mensagem                      | 
+#       | "Pedidos gerados com sucesso" | 
+
+# Esquema do Cenario: Gerar pedido com itens de cue-sheet parcialmente aprovados
+#     Dado que estou na tela de detalhe da cue-sheet
+#     E possuo itens parcialmente aprovados
+#     Quando gero pedido apenas para os itens aprovados
+#     Então visualizo a mensagem <Mensagem>
+#     E visualizo o icone de detalhes do pedido gerado com sucesso apenas nos itens aprovados
+  
+#   Exemplos:
+#       | Mensagem                      | 
+#       | "Pedidos gerados com sucesso" | 
+
+# Cenario: Gerar pedido sem itens aprovados
+#     Dado que estou na tela de detalhe da cue-sheet
+#     E nao existam itens aprovados
+#     Então nao visualizo o icone para gerar pedido
+
+
+# #Conversa: #==========#==========#==========#==========#==========#==========#==========#==========#==========#
+#   No momento da geração do pedido para novos itens deve ser verificado se já existe algum pedido na mesma cue-shet para a mesma Obra e mesmo sincronismo. Se houver o item deve ser associado ao pedido gerado.
+#   Chave única para validação de duplicidade:
+#   |SINCRONISMO|OBRA|MÍDIA|PRODUTO|EPISODIO|CAPITULO|DATA DE EXIBIÇÃO|
+# #Cenários escritos por Marcelle #==========#==========#==========#==========#==========#==========#==========#==========#
+
+#   Cenário: Associar reprise a pedido existente
+#     Dado que alterei um item da cue-sheet para Reprise = Sim que possui um pedido com status "em andamento"
+#     E o item é o único associado a esse pedido
+#     E já existe outro pedido com a chave única de validação com reprise Sim
+#     Quando confirmo a geração do pedido
+#     Então o item é associado ao outro pedido existente
+#     E o pedido que estava associado a ele tem seu itens cancelados
+
+#   Cenário: Alterar pedido na alteração da reprise
+#     Dado que alterei um item da cue-sheet para Reprise = Sim que possui um pedido com status "em andamento"
+#     E não existe outro pedido com a chave única de validação com reprise Sim
+#     Quando confirmo a geração do pedido
+#     Então o pedido é alterado e recalculado com os valores de reprise
+
+#   Cenário: Item com pedido associado com status cancelado
+#   Dado que possuo um item de cue-sheet assocciado a um pedido com status "Cancelado"
+#   Quando confirmo a geração do pedido para este item
+#   Então é criado um novo pedido e associado ao item
+
+# Cenário: Novo item ABERTURA ou TEMA expirado em Variedades ou Jornalismo ou Esporte com pedido existente
+#   Dado que existe um pedido de ABERTURA ou TEMA para <OBRA>,<PRODUTO>/<EPISODIO> e <MÍDIA>
+#   E a <DATA DE EXIBIÇÃO> é maior que 12 meses 
+#   E o produto tem Gênero igual a "VARIEDADES DIÁRIA"ou "VARIEDADES SEMANAL" ou "JORNALISMO" ou "ESPORTE"
+#   Quando acesso a tela de Gerar Pedido
+#   Então visualizo uma observação informando que existe pedido expirado
+#   E não visualizo o ícone para o pedido
+#   Cenário:
+#     Dado que executei o cenário acima
+#     Quando seleciono o item e confirmo a geração do pedido
+#     Então visualizo o novo pedido criado associado ao item de cue-sheet
+
+#Histórias relacionadas:
+  #User Story 139962:Desmarcar sincronismo ABERTURA e TEMA na geração de pedido
+  #User Story 139505:Validar duplicidade na geração do pedido
+  #User Story 140363:Validar duplicidade para sincronismos ABERTURA e TEMA na geração de pedido
+  #User Story 99035:5.2.22 - Implementar cenários de alteração de pedido na cue-sheet
+  #User Story 98573:5.2.21 - Ver indicação de pedido na cue-sheet
+  #User Story 73285:6.1.1 - Gerar Pedido      
