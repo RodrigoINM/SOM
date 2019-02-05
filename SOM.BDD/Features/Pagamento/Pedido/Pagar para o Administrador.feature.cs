@@ -126,7 +126,7 @@ this.SelecaoDeDDAsQuePossuemAdministradorAssociado("\"Abe1166196360\"", "\"KOBAL
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Marcar pagamento para o administrador no detalhe do item de pedido - Positivo", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Marcar pagamento para o Administrador no detalhe do item de pedido - Positivo", null, @__tags);
 #line 22
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -144,7 +144,7 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Marcar pagamento para o administrador no detalhe do item de pedido - Positivo, \"A" +
+        [TechTalk.SpecRun.ScenarioAttribute("Marcar pagamento para o Administrador no detalhe do item de pedido - Positivo, \"A" +
             "be1166196360\"", new string[] {
                 "chrome",
                 "PagarParaAdministradorCT02"}, SourceLine=28)]

@@ -19,7 +19,7 @@ Esquema do Cenario: Seleção de DDAs que possuem Administrador associado
       | "Abe1166196360" | "KOBALT" |
   
 @chrome @PagarParaAdministradorCT02
-Esquema do Cenario: Marcar pagamento para o administrador no detalhe do item de pedido - Positivo
+Esquema do Cenario: Marcar pagamento para o Administrador no detalhe do item de pedido - Positivo
     Dado que tenha um pedido previamente cadastrado no sistema com apenas um autor e DDA na composição <Autor>, <DDA>
 	Quando informo que o pagamento será feito ao Administrador do DDA do pedido <Autor>
 	Então visualizo o item do pedido marcado para pagamento ao administrador com sucesso <Autor>
