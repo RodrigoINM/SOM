@@ -35,15 +35,21 @@ namespace SOM.BDD.Steps.Ferramenta
             TelaTransferênciadeObraDeParaPage.SalvarTransferencia();
         }
 
+        [When(@"realizo uma Transferência de obraDe preenchendo os campos TituloObraDe e TituloObraPara ""(.*)"" , ""(.*)""")]
+        public void QuandoRealizoUmaTransferenciaDeObraDePreenchendoOsCamposTituloObraDeETituloObraPara(string ObraDe, string ObraPara)
+        {
+            TelaTransferênciadeObraDeParaPage.TransferenciaAutor(ObraDe, ObraPara);
+            TelaTransferênciadeObraDeParaPage.SalvarTransferencia();
+        }
 
         [Then(@"visualizo a mensagem de transferencia de obra concluida ""(.*)""")]
         public void EntaoVisualizoAMensagemDeTransferenciaDeObraConcluida(string MensagemDeAlteração)
         {
-            TelaTransferênciadeObraDeParaPage.ConfirmarTransferencia();
+            TelaTransferênciadeObraDeParaPage.TransferenciaDePara();
             TelaTransferênciadeObraDeParaPage.ValidarDadosAlterados(MensagemDeAlteração);
-            TelaTransferênciadeObraDeParaPage.TransferenciaAutorVisivel("NOVO AMANHECER", "ANTES DA AULA");
+            TelaTransferênciadeObraDeParaPage.TransferenciaAutorVisivel("NOVO AMANHECER", "AMIANTO");
             TelaTransferênciadeObraDeParaPage.SalvarTransferencia();
-            TelaTransferênciadeObraDeParaPage.ConfirmarTransferencia();
+            TelaTransferênciadeObraDeParaPage.TransferenciaDePara();
             TelaTransferênciadeObraDeParaPage.ValidarDadosAlterados(MensagemDeAlteração);
         }
 
@@ -78,7 +84,7 @@ namespace SOM.BDD.Steps.Ferramenta
         [When(@"realizo uma Transferência preenchendo os campos TituloObraDe e TituloObraPara (.*) , ""(.*)""")]
         public void QuandoRealizoUmaTransferenciaPreenchendoOsCamposTituloObraDeETituloObraPara(string p0, string ObraPara)
         {
-            TelaTransferênciadeObraDeParaPage.TransferenciaAutor(CadastrarObraEComposicaoPage.Obra, ObraPara);
+            TelaTransferênciadeObraDeParaPage.TransferenciaAutorVisivel(CadastrarObraEComposicaoPage.Obra, ObraPara);
         }
 
 

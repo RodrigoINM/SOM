@@ -59,7 +59,7 @@ namespace SOM.BDD.Pages.Ferramenta
             Thread.Sleep(1500);
             if (ObraDe != "" && ObraDe != " ")
                 AutomatedActions.SendDataATM(Browser, TituloObraDe, ObraDe);
-            Thread.Sleep(6000);
+            Thread.Sleep(7000);
             var CampoObraDe = Element.Xpath("//a/strong[text()= '" + ObraDe + "']");
             ElementExtensions.IsElementVisible(CampoObraDe, Browser);
             KeyboardActions.Tab(Browser, TituloObraDe);
@@ -67,7 +67,7 @@ namespace SOM.BDD.Pages.Ferramenta
             Thread.Sleep(2000);
             if (ObraPara != "" && ObraPara != " ")
                 AutomatedActions.SendDataATM(Browser, TituloObraPara, ObraPara);
-            Thread.Sleep(6000);
+            Thread.Sleep(7000);
             var CampoObraPara = Element.Xpath("//a/strong[text()= '" + ObraPara + "']");
             ElementExtensions.IsElementVisible(CampoObraPara, Browser);
             KeyboardActions.Tab(Browser, TituloObraPara);
@@ -80,14 +80,22 @@ namespace SOM.BDD.Pages.Ferramenta
             MouseActions.ClickATM(Browser, btnSalvar);
         }
 
-        public void ConfirmarTransferencia()
+        public void TransferenciaDePara()
         {
             Thread.Sleep(2000);
             MouseActions.ClickATM(Browser, BtnConfirmar);
         }
 
-        public void ValidarDadosAlterados(string MensagemDeAlteração)
+        public void ConfirmarTransferencia()
         {
+            Thread.Sleep(2000);
+            MouseActions.ClickATM(Browser, BtnConfirmar);
+            Thread.Sleep(4000);
+            MouseActions.ClickATM(Browser, BtnConfirmar);
+        }
+
+        public void ValidarDadosAlterados(string MensagemDeAlteração)
+        {   
             Assert.AreEqual(MensagemDeAlteração, ElementExtensions.GetValorAtributo(ElementeMensagem, "textContent", Browser));
             Thread.Sleep(2000);
         }

@@ -18,23 +18,23 @@ Esquema do Cenário: Transferência de Obra (De/Para)
     Então visualizo a mensagem de transferencia de obra concluida <Mensagem>
 
    Exemplos:
-       | TituloObraDe    | TituloObraPara   | Mensagem                                            |
-       | "ANTES DA AULA" | "NOVO AMANHECER" | "Dados alterados com sucesso e enviados ao GMUSIC." |
+       | TituloObraDe | TituloObraPara   | Mensagem                                            |
+       | "AMIANTO"    | "NOVO AMANHECER" | "Dados alterados com sucesso e enviados ao GMUSIC." |
 
 @chrome @TransferenciaDeObraCT02
 Esquema do Cenário: Transferencia de Autor (De/Para) com todos os campos em branco.
 	Dado a tela transferência de Obra (De/Para) esteja aberta
-    Quando realizo uma Transferência de obra preenchendo os campos TituloObraDe e TituloObraPara <TituloObraDe> , <TituloObraPara>
+    Quando realizo uma Transferência de obraDe preenchendo os campos TituloObraDe e TituloObraPara <TituloObraDe> , <TituloObraPara>
     Então visualizo os campos TituloObraDe e TituloObraPara em destaque para preenchimento
 
     Exemplos:
        | TituloObraDe | TituloObraPara |
-       | ""           | ""             |
+       | " "          | " "            |
 
 @chrome @TransferenciaDeObraCT03
 Esquema do Cenário: Transferência de Obra (De/Para) com Título Obra inexistente
 	Dado a tela transferência de Obra (De/Para) esteja aberta
-	Quando realizo uma Transferência de obra preenchendo os campos TituloObraDe e TituloObraPara <TituloObraDe> , <TituloObraPara>
+	Quando realizo uma Transferência de obraDe preenchendo os campos TituloObraDe e TituloObraPara <TituloObraDe> , <TituloObraPara>
     Então visualizo os campos TituloObraDe em destaque para preenchimento
 
     Exemplos:
@@ -44,7 +44,7 @@ Esquema do Cenário: Transferência de Obra (De/Para) com Título Obra inexisten
 @chrome @TransferenciaDeObraCT04
 Esquema do Cenário: Transferencia de DDA (De/Para) com Nome DDA(Para) inexistente.
 	Dado a tela transferência de Obra (De/Para) esteja aberta
-	Quando realizo uma Transferência de obra preenchendo os campos TituloObraDe e TituloObraPara <TituloObraDe> , <TituloObraPara>
+	Quando realizo uma Transferência de obraDe preenchendo os campos TituloObraDe e TituloObraPara <TituloObraDe> , <TituloObraPara>
     Então visualizo os campos TituloObraPara em destaque para preenchimento
 
     Exemplos:
@@ -59,15 +59,15 @@ Esquema do Cenário: Transferencia de DDA (De/Para) selecionando a checkbox excl
 	Então visualizo a mensagem de confirmação de exclusão da ObraDe <Mensagem>   
 
     Exemplos:
-		| TituloObraPara   | Mensagem                                            |
-		| "NOVO AMANHECER" | "Dados alterados com sucesso e enviados ao GMUSIC." |
+		| TituloObraPara   | Mensagem                     |
+		| "NOVO AMANHECER" | "Obra excluída com sucesso." |
 
 @chrome @TransferenciaDeObraCT06
 Esquema do Cenário: Transferencia de DDA (De/Para) com Nome DDA (De/Para) iguais.
 	Dado a tela transferência de Obra (De/Para) esteja aberta
-    Quando realizo uma Transferência preenchendo os campos TituloObraDe e TituloObraPara <TituloObraDe> , <TituloObraPara>
+	Quando realizo uma Transferência de obra preenchendo os campos TituloObraDe e TituloObraPara <TituloObraDe> , <TituloObraPara>
     Então visualizo a mensagem de Obra, operação cancelada <Mensagem>
 
    Exemplos:
-      | TituloObraDe     | TituloObraPara   | Mensagem                                                                    |
-      | "NOVO AMANHECER" | "NOVO AMANHECER" | "Operação cancelada, não permitido fazer a transferência para o mesmo DDA." |
+      | TituloObraDe     | TituloObraPara   | Mensagem                                                                     |
+      | "NOVO AMANHECER" | "NOVO AMANHECER" | "Operação cancelada, não permitido fazer a transferência para a mesma obra." |

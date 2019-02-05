@@ -106,13 +106,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Transferência de Obra (De/Para), \"ANTES DA AULA\"", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Transferência de Obra (De/Para), \"AMIANTO\"", new string[] {
                 "chrome",
                 "TransferenciaDeObraCT01"}, SourceLine=21)]
-        public virtual void TransferenciaDeObraDePara_ANTESDAAULA()
+        public virtual void TransferenciaDeObraDePara_AMIANTO()
         {
 #line 15
-this.TransferenciaDeObraDePara("\"ANTES DA AULA\"", "\"NOVO AMANHECER\"", "\"Dados alterados com sucesso e enviados ao GMUSIC.\"", ((string[])(null)));
+this.TransferenciaDeObraDePara("\"AMIANTO\"", "\"NOVO AMANHECER\"", "\"Dados alterados com sucesso e enviados ao GMUSIC.\"", ((string[])(null)));
 #line hidden
         }
         
@@ -134,21 +134,21 @@ this.FeatureBackground();
 #line 26
  testRunner.Given("a tela transferência de Obra (De/Para) esteja aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 27
-    testRunner.When(string.Format("realizo uma Transferência de obra preenchendo os campos TituloObraDe e TituloObra" +
-                        "Para {0} , {1}", tituloObraDe, tituloObraPara), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+    testRunner.When(string.Format("realizo uma Transferência de obraDe preenchendo os campos TituloObraDe e TituloOb" +
+                        "raPara {0} , {1}", tituloObraDe, tituloObraPara), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 28
     testRunner.Then("visualizo os campos TituloObraDe e TituloObraPara em destaque para preenchimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Transferencia de Autor (De/Para) com todos os campos em branco., \"\"", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Transferencia de Autor (De/Para) com todos os campos em branco., \" \"", new string[] {
                 "chrome",
                 "TransferenciaDeObraCT02"}, SourceLine=31)]
         public virtual void TransferenciaDeAutorDeParaComTodosOsCamposEmBranco__()
         {
 #line 25
-this.TransferenciaDeAutorDeParaComTodosOsCamposEmBranco_("\"\"", "\"\"", ((string[])(null)));
+this.TransferenciaDeAutorDeParaComTodosOsCamposEmBranco_("\" \"", "\" \"", ((string[])(null)));
 #line hidden
         }
         
@@ -170,8 +170,8 @@ this.FeatureBackground();
 #line 36
  testRunner.Given("a tela transferência de Obra (De/Para) esteja aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 37
- testRunner.When(string.Format("realizo uma Transferência de obra preenchendo os campos TituloObraDe e TituloObra" +
-                        "Para {0} , {1}", tituloObraDe, tituloObraPara), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.When(string.Format("realizo uma Transferência de obraDe preenchendo os campos TituloObraDe e TituloOb" +
+                        "raPara {0} , {1}", tituloObraDe, tituloObraPara), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 38
     testRunner.Then("visualizo os campos TituloObraDe em destaque para preenchimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
@@ -206,8 +206,8 @@ this.FeatureBackground();
 #line 46
  testRunner.Given("a tela transferência de Obra (De/Para) esteja aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 47
- testRunner.When(string.Format("realizo uma Transferência de obra preenchendo os campos TituloObraDe e TituloObra" +
-                        "Para {0} , {1}", tituloObraDe, tituloObraPara), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.When(string.Format("realizo uma Transferência de obraDe preenchendo os campos TituloObraDe e TituloOb" +
+                        "raPara {0} , {1}", tituloObraDe, tituloObraPara), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 48
     testRunner.Then("visualizo os campos TituloObraPara em destaque para preenchimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
@@ -258,7 +258,7 @@ this.FeatureBackground();
         public virtual void TransferenciaDeDDADeParaSelecionandoACheckboxExcluir_NOVOAMANHECER()
         {
 #line 55
-this.TransferenciaDeDDADeParaSelecionandoACheckboxExcluir("\"NOVO AMANHECER\"", "\"Dados alterados com sucesso e enviados ao GMUSIC.\"", ((string[])(null)));
+this.TransferenciaDeDDADeParaSelecionandoACheckboxExcluir("\"NOVO AMANHECER\"", "\"Obra excluída com sucesso.\"", ((string[])(null)));
 #line hidden
         }
         
@@ -280,8 +280,8 @@ this.FeatureBackground();
 #line 67
  testRunner.Given("a tela transferência de Obra (De/Para) esteja aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 68
-    testRunner.When(string.Format("realizo uma Transferência preenchendo os campos TituloObraDe e TituloObraPara {0}" +
-                        " , {1}", tituloObraDe, tituloObraPara), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.When(string.Format("realizo uma Transferência de obra preenchendo os campos TituloObraDe e TituloObra" +
+                        "Para {0} , {1}", tituloObraDe, tituloObraPara), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 69
     testRunner.Then(string.Format("visualizo a mensagem de Obra, operação cancelada {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
@@ -294,7 +294,7 @@ this.FeatureBackground();
         public virtual void TransferenciaDeDDADeParaComNomeDDADeParaIguais__NOVOAMANHECER()
         {
 #line 66
-this.TransferenciaDeDDADeParaComNomeDDADeParaIguais_("\"NOVO AMANHECER\"", "\"NOVO AMANHECER\"", "\"Operação cancelada, não permitido fazer a transferência para o mesmo DDA.\"", ((string[])(null)));
+this.TransferenciaDeDDADeParaComNomeDDADeParaIguais_("\"NOVO AMANHECER\"", "\"NOVO AMANHECER\"", "\"Operação cancelada, não permitido fazer a transferência para a mesma obra.\"", ((string[])(null)));
 #line hidden
         }
         
