@@ -29,9 +29,7 @@ namespace SOM.BDD.Pages.Obra
         public Element SlctAno { get; private set; }
         public Element SlctPais { get; private set; }
         public Element ChckDominioPublico { get; private set; }
-        public Element ChckInstitucional { get; private set; }
         public Element ChckBlackList { get; private set; }
-        public Element ChckEmblematica { get; private set; }
         public Element BtnSalvarObra { get; private set; }
         public Element BtnSalvarObraEComposicao { get; private set; }
         public Element BtnEditarObra { get; private set; }
@@ -79,6 +77,14 @@ namespace SOM.BDD.Pages.Obra
         public Element BtnAdicionarContatoDDA { get; private set; }
         public Element BtnSalvarContatoDDA { get; private set; }
 
+        //Elemento de Exclusão da Composição
+        public Element BtExcluirComposicao { get; private set; }
+
+        //Alterar Obra
+        public Element BtAlterarObra { get; private set; }
+        public Element ElementeMensagem { get; set; }
+        public Element ComboDerivacao { get; private set; }
+
         public CadastrarObraEComposicaoPage(IBrowser browser, string cadastroObraUrl) : base(browser)
         {
             CadastroObraUrl = cadastroObraUrl;
@@ -94,9 +100,7 @@ namespace SOM.BDD.Pages.Obra
             SlctAno = Element.Css("div[ng-model='ObraDados.AnoS.selected'] i[class='caret pull-right']");
             SlctPais = Element.Css("div[ng-model='ObraDados.PaisS.selected'] i[class='caret pull-right']");
             ChckDominioPublico = Element.Css("input[id='dominioPublicoId']");
-            ChckInstitucional = Element.Css("input[id='institucionalId']");
             ChckBlackList = Element.Css("input[id='blacklistId']");
-            ChckEmblematica = Element.Css("input[id='emblematicaId']");
             BtnSalvarObra = Element.Css("a[uib-tooltip='Salvar']");
             BtnSalvarObraEComposicao = Element.Css("a[ng-click='VerificaSeExisteAlteracaoComposicao(ObraDados)']");
             BtnEditarObra = Element.Css("a[uib-tooltip='Editar obra']");
@@ -143,7 +147,17 @@ namespace SOM.BDD.Pages.Obra
             ChckRecebeAutorizacao = Element.Css("div[class='onoffswitch'] label[for='FalecidoDominioPublicoId']");
             BtnAdicionarContatoDDA = Element.Css("div[ng-click='adicionarItemContato(false)'] i");
             BtnSalvarContatoDDA = Element.Css("a[ng-click='salvarContato(false)']");
+
+            //Elementos de Exclusão da composição
+            BtExcluirComposicao = Element.Css("i[uib-tooltip='Excluir']");
+
+            //Alterar Obra
+            BtAlterarObra = Element.Css("a[uib-tooltip='Editar obra']");
+            ElementeMensagem = Element.Css("div[class='ng-binding ng-scope']");
+            ComboDerivacao = Element.Css("div[ng-model ='ObraDados.TipoDerivacaoS.selected']");
         }
+
+
 
         public static string Obra { get; set; }
 
@@ -186,6 +200,7 @@ namespace SOM.BDD.Pages.Obra
             get { return FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr(); }
         }
 
+
         public string GetAutor2()
         {
             return Autor2;
@@ -194,6 +209,24 @@ namespace SOM.BDD.Pages.Obra
         private void SetAutor2(string nome)
         {
             Autor2 = nome;
+        }
+
+        public static string DDA { get; set; }
+
+        public string DDACadastrado
+        {
+            get { return FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr(); }
+        }
+
+
+        public string GetDDA()
+        {
+            return DDA;
+        }
+
+        private void SetDDA(string nome)
+        {
+            DDA = nome;
         }
 
         public override void Navegar()
@@ -214,6 +247,7 @@ namespace SOM.BDD.Pages.Obra
         private void SelecionarTipoObra(string Valor)
         {
             MouseActions.ClickATM(Browser, SlctTipo);
+            Thread.Sleep(2000);
             MouseActions.ClickATM(Browser, Element.Xpath("//div[text()='" + Valor + "']"));
         }
 
@@ -245,7 +279,7 @@ namespace SOM.BDD.Pages.Obra
             if (Valor == "Sim")
             {
                 Thread.Sleep(1500);
-                MouseActions.ClickATM(Browser, ChckInstitucional);
+                JsActions.JavaScript(Browser, "$('input[id=\"institucionalId\"]').click();");
             }
         }
 
@@ -263,7 +297,7 @@ namespace SOM.BDD.Pages.Obra
             if (Valor == "Sim")
             {
                 Thread.Sleep(1500);
-                MouseActions.ClickATM(Browser, ChckEmblematica);
+                JsActions.JavaScript(Browser, "$('input[id=\"emblematicaId\"]').click();");
             }
         }
 
@@ -278,9 +312,6 @@ namespace SOM.BDD.Pages.Obra
         public void EditarObra(string Titulo, string SubTitutlo, string Tipo, string TitutloAlternativo, string Iswc, string Ano, string ObraOriginal,
             string Nacionalidade, string Pais, string DominioPublico, string Institucional, string BlackList, string Emblematica)
         {
-            //var tituloObra = Element.Xpath("//div[text()='" + Titulo + "']");
-            //MouseActions.DoubleClickATM(Browser, tituloObra);
-
             try
             {
                 Thread.Sleep(2000);
@@ -390,6 +421,12 @@ namespace SOM.BDD.Pages.Obra
 
             ValidarAutor(Autor);
         }
+        public void AlterarAutorComposicaoEditar(string Autor)
+        {
+            AutomatedActions.SendDataATM(Browser, InpAutor, Autor);
+            ElementExtensions.IsElementVisible(Element.Xpath("//a[contains (., '" + Autor + "')]"), Browser);
+            MouseActions.ClickATM(Browser, Element.Xpath("//a[contains (., '" + Autor + "')]"));
+        }
 
         public void AlterarDDDAComposicao(string Autor, string DDA)
         {
@@ -400,6 +437,27 @@ namespace SOM.BDD.Pages.Obra
             Thread.Sleep(2000);
 
             ValidarAutor(Autor);
+        }
+
+        public void AlterarDDDAComposicaoEditar(string DDA)
+        {
+            AutomatedActions.SendDataATM(Browser, InpDDA, DDA);
+            ElementExtensions.IsElementVisible(Element.Xpath("//a[contains (., '" + DDA + "')]"), Browser);
+            MouseActions.ClickATM(Browser, Element.Xpath("//a[contains (., '" + DDA + "')]"));
+        }
+
+        public void MarcarVersionista(string Valor)
+        {
+
+            if (Valor == "Sim")
+            {
+                Thread.Sleep(1500);
+                JsActions.JavaScript(Browser, "$('input[id=\"Versionista\"]').click();");
+                var btnAddCompositor = Element.Css("div[class='modal-footer'] a[uib-tooltip='Salvar']");
+                ElementExtensions.IsElementVisible(btnAddCompositor, Browser);
+                MouseActions.ClickATM(Browser, btnAddCompositor);
+                Thread.Sleep(2000);
+            }
         }
 
         public void EditarComposicao(string Autor, string DDA, string Percentual, string NumeroAutor)
@@ -476,6 +534,8 @@ namespace SOM.BDD.Pages.Obra
                 AutomatedActions.SendDataATM(Browser, InpIswc, Iswc);
             if (Ano != "" && Ano != " ")
                 SelecionarAnoObra(Ano);
+            if (ObraOriginal != "" && ObraOriginal != " ")
+                SelecionarObraOriginal(ObraOriginal);
             if (Nacionalidade != "" && Nacionalidade != " ")
                 MarcarNacionalidade(Nacionalidade);
             if (Pais != "" && Pais != " ")
@@ -488,14 +548,32 @@ namespace SOM.BDD.Pages.Obra
             var btnSalvarCadastroDeObra = Element.Css("div[class='title-action'] a[uib-tooltip='Salvar']");
             try
             {
+                Thread.Sleep(2000);
+                ElementExtensions.IsClickable(btnSalvarCadastroDeObra, Browser);
                 Assert.IsTrue(ElementExtensions.IsElementVisible(btnSalvarCadastroDeObra, Browser));
                 MouseActions.ClickATM(Browser, btnSalvarCadastroDeObra);
+                Thread.Sleep(2000);
             }
             catch
             {
                 Assert.IsTrue(ElementExtensions.IsElementVisible(btnSalvarCadastroDeObra, Browser));
                 MouseActions.ClickATM(Browser, btnSalvarCadastroDeObra);
             }
+        }
+
+        private void SelecionarObraOriginal(string obraOriginal)
+        {
+                Thread.Sleep(2000);
+                JsActions.JavaScript(Browser, "$('input[id=\"originalId\"]').click();");
+                Assert.IsTrue(ElementExtensions.IsElementVisible(ComboDerivacao, Browser));
+                MouseActions.ClickATM(Browser, ComboDerivacao);
+                Thread.Sleep(2000);
+                MouseActions.ClickATM(Browser, Element.Xpath("//div[text()='" + obraOriginal + "']"));
+
+
+            //div[ng-model="ObraDados.TipoDerivacaoS.selected"] i[class="caret pull-right"]
+
+
         }
 
         public void SalvarEdicaoDeObra()
@@ -505,14 +583,14 @@ namespace SOM.BDD.Pages.Obra
             {
                 Thread.Sleep(1500);
                 var btnSalvarEdicaoObra = Element.Css("div[id='detalheObra'] a[uib-tooltip='Salvar']");
-                ElementExtensions.IsElementVisible(btnSalvarEdicaoObra, Browser);
+                Assert.IsTrue(ElementExtensions.IsElementVisible(btnSalvarEdicaoObra, Browser));
                 MouseActions.ClickATM(Browser, btnSalvarEdicaoObra);
             }
             catch
             {
                 Thread.Sleep(1500);
                 var btnSalvarEdicaoObra = Element.Css("div[id='detalheObra'] a[uib-tooltip='Salvar']");
-                ElementExtensions.IsElementVisible(btnSalvarEdicaoObra, Browser);
+                Assert.IsTrue(ElementExtensions.IsElementVisible(btnSalvarEdicaoObra, Browser));
                 MouseActions.ClickATM(Browser, btnSalvarEdicaoObra);
             }
         }
@@ -663,6 +741,13 @@ namespace SOM.BDD.Pages.Obra
             }
         }
 
+        public void IconeDuplicidade()
+        {
+            Thread.Sleep(2000);
+            var IconeDupli = Element.Css("i[ng-if='itemComp.Duplicidade']");
+            Assert.IsTrue(ElementExtensions.IsElementVisible(IconeDupli, Browser));
+        }
+
         public void CadastrarDuplicidade()
         {
             Browser.RefreshPage();
@@ -718,20 +803,6 @@ namespace SOM.BDD.Pages.Obra
             MouseActions.ClickATM(Browser, BtnSalvarCadastroDeAutor);
         }
 
-        public void GerarAutorRandomico(string Numero)
-        {
-            if (Numero == "1")
-            {
-                SetAutor(AutorCadastrado);
-                string Valor = GetAutor();
-            }
-            if (Numero == "2")
-            {
-                SetAutor2(AutorCadastrado2);
-                string Valor = GetAutor2();
-            }
-        }
-
         public void CadastrarAutorRandomico(string Numero)
         {
             if(Numero == "1")
@@ -748,9 +819,21 @@ namespace SOM.BDD.Pages.Obra
             }
         }
 
+        public void GerarAutorRandomico()
+        {
+            SetAutor(AutorCadastrado);
+            string Valor = GetAutor();
+        }
+
         public void CadastrarAutorComposicao(string NomeAutor)
         {
             MouseActions.ClickATM(Browser, BtnCadastrarAutor);
+            PreencherAutorRandomico(NomeAutor);
+            MouseActions.ClickATM(Browser, BtnSalvarCadastroDeAutor);
+        }
+
+        public void PreencherAutorRandomico(string NomeAutor) 
+        {
             AutomatedActions.SendData(Browser, InpNomeArtistico, NomeAutor);
             AutomatedActions.SendData(Browser, InpNomeCompletoAutor, FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr());
 
@@ -759,8 +842,7 @@ namespace SOM.BDD.Pages.Obra
             SelecionarTipoContato("Email");
             AutomatedActions.SendData(Browser, InpValorContatoAutor, "teste@teste.com.br");
             MouseActions.ClickATM(Browser, BtnAdicionarItemContato);
-            MouseActions.ClickATM(Browser, BtnSalvarContatoAutor);
-            MouseActions.ClickATM(Browser, BtnSalvarCadastroDeAutor);
+                      
         }
 
         private void CadastrarDDA()
@@ -780,10 +862,39 @@ namespace SOM.BDD.Pages.Obra
             PreencherDadosDeDDA();
         }
 
-        private void PreencherDadosDeDDA()
+        public void CadastrarDDAManualmente(string Associacao)
         {
+            Thread.Sleep(2000);
+            try
+            {
+                ElementExtensions.IsElementVisible(BtnCadastrarDDA, Browser);
+                MouseActions.ClickATM(Browser, BtnCadastrarDDA);
+            }
+            catch
+            {
+                Thread.Sleep(2000);
+                ElementExtensions.IsElementVisible(BtnCadastrarDDA, Browser);
+                MouseActions.ClickATM(Browser, BtnCadastrarDDA);
+            }
+
             ElementExtensions.EsperarElemento(InpNomeFantasia, Browser);
             AutomatedActions.SendDataATM(Browser, InpNomeFantasia, FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr());
+            AutomatedActions.SendDataATM(Browser, InpNomeCompleto, FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr());
+            PreencherCNPJ();
+            SelecionarAssociacao(Associacao);
+            MouseActions.ClickATM(Browser, ChckAdministrador);
+            CadastrarContatoDDA();
+            MouseActions.ClickATM(Browser, BtnSalvarDDA);
+        }
+
+        private void PreencherDadosDeDDA()
+        {
+
+            SetDDA(DDACadastrado);
+            string ValorDDA = GetDDA();
+
+            ElementExtensions.EsperarElemento(InpNomeFantasia, Browser);
+            AutomatedActions.SendDataATM(Browser, InpNomeFantasia, ValorDDA);
             AutomatedActions.SendDataATM(Browser, InpNomeCompleto, FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr());
             PreencherCNPJ();
             SelecionarAssociacao("UBEM");
@@ -819,8 +930,7 @@ namespace SOM.BDD.Pages.Obra
             Thread.Sleep(2000);
             MouseActions.ClickATM(Browser, InpCPF);
             Thread.Sleep(2000);
-            //AutomatedActions.SendDataATM(Browser, InpCPF, "30.253.090/0001-93");
-            AutomatedActions.SendData(Browser, InpCPF, "30.253.090/0001-93");
+            AutomatedActions.SendDataATM(Browser, InpCPF, "30.253.090/0001-93");
         }
 
         public void CadastrarContatoDDA()
@@ -1145,6 +1255,97 @@ namespace SOM.BDD.Pages.Obra
             MouseActions.ClickATM(Browser, btnConfirmarExclusao);
         }
 
+        public void ExcluirComposição()
+        {
+            MouseActions.ClickATM(Browser, BtExcluirComposicao);
 
+            var popUpExclusao = Element.Xpath("//h2[contains(., 'Deseja excluir?')]");
+            ElementExtensions.IsElementVisible(popUpExclusao, Browser);
+            var btnConfirmarExclusao = Element.Css("button[class='confirm']");
+            ElementExtensions.IsElementVisible(btnConfirmarExclusao, Browser);
+            Thread.Sleep(2000);
+            MouseActions.ClickATM(Browser, btnConfirmarExclusao);
+        }
+
+        public void MsgExcluirComposição()
+        {
+            string popUpSucesso = "div[id='toast-container'] div[class='ng-binding ng-scope']";
+            Assert.AreEqual("Registro excluído com sucesso.", ElementExtensions.GetValorAtributo(Element.Css(popUpSucesso), "textContent", Browser));
+        }
+
+        public void ValidarPopupSucesso(string Mensagem)
+        {
+            string popUpSucesso = "div[id='toast-container'] div[class='ng-binding ng-scope']";
+            Assert.AreEqual(Mensagem, ElementExtensions.GetValorAtributo(Element.Css(popUpSucesso), "textContent", Browser));
+        }
+
+        public void EditarTitulodaObra(string SubTitutlo, string Tipo, string TitutloAlternativo, string Iswc, string Ano, string ObraOriginal,
+            string Nacionalidade, string Pais, string DominioPublico, string Institucional, string BlackList, string Emblematica)
+        {
+      
+            try
+            {
+                Thread.Sleep(2000);
+                ElementExtensions.IsElementVisible(BtnEditarObra, Browser);
+                MouseActions.ClickATM(Browser, BtnEditarObra);
+            }
+            catch
+            {
+                Thread.Sleep(2000);
+                ElementExtensions.IsElementVisible(BtnEditarObra, Browser);
+                MouseActions.ClickATM(Browser, BtnEditarObra);
+            }
+
+            SetObra(ObraCadastrado);
+            string Titulo = GetObra();
+
+            MouseActions.ClickATM(Browser, InpTituloObra);
+            Thread.Sleep(2000);
+
+            CadastrarObra(Titulo, SubTitutlo, Tipo, TitutloAlternativo, Iswc, Ano, ObraOriginal, Nacionalidade, Pais, DominioPublico, Institucional,
+                BlackList, Emblematica);
+        }
+
+        public void ValidarDadosAlterados(string MensagemDeAlteração)
+        {
+            Assert.AreEqual(MensagemDeAlteração, ElementExtensions.GetValorAtributo(ElementeMensagem, "textContent", Browser));
+            Thread.Sleep(2000);
+        }
+        
+        public void AlteroCampoObraOriginal(string AlterarObra)
+        {
+            try
+            {
+                Thread.Sleep(2000);
+                ElementExtensions.IsElementVisible(BtnEditarObra, Browser);
+                MouseActions.ClickATM(Browser, BtnEditarObra);
+            }
+            catch
+            {
+                Thread.Sleep(2000);
+                ElementExtensions.IsElementVisible(BtnEditarObra, Browser);
+                MouseActions.ClickATM(Browser, BtnEditarObra);
+            }
+
+            Assert.IsTrue(ElementExtensions.IsElementVisible(ComboDerivacao, Browser));
+            MouseActions.ClickATM(Browser, ComboDerivacao);
+            Thread.Sleep(2000);
+            MouseActions.ClickATM(Browser, Element.Xpath("//div[text()='" + AlterarObra + "']"));
+
+            var btnSalvarCadastroDeObra = Element.Css("div[class='title-action'] a[uib-tooltip='Salvar']");
+            try
+            {
+                Thread.Sleep(2000);
+                ElementExtensions.IsClickable(btnSalvarCadastroDeObra, Browser);
+                Assert.IsTrue(ElementExtensions.IsElementVisible(btnSalvarCadastroDeObra, Browser));
+                MouseActions.ClickATM(Browser, btnSalvarCadastroDeObra);
+                Thread.Sleep(2000);
+            }
+            catch
+            {
+                Assert.IsTrue(ElementExtensions.IsElementVisible(btnSalvarCadastroDeObra, Browser));
+                MouseActions.ClickATM(Browser, btnSalvarCadastroDeObra);
+            }
+        }
     }
 }

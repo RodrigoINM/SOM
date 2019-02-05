@@ -48,5 +48,28 @@ namespace SOM.BDD.Steps.Obra
             TelaExcluirObraPage.ExcluirObraRandomica("Obra");
         }
 
+        [Given(@"que tenho uma obra cadastrado no sistema")]
+        public void DadoQueTenhoUmaObraCadastradoNoSistema()
+        {
+            TelaCadastrarObraEComposicaoPage.Navegar();
+            TelaCadastrarObraEComposicaoPage.CadastroDeObraRandomica("MUSICA COMERCIAL", "", "", "2018", "Sim", "Nacional", "", "Não", "Não", "Não", "Não");
+            TelaCadastrarObraEComposicaoPage.CadastrarComposicaoManualmente("100", "1");
+            TelaCadastrarObraEComposicaoPage.SalvarObraEComposicao();
+        }
+
+        [When(@"excluo a composição cadstrada nessa obra")]
+        public void QuandoExcluoAComposicaoCadstradaNessaObra()
+        {
+            TelaConsultarObraPage.Navegar();
+            TelaConsultarObraPage.ConsultaSimplesObra("Obra");
+            TelaCadastrarObraEComposicaoPage.ExcluirComposição();
+        }
+
+        [Then(@"visualizo a mensagem de registro excluido com sucesso\.")]
+        public void EntaoVisualizoAMensagemDeRegistroExcluidoComSucesso_()
+        {
+            TelaCadastrarObraEComposicaoPage.MsgExcluirComposição();
+        }
+
     }
 }
