@@ -6,6 +6,7 @@ using Framework.Core.FrameworkActions;
 using Framework.Core.Extensions.ElementExtensions;
 using System.Threading;
 using System.IO;
+using Framework.Core.Helpers;
 
 namespace SOM.BDD.Pages.Obra.DDA
 {
@@ -54,6 +55,7 @@ namespace SOM.BDD.Pages.Obra.DDA
             BtnDownloadPdf = Element.Css("a[uib-tooltip='Gerar PDF']");
         }
 
+        
         public override void Navegar()
         {
             Browser.Abrir(ConsultaDeDDAUrl);
@@ -235,7 +237,7 @@ namespace SOM.BDD.Pages.Obra.DDA
             {
                 var td = Coluna;
 
-                linha = ElementExtensions.GetValorAtributo(Element.Xpath("//*[@id='DataTables_Table_0']/tbody/tr[" + tr + "]/td[" + td + "]/div"), "textContent", Browser);
+                linha = ElementExtensions.GetValorAtributo(Element.Xpath("//*[@dt-columns='dtColumns']/tbody/tr[" + tr + "]/td[" + td + "]/div"), "textContent", Browser);
 
                 if (linha == Valor)
                 {

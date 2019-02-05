@@ -180,6 +180,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>3.1.5 - Excluir Autor.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Obra\DDA\3.1.4 - Alteracao de DDA %28Endereco%29.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.4 - Alteracao de DDA %28Endereco%29.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\DDA\3.1.4 - Alteração de DDA %28Contato%29.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.4 - Alteração de DDA %28Contato%29.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\DDA\3.1.4 - Alteração de DDA.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.4 - Alteração de DDA.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\DDA\3.1.4 - Cadastro de DDA %28Contato%29.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.4 - Cadastro de DDA %28Contato%29.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Obra\DDA\3.1.4 - Cadastro de DDA %28Endereço%29.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.4 - Cadastro de DDA %28Endereço%29.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Obra\DDA\3.1.4 - Cadastro de DDA1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -403,6 +428,11 @@
     <Compile Include="Steps\Obra\Autor\AlterarAutorSteps.cs" />
     <Compile Include="Steps\Obra\Autor\CadastrarAutorSteps.cs" />
     <Compile Include="Steps\Obra\Autor\ExcluirAutorSteps.cs" />
+    <Compile Include="Steps\Obra\DDA\3.1.4 - AlteracaodeDDAEnderecoSteps.cs" />
+    <Compile Include="Steps\Obra\DDA\3.1.4 - CadastrodeDDAContatoSteps.cs" />
+    <Compile Include="Steps\Obra\DDA\3.1.4 - CadastrodeDDAEndereçoSteps.cs" />
+    <Compile Include="Steps\Obra\DDA\3.1.4 -AlteraçãodeDDAContatoSteps.cs" />
+    <Compile Include="Steps\Obra\DDA\3.1.4 -AlteraçãodeDDASteps.cs" />
     <Compile Include="Steps\Obra\DDA\3.1.4 -ConsultaDeDDASteps .cs" />
     <Compile Include="Steps\Obra\DDA\3.1.4-CadastroDeDDASteps.cs" />
     <Compile Include="Steps\Obra\DDA\3.1.4-ExclusaoDeDDASteps.cs" />
@@ -513,6 +543,26 @@
     <None Include="Features\Obra\Autor\3.1.5 - Excluir Autor.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>3.1.5 - Excluir Autor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\DDA\3.1.4 - Alteracao de DDA %28Endereco%29.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.4 - Alteracao de DDA %28Endereco%29.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\DDA\3.1.4 - Alteração de DDA %28Contato%29.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.4 - Alteração de DDA %28Contato%29.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\DDA\3.1.4 - Alteração de DDA.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.4 - Alteração de DDA.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\DDA\3.1.4 - Cadastro de DDA %28Contato%29.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.4 - Cadastro de DDA %28Contato%29.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\DDA\3.1.4 - Cadastro de DDA %28Endereço%29.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.4 - Cadastro de DDA %28Endereço%29.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Obra\DDA\3.1.4 - Cadastro de DDA.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
