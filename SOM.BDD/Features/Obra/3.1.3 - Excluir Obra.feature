@@ -18,14 +18,4 @@ Esquema do Cenário: Excluir Obra
   Exemplos:
       | TIPO               | TITULOALTERNATIVO            | ISWC | ANO    | OBRAORIGINAL | NACIONALIDADE | PAIS | DOMINIOPUBLICO | INSTITUCIONAL | BLACKLIST | EMBLEMATICA | MENSAGEM                         |
       | "MUSICA COMERCIAL" | "TITULOALTERNATIVO OBRA 507" | " "  | "2018" | "Sim"        | "Nacional"    | " "  | "Não"          | "Não"         | "Não"     | "Não"       | "Registro excluído com sucesso." |
-  
-#@chrome @ExcluirObraEComposicao
-#Esquema do Cenário:Excluir composição da Obra
-#    Dado que esteja com a tela Detalhe de Obra aberta
-#    E exibe <MensagemConfirmacao> que confirmo
-#    Quando visualizo a <Mensagem> com sucesso
-#    Entao não visualizo a obra na tela Detalhe da Obra
-#
-#    Exemplos:
-#        | MensagemConfirmacao | MensagemSucesso                  |
-#        | "Deseja excluir?"   | "Registro excluído com sucesso." |
+ 

@@ -930,7 +930,7 @@ namespace SOM.BDD.Pages.Obra
             Thread.Sleep(2000);
             MouseActions.ClickATM(Browser, InpCPF);
             Thread.Sleep(2000);
-            AutomatedActions.SendDataATM(Browser, InpCPF, "30.253.090/0001-93");
+            AutomatedActions.SendData(Browser, InpCPF, "30.253.090/0001-93");
         }
 
         public void CadastrarContatoDDA()

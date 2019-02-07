@@ -6,6 +6,8 @@ using System;
 using Framework.Core.Extensions.ElementExtensions;
 using System.Threading;
 using Framework.Core.Helpers;
+using SOM.BDD.Pages.Produto;
+using SOM.BDD.Pages.Obra;
 
 namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
 {
@@ -112,6 +114,13 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             Assert.IsTrue(Browser.PageSource("SOM | Gerar Pedido Cue-Sheet"));
         }
 
+        public void ValidarItemCueSheetRandomicoCadastrado(string Titulo, string Tempo, string Utilizacao, string Sincronismo, string Pedido)
+        {
+            Titulo = CadastrarObraEComposicaoPage.Obra;
+
+            ValidarPedidoCadastrado(Titulo, Tempo, Utilizacao, Sincronismo, Pedido);
+        }
+
         public void ValidarPedidoCadastrado(string Titulo, string Tempo, string Utilizacao, string Sincronismo, string Pedido)
         {
             Thread.Sleep(1500);
@@ -206,6 +215,52 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             MouseActions.ClickATM(Browser, Element.Xpath("//li[text()='" + Interprete + "']"));
         }
 
+        public void CadasTrarItemCueSheetRandomico(string TituloObra, string Utilizacao, string Sincronismo, string Tempo, string Interprete)
+        {
+            TituloObra = CadastrarObraEComposicaoPage.Obra;
+
+            Thread.Sleep(2000);
+            MouseActions.ClickATM(Browser, BtnAdicionarItemCueSheet);
+
+            AutomatedActions.SendData(Browser, InpTituloObra, TituloObra);
+            SelecionarObraFonograma("", TituloObra);
+            SelecionarUtilizacao(Utilizacao);
+            SelecionarSincronismo(Sincronismo);
+            AutomatedActions.SendData(Browser, InpTempo, Tempo);
+
+            MouseActions.ClickATM(Browser, BtnCadastrarInterprete);
+            AutomatedActions.SendDataATM(Browser, InpNomeInterprete, FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr());
+            MouseActions.ClickATM(Browser, BtnSalvarCadastroDeInterprete);
+            Thread.Sleep(2000);
+
+            try
+            {
+                var interprete = Element.Css("li[class='search-choice']");
+                ElementExtensions.IsElementVisible(interprete, Browser);
+            }
+            catch
+            {
+                Thread.Sleep(2000);
+                var interprete = Element.Css("li[class='search-choice']");
+                ElementExtensions.IsElementVisible(interprete, Browser);
+            }
+
+            try
+            {
+                Thread.Sleep(2000);
+                ElementExtensions.IsElementVisible(BtnSalvarItemCueSheet, Browser);
+                MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
+            }
+            catch
+            {
+                Thread.Sleep(2000);
+                ElementExtensions.IsElementVisible(BtnSalvarItemCueSheet, Browser);
+                MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
+            }
+
+            Assert.IsTrue(ElementExtensions.IsElementVisible(PopUpStatus, Browser));
+        }
+
         public void CadastrarItemCueSheet(string TituloObra, string Utilizacao, string Sincronismo, string Tempo)
         {
             Thread.Sleep(2000);
@@ -287,7 +342,17 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
 
         public void ExcluirItemCueSheet(string Valor)
         {
-            MouseActions.ClickATM(Browser, Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']"));
+            try
+            {
+                Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']").IsElementVisible(Browser);
+                MouseActions.ClickATM(Browser, Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']"));
+            }
+            catch
+            {
+                Thread.Sleep(2000);
+                Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']").IsElementVisible(Browser);
+                MouseActions.ClickATM(Browser, Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']"));
+            }
             Thread.Sleep(1500);
             MouseActions.ClickATM(Browser, BtnExcluirItemCueSheet);
             Assert.IsTrue(ElementExtensions.IsElementVisible(Element.Xpath("//h2[contains (., 'Exclusão de Item de Cue-Sheet')]"), Browser));
@@ -307,9 +372,64 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             MouseActions.DoubleClickATM(Browser, Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']"));
         }
 
+        public void CadastrarNovoInterprete()
+        {
+            CadastroDeInterprete();
+
+            try
+            {
+                var interprete = Element.Css("li[class='search-choice']");
+                ElementExtensions.IsElementVisible(interprete, Browser);
+                MouseActions.ClickATM(Browser, interprete);
+            }
+            catch
+            {
+                Thread.Sleep(2000);
+                var interprete = Element.Css("li[class='search-choice']");
+                ElementExtensions.IsElementVisible(interprete, Browser);
+                MouseActions.ClickATM(Browser, interprete);
+            }
+
+            MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
+        }
+
+        public void AlterarItemDeCueSheetRandomico(string TituloObra, string Utilizacao, string Sincronismo, string Tempo)
+        {
+            if (TituloObra == "Aleatório")
+            {
+                TituloObra = CadastrarObraEComposicaoPage.Obra;
+                PreencherItemDeCueSheetObra(TituloObra, Utilizacao, Sincronismo, Tempo);
+            }
+            else
+                PreencherItemDeCueSheetObra(TituloObra, Utilizacao, Sincronismo, Tempo);
+
+            MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
+        }
+
         public void AlterarItemDeCueSheet(string TituloObra, string Utilizacao, string Sincronismo, string Tempo)
         {
-            if(TituloObra != "")
+            PreencherItemDeCueSheet(TituloObra, Utilizacao, Sincronismo, Tempo);
+
+            MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
+        }
+
+        private void PreencherItemDeCueSheetObra(string TituloObra, string Utilizacao, string Sincronismo, string Tempo)
+        {
+            if (TituloObra != "")
+                AutomatedActions.SendDataATM(Browser, InpTituloObra, TituloObra);
+            if (TituloObra != "")
+                SelecionarObraFonograma("", TituloObra);
+            if (Utilizacao != "")
+                SelecionarUtilizacao(Utilizacao);
+            if (Sincronismo != "")
+                SelecionarSincronismo(Sincronismo);
+            if (Tempo != "")
+                AutomatedActions.SendData(Browser, InpTempo, Tempo);
+        }
+
+        private void PreencherItemDeCueSheet(string TituloObra, string Utilizacao, string Sincronismo, string Tempo)
+        {
+            if (TituloObra != "")
                 AutomatedActions.SendDataATM(Browser, InpTituloObra, TituloObra);
             if (TituloObra != "")
                 SelecionarObraFonograma(TituloObra, "");
@@ -319,8 +439,6 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
                 SelecionarSincronismo(Sincronismo);
             if (Tempo != "")
                 AutomatedActions.SendData(Browser, InpTempo, Tempo);
-
-            MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
         }
 
         public void AprovarItemDeCueSheet(string Valor)
@@ -400,15 +518,14 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             Assert.IsTrue(ElementExtensions.IsElementVisible(IconPedido, Browser));
         }
 
+        public void CadastroDeInterprete()
+        {
+            MouseActions.ClickATM(Browser, Element.Css("button[ng-click='CadastrarInterprete()']"));
+            AutomatedActions.SendDataATM(Browser, InpNomeInterprete, FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr());
+            MouseActions.ClickATM(Browser, BtnSalvarCadastroDeInterprete);
+            Thread.Sleep(2000);
+        }
 
-
-        //public void CadastroDeInterprete()
-        //{
-        //    MouseActions.ClickATM(Browser, Element.Css("button[ng-click='CadastrarInterprete()']");
-        //    AutomatedActions.SendDataATM(Browser, InpNomeInterprete, FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr());
-        //    MouseActions.ClickATM(Browser, BtnSalvarCadastroDeInterprete);
-        //    Thread.Sleep(2000);
-        //}
         public void NavegarPara(string Link)
         {
             string linkCueSheet = "http://jbhbftssr004:8080/som/#/usoReporte/Detalhe/" + Link + "";

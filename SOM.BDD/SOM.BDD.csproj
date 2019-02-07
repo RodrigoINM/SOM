@@ -360,6 +360,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>5.2.1 - Cadastrar Cue-sheet.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.11 - Excluir item cue-sheet.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>5.2.11 - Excluir item cue-sheet.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.4 - Buscar cue-sheet.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -369,6 +374,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>5.2.6 - Liberar cue-sheet.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.7 - Duplicar cue-sheet.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>5.2.7 - Duplicar cue-sheet.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.9 - Alterar item cue-sheet.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>5.2.9 - Alterar item cue-sheet.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\UsoEReporte\RelatorioUBEM\5.6.1 - Gerar Relatório UBEM.feature.cs">
       <AutoGen>True</AutoGen>
@@ -464,8 +479,11 @@
     <Compile Include="Steps\Produto\Template\4.1.11-ExcluirTemplateSteps.cs" />
     <Compile Include="Steps\Produto\Template\4.1.9-CadastroDeTemplateSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.1-CadastrarCueSheetSteps.cs" />
+    <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.11-ExcluirItemCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.4-BuscarCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.6-LiberarCueSheetSteps.cs" />
+    <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.7-DuplicarCueSheetSteps.cs" />
+    <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.9-AlterarItemCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\RelatorioUBEM\5.6.1-GerarRelatorioUBEMSteps.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -688,6 +706,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>5.2.1 - Cadastrar Cue-sheet.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\UsoEReporte\Cue-Sheet\5.2.11 - Excluir item cue-sheet.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>5.2.11 - Excluir item cue-sheet.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\UsoEReporte\Cue-Sheet\5.2.4 - Buscar cue-sheet.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>5.2.4 - Buscar cue-sheet.feature.cs</LastGenOutput>
@@ -695,6 +717,14 @@
     <None Include="Features\UsoEReporte\Cue-Sheet\5.2.6 - Liberar cue-sheet.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>5.2.6 - Liberar cue-sheet.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UsoEReporte\Cue-Sheet\5.2.7 - Duplicar cue-sheet.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>5.2.7 - Duplicar cue-sheet.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UsoEReporte\Cue-Sheet\5.2.9 - Alterar item cue-sheet.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>5.2.9 - Alterar item cue-sheet.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\UsoEReporte\RelatorioUBEM\5.6.1 - Gerar Relatório UBEM.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
