@@ -370,6 +370,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>5.2.6 - Liberar cue-sheet.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\UsoEReporte\Painel de Exibição\3.1.3 - Painel de Exibição.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.3 - Painel de Exibição.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\UsoEReporte\RelatorioUBEM\5.6.1 - Gerar Relatório UBEM.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -409,6 +414,7 @@
     <Compile Include="Pages\Produto\ExclusaoDeProdutoPage.cs" />
     <Compile Include="Pages\Produto\Template\CadastroDeTemplatePage.cs" />
     <Compile Include="Pages\UsoEReporte\Cue-Sheet\CadastrarCueSheetPage.cs" />
+    <Compile Include="Pages\UsoEReporte\Painel de Exibição\PaineldeExibiçãoPage.cs" />
     <Compile Include="Pages\UsoEReporte\RelatorioUBEM\GerarRelatorioUBEM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\BuscaRapidaSteps.cs" />
@@ -466,6 +472,7 @@
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.1-CadastrarCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.4-BuscarCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.6-LiberarCueSheetSteps.cs" />
+    <Compile Include="Steps\UsoEReporte\Painel de Exibição\PaineldeExibiçãoSteps.cs" />
     <Compile Include="Steps\UsoEReporte\RelatorioUBEM\5.6.1-GerarRelatorioUBEMSteps.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -695,6 +702,10 @@
     <None Include="Features\UsoEReporte\Cue-Sheet\5.2.6 - Liberar cue-sheet.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>5.2.6 - Liberar cue-sheet.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UsoEReporte\Painel de Exibição\3.1.3 - Painel de Exibição.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.3 - Painel de Exibição.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\UsoEReporte\RelatorioUBEM\5.6.1 - Gerar Relatório UBEM.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
