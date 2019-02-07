@@ -30,47 +30,42 @@ Esquema do Cenário: Excluir todos os itens selecionados com sucesso
       | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Obra2             | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                           |
       | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "TESTE INMETRICS" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Registros excluídos com sucesso." |
   
-#Esquema do Cenário: Cancelar exlusão de todos os itens
-#    Dado que selecionei todos os itens da cue-sheet
-#    Quando excluo estes itens
-#    Então visualizo a <MensagemRefutacao> para refutação
-#    E a tela de detalhes da cue-sheet com todos itens listados
-#
-#    Exemplos:
-#        | MensagemRefutacao                                                       |
-#        | "Você selecionou [nº de itens] itens para exclusão. Deseja prosseguir?" |
-#
-#
-#Esquema do Cenário: Validar não exclusão um item com status Aprovado
-#    Quando seleciono o item com <Titulo> e que esteja com um <Status> aprovado
-#    Então não visualizo o ícone de exclusão
-#
-#    Exemplos:
-#        | Titulo      | Status     |
-#        | "Teste INM" | "Aprovada" |
-#
-#
-#Esquema do Cenário: Excluir um item pendente com sucesso
-#    Quando seleciono o item com <Titulo> e que esteja com um <Status> aprovado
-#    Então visualizo a <Mensagem>
-#
-#    Exemplos:
-#        | Titulo      | Status     | Mensagem                        |
-#        | "Teste INM" | "Aprovada" | "Registro excluído com sucesso" |
-#
-#
-#
-#Esquema do Cenário: Cancelar exclusão de um item da cue-sheet
-#    Dado que selecionei o <item> da cue-sheet
-#    Quando excluo estes itens
-#    Então visualizo a <Mensagem> para refutação
-#    E a tela de detalhes da cue-sheet com o item ainda listado
-#
-#    Exemplos:
-#        | Mensagem                                                                |
-#        | "Você selecionou [nº de itens] itens para exclusão. Deseja prosseguir?" |
+@chrome @ExcluirItensDeCueSheetCT03
+Esquema do Cenário: Cancelar exlusão de item de Cue-Sheet
+	Dado que tenha uma Cue-Sheet cadastrada no sistema <Produto>, <Episodio>, <Capitulo>, <Midia>, <Dia>, <Mes>, <Ano>, <RepriseRebatida>
+	E que tenha um item cadastrado na Cue-Sheet <Obra>, <Utilizacao>, <Sincronismo>, <Tempo>, <Interprete>
+	Quando seleciono um item e clico em excluir <Obra>
+	Mas cancelo a exclusão do item da Cue-Sheet
+	Então visualizo os dados do item da Cue-Sheet na grid com sucesso <Obra>, <Utilizacao>, <Sincronismo>, <Tempo>
 
-#
+  Exemplos:
+      | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Utilizacao        | Sincronismo | Tempo | Interprete |
+      | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        |
+  
+@chrome @ExcluirItensDeCueSheetCT04
+Esquema do Cenário: Excluir um item pendente com sucesso
+	Dado que tenha uma Cue-Sheet cadastrada no sistema <Produto>, <Episodio>, <Capitulo>, <Midia>, <Dia>, <Mes>, <Ano>, <RepriseRebatida>
+	E que tenha um item cadastrado na Cue-Sheet <Obra>, <Utilizacao>, <Sincronismo>, <Tempo>, <Interprete>
+	Quando excluo um item cadastrado na Cue-Sheet <Obra>
+	Então visualizo uma mensagem de registro excluido com sucesso <Mensagem>
+	
+  Exemplos:
+      | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                           |
+      | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Registros excluídos com sucesso." |
+  
+@chrome @ExcluirItensDeCueSheetCT05
+Esquema do Cenário: Cancelar exclusão de um item da cue-sheet
+    Dado que tenha uma Cue-Sheet cadastrada no sistema <Produto>, <Episodio>, <Capitulo>, <Midia>, <Dia>, <Mes>, <Ano>, <RepriseRebatida>
+	E que tenha dois itens cadastrados na Cue-Sheet <Obra>, <Obra2>, <Utilizacao>, <Sincronismo>, <Tempo>, <Interprete>
+	Quando seleciono os itens e clico em excluir <Obra>, <Obra2>
+	Mas cancelo a exclusão dos itens da Cue-Sheet
+	Então visualizo os dados dos itens da Cue-Sheet na grid com sucesso <Obra>, <Obra2>, <Utilizacao>, <Sincronismo>, <Tempo>
+	
+  Exemplos:
+      | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Obra2             | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                           |
+      | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "TESTE INMETRICS" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Registros excluídos com sucesso." |
+  
+
 ##Conversa#==========#==========#==========#==========#==========#==========#==========#==========#==========#==========#
 #    #Regras definidas em reunião com o cliente
 #    Ao excluir um item que nunca foi enviado ao ECAD ou a UBEM o item poderá ser excluído definitivamente.
