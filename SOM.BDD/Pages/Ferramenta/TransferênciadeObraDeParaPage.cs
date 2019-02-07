@@ -3,7 +3,6 @@ using Framework.Core.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Framework.Core.FrameworkActions;
 using Framework.Core.Extensions.ElementExtensions;
-using System;
 using System.Threading;
 
 
