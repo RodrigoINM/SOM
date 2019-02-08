@@ -365,6 +365,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>5.2.11 - Excluir item cue-sheet.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.12 - Aprovar e revogar aprovação de item Cue-Sheet.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>5.2.12 - Aprovar e revogar aprovação de item Cue-Sheet.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.4 - Buscar cue-sheet.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -486,6 +491,7 @@
     <Compile Include="Steps\Produto\Template\4.1.9-CadastroDeTemplateSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.1-CadastrarCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.11-ExcluirItemCueSheetSteps.cs" />
+    <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.12-AprovarERevogarAprovacaoDeItemCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.4-BuscarCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.6-LiberarCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.7-DuplicarCueSheetSteps.cs" />
@@ -716,6 +722,10 @@
     <None Include="Features\UsoEReporte\Cue-Sheet\5.2.11 - Excluir item cue-sheet.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>5.2.11 - Excluir item cue-sheet.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UsoEReporte\Cue-Sheet\5.2.12 - Aprovar e revogar aprovação de item Cue-Sheet.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>5.2.12 - Aprovar e revogar aprovação de item Cue-Sheet.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\UsoEReporte\Cue-Sheet\5.2.4 - Buscar cue-sheet.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

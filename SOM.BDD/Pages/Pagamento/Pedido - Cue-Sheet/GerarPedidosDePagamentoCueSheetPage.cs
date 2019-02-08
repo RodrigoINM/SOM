@@ -231,21 +231,40 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             SelecionarSincronismo(Sincronismo);
             AutomatedActions.SendData(Browser, InpTempo, Tempo);
 
-            MouseActions.ClickATM(Browser, BtnCadastrarInterprete);
-            AutomatedActions.SendDataATM(Browser, InpNomeInterprete, FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr());
-            MouseActions.ClickATM(Browser, BtnSalvarCadastroDeInterprete);
-            Thread.Sleep(2000);
-
-            try
+            if(Interprete == "")
             {
-                var interprete = Element.Css("li[class='search-choice']");
-                ElementExtensions.IsElementVisible(interprete, Browser);
-            }
-            catch
-            {
+                MouseActions.ClickATM(Browser, BtnCadastrarInterprete);
+                AutomatedActions.SendDataATM(Browser, InpNomeInterprete, FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr());
+                MouseActions.ClickATM(Browser, BtnSalvarCadastroDeInterprete);
                 Thread.Sleep(2000);
-                var interprete = Element.Css("li[class='search-choice']");
-                ElementExtensions.IsElementVisible(interprete, Browser);
+
+                try
+                {
+                    var interprete = Element.Css("li[class='search-choice']");
+                    ElementExtensions.IsElementVisible(interprete, Browser);
+                }
+                catch
+                {
+                    Thread.Sleep(2000);
+                    var interprete = Element.Css("li[class='search-choice']");
+                    ElementExtensions.IsElementVisible(interprete, Browser);
+                }
+            }
+            if(Interprete != "" && Interprete != " ")
+            {
+                SelecionarInterprete(Interprete);
+
+                try
+                {
+                    var interprete = Element.Css("li[class='search-choice']");
+                    ElementExtensions.IsElementVisible(interprete, Browser);
+                }
+                catch
+                {
+                    Thread.Sleep(2000);
+                    var interprete = Element.Css("li[class='search-choice']");
+                    ElementExtensions.IsElementVisible(interprete, Browser);
+                }
             }
 
             try
@@ -306,7 +325,6 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             }
 
             Assert.IsTrue(ElementExtensions.IsElementVisible(PopUpStatus, Browser));
-            //Assert.AreEqual("Registro salvo com sucesso.", ElementExtensions.GetValorAtributo(PopUpStatus, "textContent", Browser));
         }
 
         public void GerarPedidoParaItemCueSheet(string Valor)
@@ -476,6 +494,14 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             MouseActions.ClickATM(Browser, Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']"));
             MouseActions.ClickATM(Browser, BtnAprovarItens);
             Assert.AreEqual("Item aprovado com sucesso.", ElementExtensions.GetValorAtributo(PopUpStatus, "textContent", Browser));
+        }
+        public void RevogarItemDeCueSheet(string Valor)
+        {
+            Browser.RefreshPage();
+            Thread.Sleep(1500);
+            MouseActions.ClickATM(Browser, Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']"));
+            MouseActions.ClickATM(Browser, BtnRevogarAprovacao);
+            Assert.AreEqual("A aprovação foi revogada e o item liberado para edição.", ElementExtensions.GetValorAtributo(PopUpStatus, "textContent", Browser));
         }
 
         public void NavegarTelaDegeracaoDePedidos()

@@ -285,5 +285,26 @@ namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
             var textRepriseRebatida = Element.Css("div[ng-if='CueSheet.RepriseRebatida']").GetValorCss(Browser).Replace(" 1", "");
             Assert.AreEqual(RepriseRebatida, textRepriseRebatida);
         }
+
+        public void ValidarPorcentagelDeAprovacaoDaCueSheet(string Porcentagem)
+        {
+            Thread.Sleep(2000);
+            var valorPorcentagem = Element.Xpath("//span[contains(., '" + Porcentagem + "')]");
+            valorPorcentagem.IsElementVisible(Browser);
+        }
+
+        public void ValidarPendenciaItemCueSheet(string Valor)
+        {
+            var Pendencia = Element.Css("span[data-uib-tooltip-html='ItemPendenciatooltip']");
+            //MouseActions.MouseMoveToElementSML(Browser, Pendencia);
+            //var textoPendencia = Element.Xpath("//div[@ng-bind-html='contentExp()']//div[contains(., '" + Valor +"')]");
+            Pendencia.IsElementVisible(Browser);
+        }
+
+        public void ValidarItensAprovados(string Valor)
+        {
+            var itemAprovado = Element.Xpath("//td[text()='" + Valor + "']/..//span[text()='Aprovado']");
+            itemAprovado.IsElementVisible(Browser);
+        }
     }
 }
