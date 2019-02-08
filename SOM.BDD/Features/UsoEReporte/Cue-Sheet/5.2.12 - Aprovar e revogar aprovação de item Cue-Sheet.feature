@@ -75,29 +75,28 @@ Esquema do Cenário: Aprovar todos os itens com sucesso
       | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Obra2             | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                           |
       | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "TESTE INMETRICS" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Registros excluídos com sucesso." |
   
-#
-#@chrome @AprovarERevogarItemCueSheetCT07
-#Esquema do Cenário: Revogar itens com pedidos em aberto
-#	Dado que tenha uma Cue-Sheet cadastrada no sistema <Produto>, <Episodio>, <Capitulo>, <Midia>, <Dia>, <Mes>, <Ano>, <RepriseRebatida>
-#	E que tenha dois itens cadastrados na Cue-Sheet <Obra>, <Obra2>, <Utilizacao>, <Sincronismo>, <Tempo>, <Interprete>
-#	Quando aprovo dois itens cadastrados na Cue-Sheet <Obra>, <Obra2>
-#	Então visualizo os itens aprovados na Cue-Sheet com sucesso <Obra>, <Obra2>
-#	
-#  Exemplos:
-#      | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Obra2             | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                           |
-#      | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "TESTE INMETRICS" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Registros excluídos com sucesso." |
-#  
-#
-#
-#      Dado que o item de <Ordem> tenha um <NumeroPedido> com <StatusPedido>
-#      Quando revogo este item
-#      Então visualizo a <Mensagem>
-#
-#      Exemplos:
-#          | Ordem | NumeroPedido | StatusPedido   | Mensagem                                                  |
-#          | "1"   | "1000553"    | "Em Andamento" | "A aprovação foi revogada e o item liberado para edição." |
-#
 
+@chrome @AprovarERevogarItemCueSheetCT07
+Esquema do Cenário: Revogar itens com pedidos em aberto
+	Dado que tenha uma Cue-Sheet cadastrada com dois pedidos gerados
+	Quando revogo a aprovação dos dois itens com pedidos pendentes
+	Então visualizo a mensagem que a aprovação foi revogada e os itens estão liberados para edição <Mensagem>
+
+  Exemplos:
+      | Mensagem                                                  |
+      | "A aprovação foi revogada e o item liberado para edição." |
+  
+@chrome @AprovarERevogarItemCueSheetCT08
+Esquema do Cenário: Revogar itens enviados para pagamento
+	Dado que tenha uma Cue-Sheet cadastrada com dois pedidos gerados
+	E que tenha um item com pedido enviado para pagamento
+	Quando revogo o item com pedido enviado para pagamento
+	Então visualizo a mensagem que a aprovação foi revogada e os itens estão liberados para edição <Mensagem>
+	
+  Exemplos:
+      | Mensagem                                                  |
+      | "A aprovação foi revogada e o item liberado para edição." |
+  
 #Esquema do Cenário: Revogar itens enviados ao ECAD
 #    Dado que o item de <Ordem> tenha um <NumeroPedido> e tenha sido enviado ao relatório ECAD
 #    Quando revogo este item
@@ -118,15 +117,6 @@ Esquema do Cenário: Aprovar todos os itens com sucesso
 #        | "1"   | "1000553"    | "A aprovação foi revogada e o item liberado para edição." |
 #
 #
-#Esquema do Cenário: Revogar itens enviados para pagamento
-#    Dado que o item de <Ordem> tenha um <NumeroPedido> e tenha sido enviado para pagamento
-#    Quando revogo este item
-#    Então visualizo a <Mensagem>
-#
-#    Exemplos:
-#        | Ordem | NumeroPedido | Mensagem                                                  |
-#        | "1"   | "1000553"    | "A aprovação foi revogada e o item liberado para edição." |
-
 #Esquema do Cenário: Aprovar com usuário sem permissão
 #    Dado que logo com um usuário sem premissão
 #    Quando tento aprovar um item com <Ordem>

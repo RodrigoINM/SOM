@@ -495,6 +495,7 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             MouseActions.ClickATM(Browser, BtnAprovarItens);
             Assert.AreEqual("Item aprovado com sucesso.", ElementExtensions.GetValorAtributo(PopUpStatus, "textContent", Browser));
         }
+
         public void RevogarItemDeCueSheet(string Valor)
         {
             Browser.RefreshPage();
@@ -502,6 +503,14 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             MouseActions.ClickATM(Browser, Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']"));
             MouseActions.ClickATM(Browser, BtnRevogarAprovacao);
             Assert.AreEqual("A aprovação foi revogada e o item liberado para edição.", ElementExtensions.GetValorAtributo(PopUpStatus, "textContent", Browser));
+        }
+
+        public void AcessarPedidoDeCueSheet(string Obra)
+        {
+            var nomeObra = Element.Xpath("//td[text()='" + Obra + "']/..//a[@ng-click='redirecionaDetalhePedido(item.IdPedido)']");
+            ElementExtensions.IsElementVisible(nomeObra, Browser);
+            MouseActions.ClickATM(Browser, nomeObra);
+            Browser.SwitchToLastWindow();
         }
 
         public void NavegarTelaDegeracaoDePedidos()

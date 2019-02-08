@@ -358,6 +358,82 @@ this.AprovarTodosOsItensComSucesso("\"Aleatório\"", "\"Aleatório\"", "\"01\"",
 #line hidden
         }
         
+        public virtual void RevogarItensComPedidosEmAberto(string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "AprovarERevogarItemCueSheetCT07"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Revogar itens com pedidos em aberto", null, @__tags);
+#line 80
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 81
+ testRunner.Given("que tenha uma Cue-Sheet cadastrada com dois pedidos gerados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 82
+ testRunner.When("revogo a aprovação dos dois itens com pedidos pendentes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 83
+ testRunner.Then(string.Format("visualizo a mensagem que a aprovação foi revogada e os itens estão liberados para" +
+                        " edição {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Revogar itens com pedidos em aberto, \"A aprovação foi revogada e o item liberado " +
+            "para edição.\"", new string[] {
+                "chrome",
+                "AprovarERevogarItemCueSheetCT07"}, SourceLine=86)]
+        public virtual void RevogarItensComPedidosEmAberto_AAprovacaoFoiRevogadaEOItemLiberadoParaEdicao_()
+        {
+#line 80
+this.RevogarItensComPedidosEmAberto("\"A aprovação foi revogada e o item liberado para edição.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void RevogarItensEnviadosParaPagamento(string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "AprovarERevogarItemCueSheetCT08"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Revogar itens enviados para pagamento", null, @__tags);
+#line 90
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 91
+ testRunner.Given("que tenha uma Cue-Sheet cadastrada com dois pedidos gerados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 92
+ testRunner.And("que tenha um item com pedido enviado para pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 93
+ testRunner.When("revogo o item com pedido enviado para pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 94
+ testRunner.Then(string.Format("visualizo a mensagem que a aprovação foi revogada e os itens estão liberados para" +
+                        " edição {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Revogar itens enviados para pagamento, \"A aprovação foi revogada e o item liberad" +
+            "o para edição.\"", new string[] {
+                "chrome",
+                "AprovarERevogarItemCueSheetCT08"}, SourceLine=97)]
+        public virtual void RevogarItensEnviadosParaPagamento_AAprovacaoFoiRevogadaEOItemLiberadoParaEdicao_()
+        {
+#line 90
+this.RevogarItensEnviadosParaPagamento("\"A aprovação foi revogada e o item liberado para edição.\"", ((string[])(null)));
+#line hidden
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

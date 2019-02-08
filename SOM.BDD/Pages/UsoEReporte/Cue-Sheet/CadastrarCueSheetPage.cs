@@ -28,6 +28,9 @@ namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
         public Element BtnCancelarCriacaoDeCueSheet { get; private set; }
         public Element BtnLiberarCueSheet { get; private set; }
         public Element BtnDuplicarCueSheet { get; private set; }
+        public Element BtnReabrirCueSheet { get; private set; }
+        public Element BtnFinalizarCueSheet { get; private set; }
+        public Element BtnReiniciarCueSheet { get; private set; }
 
         public CadastrarCueSheetPage(IBrowser browser, string cadastroDeCueSheet) : base(browser)
         {
@@ -44,6 +47,9 @@ namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
             BtnCancelarCriacaoDeCueSheet = Element.Css("a[ng-click='voltarLista()']");
             BtnLiberarCueSheet = Element.Css("a[ng-click='LiberarCueSheet()']");
             BtnDuplicarCueSheet = Element.Css("a[uib-tooltip='Duplicar Cue-Sheet']");
+            BtnReabrirCueSheet = Element.Css("a[ng-click='ReabrirCueSheet()']");
+            BtnFinalizarCueSheet = Element.Css("a[uib-tooltip='Finalizar Cue-Sheet']");
+            BtnReiniciarCueSheet = Element.Css("a[uib-tooltip='Reiniciar Cue-Sheet']");
         }
 
         public override void Navegar()
@@ -95,7 +101,7 @@ namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
             }
             if (Episodio != "")
             {
-                AutomatedActions.SendDataATM(Browser, InpEpisodio, Episodio);
+                AutomatedActions.SendData(Browser, InpEpisodio, Episodio);
                 MouseActions.ClickATM(Browser, Element.Xpath("//a/strong[text()='" + Episodio + "']"));
             }
             if (Capitulo != "")
@@ -173,6 +179,17 @@ namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
             }
         }
 
+        public void ValidarStatusDaCueSheet(string Status)
+        {
+            var textStatus = Element.Xpath("//span[text()='" + Status + "']");
+            ElementExtensions.IsElementVisible(textStatus, Browser);
+        }
+
+        public void ValidarBotaoLiberarCueSheet()
+        {
+            ElementExtensions.IsElementVisible(BtnLiberarCueSheet, Browser);
+        }
+
         public void ValidarAlerta(string Mensagem)
         {
             var texto = Element.Css("p[style='display: block;']");
@@ -229,6 +246,37 @@ namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
         {
             ElementExtensions.IsElementVisible(BtnLiberarCueSheet, Browser);
             MouseActions.ClickATM(Browser, BtnLiberarCueSheet);
+        }
+
+        public void ReabrirCueSheet()
+        {
+            Browser.RefreshPage();
+            ElementExtensions.IsElementVisible(BtnReabrirCueSheet, Browser);
+            MouseActions.ClickATM(Browser, BtnReabrirCueSheet);
+        }
+
+        public void FinalizarCueSheet()
+        {
+            Browser.RefreshPage();
+            ElementExtensions.IsElementVisible(BtnFinalizarCueSheet, Browser);
+            MouseActions.ClickATM(Browser, BtnFinalizarCueSheet);
+            ValidarAlerta("Esta cue-sheet terá seu status alterado para Finalizada e não poderá mais sofrer alterações. Deseja prosseguir?");
+
+            Thread.Sleep(2000);
+            var BtnConfirmar = Element.Css("button[class='confirm']");
+            MouseActions.ClickATM(Browser, BtnConfirmar);
+        }
+
+        public void ReiniciarCueSheet()
+        {
+            Browser.RefreshPage();
+            ElementExtensions.IsElementVisible(BtnReiniciarCueSheet, Browser);
+            MouseActions.ClickATM(Browser, BtnReiniciarCueSheet);
+            ValidarAlerta("Você está reiniciando a cue-sheet. Deseja prosseguir?");
+
+            Thread.Sleep(2000);
+            var BtnConfirmar = Element.Css("button[class='confirm']");
+            MouseActions.ClickATM(Browser, BtnConfirmar);
         }
 
         public void DuplicarCueSheet(string RepriseRebatida)

@@ -25,7 +25,7 @@ namespace SOM.BDD.Steps.Produto.Template
         public void DadoQueTenhaUmaObraCadastradaNoSistema()
         {
             TelaCadastrarObraEComposicaoPage.Navegar();
-            TelaCadastrarObraEComposicaoPage.CadastroDeObraRandomica("MUSICA COMERCIAL", "", "", "2018", "Sim", "Nacional", "", "Não", "Não", "Não", "Não");
+            TelaCadastrarObraEComposicaoPage.CadastroDeObraRandomica("MUSICA COMERCIAL", "", "", "2018", "", "Nacional", "", "Não", "Não", "Não", "Não");
             TelaCadastrarObraEComposicaoPage.CadastrarComposicaoManualmente("100", "1");
             TelaCadastrarObraEComposicaoPage.SalvarObraEComposicao();
         }

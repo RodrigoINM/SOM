@@ -1,5 +1,6 @@
 ﻿using Framework.Core.Interfaces;
 using SOM.BDD.Pages.Obra;
+using SOM.BDD.Pages.Pagamento.Pedido;
 using SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet;
 using SOM.BDD.Pages.Produto;
 using SOM.BDD.Pages.UsoEReporte.Cue_Sheet;
@@ -16,6 +17,8 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
         public CadastroDeProdutoPage TelaCadastroDeProdutoPage { get; private set; }
         public CadastrarObraEComposicaoPage TelaCadastrarObraEComposicaoPage { get; private set; }
         public GerarPedidosDePagamentoCueSheetPage TelaGerarPedidosDePagamentoCueSheetPage { get; private set; }
+        public AlterarItemPedidoPage TelaAlterarItemPedidoPage { get; private set; }
+        public PedidoPage TelaPedidoPage { get; private set; }
 
         public AprovarERevogarAprovacaoDeItemCueSheetSteps()
         {
@@ -30,6 +33,9 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
             TelaGerarPedidosDePagamentoCueSheetPage = new GerarPedidosDePagamentoCueSheetPage((IBrowser)browser,
                 ConfigurationManager.AppSettings["ConsultaDeCueSheetUrl"],
                 ConfigurationManager.AppSettings["DetalheDaCueSheetUrl"]);
+            TelaAlterarItemPedidoPage = new AlterarItemPedidoPage((IBrowser)browser);
+            TelaPedidoPage = new PedidoPage((IBrowser)browser,
+                ConfigurationManager.AppSettings["ConsultaDePedidoUrl"]);
         }
 
         [Then(@"visualizo o percentual de aprovação da Cue-Sheet alterado ""(.*)""")]
@@ -76,6 +82,74 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
         {
             TelaGerarPedidosDePagamentoCueSheetPage.RevogarItemDeCueSheet(CadastrarObraEComposicaoPage.Obra);
             TelaGerarPedidosDePagamentoCueSheetPage.RevogarItemDeCueSheet(Obra2);
+        }
+
+        //Revogar itens com pedidos em aberto
+        [Given(@"que tenha uma Cue-Sheet cadastrada com dois pedidos gerados")]
+        public void DadoQueTenhaUmaCue_SheetCadastradaComDoisPedidosGerados()
+        {
+            TelaCadastrarObraEComposicaoPage.Navegar();
+            TelaCadastrarObraEComposicaoPage.CadastroDeObraRandomica("MUSICA COMERCIAL", "", "", "2018", "", "Nacional", "", "Não", "Não", "Não", "Não");
+            TelaCadastrarObraEComposicaoPage.CadastrarComposicaoManualmente("100", "1");
+            TelaCadastrarObraEComposicaoPage.SalvarObraEComposicao();
+            TelaCadastroDeProdutoPage.Navegar();
+            TelaCadastroDeProdutoPage.CadastroDeProduto("Novela", "DRAMATURGIA SEMANAL",
+                "290407", "Sim", "GLOBONEWS", "7001", "Não", "Sim");
+            TelaCadastroDeProdutoPage.SalvarCadastroDeProduto();
+            TelaCadastroDeProdutoPage.CadastrarCapitulo("01");
+            Thread.Sleep(2000);
+            TelaCadastrarCueSheetPage.Navegar();
+            TelaCadastrarCueSheetPage.CadastrarCueSheetRandomica("Aleatório", "Aleatório", "01", "11/11/2018", "GLOBONEWS", "");
+            TelaCadastrarCueSheetPage.ValidarPopupSemImportacao("Você não selecionou um arquivo. Deseja criar a cue-sheet mesmo assim?", "Cue-sheet cadastrada com sucesso ");
+            TelaCadastrarCueSheetPage.ValidarCueSheetRandomicaCadastrada("Aleatório", "", "Aleatório", "01", "");
+
+            TelaGerarPedidosDePagamentoCueSheetPage.CadasTrarItemCueSheetRandomico("Aleatório", "BK – BACKGROUND", "ABERTURA", "16", "");
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarItemCueSheetRandomicoCadastrado("Aleatório", "16", "BK – BACKGROUND", "ABERTURA", "Não");
+            TelaGerarPedidosDePagamentoCueSheetPage.AprovarItemDeCueSheet(CadastrarObraEComposicaoPage.Obra);
+            TelaGerarPedidosDePagamentoCueSheetPage.GerarPedidoParaItemDeCueSheet("Sim", CadastrarObraEComposicaoPage.Obra, "Sim");
+
+            TelaGerarPedidosDePagamentoCueSheetPage.CadastrarItemCueSheet("TESTE INMETRICS", "BK – BACKGROUND", "ABERTURA", "16");
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarItemCueSheetRandomicoCadastrado("TESTE INMETRICS", "16", "BK – BACKGROUND", "ABERTURA", "Não");
+            TelaGerarPedidosDePagamentoCueSheetPage.AprovarItemDeCueSheet("TESTE INMETRICS");
+            TelaGerarPedidosDePagamentoCueSheetPage.GerarPedidoParaItemDeCueSheet("Sim", "TESTE INMETRICS", "Sim");
+        }
+
+        [When(@"revogo a aprovação dos dois itens com pedidos pendentes")]
+        public void QuandoRevogoAAprovacaoDosDoisItensComPedidosPendentes()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.RevogarItemDeCueSheet(CadastrarObraEComposicaoPage.Obra);
+            TelaGerarPedidosDePagamentoCueSheetPage.RevogarItemDeCueSheet("TESTE INMETRICS");
+        }
+
+        [Then(@"visualizo a mensagem que a aprovação foi revogada e os itens estão liberados para edição ""(.*)""")]
+        public void EntaoVisualizoAMensagemQueAAprovacaoFoiRevogadaEOsItensEstaoLiberadosParaEdicao(string Mensagem)
+        {
+            TelaCadastrarCueSheetPage.ValidarPopup(Mensagem);
+        }
+
+        //Revogar itens enviados para pagamento
+        [Given(@"que tenha um item com pedido enviado para pagamento")]
+        public void DadoQueTenhaUmItemComPedidoEnviadoParaPagamento()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.AcessarPedidoDeCueSheet(CadastrarObraEComposicaoPage.Obra);
+            TelaAlterarItemPedidoPage.RegistrarAutorizacaoDeItem(CadastrarObraEComposicaoPage.Autor);
+            TelaAlterarItemPedidoPage.ValidarPopupAutorizacaoDDA("", "Sim");
+            TelaAlterarItemPedidoPage.ValidarPopupSucesso("1 item(ns) registrado(s) com sucesso.");
+            TelaAlterarItemPedidoPage.ValidarStatusAutorizacao("Autorizado", CadastrarObraEComposicaoPage.Autor);
+            TelaPedidoPage.AcessarAbaPagamento();
+            TelaPedidoPage.SelecionarUmItemDePedidoPagamento(CadastrarObraEComposicaoPage.Autor);
+            TelaAlterarItemPedidoPage.RealizarPagamento();
+            TelaAlterarItemPedidoPage.PopupRealizarPagamento("Sim");
+            TelaAlterarItemPedidoPage.ValidarPopupSucesso("");
+            TelaPedidoPage.AcessarAbaPagamento();
+            TelaAlterarItemPedidoPage.ValidarStatusPagamento("Aguardando Aprovação", CadastrarObraEComposicaoPage.Autor);
+            TelaPedidoPage.TrocarParaPrimeiraAba();
+        }
+
+        [When(@"revogo o item com pedido enviado para pagamento")]
+        public void QuandoRevogoOItemComPedidoEnviadoParaPagamento()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.RevogarItemDeCueSheet(CadastrarObraEComposicaoPage.Obra);
         }
 
     }
