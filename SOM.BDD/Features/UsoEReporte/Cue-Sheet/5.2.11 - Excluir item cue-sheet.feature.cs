@@ -170,6 +170,141 @@ this.ExcluirTodosOsItensSelecionadosComSucesso("\"Aleatório\"", "\"Aleatório\"
 #line hidden
         }
         
+        public virtual void CancelarExlusaoDeItemDeCue_Sheet(string produto, string episodio, string capitulo, string midia, string dia, string mes, string ano, string repriseRebatida, string obra, string utilizacao, string sincronismo, string tempo, string interprete, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "ExcluirItensDeCueSheetCT03"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancelar exlusão de item de Cue-Sheet", null, @__tags);
+#line 34
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 35
+ testRunner.Given(string.Format("que tenha uma Cue-Sheet cadastrada no sistema {0}, {1}, {2}, {3}, {4}, {5}, {6}, " +
+                        "{7}", produto, episodio, capitulo, midia, dia, mes, ano, repriseRebatida), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 36
+ testRunner.And(string.Format("que tenha um item cadastrado na Cue-Sheet {0}, {1}, {2}, {3}, {4}", obra, utilizacao, sincronismo, tempo, interprete), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 37
+ testRunner.When(string.Format("seleciono um item e clico em excluir {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 38
+ testRunner.But("cancelo a exclusão do item da Cue-Sheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Mas ");
+#line 39
+ testRunner.Then(string.Format("visualizo os dados do item da Cue-Sheet na grid com sucesso {0}, {1}, {2}, {3}", obra, utilizacao, sincronismo, tempo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cancelar exlusão de item de Cue-Sheet, \"Aleatório\"", new string[] {
+                "chrome",
+                "ExcluirItensDeCueSheetCT03"}, SourceLine=42)]
+        public virtual void CancelarExlusaoDeItemDeCue_Sheet_Aleatorio()
+        {
+#line 34
+this.CancelarExlusaoDeItemDeCue_Sheet("\"Aleatório\"", "\"Aleatório\"", "\"01\"", "\"GLOBONEWS\"", "\"12\"", "\"12\"", "\"2018\"", "\"Não\"", "\"Aleatório\"", "\"BK – BACKGROUND\"", "\"ABERTURA\"", "\"16\"", "\" \"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ExcluirUmItemPendenteComSucesso(string produto, string episodio, string capitulo, string midia, string dia, string mes, string ano, string repriseRebatida, string obra, string utilizacao, string sincronismo, string tempo, string interprete, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "ExcluirItensDeCueSheetCT04"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Excluir um item pendente com sucesso", null, @__tags);
+#line 46
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 47
+ testRunner.Given(string.Format("que tenha uma Cue-Sheet cadastrada no sistema {0}, {1}, {2}, {3}, {4}, {5}, {6}, " +
+                        "{7}", produto, episodio, capitulo, midia, dia, mes, ano, repriseRebatida), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 48
+ testRunner.And(string.Format("que tenha um item cadastrado na Cue-Sheet {0}, {1}, {2}, {3}, {4}", obra, utilizacao, sincronismo, tempo, interprete), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 49
+ testRunner.When(string.Format("excluo um item cadastrado na Cue-Sheet {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 50
+ testRunner.Then(string.Format("visualizo uma mensagem de registro excluido com sucesso {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Excluir um item pendente com sucesso, \"Aleatório\"", new string[] {
+                "chrome",
+                "ExcluirItensDeCueSheetCT04"}, SourceLine=53)]
+        public virtual void ExcluirUmItemPendenteComSucesso_Aleatorio()
+        {
+#line 46
+this.ExcluirUmItemPendenteComSucesso("\"Aleatório\"", "\"Aleatório\"", "\"01\"", "\"GLOBONEWS\"", "\"12\"", "\"12\"", "\"2018\"", "\"Não\"", "\"Aleatório\"", "\"BK – BACKGROUND\"", "\"ABERTURA\"", "\"16\"", "\" \"", "\"Registros excluídos com sucesso.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void CancelarExclusaoDeUmItemDaCue_Sheet(
+                    string produto, 
+                    string episodio, 
+                    string capitulo, 
+                    string midia, 
+                    string dia, 
+                    string mes, 
+                    string ano, 
+                    string repriseRebatida, 
+                    string obra, 
+                    string obra2, 
+                    string utilizacao, 
+                    string sincronismo, 
+                    string tempo, 
+                    string interprete, 
+                    string mensagem, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "ExcluirItensDeCueSheetCT05"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancelar exclusão de um item da cue-sheet", null, @__tags);
+#line 57
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 58
+    testRunner.Given(string.Format("que tenha uma Cue-Sheet cadastrada no sistema {0}, {1}, {2}, {3}, {4}, {5}, {6}, " +
+                        "{7}", produto, episodio, capitulo, midia, dia, mes, ano, repriseRebatida), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 59
+ testRunner.And(string.Format("que tenha dois itens cadastrados na Cue-Sheet {0}, {1}, {2}, {3}, {4}, {5}", obra, obra2, utilizacao, sincronismo, tempo, interprete), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 60
+ testRunner.When(string.Format("seleciono os itens e clico em excluir {0}, {1}", obra, obra2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 61
+ testRunner.But("cancelo a exclusão dos itens da Cue-Sheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Mas ");
+#line 62
+ testRunner.Then(string.Format("visualizo os dados dos itens da Cue-Sheet na grid com sucesso {0}, {1}, {2}, {3}," +
+                        " {4}", obra, obra2, utilizacao, sincronismo, tempo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cancelar exclusão de um item da cue-sheet, \"Aleatório\"", new string[] {
+                "chrome",
+                "ExcluirItensDeCueSheetCT05"}, SourceLine=65)]
+        public virtual void CancelarExclusaoDeUmItemDaCue_Sheet_Aleatorio()
+        {
+#line 57
+this.CancelarExclusaoDeUmItemDaCue_Sheet("\"Aleatório\"", "\"Aleatório\"", "\"01\"", "\"GLOBONEWS\"", "\"12\"", "\"12\"", "\"2018\"", "\"Não\"", "\"Aleatório\"", "\"TESTE INMETRICS\"", "\"BK – BACKGROUND\"", "\"ABERTURA\"", "\"16\"", "\" \"", "\"Registros excluídos com sucesso.\"", ((string[])(null)));
+#line hidden
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

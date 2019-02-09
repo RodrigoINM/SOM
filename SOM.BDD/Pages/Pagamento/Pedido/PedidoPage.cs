@@ -330,6 +330,18 @@ namespace SOM.BDD.Pages.Pagamento.Pedido
             Browser.SwitchToLastWindow();
         }
 
+        public void TrocarParaUltimaAbaSemFecharPrimeiraAba()
+        {
+            Browser.SwitchToLastWindow();
+        }
+
+
+        public void TrocarParaPrimeiraAba()
+        {
+            Browser.CloseLastWindow();
+            Browser.SwitchToFirstWindow();
+        }
+
         public void ValidarStatusPav(string Valor)
         {
             var statusPav = Element.Xpath("//div[@align='left']//span[contains(., '" + Valor + "')]");

@@ -66,5 +66,43 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
             TelaGerarPedidosDePagamentoCueSheetPage.ExcluirItemCueSheet(Obra2);
         }
 
+        [When(@"seleciono um item e clico em excluir ""(.*)""")]
+        public void QuandoSelecionoUmItemEClicoEmExcluir(string Obra)
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.SelecionarItemDaCueSheetPorObra(Obra);
+        }
+
+        [When(@"cancelo a exclusão do item da Cue-Sheet")]
+        public void QuandoCanceloAExclusaoDoItemDaCue_Sheet()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.ConfirmarExclusaoDeItem("Não");
+        }
+
+        [Then(@"visualizo os dados do item da Cue-Sheet na grid com sucesso ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)""")]
+        public void EntaoVisualizoOsDadosDoItemDaCue_SheetNaGridComSucesso(string Obra, string Utilizacao, string Sincronismo, string Tempo)
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarItemCueSheetRandomicoCadastrado(Obra, Tempo, Utilizacao, Sincronismo, "Não");
+        }
+
+        [When(@"seleciono os itens e clico em excluir ""(.*)"", ""(.*)""")]
+        public void QuandoSelecionoOsItensEClicoEmExcluir(string Obra, string Obra2)
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.SelecionarItemDaCueSheetPorObra(Obra);
+            TelaGerarPedidosDePagamentoCueSheetPage.SelecionarItemDaCueSheetPorObra(Obra2);
+        }
+
+        [When(@"cancelo a exclusão dos itens da Cue-Sheet")]
+        public void QuandoCanceloAExclusaoDosItensDaCue_Sheet()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.ConfirmarExclusaoDeItem("Não");
+        }
+
+        [Then(@"visualizo os dados dos itens da Cue-Sheet na grid com sucesso ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)""")]
+        public void EntaoVisualizoOsDadosDosItensDaCue_SheetNaGridComSucesso(string Obra, string Obra2, string Utilizacao, string Sincronismo, string Tempo)
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarItemCueSheetRandomicoCadastrado(Obra, Tempo, Utilizacao, Sincronismo, "Não");
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarItemCueSheetRandomicoCadastrado(Obra2, Tempo, Utilizacao, Sincronismo, "Não");
+        }
+
     }
 }

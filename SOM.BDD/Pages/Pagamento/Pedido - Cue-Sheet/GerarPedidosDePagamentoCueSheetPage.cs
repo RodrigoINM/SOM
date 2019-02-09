@@ -47,6 +47,7 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
         //Excluir item cue-sheet
         private Element BtnExcluirItemCueSheet { get; }
         private Element BtnConfirmarExclusao { get; }
+        private Element BtnCancelarExclusao { get; }
 
         //Alterar item aprovado de cue-sheet
         private Element BtnRevogarAprovacao { get; }
@@ -89,6 +90,7 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             //Excluir item cue-sheet
             BtnExcluirItemCueSheet = Element.Css("a[ng-click='ExcluirItens()']");
             BtnConfirmarExclusao = Element.Css("button[class='confirm']");
+            BtnCancelarExclusao = Element.Css("button[class='cancel']");
 
             //Alterar item aprovado de cue-sheet
             BtnRevogarAprovacao = Element.Css("a[ng-click='RevogarItens()']");
@@ -116,9 +118,10 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
 
         public void ValidarItemCueSheetRandomicoCadastrado(string Titulo, string Tempo, string Utilizacao, string Sincronismo, string Pedido)
         {
-            Titulo = CadastrarObraEComposicaoPage.Obra;
-
-            ValidarPedidoCadastrado(Titulo, Tempo, Utilizacao, Sincronismo, Pedido);
+            if(Titulo == "Aleatório")
+                ValidarPedidoCadastrado(CadastrarObraEComposicaoPage.Obra, Tempo, Utilizacao, Sincronismo, Pedido);
+            else
+                ValidarPedidoCadastrado(Titulo, Tempo, Utilizacao, Sincronismo, Pedido);
         }
 
         public void ValidarPedidoCadastrado(string Titulo, string Tempo, string Utilizacao, string Sincronismo, string Pedido)
@@ -228,21 +231,40 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             SelecionarSincronismo(Sincronismo);
             AutomatedActions.SendData(Browser, InpTempo, Tempo);
 
-            MouseActions.ClickATM(Browser, BtnCadastrarInterprete);
-            AutomatedActions.SendDataATM(Browser, InpNomeInterprete, FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr());
-            MouseActions.ClickATM(Browser, BtnSalvarCadastroDeInterprete);
-            Thread.Sleep(2000);
-
-            try
+            if(Interprete == "")
             {
-                var interprete = Element.Css("li[class='search-choice']");
-                ElementExtensions.IsElementVisible(interprete, Browser);
-            }
-            catch
-            {
+                MouseActions.ClickATM(Browser, BtnCadastrarInterprete);
+                AutomatedActions.SendDataATM(Browser, InpNomeInterprete, FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr());
+                MouseActions.ClickATM(Browser, BtnSalvarCadastroDeInterprete);
                 Thread.Sleep(2000);
-                var interprete = Element.Css("li[class='search-choice']");
-                ElementExtensions.IsElementVisible(interprete, Browser);
+
+                try
+                {
+                    var interprete = Element.Css("li[class='search-choice']");
+                    ElementExtensions.IsElementVisible(interprete, Browser);
+                }
+                catch
+                {
+                    Thread.Sleep(2000);
+                    var interprete = Element.Css("li[class='search-choice']");
+                    ElementExtensions.IsElementVisible(interprete, Browser);
+                }
+            }
+            if(Interprete != "" && Interprete != " ")
+            {
+                SelecionarInterprete(Interprete);
+
+                try
+                {
+                    var interprete = Element.Css("li[class='search-choice']");
+                    ElementExtensions.IsElementVisible(interprete, Browser);
+                }
+                catch
+                {
+                    Thread.Sleep(2000);
+                    var interprete = Element.Css("li[class='search-choice']");
+                    ElementExtensions.IsElementVisible(interprete, Browser);
+                }
             }
 
             try
@@ -303,7 +325,6 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             }
 
             Assert.IsTrue(ElementExtensions.IsElementVisible(PopUpStatus, Browser));
-            //Assert.AreEqual("Registro salvo com sucesso.", ElementExtensions.GetValorAtributo(PopUpStatus, "textContent", Browser));
         }
 
         public void GerarPedidoParaItemCueSheet(string Valor)
@@ -342,6 +363,39 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
 
         public void ExcluirItemCueSheet(string Valor)
         {
+            SelecionarItemDaCueSheet(Valor);
+            Thread.Sleep(1500);
+            MouseActions.ClickATM(Browser, BtnExcluirItemCueSheet);
+            Assert.IsTrue(ElementExtensions.IsElementVisible(Element.Xpath("//h2[contains (., 'Exclusão de Item de Cue-Sheet')]"), Browser));
+            Thread.Sleep(2000);
+            MouseActions.ClickATM(Browser, BtnConfirmarExclusao);
+            Thread.Sleep(1500);
+            Assert.AreEqual("Registros excluídos com sucesso.", ElementExtensions.GetValorAtributo(PopUpStatus, "textContent", Browser));
+        }
+
+        public void ConfirmarExclusaoDeItem(string Confirmar)
+        {
+            Thread.Sleep(1500);
+            MouseActions.ClickATM(Browser, BtnExcluirItemCueSheet);
+            Assert.IsTrue(ElementExtensions.IsElementVisible(Element.Xpath("//h2[contains (., 'Exclusão de Item de Cue-Sheet')]"), Browser));
+            Thread.Sleep(2000);
+            if (Confirmar == "Sim")
+                MouseActions.ClickATM(Browser, BtnConfirmarExclusao);
+            else
+                MouseActions.ClickATM(Browser, BtnCancelarExclusao);
+            Thread.Sleep(1500);
+        }
+
+        public void SelecionarItemDaCueSheetPorObra(string Obra)
+        {
+            if (Obra == "Aleatório")
+                SelecionarItemDaCueSheet(CadastrarObraEComposicaoPage.Obra);
+            else
+                SelecionarItemDaCueSheet(Obra);
+        }
+
+        public void SelecionarItemDaCueSheet(string Valor)
+        {
             try
             {
                 Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']").IsElementVisible(Browser);
@@ -353,13 +407,6 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
                 Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']").IsElementVisible(Browser);
                 MouseActions.ClickATM(Browser, Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']"));
             }
-            Thread.Sleep(1500);
-            MouseActions.ClickATM(Browser, BtnExcluirItemCueSheet);
-            Assert.IsTrue(ElementExtensions.IsElementVisible(Element.Xpath("//h2[contains (., 'Exclusão de Item de Cue-Sheet')]"), Browser));
-            Thread.Sleep(2000);
-            MouseActions.ClickATM(Browser, BtnConfirmarExclusao);
-            Thread.Sleep(1500);
-            Assert.AreEqual("Registros excluídos com sucesso.", ElementExtensions.GetValorAtributo(PopUpStatus, "textContent", Browser));
         }
 
         public void SelecionarItemAAlterar(string Valor)
@@ -447,6 +494,23 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             MouseActions.ClickATM(Browser, Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']"));
             MouseActions.ClickATM(Browser, BtnAprovarItens);
             Assert.AreEqual("Item aprovado com sucesso.", ElementExtensions.GetValorAtributo(PopUpStatus, "textContent", Browser));
+        }
+
+        public void RevogarItemDeCueSheet(string Valor)
+        {
+            Browser.RefreshPage();
+            Thread.Sleep(1500);
+            MouseActions.ClickATM(Browser, Element.Xpath("//td[@class='Bloco Materia'][text()='" + Valor + "']"));
+            MouseActions.ClickATM(Browser, BtnRevogarAprovacao);
+            Assert.AreEqual("A aprovação foi revogada e o item liberado para edição.", ElementExtensions.GetValorAtributo(PopUpStatus, "textContent", Browser));
+        }
+
+        public void AcessarPedidoDeCueSheet(string Obra)
+        {
+            var nomeObra = Element.Xpath("//td[text()='" + Obra + "']/..//a[@ng-click='redirecionaDetalhePedido(item.IdPedido)']");
+            ElementExtensions.IsElementVisible(nomeObra, Browser);
+            MouseActions.ClickATM(Browser, nomeObra);
+            Browser.SwitchToLastWindow();
         }
 
         public void NavegarTelaDegeracaoDePedidos()
