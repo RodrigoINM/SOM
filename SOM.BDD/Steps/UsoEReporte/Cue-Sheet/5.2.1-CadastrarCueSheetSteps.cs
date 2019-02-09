@@ -34,8 +34,8 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
         public void DadoQueTenhaUmProdutoCadastradoNoSistema()
         {
             TelaCadastroDeProdutoPage.Navegar();
-            TelaCadastroDeProdutoPage.CadastroDeProduto("Novela", "DRAMATURGIA SEMANAL", 
-                "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Sim");
+            TelaCadastroDeProdutoPage.CadastroDeProduto("Novela", "DRAMATURGIA SEMANAL",
+                "290407", "Sim", "GLOBONEWS", "7001", "Não", "Sim");
             TelaCadastroDeProdutoPage.SalvarCadastroDeProduto();
             TelaCadastroDeProdutoPage.CadastrarCapitulo("01");
             Thread.Sleep(2000);

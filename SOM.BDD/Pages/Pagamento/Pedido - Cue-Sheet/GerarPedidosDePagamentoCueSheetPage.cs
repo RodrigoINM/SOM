@@ -215,7 +215,14 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
         private void SelecionarInterprete(string Interprete)
         {
             AutomatedActions.SendDataATM(Browser, InpInterprete, Interprete);
-            MouseActions.ClickATM(Browser, Element.Xpath("//li[text()='" + Interprete + "']"));
+            try
+            {
+                MouseActions.ClickATM(Browser, Element.Xpath("//li[text()='" + Interprete + "']"));
+            }
+            catch
+            {
+                MouseActions.ClickATM(Browser, Element.Xpath("//li[text()='" + Interprete + "']"));
+            }
         }
 
         public void CadasTrarItemCueSheetRandomico(string TituloObra, string Utilizacao, string Sincronismo, string Tempo, string Interprete)
@@ -435,6 +442,21 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
                 var interprete = Element.Css("li[class='search-choice']");
                 ElementExtensions.IsElementVisible(interprete, Browser);
                 MouseActions.ClickATM(Browser, interprete);
+            }
+
+            MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
+        }
+
+        public void AlterarItemDeCueSheetParaReprise()
+        {
+            var marcarReprise = Element.Css("label[for='itemReprise']");
+            try
+            {
+                MouseActions.ClickATM(Browser, marcarReprise);
+            }
+            catch
+            {
+                MouseActions.ClickATM(Browser, marcarReprise);
             }
 
             MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);

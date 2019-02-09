@@ -390,6 +390,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>5.2.21 - Ver indicação de pedido na cue-sheet.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.22 - Implementar cenários de alteração de pedido na cue-sheet.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>5.2.22 - Implementar cenários de alteração de pedido na cue-sheet.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.4 - Buscar cue-sheet.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -515,6 +520,7 @@
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.17-ReabrirCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.20-FinalizarCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.21-VerIndicacaoDePedidoNaCueSheetSteps.cs" />
+    <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.22-AlteracaoDePedidoNaCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.4-BuscarCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.6-LiberarCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.7-DuplicarCueSheetSteps.cs" />
@@ -765,6 +771,10 @@
     <None Include="Features\UsoEReporte\Cue-Sheet\5.2.21 - Ver indicação de pedido na cue-sheet.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>5.2.21 - Ver indicação de pedido na cue-sheet.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UsoEReporte\Cue-Sheet\5.2.22 - Implementar cenários de alteração de pedido na cue-sheet.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>5.2.22 - Implementar cenários de alteração de pedido na cue-sheet.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\UsoEReporte\Cue-Sheet\5.2.4 - Buscar cue-sheet.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
