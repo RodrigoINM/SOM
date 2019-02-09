@@ -89,7 +89,10 @@ namespace SOM.BDD.Pages.UsoEReporte.RelatorioUBEM
                 AutomatedActions.SendData(Browser, InpDDA, DDA);
                 //InpDDA.SendKeys(DDA);
                 //Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-                MouseActions.ClickATM(Browser, OptDDA);
+
+                var ElementoText = Element.Xpath("//strong[text()='" + DDA + "']");
+                ElementExtensions.IsElementVisible(ElementoText, Browser);
+                MouseActions.ClickATM(Browser, ElementoText);
                 //OptDDA.Click();
             }
         }
@@ -173,9 +176,23 @@ namespace SOM.BDD.Pages.UsoEReporte.RelatorioUBEM
             //BtnDownloadExcel.Click();
             Thread.Sleep(2000);
             //Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(360);
-            Assert.IsTrue(ElementExtensions.IsClickable(SlctAssociacao, Browser));
-            //Assert.IsTrue(SlctAssociacao.Displayed);
-            Thread.Sleep(2000);
+
+            try
+            {
+                Thread.Sleep(4000);
+                ElementExtensions.IsElementVisible(SlctAssociacao, Browser);
+                Assert.IsTrue(ElementExtensions.IsClickable(SlctAssociacao, Browser));
+            }
+
+            catch
+            {
+                Thread.Sleep(4000);
+                ElementExtensions.IsElementVisible(SlctAssociacao, Browser);
+                Assert.IsTrue(ElementExtensions.IsClickable(SlctAssociacao, Browser));
+            }
+
+                //Assert.IsTrue(SlctAssociacao.Displayed);
+                Thread.Sleep(2000);
         }
 
         public void ValidarMensagemFechamentoInexistente(string Mensagem)
@@ -187,9 +204,9 @@ namespace SOM.BDD.Pages.UsoEReporte.RelatorioUBEM
         }
 
         public void ValidarDadosRelatorioUbem(string Programa, string Data, string Capitulo, string Episodio, string Genero, string TituloMusica,
-            string TituloOriginal, string Autor, string DDA, string Duplicidade, string Sincronismo, string Interpretes, string Reprise, string file)
+            string TituloOriginal, string Autor, string DDA, string Duplicidade, string Sincronismo, string Interpretes, string Reprise, string file, string TituloPlanilha)
         {
-            ExcelUtil.PopulateInCollection(Environment.GetEnvironmentVariable("USERPROFILE") + "\\Downloads\\" + file + ".xlsx", "Planilha Mensal UBEM");
+            ExcelUtil.PopulateInCollection(Environment.GetEnvironmentVariable("USERPROFILE") + "\\Downloads\\" + file + ".xlsx", TituloPlanilha);
 
             ValidarColuna(Programa, "PROGRAMA");
             ValidarColuna(Data, "DATA EXIBIÇÃO");
@@ -235,28 +252,28 @@ namespace SOM.BDD.Pages.UsoEReporte.RelatorioUBEM
 
         public void ValidarRelatorioUbem(string Programa, string Data, string Capitulo, string Episodio, string Genero, string TituloMusica,
             string TituloOriginal, string Autor, string DDA, string Duplicidade, string Sincronismo, string Interpretes, string Reprise,
-            string Associacao, string Mes, string Ano)
+            string Associacao, string Mes, string Ano, string TituloPlanilha)
         {
             switch (Associacao)
             {
                 case "UBEM":
                     {
                         ValidarRelatorioAssociacao(Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "SEM ASSOCIAÇÃO":
                     {
                         Associacao = "SEM_ASSOCIACAO";
                         ValidarRelatorioAssociacao(Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "TODAS":
                     {
                         Associacao = "TODAS_ASSOCIACOES";
                         ValidarRelatorioAssociacao(Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
             }
@@ -376,7 +393,7 @@ namespace SOM.BDD.Pages.UsoEReporte.RelatorioUBEM
 
         public void ValidarRelatorioAssociacao(string Programa, string Data, string Capitulo, string Episodio, string Genero, string TituloMusica,
             string TituloOriginal, string Autor, string DDA, string Duplicidade, string Sincronismo, string Interpretes, string Reprise,
-            string Associacao, string Mes, string Ano)
+            string Associacao, string Mes, string Ano, string TituloPlanilha)
         {
             string teste = "Relatorio_" + Associacao + "_";
             switch (Mes)
@@ -385,84 +402,84 @@ namespace SOM.BDD.Pages.UsoEReporte.RelatorioUBEM
                     {
                         string file = teste + "01" + Ano + "";
                         ValidarDownloadRelatorio2(file, Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "Fevereiro":
                     {
                         string file = teste + "02" + Ano + "";
                         ValidarDownloadRelatorio2(file, Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "Março":
                     {
                         string file = teste + "03" + Ano + "";
                         ValidarDownloadRelatorio2(file, Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "Abril":
                     {
                         string file = teste + "04" + Ano + "";
                         ValidarDownloadRelatorio2(file, Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "Maio":
                     {
                         string file = teste + "05" + Ano + "";
                         ValidarDownloadRelatorio2(file, Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "Junho":
                     {
                         string file = teste + "06" + Ano + "";
                         ValidarDownloadRelatorio2(file, Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "Julho":
                     {
                         string file = teste + "07" + Ano + "";
                         ValidarDownloadRelatorio2(file, Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "Agosto":
                     {
                         string file = teste + "08" + Ano + "";
                         ValidarDownloadRelatorio2(file, Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "Setembro":
                     {
                         string file = teste + "09" + Ano + "";
                         ValidarDownloadRelatorio2(file, Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "Outubro":
                     {
                         string file = teste + "10" + Ano + "";
                         ValidarDownloadRelatorio2(file, Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "Novembro":
                     {
                         string file = teste + "11" + Ano + "";
                         ValidarDownloadRelatorio2(file, Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
                 case "Dezembro":
                     {
                         string file = teste + "12" + Ano + "";
                         ValidarDownloadRelatorio2(file, Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
                         break;
                     }
             }
@@ -470,13 +487,13 @@ namespace SOM.BDD.Pages.UsoEReporte.RelatorioUBEM
         
         public void ValidarDownloadRelatorio2(string file, string Programa, string Data, string Capitulo, string Episodio, string Genero, string TituloMusica,
             string TituloOriginal, string Autor, string DDA, string Duplicidade, string Sincronismo, string Interpretes, string Reprise,
-            string Associacao, string Mes, string Ano)
+            string Associacao, string Mes, string Ano, string TituloPlanilha)
         {
             Thread.Sleep(2000);
             string originalFileName = Environment.GetEnvironmentVariable("USERPROFILE") + "\\Downloads\\" + file + ".xlsx";
 
             ValidarDadosRelatorioUbem(Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, file);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, file, TituloPlanilha);
 
             File.Delete(originalFileName);
         }

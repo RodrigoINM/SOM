@@ -19,12 +19,9 @@ namespace SOM.BDD.Features.UsoEReporte.RelatorioUBEM
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [TechTalk.SpecRun.FeatureAttribute("5.6.1 - Gerar Relatório UBEM", new string[] {
             "kill_Driver",
-            "RelatorioUBEM"}, Description=@"	Como um usuário com permissão ""Gerar Relatório UBEM""
-	Eu quero emitir um relatório em formato Excel conforme padrão
-	De modo que reportar as utilizações de músicas nas produções da Globo à UBEM.
-
-Critérios de aceite:
-Sistema deverá ser capaz de reportar as utilizações de músicas nas produções da Globo à UBEM.", SourceFile="Features\\UsoEReporte\\RelatorioUBEM\\5.6.1 - Gerar Relatório UBEM.feature", SourceLine=6)]
+            "RelatorioUBEM"}, Description="\tComo um usuário com permissão \"Gerar Relatório UBEM\"\r\n\tEu quero emitir um relató" +
+        "rio em formato Excel conforme padrão\r\n\tDe modo que reportar as utilizações de mú" +
+        "sicas nas produções da Globo à UBEM.", SourceFile="Features\\UsoEReporte\\RelatorioUBEM\\5.6.1 - Gerar Relatório UBEM.feature", SourceLine=6)]
     public partial class _5_6_1_GerarRelatorioUBEMFeature
     {
         
@@ -37,12 +34,9 @@ Sistema deverá ser capaz de reportar as utilizações de músicas nas produçõ
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "5.6.1 - Gerar Relatório UBEM", @"	Como um usuário com permissão ""Gerar Relatório UBEM""
-	Eu quero emitir um relatório em formato Excel conforme padrão
-	De modo que reportar as utilizações de músicas nas produções da Globo à UBEM.
-
-Critérios de aceite:
-Sistema deverá ser capaz de reportar as utilizações de músicas nas produções da Globo à UBEM.", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "5.6.1 - Gerar Relatório UBEM", "\tComo um usuário com permissão \"Gerar Relatório UBEM\"\r\n\tEu quero emitir um relató" +
+                    "rio em formato Excel conforme padrão\r\n\tDe modo que reportar as utilizações de mú" +
+                    "sicas nas produções da Globo à UBEM.", ProgrammingLanguage.CSharp, new string[] {
                         "kill_Driver",
                         "RelatorioUBEM"});
             testRunner.OnFeatureStart(featureInfo);
@@ -82,12 +76,12 @@ Sistema deverá ser capaz de reportar as utilizações de músicas nas produçõ
         
         public virtual void FeatureBackground()
         {
-#line 15
-#line 16
+#line 12
+#line 13
  testRunner.Given("que esteja logado no sistema SOM", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
-#line 17
+#line 14
  testRunner.And("que esteja na tela de Relatorio Ubem", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
-#line 18
+#line 15
  testRunner.And("que possua um periodo que tenha sido fechado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
         }
@@ -102,15 +96,15 @@ Sistema deverá ser capaz de reportar as utilizações de músicas nas produçõ
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar download sem fechamento mensal relatório UBEM", null, @__tags);
-#line 21
+#line 18
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 15
+#line 12
 this.FeatureBackground();
-#line 22
-  testRunner.When(string.Format("faco um filtro para um periodo {0} {1} que ainda nao possua fechamento", mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 23
-  testRunner.Then(string.Format("visualizo a mensagem de que não existe fechamento UBEM para o periodo selecionado" +
+#line 19
+ testRunner.When(string.Format("faco um filtro para um periodo {0} {1} que ainda nao possua fechamento", mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 20
+ testRunner.Then(string.Format("visualizo a mensagem de que não existe fechamento UBEM para o periodo selecionado" +
                         " {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -118,10 +112,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Gerar download sem fechamento mensal relatório UBEM, \"Dezembro\"", new string[] {
                 "chrome",
-                "RelatorioUBEMCT01"}, SourceLine=26)]
+                "RelatorioUBEMCT01"}, SourceLine=23)]
         public virtual void GerarDownloadSemFechamentoMensalRelatorioUBEM_Dezembro()
         {
-#line 21
+#line 18
 this.GerarDownloadSemFechamentoMensalRelatorioUBEM("\"Dezembro\"", "\"2018\"", "\"Não existe fechamento para o período selecionado.\"", ((string[])(null)));
 #line hidden
         }
@@ -136,15 +130,15 @@ this.GerarDownloadSemFechamentoMensalRelatorioUBEM("\"Dezembro\"", "\"2018\"", "
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Consultar relatório de fechamento UBEM", null, @__tags);
-#line 30
+#line 27
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 15
+#line 12
 this.FeatureBackground();
-#line 31
-  testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 32
-  testRunner.Then(string.Format("visualizo o link de download do relatorio de fechamento UBEM com sucesso {0} {1} " +
+#line 28
+ testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 29
+ testRunner.Then(string.Format("visualizo o link de download do relatorio de fechamento UBEM com sucesso {0} {1} " +
                         "{2}", associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -152,10 +146,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Consultar relatório de fechamento UBEM, \"UBEM\"", new string[] {
                 "chrome",
-                "RelatorioUBEMCT02"}, SourceLine=35)]
+                "RelatorioUBEMCT02"}, SourceLine=32)]
         public virtual void ConsultarRelatorioDeFechamentoUBEM_UBEM()
         {
-#line 30
+#line 27
 this.ConsultarRelatorioDeFechamentoUBEM("\"UBEM\"", "\"Outubro\"", "\"2017\"", ((string[])(null)));
 #line hidden
         }
@@ -170,45 +164,45 @@ this.ConsultarRelatorioDeFechamentoUBEM("\"UBEM\"", "\"Outubro\"", "\"2017\"", (
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar download relatório UBEM", null, @__tags);
-#line 39
+#line 36
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 15
+#line 12
 this.FeatureBackground();
-#line 40
-  testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 41
-  testRunner.Then(string.Format("realizo o download do relatorio UBEM com sucesso para a {0} {1} {2} escolhidos", associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line 37
+ testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 38
+ testRunner.Then(string.Format("realizo o download do relatorio UBEM com sucesso para a {0} {1} {2} escolhidos", associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Gerar download relatório UBEM, \"UBEM\"", new string[] {
                 "chrome",
-                "RelatorioUBEMCT03"}, SourceLine=44)]
+                "RelatorioUBEMCT03"}, SourceLine=41)]
         public virtual void GerarDownloadRelatorioUBEM_UBEM()
         {
-#line 39
+#line 36
 this.GerarDownloadRelatorioUBEM("\"UBEM\"", "\"Outubro\"", "\"2017\"", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Gerar download relatório UBEM, \"SEM ASSOCIAÇÃO\"", new string[] {
                 "chrome",
-                "RelatorioUBEMCT03"}, SourceLine=44)]
+                "RelatorioUBEMCT03"}, SourceLine=41)]
         public virtual void GerarDownloadRelatorioUBEM_SEMASSOCIACAO()
         {
-#line 39
+#line 36
 this.GerarDownloadRelatorioUBEM("\"SEM ASSOCIAÇÃO\"", "\"Outubro\"", "\"2017\"", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Gerar download relatório UBEM, \"TODAS\"", new string[] {
                 "chrome",
-                "RelatorioUBEMCT03"}, SourceLine=44)]
+                "RelatorioUBEMCT03"}, SourceLine=41)]
         public virtual void GerarDownloadRelatorioUBEM_TODAS()
         {
-#line 39
+#line 36
 this.GerarDownloadRelatorioUBEM("\"TODAS\"", "\"Outubro\"", "\"2017\"", ((string[])(null)));
 #line hidden
         }
@@ -230,6 +224,7 @@ this.GerarDownloadRelatorioUBEM("\"TODAS\"", "\"Outubro\"", "\"2017\"", ((string
                     string sincronismo, 
                     string interpretes, 
                     string reprise, 
+                    string tituloPlanilha, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -240,28 +235,521 @@ this.GerarDownloadRelatorioUBEM("\"TODAS\"", "\"Outubro\"", "\"2017\"", ((string
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar as informações do relatório UBEM", null, @__tags);
-#line 50
+#line 47
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 15
+#line 12
 this.FeatureBackground();
-#line 51
-  testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 52
-  testRunner.Then(string.Format("posso baixar o relatorio UBEM e verificar se as informacoes de {0} {1} {2} {3} {4" +
-                        "} {5} {6} {7} {8} {9} {10} {11} {12} estao sendo exibidas corretamente para a {1" +
-                        "3} {14} {15} escolhidos", programa, dataExibicao, capitulo, episodio, genero, tituloDaMusica, tituloOriginal, autor, dDA, possuiDuplicidade, sincronismo, interpretes, reprise, associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line 48
+ testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 49
+ testRunner.Then(string.Format("posso baixar o relatorio UBEM e verificar se as informacoes de {0} {1} {2} {3} {4" +
+                        "} {5} {6} {7} {8} {9} {10} {11} {12} {13} estao sendo exibidas corretamente para" +
+                        " a {14} {15} {16} escolhidos", programa, dataExibicao, capitulo, episodio, genero, tituloDaMusica, tituloOriginal, autor, dDA, possuiDuplicidade, sincronismo, interpretes, reprise, tituloPlanilha, associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validar as informações do relatório UBEM, \"UBEM\"", new string[] {
                 "chrome",
-                "RelatorioUBEMCT04"}, SourceLine=55)]
+                "RelatorioUBEMCT04"}, SourceLine=52)]
         public virtual void ValidarAsInformacoesDoRelatorioUBEM_UBEM()
         {
-#line 50
-this.ValidarAsInformacoesDoRelatorioUBEM("\"UBEM\"", "\"Outubro\"", "\"2017\"", "\"JORNAL NACIONAL\"", "\"09/10/2017\"", "\" \"", "\" \"", "\"JORNALISMO\"", "\"NM SYNTH 2\"", "\"NM SYNTH 2\"", "\"SACHA AMBACK\"", "\"SIGEM\"", "\" \"", "\" \"", "\"SACHA AMBACK\"", "\"NÃO\"", ((string[])(null)));
+#line 47
+this.ValidarAsInformacoesDoRelatorioUBEM("\"UBEM\"", "\"Outubro\"", "\"2017\"", "\"JORNAL NACIONAL\"", "\"09/10/2017\"", "\" \"", "\" \"", "\"JORNALISMO\"", "\"NM SYNTH 2\"", "\"NM SYNTH 2\"", "\"SACHA AMBACK\"", "\"SIGEM\"", "\" \"", "\" \"", "\"SACHA AMBACK\"", "\"NÃO\"", "\"Planilha Mensal UBEM\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarRelatorioUBEMSemFechamentoMensal(string associacao, string mes, string ano, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioUBEMCT05"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar relatório UBEM sem fechamento mensal", null, @__tags);
+#line 56
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 57
+    testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 58
+    testRunner.Then(string.Format("visualizo a mensagem de que não existe fechamento UBEM para o periodo selecionado" +
+                        " {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar relatório UBEM sem fechamento mensal, \"UBEM\"", new string[] {
+                "chrome",
+                "RelatorioUBEMCT05"}, SourceLine=61)]
+        public virtual void GerarRelatorioUBEMSemFechamentoMensal_UBEM()
+        {
+#line 56
+this.GerarRelatorioUBEMSemFechamentoMensal("\"UBEM\"", "\"Fevereiro\"", "\"2019\"", "\"Não existe fechamento para o período selecionado.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarRelatorioUBEMDoTipoSemAssociacaoSemFechamentoMensal(
+                    string associacao, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string episodio, 
+                    string genero, 
+                    string tituloDaMusica, 
+                    string tituloOriginal, 
+                    string autor, 
+                    string dDA, 
+                    string possuiDuplicidade, 
+                    string sincronismo, 
+                    string interpretes, 
+                    string reprise, 
+                    string tituloPlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioUBEMCT06"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar relatório UBEM do tipo Sem Associação sem fechamento mensal", null, @__tags);
+#line 65
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 66
+    testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 67
+    testRunner.Then(string.Format("gero o relatorio e verifico se as informacoes de {0} {1} {2} {3} {4} {5} {6} {7} " +
+                        "{8} {9} {10} {11} {12} {13} estao sendo exibidas corretamente para a {14} {15} {" +
+                        "16} escolhidos", programa, dataExibicao, capitulo, episodio, genero, tituloDaMusica, tituloOriginal, autor, dDA, possuiDuplicidade, sincronismo, interpretes, reprise, tituloPlanilha, associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar relatório UBEM do tipo Sem Associação sem fechamento mensal, \"SEM ASSOCIAÇÃ" +
+            "O\"", new string[] {
+                "chrome",
+                "RelatorioUBEMCT06"}, SourceLine=70)]
+        public virtual void GerarRelatorioUBEMDoTipoSemAssociacaoSemFechamentoMensal_SEMASSOCIACAO()
+        {
+#line 65
+this.GerarRelatorioUBEMDoTipoSemAssociacaoSemFechamentoMensal("\"SEM ASSOCIAÇÃO\"", "\"Janeiro\"", "\"2019\"", "\"NOVELA TESTE CVC02\"", "\"09/10/2017\"", "\" \"", "\" \"", "\"DRAMATURGIA SEMANAL\"", "\"MUSICA DA MARCELLE\"", "\"MUSICA DA MARCELLE\"", "\"MARCELLE MENDONCA\"", "\"EMI SONGS\"", "\"NÃO\"", "\"AO VIVO ADORNO\"", "\"DANIEL MUSY\"", "\"NÃO\"", "\"Planilha Mensal\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarNovoRelatorioUBEMMensalTipoUBEM(
+                    string associacao, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string episodio, 
+                    string genero, 
+                    string tituloDaMusica, 
+                    string tituloOriginal, 
+                    string autor, 
+                    string dDA, 
+                    string possuiDuplicidade, 
+                    string sincronismo, 
+                    string interpretes, 
+                    string reprise, 
+                    string tituloPlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioUBEMCT07"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar Novo relatório UBEM Mensal tipo UBEM", null, @__tags);
+#line 74
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 75
+    testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 76
+ testRunner.Then(string.Format("gero o relatorio e verifico se as informacoes de {0} {1} {2} {3} {4} {5} {6} {7} " +
+                        "{8} {9} {10} {11} {12} {13} estao sendo exibidas corretamente para a {14} {15} {" +
+                        "16} escolhidos", programa, dataExibicao, capitulo, episodio, genero, tituloDaMusica, tituloOriginal, autor, dDA, possuiDuplicidade, sincronismo, interpretes, reprise, tituloPlanilha, associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar Novo relatório UBEM Mensal tipo UBEM, \"UBEM\"", new string[] {
+                "chrome",
+                "RelatorioUBEMCT07"}, SourceLine=79)]
+        public virtual void GerarNovoRelatorioUBEMMensalTipoUBEM_UBEM()
+        {
+#line 74
+this.GerarNovoRelatorioUBEMMensalTipoUBEM("\"UBEM\"", "\"Janeiro\"", "\"2019\"", "\"NOVELA TESTE CVC02\"", "\"23/01/2019\"", "\" \"", "\" \"", "\"DRAMATURGIA SEMANAL\"", "\"MUSICA DA MARCELLE\"", "\"MUSICA DA MARCELLE\"", "\"MARCELLE MENDONCA,SHAKIRA MEBARAK\"", "\"SOM E LUZ,A DESCO\"", "\"NÃO\"", "\"AO VIVO ADORNO\"", "\"DANIEL MUSY\"", "\"NÃO\"", "\"Planilha Mensal UBEM\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarNovoRelatorioUBEMMensalTipoSemAssociacao(
+                    string associacao, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string episodio, 
+                    string genero, 
+                    string tituloDaMusica, 
+                    string tituloOriginal, 
+                    string autor, 
+                    string dDA, 
+                    string possuiDuplicidade, 
+                    string sincronismo, 
+                    string interpretes, 
+                    string reprise, 
+                    string tituloPlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioUBEMCT08"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar Novo relatório UBEM Mensal tipo Sem Associação", null, @__tags);
+#line 83
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 84
+    testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 85
+    testRunner.Then(string.Format("gero o relatorio e verifico se as informacoes de {0} {1} {2} {3} {4} {5} {6} {7} " +
+                        "{8} {9} {10} {11} {12} {13} estao sendo exibidas corretamente para a {14} {15} {" +
+                        "16} escolhidos", programa, dataExibicao, capitulo, episodio, genero, tituloDaMusica, tituloOriginal, autor, dDA, possuiDuplicidade, sincronismo, interpretes, reprise, tituloPlanilha, associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar Novo relatório UBEM Mensal tipo Sem Associação, \"SEM ASSOCIAÇÃO\"", new string[] {
+                "chrome",
+                "RelatorioUBEMCT08"}, SourceLine=88)]
+        public virtual void GerarNovoRelatorioUBEMMensalTipoSemAssociacao_SEMASSOCIACAO()
+        {
+#line 83
+this.GerarNovoRelatorioUBEMMensalTipoSemAssociacao("\"SEM ASSOCIAÇÃO\"", "\"Janeiro\"", "\"2019\"", "\"NOVELA TESTE CVC02\"", "\"09/10/2017\"", "\" \"", "\" \"", "\"DRAMATURGIA SEMANAL\"", "\"MUSICA DA MARCELLE\"", "\"MUSICA DA MARCELLE\"", "\"MARCELLE MENDONCA\"", "\"EMI SONGS\"", "\"NÃO\"", "\"AO VIVO ADORNO\"", "\"DANIEL MUSY\"", "\"NÃO\"", "\"Planilha Mensal\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarNovoRelatorioUBEMMensalTipoTodos(
+                    string associacao, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string episodio, 
+                    string genero, 
+                    string tituloDaMusica, 
+                    string tituloOriginal, 
+                    string autor, 
+                    string dDA, 
+                    string possuiDuplicidade, 
+                    string sincronismo, 
+                    string interpretes, 
+                    string reprise, 
+                    string tituloPlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioUBEMCT09"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar Novo relatório UBEM Mensal tipo Todos", null, @__tags);
+#line 92
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 93
+    testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 94
+    testRunner.Then(string.Format("gero o relatorio e verifico se as informacoes de {0} {1} {2} {3} {4} {5} {6} {7} " +
+                        "{8} {9} {10} {11} {12} {13} estao sendo exibidas corretamente para a {14} {15} {" +
+                        "16} escolhidos", programa, dataExibicao, capitulo, episodio, genero, tituloDaMusica, tituloOriginal, autor, dDA, possuiDuplicidade, sincronismo, interpretes, reprise, tituloPlanilha, associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar Novo relatório UBEM Mensal tipo Todos, \"TODAS\"", new string[] {
+                "chrome",
+                "RelatorioUBEMCT09"}, SourceLine=97)]
+        public virtual void GerarNovoRelatorioUBEMMensalTipoTodos_TODAS()
+        {
+#line 92
+this.GerarNovoRelatorioUBEMMensalTipoTodos("\"TODAS\"", "\"Janeiro\"", "\"2019\"", "\"NOVELA TESTE CVC02\"", "\"23/01/2019\"", "\" \"", "\" \"", "\"DRAMATURGIA SEMANAL\"", "\"MUSICA DA MARCELLE\"", "\"MUSICA DA MARCELLE\"", "\"MARCELLE MENDONCA,MARCELLE MENDONCA,SHAKIRA MEBARAK\"", "\"EMI SONGS,SOM E LUZ,A DESCO\"", "\"NÃO\"", "\"AO VIVO ADORNO\"", "\"DANIEL MUSY\"", "\"NÃO\"", "\"Planilha Mensal TODAS\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarNovoRelatorioUBEMComplementoUBEM(
+                    string associacao, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string episodio, 
+                    string genero, 
+                    string tituloDaMusica, 
+                    string tituloOriginal, 
+                    string autor, 
+                    string dDA, 
+                    string possuiDuplicidade, 
+                    string sincronismo, 
+                    string interpretes, 
+                    string reprise, 
+                    string tituloPlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioUBEMCT10"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar Novo relatório UBEM Complemento UBEM", null, @__tags);
+#line 101
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 102
+ testRunner.When(string.Format("faco um filtro para um periodo complemento {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 103
+    testRunner.Then(string.Format("gero o relatorio e verifico se as informacoes de {0} {1} {2} {3} {4} {5} {6} {7} " +
+                        "{8} {9} {10} {11} {12} {13} estao sendo exibidas corretamente para a {14} {15} {" +
+                        "16} escolhidos", programa, dataExibicao, capitulo, episodio, genero, tituloDaMusica, tituloOriginal, autor, dDA, possuiDuplicidade, sincronismo, interpretes, reprise, tituloPlanilha, associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar Novo relatório UBEM Complemento UBEM, \"UBEM\"", new string[] {
+                "chrome",
+                "RelatorioUBEMCT10"}, SourceLine=106)]
+        public virtual void GerarNovoRelatorioUBEMComplementoUBEM_UBEM()
+        {
+#line 101
+this.GerarNovoRelatorioUBEMComplementoUBEM("\"UBEM\"", "\"Janeiro\"", "\"2019\"", "\"NOVELA TESTE CVC02\"", "\"23/01/2019\"", "\" \"", "\" \"", "\"DRAMATURGIA SEMANAL\"", "\"MUSICA DA MARCELLE\"", "\"MUSICA DA MARCELLE\"", "\"MARCELLE MENDONCA,SHAKIRA MEBARAK\"", "\"SOM E LUZ,A DESCO\"", "\"NÃO\"", "\"AO VIVO ADORNO\"", "\"DANIEL MUSY\"", "\"NÃO\"", "\"Planilha Mensal UBEM\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarNovoRelatorioUBEMComplementoTipoSemAssociacao(
+                    string associacao, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string episodio, 
+                    string genero, 
+                    string tituloDaMusica, 
+                    string tituloOriginal, 
+                    string autor, 
+                    string dDA, 
+                    string possuiDuplicidade, 
+                    string sincronismo, 
+                    string interpretes, 
+                    string reprise, 
+                    string tituloPlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioUBEMCT11"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar Novo relatório UBEM Complemento tipo Sem Associação", null, @__tags);
+#line 110
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 111
+    testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 112
+    testRunner.Then(string.Format("gero o relatorio e verifico se as informacoes de {0} {1} {2} {3} {4} {5} {6} {7} " +
+                        "{8} {9} {10} {11} {12} {13} estao sendo exibidas corretamente para a {14} {15} {" +
+                        "16} escolhidos", programa, dataExibicao, capitulo, episodio, genero, tituloDaMusica, tituloOriginal, autor, dDA, possuiDuplicidade, sincronismo, interpretes, reprise, tituloPlanilha, associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar Novo relatório UBEM Complemento tipo Sem Associação, \"SEM ASSOCIAÇÃO\"", new string[] {
+                "chrome",
+                "RelatorioUBEMCT11"}, SourceLine=115)]
+        public virtual void GerarNovoRelatorioUBEMComplementoTipoSemAssociacao_SEMASSOCIACAO()
+        {
+#line 110
+this.GerarNovoRelatorioUBEMComplementoTipoSemAssociacao("\"SEM ASSOCIAÇÃO\"", "\"Janeiro\"", "\"2019\"", "\"NOVELA TESTE CVC02\"", "\"09/10/2017\"", "\" \"", "\" \"", "\"DRAMATURGIA SEMANAL\"", "\"MUSICA DA MARCELLE\"", "\"MUSICA DA MARCELLE\"", "\"MARCELLE MENDONCA\"", "\"EMI SONGS\"", "\"NÃO\"", "\"AO VIVO ADORNO\"", "\"DANIEL MUSY\"", "\"NÃO\"", "\"Planilha Mensal\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarNovoRelatorioUBEMComplementoTipoTodos(
+                    string associacao, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string episodio, 
+                    string genero, 
+                    string tituloDaMusica, 
+                    string tituloOriginal, 
+                    string autor, 
+                    string dDA, 
+                    string possuiDuplicidade, 
+                    string sincronismo, 
+                    string interpretes, 
+                    string reprise, 
+                    string tituloPlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioUBEMCT12"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar Novo relatório UBEM Complemento tipo Todos", null, @__tags);
+#line 119
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 120
+    testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 121
+    testRunner.Then(string.Format("gero o relatorio e verifico se as informacoes de {0} {1} {2} {3} {4} {5} {6} {7} " +
+                        "{8} {9} {10} {11} {12} {13} estao sendo exibidas corretamente para a {14} {15} {" +
+                        "16} escolhidos", programa, dataExibicao, capitulo, episodio, genero, tituloDaMusica, tituloOriginal, autor, dDA, possuiDuplicidade, sincronismo, interpretes, reprise, tituloPlanilha, associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar Novo relatório UBEM Complemento tipo Todos, \"TODAS\"", new string[] {
+                "chrome",
+                "RelatorioUBEMCT12"}, SourceLine=124)]
+        public virtual void GerarNovoRelatorioUBEMComplementoTipoTodos_TODAS()
+        {
+#line 119
+this.GerarNovoRelatorioUBEMComplementoTipoTodos("\"TODAS\"", "\"Janeiro\"", "\"2019\"", "\"NOVELA TESTE CVC02\"", "\"23/01/2019\"", "\" \"", "\" \"", "\"DRAMATURGIA SEMANAL\"", "\"MUSICA DA MARCELLE\"", "\"MUSICA DA MARCELLE\"", "\"MARCELLE MENDONCA,MARCELLE MENDONCA,SHAKIRA MEBARAK\"", "\"EMI SONGS,SOM E LUZ,A DESCO\"", "\"NÃO\"", "\"AO VIVO ADORNO\"", "\"DANIEL MUSY\"", "\"NÃO\"", "\"Planilha Mensal TODAS\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarNovoRelatorioUBEMMensalComDDASemObras_(string associacao, string mes, string ano, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioUBEMCT13"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar Novo relatório UBEM mensal com DDA sem obras.", null, @__tags);
+#line 158
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 159
+    testRunner.When(string.Format("faco um filtro para um periodo {0} {1} e associacao {2}", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 160
+    testRunner.Then(string.Format("visualizo a mensagem de que não existe fechamento UBEM para o periodo selecionado" +
+                        " {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar Novo relatório UBEM mensal com DDA sem obras., \"UBEM\"", new string[] {
+                "chrome",
+                "RelatorioUBEMCT13"}, SourceLine=163)]
+        public virtual void GerarNovoRelatorioUBEMMensalComDDASemObras__UBEM()
+        {
+#line 158
+this.GerarNovoRelatorioUBEMMensalComDDASemObras_("\"UBEM\"", "\"Fevereiro\"", "\"2019\"", "\"Não existe fechamento para o período selecionado.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarNovoRelatorioUBEMMensalComDDAAssociado_(
+                    string associacao, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string episodio, 
+                    string genero, 
+                    string tituloDaMusica, 
+                    string tituloOriginal, 
+                    string autor, 
+                    string dDA, 
+                    string possuiDuplicidade, 
+                    string sincronismo, 
+                    string interpretes, 
+                    string reprise, 
+                    string tituloPlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioUBEMCT14"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar Novo relatório UBEM mensal com DDA associado.", null, @__tags);
+#line 167
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 168
+    testRunner.When(string.Format("faco um filtro para um periodo {0} {1} , associacao {2} e DDA", mes, ano, associacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 169
+    testRunner.Then(string.Format("gero o relatorio e verifico se as informacoes de {0} {1} {2} {3} {4} {5} {6} {7} " +
+                        "{8} {9} {10} {11} {12} {13} estao sendo exibidas corretamente para a {14} {15} {" +
+                        "16} escolhidos", programa, dataExibicao, capitulo, episodio, genero, tituloDaMusica, tituloOriginal, autor, dDA, possuiDuplicidade, sincronismo, interpretes, reprise, tituloPlanilha, associacao, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar Novo relatório UBEM mensal com DDA associado., \"UBEM\"", new string[] {
+                "chrome",
+                "RelatorioUBEMCT14"}, SourceLine=172)]
+        public virtual void GerarNovoRelatorioUBEMMensalComDDAAssociado__UBEM()
+        {
+#line 167
+this.GerarNovoRelatorioUBEMMensalComDDAAssociado_("\"UBEM\"", "\"Janeiro\"", "\"2019\"", "\"NOVELA TESTE CVC02\"", "\"23/01/2019\"", "\" \"", "\" \"", "\"DRAMATURGIA SEMANAL\"", "\"MUSICA DA MARCELLE\"", "\"MUSICA DA MARCELLE\"", "\"MARCELLE MENDONCA,SHAKIRA MEBARAK\"", "\"SOM E LUZ,A DESCO\"", "\"NÃO\"", "\"AO VIVO ADORNO\"", "\"DANIEL MUSY\"", "\"NÃO\"", "\"Planilha Mensal UBEM\"", ((string[])(null)));
 #line hidden
         }
         

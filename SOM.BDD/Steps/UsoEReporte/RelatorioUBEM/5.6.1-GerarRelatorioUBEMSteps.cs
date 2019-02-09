@@ -43,14 +43,15 @@ namespace SOM.BDD.Steps.UsoEReporte.RelatorioUBEM
             TelaRelatorioUbemPage.FiltrarRelatorioUbem(Associacao, "Mensal", Mes, Ano, "", "", "");
         }
 
-        [Then(@"posso baixar o relatorio UBEM e verificar se as informacoes de ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" estao sendo exibidas corretamente para a ""(.*)"" ""(.*)"" ""(.*)"" escolhidos")]
+        [Then(@"posso baixar o relatorio UBEM e verificar se as informacoes de ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" estao sendo exibidas corretamente para a ""(.*)"" ""(.*)"" ""(.*)"" escolhidos")]
         public void EntaoPossoBaixarORelatorioUBEMEVerificarSeAsInformacoesDeEstaoSendoExibidasCorretamenteParaAEscolhidos(string Programa, string Data, string Capitulo, string Episodio, string Genero, string TituloMusica,
-            string TituloOriginal, string Autor, string DDA, string Duplicidade, string Sincronismo, string Interpretes, string Reprise, string Associacao, string Mes, string Ano)
+            string TituloOriginal, string Autor, string DDA, string Duplicidade, string Sincronismo, string Interpretes, string Reprise, string Associacao, string Mes, string Ano, string TituloPlanilha)
         {
             TelaRelatorioUbemPage.DownloadRelatorioUbemMensal();
             TelaRelatorioUbemPage.ValidarRelatorioUbem(Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
-                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
         }
+
 
         [Then(@"realizo o download do relatorio UBEM com sucesso para a ""(.*)"" ""(.*)"" ""(.*)"" escolhidos")]
         public void EntaoRealizoODownloadDoRelatorioUBEMComSucessoParaAEscolhidos(string Associacao, string Mes, string Ano)
@@ -71,6 +72,38 @@ namespace SOM.BDD.Steps.UsoEReporte.RelatorioUBEM
         {
             TelaRelatorioUbemPage.ValidarMensagemFechamentoInexistente(Mensagem);
         }
-        
+
+        //[Then(@"gero o relatorio e verifico se as informacoes de ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" estao sendo exibidas corretamente para a ""(.*)"" ""(.*)"" ""(.*)"" escolhidos")]
+        //public void EntaoGeroORelatorioEVerificoSeAsInformacoesDeEstaoSendoExibidasCorretamenteParaAEscolhidos(string Programa, string Data, string Capitulo, string Episodio, string Genero, string TituloMusica,
+        //    string TituloOriginal, string Autor, string DDA, string Duplicidade, string Sincronismo, string Interpretes, string Reprise, string Associacao, string Mes, string Ano)
+        //{
+        //    TelaRelatorioUbemPage.DownloadRelatorioUbem();
+        //    TelaRelatorioUbemPage.ValidarRelatorioUbem(Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
+        //        Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano);
+        //    TelaRelatorioUbemPage.ExcluirRelatorio(Associacao, Mes, Ano);
+        //}
+
+        [Then(@"gero o relatorio e verifico se as informacoes de ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" estao sendo exibidas corretamente para a ""(.*)"" ""(.*)"" ""(.*)"" escolhidos")]
+        public void EntaoGeroORelatorioEVerificoSeAsInformacoesDeEstaoSendoExibidasCorretamenteParaAEscolhidos(string Programa, string Data, string Capitulo, string Episodio, string Genero, string TituloMusica,
+            string TituloOriginal, string Autor, string DDA, string Duplicidade, string Sincronismo, string Interpretes, string Reprise, string Associacao, string Mes, string Ano, string TituloPlanilha)
+        {
+            TelaRelatorioUbemPage.DownloadRelatorioUbem();
+            TelaRelatorioUbemPage.ValidarRelatorioUbem(Programa, Data, Capitulo, Episodio, Genero, TituloMusica, TituloOriginal,
+                Autor, DDA, Duplicidade, Sincronismo, Interpretes, Reprise, Associacao, Mes, Ano, TituloPlanilha);
+        }
+
+        [When(@"faco um filtro para um periodo complemento ""(.*)"" ""(.*)"" e associacao ""(.*)""")]
+        public void QuandoFacoUmFiltroParaUmPeriodoComplementoEAssociacao(string Mes, string Ano, string Associacao)
+        {
+            TelaRelatorioUbemPage.FiltrarRelatorioUbem(Associacao, "Complemento", Mes, Ano, "", "", "");
+        }
+
+        [When(@"faco um filtro para um periodo ""(.*)"" ""(.*)"" , associacao ""(.*)"" e DDA")]
+        public void QuandoFacoUmFiltroParaUmPeriodoAssociacaoEDDA(string Mes, string Ano, string Associacao)
+        {
+            TelaRelatorioUbemPage.FiltrarRelatorioUbem(Associacao, "Mensal", Mes, Ano, "", "SOM E LUZ", "");
+        }
+
+
     }
 }
