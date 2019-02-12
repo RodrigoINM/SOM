@@ -380,6 +380,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>5.2.18 - Cadastrar Musica de Transição.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.19 - Alterar campos Gravadora e Submix.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>5.2.19 - Alterar campos Gravadora e Submix.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\UsoEReporte\Cue-Sheet\5.2.20 - Finalizar cue-sheet.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -518,6 +523,7 @@
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.11-ExcluirItemCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.12-AprovarERevogarAprovacaoDeItemCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.17-ReabrirCueSheetSteps.cs" />
+    <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.19-AlterarCamposGravadoraESubmixSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.20-FinalizarCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.21-VerIndicacaoDePedidoNaCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.22-AlteracaoDePedidoNaCueSheetSteps.cs" />
@@ -763,6 +769,10 @@
     <None Include="Features\UsoEReporte\Cue-Sheet\5.2.18 - Cadastrar Musica de Transição.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>5.2.18 - Cadastrar Musica de Transição.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UsoEReporte\Cue-Sheet\5.2.19 - Alterar campos Gravadora e Submix.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>5.2.19 - Alterar campos Gravadora e Submix.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\UsoEReporte\Cue-Sheet\5.2.20 - Finalizar cue-sheet.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

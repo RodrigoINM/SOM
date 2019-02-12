@@ -30,6 +30,8 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
         private Element SlctSincronismo { get; }
         private Element InpTempo { get; }
         private Element InpInterprete { get; }
+        public Element InpGravadora { get; private set; }
+        public Element InpSubmix { get; private set; }
 
         //Cadastro de Interprete
         public Element BtnCadastrarInterprete { get; private set; }
@@ -73,6 +75,8 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             SlctSincronismo = Element.Css("div[ng-model='ItemCueSheetDados.TipoSincronismoSelected'] i[class='caret pull-right']");
             InpTempo = Element.Css("input[id='tempo']");
             InpInterprete = Element.Css("input[id='novoAutoComplete']");
+            InpGravadora = Element.Css("input[ng-model='ItemCueSheetDados.RecordCompanyDescription']");
+            InpSubmix = Element.Css("input[ng-model='ItemCueSheetDados.Submix']");
 
             //Cadastro de Interprete
             BtnCadastrarInterprete = Element.Css("button[ng-click='CadastrarInterprete()']");
@@ -447,6 +451,17 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
         }
 
+        public void AlterarGravadoraESubmixDeItemDeCueSheet(string Gravadora, string Submix)
+        {
+            ElementExtensions.IsElementVisible(InpGravadora, Browser);
+            AutomatedActions.SendDataATM(Browser, InpGravadora, Gravadora);
+
+            ElementExtensions.IsElementVisible(InpSubmix, Browser);
+            AutomatedActions.SendDataATM(Browser, InpSubmix, Submix);
+
+            MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
+        }
+
         public void AlterarItemDeCueSheetParaReprise()
         {
             var marcarReprise = Element.Css("label[for='itemReprise']");
@@ -635,5 +650,10 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             Assert.AreEqual("Registro salvo com sucesso.", ElementExtensions.GetValorAtributo(PopUpStatus, "textContent", Browser));
         }
 
+        public void ValidarItemDeCueSheet(string Valor)
+        {
+            var textoItemCueSheet = Element.Xpath("//tbody[@dnd-list='ListCueSheetItemViewDragDrop.lists']//td[contains(., '" + Valor + "')]");
+            ElementExtensions.IsElementVisible(textoItemCueSheet, Browser);
+        }
     }
 }
