@@ -1,6 +1,6 @@
 ﻿#language: pt-BR
-#Author: Rodrigo Magno
-#Date: 25/09/2018
+#Author: Larissa Silva
+#Date: 09/02/2019
 #Version: 1.0
 
 @kill_Driver @RelatorioUBEM
@@ -9,6 +9,9 @@ Funcionalidade: 5.6.1 - Gerar Relatório UBEM
 	Eu quero emitir um relatório em formato Excel conforme padrão
 	De modo que reportar as utilizações de músicas nas produções da Globo à UBEM.
 
+Critérios de aceite:
+Sistema deverá ser capaz de reportar as utilizações de músicas nas produções da Globo à UBEM.
+
 Contexto: Acessar sistema SOM
 	Dado que esteja logado no sistema SOM
 	E que esteja na tela de Relatorio Ubem
@@ -16,28 +19,28 @@ Contexto: Acessar sistema SOM
 
 @chrome	@RelatorioUBEMCT01
 Esquema do Cenário: Gerar download sem fechamento mensal relatório UBEM
-	Quando faco um filtro para um periodo <Mes> <Ano> que ainda nao possua fechamento
-	Entao visualizo a mensagem de que não existe fechamento UBEM para o periodo selecionado <Mensagem>
+  Quando faco um filtro para um periodo <Mes> <Ano> que ainda nao possua fechamento
+  Entao visualizo a mensagem de que não existe fechamento UBEM para o periodo selecionado <Mensagem>
     
-	Exemplos: 
+  Exemplos: 
       | Mes        | Ano    | Mensagem                                            | 
       | "Dezembro" | "2018" | "Não existe fechamento para o período selecionado." | 
   
 @chrome	@RelatorioUBEMCT02
 Esquema do Cenário: Consultar relatório de fechamento UBEM
-	Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
-	Entao visualizo o link de download do relatorio de fechamento UBEM com sucesso <Associacao> <Mes> <Ano>
+  Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
+  Entao visualizo o link de download do relatorio de fechamento UBEM com sucesso <Associacao> <Mes> <Ano>
     
-	Exemplos:
+  Exemplos:
       | Associacao       | Mes       | Ano    | 
       | "UBEM"           | "Outubro" | "2017" | 
   
 @chrome	@RelatorioUBEMCT03
 Esquema do Cenário: Gerar download relatório UBEM
-	Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
-	Entao realizo o download do relatorio UBEM com sucesso para a <Associacao> <Mes> <Ano> escolhidos
+  Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
+  Entao realizo o download do relatorio UBEM com sucesso para a <Associacao> <Mes> <Ano> escolhidos
     
-	Exemplos:
+  Exemplos:
       | Associacao       | Mes       | Ano    | 
       | "UBEM"           | "Outubro" | "2017" | 
       | "SEM ASSOCIAÇÃO" | "Outubro" | "2017" | 
@@ -45,243 +48,211 @@ Esquema do Cenário: Gerar download relatório UBEM
   
 @chrome	@RelatorioUBEMCT04
 Esquema do Cenário: Validar as informações do relatório UBEM
-	Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
-	Entao posso baixar o relatorio UBEM e verificar se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloPlanilha> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+  Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
+  Entao posso baixar o relatorio UBEM e verificar se as informacoes de <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <TituloDaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDuplicidade>, <Sincronismo>, <Interpretes>, <Reprise>, <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao>, <Mes>, <Ano> escolhidos
     
-	Exemplos:
-      | Associacao | Mes       | Ano    | Programa          | DataExibicao | Capitulo | Episodio | Genero       | TituloDaMusica | TituloOriginal | Autor          | DDA     | PossuiDuplicidade | Sincronismo | Interpretes    | Reprise | TituloPlanilha         |
+  Exemplos:
+      | Associacao | Mes       | Ano    | Programa          | DataExibicao | Capitulo | Episodio | Genero       | TituloDaMusica | TituloOriginal | Autor          | DDA     | PossuiDuplicidade | Sincronismo | Interpretes    | Reprise | TituloRelatorio        |
       | "UBEM"     | "Outubro" | "2017" | "JORNAL NACIONAL" | "09/10/2017" | " "      | " "      | "JORNALISMO" | "NM SYNTH 2"   | "NM SYNTH 2"   | "SACHA AMBACK" | "SIGEM" | " "               | " "         | "SACHA AMBACK" | "NÃO"   | "Planilha Mensal UBEM" |
   
-@chrome	@RelatorioUBEMCT05
-Esquema do Cenario: Gerar relatório UBEM sem fechamento mensal
+  @chrome	@RelatorioUBEMCT05
+ Esquema do Cenario: Gerar relatório UBEM sem fechamento mensal
     Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
     Entao visualizo a mensagem de que não existe fechamento UBEM para o periodo selecionado <Mensagem>
 
-	Exemplos: 
-      | Associacao | Mes         | Ano    | Mensagem                                            |
-      | "UBEM"     | "Fevereiro" | "2019" | "Não existe fechamento para o período selecionado." | 
+    Exemplos:
+        | Associacao | Mes        | Ano    | Mensagem                                            | 
+        | "UBEM"     | "Dezembro" | "2018" | "Não existe fechamento para o período selecionado." |
 
-@chrome	@RelatorioUBEMCT06
+ @chrome	@RelatorioUBEMCT06
+Esquema do Cenario: Gerar relatório UBEM do tipo Associação todas sem fechamento mensal
+    Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+
+    Exemplos:
+      | Associacao | Mes        | Ano    | Programa     | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica           | TituloOriginal | Autor                  | DDA    | PossuiDuplicidade | Sincronismo | Interpretes                                             | Reprise | TituloRelatorio         |
+      | "TODAS"    | "Novembro" | "2017" | "NOVO MUNDO" | "02/11/2017" | "700"    | " "      | "DRAMATURGIA DIÁRIA" | "CARIOCA PALACE THEME 2" | " "            | "RAFAEL LANGONI SMITH" | "DECK" | "NÃO"             | "FUNDO"     | "PEDRO EUGENIO ARAUJO,RAFAEL LANGONI SMITH,ROGERIO VAZ" | "NÃO"   | "Planilha Mensal TODAS" |
+
+ @chrome	@RelatorioUBEMCT07
 Esquema do Cenario: Gerar relatório UBEM do tipo Sem Associação sem fechamento mensal
     Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
-    Entao gero o relatorio e verifico se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloPlanilha> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
 
-	Exemplos: 
-      | Associacao       | Mes       | Ano    | Programa             | DataExibicao | Capitulo | Episodio | Genero                | TituloDaMusica       | TituloOriginal       | Autor               | DDA         | PossuiDuplicidade | Sincronismo      | Interpretes   | Reprise | TituloPlanilha    |
-      | "SEM ASSOCIAÇÃO" | "Janeiro" | "2019" | "NOVELA TESTE CVC02" | "09/10/2017" | " "      | " "      | "DRAMATURGIA SEMANAL" | "MUSICA DA MARCELLE" | "MUSICA DA MARCELLE" | "MARCELLE MENDONCA" | "EMI SONGS" | "NÃO"             | "AO VIVO ADORNO" | "DANIEL MUSY" | "NÃO"   | "Planilha Mensal" |
+    Exemplos:
+	  | Associacao       | Mes        | Ano    | Programa           | DataExibicao | Capitulo | Episodio | Genero              | TituloDaMusica          | TituloOriginal | Autor   | DDA             | PossuiDuplicidade | Sincronismo | Interpretes | Reprise | TituloRelatorio    |
+	  | "SEM ASSOCIAÇÃO" | "Novembro" | "2017" | "TESTE VARIEDADES" | "05/11/2017" | "1"      | " "      | "VARIEDADE SEMANAL" | "MUSICA DE TESTE 5 INT" | " "            | "LUCCA" | "UNIVERSAL MGB" | "NÃO"             | "ADORNO"    | "ANITTA"    | "NÃO"   | "Planilha Mensal " |
 
-@chrome	@RelatorioUBEMCT07
+ @chrome	@RelatorioUBEMCT08
 Esquema do Cenario: Gerar Novo relatório UBEM Mensal tipo UBEM
     Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
-	Entao gero o relatorio e verifico se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloPlanilha> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
 
-	Exemplos: 
-      | Associacao | Mes       | Ano    | Programa             | DataExibicao | Capitulo | Episodio | Genero                | TituloDaMusica       | TituloOriginal       | Autor                               | DDA                 | PossuiDuplicidade | Sincronismo      | Interpretes   | Reprise | TituloPlanilha         |
-      | "UBEM"     | "Janeiro" | "2019" | "NOVELA TESTE CVC02" | "23/01/2019" | " "      | " "      | "DRAMATURGIA SEMANAL" | "MUSICA DA MARCELLE" | "MUSICA DA MARCELLE" | "MARCELLE MENDONCA,SHAKIRA MEBARAK" | "SOM E LUZ,A DESCO" | "NÃO"             | "AO VIVO ADORNO" | "DANIEL MUSY" | "NÃO"   | "Planilha Mensal UBEM" |
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica      | TituloOriginal | Autor   | DDA               | PossuiDuplicidade | Sincronismo                   | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "      | "DRAMATURGIA DIÁRIA" | "NOVA MUSICA HELEN" | " "            | "TESTA" | "HELEN PRODUCOES" | "NÃO"             | "AO VIVO FUNDO EM JORNALISMO" | "ANITTA"    | "NÃO"   | "Planilha Mensal UBEM" |
 
-@chrome	@RelatorioUBEMCT08
+ @chrome	@RelatorioUBEMCT09
 Esquema do Cenario: Gerar Novo relatório UBEM Mensal tipo Sem Associação
     Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
-    Entao gero o relatorio e verifico se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloPlanilha> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
 
-	Exemplos: 
-      | Associacao       | Mes       | Ano    | Programa             | DataExibicao | Capitulo | Episodio | Genero                | TituloDaMusica       | TituloOriginal       | Autor               | DDA         | PossuiDuplicidade | Sincronismo      | Interpretes   | Reprise | TituloPlanilha    |
-      | "SEM ASSOCIAÇÃO" | "Janeiro" | "2019" | "NOVELA TESTE CVC02" | "09/10/2017" | " "      | " "      | "DRAMATURGIA SEMANAL" | "MUSICA DA MARCELLE" | "MUSICA DA MARCELLE" | "MARCELLE MENDONCA" | "EMI SONGS" | "NÃO"             | "AO VIVO ADORNO" | "DANIEL MUSY" | "NÃO"   | "Planilha Mensal" |
+    Exemplos:
+	  | Associacao       | Mes        | Ano    | Programa  | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica       | TituloOriginal | Autor               | DDA         | PossuiDuplicidade | Sincronismo | Interpretes | Reprise | TituloRelatorio    |
+	  | "SEM ASSOCIAÇÃO" | "Novembro" | "2018" | "O CLONE" | "08/11/2018" | "44"     | " "      | "DRAMATURGIA DIÁRIA" | "MUSICA DA MARCELLE" | " "            | "MARCELLE MENDONCA" | "EMI SONGS" | "NÃO"             | "FUNDO"     | "INACIO"    | "NÃO"   | "Planilha Mensal " |
 
-@chrome	@RelatorioUBEMCT09
+ @chrome	@RelatorioUBEMCT10
 Esquema do Cenario: Gerar Novo relatório UBEM Mensal tipo Todos
     Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
-    Entao gero o relatorio e verifico se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloPlanilha> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
 
     Exemplos:
-      | Associacao | Mes       | Ano    | Programa             | DataExibicao | Capitulo | Episodio | Genero                | TituloDaMusica       | TituloOriginal       | Autor                                                 | DDA                           | PossuiDuplicidade | Sincronismo      | Interpretes   | Reprise | TituloPlanilha          |
-      | "TODAS"    | "Janeiro" | "2019" | "NOVELA TESTE CVC02" | "23/01/2019" | " "      | " "      | "DRAMATURGIA SEMANAL" | "MUSICA DA MARCELLE" | "MUSICA DA MARCELLE" | "MARCELLE MENDONCA,MARCELLE MENDONCA,SHAKIRA MEBARAK" | "EMI SONGS,SOM E LUZ,A DESCO" | "NÃO"             | "AO VIVO ADORNO" | "DANIEL MUSY" | "NÃO"   | "Planilha Mensal TODAS" |
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero       | TituloDaMusica          | TituloOriginal | Autor                          | DDA                             | PossuiDuplicidade | Sincronismo    | Interpretes | Reprise | TituloRelatorio         |
+	  | "TODAS"    | "Janeiro" | "2019" | "AUTO_PROD_0" | "01/01/2019" | " "      | " "      | "JORNALISMO" | "TESTE DE CONHECIMENTO" | " "            | "CLAUDEMIR,DINEY,ROSANA SILVA" | "UNIVERSAL MGB,A DESCO,A DESCO" | "NÃO"             | "ENCERRAMENTO" | "ANA"       | "NÃO"   | "Planilha Mensal TODAS" |
 
-@chrome	@RelatorioUBEMCT10
+ @chrome	@RelatorioUBEMCT11
 Esquema do Cenario: Gerar Novo relatório UBEM Complemento UBEM
-	Quando faco um filtro para um periodo complemento <Mes> <Ano> e associacao <Associacao>
-    Entao gero o relatorio e verifico se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloPlanilha> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+    Quando faco um filtro complemento para um periodo <Mes> <Ano> e associacao <Associacao>
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
 
-    Exemplos: 
-      | Associacao | Mes       | Ano    | Programa             | DataExibicao | Capitulo | Episodio | Genero                | TituloDaMusica       | TituloOriginal       | Autor                               | DDA                 | PossuiDuplicidade | Sincronismo      | Interpretes   | Reprise | TituloPlanilha         |
-      | "UBEM"     | "Janeiro" | "2019" | "NOVELA TESTE CVC02" | "23/01/2019" | " "      | " "      | "DRAMATURGIA SEMANAL" | "MUSICA DA MARCELLE" | "MUSICA DA MARCELLE" | "MARCELLE MENDONCA,SHAKIRA MEBARAK" | "SOM E LUZ,A DESCO" | "NÃO"             | "AO VIVO ADORNO" | "DANIEL MUSY" | "NÃO"   | "Planilha Mensal UBEM" |
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica      | TituloOriginal | Autor   | DDA               | PossuiDuplicidade | Sincronismo                   | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "      | "DRAMATURGIA DIÁRIA" | "NOVA MUSICA HELEN" | " "            | "TESTA" | "HELEN PRODUCOES" | "NÃO"             | "AO VIVO FUNDO EM JORNALISMO" | "ANITTA"    | "NÃO"   | "Planilha Mensal UBEM" |
 
-@chrome	@RelatorioUBEMCT11
+ @chrome	@RelatorioUBEMCT12
 Esquema do Cenario: Gerar Novo relatório UBEM Complemento tipo Sem Associação
     Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
-    Entao gero o relatorio e verifico se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloPlanilha> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
-
-	Exemplos: 
-      | Associacao       | Mes       | Ano    | Programa             | DataExibicao | Capitulo | Episodio | Genero                | TituloDaMusica       | TituloOriginal       | Autor               | DDA         | PossuiDuplicidade | Sincronismo      | Interpretes   | Reprise | TituloPlanilha    |
-      | "SEM ASSOCIAÇÃO" | "Janeiro" | "2019" | "NOVELA TESTE CVC02" | "09/10/2017" | " "      | " "      | "DRAMATURGIA SEMANAL" | "MUSICA DA MARCELLE" | "MUSICA DA MARCELLE" | "MARCELLE MENDONCA" | "EMI SONGS" | "NÃO"             | "AO VIVO ADORNO" | "DANIEL MUSY" | "NÃO"   | "Planilha Mensal" |
-
-@chrome	@RelatorioUBEMCT12
-Esquema do Cenario: Gerar Novo relatório UBEM Complemento tipo Todos
-    Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
-    Entao gero o relatorio e verifico se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloPlanilha> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
 
     Exemplos:
-      | Associacao | Mes       | Ano    | Programa             | DataExibicao | Capitulo | Episodio | Genero                | TituloDaMusica       | TituloOriginal       | Autor                                                 | DDA                           | PossuiDuplicidade | Sincronismo      | Interpretes   | Reprise | TituloPlanilha          |
-      | "TODAS"    | "Janeiro" | "2019" | "NOVELA TESTE CVC02" | "23/01/2019" | " "      | " "      | "DRAMATURGIA SEMANAL" | "MUSICA DA MARCELLE" | "MUSICA DA MARCELLE" | "MARCELLE MENDONCA,MARCELLE MENDONCA,SHAKIRA MEBARAK" | "EMI SONGS,SOM E LUZ,A DESCO" | "NÃO"             | "AO VIVO ADORNO" | "DANIEL MUSY" | "NÃO"   | "Planilha Mensal TODAS" |
+	  | Associacao       | Mes        | Ano    | Programa  | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica       | TituloOriginal | Autor               | DDA         | PossuiDuplicidade | Sincronismo | Interpretes | Reprise | TituloRelatorio    |
+	  | "SEM ASSOCIAÇÃO" | "Novembro" | "2018" | "O CLONE" | "08/11/2018" | "44"     | " "      | "DRAMATURGIA DIÁRIA" | "MUSICA DA MARCELLE" | " "            | "MARCELLE MENDONCA" | "EMI SONGS" | "NÃO"             | "FUNDO"     | "INACIO"    | "NÃO"   | "Planilha Mensal " |
 
-#@chrome	@RelatorioUBEMCT13
-#Esquema do Cenario: Gerar Fechamento de relatório UBEM mensal tipo UBEM
-#    Dado que tenha um periodo sem fechamento na tela "Relatório UBEM"
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoMensal> e <Periodo>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <Midia>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa     | DataExibicao     | Capitulo | Episodio | Genero               | Midia        | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "NOVO MUNDO" | "07/06/2018"     | "888"    | ""       | "DRAMATURGIA DIÁRIA" | "CANAL VIVA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-
-
-#Esquema do Cenario: Gerar Fechamento de relatório UBEM Mensal tipo Sem Associação
-#    Dado que tenha um periodo sem fechamento na tela "Relatório UBEM"
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoMensal> e <Periodo>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <Midia>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa | DataExibicao     | Capitulo | Episodio | Genero               | Midia        | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "Teste"  | "07/06/2018"     | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "CANAL VIVA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-#
-#
-#Esquema do Cenario: Gerar Fechamento de relatório UBEM Mensal tipo Todos
-#    Dado que tenha um periodo sem fechamento na tela "Relatório UBEM"
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoMensal> e <Periodo>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <Midia>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa   | DataExibicao     | Capitulo | Episodio | Genero               | Midia        | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "Teste01"  | "07/06/2018"     | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "CANAL VIVA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-
-@chrome	@RelatorioUBEMCT13
-Esquema do Cenario: Gerar Novo relatório UBEM mensal com DDA sem obras.
+ @chrome	@RelatorioUBEMCT13
+Esquema do Cenario: Gerar Novo relatório UBEM Complemento tipo Todos
     Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
-    Entao visualizo a mensagem de que não existe fechamento UBEM para o periodo selecionado <Mensagem>
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
 
-	Exemplos: 
-      | Associacao | Mes         | Ano    | Mensagem                                            |
-      | "UBEM"     | "Fevereiro" | "2019" | "Não existe fechamento para o período selecionado." |
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero       | TituloDaMusica          | TituloOriginal | Autor                          | DDA                             | PossuiDuplicidade | Sincronismo    | Interpretes | Reprise | TituloRelatorio         |
+	  | "TODAS"    | "Janeiro" | "2019" | "AUTO_PROD_0" | "01/01/2019" | " "      | " "      | "JORNALISMO" | "TESTE DE CONHECIMENTO" | " "            | "CLAUDEMIR,DINEY,ROSANA SILVA" | "UNIVERSAL MGB,A DESCO,A DESCO" | "NÃO"             | "ENCERRAMENTO" | "ANA"       | "NÃO"   | "Planilha Mensal TODAS" |
 
-@chrome	@RelatorioUBEMCT14
+ @chrome	@RelatorioUBEMCT14
+Esquema do Cenario: Gerar Novo relatório UBEM mensal com DDA em branco.
+    Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica      | TituloOriginal | Autor   | DDA               | PossuiDuplicidade | Sincronismo                   | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "      | "DRAMATURGIA DIÁRIA" | "NOVA MUSICA HELEN" | " "            | "TESTA" | "HELEN PRODUCOES" | "NÃO"             | "AO VIVO FUNDO EM JORNALISMO" | "ANITTA"    | "NÃO"   | "Planilha Mensal UBEM" |
+
+ @chrome	@RelatorioUBEMCT15
 Esquema do Cenario: Gerar Novo relatório UBEM mensal com DDA associado.
-    Quando faco um filtro para um periodo <Mes> <Ano> , associacao <Associacao> e DDA
-    Entao gero o relatorio e verifico se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloPlanilha> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+    Quando faco um filtro para um periodo <Mes> <Ano> associacao <Associacao> e DDA
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
 
-	 Exemplos:  
-      | Associacao | Mes       | Ano    | Programa             | DataExibicao | Capitulo | Episodio | Genero                | TituloDaMusica       | TituloOriginal       | Autor                               | DDA                 | PossuiDuplicidade | Sincronismo      | Interpretes   | Reprise | TituloPlanilha         |
-      | "UBEM"     | "Janeiro" | "2019" | "NOVELA TESTE CVC02" | "23/01/2019" | " "      | " "      | "DRAMATURGIA SEMANAL" | "MUSICA DA MARCELLE" | "MUSICA DA MARCELLE" | "MARCELLE MENDONCA,SHAKIRA MEBARAK" | "SOM E LUZ,A DESCO" | "NÃO"             | "AO VIVO ADORNO" | "DANIEL MUSY" | "NÃO"   | "Planilha Mensal UBEM" |
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica      | TituloOriginal | Autor   | DDA               | PossuiDuplicidade | Sincronismo                   | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "      | "DRAMATURGIA DIÁRIA" | "NOVA MUSICA HELEN" | " "            | "TESTA" | "HELEN PRODUCOES" | "NÃO"             | "AO VIVO FUNDO EM JORNALISMO" | "ANITTA"    | "NÃO"   | "Planilha Mensal UBEM" |
 
+ @chrome	@RelatorioUBEMCT16
+Esquema do Cenario: Gerar Novo relatório UBEM Complemento com DDA associado.
+	Quando faco um filtro complemento para um periodo <Mes> <Ano> associacao <Associacao> e DDA
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
 
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica      | TituloOriginal | Autor   | DDA               | PossuiDuplicidade | Sincronismo                   | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "      | "DRAMATURGIA DIÁRIA" | "NOVA MUSICA HELEN" | " "            | "TESTA" | "HELEN PRODUCOES" | "NÃO"             | "AO VIVO FUNDO EM JORNALISMO" | "ANITTA"    | "NÃO"   | "Planilha Mensal UBEM" |
 
-#Esquema do Cenario: Gerar Novo relatório UBEM Complemento com DDA associado.
-#    Quando faco um filtro para um periodo complemento <Mes> <Ano> e associacao <Associacao>
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoComplemento> e <Periodo>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <Midia>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa   | DataExibicao     | Capitulo | Episodio | Genero               | Midia        | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "Teste03"  | "07/06/2018"     | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "CANAL VIVA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-#
-#
-#Esquema do Cenario: Gerar Novo relatório UBEM sem associação mensal com DDA
-#    Dado que tenha um periodo sem fechamento na tela "Relatório UBEM"
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoMensal> e <Periodo>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <Midia>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa   | DataExibicao     | Capitulo | Episodio | Genero               | Midia        | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "Teste67"  | "07/06/2018"     | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "CANAL VIVA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-#
-#
-#Esquema do Cenario: Gerar Novo relatório UBEM sem informar o periodo.
-#    Dado que tenha um periodo sem fechamento na tela "Relatório UBEM"
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao> e <TipoMensal>.
-#    Então visualizo o campo <Periodo> em destaque para preenchimento.
-#
-#    Exemplos:
-#      | TipoAssociacao | TipoComplemento | Periodo |
-#      | "UBEM"         | "Mensal"        | ""      |
-#
-#
-#Esquema do Cenário: Validar histórico do relatorio UBEM
-#    Quando valido o <Historico>
-#    Então visualizo a grid com os campos <Campo> e <NovoValor>.
-#
-#    Exemplos:
-#      | Campo     | NovoValor |
-#      | "Período" | "09/2018" |
-#
-#
-#Esquema do Cenário: Validar filtro Produto no relatório UBEM mensal
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoMensal> e <Periodo>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <Midia>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa   | DataExibicao  | Capitulo | Episodio | Genero               | Midia        | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "Teste55"  | "07/06/2018"  | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "CANAL VIVA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-#
-#
-#Esquema do Cenário: Validar filtro Produto no relatório UBEM Complemento
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoComplemento> e <Periodo>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <Midia>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa   | DataExibicao  | Capitulo | Episodio | Genero               | Midia        | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "Teste17"  | "07/06/2018"  | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "CANAL VIVA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-#
-#
-#Esquema do Cenário: Validar filtro Mídia com flag Sim no relatório UBEM mensal
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoMensal>, <Periodo> e <FlagSim>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <Midia>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa   | DataExibicao     | Capitulo | Episodio | Genero               | Midia        | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "Teste78"  | "07/06/2018"     | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "CANAL VIVA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-#
-#
-#Esquema do Cenário: Validar filtro Mídia com flag Não no relatório UBEM mensal
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoMensal>, <Periodo> e <FlagNao>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa   | DataExibicao     | Capitulo | Episodio | Genero               | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "Teste001" | "07/06/2018"     | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-#
-#
-#Esquema do Cenário: Validar filtro Mídia com flag Sim no relatório UBEM complemento
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoMensal>, <Periodo> e <FlagSim>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa       | DataExibicao     | Capitulo | Episodio | Genero               | Midia        | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "TesteSimples" | "07/06/2018"     | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "CANAL VIVA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-#
-#
-#Esquema do Cenário: Validar filtro Mídia com flag Não no relatório UBEM complemento
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoMensal>, <Periodo> e <FlagNao>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa     | DataExibicao     | Capitulo | Episodio | Genero               | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "TesteNovo"  | "07/06/2018"     | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-#
-#
-#Esquema do Cenário: Validar duplicidade no relatorio UBEM
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoMensal> e <Periodo>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa   | DataExibicao     | Capitulo | Episodio | Genero               | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "Teste67"  | "07/06/2018"     | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-#      | "Teste67"  | "07/06/2018"     | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-#
-#
-#Esquema do Cenário: Validar Ordem alfabetica no relatorio UBEM
-#    Quando realizo um relatorio UBEM preenchendo o campo <TipoAssociacao>, <TipoMensal> e <Periodo>
-#    Então visualizo a planilha com os campos <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <TitulodaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDucplicidade>, <Sincronismo>, <Interprete> e <Reprise> com todos os comapos preenchidos.
-#
-#    Exemplos:
-#      | Programa     | DataExibicao     | Capitulo | Episodio | Genero               | TitulodaMusica | TituloOriginal | Autor      | DDA         | PossuiDucplicidade | Sincronismo | Interprete         | Reprise |
-#      | "Teste67"    | "07/06/2018"     | "821"    | ""       | "DRAMATURGIA DIÁRIA" | "DARWIN"       | "DARWIN"       | "MARCELLE" | "SOM E LUZ" | "NÃO"              | "FUNDO"     | "MARION LEMONNIER" | "NÃO"   |
-#      | "NOVO MUNDO" | "07/06/2018"     | "888"    | ""       | "DRAMATURGIA DIÁRIA" | "CANAL VIVA"   | "DARWIN"       | "DARWIN"   | "MARCELLE"  | "SOM E LUZ"        | "NÃO"       | "FUNDO"            |"NÃO"   |
+ @chrome	@RelatorioUBEMCT17
+Esquema do Cenario: Gerar Novo relatório UBEM sem associação mensal com DDA
+    Quando faco um filtro para um periodo sem associação <Mes> <Ano> associacao <Associacao> e DDA
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+
+    Exemplos:
+	  | Associacao       | Mes        | Ano    | Programa  | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica       | TituloOriginal | Autor               | DDA         | PossuiDuplicidade | Sincronismo | Interpretes | Reprise | TituloRelatorio    |
+	  | "SEM ASSOCIAÇÃO" | "Novembro" | "2018" | "O CLONE" | "08/11/2018" | "44"     | " "      | "DRAMATURGIA DIÁRIA" | "MUSICA DA MARCELLE" | " "            | "MARCELLE MENDONCA" | "EMI SONGS" | "NÃO"             | "FUNDO"     | "INACIO"    | "NÃO"   | "Planilha Mensal " |
+
+ @chrome	@RelatorioUBEMCT18
+Esquema do Cenario: Gerar Novo relatório UBEM sem informar o periodo.
+    Quando faco um filtro sem informar o periodo <Mes> <Ano>
+    Então visualizo o campo Periodo em destaque para preenchimento
+
+    Exemplos:
+      | Mes | Ano |
+      | " " | " " |
+
+ @chrome	@RelatorioUBEMCT19
+Esquema do Cenário: Validar histórico do relatorio UBEM
+	Quando faco um filtro complemento para um periodo <Mes> <Ano> associacao <Associacao> e DDA
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+	E valido o historico do reletorio UBEM
+
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica      | TituloOriginal | Autor   | DDA               | PossuiDuplicidade | Sincronismo                   | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "      | "DRAMATURGIA DIÁRIA" | "NOVA MUSICA HELEN" | " "            | "TESTA" | "HELEN PRODUCOES" | "NÃO"             | "AO VIVO FUNDO EM JORNALISMO" | "ANITTA"    | "NÃO"   | "Planilha Mensal UBEM" |
+
+ @chrome	@RelatorioUBEMCT20
+Esquema do Cenário: Validar filtro Produto no relatório UBEM mensal
+	Quando faco um filtro para um periodo <Mes> <Ano> associacao <Associacao> e produto
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa          | DataExibicao | Capitulo | Episodio | Genero       | TituloDaMusica | TituloOriginal | Autor                                                                         | DDA                                                          | PossuiDuplicidade | Sincronismo | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "JORNAL NACIONAL" | "15/10/2018" | "999"    | " "      | "JORNALISMO" | "BANG BANG"    | " "            | "MARCELLE MENDONCA,MAX MARTIN,MYRON BIRDSONG,RICKARD GORANSSON,SAVAN KOTECHA" | "SOM E LUZ,KOBALT MUSIC,SOM E LUZ,KOBALT MUSIC,KOBALT MUSIC" | "NÃO"             | "ADORNO"    | "ANITTA"    | "SIM"   | "Planilha Mensal UBEM" |
+
+ @chrome	@RelatorioUBEMCT21
+Esquema do Cenário: Validar filtro Produto no relatório UBEM Complemento
+	Quando faco um filtro com complemento para um periodo <Mes> <Ano> associacao <Associacao> e produto
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa          | DataExibicao | Capitulo | Episodio | Genero       | TituloDaMusica | TituloOriginal | Autor                                                                         | DDA                                                          | PossuiDuplicidade | Sincronismo | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "JORNAL NACIONAL" | "15/10/2018" | "999"    | " "      | "JORNALISMO" | "BANG BANG"    | " "            | "MARCELLE MENDONCA,MAX MARTIN,MYRON BIRDSONG,RICKARD GORANSSON,SAVAN KOTECHA" | "SOM E LUZ,KOBALT MUSIC,SOM E LUZ,KOBALT MUSIC,KOBALT MUSIC" | "NÃO"             | "ADORNO"    | "ANITTA"    | "SIM"   | "Planilha Mensal UBEM" |
+
+ @chrome	@RelatorioUBEMCT22
+Esquema do Cenário: Validar filtro Mídia com flag Sim no relatório UBEM mensal
+	Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
+	E seleciono a flag de sim
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica      | TituloOriginal | Autor   | DDA               | PossuiDuplicidade | Sincronismo                   | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "      | "DRAMATURGIA DIÁRIA" | "NOVA MUSICA HELEN" | " "            | "TESTA" | "HELEN PRODUCOES" | "NÃO"             | "AO VIVO FUNDO EM JORNALISMO" | "ANITTA"    | "NÃO"   | "Planilha Mensal UBEM" |
+
+ @chrome	@RelatorioUBEMCT23
+Esquema do Cenário: Validar filtro Mídia com flag Não no relatório UBEM mensal
+	Quando faco um filtro para um periodo <Mes> <Ano> e associacao <Associacao>
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica      | TituloOriginal | Autor   | DDA               | PossuiDuplicidade | Sincronismo                   | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "      | "DRAMATURGIA DIÁRIA" | "NOVA MUSICA HELEN" | " "            | "TESTA" | "HELEN PRODUCOES" | "NÃO"             | "AO VIVO FUNDO EM JORNALISMO" | "ANITTA"    | "NÃO"   | "Planilha Mensal UBEM" |
+
+ @chrome	@RelatorioUBEMCT24
+Esquema do Cenário: Validar filtro Mídia com flag Sim no relatório UBEM complemento
+    Quando faco um filtro complemento para um periodo <Mes> <Ano> e associacao <Associacao>
+	E seleciono a flag de sim
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica      | TituloOriginal | Autor   | DDA               | PossuiDuplicidade | Sincronismo                   | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "      | "DRAMATURGIA DIÁRIA" | "NOVA MUSICA HELEN" | " "            | "TESTA" | "HELEN PRODUCOES" | "NÃO"             | "AO VIVO FUNDO EM JORNALISMO" | "ANITTA"    | "NÃO"   | "Planilha Mensal UBEM" |
+
+ @chrome	@RelatorioUBEMCT25
+Esquema do Cenário: Validar filtro Mídia com flag Não no relatório UBEM complemento
+    Quando faco um filtro complemento para um periodo <Mes> <Ano> e associacao <Associacao>
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica      | TituloOriginal | Autor   | DDA               | PossuiDuplicidade | Sincronismo                   | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "      | "DRAMATURGIA DIÁRIA" | "NOVA MUSICA HELEN" | " "            | "TESTA" | "HELEN PRODUCOES" | "NÃO"             | "AO VIVO FUNDO EM JORNALISMO" | "ANITTA"    | "NÃO"   | "Planilha Mensal UBEM" |
+
+ @chrome	@RelatorioUBEMCT26
+Esquema do Cenário: Validar duplicidade no relatorio UBEM
+    Quando faco um filtro complemento para um periodo <Mes> <Ano> e associacao <Associacao>
+    Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
+
+    Exemplos:
+	  | Associacao | Mes       | Ano    | Programa      | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica      | TituloOriginal | Autor   | DDA               | PossuiDuplicidade | Sincronismo                   | Interpretes | Reprise | TituloRelatorio        |
+	  | "UBEM"     | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "      | "DRAMATURGIA DIÁRIA" | "NOVA MUSICA HELEN" | " "            | "TESTA" | "HELEN PRODUCOES" | "NÃO"             | "AO VIVO FUNDO EM JORNALISMO" | "ANITTA"    | "NÃO"   | "Planilha Mensal UBEM" |
+	  | "UBEM"     | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "      | "DRAMATURGIA DIÁRIA" | "NOVA MUSICA HELEN" | " "            | "TESTA" | "HELEN PRODUCOES" | "NÃO"             | "AO VIVO FUNDO EM JORNALISMO" | "ANITTA"    | "NÃO"   | "Planilha Mensal UBEM" |
