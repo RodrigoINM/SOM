@@ -415,6 +415,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>3.1.3 - Painel de Exibição.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\UsoEReporte\RelatorioECAD\Gerar Relatório ECAD.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Gerar Relatório ECAD.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\UsoEReporte\RelatorioUBEM\5.6.1 - Gerar Relatório UBEM.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -520,6 +525,7 @@
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.7-DuplicarCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Cue-Sheet\5.2.9-AlterarItemCueSheetSteps.cs" />
     <Compile Include="Steps\UsoEReporte\Painel de Exibição\PaineldeExibiçãoSteps.cs" />
+    <Compile Include="Steps\UsoEReporte\RelatorioECAD\GerarRelatórioECADSteps.cs" />
     <Compile Include="Steps\UsoEReporte\RelatorioUBEM\5.6.1-GerarRelatorioUBEMSteps.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -786,6 +792,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>3.1.3 - Painel de Exibição.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\UsoEReporte\RelatorioECAD\Gerar Relatório ECAD.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Gerar Relatório ECAD.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\UsoEReporte\RelatorioUBEM\5.6.1 - Gerar Relatório UBEM.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>5.6.1 - Gerar Relatório UBEM.feature.cs</LastGenOutput>
@@ -817,6 +827,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoItX.Dotnet.3.3.14.2\build\AutoItX.Dotnet.targets" Condition="Exists('..\packages\AutoItX.Dotnet.3.3.14.2\build\AutoItX.Dotnet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
