@@ -335,6 +335,10 @@ namespace SOM.BDD.Pages.Pagamento.Pedido
             Browser.SwitchToLastWindow();
         }
 
+        public void TrocarParaPrimeiraAbaSemFecharUltimaAba()
+        {
+            Browser.SwitchToFirstWindow();
+        }
 
         public void TrocarParaPrimeiraAba()
         {
@@ -603,6 +607,13 @@ namespace SOM.BDD.Pages.Pagamento.Pedido
                 Assert.IsTrue(ElementExtensions.IsElementVisible(Element.Css(popUpSucesso), Browser));
                 Thread.Sleep(2000);
             }
+        }
+
+        public void ValidarStatusDePedido(string Status)
+        {
+            Browser.RefreshPage();
+            var textStatus = Element.Xpath("//b[contains(., '" + Status + "')]");
+            ElementExtensions.IsElementVisible(textStatus, Browser);
         }
     }
 }
