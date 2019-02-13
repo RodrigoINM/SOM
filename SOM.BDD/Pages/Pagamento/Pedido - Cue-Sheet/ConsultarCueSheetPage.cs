@@ -47,7 +47,7 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             //Filtro de obras e fonogramas
             BtnBuscarObrasEFonogramas = Element.Css("button[ng-click='OpenObraFonogramaModal()']");
             InpObraEFonograma = Element.Css("input[ng-model='ObraFonogramaNome']");
-            BtnPesquisarObraEFonograma = Element.Css("button[ng-click='PesquisarObraFonograma()']");
+            BtnPesquisarObraEFonograma = Element.Css("a[ng-click='carregarObrasFonogramasSelecionados()']");
         }
 
         public override void Navegar()
@@ -210,8 +210,39 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             AutomatedActions.SendData(Browser, InpDataFinal, "11/11/2019");
             KeyboardActions.Tab(Browser, InpDataFinal);
            
+            MouseActions.ClickATM(Browser, BtnPesquisar);
+        }
+
+        public void ConsultaDeCueSheetPorObra(string Obra, string Fonograma)
+        {
+            AbrirFiltrosAvancadosDeCueSheet();
+            SelecionarObraFonograma(Fonograma, Obra);
+
+            ElementExtensions.IsElementVisible(BtnPesquisarObraEFonograma, Browser);
+            MouseActions.ClickATM(Browser, BtnPesquisarObraEFonograma);
 
             MouseActions.ClickATM(Browser, BtnPesquisar);
+        }
+
+        private void SelecionarObraFonograma(string Fonograma, string TituloObra)
+        {
+            MouseActions.ClickATM(Browser, BtnBuscarObrasEFonogramas);
+
+            var btnPesquisar = Element.Css("button[ng-click='PesquisarObraFonograma()']");
+
+            if (Fonograma != "" && Fonograma != " ")
+            {
+                AutomatedActions.SendData(Browser, InpObraEFonograma, Fonograma);
+                MouseActions.ClickATM(Browser, btnPesquisar);
+                MouseActions.ClickATM(Browser, Element.Xpath("//tr[@ng-click='selecionarFonograma(item)']/td[text()='" + Fonograma + "']"));
+            }
+                
+            if (TituloObra != "" && TituloObra != " ")
+            {
+                AutomatedActions.SendData(Browser, InpObraEFonograma, TituloObra);
+                MouseActions.ClickATM(Browser, btnPesquisar);
+                MouseActions.ClickATM(Browser, Element.Xpath("//tr[@ng-click='selecionarObra(item)']/td[text()='" + TituloObra + "']"));
+            }
         }
 
         public void ValidarCampoEpisodioEmBranco()

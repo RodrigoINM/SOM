@@ -512,6 +512,40 @@ this.BuscarPelosFiltroEpisodioSemProduto("\"TESTE\"", ((string[])(null)));
 #line hidden
         }
         
+        public virtual void BuscarPeloFiltroObrasEFonogramaComSucesso(string obra, string midia, string produto, string episodio, string capitulo, string dataExibicao, string repriseRebatida, string qtdItens, string status, string aprovacao, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "BuscarCueSheetCT12"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Buscar pelo filtro Obras e Fonograma com sucesso", null, @__tags);
+#line 115
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 116
+ testRunner.When(string.Format("faço uma busca de Cue-Sheet por Obra {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 117
+ testRunner.Then(string.Format("visualizo os dados da Cue-Sheet no resultado da busca {0}, {1}, {2}, {3}, {4}, {5" +
+                        "}, {6}, {7}, {8}", midia, produto, episodio, capitulo, dataExibicao, repriseRebatida, qtdItens, status, aprovacao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Buscar pelo filtro Obras e Fonograma com sucesso, \"Valorie685624649\"", new string[] {
+                "chrome",
+                "BuscarCueSheetCT12"}, SourceLine=120)]
+        public virtual void BuscarPeloFiltroObrasEFonogramaComSucesso_Valorie685624649()
+        {
+#line 115
+this.BuscarPeloFiltroObrasEFonogramaComSucesso("\"Valorie685624649\"", "\"GLOBONEWS\"", "\"Wilbert1702458109 Carrick1131067238\"", "\"Lashawnda2140085248\"", "\"01\"", "\"12/12/2018\"", "\" \"", "\"2\"", "\"Em Aberto\"", "\"0%\"", ((string[])(null)));
+#line hidden
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

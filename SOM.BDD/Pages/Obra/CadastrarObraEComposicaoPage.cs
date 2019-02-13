@@ -563,17 +563,18 @@ namespace SOM.BDD.Pages.Obra
 
         private void SelecionarObraOriginal(string obraOriginal)
         {
-                Thread.Sleep(2000);
-                JsActions.JavaScript(Browser, "$('input[id=\"originalId\"]').click();");
-                Assert.IsTrue(ElementExtensions.IsElementVisible(ComboDerivacao, Browser));
-                MouseActions.ClickATM(Browser, ComboDerivacao);
-                Thread.Sleep(2000);
-                MouseActions.ClickATM(Browser, Element.Xpath("//div[text()='" + obraOriginal + "']"));
-
-
-            //div[ng-model="ObraDados.TipoDerivacaoS.selected"] i[class="caret pull-right"]
-
-
+            if(obraOriginal != "" && obraOriginal != " ")
+            {
+                if(obraOriginal != "Sim")
+                {
+                    Thread.Sleep(2000);
+                    JsActions.JavaScript(Browser, "$('input[id=\"originalId\"]').click();");
+                    Assert.IsTrue(ElementExtensions.IsElementVisible(ComboDerivacao, Browser));
+                    MouseActions.ClickATM(Browser, ComboDerivacao);
+                    Thread.Sleep(2000);
+                    MouseActions.ClickATM(Browser, Element.Xpath("//div[text()='" + obraOriginal + "']"));
+                }
+            }
         }
 
         public void SalvarEdicaoDeObra()
@@ -855,7 +856,7 @@ namespace SOM.BDD.Pages.Obra
             }
             catch
             {
-                Thread.Sleep(2000);
+                Thread.Sleep(3000);
                 ElementExtensions.IsElementVisible(BtnCadastrarDDA, Browser);
                 MouseActions.ClickATM(Browser, BtnCadastrarDDA);
             }

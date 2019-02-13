@@ -50,5 +50,38 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
             TelaGerarPedidosDePagamentoCueSheetPage.ValidarItemDeCueSheet(Gravadora);
         }
 
+        [When(@"tento cadastrar um item de Cue-Sheet sem preencher o titulo da musica ""(.*)"", ""(.*)"", ""(.*)""")]
+        public void QuandoTentoCadastrarUmItemDeCue_SheetSemPreencherOTituloDaMusica(string Titulo, string Gravadora, string Submix)
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.CadastrarItemCueSheet(Titulo, "BK – BACKGROUND", "ABERTURA", "12", "ANITTA", CadastrarObraEComposicaoPage.Autor);
+        }
+
+        [Then(@"visualizo o campo de Título da obra em destaque")]
+        public void EntaoVisualizoOCampoDeTituloDaObraEmDestaque()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarCampoEmBranco("Título");
+        }
+
+        [Given(@"que tenha um item de Cue-Sheet cadastrado com Musica de transição ""(.*)""")]
+        public void DadoQueTenhaUmItemDeCue_SheetCadastradoComMusicaDeTransicao(string Titulo)
+        {
+            if(Titulo == "Aleatório")
+                TelaGerarPedidosDePagamentoCueSheetPage.CadastrarItemDeCueSheetComMusicaDeTransicao(CadastrarObraEComposicaoPage.Obra, "BK – BACKGROUND", "ABERTURA", "12", "ANITTA", CadastrarObraEComposicaoPage.Autor);
+            else
+                TelaGerarPedidosDePagamentoCueSheetPage.CadastrarItemDeCueSheetComMusicaDeTransicao(Titulo, "BK – BACKGROUND", "ABERTURA", "12", "ANITTA", CadastrarObraEComposicaoPage.Autor);
+        }
+
+        [When(@"tento cadastrar uma Musica de transição sem informar o Titulo")]
+        public void QuandoTentoCadastrarUmaMusicaDeTransicaoSemInformarOTitulo()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.CadastrarMusicaDeTransicao("", "");
+        }
+
+        [Then(@"visualizo o campo de Titulo em destaque")]
+        public void EntaoVisualizoOCampoDeTituloEmDestaque()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarMusicaDeTransicaoEmBranco();
+        }
+
     }
 }

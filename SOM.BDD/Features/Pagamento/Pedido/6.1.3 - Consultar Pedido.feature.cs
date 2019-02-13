@@ -516,7 +516,7 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Busca por Valor Negociado, \"Não\"", new string[] {
                 "chrome",
-                "ConsultarPedidoCT13"}, SourceLine=127)]
+                "ConsultarPedidoCT13"}, SourceLine=126)]
         public virtual void BuscaPorValorNegociado_Nao()
         {
 #line 121
@@ -534,17 +534,17 @@ this.BuscaPorValorNegociado("\"Não\"", "\"1000565\"", "\"JORNAL NACIONAL\"", "\
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Visualização de Histórico", null, @__tags);
-#line 140
+#line 130
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
 this.FeatureBackground();
-#line 141
+#line 131
  testRunner.When(string.Format("faço uma busca avançada de pedido por número {0}", numero), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 142
+#line 132
     testRunner.Then(string.Format("visualizo os dados do pedido no resultado da busca {0}, {1}, {2}, {3}, {4}, {5}, " +
                         "{6}, {7}, {8}, {9}, {10}", numero, produto, episodio, capitulo, obra, midiaADebitar, sincronismo, valorTotal, status, statusPav, reprise), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
-#line 143
+#line 133
  testRunner.And("visualizo as alterações feitas nos pedido ao acessar o historico", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
             this.ScenarioCleanup();
@@ -552,10 +552,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Visualização de Histórico, \"1001404\"", new string[] {
                 "chrome",
-                "ConsultarPedidoCT14"}, SourceLine=146)]
+                "ConsultarPedidoCT14"}, SourceLine=136)]
         public virtual void VisualizacaoDeHistorico_1001404()
         {
-#line 140
+#line 130
 this.VisualizacaoDeHistorico("\"1001404\"", "\"Avis1816412639 Ozane1633164760\"", "\"Paulette436942029\"", "\"01\"", "\"Jonelle1677499510\"", "\"GLOBONEWS\"", "\"ABERTURA\"", "\"R$ 67,50\"", "\"Em andamento\"", "\"Não requerido\"", "\"Não\"", ((string[])(null)));
 #line hidden
         }
@@ -570,14 +570,14 @@ this.VisualizacaoDeHistorico("\"1001404\"", "\"Avis1816412639 Ozane1633164760\""
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Melhorias na busca de pedido - campo produto", null, @__tags);
-#line 151
+#line 141
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
 this.FeatureBackground();
-#line 152
+#line 142
     testRunner.When(string.Format("faço uma busca avançada de pedido por produto {0}", produto), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 153
+#line 143
  testRunner.Then(string.Format("visualizo todos os pedidos que estejam vinculado ao produto buscado {0}", produto), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -585,20 +585,20 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Melhorias na busca de pedido - campo produto, \"JORNAL NACIONAL\"", new string[] {
                 "chrome",
-                "ConsultarPedidoCT15"}, SourceLine=156)]
+                "ConsultarPedidoCT15"}, SourceLine=146)]
         public virtual void MelhoriasNaBuscaDePedido_CampoProduto_JORNALNACIONAL()
         {
-#line 151
+#line 141
 this.MelhoriasNaBuscaDePedido_CampoProduto("\"JORNAL NACIONAL\"", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Melhorias na busca de pedido - campo produto, \"Avis1816412639 Ozane1633164760\"", new string[] {
                 "chrome",
-                "ConsultarPedidoCT15"}, SourceLine=156)]
+                "ConsultarPedidoCT15"}, SourceLine=146)]
         public virtual void MelhoriasNaBuscaDePedido_CampoProduto_Avis1816412639Ozane1633164760()
         {
-#line 151
+#line 141
 this.MelhoriasNaBuscaDePedido_CampoProduto("\"Avis1816412639 Ozane1633164760\"", ((string[])(null)));
 #line hidden
         }
@@ -613,14 +613,14 @@ this.MelhoriasNaBuscaDePedido_CampoProduto("\"Avis1816412639 Ozane1633164760\"",
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Melhorias na busca de pedido - campo obra", null, @__tags);
-#line 161
+#line 151
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
 this.FeatureBackground();
-#line 162
+#line 152
     testRunner.When(string.Format("faço uma busca avançada de pedido por obra {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 163
+#line 153
  testRunner.Then(string.Format("visualizo todos os pedidos que estejam vinculado a obra buscada {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -628,20 +628,20 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Melhorias na busca de pedido - campo obra, \"MUSICA DE TESTE 1\"", new string[] {
                 "chrome",
-                "ConsultarPedidoCT16"}, SourceLine=166)]
+                "ConsultarPedidoCT16"}, SourceLine=156)]
         public virtual void MelhoriasNaBuscaDePedido_CampoObra_MUSICADETESTE1()
         {
-#line 161
+#line 151
 this.MelhoriasNaBuscaDePedido_CampoObra("\"MUSICA DE TESTE 1\"", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Melhorias na busca de pedido - campo obra, \"Jonelle1677499510\"", new string[] {
                 "chrome",
-                "ConsultarPedidoCT16"}, SourceLine=166)]
+                "ConsultarPedidoCT16"}, SourceLine=156)]
         public virtual void MelhoriasNaBuscaDePedido_CampoObra_Jonelle1677499510()
         {
-#line 161
+#line 151
 this.MelhoriasNaBuscaDePedido_CampoObra("\"Jonelle1677499510\"", ((string[])(null)));
 #line hidden
         }
@@ -656,14 +656,14 @@ this.MelhoriasNaBuscaDePedido_CampoObra("\"Jonelle1677499510\"", ((string[])(nul
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Melhorias na busca de pedido - Status", null, @__tags);
-#line 176
+#line 161
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
 this.FeatureBackground();
-#line 177
+#line 162
     testRunner.When(string.Format("faço uma busca avançada de pedido por status e numero {0}, {1}", numero, status), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 178
+#line 163
     testRunner.Then(string.Format("visualizo todos os pedidos que estejam com status buscado {0}", status), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -671,30 +671,30 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Melhorias na busca de pedido - Status, \"Em andamento\"", new string[] {
                 "chrome",
-                "ConsultarPedidoCT17"}, SourceLine=181)]
+                "ConsultarPedidoCT17"}, SourceLine=166)]
         public virtual void MelhoriasNaBuscaDePedido_Status_EmAndamento()
         {
-#line 176
+#line 161
 this.MelhoriasNaBuscaDePedido_Status("\"Em andamento\"", "\"1001451\"", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Melhorias na busca de pedido - Status, \"Cancelado\"", new string[] {
                 "chrome",
-                "ConsultarPedidoCT17"}, SourceLine=181)]
+                "ConsultarPedidoCT17"}, SourceLine=166)]
         public virtual void MelhoriasNaBuscaDePedido_Status_Cancelado()
         {
-#line 176
+#line 161
 this.MelhoriasNaBuscaDePedido_Status("\"Cancelado\"", "\"1001450\"", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Melhorias na busca de pedido - Status, \"Concluído\"", new string[] {
                 "chrome",
-                "ConsultarPedidoCT17"}, SourceLine=181)]
+                "ConsultarPedidoCT17"}, SourceLine=166)]
         public virtual void MelhoriasNaBuscaDePedido_Status_Concluido()
         {
-#line 176
+#line 161
 this.MelhoriasNaBuscaDePedido_Status("\"Concluído\"", "\"1000106\"", ((string[])(null)));
 #line hidden
         }
@@ -709,14 +709,14 @@ this.MelhoriasNaBuscaDePedido_Status("\"Concluído\"", "\"1000106\"", ((string[]
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Melhorias na busca de pedido - Status Pav", null, @__tags);
-#line 187
+#line 172
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
 this.FeatureBackground();
-#line 188
+#line 173
     testRunner.When(string.Format("faço uma busca avançada de pedido por status pav e numero {0}, {1}", numero, statusPav), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 189
+#line 174
     testRunner.Then(string.Format("visualizo todos os pedidos que estejam com status pav buscado {0}", statusPav), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -724,10 +724,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Melhorias na busca de pedido - Status Pav, \"1000109\"", new string[] {
                 "chrome",
-                "ConsultarPedidoCT18"}, SourceLine=192)]
+                "ConsultarPedidoCT18"}, SourceLine=177)]
         public virtual void MelhoriasNaBuscaDePedido_StatusPav_1000109()
         {
-#line 187
+#line 172
 this.MelhoriasNaBuscaDePedido_StatusPav("\"1000109\"", "\"Aprovado\"", ((string[])(null)));
 #line hidden
         }
@@ -742,14 +742,14 @@ this.MelhoriasNaBuscaDePedido_StatusPav("\"1000109\"", "\"Aprovado\"", ((string[
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Informação não localizada", null, @__tags);
-#line 196
+#line 181
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
 this.FeatureBackground();
-#line 197
+#line 182
  testRunner.When(string.Format("faço uma busca avançada de pedido por um número que não existe no sistema {0}", numero), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 198
+#line 183
  testRunner.Then(string.Format("visualizo a mensagem de que não foram encontrados pedidos com os dados informados" +
                         " na busca {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
@@ -758,10 +758,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Informação não localizada, \"1099999\"", new string[] {
                 "chrome",
-                "ConsultarPedidoCT19"}, SourceLine=201)]
+                "ConsultarPedidoCT19"}, SourceLine=186)]
         public virtual void InformacaoNaoLocalizada_1099999()
         {
-#line 196
+#line 181
 this.InformacaoNaoLocalizada("\"1099999\"", "\"Dados não encontratos\"", ((string[])(null)));
 #line hidden
         }

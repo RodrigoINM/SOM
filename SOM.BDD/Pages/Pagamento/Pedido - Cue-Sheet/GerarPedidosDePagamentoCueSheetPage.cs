@@ -206,8 +206,17 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
 
         private void SelecionarUtilizacao(string Utilizacao)
         {
-            MouseActions.ClickATM(Browser, SlctUtilizacao);
-            MouseActions.ClickATM(Browser, Element.Xpath("//a/div[text()='" + Utilizacao + "']"));
+            try
+            {
+                MouseActions.ClickATM(Browser, SlctUtilizacao);
+                MouseActions.ClickATM(Browser, Element.Xpath("//a/div[text()='" + Utilizacao + "']"));
+            }
+            catch
+            {
+                Thread.Sleep(2000);
+                MouseActions.ClickATM(Browser, SlctUtilizacao);
+                MouseActions.ClickATM(Browser, Element.Xpath("//a/div[text()='" + Utilizacao + "']"));
+            }
         }
 
         private void SelecionarSincronismo(string Sincronismo)
@@ -374,6 +383,7 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
 
         public void ExcluirItemCueSheet(string Valor)
         {
+            Browser.RefreshPage();
             SelecionarItemDaCueSheet(Valor);
             Thread.Sleep(1500);
             MouseActions.ClickATM(Browser, BtnExcluirItemCueSheet);
@@ -639,8 +649,11 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             Thread.Sleep(2000);
             MouseActions.ClickATM(Browser, BtnAdicionarItemCueSheet);
 
-            AutomatedActions.SendData(Browser, InpTituloObra, TituloObra);
-            SelecionarObra(TituloObra, AutorDDA);
+            if(TituloObra != "" && TituloObra != " ")
+            {
+                AutomatedActions.SendData(Browser, InpTituloObra, TituloObra);
+                SelecionarObra(TituloObra, AutorDDA);
+            }
             SelecionarUtilizacao(Utilizacao);
             SelecionarSincronismo(Sincronismo);
             SelecionarInterprete(Interprete);
@@ -648,6 +661,73 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
 
             MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
             Assert.AreEqual("Registro salvo com sucesso.", ElementExtensions.GetValorAtributo(PopUpStatus, "textContent", Browser));
+        }
+
+        public void CadastrarItemCueSheet(string TituloObra, string Utilizacao, string Sincronismo, string Tempo, string Interprete, string AutorDDA)
+        {
+            Thread.Sleep(2000);
+            MouseActions.ClickATM(Browser, BtnAdicionarItemCueSheet);
+
+            PreencherItemDeCueSheetObra(TituloObra, Utilizacao, Sincronismo, Tempo);
+            SelecionarInterprete(Interprete);
+
+            MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
+        }
+
+        public void CadastrarItemDeCueSheetComMusicaDeTransicao(string TituloObra, string Utilizacao, 
+            string Sincronismo, string Tempo, string Interprete, string AutorDDA)
+        {
+            Thread.Sleep(2000);
+            MouseActions.ClickATM(Browser, BtnAdicionarItemCueSheet);
+
+            PreencherMusicaDeTransicao(TituloObra, AutorDDA);
+
+            if (Utilizacao != "")
+                SelecionarUtilizacao(Utilizacao);
+            if (Sincronismo != "")
+                SelecionarSincronismo(Sincronismo);
+            if (Tempo != "")
+                AutomatedActions.SendData(Browser, InpTempo, Tempo);
+
+            SelecionarInterprete(Interprete);
+
+            MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
+        }
+
+        public void CadastrarMusicaDeTransicao(string TituloObra, string AutorDDA)
+        {
+            Thread.Sleep(2000);
+            MouseActions.ClickATM(Browser, BtnAdicionarItemCueSheet);
+
+            PreencherMusicaDeTransicao(TituloObra, AutorDDA);
+        }
+
+        public void PreencherMusicaDeTransicao(string TituloObra, string AutorDDA)
+        {
+            MouseActions.ClickATM(Browser, BtnOpenObraFonograma);
+            MouseActions.ClickATM(Browser, Element.Css("button[ng-if='CadastraObraTransicao']"));
+
+            if (TituloObra != "" && TituloObra != " ")
+                AutomatedActions.SendDataATM(Browser, Element.Css("input[ng-model='ObraTransicao.Titulo']"), TituloObra);
+            if (AutorDDA != "" && AutorDDA != " ")
+            {
+                AutomatedActions.SendDataATM(Browser, Element.Css("input[ng-model='ObraTransicao.Autores']"), AutorDDA);
+                MouseActions.ClickATM(Browser, Element.Xpath("//a/strong[text()='" + AutorDDA + "']"));
+            }
+
+            MouseActions.ClickATM(Browser, Element.Css("button[ng-click='SalvarObraTransicao()']"));
+        }
+
+        public void ValidarMusicaDeTransicaoEmBranco()
+        {
+            var campoEmDestaque = Element.Xpath("//div[@class='form-group has-error']//label[contains(., 'Título')]");
+            ElementExtensions.IsElementVisible(campoEmDestaque, Browser);
+        }
+
+        public void ValidarCampoEmBranco(string Campo)
+        {
+            var campoEmDestaque = Element.Xpath("//div[@class='has-error']//label[contains(., '" + Campo + "')]");
+            ElementExtensions.IsElementVisible(campoEmDestaque, Browser);
         }
 
         public void ValidarItemDeCueSheet(string Valor)

@@ -305,6 +305,132 @@ this.CancelarExclusaoDeUmItemDaCue_Sheet("\"Aleatório\"", "\"Aleatório\"", "\"
 #line hidden
         }
         
+        public virtual void ExclusaoDeItemSemFechamentoAoECADUBEMOuPedidoAssociado(string produto, string episodio, string capitulo, string midia, string dia, string mes, string ano, string repriseRebatida, string obra, string utilizacao, string sincronismo, string tempo, string interprete, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "ExcluirItensDeCueSheetCT06"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Exclusão de item sem fechamento ao ECAD, UBEM ou pedido associado", null, @__tags);
+#line 69
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 70
+ testRunner.Given(string.Format("que tenha uma Cue-Sheet cadastrada no sistema {0}, {1}, {2}, {3}, {4}, {5}, {6}, " +
+                        "{7}", produto, episodio, capitulo, midia, dia, mes, ano, repriseRebatida), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 71
+ testRunner.And(string.Format("que tenha um item cadastrado na Cue-Sheet {0}, {1}, {2}, {3}, {4}", obra, utilizacao, sincronismo, tempo, interprete), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 72
+ testRunner.And(string.Format("que tenha um item aprovado {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 73
+ testRunner.And("que tenha um item com pedido enviado para pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 74
+ testRunner.When(string.Format("excluo um item cadastrado na Cue-Sheet {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 75
+ testRunner.Then(string.Format("visualizo uma mensagem de registro excluido com sucesso {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Exclusão de item sem fechamento ao ECAD, UBEM ou pedido associado, \"Aleatório\"", new string[] {
+                "chrome",
+                "ExcluirItensDeCueSheetCT06"}, SourceLine=78)]
+        public virtual void ExclusaoDeItemSemFechamentoAoECADUBEMOuPedidoAssociado_Aleatorio()
+        {
+#line 69
+this.ExclusaoDeItemSemFechamentoAoECADUBEMOuPedidoAssociado("\"Aleatório\"", "\"Aleatório\"", "\"01\"", "\"GLOBONEWS\"", "\"12\"", "\"12\"", "\"2018\"", "\"Não\"", "\"Aleatório\"", "\"BK – BACKGROUND\"", "\"ABERTURA\"", "\"16\"", "\" \"", "\"Registros excluídos com sucesso.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ExclusaoDeItemComFechamentoAoECAD(string produto, string episodio, string capitulo, string midia, string dia, string mes, string ano, string repriseRebatida, string obra, string utilizacao, string sincronismo, string tempo, string interprete, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "ExcluirItensDeCueSheetCT07"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Exclusão de item com fechamento ao ECAD", null, @__tags);
+#line 82
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 83
+    testRunner.Given(string.Format("que tenha uma Cue-Sheet cadastrada no sistema {0}, {1}, {2}, {3}, {4}, {5}, {6}, " +
+                        "{7}", produto, episodio, capitulo, midia, dia, mes, ano, repriseRebatida), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 84
+ testRunner.And(string.Format("que tenha um item cadastrado na Cue-Sheet {0}, {1}, {2}, {3}, {4}", obra, utilizacao, sincronismo, tempo, interprete), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 85
+ testRunner.And(string.Format("que tenha um item aprovado {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 86
+ testRunner.And("que tenha um item com pedido enviado para pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 87
+ testRunner.When(string.Format("excluo um item cadastrado na Cue-Sheet {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 88
+ testRunner.Then(string.Format("visualizo uma mensagem de registro excluido com sucesso {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Exclusão de item com fechamento ao ECAD, \"Aleatório\"", new string[] {
+                "chrome",
+                "ExcluirItensDeCueSheetCT07"}, SourceLine=91)]
+        public virtual void ExclusaoDeItemComFechamentoAoECAD_Aleatorio()
+        {
+#line 82
+this.ExclusaoDeItemComFechamentoAoECAD("\"Aleatório\"", "\"Aleatório\"", "\"01\"", "\"GLOBONEWS\"", "\"12\"", "\"12\"", "\"2018\"", "\"Não\"", "\"Aleatório\"", "\"BK – BACKGROUND\"", "\"ABERTURA\"", "\"16\"", "\" \"", "\"Registros excluídos com sucesso.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ExclusaoDeItemComFechamentoAoUBEM(string produto, string episodio, string capitulo, string midia, string dia, string mes, string ano, string repriseRebatida, string obra, string utilizacao, string sincronismo, string tempo, string interprete, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "ExcluirItensDeCueSheetCT08"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Exclusão de item com fechamento ao UBEM", null, @__tags);
+#line 96
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 97
+    testRunner.Given(string.Format("que tenha uma Cue-Sheet cadastrada no sistema {0}, {1}, {2}, {3}, {4}, {5}, {6}, " +
+                        "{7}", produto, episodio, capitulo, midia, dia, mes, ano, repriseRebatida), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 98
+ testRunner.And(string.Format("que tenha um item cadastrado na Cue-Sheet {0}, {1}, {2}, {3}, {4}", obra, utilizacao, sincronismo, tempo, interprete), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 99
+ testRunner.And(string.Format("que tenha um item aprovado {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 100
+ testRunner.And("que tenha um item com pedido enviado para pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 101
+ testRunner.When(string.Format("excluo um item cadastrado na Cue-Sheet {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 102
+ testRunner.Then(string.Format("visualizo uma mensagem de registro excluido com sucesso {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Exclusão de item com fechamento ao UBEM, \"Aleatório\"", new string[] {
+                "chrome",
+                "ExcluirItensDeCueSheetCT08"}, SourceLine=105)]
+        public virtual void ExclusaoDeItemComFechamentoAoUBEM_Aleatorio()
+        {
+#line 96
+this.ExclusaoDeItemComFechamentoAoUBEM("\"Aleatório\"", "\"Aleatório\"", "\"01\"", "\"GLOBONEWS\"", "\"12\"", "\"12\"", "\"2018\"", "\"Não\"", "\"Aleatório\"", "\"BK – BACKGROUND\"", "\"ABERTURA\"", "\"16\"", "\" \"", "\"Registros excluídos com sucesso.\"", ((string[])(null)));
+#line hidden
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {
