@@ -19,8 +19,7 @@ namespace SOM.BDD.Features.UsoEReporte.RelatorioECAD
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [TechTalk.SpecRun.FeatureAttribute("5.6.1 - Gerar Relatório ECAD", new string[] {
             "kill_Driver",
-            "RelatorioUBEM"}, Description="exto: Acessar sistema SOM\r\n\tDado que esteja logado no sistema SOM\r\n\tE que esteja " +
-        "na tela de Relatorio ECAD esteja aberta", SourceFile="Features\\UsoEReporte\\RelatorioECAD\\Gerar Relatório ECAD.feature", SourceLine=6)]
+            "RelatorioECAD"}, SourceFile="Features\\UsoEReporte\\RelatorioECAD\\Gerar Relatório ECAD.feature", SourceLine=6)]
     public partial class _5_6_1_GerarRelatorioECADFeature
     {
         
@@ -33,10 +32,9 @@ namespace SOM.BDD.Features.UsoEReporte.RelatorioECAD
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "5.6.1 - Gerar Relatório ECAD", "exto: Acessar sistema SOM\r\n\tDado que esteja logado no sistema SOM\r\n\tE que esteja " +
-                    "na tela de Relatorio ECAD esteja aberta", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "5.6.1 - Gerar Relatório ECAD", null, ProgrammingLanguage.CSharp, new string[] {
                         "kill_Driver",
-                        "RelatorioUBEM"});
+                        "RelatorioECAD"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,6 +68,716 @@ namespace SOM.BDD.Features.UsoEReporte.RelatorioECAD
         public virtual void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
+        }
+        
+        public virtual void FeatureBackground()
+        {
+#line 9
+#line 10
+ testRunner.Given("que esteja logado no sistema SOM", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 11
+ testRunner.And("a tela de Relatorio ECAD esteja aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+        }
+        
+        public virtual void GerarDownloadRelatorioECADSemFechamentoMensal(string tipo, string mes, string ano, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT01"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar download relatório ECAD sem fechamento mensal", null, @__tags);
+#line 14
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 15
+    testRunner.When(string.Format("filtro um relatorio ECAD preenchendo o campo tipo e o periodo {0}, {1} , {2}", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 16
+ testRunner.Then(string.Format("visualizo que a mensagem do relatorio que não possue fechamento mensal {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar download relatório ECAD sem fechamento mensal, \"Mensal\"", new string[] {
+                "chrome",
+                "RelatorioECADCT01"}, SourceLine=19)]
+        public virtual void GerarDownloadRelatorioECADSemFechamentoMensal_Mensal()
+        {
+#line 14
+this.GerarDownloadRelatorioECADSemFechamentoMensal("\"Mensal\"", "\"Dezembro\"", "\"2018\"", "\"Não existe fechamento para o período selecionado.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarNovoRelatorioMensalECADEmExcel(
+                    string tipo, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string nomedoEpisodio, 
+                    string diretor, 
+                    string ordemExecucao, 
+                    string titulodaObraMusica, 
+                    string tipodeMusica, 
+                    string autor, 
+                    string interprete, 
+                    string segundos, 
+                    string classificacao, 
+                    string compositores, 
+                    string editora, 
+                    string gravadora, 
+                    string submix, 
+                    string nomePlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT02"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar Novo relatório mensal ECAD em Excel", null, @__tags);
+#line 23
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 24
+    testRunner.When(string.Format("filtro um relatorio ECAD preenchendo o campo tipo e o periodo {0}, {1} , {2}", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 25
+ testRunner.Then(string.Format("gero um relatorio ECAD e verifico as informações {0}, {1}, {2}, {3}, {4}, {5}, {6" +
+                        "}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16} estao sendo exibidas " +
+                        "corretamente para o filtro {17}, {18} escolhidos", programa, dataExibicao, capitulo, nomedoEpisodio, diretor, ordemExecucao, titulodaObraMusica, tipodeMusica, autor, interprete, segundos, classificacao, compositores, editora, gravadora, submix, nomePlanilha, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar Novo relatório mensal ECAD em Excel, \"Mensal\"", new string[] {
+                "chrome",
+                "RelatorioECADCT02"}, SourceLine=28)]
+        public virtual void GerarNovoRelatorioMensalECADEmExcel_Mensal()
+        {
+#line 23
+this.GerarNovoRelatorioMensalECADEmExcel("\"Mensal\"", "\"Outubro\"", "\"2018\"", "\"NOVA NOVELA\"", "\"03/10/2018\"", "\"2\"", "\" \"", "\" \"", "\"1\"", "\"NOVA MUSICA HELEN\"", "\"BIBLIOTECA MUSICAL\"", "\"TESTA\"", "\"ANITTA\"", "\"10\"", "\"TM\"", "\" \"", "\"HELEN PRODUCOES\"", "\" \"", "\" \"", "\"Planilha Mensal ECAD\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarNovoRelatorioComplementoECADEmExcel(
+                    string tipo, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string nomedoEpisodio, 
+                    string diretor, 
+                    string ordemExecucao, 
+                    string titulodaObraMusica, 
+                    string tipodeMusica, 
+                    string autor, 
+                    string interprete, 
+                    string segundos, 
+                    string classificacao, 
+                    string compositores, 
+                    string editora, 
+                    string gravadora, 
+                    string submix, 
+                    string nomePlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT03"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar Novo relatório Complemento ECAD em Excel", null, @__tags);
+#line 32
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 33
+    testRunner.When(string.Format("filtro um relatorio ECAD preenchendo o campo tipo e o periodo {0}, {1} , {2}", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 34
+ testRunner.Then(string.Format("gero um relatorio ECAD e verifico as informações {0}, {1}, {2}, {3}, {4}, {5}, {6" +
+                        "}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16} estao sendo exibidas " +
+                        "corretamente para o filtro {17}, {18} escolhidos", programa, dataExibicao, capitulo, nomedoEpisodio, diretor, ordemExecucao, titulodaObraMusica, tipodeMusica, autor, interprete, segundos, classificacao, compositores, editora, gravadora, submix, nomePlanilha, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar Novo relatório Complemento ECAD em Excel, \"Complemento\"", new string[] {
+                "chrome",
+                "RelatorioECADCT03"}, SourceLine=37)]
+        public virtual void GerarNovoRelatorioComplementoECADEmExcel_Complemento()
+        {
+#line 32
+this.GerarNovoRelatorioComplementoECADEmExcel("\"Complemento\"", "\"Outubro\"", "\"2018\"", "\"ANTENA PAULISTA\"", "\"25/10/2018\"", "\"10012010\"", "\"REPRISE\"", "\" \"", "\"1\"", "\"MUSICA DA MARCELLE\"", "\"MUSICA COMERCIAL\"", "\"MARCELLE MENDONCA,MARCELLE MENDONCA,SHAKIRA MEBARAK\"", "\"DANIEL MUSY\"", "\"40\"", "\"TA\"", "\"\"", "\"EMI SONGS,SOM E LUZ,A DESCOBRIR\"", "\"RGE\"", "\"FULL MIX\"", "\"Planilha Mensal ECAD\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarRelatorioECADMensalPeloFiltroProduto_(
+                    string tipo, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string nomedoEpisodio, 
+                    string diretor, 
+                    string ordemExecucao, 
+                    string titulodaObraMusica, 
+                    string tipodeMusica, 
+                    string autor, 
+                    string interprete, 
+                    string segundos, 
+                    string classificacao, 
+                    string compositores, 
+                    string editora, 
+                    string gravadora, 
+                    string submix, 
+                    string nomePlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT04"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar relatório ECAD mensal pelo filtro Produto.", null, @__tags);
+#line 41
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 42
+    testRunner.When(string.Format("filtro um relatorio ECAD preenchendo o campo tipo periodo {0}, {1} , {2} e produt" +
+                        "o", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 43
+ testRunner.Then(string.Format("gero um relatorio ECAD e verifico as informações {0}, {1}, {2}, {3}, {4}, {5}, {6" +
+                        "}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16} estao sendo exibidas " +
+                        "corretamente para o filtro {17}, {18} escolhidos", programa, dataExibicao, capitulo, nomedoEpisodio, diretor, ordemExecucao, titulodaObraMusica, tipodeMusica, autor, interprete, segundos, classificacao, compositores, editora, gravadora, submix, nomePlanilha, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar relatório ECAD mensal pelo filtro Produto., \"Mensal\"", new string[] {
+                "chrome",
+                "RelatorioECADCT04"}, SourceLine=46)]
+        public virtual void GerarRelatorioECADMensalPeloFiltroProduto__Mensal()
+        {
+#line 41
+this.GerarRelatorioECADMensalPeloFiltroProduto_("\"Mensal\"", "\"Outubro\"", "\"2018\"", "\"NOVA NOVELA\"", "\"03/10/2018\"", "\"2\"", "\" \"", "\" \"", "\"1\"", "\"NOVA MUSICA HELEN\"", "\"BIBLIOTECA MUSICAL\"", "\"TESTA\"", "\"ANITTA\"", "\"10\"", "\"TM\"", "\" \"", "\"HELEN PRODUCOES\"", "\" \"", "\" \"", "\"Planilha Mensal ECAD\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarRelatorioECADComplementoPeloFiltroProduto_(
+                    string tipo, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string nomedoEpisodio, 
+                    string diretor, 
+                    string ordemExecucao, 
+                    string titulodaObraMusica, 
+                    string tipodeMusica, 
+                    string autor, 
+                    string interprete, 
+                    string segundos, 
+                    string classificacao, 
+                    string compositores, 
+                    string editora, 
+                    string gravadora, 
+                    string submix, 
+                    string nomePlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT05"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar relatório ECAD Complemento pelo filtro Produto.", null, @__tags);
+#line 51
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 52
+    testRunner.When(string.Format("filtro um relatorio ECAD complemento preenchendo o campo tipo periodo {0}, {1} , " +
+                        "{2} e produto", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 53
+ testRunner.Then(string.Format("gero um relatorio ECAD e verifico as informações {0}, {1}, {2}, {3}, {4}, {5}, {6" +
+                        "}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16} estao sendo exibidas " +
+                        "corretamente para o filtro {17}, {18} escolhidos", programa, dataExibicao, capitulo, nomedoEpisodio, diretor, ordemExecucao, titulodaObraMusica, tipodeMusica, autor, interprete, segundos, classificacao, compositores, editora, gravadora, submix, nomePlanilha, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar relatório ECAD Complemento pelo filtro Produto., \"Complemento\"", new string[] {
+                "chrome",
+                "RelatorioECADCT05"}, SourceLine=56)]
+        public virtual void GerarRelatorioECADComplementoPeloFiltroProduto__Complemento()
+        {
+#line 51
+this.GerarRelatorioECADComplementoPeloFiltroProduto_("\"Complemento\"", "\"Outubro\"", "\"2018\"", "\"ANTENA PAULISTA\"", "\"25/10/2018\"", "\"10012010\"", "\"REPRISE\"", "\" \"", "\"1\"", "\"MUSICA DA MARCELLE\"", "\"MUSICA COMERCIAL\"", "\"MARCELLE MENDONCA,MARCELLE MENDONCA,SHAKIRA MEBARAK\"", "\"DANIEL MUSY\"", "\"40\"", "\"TA\"", "\"\"", "\"EMI SONGS,SOM E LUZ,A DESCOBRIR\"", "\"RGE\"", "\"FULL MIX\"", "\"Planilha Mensal ECAD\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidarHistoricoDoRelatorioECAD(
+                    string tipo, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string nomedoEpisodio, 
+                    string diretor, 
+                    string ordemExecucao, 
+                    string titulodaObraMusica, 
+                    string tipodeMusica, 
+                    string autor, 
+                    string interprete, 
+                    string segundos, 
+                    string classificacao, 
+                    string compositores, 
+                    string editora, 
+                    string gravadora, 
+                    string submix, 
+                    string nomePlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT06"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar histórico do relatorio ECAD", null, @__tags);
+#line 60
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 61
+testRunner.When(string.Format("filtro um relatorio ECAD preenchendo o campo tipo e o periodo {0}, {1} , {2}", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 62
+ testRunner.Then(string.Format("gero um relatorio ECAD e verifico as informações {0}, {1}, {2}, {3}, {4}, {5}, {6" +
+                        "}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16} estao sendo exibidas " +
+                        "corretamente para o filtro {17}, {18} escolhidos", programa, dataExibicao, capitulo, nomedoEpisodio, diretor, ordemExecucao, titulodaObraMusica, tipodeMusica, autor, interprete, segundos, classificacao, compositores, editora, gravadora, submix, nomePlanilha, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line 63
+ testRunner.And("valido o historico do reletorio ECAD", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validar histórico do relatorio ECAD, \"Mensal\"", new string[] {
+                "chrome",
+                "RelatorioECADCT06"}, SourceLine=66)]
+        public virtual void ValidarHistoricoDoRelatorioECAD_Mensal()
+        {
+#line 60
+this.ValidarHistoricoDoRelatorioECAD("\"Mensal\"", "\"Outubro\"", "\"2018\"", "\"NOVA NOVELA\"", "\"03/10/2018\"", "\"2\"", "\" \"", "\" \"", "\"1\"", "\"NOVA MUSICA HELEN\"", "\"BIBLIOTECA MUSICAL\"", "\"TESTA\"", "\"ANITTA\"", "\"10\"", "\"TM\"", "\" \"", "\"HELEN PRODUCOES\"", "\" \"", "\" \"", "\"Planilha Mensal ECAD\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarRelatorioECADMensalPeloFiltroMidia_(
+                    string tipo, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string nomedoEpisodio, 
+                    string diretor, 
+                    string ordemExecucao, 
+                    string titulodaObraMusica, 
+                    string tipodeMusica, 
+                    string autor, 
+                    string interprete, 
+                    string segundos, 
+                    string classificacao, 
+                    string compositores, 
+                    string editora, 
+                    string gravadora, 
+                    string submix, 
+                    string nomePlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT07"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar relatório ECAD mensal pelo filtro mídia.", null, @__tags);
+#line 70
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 71
+    testRunner.When(string.Format("filtro um relatorio ECAD preenchendo o campo tipo , periodo {0}, {1} , {2} e midi" +
+                        "a", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 72
+ testRunner.Then(string.Format("gero um relatorio ECAD e verifico as informações {0}, {1}, {2}, {3}, {4}, {5}, {6" +
+                        "}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16} estao sendo exibidas " +
+                        "corretamente para o filtro {17}, {18} escolhidos", programa, dataExibicao, capitulo, nomedoEpisodio, diretor, ordemExecucao, titulodaObraMusica, tipodeMusica, autor, interprete, segundos, classificacao, compositores, editora, gravadora, submix, nomePlanilha, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar relatório ECAD mensal pelo filtro mídia., \"Mensal\"", new string[] {
+                "chrome",
+                "RelatorioECADCT07"}, SourceLine=75)]
+        public virtual void GerarRelatorioECADMensalPeloFiltroMidia__Mensal()
+        {
+#line 70
+this.GerarRelatorioECADMensalPeloFiltroMidia_("\"Mensal\"", "\"Outubro\"", "\"2018\"", "\"NOVA NOVELA\"", "\"03/10/2018\"", "\"2\"", "\" \"", "\" \"", "\"1\"", "\"NOVA MUSICA HELEN\"", "\"BIBLIOTECA MUSICAL\"", "\"TESTA\"", "\"ANITTA\"", "\"10\"", "\"TM\"", "\" \"", "\"HELEN PRODUCOES\"", "\" \"", "\" \"", "\"Planilha Mensal ECAD\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarRelatorioECADComplementoPeloFiltroMidia_(
+                    string tipo, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string nomedoEpisodio, 
+                    string diretor, 
+                    string ordemExecucao, 
+                    string titulodaObraMusica, 
+                    string tipodeMusica, 
+                    string autor, 
+                    string interprete, 
+                    string segundos, 
+                    string classificacao, 
+                    string compositores, 
+                    string editora, 
+                    string gravadora, 
+                    string submix, 
+                    string nomePlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT08"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar relatório ECAD Complemento pelo filtro mídia.", null, @__tags);
+#line 79
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 80
+ testRunner.When(string.Format("filtro um relatorio ECAD complemento preenchendo o campo tipo periodo {0}, {1} , " +
+                        "{2} e midia", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 81
+ testRunner.Then(string.Format("gero um relatorio ECAD e verifico as informações {0}, {1}, {2}, {3}, {4}, {5}, {6" +
+                        "}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16} estao sendo exibidas " +
+                        "corretamente para o filtro {17}, {18} escolhidos", programa, dataExibicao, capitulo, nomedoEpisodio, diretor, ordemExecucao, titulodaObraMusica, tipodeMusica, autor, interprete, segundos, classificacao, compositores, editora, gravadora, submix, nomePlanilha, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar relatório ECAD Complemento pelo filtro mídia., \"Complemento\"", new string[] {
+                "chrome",
+                "RelatorioECADCT08"}, SourceLine=84)]
+        public virtual void GerarRelatorioECADComplementoPeloFiltroMidia__Complemento()
+        {
+#line 79
+this.GerarRelatorioECADComplementoPeloFiltroMidia_("\"Complemento\"", "\"Outubro\"", "\"2018\"", "\"ANTENA PAULISTA\"", "\"25/10/2018\"", "\"10012010\"", "\"REPRISE\"", "\" \"", "\"1\"", "\"MUSICA DA MARCELLE\"", "\"MUSICA COMERCIAL\"", "\"MARCELLE MENDONCA,MARCELLE MENDONCA,SHAKIRA MEBARAK\"", "\"DANIEL MUSY\"", "\"40\"", "\"TA\"", "\"\"", "\"EMI SONGS,SOM E LUZ,A DESCOBRIR\"", "\"RGE\"", "\"FULL MIX\"", "\"Planilha Mensal ECAD\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarRelatorioECADMensalPeloFiltroDDA_(
+                    string tipo, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string nomedoEpisodio, 
+                    string diretor, 
+                    string ordemExecucao, 
+                    string titulodaObraMusica, 
+                    string tipodeMusica, 
+                    string autor, 
+                    string interprete, 
+                    string segundos, 
+                    string classificacao, 
+                    string compositores, 
+                    string editora, 
+                    string gravadora, 
+                    string submix, 
+                    string nomePlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT09"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar relatório ECAD Mensal pelo filtro DDA.", null, @__tags);
+#line 88
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 89
+    testRunner.When(string.Format("filtro um relatorio ECAD preenchendo o campo tipo , periodo {0}, {1} , {2} e DDA", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 90
+ testRunner.Then(string.Format("gero um relatorio ECAD e verifico as informações {0}, {1}, {2}, {3}, {4}, {5}, {6" +
+                        "}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16} estao sendo exibidas " +
+                        "corretamente para o filtro {17}, {18} escolhidos", programa, dataExibicao, capitulo, nomedoEpisodio, diretor, ordemExecucao, titulodaObraMusica, tipodeMusica, autor, interprete, segundos, classificacao, compositores, editora, gravadora, submix, nomePlanilha, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar relatório ECAD Mensal pelo filtro DDA., \"Mensal\"", new string[] {
+                "chrome",
+                "RelatorioECADCT09"}, SourceLine=93)]
+        public virtual void GerarRelatorioECADMensalPeloFiltroDDA__Mensal()
+        {
+#line 88
+this.GerarRelatorioECADMensalPeloFiltroDDA_("\"Mensal\"", "\"Outubro\"", "\"2018\"", "\"NOVA NOVELA\"", "\"03/10/2018\"", "\"2\"", "\" \"", "\" \"", "\"1\"", "\"NOVA MUSICA HELEN\"", "\"BIBLIOTECA MUSICAL\"", "\"TESTA\"", "\"ANITTA\"", "\"10\"", "\"TM\"", "\" \"", "\"HELEN PRODUCOES\"", "\" \"", "\" \"", "\"Planilha Mensal ECAD\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarRelatorioECADComplementoPeloFiltroDDA_(
+                    string tipo, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string nomedoEpisodio, 
+                    string diretor, 
+                    string ordemExecucao, 
+                    string titulodaObraMusica, 
+                    string tipodeMusica, 
+                    string autor, 
+                    string interprete, 
+                    string segundos, 
+                    string classificacao, 
+                    string compositores, 
+                    string editora, 
+                    string gravadora, 
+                    string submix, 
+                    string nomePlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT10"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar relatório ECAD Complemento pelo filtro DDA.", null, @__tags);
+#line 97
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 98
+ testRunner.When(string.Format("filtro um relatorio ECAD complemento preenchendo o campo tipo periodo {0}, {1} , " +
+                        "{2} e DDA", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 99
+ testRunner.Then(string.Format("gero um relatorio ECAD e verifico as informações {0}, {1}, {2}, {3}, {4}, {5}, {6" +
+                        "}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16} estao sendo exibidas " +
+                        "corretamente para o filtro {17}, {18} escolhidos", programa, dataExibicao, capitulo, nomedoEpisodio, diretor, ordemExecucao, titulodaObraMusica, tipodeMusica, autor, interprete, segundos, classificacao, compositores, editora, gravadora, submix, nomePlanilha, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar relatório ECAD Complemento pelo filtro DDA., \"Complemento\"", new string[] {
+                "chrome",
+                "RelatorioECADCT10"}, SourceLine=102)]
+        public virtual void GerarRelatorioECADComplementoPeloFiltroDDA__Complemento()
+        {
+#line 97
+this.GerarRelatorioECADComplementoPeloFiltroDDA_("\"Complemento\"", "\"Outubro\"", "\"2018\"", "\"ANTENA PAULISTA\"", "\"25/10/2018\"", "\"10012010\"", "\"REPRISE\"", "\" \"", "\"1\"", "\"MUSICA DA MARCELLE\"", "\"MUSICA COMERCIAL\"", "\"MARCELLE MENDONCA,MARCELLE MENDONCA,SHAKIRA MEBARAK\"", "\"DANIEL MUSY\"", "\"40\"", "\"TA\"", "\"\"", "\"EMI SONGS,SOM E LUZ,A DESCOBRIR\"", "\"RGE\"", "\"FULL MIX\"", "\"Planilha Mensal ECAD\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarRelatorioECADComCampoSegundosSuperiorAZero_(
+                    string tipo, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string nomedoEpisodio, 
+                    string diretor, 
+                    string ordemExecucao, 
+                    string titulodaObraMusica, 
+                    string tipodeMusica, 
+                    string autor, 
+                    string interprete, 
+                    string segundos, 
+                    string classificacao, 
+                    string compositores, 
+                    string editora, 
+                    string gravadora, 
+                    string submix, 
+                    string nomePlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT11"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar relatório ECAD com campo segundos superior a Zero.", null, @__tags);
+#line 106
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 107
+    testRunner.When(string.Format("filtro um relatorio ECAD preenchendo o campo tipo e o periodo {0}, {1} , {2}", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 108
+ testRunner.Then(string.Format("gero um relatorio ECAD e verifico as informações {0}, {1}, {2}, {3}, {4}, {5}, {6" +
+                        "}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16} estao sendo exibidas " +
+                        "corretamente para o filtro {17}, {18} escolhidos", programa, dataExibicao, capitulo, nomedoEpisodio, diretor, ordemExecucao, titulodaObraMusica, tipodeMusica, autor, interprete, segundos, classificacao, compositores, editora, gravadora, submix, nomePlanilha, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar relatório ECAD com campo segundos superior a Zero., \"Mensal\"", new string[] {
+                "chrome",
+                "RelatorioECADCT11"}, SourceLine=111)]
+        public virtual void GerarRelatorioECADComCampoSegundosSuperiorAZero__Mensal()
+        {
+#line 106
+this.GerarRelatorioECADComCampoSegundosSuperiorAZero_("\"Mensal\"", "\"Outubro\"", "\"2018\"", "\"NOVA NOVELA\"", "\"03/10/2018\"", "\"2\"", "\" \"", "\" \"", "\"1\"", "\"NOVA MUSICA HELEN\"", "\"BIBLIOTECA MUSICAL\"", "\"TESTA\"", "\"ANITTA\"", "\"10\"", "\"TM\"", "\" \"", "\"HELEN PRODUCOES\"", "\" \"", "\" \"", "\"Planilha Mensal ECAD\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidarDuplicidadeDeItensNoRelatorioECAD(
+                    string tipo, 
+                    string mes, 
+                    string ano, 
+                    string programa, 
+                    string dataExibicao, 
+                    string capitulo, 
+                    string nomedoEpisodio, 
+                    string diretor, 
+                    string ordemExecucao, 
+                    string titulodaObraMusica, 
+                    string tipodeMusica, 
+                    string autor, 
+                    string interprete, 
+                    string segundos, 
+                    string classificacao, 
+                    string compositores, 
+                    string editora, 
+                    string gravadora, 
+                    string submix, 
+                    string nomePlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT12"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar duplicidade de itens no relatório ECAD", null, @__tags);
+#line 115
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 116
+    testRunner.When(string.Format("filtro um relatorio ECAD preenchendo o campo tipo e o periodo {0}, {1} , {2}", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 117
+ testRunner.Then(string.Format("gero um relatorio ECAD e verifico as informações {0}, {1}, {2}, {3}, {4}, {5}, {6" +
+                        "}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16} estao sendo exibidas " +
+                        "corretamente para o filtro {17}, {18} escolhidos", programa, dataExibicao, capitulo, nomedoEpisodio, diretor, ordemExecucao, titulodaObraMusica, tipodeMusica, autor, interprete, segundos, classificacao, compositores, editora, gravadora, submix, nomePlanilha, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validar duplicidade de itens no relatório ECAD, Variant 0", new string[] {
+                "chrome",
+                "RelatorioECADCT12"}, SourceLine=120)]
+        public virtual void ValidarDuplicidadeDeItensNoRelatorioECAD_Variant0()
+        {
+#line 115
+this.ValidarDuplicidadeDeItensNoRelatorioECAD("\"Mensal\"", "\"Outubro\"", "\"2018\"", "\"NOVA NOVELA\"", "\"03/10/2018\"", "\"2\"", "\" \"", "\" \"", "\"1\"", "\"NOVA MUSICA HELEN\"", "\"BIBLIOTECA MUSICAL\"", "\"TESTA\"", "\"ANITTA\"", "\"10\"", "\"TM\"", "\" \"", "\"HELEN PRODUCOES\"", "\" \"", "\" \"", "\"Planilha Mensal ECAD\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validar duplicidade de itens no relatório ECAD, Variant 1", new string[] {
+                "chrome",
+                "RelatorioECADCT12"}, SourceLine=120)]
+        public virtual void ValidarDuplicidadeDeItensNoRelatorioECAD_Variant1()
+        {
+#line 115
+this.ValidarDuplicidadeDeItensNoRelatorioECAD("\"Mensal\"", "\"Outubro\"", "\"2018\"", "\"NOVA NOVELA\"", "\"03/10/2018\"", "\"2\"", "\" \"", "\" \"", "\"1\"", "\"NOVA MUSICA HELEN\"", "\"BIBLIOTECA MUSICAL\"", "\"TESTA\"", "\"ANITTA\"", "\"10\"", "\"TM\"", "\" \"", "\"HELEN PRODUCOES\"", "\" \"", "\" \"", "\"Planilha Mensal ECAD\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void FecharPeriodoMensalComPeriodoFechadoDoRelatorioECAD(string mes, string ano, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT13"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Fechar periodo mensal com periodo fechado do relatorio ECAD", null, @__tags);
+#line 125
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 126
+    testRunner.When(string.Format("realizo um fechamento mensal do relatório ECAD preenchendo o campo periodo {0}, {" +
+                        "1}", mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 127
+    testRunner.Then(string.Format("visualizo a mensagem de fechamento em destaque {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Fechar periodo mensal com periodo fechado do relatorio ECAD, \"Outubro\"", new string[] {
+                "chrome",
+                "RelatorioECADCT13"}, SourceLine=130)]
+        public virtual void FecharPeriodoMensalComPeriodoFechadoDoRelatorioECAD_Outubro()
+        {
+#line 125
+this.FecharPeriodoMensalComPeriodoFechadoDoRelatorioECAD("\"Outubro\"", "\"2017\"", "\"Já foi realizado fechamento para este período.\"", ((string[])(null)));
+#line hidden
         }
         
         [TechTalk.SpecRun.TestRunCleanup()]

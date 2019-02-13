@@ -471,6 +471,7 @@
     <Compile Include="Pages\Produto\Template\CadastroDeTemplatePage.cs" />
     <Compile Include="Pages\UsoEReporte\Cue-Sheet\CadastrarCueSheetPage.cs" />
     <Compile Include="Pages\UsoEReporte\Painel de Exibição\PaineldeExibiçãoPage.cs" />
+    <Compile Include="Pages\UsoEReporte\RelatorioECAD\RelatorioECADPage.cs" />
     <Compile Include="Pages\UsoEReporte\RelatorioUBEM\GerarRelatorioUBEM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\BuscaRapidaSteps.cs" />

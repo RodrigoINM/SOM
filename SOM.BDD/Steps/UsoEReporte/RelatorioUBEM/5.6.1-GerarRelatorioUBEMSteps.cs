@@ -1,5 +1,4 @@
 ﻿using Framework.Core.Interfaces;
-using SOM.BDD.Helpers;
 using SOM.BDD.Pages.UsoEReporte.RelatorioUBEM;
 using System.Configuration;
 using TechTalk.SpecFlow;
