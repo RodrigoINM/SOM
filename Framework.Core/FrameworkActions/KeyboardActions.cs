@@ -67,5 +67,11 @@ namespace Framework.Core.FrameworkActions
         {
             browser.ObterDriver().FindElement(elemento.ObterBy()).SendKeys(Keys.LeftShift + Keys.Home);
         }
+
+        public static void ArrowRight<T>(T browser, Element elemento) where T : IBrowser
+        {
+            browser.ObterDriver().FindElement(elemento.ObterBy()).SendKeys(Keys.ArrowRight);
+        }
+
     }
 }
