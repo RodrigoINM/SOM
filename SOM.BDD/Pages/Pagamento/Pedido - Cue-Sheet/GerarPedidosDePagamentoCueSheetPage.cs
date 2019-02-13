@@ -733,7 +733,15 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
         public void ValidarItemDeCueSheet(string Valor)
         {
             var textoItemCueSheet = Element.Xpath("//tbody[@dnd-list='ListCueSheetItemViewDragDrop.lists']//td[contains(., '" + Valor + "')]");
-            ElementExtensions.IsElementVisible(textoItemCueSheet, Browser);
+            try
+            {
+                ElementExtensions.IsElementVisible(textoItemCueSheet, Browser);
+            }
+            catch
+            {
+                Thread.Sleep(4000);
+                ElementExtensions.IsElementVisible(textoItemCueSheet, Browser);
+            }
         }
     }
 }
