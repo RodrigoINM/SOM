@@ -97,26 +97,26 @@ Esquema do Cenário: Revogar itens enviados para pagamento
       | Mensagem                                                  |
       | "A aprovação foi revogada e o item liberado para edição." |
   
-#Esquema do Cenário: Revogar itens enviados ao ECAD
-#    Dado que o item de <Ordem> tenha um <NumeroPedido> e tenha sido enviado ao relatório ECAD
-#    Quando revogo este item
-#    Então visualizo a <Mensagem>
-#
-#    Exemplos:
-#        | Ordem | NumeroPedido | Mensagem                                                  |
-#        | "1"   | "1000553"    | "A aprovação foi revogada e o item liberado para edição." |
-#
-#
-#Esquema do Cenário: Revogar itens enviados ao UBEM
-#    Dado que o item de <Ordem> tenha um <NumeroPedido> e tenha sido enviado ao relatório UBEM
-#    Quando revogo este item
-#    Então visualizo a <Mensagem>
-#
-#    Exemplos:
-#        | Ordem | NumeroPedido | Mensagem                                                  |
-#        | "1"   | "1000553"    | "A aprovação foi revogada e o item liberado para edição." |
-#
-#
+Esquema do Cenário: Revogar itens enviados ao ECAD
+    Dado que tenha uma Cue-Sheet cadastrada com dois pedidos gerados
+	E que tenha um item com pedido enviado para pagamento
+	Quando revogo o item com pedido enviado para pagamento
+	Então visualizo a mensagem que a aprovação foi revogada e os itens estão liberados para edição <Mensagem>
+	
+  Exemplos:
+      | Mensagem                                                  |
+      | "A aprovação foi revogada e o item liberado para edição." |
+
+Esquema do Cenário: Revogar itens enviados ao UBEM
+    Dado que tenha uma Cue-Sheet cadastrada com dois pedidos gerados
+	E que tenha um item com pedido enviado para pagamento
+	Quando revogo o item com pedido enviado para pagamento
+	Então visualizo a mensagem que a aprovação foi revogada e os itens estão liberados para edição <Mensagem>
+	
+  Exemplos:
+      | Mensagem                                                  |
+      | "A aprovação foi revogada e o item liberado para edição." |
+
 #Esquema do Cenário: Aprovar com usuário sem permissão
 #    Dado que logo com um usuário sem premissão
 #    Quando tento aprovar um item com <Ordem>
@@ -125,7 +125,6 @@ Esquema do Cenário: Revogar itens enviados para pagamento
 #    Exemplos:
 #        | Ordem |
 #        | "1"   |
-#
 #
 #Esquema do Cenário: Revogar com usuário sem permissão
 #    Dado que logo com um usuário sem premissão

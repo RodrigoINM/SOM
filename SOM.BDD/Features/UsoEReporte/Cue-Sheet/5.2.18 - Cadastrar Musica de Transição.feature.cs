@@ -78,6 +78,86 @@ namespace SOM.BDD.Features.UsoEReporte.Cue_Sheet
 #line hidden
         }
         
+        public virtual void CadastrarNovaMusicaNaCue_SheetComSucesso(string titulo, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CadastroDeObraNaCueSheetCT01"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastrar nova Música na cue-sheet com sucesso", null, @__tags);
+#line 12
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 13
+    testRunner.Given("que tenha uma obra cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 14
+ testRunner.And("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 15
+ testRunner.And("que tenha uma cue-sheet cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 16
+ testRunner.When(string.Format("cadastro um item de Cue-Sheet com Musica de transição {0}", titulo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 17
+ testRunner.Then(string.Format("visualizo a Musica de Transição cadastrada com sucesso {0}", titulo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cadastrar nova Música na cue-sheet com sucesso, \"Aleatório\"", new string[] {
+                "chrome",
+                "CadastroDeObraNaCueSheetCT01"}, SourceLine=20)]
+        public virtual void CadastrarNovaMusicaNaCue_SheetComSucesso_Aleatorio()
+        {
+#line 12
+this.CadastrarNovaMusicaNaCue_SheetComSucesso("\"Aleatório\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void CadastrarNovaMusicaNaCue_SheetComInformacoesDuplicadas(string titulo, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CadastroDeObraNaCueSheetCT02"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastrar nova Música na cue-sheet com informações duplicadas", null, @__tags);
+#line 24
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 25
+    testRunner.Given("que tenha uma obra cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 26
+ testRunner.And("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 27
+ testRunner.And("que tenha uma cue-sheet cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 28
+ testRunner.When(string.Format("cadastro um item de Cue-Sheet com Musica de transição {0}", titulo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 29
+ testRunner.And(string.Format("cadastro um item de Cue-Sheet com Musica de transição repetida {0}", titulo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 30
+ testRunner.Then("visualizo um mensagem de alerta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cadastrar nova Música na cue-sheet com informações duplicadas, \"Aleatório\"", new string[] {
+                "chrome",
+                "CadastroDeObraNaCueSheetCT02"}, SourceLine=33)]
+        public virtual void CadastrarNovaMusicaNaCue_SheetComInformacoesDuplicadas_Aleatorio()
+        {
+#line 24
+this.CadastrarNovaMusicaNaCue_SheetComInformacoesDuplicadas("\"Aleatório\"", ((string[])(null)));
+#line hidden
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

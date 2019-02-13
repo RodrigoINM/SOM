@@ -124,18 +124,8 @@ Esquema do Cenario: Busca por Valor Negociado
     
   Exemplos:
       | ValorNegociado | Numero    | Produto           | Episodio | Capitulo | Obra                | MidiaADebitar | Sincronismo | ValorTotal  | Status         | StatusPav       | Reprise |
-      #| "Sim"          | "1000554" | "JORNAL NACIONAL" | ""       | "999"    | "BANG BANG"         | "TV"          | "FUNDO"     | "R$ 50,00"  | "Em andamento" | "Não requerido" | "Sim"   |
       | "Não"          | "1000565" | "JORNAL NACIONAL" | ""       | "999"    | "MUSICA DE TESTE 1" | "TV"          | "ABERTURA"  | "R$ 800,00" | "Em andamento" | "Não requerido" | "Não"   |
   
-#Esquema do Cenario: Visualização de Relatório de Pedido
-#    Quando informo e seleciono o <Numero> do pedido
-#    E faco download do relatorio de pagamento do resultado da busca
-#    Entao visualizo o relatorio de status sobre autorizacoes de uso de musicas do pedido pesquisado
-#   
-#  Exemplos:
-#      | Numero    |
-#      | "1000565" |
-
 @chrome @ConsultarPedidoCT14
 Esquema do Cenario: Visualização de Histórico
 	Quando faço uma busca avançada de pedido por número <Numero>
@@ -166,11 +156,6 @@ Esquema do Cenario: Melhorias na busca de pedido - campo obra
       | Obra                |
       | "MUSICA DE TESTE 1" |
       | "Jonelle1677499510" |
-  
-#Cenario: Melhorias na busca de pedido - Ordenação
-#    Dado a tela de busca de pedido esteja aberta e faço uma busca simples
-#    Quando clico nas colunas da grid
-#    E visualizo a ordenação decrescente por padrão
 
 @chrome @ConsultarPedidoCT17
 Esquema do Cenario: Melhorias na busca de pedido - Status
@@ -201,3 +186,16 @@ Esquema do Cenario: Informação não localizada
       | Numero    | Mensagem                |
       | "1099999" | "Dados não encontratos" |
   
+#Esquema do Cenario: Visualização de Relatório de Pedido
+#    Quando informo e seleciono o <Numero> do pedido
+#    E faco download do relatorio de pagamento do resultado da busca
+#    Entao visualizo o relatorio de status sobre autorizacoes de uso de musicas do pedido pesquisado
+#   
+#  Exemplos:
+#      | Numero    |
+#      | "1000565" |
+#
+#Cenario: Melhorias na busca de pedido - Ordenação
+#    Dado a tela de busca de pedido esteja aberta e faço uma busca simples
+#    Quando clico nas colunas da grid
+#    E visualizo a ordenação decrescente por padrão

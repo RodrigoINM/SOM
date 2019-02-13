@@ -111,13 +111,12 @@ Esquema do Cenário: Buscar pelos filtro Episódio sem Produto
       | Episodio | 
       | "TESTE"  | 
   
-#Esquema do Cenário: Buscar pelo filtro Obras e Fonograma com sucesso
-#    Quando faço uma busca por <ObraFonogramaDesejado>
-#    Então visualizo a tela de busca por obra para seleção
-#    E a grid com os campos <Midia>, <Produto>, <Episodio>, <Capitulo>, <DataExibicao>, <RepriseRebatida>, <QtdItens>, <Status>, <Aprovacao> preenchidos com o resultados da busca por Obra ou Fonograma
-#
-#    Exemplos:
-#        | ObraFonogramaDesejado | Midia | Produto           | Episodio | Capitulo | DataExibicao | RepriseRebatida | QtdItens | Status     | Aprovacao |
-#        | "Teste INM"           | "TV"  | "JORNAL NACIONAL" | "1"      | "12"     | "12-03-2018" | "Rebatida"      | "10"     | "Validada" | "100%"    |
-#
-#
+@chrome @BuscarCueSheetCT12
+Esquema do Cenário: Buscar pelo filtro Obras e Fonograma com sucesso
+	Quando faço uma busca de Cue-Sheet por Obra <Obra>
+	Então visualizo os dados da Cue-Sheet no resultado da busca <Midia>, <Produto>, <Episodio>, <Capitulo>, <DataExibicao>, <RepriseRebatida>, <QtdItens>, <Status>, <Aprovacao>
+	  
+  Exemplos:
+      | Obra               | Midia       | Produto                               | Episodio              | Capitulo | DataExibicao | RepriseRebatida | QtdItens | Status      | Aprovacao |
+      | "Valorie685624649" | "GLOBONEWS" | "Wilbert1702458109 Carrick1131067238" | "Lashawnda2140085248" | "01"     | "12/12/2018" | " "             | "2"      | "Em Aberto" | "0%"      |
+  

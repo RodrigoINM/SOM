@@ -65,7 +65,46 @@ Esquema do Cenário: Cancelar exclusão de um item da cue-sheet
       | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Obra2             | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                           |
       | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "TESTE INMETRICS" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Registros excluídos com sucesso." |
   
+@chrome @ExcluirItensDeCueSheetCT06
+Esquema do Cenário: Exclusão de item sem fechamento ao ECAD, UBEM ou pedido associado
+	Dado que tenha uma Cue-Sheet cadastrada no sistema <Produto>, <Episodio>, <Capitulo>, <Midia>, <Dia>, <Mes>, <Ano>, <RepriseRebatida>
+	E que tenha um item cadastrado na Cue-Sheet <Obra>, <Utilizacao>, <Sincronismo>, <Tempo>, <Interprete>
+	E que tenha um item aprovado <Obra>
+	E que tenha um item com pedido enviado para pagamento
+	Quando excluo um item cadastrado na Cue-Sheet <Obra>
+	Então visualizo uma mensagem de registro excluido com sucesso <Mensagem>
+	
+  Exemplos:
+      | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                           |
+      | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Registros excluídos com sucesso." |
+  
+@chrome @ExcluirItensDeCueSheetCT07
+Esquema do Cenário: Exclusão de item com fechamento ao ECAD
+    Dado que tenha uma Cue-Sheet cadastrada no sistema <Produto>, <Episodio>, <Capitulo>, <Midia>, <Dia>, <Mes>, <Ano>, <RepriseRebatida>
+	E que tenha um item cadastrado na Cue-Sheet <Obra>, <Utilizacao>, <Sincronismo>, <Tempo>, <Interprete>
+	E que tenha um item aprovado <Obra>
+	E que tenha um item com pedido enviado para pagamento
+	Quando excluo um item cadastrado na Cue-Sheet <Obra>
+	Então visualizo uma mensagem de registro excluido com sucesso <Mensagem>
+	
+  Exemplos:
+      | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                           |
+      | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Registros excluídos com sucesso." |
+  
 
+@chrome @ExcluirItensDeCueSheetCT08
+Esquema do Cenário: Exclusão de item com fechamento ao UBEM
+    Dado que tenha uma Cue-Sheet cadastrada no sistema <Produto>, <Episodio>, <Capitulo>, <Midia>, <Dia>, <Mes>, <Ano>, <RepriseRebatida>
+	E que tenha um item cadastrado na Cue-Sheet <Obra>, <Utilizacao>, <Sincronismo>, <Tempo>, <Interprete>
+	E que tenha um item aprovado <Obra>
+	E que tenha um item com pedido enviado para pagamento
+	Quando excluo um item cadastrado na Cue-Sheet <Obra>
+	Então visualizo uma mensagem de registro excluido com sucesso <Mensagem>
+	
+  Exemplos:
+      | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                           |
+      | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Registros excluídos com sucesso." |
+  
 ##Conversa#==========#==========#==========#==========#==========#==========#==========#==========#==========#==========#
 #    #Regras definidas em reunião com o cliente
 #    Ao excluir um item que nunca foi enviado ao ECAD ou a UBEM o item poderá ser excluído definitivamente.
@@ -78,27 +117,6 @@ Esquema do Cenário: Cancelar exclusão de um item da cue-sheet
 #Contexto:
 #    Dado que estou na tela de detalhe da cue-sheet
 #    E selecionei os itens que desejo excluir
-#
-#    Cenário: Exclusão de item sem fechamento ao ECAD, UBEM ou pedido associado
-#        Dado que nenhum dos itens selecionados foi relacionado no fechamento ECAD ou UBEM
-#        Quando confirmo a exclusão dos itens
-#        Então visualizo a mensagem confirmando a exclusão
-#        E não visualizo as linhas excluídas na cue-sheet
-#        E o item é excluído fisicamente da base de dados
-#
-#    Cenário: Exclusão de item com fechamento ao ECAD
-#        Dado que os itens selecionados foram relacionados no fechamento ECAD
-#        Quando confirmo a exclusão dos itens
-#        Então visualizo a mensagem confirmando a exclusão
-#        E não visualizo as linhas excluídas na cue-sheet
-#        E o item inativado na base para ser usado em futuros relatórios de complemento
-#
-#    Cenário: Exclusão de item com fechamento ao UBEM
-#        Dado que os itens selecionados foram relacionados no fechamento UBEM
-#        Quando confirmo a exclusão dos itens
-#        Então visualizo a mensagem confirmando a exclusão
-#        E não visualizo as linhas excluídas na cue-sheet
-#        E o item inativado na base para ser usado em futuros relatórios de complemento
 #
 #    Cenário: Exclusão total de itens com pedido "Em andamento"
 #        Dado que os itens selecionados estão associados a pedido com status em andamento

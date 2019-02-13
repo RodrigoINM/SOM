@@ -434,6 +434,66 @@ this.RevogarItensEnviadosParaPagamento("\"A aprovação foi revogada e o item li
 #line hidden
         }
         
+        public virtual void RevogarItensEnviadosAoECAD(string mensagem, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Revogar itens enviados ao ECAD", null, exampleTags);
+#line 100
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 101
+    testRunner.Given("que tenha uma Cue-Sheet cadastrada com dois pedidos gerados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 102
+ testRunner.And("que tenha um item com pedido enviado para pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 103
+ testRunner.When("revogo o item com pedido enviado para pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 104
+ testRunner.Then(string.Format("visualizo a mensagem que a aprovação foi revogada e os itens estão liberados para" +
+                        " edição {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Revogar itens enviados ao ECAD, \"A aprovação foi revogada e o item liberado para " +
+            "edição.\"", SourceLine=107)]
+        public virtual void RevogarItensEnviadosAoECAD_AAprovacaoFoiRevogadaEOItemLiberadoParaEdicao_()
+        {
+#line 100
+this.RevogarItensEnviadosAoECAD("\"A aprovação foi revogada e o item liberado para edição.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void RevogarItensEnviadosAoUBEM(string mensagem, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Revogar itens enviados ao UBEM", null, exampleTags);
+#line 110
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 111
+    testRunner.Given("que tenha uma Cue-Sheet cadastrada com dois pedidos gerados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 112
+ testRunner.And("que tenha um item com pedido enviado para pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 113
+ testRunner.When("revogo o item com pedido enviado para pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 114
+ testRunner.Then(string.Format("visualizo a mensagem que a aprovação foi revogada e os itens estão liberados para" +
+                        " edição {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Revogar itens enviados ao UBEM, \"A aprovação foi revogada e o item liberado para " +
+            "edição.\"", SourceLine=117)]
+        public virtual void RevogarItensEnviadosAoUBEM_AAprovacaoFoiRevogadaEOItemLiberadoParaEdicao_()
+        {
+#line 110
+this.RevogarItensEnviadosAoUBEM("\"A aprovação foi revogada e o item liberado para edição.\"", ((string[])(null)));
+#line hidden
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

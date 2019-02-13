@@ -75,10 +75,3 @@ Esquema do Cenário: Validar mensagem de alerta ao duplicar cue-sheet sem altera
       | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                                                                                          |
       | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | " "             | "Aleatório" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Já existe uma cue-sheet cadastrada para este mesmo Produto, Capítulo, Mídia e Data de Exibição." |
   
-#Esquema do Cenário: Validar mensagem ao duplicar Cue-sheet de Rebatida
-#    Quando duplico a cue-sheet prenchendo os campos <Capitulo>, <Midia>, <DataExibicao> e <RepriseRebatida> que não seja inédita
-#    Então visualizo a <Mensagem>
-#
-#    Exemplos:
-#        | Capitulo | Midia | DataExibicao | RepriseRebatida | Mensagem                                                                                    |
-#        | "12"     | "TV"  | "12-03-2018" | "Rebatida"      | "Esta cue-sheet não pode ser uma reprise pois o capítulo não está cadastrado como inédito." |

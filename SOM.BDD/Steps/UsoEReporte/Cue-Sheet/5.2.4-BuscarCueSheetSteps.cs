@@ -123,5 +123,11 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
             TelaConsultarCueSheetPage.ValidarCampoEpisodioEmBranco();
         }
 
+        [When(@"faço uma busca de Cue-Sheet por Obra ""(.*)""")]
+        public void QuandoFacoUmaBuscaDeCue_SheetPorObra(string Obra)
+        {
+            TelaConsultarCueSheetPage.ConsultaDeCueSheetPorObra(Obra, "");
+        }
+
     }
 }

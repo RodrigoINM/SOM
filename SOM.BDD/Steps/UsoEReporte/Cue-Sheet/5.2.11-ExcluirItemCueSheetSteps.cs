@@ -104,5 +104,21 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
             TelaGerarPedidosDePagamentoCueSheetPage.ValidarItemCueSheetRandomicoCadastrado(Obra2, Tempo, Utilizacao, Sincronismo, "Não");
         }
 
+        [Given(@"que tenha um item aprovado ""(.*)""")]
+        public void DadoQueTenhaUmItemAprovado(string Obra)
+        {
+            if(Obra == "Aleatório")
+            {
+                TelaGerarPedidosDePagamentoCueSheetPage.AprovarItemDeCueSheet(CadastrarObraEComposicaoPage.Obra);
+                TelaGerarPedidosDePagamentoCueSheetPage.GerarPedidoParaItemDeCueSheet("Sim", CadastrarObraEComposicaoPage.Obra, "Sim");
+            }
+            else
+            {
+                TelaGerarPedidosDePagamentoCueSheetPage.AprovarItemDeCueSheet(Obra);
+                TelaGerarPedidosDePagamentoCueSheetPage.GerarPedidoParaItemDeCueSheet("Sim", Obra, "Sim");
+            }
+        }
+
+
     }
 }
