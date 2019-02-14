@@ -8,6 +8,8 @@ using System;
 using Framework.Core.Helpers;
 using SOM.BDD.Pages.Produto;
 using SOM.BDD.Pages.Obra;
+using System.Windows.Forms;
+using SOM.BDD.Helpers;
 
 namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
 {
@@ -212,6 +214,27 @@ namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
             ValidarDadosDaCueSheet("Episódio", Episodio);
             ValidarDadosDaCueSheet("Capítulo", Capitulo);
             ValidarDadosDaCueSheet("Mídia", Midia);
+        }
+
+        public void RealizarUploadDeArquivo(string Extensao)
+        {
+            Thread.Sleep(2000);
+            var BtnUpload = Element.Css("a[ng-click='AbrirModalArquivo()']");
+            MouseActions.ClickATM(Browser, BtnUpload);
+
+            var BtnCarregarArquivo = Element.Css("input[id='arquivo']");
+            MouseActions.ClickATM(Browser, BtnCarregarArquivo);
+            Thread.Sleep(2000);
+
+            if (Extensao == "TXT")
+                SendKeys.SendWait(GetPath.GetResourcePath("ONOF 30 BL1.txt"));
+            if (Extensao == "EDL")
+                SendKeys.SendWait(GetPath.GetResourcePath("MASTER GUILHERME VETERANO E APRENDIZ  GUILHERME.edl"));
+            SendKeys.SendWait(@"{Enter}");
+
+            var SalvarUpload = Element.Css("button[ng-click='uploadArquivoItemCueSheet()']");
+            ElementExtensions.IsElementVisible(SalvarUpload, Browser);
+            MouseActions.ClickATM(Browser, SalvarUpload);
         }
 
         private void ValidarDadosDaCueSheet(string Campo, string Valor)

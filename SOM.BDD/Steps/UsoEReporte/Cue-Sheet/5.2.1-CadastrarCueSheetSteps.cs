@@ -1,4 +1,6 @@
 ﻿using Framework.Core.Interfaces;
+using SOM.BDD.Pages.Obra;
+using SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet;
 using SOM.BDD.Pages.Produto;
 using SOM.BDD.Pages.UsoEReporte.Cue_Sheet;
 using System.Configuration;
@@ -12,6 +14,8 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
     {
         public CadastrarCueSheetPage TelaCadastrarCueSheetPage { get; private set; }
         public CadastroDeProdutoPage TelaCadastroDeProdutoPage { get; private set; }
+        public GerarPedidosDePagamentoCueSheetPage TelaGerarPedidosDePagamentoCueSheetPage { get; private set; }
+        public CadastrarObraEComposicaoPage TelaCadastrarObraEComposicaoPage { get; private set; }
 
         public CadastrarCueSheetSteps()
         {
@@ -21,6 +25,11 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
                 ConfigurationManager.AppSettings["CadastroDeCueSheet"]);
             TelaCadastroDeProdutoPage = new CadastroDeProdutoPage((IBrowser)browser,
                 ConfigurationManager.AppSettings["CadastrarProdutoUrl"]);
+            TelaGerarPedidosDePagamentoCueSheetPage = new GerarPedidosDePagamentoCueSheetPage((IBrowser)browser,
+                ConfigurationManager.AppSettings["ConsultaDeCueSheetUrl"],
+                ConfigurationManager.AppSettings["DetalheDaCueSheetUrl"]);
+            TelaCadastrarObraEComposicaoPage = new CadastrarObraEComposicaoPage((IBrowser)browser,
+                ConfigurationManager.AppSettings["CadastroObraUrl"]);
         }
 
         [Given(@"que esteja na tela de cadastro de Cue-Sheet")]
@@ -127,6 +136,32 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
         public void EntaoVisualizoOCampoDeImportarArquivoEmDestaqueAoNaoCriarACue_SheetSemFazerAImportacao()
         {
             TelaCadastrarCueSheetPage.ValidarArquivoDeImportacaoObrigatorio();
+        }
+
+        //Cadastrar itens por importação de arquivo com extensões ".TXT" e ".EDL" na tela Cadastro de Cue-Sheet
+        [When(@"faço upload de um arquivo com uma lista de itens para Cue-Sheet ""(.*)""")]
+        public void QuandoFacoUploadDeUmArquivoComUmaListaDeItensParaCue_Sheet(string Extensao)
+        {
+            TelaCadastrarCueSheetPage.RealizarUploadDeArquivo(Extensao);
+        }
+
+        [Then(@"visualizo um dos itens da lista cadastrado na Cue-Sheet com sucesso ""(.*)""")]
+        public void EntaoVisualizoUmDosItensDaListaCadastradoNaCue_SheetComSucesso(string ItemDaCueSheet)
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarItemDeCueSheet(ItemDaCueSheet);
+        }
+
+        [When(@"cadastro um item na Cue-Sheet")]
+        public void QuandoCadastroUmItemNaCue_Sheet()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.CadastrarItemCueSheetSemFonograma(CadastrarObraEComposicaoPage.Obra, "BK – BACKGROUND", "ABERTURA", "12", "ANITTA", CadastrarObraEComposicaoPage.Autor);
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarPedidoCadastrado(CadastrarObraEComposicaoPage.Obra, "12", "BK – BACKGROUND", "ABERTURA", "Não");
+        }
+
+        [Then(@"visualizo o item da Cue-Sheet cadastrado na grid com sucesso")]
+        public void EntaoVisualizoOItemDaCue_SheetCadastradoNaGridComSucesso()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarItemDeCueSheet(CadastrarObraEComposicaoPage.Obra);
         }
 
     }
