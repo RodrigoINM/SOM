@@ -825,7 +825,9 @@
     </None>
     <None Include="packages.config" />
     <None Include="Resources\login.xlsx" />
-    <None Include="Resources\Massa.xlsx" />
+    <None Include="Resources\Massa.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\MASTER GUILHERME VETERANO E APRENDIZ  GUILHERME.edl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

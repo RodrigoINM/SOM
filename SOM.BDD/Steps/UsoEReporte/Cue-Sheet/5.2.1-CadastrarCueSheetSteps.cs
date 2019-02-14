@@ -93,7 +93,6 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
         [Given(@"que tenha uma cue-sheet cadastrada no sistema")]
         public void DadoQueTenhaUmaCue_SheetCadastradaNoSistema()
         {
-            DadoQueTenhaUmProdutoCadastradoNoSistema();
             QuandoQueCadastroUmaNovaCue_SheetSemImportarUmArquivoComOsItensDaCue_Sheet();
             EntaoVisualizoUmaMensagemDeCriticaParaConfirmacaoJuntoComUmaMensagemDeCadastroRealizadoComSucesso("Você não selecionou um arquivo. Deseja criar a cue-sheet mesmo assim?", "Cue-sheet cadastrada com sucesso ");
         }
@@ -162,6 +161,82 @@ namespace SOM.BDD.Steps.UsoEReporte.Cue_Sheet
         public void EntaoVisualizoOItemDaCue_SheetCadastradoNaGridComSucesso()
         {
             TelaGerarPedidosDePagamentoCueSheetPage.ValidarItemDeCueSheet(CadastrarObraEComposicaoPage.Obra);
+        }
+
+        //Validar extensão do arquivo de importação diferente de .EDL ou .TXT
+        [When(@"tento cadastrar uma Cue-Sheet importando um arquivo com extensão diferente de EDL e TXT ""(.*)""")]
+        public void QuandoTentoCadastrarUmaCue_SheetImportandoUmArquivoComExtensaoDiferenteDeEDLETXT(string ListaDeItensDaCueSheet)
+        {
+            TelaCadastrarCueSheetPage.Navegar();
+            TelaCadastrarCueSheetPage.CadastrarCueSheetComImportacaoDeArquivo(CadastroDeProdutoPage.Produto, CadastroDeProdutoPage.Episodio, 
+                "01", "11/11/2018", "GLOBONEWS", "", ListaDeItensDaCueSheet);
+        }
+
+        [Then(@"visualizo uma mensagem informando que o arquivo é inválido ""(.*)""")]
+        public void EntaoVisualizoUmaMensagemInformandoQueOArquivoEInvalido(string Mensagem)
+        {
+            TelaCadastrarCueSheetPage.ValidarAlerta(Mensagem);
+        }
+
+        [When(@"cadastro uma Cue-Sheet importando uma lista de itens ""(.*)""")]
+        public void QuandoCadastroUmaCue_SheetImportandoUmaListaDeItens(string ListaDeItensDaCueSheet)
+        {
+            TelaCadastrarCueSheetPage.Navegar();
+            TelaCadastrarCueSheetPage.CadastrarCueSheetComImportacaoDeArquivo(CadastroDeProdutoPage.Produto, CadastroDeProdutoPage.Episodio,
+                "01", "11/11/2018", "GLOBONEWS", "", ListaDeItensDaCueSheet);
+        }
+
+        //Cancelar cadastro de item na cue-sheet
+        [When(@"cancelo o cadastro de um item de Cue-Sheet")]
+        public void QuandoCanceloOCadastroDeUmItemDeCue_Sheet()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.CancelarCadastroDeItemCueSheet(CadastrarObraEComposicaoPage.Obra, 
+                "BK – BACKGROUND", "ABERTURA", "12");
+        }
+
+        [Then(@"visualizo que o total de itens na Cue-Sheet continua como zero")]
+        public void EntaoVisualizoQueOTotalDeItensNaCue_SheetContinuaComoZero()
+        {
+            TelaCadastrarCueSheetPage.ValidarTotalDeItens(" 0");
+        }
+
+        //Cue-sheet de uma reprise para gênero Jornalismo
+        [Given(@"que tenha um produto cadastrado no sistema ""(.*)"", ""(.*)""")]
+        public void DadoQueTenhaUmProdutoCadastradoNoSistema(string GeneroOriginal, string DireitosMusicais)
+        {
+            TelaCadastroDeProdutoPage.Navegar();
+            TelaCadastroDeProdutoPage.CadastroDeProduto(GeneroOriginal, DireitosMusicais,
+                "290407", "Sim", "GLOBONEWS", "7001", "Não", "Sim");
+            TelaCadastroDeProdutoPage.SalvarCadastroDeProduto();
+            TelaCadastroDeProdutoPage.CadastrarCapitulo("01");
+            Thread.Sleep(2000);
+        }
+
+        [When(@"altero o item para Fair Use")]
+        public void QuandoAlteroOItemParaFairUse()
+        {
+            TelaCadastrarCueSheetPage.AbrirItemDeCueSheet(CadastrarObraEComposicaoPage.Obra);
+            TelaGerarPedidosDePagamentoCueSheetPage.AlterarItemDeCueSheetParaFairUse();
+        }
+
+        [Then(@"visualizo apenas o botão de Reiniciar Cue-Sheet")]
+        public void EntaoVisualizoApenasOBotaoDeReiniciarCue_Sheet()
+        {
+            TelaCadastrarCueSheetPage.ValidarBotaoReiniciarCueSheet();
+        }
+
+        //Validar campos obrigatórios em branco
+        [When(@"tento cadastrar um item de Cue-Sheet deixando os campos obrigatórios em branco")]
+        public void QuandoTentoCadastrarUmItemDeCue_SheetDeixandoOsCamposObrigatoriosEmBranco()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.CadastrarItemCueSheet("", "", "", "");
+        }
+
+        [Then(@"visualizo os campos obrigatórios para o cadastro de um item de Cue-Sheet em destaque")]
+        public void EntaoVisualizoOsCamposObrigatoriosParaOCadastroDeUmItemDeCue_SheetEmDestaque()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarCampoEmBranco("Título");
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarCampoEmBranco("Tempo");
         }
 
     }

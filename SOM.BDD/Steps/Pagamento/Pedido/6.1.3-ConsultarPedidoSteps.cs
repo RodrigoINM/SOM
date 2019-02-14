@@ -168,5 +168,11 @@ namespace SOM.BDD.Steps.Pagamento.Pedido
             TelaPedidoPage.ValidarDadosNaoEncontrados(Mensagem);
         }
 
+        [Then(@"visualizo o relatório de pagamento do pedido buscado")]
+        public void EntaoVisualizoORelatorioDePagamentoDoPedidoBuscado()
+        {
+            TelaPedidoPage.ValidarRelatorioDePagamento();
+        }
+
     }
 }

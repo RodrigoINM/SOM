@@ -105,32 +105,27 @@ Esquema do Cenário: Exclusão de item com fechamento ao UBEM
       | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                           |
       | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Registros excluídos com sucesso." |
   
-##Conversa#==========#==========#==========#==========#==========#==========#==========#==========#==========#==========#
-#    #Regras definidas em reunião com o cliente
-#    Ao excluir um item que nunca foi enviado ao ECAD ou a UBEM o item poderá ser excluído definitivamente.
-#    Ao excluir um item que já foi enviado ao ECAD ou a UBEM deve ser desativado para manter histórico no relatório.
-#    Ao excluir um item de cue-sheet que possuo pedido é necessário cancelar todos os itens cujo status de pagamento sejam diferentes de "Aguardando Aprovação", "Aprovado" ou "Cancelado" e o item deve ser desativado para manter o histórico.
-#    Os pedidos com todos os itens cancelados também serão cancelados.
-#    Deve ser exibida mensagem ao usuário informando que o pedido ou pedidos associados aos itens serão cancelado e solicitar confirmação para a ação de exclusão.
-#    
-##CTs escritos pela Marcelle #==========#==========#==========#==========#==========#==========#==========#==========#
-#Contexto:
-#    Dado que estou na tela de detalhe da cue-sheet
-#    E selecionei os itens que desejo excluir
-#
-#    Cenário: Exclusão total de itens com pedido "Em andamento"
-#        Dado que os itens selecionados estão associados a pedido com status em andamento
-#        E não existem outros itens associados ao mesmo pedido
-#        Quando confirmo a exclusão dos itens
-#        Então visualizo a mensagem confirmando a exclusão
-#        E não visualizo as linhas excluídas na cue-sheet
-#        E todos os itens do pedido com status diferente de "Aguardando Aprovação", "Aprovado" ou "Cancelado" são cancelados
-#        E o item inativado na base para histórico
-#
-#    Cenário: Exclusão parcial de itens com pedido "Em andamento"
-#        Dado que os itens selecionados estão associados a pedido com status em andamento
-#        Mas existem outros itens associados ao mesmo pedido
-#        Quando confirmo a exclusão dos itens
-#        Então visualizo a mensagem confirmando a exclusão
-#        E não visualizo as linhas excluídas na cue-sheet
-#        E o item inativado na base para histórico
+@chrome @ExcluirItensDeCueSheetCT09
+Esquema do Cenário: Exclusão total de itens com pedido "Em andamento"
+    Dado que tenha uma Cue-Sheet cadastrada no sistema <Produto>, <Episodio>, <Capitulo>, <Midia>, <Dia>, <Mes>, <Ano>, <RepriseRebatida>
+	E que tenha um item cadastrado na Cue-Sheet <Obra>, <Utilizacao>, <Sincronismo>, <Tempo>, <Interprete>
+	E que tenha um item aprovado <Obra>
+	Quando excluo um item cadastrado na Cue-Sheet <Obra>
+	Então visualizo uma mensagem de registro excluido com sucesso <Mensagem>
+	
+  Exemplos:
+      | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                           |
+      | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Registros excluídos com sucesso." |
+  
+@chrome @ExcluirItensDeCueSheetCT10
+Esquema do Cenário: Exclusão parcial de itens com pedido "Em andamento"
+    Dado que tenha uma Cue-Sheet cadastrada no sistema <Produto>, <Episodio>, <Capitulo>, <Midia>, <Dia>, <Mes>, <Ano>, <RepriseRebatida>
+	E que tenha dois itens cadastrados na Cue-Sheet <Obra>, <Obra2>, <Utilizacao>, <Sincronismo>, <Tempo>, <Interprete>
+	E que tenha um item aprovado <Obra>
+	Quando excluo um item cadastrado na Cue-Sheet <Obra>
+	Então visualizo uma mensagem de registro excluido com sucesso <Mensagem>
+
+  Exemplos:
+      | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Obra2             | Utilizacao        | Sincronismo | Tempo | Interprete | Mensagem                           |
+      | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "TESTE INMETRICS" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Registros excluídos com sucesso." |
+  

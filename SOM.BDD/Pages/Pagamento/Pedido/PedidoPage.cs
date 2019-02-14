@@ -6,6 +6,7 @@ using SOM.BDD.Pages.Obra;
 using Framework.Core.Extensions.ElementExtensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
+using System.IO;
 
 namespace SOM.BDD.Pages.Pagamento.Pedido
 {
@@ -614,6 +615,17 @@ namespace SOM.BDD.Pages.Pagamento.Pedido
             Browser.RefreshPage();
             var textStatus = Element.Xpath("//b[contains(., '" + Status + "')]");
             ElementExtensions.IsElementVisible(textStatus, Browser);
+        }
+
+        public void ValidarRelatorioDePagamento()
+        {
+            var linkRelatorio = Element.Css("a[ng-click='GerarRelatorioPedidoPagamento()']");
+            MouseActions.ClickATM(Browser, linkRelatorio);
+
+            Thread.Sleep(2000);
+            string originalFileName = Environment.GetEnvironmentVariable("USERPROFILE") + "\\Downloads\\" + "PedidoPagamento" + ".xlsx";
+
+            File.Delete(originalFileName);
         }
     }
 }

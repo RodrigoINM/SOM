@@ -157,10 +157,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
 this.FeatureBackground();
 #line 30
- testRunner.Given("que tenha uma cue-sheet cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+ testRunner.Given("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 31
- testRunner.When("tento cadastrar uma nova cue-sheet com os mesmos dados da cue-sheet existente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.And("que tenha uma cue-sheet cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line 32
+ testRunner.When("tento cadastrar uma nova cue-sheet com os mesmos dados da cue-sheet existente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 33
  testRunner.Then(string.Format("visualizo uma mensagem de critica informando que já existe uma cue-sheet cadastra" +
                         "da para essa midia e data {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
@@ -171,7 +173,7 @@ this.FeatureBackground();
             "ste mesmo Produto, Capítulo, Mídia e Data de Exibição. Os itens do arquivos serã" +
             "o incluídos ao final da planilha. Deseja prosseguir?\"", new string[] {
                 "chrome",
-                "CadastroDeCueSheetCT03"}, SourceLine=35)]
+                "CadastroDeCueSheetCT03"}, SourceLine=36)]
         public virtual void ValidarDuplicidadeDeNovaCue_Sheet_JaExisteUmaCue_SheetCadastradaParaEsteMesmoProdutoCapituloMidiaEDataDeExibicao_OsItensDoArquivosSeraoIncluidosAoFinalDaPlanilha_DesejaProsseguir()
         {
 #line 29
@@ -191,16 +193,16 @@ this.ValidarDuplicidadeDeNovaCue_Sheet("\"Já existe uma cue-sheet cadastrada pa
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar critica para criacao de cue-sheet como reprise/rebatida", null, @__tags);
-#line 39
+#line 40
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 40
- testRunner.Given("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 41
- testRunner.When(string.Format("tento cadastrar uma nova cue-sheet {0}", repriseRebatida), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.Given("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 42
+ testRunner.When(string.Format("tento cadastrar uma nova cue-sheet {0}", repriseRebatida), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 43
  testRunner.Then(string.Format("visualizo uma mensagem de critica informando que o capitulo não está cadastrado c" +
                         "omo inedito {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
@@ -209,10 +211,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Validar critica para criacao de cue-sheet como reprise/rebatida, \"Reprise\"", new string[] {
                 "chrome",
-                "CadastroDeCueSheetCT04"}, SourceLine=45)]
+                "CadastroDeCueSheetCT04"}, SourceLine=46)]
         public virtual void ValidarCriticaParaCriacaoDeCue_SheetComoRepriseRebatida_Reprise()
         {
-#line 39
+#line 40
 this.ValidarCriticaParaCriacaoDeCue_SheetComoRepriseRebatida("\"Reprise\"", "\"Esta cue-sheet não pode ser uma reprise pois o capítulo não está cadastrado como" +
                     " inédito.\"", ((string[])(null)));
 #line hidden
@@ -220,10 +222,10 @@ this.ValidarCriticaParaCriacaoDeCue_SheetComoRepriseRebatida("\"Reprise\"", "\"E
         
         [TechTalk.SpecRun.ScenarioAttribute("Validar critica para criacao de cue-sheet como reprise/rebatida, \"Rebatida\"", new string[] {
                 "chrome",
-                "CadastroDeCueSheetCT04"}, SourceLine=45)]
+                "CadastroDeCueSheetCT04"}, SourceLine=46)]
         public virtual void ValidarCriticaParaCriacaoDeCue_SheetComoRepriseRebatida_Rebatida()
         {
-#line 39
+#line 40
 this.ValidarCriticaParaCriacaoDeCue_SheetComoRepriseRebatida("\"Rebatida\"", "\"Esta cue-sheet não pode ser uma rebatida pois o capítulo não está cadastrado com" +
                     "o inédito.\"", ((string[])(null)));
 #line hidden
@@ -231,30 +233,30 @@ this.ValidarCriticaParaCriacaoDeCue_SheetComoRepriseRebatida("\"Rebatida\"", "\"
         
         [TechTalk.SpecRun.ScenarioAttribute("Cancelar criação de cue-sheet sem arquivo de importação", new string[] {
                 "chrome",
-                "CadastroDeCueSheetCT05"}, SourceLine=49)]
+                "CadastroDeCueSheetCT05"}, SourceLine=50)]
         public virtual void CancelarCriacaoDeCue_SheetSemArquivoDeImportacao()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancelar criação de cue-sheet sem arquivo de importação", null, new string[] {
                         "chrome",
                         "CadastroDeCueSheetCT05"});
-#line 50
+#line 51
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 51
- testRunner.Given("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 52
+ testRunner.Given("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 53
  testRunner.When("tento cadastrar uma nova cue-sheet sem importar um arquivo com os itens da cue-sh" +
                     "eet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 53
+#line 54
  testRunner.Then("visualizo o campo de importar arquivo em destaque ao não criar a cue-sheet sem fa" +
                     "zer a importação", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        public virtual void CadastrarItensPorImportacaoDeArquivoComExtensoes_TXTE_EDLNaTelaCadastroDeCue_Sheet(string extensao, string itemDaCueSheet, string[] exampleTags)
+        public virtual void CadastrarItensPorImportacaoDeArquivoComExtensoes_TXTE_EDLNaTelaCadastroDeCue_Sheet(string listaDeItensDaCueSheet, string itemDaCueSheet, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "chrome",
@@ -265,17 +267,15 @@ this.FeatureBackground();
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastrar itens por importação de arquivo com extensões \".TXT\" e \".EDL\" na tela C" +
                     "adastro de Cue-Sheet", null, @__tags);
-#line 56
+#line 57
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 57
- testRunner.Given("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 58
- testRunner.And("que tenha uma cue-sheet cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+ testRunner.Given("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 59
- testRunner.When(string.Format("faço upload de um arquivo com uma lista de itens para Cue-Sheet {0}", extensao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.When(string.Format("cadastro uma Cue-Sheet importando uma lista de itens {0}", listaDeItensDaCueSheet), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 60
  testRunner.Then(string.Format("visualizo um dos itens da lista cadastrado na Cue-Sheet com sucesso {0}", itemDaCueSheet), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
@@ -283,28 +283,28 @@ this.FeatureBackground();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Cadastrar itens por importação de arquivo com extensões \".TXT\" e \".EDL\" na tela C" +
-            "adastro de Cue-Sheet, \"TXT\"", new string[] {
+            "adastro de Cue-Sheet, \"ONOF 30 BL1.txt\"", new string[] {
                 "chrome",
                 "CadastroDeCueSheetCT06"}, SourceLine=63)]
-        public virtual void CadastrarItensPorImportacaoDeArquivoComExtensoes_TXTE_EDLNaTelaCadastroDeCue_Sheet_TXT()
+        public virtual void CadastrarItensPorImportacaoDeArquivoComExtensoes_TXTE_EDLNaTelaCadastroDeCue_Sheet_ONOF30BL1_Txt()
         {
-#line 56
-this.CadastrarItensPorImportacaoDeArquivoComExtensoes_TXTE_EDLNaTelaCadastroDeCue_Sheet("\"TXT\"", "\"NASCENTE\"", ((string[])(null)));
+#line 57
+this.CadastrarItensPorImportacaoDeArquivoComExtensoes_TXTE_EDLNaTelaCadastroDeCue_Sheet("\"ONOF 30 BL1.txt\"", "\"NASCENTE\"", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Cadastrar itens por importação de arquivo com extensões \".TXT\" e \".EDL\" na tela C" +
-            "adastro de Cue-Sheet, \"EDL\"", new string[] {
+            "adastro de Cue-Sheet, \"MASTER GUILHERME VETERANO E APRENDIZ  GUILHERME.edl\"", new string[] {
                 "chrome",
                 "CadastroDeCueSheetCT06"}, SourceLine=63)]
-        public virtual void CadastrarItensPorImportacaoDeArquivoComExtensoes_TXTE_EDLNaTelaCadastroDeCue_Sheet_EDL()
+        public virtual void CadastrarItensPorImportacaoDeArquivoComExtensoes_TXTE_EDLNaTelaCadastroDeCue_Sheet_MASTERGUILHERMEVETERANOEAPRENDIZGUILHERME_Edl()
         {
-#line 56
-this.CadastrarItensPorImportacaoDeArquivoComExtensoes_TXTE_EDLNaTelaCadastroDeCue_Sheet("\"EDL\"", "\"VINHETA__BEM_VERAO___AUDIO_01\"", ((string[])(null)));
+#line 57
+this.CadastrarItensPorImportacaoDeArquivoComExtensoes_TXTE_EDLNaTelaCadastroDeCue_Sheet("\"MASTER GUILHERME VETERANO E APRENDIZ  GUILHERME.edl\"", "\"VINHETA__BEM_VERAO___AUDIO_01\"", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ImportarArquivosTXTEEDLComItensDeCue_SheetNaTelaDeDetahesDaCue_Sheet(string extensao, string itemDaCueSheet, string[] exampleTags)
+        public virtual void ImportarArquivosTXTEEDLComItensDeCue_SheetNaTelaDeDetahesDaCue_Sheet(string listaDeItensDaCueSheet, string itemDaCueSheet, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "chrome",
@@ -325,7 +325,7 @@ this.FeatureBackground();
 #line 70
  testRunner.And("que tenha uma cue-sheet cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line 71
- testRunner.When(string.Format("faço upload de um arquivo com uma lista de itens para Cue-Sheet {0}", extensao), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.When(string.Format("faço upload de um arquivo com uma lista de itens para Cue-Sheet {0}", listaDeItensDaCueSheet), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 72
  testRunner.Then(string.Format("visualizo um dos itens da lista cadastrado na Cue-Sheet com sucesso {0}", itemDaCueSheet), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
@@ -333,24 +333,24 @@ this.FeatureBackground();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Importar arquivos TXT e EDL com itens de cue-sheet na tela de detahes da cue-shee" +
-            "t, \"TXT\"", new string[] {
+            "t, \"ONOF 30 BL1.txt\"", new string[] {
                 "chrome",
                 "CadastroDeCueSheetCT07"}, SourceLine=75)]
-        public virtual void ImportarArquivosTXTEEDLComItensDeCue_SheetNaTelaDeDetahesDaCue_Sheet_TXT()
+        public virtual void ImportarArquivosTXTEEDLComItensDeCue_SheetNaTelaDeDetahesDaCue_Sheet_ONOF30BL1_Txt()
         {
 #line 68
-this.ImportarArquivosTXTEEDLComItensDeCue_SheetNaTelaDeDetahesDaCue_Sheet("\"TXT\"", "\"NASCENTE\"", ((string[])(null)));
+this.ImportarArquivosTXTEEDLComItensDeCue_SheetNaTelaDeDetahesDaCue_Sheet("\"ONOF 30 BL1.txt\"", "\"NASCENTE\"", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Importar arquivos TXT e EDL com itens de cue-sheet na tela de detahes da cue-shee" +
-            "t, \"EDL\"", new string[] {
+            "t, \"MASTER GUILHERME VETERANO E APRENDIZ  GUILHERME.edl\"", new string[] {
                 "chrome",
                 "CadastroDeCueSheetCT07"}, SourceLine=75)]
-        public virtual void ImportarArquivosTXTEEDLComItensDeCue_SheetNaTelaDeDetahesDaCue_Sheet_EDL()
+        public virtual void ImportarArquivosTXTEEDLComItensDeCue_SheetNaTelaDeDetahesDaCue_Sheet_MASTERGUILHERMEVETERANOEAPRENDIZGUILHERME_Edl()
         {
 #line 68
-this.ImportarArquivosTXTEEDLComItensDeCue_SheetNaTelaDeDetahesDaCue_Sheet("\"EDL\"", "\"VINHETA__BEM_VERAO___AUDIO_01\"", ((string[])(null)));
+this.ImportarArquivosTXTEEDLComItensDeCue_SheetNaTelaDeDetahesDaCue_Sheet("\"MASTER GUILHERME VETERANO E APRENDIZ  GUILHERME.edl\"", "\"VINHETA__BEM_VERAO___AUDIO_01\"", ((string[])(null)));
 #line hidden
         }
         
@@ -404,6 +404,220 @@ this.FeatureBackground();
  testRunner.When("cadastro um item na Cue-Sheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 93
  testRunner.Then("visualizo o item da Cue-Sheet cadastrado na grid com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        public virtual void ValidarExtensaoDoArquivoDeImportacaoDiferenteDe_EDLOu_TXT(string listaDeItensDaCueSheet, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CadastroDeCueSheetCT10"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar extensão do arquivo de importação diferente de .EDL ou .TXT", null, @__tags);
+#line 96
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 97
+    testRunner.Given("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 98
+ testRunner.When(string.Format("tento cadastrar uma Cue-Sheet importando um arquivo com extensão diferente de EDL" +
+                        " e TXT {0}", listaDeItensDaCueSheet), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 99
+ testRunner.Then(string.Format("visualizo uma mensagem informando que o arquivo é inválido {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validar extensão do arquivo de importação diferente de .EDL ou .TXT, \"Massa.xlsx\"" +
+            "", new string[] {
+                "chrome",
+                "CadastroDeCueSheetCT10"}, SourceLine=102)]
+        public virtual void ValidarExtensaoDoArquivoDeImportacaoDiferenteDe_EDLOu_TXT_Massa_Xlsx()
+        {
+#line 96
+this.ValidarExtensaoDoArquivoDeImportacaoDiferenteDe_EDLOu_TXT("\"Massa.xlsx\"", "\"Este arquivo não pode ser importado. O formato do arquivo é inválido\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cancelar cadastro de item na cue-sheet", new string[] {
+                "chrome",
+                "CadastroDeCueSheetCT11"}, SourceLine=105)]
+        public virtual void CancelarCadastroDeItemNaCue_Sheet()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancelar cadastro de item na cue-sheet", null, new string[] {
+                        "chrome",
+                        "CadastroDeCueSheetCT11"});
+#line 106
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 107
+ testRunner.Given("que tenha uma obra cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 108
+ testRunner.And("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 109
+ testRunner.And("que tenha uma cue-sheet cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 110
+ testRunner.When("cancelo o cadastro de um item de Cue-Sheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 111
+ testRunner.Then("visualizo que o total de itens na Cue-Sheet continua como zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        public virtual void Cue_SheetDeUmaRepriseParaGeneroJornalismo(string generoOriginal, string direitosMusicais, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CadastroDeCueSheetCT12"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cue-sheet de uma reprise para gênero Jornalismo", null, @__tags);
+#line 114
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 115
+ testRunner.Given("que tenha uma obra cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 116
+ testRunner.And(string.Format("que tenha um produto cadastrado no sistema {0}, {1}", generoOriginal, direitosMusicais), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 117
+ testRunner.And("que tenha uma cue-sheet cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 118
+ testRunner.When("cadastro um item na Cue-Sheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 119
+ testRunner.And("altero o item para Fair Use", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 120
+ testRunner.Then("visualizo o item da Cue-Sheet cadastrado na grid com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cue-sheet de uma reprise para gênero Jornalismo, \"Jornalismo\"", new string[] {
+                "chrome",
+                "CadastroDeCueSheetCT12"}, SourceLine=123)]
+        public virtual void Cue_SheetDeUmaRepriseParaGeneroJornalismo_Jornalismo()
+        {
+#line 114
+this.Cue_SheetDeUmaRepriseParaGeneroJornalismo("\"Jornalismo\"", "\"JORNALISMO\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void Cue_SheetDeUmaRepriseParaGeneroEsporte(string generoOriginal, string direitosMusicais, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CadastroDeCueSheetCT13"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cue-sheet de uma reprise para gênero Esporte", null, @__tags);
+#line 127
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 128
+    testRunner.Given("que tenha uma obra cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 129
+ testRunner.And(string.Format("que tenha um produto cadastrado no sistema {0}, {1}", generoOriginal, direitosMusicais), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 130
+ testRunner.And("que tenha uma cue-sheet cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 131
+ testRunner.When("cadastro um item na Cue-Sheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 132
+ testRunner.And("altero o item para Fair Use", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 133
+ testRunner.Then("visualizo o item da Cue-Sheet cadastrado na grid com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cue-sheet de uma reprise para gênero Esporte, \"Jornalismo\"", new string[] {
+                "chrome",
+                "CadastroDeCueSheetCT13"}, SourceLine=136)]
+        public virtual void Cue_SheetDeUmaRepriseParaGeneroEsporte_Jornalismo()
+        {
+#line 127
+this.Cue_SheetDeUmaRepriseParaGeneroEsporte("\"Jornalismo\"", "\"ESPORTE\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ImpedirImportacaoNoDetalheDaCue_SheetComStatusLiberada(string produto, string episodio, string capitulo, string midia, string dia, string mes, string ano, string repriseRebatida, string obra, string utilizacao, string sincronismo, string tempo, string interprete, string status, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CadastroDeCueSheetCT14"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Impedir importação no detalhe da Cue-sheet com status Liberada", null, @__tags);
+#line 140
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 141
+    testRunner.Given(string.Format("que tenha uma Cue-Sheet cadastrada no sistema {0}, {1}, {2}, {3}, {4}, {5}, {6}, " +
+                        "{7}", produto, episodio, capitulo, midia, dia, mes, ano, repriseRebatida), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 142
+ testRunner.And(string.Format("que tenha um item cadastrado na Cue-Sheet {0}, {1}, {2}, {3}, {4}", obra, utilizacao, sincronismo, tempo, interprete), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 143
+ testRunner.When(string.Format("aprovo um item da Cue-Sheet {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 144
+ testRunner.And("finalizo a Cue-Sheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 145
+ testRunner.Then(string.Format("visualizo o Status da Cue-Sheet como Finalizada {0}", status), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line 146
+ testRunner.And("visualizo apenas o botão de Reiniciar Cue-Sheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Impedir importação no detalhe da Cue-sheet com status Liberada, \"Aleatório\"", new string[] {
+                "chrome",
+                "CadastroDeCueSheetCT14"}, SourceLine=149)]
+        public virtual void ImpedirImportacaoNoDetalheDaCue_SheetComStatusLiberada_Aleatorio()
+        {
+#line 140
+this.ImpedirImportacaoNoDetalheDaCue_SheetComStatusLiberada("\"Aleatório\"", "\"Aleatório\"", "\"01\"", "\"GLOBONEWS\"", "\"12\"", "\"12\"", "\"2018\"", "\"Não\"", "\"Aleatório\"", "\"BK – BACKGROUND\"", "\"ABERTURA\"", "\"16\"", "\" \"", "\"Finalizada\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validar campos obrigatórios em branco", new string[] {
+                "chrome",
+                "CadastroDeCueSheetCT15"}, SourceLine=152)]
+        public virtual void ValidarCamposObrigatoriosEmBranco()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar campos obrigatórios em branco", null, new string[] {
+                        "chrome",
+                        "CadastroDeCueSheetCT15"});
+#line 153
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 154
+    testRunner.And("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 155
+ testRunner.And("que tenha uma cue-sheet cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 156
+ testRunner.When("tento cadastrar um item de Cue-Sheet deixando os campos obrigatórios em branco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 157
+ testRunner.Then("visualizo os campos obrigatórios para o cadastro de um item de Cue-Sheet em desta" +
+                    "que", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
         }

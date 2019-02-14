@@ -32,7 +32,7 @@ Esquema do Cenario: Alteração de sincronismo - Pedido já existente para a mes
       | TITULO               | SINCRONISMO1 | TEMPOSOMADO | SINCRONISMO2   | SINCRONISMO | TEMPO | TEMPO2 |
       | "MUSICA DA MARCELLE" | "ADORNO"     | "41"        | "ENCERRAMENTO" | "FUNDO"     | "16"  | "25"   |
   
-@chrome @PedidosPagamentoCueSheetCT02
+@chrome @PedidosPagamentoCueSheetCT03
 Esquema do Cenario: Alteração de obra - Pedido já existente para a mesma obra e sincronismo
 	Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada
 	E que eu tenha dois pedidos gerados para itens de cue-sheet com obras diferentes <TITULO1> e <TITULO2>
@@ -43,7 +43,7 @@ Esquema do Cenario: Alteração de obra - Pedido já existente para a mesma obra
       | TITULO1          | TITULO2        | SINCRONISMO | TEMPOSOMADO | SINCRONISMO2 | TEMPO | TEMPO2 |
       | "TESTE DE 500MB" | "MUSICA TESTE" | "ADORNO"    | "41"        | "FUNDO"      | "16"  | "25"   |
 
-@chrome @PedidosPagamentoCueSheetCT03
+@chrome @PedidosPagamentoCueSheetCT04
 Esquema do Cenario: Não marcar para gerar pedido linhas de ABERTURA ou TEMA
 	Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada
 	E que possuo itens de sincronismo ABERTURA. <TITULO>, <UTITLIZACAO>, <SINCRONISMO>, <TEMPO>
@@ -55,7 +55,7 @@ Esquema do Cenario: Não marcar para gerar pedido linhas de ABERTURA ou TEMA
       | TITULO           | UTITLIZACAO       | SINCRONISMO | SINCRONISMO2 | TEMPO | TEMPO2 |
       | "TESTE DE 500MB" | "BK – BACKGROUND" | "ABERTURA"  | "TEMA"       | "16"  | "25"   |
 	  
-@chrome @PedidosPagamentoCueSheetCT04
+@chrome @PedidosPagamentoCueSheetCT05
 Esquema do Cenario: Novo item ABERTURA ou TEMA válido em Variedades ou Jornalismo ou Esporte com pedido existente
 	Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada
 	E que existe um pedido de ABERTURA ou TEMA para <TITULO>, <UTITLIZACAO>, <SINCRONISMO>, <TEMPO>
@@ -70,7 +70,7 @@ Esquema do Cenario: Novo item ABERTURA ou TEMA válido em Variedades ou Jornalis
       | TITULO           | UTITLIZACAO       | SINCRONISMO | TEMPO | TEMPO2 | TEMPOSOMADO |
       | "TESTE DE 500MB" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | "25"   | "41"        |
   
-@chrome @PedidosPagamentoCueSheetCT05
+@chrome @PedidosPagamentoCueSheetCT06
 Esquema do Cenario: Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente
 	Dado que tenha uma cue-sheet do genero Dramaturgia previamente cadastrada
 	E que existe um pedido de ABERTURA ou TEMA para <TITULO>, <UTITLIZACAO>, <SINCRONISMO>, <TEMPO>
@@ -84,6 +84,27 @@ Esquema do Cenario: Novo item ABERTURA ou TEMA em Dramaturgia com pedido existen
       | TITULO           | UTITLIZACAO       | SINCRONISMO | TEMPO | TEMPO2 | TEMPOSOMADO |
       | "TESTE DE 500MB" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | "25"   | "41"        |
 	  
+
+@chrome @PedidosPagamentoCueSheetCT07
+Esquema do Cenario: Gerar pedido sem itens aprovados
+    Dado que tenha uma Cue-Sheet cadastrada no sistema <Produto>, <Episodio>, <Capitulo>, <Midia>, <Dia>, <Mes>, <Ano>, <RepriseRebatida>
+	E que tenha um item cadastrado na Cue-Sheet <Obra>, <Utilizacao>, <Sincronismo>, <Tempo>, <Interprete>
+	Então visualizo apenas o icone para aprovar o item cadastrado
+	
+  Exemplos:
+      | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Utilizacao        | Sincronismo | Tempo | Interprete |
+      | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        |
+
+@chrome @PedidosPagamentoCueSheetCT08
+ Cenario: Gerar pedido para planilha de cue-sheet 100% aprovada
+     Dado que tenha uma obra cadastrada no sistema
+	 E que tenha um produto cadastrado no sistema
+	 E que tenha uma cue-sheet cadastrada no sistema
+	 E que tenha um item cadastrado na cue-sheet
+	 Quando eu aprovo e crio um pedido para o item da Cue-Sheet
+	 Então visualizo o pedido cadastrado com sucesso
+	
+
 #@chrome
 #Esquema do Cenario: Alterar itens da obra com pedido em andamento
 #	Quando altero os percentuais dos itens de composição de uma obra com pedido em andamento <TITULO>, <UTITLIZACAO>, <SINCRONISMO>, <TEMPO>, <INTERPRETE>, <LINKCUESHEET>, <AUTORDDA>
@@ -106,17 +127,6 @@ Esquema do Cenario: Novo item ABERTURA ou TEMA em Dramaturgia com pedido existen
 # 	Validar as alterações na cue-sheet que afetam pedidos já gerados
 #   Validar geração de pedido para obras com todos os autores falecidos a mais de 70 anos
   
-# Esquema do Cenario: Gerar pedido para planilha de cue-sheet 100% aprovada
-#     Dado que estou na tela de detalhe da cue-sheet
-#     E possuo todos os itens da massa de dados aprovada
-#     Quando gero um novo pedido
-#     Então visualizo a mensagem <Mensagem>
-#     E visualizo o icone de detalhes do pedido gerado com sucesso
-  
-#   Exemplos:
-#       | Mensagem                      | 
-#       | "Pedidos gerados com sucesso" | 
-
 # Esquema do Cenario: Gerar pedido com itens de cue-sheet parcialmente aprovados
 #     Dado que estou na tela de detalhe da cue-sheet
 #     E possuo itens parcialmente aprovados
@@ -127,11 +137,6 @@ Esquema do Cenario: Novo item ABERTURA ou TEMA em Dramaturgia com pedido existen
 #   Exemplos:
 #       | Mensagem                      | 
 #       | "Pedidos gerados com sucesso" | 
-
-# Cenario: Gerar pedido sem itens aprovados
-#     Dado que estou na tela de detalhe da cue-sheet
-#     E nao existam itens aprovados
-#     Então nao visualizo o icone para gerar pedido
 
 
 # #Conversa: #==========#==========#==========#==========#==========#==========#==========#==========#==========#

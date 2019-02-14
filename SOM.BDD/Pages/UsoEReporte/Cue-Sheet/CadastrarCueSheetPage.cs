@@ -76,7 +76,24 @@ namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
             ElementExtensions.IsElementVisible(BtnDuplicarCueSheet, Browser);
             MouseActions.ClickATM(Browser, BtnDuplicarCueSheet);
         }
-        
+
+        public void CadastrarCueSheetComImportacaoDeArquivo(string Produto, string Episodio, string Capitulo, 
+            string DataExibicao, string Midias, string RepriseRebatida, string ListaDeItensDaCueSheet)
+        {
+            PreencherDadosDaCueSheet(Produto, Episodio, Capitulo, DataExibicao, Midias, RepriseRebatida);
+
+            Thread.Sleep(2000);
+            var BtnEscolherArquivo = Element.Css("input[ng-model='arquivo']");
+            MouseActions.ClickATM(Browser, BtnEscolherArquivo);
+
+            Thread.Sleep(2000);
+
+            SendKeys.SendWait(GetPath.GetResourcePath(ListaDeItensDaCueSheet));
+            SendKeys.SendWait(@"{Enter}");
+
+            MouseActions.ClickATM(Browser, BtnSalvarCueSheet);
+        }
+
         public void CadastrarCueSheet(string Produto, string Episodio, string Capitulo, string DataExibicao, string Midias, string RepriseRebatida)
         {
             PreencherDadosDaCueSheet(Produto, Episodio, Capitulo, DataExibicao, Midias, RepriseRebatida);
@@ -192,6 +209,11 @@ namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
             ElementExtensions.IsElementVisible(BtnLiberarCueSheet, Browser);
         }
 
+        public void ValidarBotaoReiniciarCueSheet()
+        {
+            ElementExtensions.IsElementVisible(BtnReiniciarCueSheet, Browser);
+        }
+
         public void ValidarAlerta(string Mensagem)
         {
             var texto = Element.Css("p[style='display: block;']");
@@ -216,7 +238,7 @@ namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
             ValidarDadosDaCueSheet("Mídia", Midia);
         }
 
-        public void RealizarUploadDeArquivo(string Extensao)
+        public void RealizarUploadDeArquivo(string ListaDeItensDaCueSheet)
         {
             Thread.Sleep(2000);
             var BtnUpload = Element.Css("a[ng-click='AbrirModalArquivo()']");
@@ -226,10 +248,7 @@ namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
             MouseActions.ClickATM(Browser, BtnCarregarArquivo);
             Thread.Sleep(2000);
 
-            if (Extensao == "TXT")
-                SendKeys.SendWait(GetPath.GetResourcePath("ONOF 30 BL1.txt"));
-            if (Extensao == "EDL")
-                SendKeys.SendWait(GetPath.GetResourcePath("MASTER GUILHERME VETERANO E APRENDIZ  GUILHERME.edl"));
+            SendKeys.SendWait(GetPath.GetResourcePath(ListaDeItensDaCueSheet));
             SendKeys.SendWait(@"{Enter}");
 
             var SalvarUpload = Element.Css("button[ng-click='uploadArquivoItemCueSheet()']");
@@ -376,6 +395,13 @@ namespace SOM.BDD.Pages.UsoEReporte.Cue_Sheet
         {
             var itemAprovado = Element.Xpath("//td[text()='" + Valor + "']/..//span[text()='Aprovado']");
             itemAprovado.IsElementVisible(Browser);
+        }
+
+        public void ValidarTotalDeItens(string TotalDeItens)
+        {
+            var textTotal = Element.Xpath("//b[text()='Total de Itens:']/../span");
+            textTotal.IsElementVisible(Browser);
+            Assert.AreEqual(TotalDeItens, textTotal.GetTexto(Browser));
         }
     }
 }

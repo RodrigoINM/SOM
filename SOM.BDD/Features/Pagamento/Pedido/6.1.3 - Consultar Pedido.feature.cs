@@ -766,6 +766,42 @@ this.InformacaoNaoLocalizada("\"1099999\"", "\"Dados não encontratos\"", ((stri
 #line hidden
         }
         
+        public virtual void VisualizacaoDeRelatorioDePedido(string numero, string produto, string episodio, string capitulo, string obra, string midiaADebitar, string sincronismo, string valorTotal, string status, string statusPav, string reprise, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "ConsultarPedidoCT20"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Visualização de Relatório de Pedido", null, @__tags);
+#line 190
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 191
+ testRunner.When(string.Format("faço uma busca avançada de pedido por número {0}", numero), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 192
+    testRunner.Then(string.Format("visualizo os dados do pedido no resultado da busca {0}, {1}, {2}, {3}, {4}, {5}, " +
+                        "{6}, {7}, {8}, {9}, {10}", numero, produto, episodio, capitulo, obra, midiaADebitar, sincronismo, valorTotal, status, statusPav, reprise), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line 193
+ testRunner.And("visualizo o relatório de pagamento do pedido buscado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Visualização de Relatório de Pedido, \"1001404\"", new string[] {
+                "chrome",
+                "ConsultarPedidoCT20"}, SourceLine=196)]
+        public virtual void VisualizacaoDeRelatorioDePedido_1001404()
+        {
+#line 190
+this.VisualizacaoDeRelatorioDePedido("\"1001404\"", "\"Avis1816412639 Ozane1633164760\"", "\"Paulette436942029\"", "\"01\"", "\"Jonelle1677499510\"", "\"GLOBONEWS\"", "\"ABERTURA\"", "\"R$ 67,50\"", "\"Em andamento\"", "\"Não requerido\"", "\"Não\"", ((string[])(null)));
+#line hidden
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {
