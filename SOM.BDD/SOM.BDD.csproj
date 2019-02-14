@@ -181,6 +181,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>3.1.5 - Excluir Autor.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Obra\Catálogo de Editoras\3.1.6 - Catálogo de Editora.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.6 - Catálogo de Editora.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Obra\DDA\3.1.4 - Alteracao de DDA %28Endereco%29.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -452,6 +457,7 @@
     <Compile Include="Pages\Obra\Autor\AlterarAutorPage.cs" />
     <Compile Include="Pages\Obra\Autor\CadastrarAutorPage.cs" />
     <Compile Include="Pages\Obra\Autor\ExclusaoDeAutorPage.cs" />
+    <Compile Include="Pages\Obra\Catálogo de Editoras\CatálogodeEditoraPage.cs" />
     <Compile Include="Pages\Obra\ConsultarObraPage.cs" />
     <Compile Include="Pages\Obra\DDA\CadastroDeDDAPage.cs" />
     <Compile Include="Pages\Obra\DDA\ConsultaDeDDAPage.cs" />
@@ -491,6 +497,7 @@
     <Compile Include="Steps\Obra\Autor\AlterarAutorSteps.cs" />
     <Compile Include="Steps\Obra\Autor\CadastrarAutorSteps.cs" />
     <Compile Include="Steps\Obra\Autor\ExcluirAutorSteps.cs" />
+    <Compile Include="Steps\Obra\Catálogo de Editoras\CatálogodeEditoraSteps.cs" />
     <Compile Include="Steps\Obra\DDA\3.1.4 - AlteracaodeDDAEnderecoSteps.cs" />
     <Compile Include="Steps\Obra\DDA\3.1.4 - CadastrodeDDAContatoSteps.cs" />
     <Compile Include="Steps\Obra\DDA\3.1.4 - CadastrodeDDAEndereçoSteps.cs" />
@@ -618,6 +625,10 @@
     <None Include="Features\Obra\Autor\3.1.5 - Excluir Autor.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>3.1.5 - Excluir Autor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Obra\Catálogo de Editoras\3.1.6 - Catálogo de Editora.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>3.1.6 - Catálogo de Editora.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Obra\DDA\3.1.4 - Alteracao de DDA %28Endereco%29.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
