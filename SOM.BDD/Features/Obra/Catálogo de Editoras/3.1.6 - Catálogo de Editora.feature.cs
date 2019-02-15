@@ -82,7 +82,7 @@ namespace SOM.BDD.Features.Obra.CatalogoDeEditoras
 #line hidden
         }
         
-        public virtual void ImportarBibliotecaComSucesso(string arquivo, string linha, string titulo, string composicao, string nacionalidade, string dominioPublico, string tipo, string[] exampleTags)
+        public virtual void ImportarBibliotecaComSucesso(string arquivo, string linha, string titulo, string composicao, string nacionalidade, string dominioPublico, string tipo, string mensagem, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "chrome",
@@ -98,23 +98,363 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
 this.FeatureBackground();
 #line 15
-    testRunner.When(string.Format("faço um upload de um {0} válido", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+    testRunner.When(string.Format("faço um upload de um arquivo válido  {0}", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 16
-    testRunner.Then(string.Format("visualizo a grid com os seguintes colunas na aba Itens Válidos: {0}, {1}, {2}, {3" +
-                        "}, {4} e {5}", linha, titulo, composicao, nacionalidade, dominioPublico, tipo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+    testRunner.And(string.Format("visualizo a grid com as seguintes colunas, na aba de Itens Válidos: {0}, {1}, {2}" +
+                        ", {3}, {4} e {5}", linha, titulo, composicao, nacionalidade, dominioPublico, tipo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line 17
-    testRunner.And(string.Format("é salva uma Obra com o {0}", titulo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+    testRunner.Then(string.Format("salvo a importação do catálogo e visualizo a mensagem {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Importar Biblioteca com sucesso, \"template.xlsx\"", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Importar Biblioteca com sucesso, \"TEMPLATE Catálogo de Editoras.xlsx\"", new string[] {
                 "chrome",
                 "CatalagodeEditoraCt01"}, SourceLine=20)]
-        public virtual void ImportarBibliotecaComSucesso_Template_Xlsx()
+        public virtual void ImportarBibliotecaComSucesso_TEMPLATECatalogoDeEditoras_Xlsx()
         {
 #line 14
-this.ImportarBibliotecaComSucesso("\"template.xlsx\"", "\"1\"", "\"OBRA TEMPLATE\"", "\"Produto Teste\"", "\"Nacional\"", "\"Não\"", "\"TRILHA MUSICAL\"", ((string[])(null)));
+this.ImportarBibliotecaComSucesso("\"TEMPLATE Catálogo de Editoras.xlsx\"", "\"2\"", "\"A AGRESSAO\"", "\"ROGER HENRI - ROGER HENRI - (100%)\"", "\"NACIONAL\"", "\"Não\"", "\"TRILHA MUSICAL\"", "\"A importação será realizada em segundo plano. Ao final será enviado e-mail com r" +
+                    "esultado.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Fazer download de Template com sucesso", new string[] {
+                "chrome",
+                "CatalagodeEditoraCt02"}, SourceLine=23)]
+        public virtual void FazerDownloadDeTemplateComSucesso()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Fazer download de Template com sucesso", null, new string[] {
+                        "chrome",
+                        "CatalagodeEditoraCt02"});
+#line 24
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 25
+    testRunner.When("clico para fazer o dowload no template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 26
+    testRunner.Then("visualizo o download com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        public virtual void ValidarExtensaoCorretaDoFicheiro(string arquivo, string linha, string titulo, string composicao, string nacionalidade, string dominioPublico, string tipo, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CatalagodeEditoraCt03"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar extensão correta do ficheiro", null, @__tags);
+#line 29
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 30
+    testRunner.When(string.Format("faço um upload de um arquivo válido  {0}", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 31
+    testRunner.And(string.Format("visualizo a grid com as seguintes colunas, na aba de Itens Válidos: {0}, {1}, {2}" +
+                        ", {3}, {4} e {5}", linha, titulo, composicao, nacionalidade, dominioPublico, tipo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 32
+    testRunner.Then(string.Format("salvo a importação do catálogo e visualizo a mensagem {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validar extensão correta do ficheiro, \"TEMPLATE Catálogo de Editoras.xlsx\"", new string[] {
+                "chrome",
+                "CatalagodeEditoraCt03"}, SourceLine=35)]
+        public virtual void ValidarExtensaoCorretaDoFicheiro_TEMPLATECatalogoDeEditoras_Xlsx()
+        {
+#line 29
+this.ValidarExtensaoCorretaDoFicheiro("\"TEMPLATE Catálogo de Editoras.xlsx\"", "\"2\"", "\"A AGRESSAO\"", "\"ROGER HENRI - ROGER HENRI - (100%)\"", "\"NACIONAL\"", "\"Não\"", "\"TRILHA MUSICAL\"", "\"A importação será realizada em segundo plano. Ao final será enviado e-mail com r" +
+                    "esultado.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidarMensagemDeExtensaoIncorretaDoFicheiro(string arquivo, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CatalagodeEditoraCt04"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar mensagem de extensao incorreta do ficheiro", null, @__tags);
+#line 39
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 40
+    testRunner.When(string.Format("faço um upload de um arquivo {0}", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 41
+    testRunner.Then(string.Format("visualizo a mensagem de importação incorreta {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validar mensagem de extensao incorreta do ficheiro, \"Text.docx\"", new string[] {
+                "chrome",
+                "CatalagodeEditoraCt04"}, SourceLine=44)]
+        public virtual void ValidarMensagemDeExtensaoIncorretaDoFicheiro_Text_Docx()
+        {
+#line 39
+this.ValidarMensagemDeExtensaoIncorretaDoFicheiro("\"Text.docx\"", "\"Não foi possível executar importação, arquivo inválido.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void FazerUploadDePlanilhaComInformacoesInvalidas(string arquivo, string erro, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CatalagodeEditoraCt05"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Fazer upload de planilha com informações inválidas", null, @__tags);
+#line 48
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 49
+    testRunner.When(string.Format("faço um upload de um {0} com Autor não cadastrado", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 50
+    testRunner.Then(string.Format("visualizo, na aba Itens Inválidos, o erro {0}", erro), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Fazer upload de planilha com informações inválidas, \"Catálogo de Editoras Autor -" +
+            " Erro.xlsx\"", new string[] {
+                "chrome",
+                "CatalagodeEditoraCt05"}, SourceLine=53)]
+        public virtual void FazerUploadDePlanilhaComInformacoesInvalidas_CatalogoDeEditorasAutor_Erro_Xlsx()
+        {
+#line 48
+this.FazerUploadDePlanilhaComInformacoesInvalidas("\"Catálogo de Editoras Autor - Erro.xlsx\"", "\"- AUTORES: O autor não existe - HSNWEUE\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void FazerUploadDePlanilhaComAutorNaoCadastrado(string arquivo, string erro, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CatalagodeEditoraCt06"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Fazer upload de planilha com Autor não cadastrado", null, @__tags);
+#line 57
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 58
+    testRunner.When(string.Format("faço um upload de um {0} com Autor não cadastrado", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 59
+    testRunner.Then(string.Format("visualizo, na aba Itens Inválidos, o erro {0}", erro), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Fazer upload de planilha com Autor não cadastrado, \"Catálogo de Editoras Autor - " +
+            "Erro.xlsx\"", new string[] {
+                "chrome",
+                "CatalagodeEditoraCt06"}, SourceLine=62)]
+        public virtual void FazerUploadDePlanilhaComAutorNaoCadastrado_CatalogoDeEditorasAutor_Erro_Xlsx()
+        {
+#line 57
+this.FazerUploadDePlanilhaComAutorNaoCadastrado("\"Catálogo de Editoras Autor - Erro.xlsx\"", "\"- AUTORES: O autor não existe - HSNWEUE\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void FazerUploadDePlanilhaComDDANaoCadastrado(string arquivo, string erro, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CatalagodeEditoraCt07"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Fazer upload de planilha com DDA não cadastrado", null, @__tags);
+#line 66
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 67
+    testRunner.When(string.Format("faço um upload de um {0} com DDA não cadastrado", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 68
+    testRunner.Then(string.Format("visualizo, na aba Itens Inválidos, o erro de DDA {0}", erro), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Fazer upload de planilha com DDA não cadastrado, \"Catálogo de Editoras - DDA - Er" +
+            "ro.xlsx\"", new string[] {
+                "chrome",
+                "CatalagodeEditoraCt07"}, SourceLine=71)]
+        public virtual void FazerUploadDePlanilhaComDDANaoCadastrado_CatalogoDeEditoras_DDA_Erro_Xlsx()
+        {
+#line 66
+this.FazerUploadDePlanilhaComDDANaoCadastrado("\"Catálogo de Editoras - DDA - Erro.xlsx\"", "\"- DDA: O DDA não existe - JDYTDBFJCV\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidarMensagemDeUploadSemArquivo(string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CatalagodeEditoraCt09"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar mensagem de upload sem Arquivo", null, @__tags);
+#line 84
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 85
+      testRunner.When("faço um upload sem nenhum Arquivo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 86
+      testRunner.Then(string.Format("visualizo a mesagem de erro da importação {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validar mensagem de upload sem Arquivo, \"Não foi possível executar importação, se" +
+            "lecione o arquivo.\"", new string[] {
+                "chrome",
+                "CatalagodeEditoraCt09"}, SourceLine=89)]
+        public virtual void ValidarMensagemDeUploadSemArquivo_NaoFoiPossivelExecutarImportacaoSelecioneOArquivo_()
+        {
+#line 84
+this.ValidarMensagemDeUploadSemArquivo("\"Não foi possível executar importação, selecione o arquivo.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void CancelamentoDeUpload(string arquivo, string linha, string titulo, string composicao, string nacionalidade, string dominioPublico, string tipo, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CatalagodeEditoraCt10"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancelamento de Upload", null, @__tags);
+#line 93
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 94
+    testRunner.When(string.Format("faço um upload de um arquivo válido  {0}", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 95
+    testRunner.And(string.Format("visualizo a grid com as seguintes colunas, na aba de Itens Válidos: {0}, {1}, {2}" +
+                        ", {3}, {4} e {5}", linha, titulo, composicao, nacionalidade, dominioPublico, tipo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 96
+    testRunner.Then("confirmo o cancelamento do Upload do aquivo.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cancelamento de Upload, \"TEMPLATE Catálogo de Editoras.xlsx\"", new string[] {
+                "chrome",
+                "CatalagodeEditoraCt10"}, SourceLine=99)]
+        public virtual void CancelamentoDeUpload_TEMPLATECatalogoDeEditoras_Xlsx()
+        {
+#line 93
+this.CancelamentoDeUpload("\"TEMPLATE Catálogo de Editoras.xlsx\"", "\"2\"", "\"A AGRESSAO\"", "\"ROGER HENRI - ROGER HENRI - (100%)\"", "\"NACIONAL\"", "\"Não\"", "\"TRILHA MUSICAL\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidarMensagemDeImportacaoEmSegundoPlano(string arquivo, string linha, string titulo, string composicao, string nacionalidade, string dominioPublico, string tipo, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CatalagodeEditoraCt11"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar mensagem de importação em segundo plano", null, @__tags);
+#line 103
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 104
+    testRunner.When(string.Format("faço um upload de um arquivo válido  {0}", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 105
+    testRunner.And(string.Format("visualizo a grid com colunas, na aba de Itens Válidos: {0}, {1}, {2}, {3}, {4} e " +
+                        "{5}", linha, titulo, composicao, nacionalidade, dominioPublico, tipo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 106
+    testRunner.Then(string.Format("salvo a importação do catálogo e visualizo a mensagem {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validar mensagem de importação em segundo plano, \"TEMPLATE Catálogo de Editoras.x" +
+            "lsx\"", new string[] {
+                "chrome",
+                "CatalagodeEditoraCt11"}, SourceLine=109)]
+        public virtual void ValidarMensagemDeImportacaoEmSegundoPlano_TEMPLATECatalogoDeEditoras_Xlsx()
+        {
+#line 103
+this.ValidarMensagemDeImportacaoEmSegundoPlano("\"TEMPLATE Catálogo de Editoras.xlsx\"", "\"2\"", "\"A AGRESSAO\"", "\"ROGER HENRI - ROGER HENRI - (100%)\"", "\"NACIONAL\"", "\"Não\"", "\"TRILHA MUSICAL\"", "\"A importação será realizada em segundo plano. Ao final será enviado e-mail com r" +
+                    "esultado.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidarUploadComSucessoDeFicheiroComMuitosRegistros(string arquivo, string linha, string titulo, string composicao, string nacionalidade, string dominioPublico, string tipo, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CatalagodeEditoraCt13"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar upload com sucesso de Ficheiro com muitos registros", null, @__tags);
+#line 122
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 123
+    testRunner.When(string.Format("faço um upload de um arquivo válido  {0}", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 124
+    testRunner.And(string.Format("visualizo a grid com as seguintes colunas, na aba de Itens Válidos: {0}, {1}, {2}" +
+                        ", {3}, {4} e {5}", linha, titulo, composicao, nacionalidade, dominioPublico, tipo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 125
+    testRunner.Then(string.Format("salvo a importação do catálogo e visualizo a mensagem {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validar upload com sucesso de Ficheiro com muitos registros, \"TEMPLATE Catálogo d" +
+            "e Editoras.xlsx\"", new string[] {
+                "chrome",
+                "CatalagodeEditoraCt13"}, SourceLine=128)]
+        public virtual void ValidarUploadComSucessoDeFicheiroComMuitosRegistros_TEMPLATECatalogoDeEditoras_Xlsx()
+        {
+#line 122
+this.ValidarUploadComSucessoDeFicheiroComMuitosRegistros("\"TEMPLATE Catálogo de Editoras.xlsx\"", "\"2\"", "\"A AGRESSAO\"", "\"ROGER HENRI - ROGER HENRI - (100%)\"", "\"NACIONAL\"", "\"Não\"", "\"TRILHA MUSICAL\"", "\"A importação será realizada em segundo plano. Ao final será enviado e-mail com r" +
+                    "esultado.\"", ((string[])(null)));
 #line hidden
         }
         

@@ -835,12 +835,30 @@
       <LastGenOutput>5.6.1 - Gerar Relatório UBEM.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Resources\Catálogo de Editoras - DDA - Erro.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Catálogo de Editoras Autor - Erro.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\login.xlsx" />
     <None Include="Resources\Massa.xlsx" />
     <None Include="Resources\MASTER GUILHERME VETERANO E APRENDIZ  GUILHERME.edl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Resources\Relatorio_TODAS_ASSOCIACOES_102017.xlsx" />
+    <None Include="Resources\TEMPLATE Catálogo de Editoras.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TEMPLATE ERRO.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Teste em branco.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Text.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="runtests.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
