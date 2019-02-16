@@ -27,7 +27,8 @@ Cenario: Validar campo Capítulo obrigatório
 		
 @chrome @CadastroDeCueSheetCT03
 Esquema do Cenario: Validar duplicidade de nova Cue-sheet
-	Dado que tenha uma cue-sheet cadastrada no sistema
+	Dado que tenha um produto cadastrado no sistema
+	E que tenha uma cue-sheet cadastrada no sistema
 	Quando tento cadastrar uma nova cue-sheet com os mesmos dados da cue-sheet existente
 	Entao visualizo uma mensagem de critica informando que já existe uma cue-sheet cadastrada para essa midia e data <Mensagem>
     
@@ -55,27 +56,26 @@ Cenario: Cancelar criação de cue-sheet sem arquivo de importação
 @chrome @CadastroDeCueSheetCT06
 Esquema do Cenario: Cadastrar itens por importação de arquivo com extensões ".TXT" e ".EDL" na tela Cadastro de Cue-Sheet
 	Dado que tenha um produto cadastrado no sistema
-	E que tenha uma cue-sheet cadastrada no sistema
-	Quando faço upload de um arquivo com uma lista de itens para Cue-Sheet <Extensao>
+	Quando cadastro uma Cue-Sheet importando uma lista de itens <ListaDeItensDaCueSheet>
 	Então visualizo um dos itens da lista cadastrado na Cue-Sheet com sucesso <ItemDaCueSheet>
  
  Exemplos:
-      | Extensao | ItemDaCueSheet                  |
-      | "TXT"    | "NASCENTE"                      |
-      | "EDL"    | "VINHETA__BEM_VERAO___AUDIO_01" |
+      | ListaDeItensDaCueSheet                                | ItemDaCueSheet                  |
+      | "ONOF 30 BL1.txt"                                     | "NASCENTE"                      |
+      | "MASTER GUILHERME VETERANO E APRENDIZ  GUILHERME.edl" | "VINHETA__BEM_VERAO___AUDIO_01" |
 
 @chrome @CadastroDeCueSheetCT07
 Esquema do Cenario: Importar arquivos TXT e EDL com itens de cue-sheet na tela de detahes da cue-sheet
     Dado que tenha um produto cadastrado no sistema
 	E que tenha uma cue-sheet cadastrada no sistema
-	Quando faço upload de um arquivo com uma lista de itens para Cue-Sheet <Extensao>
+	Quando faço upload de um arquivo com uma lista de itens para Cue-Sheet <ListaDeItensDaCueSheet>
 	Então visualizo um dos itens da lista cadastrado na Cue-Sheet com sucesso <ItemDaCueSheet>
  
  Exemplos:
-      | Extensao | ItemDaCueSheet                  |
-      | "TXT"    | "NASCENTE"                      |
-      | "EDL"    | "VINHETA__BEM_VERAO___AUDIO_01" |
- 
+      | ListaDeItensDaCueSheet                                | ItemDaCueSheet                  |
+      | "ONOF 30 BL1.txt"                                     | "NASCENTE"                      |
+      | "MASTER GUILHERME VETERANO E APRENDIZ  GUILHERME.edl" | "VINHETA__BEM_VERAO___AUDIO_01" |
+
 @chrome @CadastroDeCueSheetCT08
 Cenario: Item com Obra associada para gênero diferente de Jornalismo e Esporte
 	Dado que tenha uma obra cadastrada no sistema
@@ -91,61 +91,67 @@ Cenario: Item com Fonograma para gênero diferente de Jornalismo e Esporte
 	E que tenha uma cue-sheet cadastrada no sistema
 	Quando cadastro um item na Cue-Sheet
 	Então visualizo o item da Cue-Sheet cadastrado na grid com sucesso
-    
-#
-#Cenario: Impedir importação no detalhe da Cue-sheet com status Liberada
-#    Dado que esteja na tela de detalhes de uma cue-sheet com status liberada
-#    Entao não visualizo o ícone Upload de Arquivo com sucesso
 
-#Esquema do Cenario: Validar extensão do arquivo de importação diferente de .EDL ou .TXT
-#    Dado que esteja na tela de cadastro de Cue-Sheet
-#    Quando informo os campos <Produto>, <Capitulo>, <Episodio>, <Midia>, <DataExibicao> e <Reprise> ou <Rebatida> no formulario de cadastro
-#    E tento salvar o cadastro importando um arquivo com extensao diferente de TXT e EDL
-#    Entao visualizo a <Mensagem> de critica
-#      
-#  Exemplos:
-#      | Produto           | Capitulo | Episodio | Midia | DataExibicao | Reprise | Rebatida | Mensagem                                                                | 
-#      | "Jornal Nacional" | "999"    | ""       | "TV"  | "23/10/2018" | ""      | ""       | "Este arquivo não pode ser importado. O formato do arquivo é inválido." | 
-#
+@chrome @CadastroDeCueSheetCT10
+Esquema do Cenario: Validar extensão do arquivo de importação diferente de .EDL ou .TXT
+    Dado que tenha um produto cadastrado no sistema
+	Quando tento cadastrar uma Cue-Sheet importando um arquivo com extensão diferente de EDL e TXT <ListaDeItensDaCueSheet>
+	Então visualizo uma mensagem informando que o arquivo é inválido <Mensagem>
 
-#Esquema do Cenario: Cue-sheet de uma reprise para gênero Jornalismo
-#    Dado que possua uma cue-sheet cadastrada com um produto do genero Jornalismo
-#    E que esteja na tela de cadastro de novos itens dentro cue-sheet
-#    Quando salvo o cadastro preenchendo os campos <Titulo>, <TipoExibicao>, <TipoUtilizacao>, <Sincronismo>, <Interprete>, <Tempo>, <Reprise> e <FairUse>
-#    Entao visualizo o item incluido com sucesso no detalhe da cue-sheet
-#
-#  Exemplos:
-#      | Titulo      | TipoExibicao | TipoUtilizacao    | Sincronismo | Interprete | Tempo | Reprise | FairUse | 
-#      | "BANG BANG" | "Gravado"    | "BK - BACKGROUND" | "ABERTURA"  | "ANITTA"   | "10"  | "Sim"   | "Sim"   | 
-#  
-#Esquema do Cenario: Cue-sheet de uma reprise para gênero Esporte
-#    Dado que possua uma cue-sheet cadastrada com um produto do genero Esporte
-#    E que esteja na tela de cadastro de novos itens dentro cue-sheet
-#    Quando salvo o cadastro preenchendo os campos <Titulo>, <TipoExibicao>, <TipoUtilizacao>, <Sincronismo>, <Interprete>, <Tempo>, <Reprise> e <FairUse>
-#    Entao visualizo o item incluido com sucesso no detalhe da cue-sheet
-#
-#  Exemplos:
-#      | Titulo      | TipoExibicao | TipoUtilizacao    | Sincronismo | Interprete | Tempo | Reprise | FairUse | 
-#      | "BANG BANG" | "Gravado"    | "BK - BACKGROUND" | "ABERTURA"  | "ANITTA"   | "10"  | "Sim"   | "Sim"   | 
-#
-#Esquema do Cenario: Validar campos obrigatórios em branco
-#    Dado que possua uma cue-sheet cadastrada
-#    E que esteja na tela de cadastro de novos itens dentro cue-sheet
-#    Quando tento salvar o cadastro sem preencher os campos <Titulo> e <Tempo>
-#    Entao visualizo os campos <Titulo> e <Tempo> destacados em vermelho
-#
-#  Exemplos:
-#      | Titulo      | Tempo | 
-#      | "BANG BANG" | "10"  | 
-#
-#Esquema do Cenario: Cancelar cadastro de item na cue-sheet
-#    Dado que possua uma cue-sheet cadastrada
-#    E que esteja na tela de cadastro de novos itens dentro cue-sheet
-#    Quando preencho os campos <Titulo>, <TipoExibicao>, <TipoUtilizacao>, <Sincronismo>, <Interprete>, <Tempo>, <Reprise> e <FairUse>
-#    E clico em cancelar
-#    Entao visualizo a <Mensagem> de confirmacao
-#    E retorno para a tela de detalhe da cue-sheet
-#  
-#  Exemplos:
-#      | Titulo      | TipoExibicao | TipoUtilizacao    | Sincronismo | Interprete | Tempo | Reprise | FairUse | Mensagem                                                                                   | 
-#      | "BANG BANG" | "Gravado"    | "BK - BACKGROUND" | "ABERTURA"  | "ANITTA"   | "10"  | "Sim"   | "Sim"   | "Deseja cancelar? Registro ainda não foi salvo no sistema, todos os dados serão perdidos." | 
+ Exemplos:
+      | ListaDeItensDaCueSheet | Mensagem                                                               |
+      | "Massa.xlsx"           | "Este arquivo não pode ser importado. O formato do arquivo é inválido" |
+ 
+@chrome @CadastroDeCueSheetCT11
+ Cenario: Cancelar cadastro de item na cue-sheet
+	Dado que tenha uma obra cadastrada no sistema
+	E que tenha um produto cadastrado no sistema
+	E que tenha uma cue-sheet cadastrada no sistema
+	Quando cancelo o cadastro de um item de Cue-Sheet
+	Então visualizo que o total de itens na Cue-Sheet continua como zero
+
+@chrome @CadastroDeCueSheetCT12
+Esquema do Cenario: Cue-sheet de uma reprise para gênero Jornalismo
+	Dado que tenha uma obra cadastrada no sistema
+	E que tenha um produto cadastrado no sistema <GeneroOriginal>, <DireitosMusicais>
+	E que tenha uma cue-sheet cadastrada no sistema
+	Quando cadastro um item na Cue-Sheet
+	E altero o item para Fair Use
+	Então visualizo o item da Cue-Sheet cadastrado na grid com sucesso
+	
+ Exemplos:
+      | GeneroOriginal | DireitosMusicais |
+      | "Jornalismo"   | "JORNALISMO"     |
+ 
+@chrome @CadastroDeCueSheetCT13
+Esquema do Cenario: Cue-sheet de uma reprise para gênero Esporte
+    Dado que tenha uma obra cadastrada no sistema
+	E que tenha um produto cadastrado no sistema <GeneroOriginal>, <DireitosMusicais>
+	E que tenha uma cue-sheet cadastrada no sistema
+	Quando cadastro um item na Cue-Sheet
+	E altero o item para Fair Use
+	Então visualizo o item da Cue-Sheet cadastrado na grid com sucesso
+	
+ Exemplos:
+      | GeneroOriginal | DireitosMusicais |
+      | "Jornalismo"   | "ESPORTE"        |
+ 
+@chrome @CadastroDeCueSheetCT14
+Esquema do Cenario: Impedir importação no detalhe da Cue-sheet com status Liberada
+    Dado que tenha uma Cue-Sheet cadastrada no sistema <Produto>, <Episodio>, <Capitulo>, <Midia>, <Dia>, <Mes>, <Ano>, <RepriseRebatida>
+	E que tenha um item cadastrado na Cue-Sheet <Obra>, <Utilizacao>, <Sincronismo>, <Tempo>, <Interprete>
+	Quando aprovo um item da Cue-Sheet <Obra>
+	E finalizo a Cue-Sheet
+	Então visualizo o Status da Cue-Sheet como Finalizada <Status>
+	E visualizo apenas o botão de Reiniciar Cue-Sheet
+	
+  Exemplos:
+      | Produto     | Episodio    | Capitulo | Midia       | Dia  | Mes  | Ano    | RepriseRebatida | Obra        | Utilizacao        | Sincronismo | Tempo | Interprete | Status       |
+      | "Aleatório" | "Aleatório" | "01"     | "GLOBONEWS" | "12" | "12" | "2018" | "Não"           | "Aleatório" | "BK – BACKGROUND" | "ABERTURA"  | "16"  | " "        | "Finalizada" |
+
+@chrome @CadastroDeCueSheetCT15
+Cenario: Validar campos obrigatórios em branco
+    E que tenha um produto cadastrado no sistema
+	E que tenha uma cue-sheet cadastrada no sistema
+	Quando tento cadastrar um item de Cue-Sheet deixando os campos obrigatórios em branco
+	Então visualizo os campos obrigatórios para o cadastro de um item de Cue-Sheet em destaque

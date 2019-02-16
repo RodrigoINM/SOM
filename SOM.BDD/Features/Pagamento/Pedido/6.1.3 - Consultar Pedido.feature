@@ -186,15 +186,17 @@ Esquema do Cenario: Informação não localizada
       | Numero    | Mensagem                |
       | "1099999" | "Dados não encontratos" |
   
-#Esquema do Cenario: Visualização de Relatório de Pedido
-#    Quando informo e seleciono o <Numero> do pedido
-#    E faco download do relatorio de pagamento do resultado da busca
-#    Entao visualizo o relatorio de status sobre autorizacoes de uso de musicas do pedido pesquisado
-#   
-#  Exemplos:
-#      | Numero    |
-#      | "1000565" |
-#
+ @chrome @ConsultarPedidoCT20
+Esquema do Cenario: Visualização de Relatório de Pedido
+	Quando faço uma busca avançada de pedido por número <Numero>
+    Entao visualizo os dados do pedido no resultado da busca <Numero>, <Produto>, <Episodio>, <Capitulo>, <Obra>, <MidiaADebitar>, <Sincronismo>, <ValorTotal>, <Status>, <StatusPav>, <Reprise>
+	E visualizo o relatório de pagamento do pedido buscado
+
+  Exemplos:
+      | Numero    | Produto                          | Episodio            | Capitulo | Obra                | MidiaADebitar | Sincronismo | ValorTotal | Status         | StatusPav       | Reprise |
+      | "1001404" | "Avis1816412639 Ozane1633164760" | "Paulette436942029" | "01"     | "Jonelle1677499510" | "GLOBONEWS"   | "ABERTURA"  | "R$ 67,50" | "Em andamento" | "Não requerido" | "Não"   |
+  
+
 #Cenario: Melhorias na busca de pedido - Ordenação
 #    Dado a tela de busca de pedido esteja aberta e faço uma busca simples
 #    Quando clico nas colunas da grid

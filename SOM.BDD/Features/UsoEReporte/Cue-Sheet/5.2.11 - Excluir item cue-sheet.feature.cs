@@ -431,6 +431,102 @@ this.ExclusaoDeItemComFechamentoAoUBEM("\"Aleatório\"", "\"Aleatório\"", "\"01
 #line hidden
         }
         
+        public virtual void ExclusaoTotalDeItensComPedidoEmAndamento(string produto, string episodio, string capitulo, string midia, string dia, string mes, string ano, string repriseRebatida, string obra, string utilizacao, string sincronismo, string tempo, string interprete, string mensagem, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "ExcluirItensDeCueSheetCT09"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Exclusão total de itens com pedido \"Em andamento\"", null, @__tags);
+#line 109
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 110
+    testRunner.Given(string.Format("que tenha uma Cue-Sheet cadastrada no sistema {0}, {1}, {2}, {3}, {4}, {5}, {6}, " +
+                        "{7}", produto, episodio, capitulo, midia, dia, mes, ano, repriseRebatida), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 111
+ testRunner.And(string.Format("que tenha um item cadastrado na Cue-Sheet {0}, {1}, {2}, {3}, {4}", obra, utilizacao, sincronismo, tempo, interprete), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 112
+ testRunner.And(string.Format("que tenha um item aprovado {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 113
+ testRunner.When(string.Format("excluo um item cadastrado na Cue-Sheet {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 114
+ testRunner.Then(string.Format("visualizo uma mensagem de registro excluido com sucesso {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Exclusão total de itens com pedido \"Em andamento\", \"Aleatório\"", new string[] {
+                "chrome",
+                "ExcluirItensDeCueSheetCT09"}, SourceLine=117)]
+        public virtual void ExclusaoTotalDeItensComPedidoEmAndamento_Aleatorio()
+        {
+#line 109
+this.ExclusaoTotalDeItensComPedidoEmAndamento("\"Aleatório\"", "\"Aleatório\"", "\"01\"", "\"GLOBONEWS\"", "\"12\"", "\"12\"", "\"2018\"", "\"Não\"", "\"Aleatório\"", "\"BK – BACKGROUND\"", "\"ABERTURA\"", "\"16\"", "\" \"", "\"Registros excluídos com sucesso.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ExclusaoParcialDeItensComPedidoEmAndamento(
+                    string produto, 
+                    string episodio, 
+                    string capitulo, 
+                    string midia, 
+                    string dia, 
+                    string mes, 
+                    string ano, 
+                    string repriseRebatida, 
+                    string obra, 
+                    string obra2, 
+                    string utilizacao, 
+                    string sincronismo, 
+                    string tempo, 
+                    string interprete, 
+                    string mensagem, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "ExcluirItensDeCueSheetCT10"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Exclusão parcial de itens com pedido \"Em andamento\"", null, @__tags);
+#line 121
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 122
+    testRunner.Given(string.Format("que tenha uma Cue-Sheet cadastrada no sistema {0}, {1}, {2}, {3}, {4}, {5}, {6}, " +
+                        "{7}", produto, episodio, capitulo, midia, dia, mes, ano, repriseRebatida), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 123
+ testRunner.And(string.Format("que tenha dois itens cadastrados na Cue-Sheet {0}, {1}, {2}, {3}, {4}, {5}", obra, obra2, utilizacao, sincronismo, tempo, interprete), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 124
+ testRunner.And(string.Format("que tenha um item aprovado {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 125
+ testRunner.When(string.Format("excluo um item cadastrado na Cue-Sheet {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 126
+ testRunner.Then(string.Format("visualizo uma mensagem de registro excluido com sucesso {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Exclusão parcial de itens com pedido \"Em andamento\", \"Aleatório\"", new string[] {
+                "chrome",
+                "ExcluirItensDeCueSheetCT10"}, SourceLine=129)]
+        public virtual void ExclusaoParcialDeItensComPedidoEmAndamento_Aleatorio()
+        {
+#line 121
+this.ExclusaoParcialDeItensComPedidoEmAndamento("\"Aleatório\"", "\"Aleatório\"", "\"01\"", "\"GLOBONEWS\"", "\"12\"", "\"12\"", "\"2018\"", "\"Não\"", "\"Aleatório\"", "\"TESTE INMETRICS\"", "\"BK – BACKGROUND\"", "\"ABERTURA\"", "\"16\"", "\" \"", "\"Registros excluídos com sucesso.\"", ((string[])(null)));
+#line hidden
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

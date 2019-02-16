@@ -303,6 +303,25 @@ namespace SOM.BDD.Steps.Pagamento.Pedido___Cue_Sheet
             ScenarioContext.Current.Pending();
         }
 
+        [Then(@"visualizo apenas o icone para aprovar o item cadastrado")]
+        public void EntaoVisualizoApenasOIconeParaAprovarOItemCadastrado()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.SelecionarItemDaCueSheet(CadastrarObraEComposicaoPage.Obra);
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarIconeDeAprovarItemDeCueSheet();
+        }
+
+        [When(@"eu aprovo e crio um pedido para o item da Cue-Sheet")]
+        public void QuandoEuAprovoECrioUmPedidoParaOItemDaCue_Sheet()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.AprovarItemDeCueSheet(CadastrarObraEComposicaoPage.Obra);
+            TelaGerarPedidosDePagamentoCueSheetPage.GerarPedidoParaItemDeCueSheet("Sim", CadastrarObraEComposicaoPage.Obra, "Sim");
+        }
+
+        [Then(@"visualizo o pedido cadastrado com sucesso")]
+        public void EntaoVisualizoOPedidoCadastradoComSucesso()
+        {
+            TelaGerarPedidosDePagamentoCueSheetPage.ValidarPedidoGerado(CadastrarObraEComposicaoPage.Obra);
+        }
 
     }
 }

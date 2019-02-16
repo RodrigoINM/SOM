@@ -227,14 +227,17 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
 
         private void SelecionarInterprete(string Interprete)
         {
-            AutomatedActions.SendDataATM(Browser, InpInterprete, Interprete);
-            try
+            if(Interprete != "" && Interprete != " ")
             {
-                MouseActions.ClickATM(Browser, Element.Xpath("//li[text()='" + Interprete + "']"));
-            }
-            catch
-            {
-                MouseActions.ClickATM(Browser, Element.Xpath("//li[text()='" + Interprete + "']"));
+                AutomatedActions.SendDataATM(Browser, InpInterprete, Interprete);
+                try
+                {
+                    MouseActions.ClickATM(Browser, Element.Xpath("//li[text()='" + Interprete + "']"));
+                }
+                catch
+                {
+                    MouseActions.ClickATM(Browser, Element.Xpath("//li[text()='" + Interprete + "']"));
+                }
             }
         }
 
@@ -303,46 +306,32 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             Assert.IsTrue(ElementExtensions.IsElementVisible(PopUpStatus, Browser));
         }
 
+        public void CancelarCadastroDeItemCueSheet(string TituloObra, string Utilizacao, string Sincronismo, string Tempo)
+        {
+            Thread.Sleep(2000);
+            MouseActions.ClickATM(Browser, BtnAdicionarItemCueSheet);
+
+            PreencherItemDeCueSheetObra(TituloObra, Utilizacao, Sincronismo, Tempo);
+
+            var BtnCancelarCadastroItemDeCueSheet = Element.Css("a[ng-click='voltarLista()']");
+            MouseActions.ClickATM(Browser, BtnCancelarCadastroItemDeCueSheet);
+
+            ValidarAlerta("Deseja cancelar? Registro ainda não foi salvo no sistema, todos os dados serão perdidos.");
+
+            var BtnConfirmarCancelamento = Element.Css("button[class='confirm']");
+            BtnConfirmarCancelamento.IsElementVisible(Browser);
+            Thread.Sleep(2000);
+            MouseActions.ClickATM(Browser, BtnConfirmarCancelamento);
+        }
+
         public void CadastrarItemCueSheet(string TituloObra, string Utilizacao, string Sincronismo, string Tempo)
         {
             Thread.Sleep(2000);
             MouseActions.ClickATM(Browser, BtnAdicionarItemCueSheet);
-            
-            AutomatedActions.SendData(Browser, InpTituloObra, TituloObra);
-            SelecionarObraFonograma("", TituloObra);
-            SelecionarUtilizacao(Utilizacao);
-            SelecionarSincronismo(Sincronismo);
-            AutomatedActions.SendData(Browser, InpTempo, Tempo);
 
-            MouseActions.ClickATM(Browser, BtnCadastrarInterprete);
-            AutomatedActions.SendDataATM(Browser, InpNomeInterprete, FakeHelpers.FirstName() + FakeHelpers.RandomNumberStr());
-            MouseActions.ClickATM(Browser, BtnSalvarCadastroDeInterprete);
-            Thread.Sleep(2000);
+            PreencherItemDeCueSheetObra(TituloObra, Utilizacao, Sincronismo, Tempo);
 
-            try
-            {
-                var interprete = Element.Css("li[class='search-choice']");
-                ElementExtensions.IsElementVisible(interprete, Browser);
-            }
-            catch
-            {
-                Thread.Sleep(2000);
-                var interprete = Element.Css("li[class='search-choice']");
-                ElementExtensions.IsElementVisible(interprete, Browser);
-            }
-
-            try
-            {
-                Thread.Sleep(2000);
-                ElementExtensions.IsElementVisible(BtnSalvarItemCueSheet, Browser);
-                MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
-            }
-            catch
-            {
-                Thread.Sleep(2000);
-                ElementExtensions.IsElementVisible(BtnSalvarItemCueSheet, Browser);
-                MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
-            }
+            CadastrarNovoInterprete();
 
             Assert.IsTrue(ElementExtensions.IsElementVisible(PopUpStatus, Browser));
         }
@@ -472,6 +461,21 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
         }
 
+        public void AlterarItemDeCueSheetParaFairUse()
+        {
+            var marcarFairUSe = Element.Css("label[for='itemFairUse']");
+            try
+            {
+                MouseActions.ClickATM(Browser, marcarFairUSe);
+            }
+            catch
+            {
+                MouseActions.ClickATM(Browser, marcarFairUSe);
+            }
+
+            MouseActions.ClickATM(Browser, BtnSalvarItemCueSheet);
+        }
+
         public void AlterarItemDeCueSheetParaReprise()
         {
             var marcarReprise = Element.Css("label[for='itemReprise']");
@@ -558,6 +562,12 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             ElementExtensions.IsElementVisible(nomeObra, Browser);
             MouseActions.ClickATM(Browser, nomeObra);
             Browser.SwitchToLastWindow();
+        }
+
+        public void ValidarPedidoGerado(string Obra)
+        {
+            var nomeObra = Element.Xpath("//td[text()='" + Obra + "']/..//a[@ng-click='redirecionaDetalhePedido(item.IdPedido)']");
+            ElementExtensions.IsElementVisible(nomeObra, Browser);
         }
 
         public void NavegarTelaDegeracaoDePedidos()
@@ -730,6 +740,11 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
             ElementExtensions.IsElementVisible(campoEmDestaque, Browser);
         }
 
+        public void ValidarIconeDeAprovarItemDeCueSheet()
+        {
+            ElementExtensions.IsElementVisible(BtnAprovarItens, Browser);
+        }
+
         public void ValidarItemDeCueSheet(string Valor)
         {
             var textoItemCueSheet = Element.Xpath("//tbody[@dnd-list='ListCueSheetItemViewDragDrop.lists']//td[contains(., '" + Valor + "')]");
@@ -743,5 +758,12 @@ namespace SOM.BDD.Pages.Pagamento.Pedido___Cue_Sheet
                 ElementExtensions.IsElementVisible(textoItemCueSheet, Browser);
             }
         }
+
+        public void ValidarAlerta(string Mensagem)
+        {
+            var texto = Element.Css("p[style='display: block;']");
+            Assert.AreEqual(Mensagem, ElementExtensions.GetValorAtributo(texto, "textContent", Browser));
+        }
+
     }
 }

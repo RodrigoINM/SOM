@@ -167,7 +167,7 @@ this.AlteracaoDeSincronismo_PedidoJaExistenteParaAMesmaObraESincronismo("\"MUSIC
         {
             string[] @__tags = new string[] {
                     "chrome",
-                    "PedidosPagamentoCueSheetCT02"};
+                    "PedidosPagamentoCueSheetCT03"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -195,7 +195,7 @@ this.FeatureBackground();
         [TechTalk.SpecRun.ScenarioAttribute("Alteração de obra - Pedido já existente para a mesma obra e sincronismo, \"TESTE D" +
             "E 500MB\"", new string[] {
                 "chrome",
-                "PedidosPagamentoCueSheetCT02"}, SourceLine=43)]
+                "PedidosPagamentoCueSheetCT03"}, SourceLine=43)]
         public virtual void AlteracaoDeObra_PedidoJaExistenteParaAMesmaObraESincronismo_TESTEDE500MB()
         {
 #line 36
@@ -207,7 +207,7 @@ this.AlteracaoDeObra_PedidoJaExistenteParaAMesmaObraESincronismo("\"TESTE DE 500
         {
             string[] @__tags = new string[] {
                     "chrome",
-                    "PedidosPagamentoCueSheetCT03"};
+                    "PedidosPagamentoCueSheetCT04"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -234,7 +234,7 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Não marcar para gerar pedido linhas de ABERTURA ou TEMA, \"TESTE DE 500MB\"", new string[] {
                 "chrome",
-                "PedidosPagamentoCueSheetCT03"}, SourceLine=55)]
+                "PedidosPagamentoCueSheetCT04"}, SourceLine=55)]
         public virtual void NaoMarcarParaGerarPedidoLinhasDeABERTURAOuTEMA_TESTEDE500MB()
         {
 #line 47
@@ -246,7 +246,7 @@ this.NaoMarcarParaGerarPedidoLinhasDeABERTURAOuTEMA("\"TESTE DE 500MB\"", "\"BK 
         {
             string[] @__tags = new string[] {
                     "chrome",
-                    "PedidosPagamentoCueSheetCT04"};
+                    "PedidosPagamentoCueSheetCT05"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -282,7 +282,7 @@ this.FeatureBackground();
         [TechTalk.SpecRun.ScenarioAttribute("Novo item ABERTURA ou TEMA válido em Variedades ou Jornalismo ou Esporte com pedi" +
             "do existente, \"TESTE DE 500MB\"", new string[] {
                 "chrome",
-                "PedidosPagamentoCueSheetCT04"}, SourceLine=70)]
+                "PedidosPagamentoCueSheetCT05"}, SourceLine=70)]
         public virtual void NovoItemABERTURAOuTEMAValidoEmVariedadesOuJornalismoOuEsporteComPedidoExistente_TESTEDE500MB()
         {
 #line 59
@@ -294,7 +294,7 @@ this.NovoItemABERTURAOuTEMAValidoEmVariedadesOuJornalismoOuEsporteComPedidoExist
         {
             string[] @__tags = new string[] {
                     "chrome",
-                    "PedidosPagamentoCueSheetCT05"};
+                    "PedidosPagamentoCueSheetCT06"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -326,12 +326,77 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, \"TESTE DE 500MB\"", new string[] {
                 "chrome",
-                "PedidosPagamentoCueSheetCT05"}, SourceLine=84)]
+                "PedidosPagamentoCueSheetCT06"}, SourceLine=84)]
         public virtual void NovoItemABERTURAOuTEMAEmDramaturgiaComPedidoExistente_TESTEDE500MB()
         {
 #line 74
 this.NovoItemABERTURAOuTEMAEmDramaturgiaComPedidoExistente("\"TESTE DE 500MB\"", "\"BK – BACKGROUND\"", "\"ABERTURA\"", "\"16\"", "\"25\"", "\"41\"", ((string[])(null)));
 #line hidden
+        }
+        
+        public virtual void GerarPedidoSemItensAprovados(string produto, string episodio, string capitulo, string midia, string dia, string mes, string ano, string repriseRebatida, string obra, string utilizacao, string sincronismo, string tempo, string interprete, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "PedidosPagamentoCueSheetCT07"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar pedido sem itens aprovados", null, @__tags);
+#line 89
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 90
+    testRunner.Given(string.Format("que tenha uma Cue-Sheet cadastrada no sistema {0}, {1}, {2}, {3}, {4}, {5}, {6}, " +
+                        "{7}", produto, episodio, capitulo, midia, dia, mes, ano, repriseRebatida), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 91
+ testRunner.And(string.Format("que tenha um item cadastrado na Cue-Sheet {0}, {1}, {2}, {3}, {4}", obra, utilizacao, sincronismo, tempo, interprete), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 92
+ testRunner.Then("visualizo apenas o icone para aprovar o item cadastrado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar pedido sem itens aprovados, \"Aleatório\"", new string[] {
+                "chrome",
+                "PedidosPagamentoCueSheetCT07"}, SourceLine=95)]
+        public virtual void GerarPedidoSemItensAprovados_Aleatorio()
+        {
+#line 89
+this.GerarPedidoSemItensAprovados("\"Aleatório\"", "\"Aleatório\"", "\"01\"", "\"GLOBONEWS\"", "\"12\"", "\"12\"", "\"2018\"", "\"Não\"", "\"Aleatório\"", "\"BK – BACKGROUND\"", "\"ABERTURA\"", "\"16\"", "\" \"", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar pedido para planilha de cue-sheet 100% aprovada", new string[] {
+                "chrome",
+                "PedidosPagamentoCueSheetCT08"}, SourceLine=98)]
+        public virtual void GerarPedidoParaPlanilhaDeCue_Sheet100Aprovada()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar pedido para planilha de cue-sheet 100% aprovada", null, new string[] {
+                        "chrome",
+                        "PedidosPagamentoCueSheetCT08"});
+#line 99
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 100
+     testRunner.Given("que tenha uma obra cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 101
+  testRunner.And("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 102
+  testRunner.And("que tenha uma cue-sheet cadastrada no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 103
+  testRunner.And("que tenha um item cadastrado na cue-sheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 104
+  testRunner.When("eu aprovo e crio um pedido para o item da Cue-Sheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 105
+  testRunner.Then("visualizo o pedido cadastrado com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.TestRunCleanup()]
