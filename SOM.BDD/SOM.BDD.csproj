@@ -838,6 +838,7 @@
     <None Include="Resources\Catálogo de Editoras - DDA - Erro.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\Catálogo de Editoras - Duplicar.xlsx" />
     <None Include="Resources\Catálogo de Editoras Autor - Erro.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

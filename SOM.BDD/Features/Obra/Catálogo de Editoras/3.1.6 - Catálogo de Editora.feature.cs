@@ -312,6 +312,40 @@ this.FazerUploadDePlanilhaComDDANaoCadastrado("\"Catálogo de Editoras - DDA - E
 #line hidden
         }
         
+        public virtual void ValidarMensagensNaColunaErroAoFazerUploadDePlanilhaVazia(string arquivo, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CatalagodeEditoraCt08"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar mensagens na coluna Erro ao fazer upload de planilha vazia", null, @__tags);
+#line 75
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 76
+    testRunner.When(string.Format("faço um upload de um {0} com em branco", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 77
+    testRunner.Then("visualizo, na aba Itens Inválidos, o Erro da planilha em branco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validar mensagens na coluna Erro ao fazer upload de planilha vazia, \"Teste em bra" +
+            "nco.xlsx\"", new string[] {
+                "chrome",
+                "CatalagodeEditoraCt08"}, SourceLine=80)]
+        public virtual void ValidarMensagensNaColunaErroAoFazerUploadDePlanilhaVazia_TesteEmBranco_Xlsx()
+        {
+#line 75
+this.ValidarMensagensNaColunaErroAoFazerUploadDePlanilhaVazia("\"Teste em branco.xlsx\"", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void ValidarMensagemDeUploadSemArquivo(string mensagem, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -364,8 +398,7 @@ this.FeatureBackground();
 #line 94
     testRunner.When(string.Format("faço um upload de um arquivo válido  {0}", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 95
-    testRunner.And(string.Format("visualizo a grid com as seguintes colunas, na aba de Itens Válidos: {0}, {1}, {2}" +
-                        ", {3}, {4} e {5}", linha, titulo, composicao, nacionalidade, dominioPublico, tipo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+    testRunner.And(string.Format("visualizo a grid das colunas {0}, {1}, {2}, {3}, {4}, {5}", linha, titulo, composicao, nacionalidade, dominioPublico, tipo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line 96
     testRunner.Then("confirmo o cancelamento do Upload do aquivo.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
@@ -400,8 +433,8 @@ this.FeatureBackground();
 #line 104
     testRunner.When(string.Format("faço um upload de um arquivo válido  {0}", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 105
-    testRunner.And(string.Format("visualizo a grid com colunas, na aba de Itens Válidos: {0}, {1}, {2}, {3}, {4} e " +
-                        "{5}", linha, titulo, composicao, nacionalidade, dominioPublico, tipo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+    testRunner.And(string.Format("visualizo a grid com as seguintes colunas, na aba de Itens Válidos: {0}, {1}, {2}" +
+                        ", {3}, {4} e {5}", linha, titulo, composicao, nacionalidade, dominioPublico, tipo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line 106
     testRunner.Then(string.Format("salvo a importação do catálogo e visualizo a mensagem {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
@@ -417,6 +450,41 @@ this.FeatureBackground();
 #line 103
 this.ValidarMensagemDeImportacaoEmSegundoPlano("\"TEMPLATE Catálogo de Editoras.xlsx\"", "\"2\"", "\"A AGRESSAO\"", "\"ROGER HENRI - ROGER HENRI - (100%)\"", "\"NACIONAL\"", "\"Não\"", "\"TRILHA MUSICAL\"", "\"A importação será realizada em segundo plano. Ao final será enviado e-mail com r" +
                     "esultado.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidarErrosNaImportacaoDeFicheiroComDadosDuplicados(string arquivo, string erro, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "CatalagodeEditoraCt12"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar erros na importação de ficheiro com dados duplicados", null, @__tags);
+#line 113
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 114
+     testRunner.When(string.Format("faço um upload de um arquivo duplicado {0}", arquivo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 115
+     testRunner.Then(string.Format("visualizo, na aba Itens Inválidos, o erro {0}", erro), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validar erros na importação de ficheiro com dados duplicados, \"Catálogo de Editor" +
+            "as - Duplicar.xlsx\"", new string[] {
+                "chrome",
+                "CatalagodeEditoraCt12"}, SourceLine=118)]
+        public virtual void ValidarErrosNaImportacaoDeFicheiroComDadosDuplicados_CatalogoDeEditoras_Duplicar_Xlsx()
+        {
+#line 113
+this.ValidarErrosNaImportacaoDeFicheiroComDadosDuplicados("\"Catálogo de Editoras - Duplicar.xlsx\"", "\"- TÍTULO DA OBRA/AUTORES/DDA/PERCENTUAIS AUTORAIS: Obra duplicada no arquivo - A" +
+                    " AGRESSAO\"", ((string[])(null)));
 #line hidden
         }
         

@@ -71,14 +71,14 @@ Esquema do Cenário: Fazer upload de planilha com DDA não cadastrado
           | Arquivo                                  | Erro                                   |
           | "Catálogo de Editoras - DDA - Erro.xlsx" | "- DDA: O DDA não existe - JDYTDBFJCV" |
 
-#@chrome @CatalagodeEditoraCt08
-#Esquema do Cenário: Validar mensagens na coluna Erro ao fazer upload de planilha vazia
-#    Quando faço um upload de um <Arquivo> com em branco
-#    Então visualizo, na aba Itens Inválidos, o erro de campos em branco <Erro>
-#
-#      Exemplos:
-#          | Arquivo                | Erro                                                                                                                                                                                                                                                                                                    |
-#          | "Teste em branco.xlsx" | "- TÍTULO DA OBRA: Campo não informado - AUTORES: Campo não informado - DDA: Campo não informado - PERCENTUAIS AUTORAIS: Campo não informado - NACIONALIDADE DA OBRA: Campo não informado - TIPO DE OBRA: Campo não informado - PERCENTUAIS AUTORAIS: O percentual da composição é menor que 100% - 0%" |
+@chrome @CatalagodeEditoraCt08
+Esquema do Cenário: Validar mensagens na coluna Erro ao fazer upload de planilha vazia
+    Quando faço um upload de um <Arquivo> com em branco
+    Então visualizo, na aba Itens Inválidos, o Erro da planilha em branco
+
+      Exemplos:
+          | Arquivo                |
+          | "Teste em branco.xlsx" |
 
 @chrome @CatalagodeEditoraCt09
 Esquema do Cenário: Validar mensagem de upload sem Arquivo
@@ -92,7 +92,7 @@ Esquema do Cenário: Validar mensagem de upload sem Arquivo
 @chrome @CatalagodeEditoraCt10
 Esquema do Cenário: Cancelamento de Upload
     Quando faço um upload de um arquivo válido  <Arquivo>
-    E visualizo a grid com as seguintes colunas, na aba de Itens Válidos: <Linha>, <Titulo>, <Composicao>, <Nacionalidade>, <DominioPublico> e <Tipo>
+    E visualizo a grid das colunas <Linha>, <Titulo>, <Composicao>, <Nacionalidade>, <DominioPublico>, <Tipo>
     Então confirmo o cancelamento do Upload do aquivo.
 
     Exemplos:
@@ -102,21 +102,21 @@ Esquema do Cenário: Cancelamento de Upload
 @chrome @CatalagodeEditoraCt11
 Esquema do Cenário: Validar mensagem de importação em segundo plano
     Quando faço um upload de um arquivo válido  <Arquivo>
-    E visualizo a grid com colunas, na aba de Itens Válidos: <Linha>, <Titulo>, <Composicao>, <Nacionalidade>, <DominioPublico> e <Tipo>
+    E visualizo a grid com as seguintes colunas, na aba de Itens Válidos: <Linha>, <Titulo>, <Composicao>, <Nacionalidade>, <DominioPublico> e <Tipo>
     Então salvo a importação do catálogo e visualizo a mensagem <Mensagem>
 
     Exemplos:
         | Arquivo                              | Linha | Titulo       | Composicao                           | Nacionalidade | DominioPublico | Tipo             | Mensagem                                                                                    |
         | "TEMPLATE Catálogo de Editoras.xlsx" | "2"   | "A AGRESSAO" | "ROGER HENRI - ROGER HENRI - (100%)" | "NACIONAL"    | "Não"          | "TRILHA MUSICAL" | "A importação será realizada em segundo plano. Ao final será enviado e-mail com resultado." |
-#
-#
-#Esquema do Cenário: Validar erros na importação de ficheiro com dados duplicados
-#      Quando faço um upload de um <Arquivo> com <Obra> duplicada no arquivo
-#      Então visualizo a <Mensagem> na coluna Erro, na aba Itens Inválidos
-#
-#      Exemplos:
-#          | Arquivo         | Obra    | Mensagem                                                                            |
-#          | "template.xlsx" | "TESTE" |"TÍTULO DA OBRA/AUTORES/DDA/PERCENTUAIS AUTORAIS: Obra duplicada no arquivo - TESTE" |
+
+@chrome @CatalagodeEditoraCt12
+Esquema do Cenário: Validar erros na importação de ficheiro com dados duplicados
+     Quando faço um upload de um arquivo duplicado <Arquivo>
+     Então visualizo, na aba Itens Inválidos, o erro <Erro>
+
+     Exemplos:
+         | Arquivo                                | Erro                                                                                        |
+         | "Catálogo de Editoras - Duplicar.xlsx" | "- TÍTULO DA OBRA/AUTORES/DDA/PERCENTUAIS AUTORAIS: Obra duplicada no arquivo - A AGRESSAO" |
 
 @chrome @CatalagodeEditoraCt13
 Esquema do Cenário: Validar upload com sucesso de Ficheiro com muitos registros

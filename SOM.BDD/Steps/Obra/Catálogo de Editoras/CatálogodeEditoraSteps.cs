@@ -97,10 +97,10 @@ namespace SOM.BDD.Steps.Obra.Catálogo_de_Editoras
             TelaCatálogodeEditoraPage.RealizarUploadDeArquivo(Arquivo);
         }
 
-        [Then(@"visualizo, na aba Itens Inválidos, o erro de campos em branco ""(.*)""")]
-        public void EntaoVisualizoNaAbaItensInvalidosOErroDeCamposEmBranco(string Autor)
+        [Then(@"visualizo, na aba Itens Inválidos, o Erro da planilha em branco")]
+        public void EntaoVisualizoNaAbaItensInvalidosOErroDaPlanilhaEmBranco()
         {
-            TelaCatálogodeEditoraPage.ValidarAutorinexixtente(Autor);
+            TelaCatálogodeEditoraPage.Validarinexixtente();
         }
 
         [When(@"faço um upload sem nenhum Arquivo")]
@@ -121,8 +121,8 @@ namespace SOM.BDD.Steps.Obra.Catálogo_de_Editoras
             TelaCatálogodeEditoraPage.CancelarUpload();
         }
 
-        [When(@"visualizo a grid com colunas, na aba de Itens Válidos: ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"" e ""(.*)""")]
-        public void QuandoVisualizoAGridComColunasNaAbaDeItensValidosE(string Linha, string Titulo, string Composicao, string Nacionalidade, string DominioPublico, string Tipo)
+        [When(@"visualizo a grid das colunas ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)""")]
+        public void QuandoVisualizoAGridDasColunas(string Linha, string Titulo, string Composicao, string Nacionalidade, string DominioPublico, string Tipo)
         {
             TelaCatálogodeEditoraPage.ValidarGrid(Linha, Titulo, Composicao, Nacionalidade, DominioPublico, Tipo);
         }

@@ -118,6 +118,17 @@ namespace SOM.BDD.Pages.Obra.Catálogo_de_Editoras
             Assert.AreEqual(Autor, AutorInexistente.GetTexto(Browser));
         }
 
+        public void Validarinexixtente()
+        {
+            var AutorInexistente = Element.Css("tr[ng-repeat='item in ImportacaoJornalismo.ItemErro']:nth-child(1) th:nth-child(7)");
+            var InpItensValidos = Element.Xpath("//a/uib-tab-heading[text()='Itens inválidos']");
+
+            Thread.Sleep(2000);
+            MouseActions.ClickATM(Browser, InpItensValidos);
+            Thread.Sleep(2000);
+            ElementExtensions.IsElementVisible(AutorInexistente, Browser);
+        }
+
         public void BaixarTeplate()
         {
             Thread.Sleep(2000);
