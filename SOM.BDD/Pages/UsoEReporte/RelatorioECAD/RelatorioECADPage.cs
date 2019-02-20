@@ -8,6 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using ExcelDataReader;
 using SOM.BDD.Helpers;
+using System.Windows.Forms;
 
 namespace SOM.BDD.Pages.UsoEReporte.RelatorioECAD
 {
@@ -162,10 +163,12 @@ namespace SOM.BDD.Pages.UsoEReporte.RelatorioECAD
             try
             {
                 Thread.Sleep(9000);
+                Thread.Sleep(9000);
                 Assert.IsTrue(ElementExtensions.IsClickable(SlctTipo, Browser));
             }
             catch
             {
+                Thread.Sleep(9000);
                 Thread.Sleep(9000);
                 Assert.IsTrue(ElementExtensions.IsClickable(SlctTipo, Browser));
             }
@@ -333,6 +336,96 @@ namespace SOM.BDD.Pages.UsoEReporte.RelatorioECAD
                     numLinha = numLinha + 1;
                 }
             }
+        }
+
+        public void ValidarPDF()
+        {
+            Thread.Sleep(2000);
+            var BtnPDF = Element.Css("a[ng-click='BaixarPDF()']");
+            MouseActions.ClickATM(Browser, BtnPDF);
+
+            try
+            {
+                Thread.Sleep(3000);
+                var FechamentoMensal = Element.Css("a[ng-click='AbrirModalFechamento()']");
+                Assert.IsTrue(ElementExtensions.IsClickable(FechamentoMensal, Browser));
+            }
+
+            catch
+            {
+                Thread.Sleep(3000);
+                var FechamentoMensal = Element.Css("a[ng-click='AbrirModalFechamento()']");
+                Assert.IsTrue(ElementExtensions.IsClickable(FechamentoMensal, Browser));
+            }
+
+            AutoIt.AutoItX.AutoItSetOption("WinTitleMatchMode", 2);
+            AutoIt.AutoItX.WinActivate("Google Chrome");
+            AutoIt.AutoItX.Send("{TAB}");
+            AutoIt.AutoItX.Send("{ENTER}");
+
+
+            //JsActions.JavaScript(Browser, "var x = document.getElementsByClassName('cancel-button'); alert(x[0]);");
+
+            //JsActions.JavaScript(Browser, "$('//*[@id='button-strip']/paper-button[2]').click();");
+            //MouseActions.ClickATM(Browser, Element.Xpath("//*[@id='button-strip']/paper-button[2]"));
+            //KeyboardActions.Escape(Browser, Element.Xpath("//*[@id='button-strip']/paper-button[2]"));
+            //Thread.Sleep(2000);
+            Browser.SwitchToLastWindow();
+            CamposPDF();
+
+        }
+
+        public void CamposPDF()
+        {
+            var ThPrograma = Element.Xpath("//th[text()='Programa']");
+            var ThData = Element.Xpath("//th[text()='Data Exibição']");
+            var ThHorario = Element.Xpath("//th[text()='Horário de Exibição']");
+            var ThCapitulo = Element.Xpath("//th[text()='Capítulo']");
+            var ThTemporada = Element.Xpath("//th[text()='Temporada']");
+            var ThNomeEpisodio = Element.Xpath("//th[text()='Nome do Episódio']");
+            var ThProdutor = Element.Xpath("//th[text()='Produtor']");
+            var ThDiretor = Element.Xpath("//th[text()='Diretor']");
+            var ThOrdemExecucao = Element.Xpath("//th[text()='Ordem Execução']");
+            var ThTituloObra = Element.Xpath("//th[text()='Título da Obra Musical']");
+            var ThTipoMusica = Element.Xpath("//th[text()='Tipo de Música']");
+            var ThAutor = Element.Xpath("//th[text()='Autor']");
+            var ThInterprete = Element.Xpath("//th[text()='Interprete']");
+            var ThSegundos = Element.Xpath("//th[text()='Segundos']");
+            var ThClassificao = Element.Xpath("//th[text()='Classificação']");
+            var ThCompositor = Element.Xpath("//th[text()='Compositor(es) das trilhas do Programa']");
+            var ThEditora = Element.Xpath("//th[text()='Editora']");
+            var ThGravadora = Element.Xpath("//th[text()='Gravadora']");
+            var ThISRC = Element.Xpath("//th[text()='ISRC']");
+            var ThSubmix = Element.Xpath("//th[text()='Submix / Tipo de Arranjo']");
+
+
+            Thread.Sleep(1000);
+            ElementExtensions.IsElementVisible(ThPrograma, Browser);
+            ElementExtensions.IsElementVisible(ThData, Browser);
+            ElementExtensions.IsElementVisible(ThHorario, Browser);
+            Thread.Sleep(1000);
+            ElementExtensions.IsElementVisible(ThCapitulo, Browser);
+            ElementExtensions.IsElementVisible(ThTemporada, Browser);
+            ElementExtensions.IsElementVisible(ThNomeEpisodio, Browser);
+            Thread.Sleep(1000);
+            ElementExtensions.IsElementVisible(ThProdutor, Browser);
+            ElementExtensions.IsElementVisible(ThDiretor, Browser);
+            ElementExtensions.IsElementVisible(ThOrdemExecucao, Browser);
+            Thread.Sleep(1000);
+            ElementExtensions.IsElementVisible(ThTituloObra, Browser);
+            ElementExtensions.IsElementVisible(ThTipoMusica, Browser);
+            ElementExtensions.IsElementVisible(ThAutor, Browser);
+            Thread.Sleep(1000);
+            ElementExtensions.IsElementVisible(ThInterprete, Browser);
+            ElementExtensions.IsElementVisible(ThSegundos, Browser);
+            ElementExtensions.IsElementVisible(ThClassificao, Browser);
+            Thread.Sleep(1000);
+            ElementExtensions.IsElementVisible(ThCompositor, Browser);
+            ElementExtensions.IsElementVisible(ThEditora, Browser);
+            ElementExtensions.IsElementVisible(ThGravadora, Browser);
+            Thread.Sleep(1000);
+            ElementExtensions.IsElementVisible(ThISRC, Browser);
+            ElementExtensions.IsElementVisible(ThSubmix, Browser);
         }
     }
 }

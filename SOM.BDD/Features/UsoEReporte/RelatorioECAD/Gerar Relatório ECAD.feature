@@ -130,20 +130,15 @@ Esquema do Cenário: Fechar periodo mensal com periodo fechado do relatorio ECAD
         | Mes       | Ano    | Mensagem                                         |
         | "Outubro" | "2017" | "Já foi realizado fechamento para este período." |
 
+@chrome	@RelatorioECADCT14
+Esquema do Cenario: Gerar Novo relatório mensal ECAD em PDF
+    Quando filtro um relatorio ECAD preenchendo o campo tipo e o periodo <Tipo>, <Mes> , <Ano>
+	Então valido a tela apresentando o aquivo em PDF
 
+	Exemplos:
+		| Tipo     | Mes       | Ano    |
+		| "Mensal" | "Outubro" | "2017" |
 
-#NÃO SE APLICA
-#
-#
-#Esquema do Cenario: Gerar Novo relatório mensal ECAD em PDF
-#    Quando realizo um relatorio ECAD preenchendo o campo <TipoMensal> e <Periodo>
-#    Então visualizo o relatório com o os campos <Programa>, <DataExibicao>, <HorariodeExibicao>, <Capitulo>, <Temporada>, <NomedoEpisodio>, <Produtor>, <Diretor>, <OrdemExecucao>, <TitulodaObraMusical>, <TipodeMusica>, <Autor>, <Interprete>, <Segundos>, <Classificação>, <CompositorTrilha>, <Editora>, <Gravadora>, <ISRC> e <Submix> com todas as informações.
-#
-#    Exemplos:
-#      | Programa      | DataExibicao | HorariodeExibicao | Capitulo | Temporada | NomedoEpisodio | Produtor | Diretor | OrdemExecucao | TitulodaObraMusical | TipodeMusica     | Autor            | Interprete | Segundos | Classificação | CompositorTrilha | Editora | Gravadora | ISRC | Submix |
-#      | "NOVA NOVELA" | "03/09/2018" | ""                | "9"      | ""        | ""             | ""       | ""      | "1"           | "DOMITILA"          | "TRILHA MUSICAL" | "RAFAEL LANGONI" | "ANITTA"   | "10"     | ""            | ""               | "SIGEM" | ""        | ""   | ""     |
-#
-#
 #Esquema do Cenario: Gerar Novo relatório Complemento ECAD em PDF
 #    Quando realizo um relatorio ECAD preenchendo o campo <TipoComplemento> e <Periodo>
 #    Então visualizo o relatório com o os campos <Programa>, <DataExibicao>, <HorariodeExibicao>, <Capitulo>, <Temporada>, <NomedoEpisodio>, <Produtor>, <Diretor>, <OrdemExecucao>, <TitulodaObraMusical>, <TipodeMusica>, <Autor>, <Interprete>, <Segundos>, <Classificação>, <CompositorTrilha>, <Editora>, <Gravadora>, <ISRC> e <Submix> com todas as informações.

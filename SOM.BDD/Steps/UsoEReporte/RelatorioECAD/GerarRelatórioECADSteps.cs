@@ -100,6 +100,12 @@ namespace SOM.BDD.Steps.UsoEReporte.RelatorioECAD
             TelaRelatorioECADPage.DestaqueMsgFechamento(Mensagem);
         }
 
+        [Then(@"valido a tela apresentando o aquivo em PDF")]
+        public void EntaoValidoATelaApresentandoOAquivoEmPDF()
+        {
+            TelaRelatorioECADPage.ValidarPDF();
+        }
+
 
     }
 }

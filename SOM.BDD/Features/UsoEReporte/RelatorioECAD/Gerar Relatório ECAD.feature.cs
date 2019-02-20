@@ -780,6 +780,39 @@ this.FecharPeriodoMensalComPeriodoFechadoDoRelatorioECAD("\"Outubro\"", "\"2017\
 #line hidden
         }
         
+        public virtual void GerarNovoRelatorioMensalECADEmPDF(string tipo, string mes, string ano, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "RelatorioECADCT14"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar Novo relatório mensal ECAD em PDF", null, @__tags);
+#line 134
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 135
+    testRunner.When(string.Format("filtro um relatorio ECAD preenchendo o campo tipo e o periodo {0}, {1} , {2}", tipo, mes, ano), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 136
+ testRunner.Then("valido a tela apresentando o aquivo em PDF", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar Novo relatório mensal ECAD em PDF, \"Mensal\"", new string[] {
+                "chrome",
+                "RelatorioECADCT14"}, SourceLine=139)]
+        public virtual void GerarNovoRelatorioMensalECADEmPDF_Mensal()
+        {
+#line 134
+this.GerarNovoRelatorioMensalECADEmPDF("\"Mensal\"", "\"Outubro\"", "\"2017\"", ((string[])(null)));
+#line hidden
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {
