@@ -92,5 +92,58 @@ namespace SOM.BDD.Steps.Produto.Template
             TelaCadastroDeTemplatePage.ValidarObraDeTemplate(CadastrarObraEComposicaoPage.Obra);
         }
 
+        [Given(@"que tenho um produto cadastrado")]
+        public void DadoQueTenhoUmProdutoCadastrado()
+        {
+            TelaCadastrarObraEComposicaoPage.Navegar();
+            TelaCadastrarObraEComposicaoPage.CadastroDeObraRandomica("MUSICA COMERCIAL", "", "", "2018", "Sim", "Nacional", "", "Não", "Não", "Não", "Não");
+            TelaCadastrarObraEComposicaoPage.CadastrarComposicaoManualmente("100", "1");
+            TelaCadastrarObraEComposicaoPage.SalvarObraEComposicao();
+        }
+
+        [Then(@"Cadastro um item em um bloco já criado")]
+        public void EntaoCadastroUmItemEmUmBlocoJaCriado()
+        {
+            TelaCadastroDeProdutoPage.Navegar();
+            TelaCadastroDeProdutoPage.CadastroDeProduto("Novela", "DRAMATURGIA SEMANAL",
+                "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Sim");
+            TelaCadastroDeProdutoPage.SalvarCadastroDeProduto();
+            Thread.Sleep(2000);
+            TelaCadastroDeTemplatePage.CadastrarItemTemplate("1", CadastrarObraEComposicaoPage.Obra, "Aleatório", "PE – PERFORMANCE", "ENCERRAMENTO", "12",
+                "", "", "");
+        }
+
+        [Then(@"Cadastro um item em uma materia já criado")]
+        public void EntaoCadastroUmItemEmUmaMateriaJaCriado()
+        {
+            TelaCadastroDeProdutoPage.Navegar();
+            TelaCadastroDeProdutoPage.CadastroDeProduto("Novela", "DRAMATURGIA SEMANAL",
+                "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Sim");
+            TelaCadastroDeProdutoPage.SalvarCadastroDeProduto();
+            Thread.Sleep(2000);
+            TelaCadastroDeTemplatePage.CadastrarItemTemplate("1", CadastrarObraEComposicaoPage.Obra, "Aleatório", "PE – PERFORMANCE", "ENCERRAMENTO", "12",
+                "", "", "");
+            TelaCadastroDeTemplatePage.CriarBlocoMateria("Bloco 1");
+        }
+
+        [Given(@"Cadastro um item em um bloco")]
+        public void DadoCadastroUmItemEmUmBloco()
+        {
+            TelaCadastroDeProdutoPage.Navegar();
+            TelaCadastroDeProdutoPage.CadastroDeProduto("Novela", "DRAMATURGIA SEMANAL",
+                "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Sim");
+            TelaCadastroDeProdutoPage.SalvarCadastroDeProduto();
+            Thread.Sleep(2000);
+            TelaCadastroDeTemplatePage.CadastrarItemTemplate("1", CadastrarObraEComposicaoPage.Obra, "Aleatório", "PE – PERFORMANCE", "ENCERRAMENTO", "12",
+                "", "", "");
+            TelaCadastroDeTemplatePage.CriarBlocoMateria("Bloco 1");
+        }
+
+        [Then(@"seleciono o bloco para ser excluido")]
+        public void EntaoSelecionoOBlocoParaSerExcluido()
+        {
+            TelaCadastroDeTemplatePage.ExcluirMateriaEBloco("Bloco","Mensagem","Sim");
+        }
+
     }
 }

@@ -116,6 +116,16 @@ this.ConsultaAvancadaPorObraCadastradaNoSistema("\"TITULO CONSULTA SIMPLES\"", "
 #line hidden
         }
         
+        [TechTalk.SpecRun.ScenarioAttribute("Consulta Avançada por Obra cadastrada no sistema, \"COAST OFF\"", new string[] {
+                "chrome",
+                "ConsultarObraEComposicaoCT01"}, SourceLine=19)]
+        public virtual void ConsultaAvancadaPorObraCadastradaNoSistema_COASTOFF()
+        {
+#line 14
+this.ConsultaAvancadaPorObraCadastradaNoSistema("\"COAST OFF\"", "\"COAST OFF\"", "\"KEITH KENNIFF\"", "\" \"", "\"MUSICA COMERCIAL\"", "\"A DESCOBRIR\"", "\"Nacional\"", "\"Não\"", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void ConsultaSimplesPorObraCadastradaNoSistema(string tITULO, string aUTOR, string tIPO, string dDA, string nACIONALIDADE, string dOMINIOPUBLICO, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -126,14 +136,14 @@ this.ConsultaAvancadaPorObraCadastradaNoSistema("\"TITULO CONSULTA SIMPLES\"", "
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Consulta Simples por Obra cadastrada no sistema", null, @__tags);
-#line 23
+#line 24
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 24
- testRunner.When(string.Format("faço uma busca simples por uma obra {0}", tITULO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 25
+ testRunner.When(string.Format("faço uma busca simples por uma obra {0}", tITULO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 26
  testRunner.Then(string.Format("visualizo a obra cadastrada no resultado da busca com sucesso {0}, {1}, {2}, {3}," +
                         " {4}, {5}", tITULO, aUTOR, dDA, nACIONALIDADE, tIPO, dOMINIOPUBLICO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
@@ -142,15 +152,25 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Consulta Simples por Obra cadastrada no sistema, \"TITULO CONSULTA SIMPLES\"", new string[] {
                 "chrome",
-                "ConsultarObraEComposicaoCT02"}, SourceLine=28)]
+                "ConsultarObraEComposicaoCT02"}, SourceLine=29)]
         public virtual void ConsultaSimplesPorObraCadastradaNoSistema_TITULOCONSULTASIMPLES()
         {
-#line 23
+#line 24
 this.ConsultaSimplesPorObraCadastradaNoSistema("\"TITULO CONSULTA SIMPLES\"", "\"TESTE INM Autor\"", "\"BIBLIOTECA MUSICAL\"", "\"KOBALT MUSIC\"", "\"Nacional\"", "\"Não\"", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ConsultarDetalheDeObraComFonograma(string obra, string interpretes, string produtor_Fonografico, string submix, string iSRC, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("Consulta Simples por Obra cadastrada no sistema, \"COAST OFF\"", new string[] {
+                "chrome",
+                "ConsultarObraEComposicaoCT02"}, SourceLine=29)]
+        public virtual void ConsultaSimplesPorObraCadastradaNoSistema_COASTOFF()
+        {
+#line 24
+this.ConsultaSimplesPorObraCadastradaNoSistema("\"COAST OFF\"", "\"KEITH KENNIFF\"", "\"MUSICA COMERCIAL\"", "\"A DESCOBRIR\"", "\"Nacional\"", "\"Não\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ConsultarDetalheDeObraComFonograma(string obra, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "chrome",
@@ -160,27 +180,36 @@ this.ConsultaSimplesPorObraCadastradaNoSistema("\"TITULO CONSULTA SIMPLES\"", "\
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Consultar detalhe de obra com fonograma", null, @__tags);
-#line 32
+#line 34
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 33
+#line 35
  testRunner.When(string.Format("faço uma busca simples por uma obra {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 34
-    testRunner.Then(string.Format("visualizo a grid com os campos {0}, {1}, {2}, {3} preenchido com os dados do fono" +
-                        "grama {4}", interpretes, produtor_Fonografico, submix, iSRC, obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line 36
+    testRunner.Then(string.Format("visualizo a grid preenchido com os dados do fonograma {0}", obra), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Consultar detalhe de obra com fonograma, \"MUSICA DA HELEN1\"", new string[] {
                 "chrome",
-                "ConsultarObraEComposicaoCT03"}, SourceLine=37)]
+                "ConsultarObraEComposicaoCT03"}, SourceLine=39)]
         public virtual void ConsultarDetalheDeObraComFonograma_MUSICADAHELEN1()
         {
-#line 32
-this.ConsultarDetalheDeObraComFonograma("\"MUSICA DA HELEN1\"", "\"ANITTA\"", "\"RGE\"", "\"FULL MIX\"", "\"BRRGE10101010\"", ((string[])(null)));
+#line 34
+this.ConsultarDetalheDeObraComFonograma("\"MUSICA DA HELEN1\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Consultar detalhe de obra com fonograma, \"COAST OFF\"", new string[] {
+                "chrome",
+                "ConsultarObraEComposicaoCT03"}, SourceLine=39)]
+        public virtual void ConsultarDetalheDeObraComFonograma_COASTOFF()
+        {
+#line 34
+this.ConsultarDetalheDeObraComFonograma("\"COAST OFF\"", ((string[])(null)));
 #line hidden
         }
         

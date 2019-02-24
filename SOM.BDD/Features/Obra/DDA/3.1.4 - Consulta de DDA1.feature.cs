@@ -115,6 +115,16 @@ this.BuscaSimplesPorDDAComSucesso("\"Teste INM 607\"", "\"Teste INM 607\"", "\"5
 #line hidden
         }
         
+        [TechTalk.SpecRun.ScenarioAttribute("Busca Simples por DDA com sucesso, \"Teste NOMEFANTASIA\"", new string[] {
+                "chrome",
+                "ConsultaDeDDACT01"}, SourceLine=19)]
+        public virtual void BuscaSimplesPorDDAComSucesso_TesteNOMEFANTASIA()
+        {
+#line 13
+this.BuscaSimplesPorDDAComSucesso("\"Teste NOMEFANTASIA\"", "\"Teste NOMEFANTASIA\"", "\"54635356357\"", "\"UBEM\"", "\"Sim\"", "\"10/10/1992\"", "\"Contato NOMEFANTASIA\"", "\"E-mail\"", "\"teste@teste.com\"", "\"Sim\"", "\"Administrador\"", "\"546.353.563-57\"", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void BuscaAvancadaPorNomeFantasiaComSucesso(string nOMEFANTASIA, string nOMECOMPLETO, string cPF, string aSSOCIACAO, string aDMINISTRADOR, string dATANASCIMENTO, string nOMECONTATO, string tIPOCONTATO, string cONTATO, string aUTORIZACAO, string tIPO, string dOCUMENTO, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -125,16 +135,16 @@ this.BuscaSimplesPorDDAComSucesso("\"Teste INM 607\"", "\"Teste INM 607\"", "\"5
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Busca avançada por Nome Fantasia com sucesso", null, @__tags);
-#line 23
+#line 24
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 24
- testRunner.Given(string.Format("que tenha um DDA cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}", nOMEFANTASIA, nOMECOMPLETO, cPF, aSSOCIACAO, aDMINISTRADOR, dATANASCIMENTO, nOMECONTATO, tIPOCONTATO, cONTATO, aUTORIZACAO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 25
-    testRunner.When(string.Format("faço uma busca avançada por nome fantasia de DDA {0}", nOMEFANTASIA), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.Given(string.Format("que tenha um DDA cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}", nOMEFANTASIA, nOMECOMPLETO, cPF, aSSOCIACAO, aDMINISTRADOR, dATANASCIMENTO, nOMECONTATO, tIPOCONTATO, cONTATO, aUTORIZACAO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 26
+    testRunner.When(string.Format("faço uma busca avançada por nome fantasia de DDA {0}", nOMEFANTASIA), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 27
  testRunner.Then(string.Format("visualizo os dados do DDA no resultado da busca {0}, {1}, {2}, {3}, {4}", nOMEFANTASIA, nOMECOMPLETO, dOCUMENTO, aSSOCIACAO, tIPO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -142,10 +152,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Busca avançada por Nome Fantasia com sucesso, \"Teste INM 608\"", new string[] {
                 "chrome",
-                "ConsultaDeDDACT02"}, SourceLine=29)]
+                "ConsultaDeDDACT02"}, SourceLine=30)]
         public virtual void BuscaAvancadaPorNomeFantasiaComSucesso_TesteINM608()
         {
-#line 23
+#line 24
 this.BuscaAvancadaPorNomeFantasiaComSucesso("\"Teste INM 608\"", "\"Teste INM 608\"", "\"54635356357\"", "\"UBEM\"", "\"Sim\"", "\"10/10/1992\"", "\"Contato Teste 608\"", "\"E-mail\"", "\"teste@teste.com\"", "\"Sim\"", "\"Administrador\"", "\"546.353.563-57\"", ((string[])(null)));
 #line hidden
         }
@@ -160,16 +170,16 @@ this.BuscaAvancadaPorNomeFantasiaComSucesso("\"Teste INM 608\"", "\"Teste INM 60
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Busca avançada por Tipo com sucesso", null, @__tags);
-#line 33
+#line 34
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 34
- testRunner.Given(string.Format("que tenha um DDA cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}", nOMEFANTASIA, nOMECOMPLETO, cPF, aSSOCIACAO, aDMINISTRADOR, dATANASCIMENTO, nOMECONTATO, tIPOCONTATO, cONTATO, aUTORIZACAO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 35
-    testRunner.When(string.Format("faço uma busca avançada por nome fantasia e tipo de DDA {0}, {1}", nOMEFANTASIA, fILTROTIPO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.Given(string.Format("que tenha um DDA cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}", nOMEFANTASIA, nOMECOMPLETO, cPF, aSSOCIACAO, aDMINISTRADOR, dATANASCIMENTO, nOMECONTATO, tIPOCONTATO, cONTATO, aUTORIZACAO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 36
+    testRunner.When(string.Format("faço uma busca avançada por nome fantasia e tipo de DDA {0}, {1}", nOMEFANTASIA, fILTROTIPO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 37
  testRunner.Then(string.Format("visualizo os dados do DDA no resultado da busca {0}, {1}, {2}, {3}, {4}", nOMEFANTASIA, nOMECOMPLETO, dOCUMENTO, aSSOCIACAO, tIPO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -177,10 +187,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Busca avançada por Tipo com sucesso, \"Teste INM 609\"", new string[] {
                 "chrome",
-                "ConsultaDeDDACT03"}, SourceLine=39)]
+                "ConsultaDeDDACT03"}, SourceLine=40)]
         public virtual void BuscaAvancadaPorTipoComSucesso_TesteINM609()
         {
-#line 33
+#line 34
 this.BuscaAvancadaPorTipoComSucesso("\"Teste INM 609\"", "\"Teste INM 609\"", "\"54635356357\"", "\"UBEM\"", "\"Sim\"", "\"10/10/1992\"", "\"Contato Teste 609\"", "\"E-mail\"", "\"teste@teste.com\"", "\"Sim\"", "\"Administrador\"", "\"546.353.563-57\"", "\"Grupo Editorial\"", ((string[])(null)));
 #line hidden
         }
@@ -195,16 +205,16 @@ this.BuscaAvancadaPorTipoComSucesso("\"Teste INM 609\"", "\"Teste INM 609\"", "\
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Busca avançada por Associação com sucesso", null, @__tags);
-#line 43
+#line 44
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 44
- testRunner.Given(string.Format("que tenha um DDA cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}", nOMEFANTASIA, nOMECOMPLETO, cPF, aSSOCIACAO, aDMINISTRADOR, dATANASCIMENTO, nOMECONTATO, tIPOCONTATO, cONTATO, aUTORIZACAO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 45
-    testRunner.When(string.Format("faço uma busca avançada por nome fantasia e associação {0}, {1}", nOMEFANTASIA, aSSOCIACAO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.Given(string.Format("que tenha um DDA cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}", nOMEFANTASIA, nOMECOMPLETO, cPF, aSSOCIACAO, aDMINISTRADOR, dATANASCIMENTO, nOMECONTATO, tIPOCONTATO, cONTATO, aUTORIZACAO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 46
+    testRunner.When(string.Format("faço uma busca avançada por nome fantasia e associação {0}, {1}", nOMEFANTASIA, aSSOCIACAO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 47
  testRunner.Then(string.Format("visualizo os dados do DDA no resultado da busca {0}, {1}, {2}, {3}, {4}", nOMEFANTASIA, nOMECOMPLETO, dOCUMENTO, aSSOCIACAO, tIPO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -212,10 +222,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Busca avançada por Associação com sucesso, \"Teste INM 610\"", new string[] {
                 "chrome",
-                "ConsultaDeDDACT04"}, SourceLine=49)]
+                "ConsultaDeDDACT04"}, SourceLine=50)]
         public virtual void BuscaAvancadaPorAssociacaoComSucesso_TesteINM610()
         {
-#line 43
+#line 44
 this.BuscaAvancadaPorAssociacaoComSucesso("\"Teste INM 610\"", "\"Teste INM 610\"", "\"54635356357\"", "\"UBEM\"", "\"Sim\"", "\"10/10/1992\"", "\"Contato Teste 610\"", "\"E-mail\"", "\"teste@teste.com\"", "\"Sim\"", "\"Administrador\"", "\"546.353.563-57\"", ((string[])(null)));
 #line hidden
         }
@@ -230,16 +240,16 @@ this.BuscaAvancadaPorAssociacaoComSucesso("\"Teste INM 610\"", "\"Teste INM 610\
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Busca avançada por Nome Completo / Razão social com sucesso com sucesso", null, @__tags);
-#line 53
+#line 54
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 54
- testRunner.Given(string.Format("que tenha um DDA cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}", nOMEFANTASIA, nOMECOMPLETO, cPF, aSSOCIACAO, aDMINISTRADOR, dATANASCIMENTO, nOMECONTATO, tIPOCONTATO, cONTATO, aUTORIZACAO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 55
- testRunner.When(string.Format("faço uma busca avançada por nome fantasia e nome completo {0}, {1}", nOMEFANTASIA, nOMECOMPLETO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.Given(string.Format("que tenha um DDA cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}", nOMEFANTASIA, nOMECOMPLETO, cPF, aSSOCIACAO, aDMINISTRADOR, dATANASCIMENTO, nOMECONTATO, tIPOCONTATO, cONTATO, aUTORIZACAO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 56
+ testRunner.When(string.Format("faço uma busca avançada por nome fantasia e nome completo {0}, {1}", nOMEFANTASIA, nOMECOMPLETO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 57
  testRunner.Then(string.Format("visualizo os dados do DDA no resultado da busca {0}, {1}, {2}, {3}, {4}", nOMEFANTASIA, nOMECOMPLETO, dOCUMENTO, aSSOCIACAO, tIPO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -248,10 +258,10 @@ this.FeatureBackground();
         [TechTalk.SpecRun.ScenarioAttribute("Busca avançada por Nome Completo / Razão social com sucesso com sucesso, \"Teste I" +
             "NM 611\"", new string[] {
                 "chrome",
-                "ConsultaDeDDACT05"}, SourceLine=59)]
+                "ConsultaDeDDACT05"}, SourceLine=60)]
         public virtual void BuscaAvancadaPorNomeCompletoRazaoSocialComSucessoComSucesso_TesteINM611()
         {
-#line 53
+#line 54
 this.BuscaAvancadaPorNomeCompletoRazaoSocialComSucessoComSucesso("\"Teste INM 611\"", "\"Teste INM 611\"", "\"54635356357\"", "\"UBEM\"", "\"Sim\"", "\"10/10/1992\"", "\"Contato Teste 611\"", "\"E-mail\"", "\"teste@teste.com\"", "\"Sim\"", "\"Administrador\"", "\"546.353.563-57\"", ((string[])(null)));
 #line hidden
         }
@@ -266,16 +276,16 @@ this.BuscaAvancadaPorNomeCompletoRazaoSocialComSucessoComSucesso("\"Teste INM 61
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Busca por DDA não cadastrados", null, @__tags);
-#line 63
+#line 64
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 64
- testRunner.Given("que esteja com a tela de Busca de DDA aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 65
- testRunner.When(string.Format("faço uma busca avançada por um DDA que não esteja cadastrado no sistema {0}", nOMEFANTASIA), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.Given("que esteja com a tela de Busca de DDA aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 66
+ testRunner.When(string.Format("faço uma busca avançada por um DDA que não esteja cadastrado no sistema {0}", nOMEFANTASIA), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 67
  testRunner.Then(string.Format("visualizo uma mensagem de dados não encontrados no resultado da busca {0}", mENSAGEM), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -283,10 +293,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Busca por DDA não cadastrados, \"Teste 9999999\"", new string[] {
                 "chrome",
-                "ConsultaDeDDACT06"}, SourceLine=69)]
+                "ConsultaDeDDACT06"}, SourceLine=70)]
         public virtual void BuscaPorDDANaoCadastrados_Teste9999999()
         {
-#line 63
+#line 64
 this.BuscaPorDDANaoCadastrados("\"Teste 9999999\"", "\"Dados não encontratos\"", ((string[])(null)));
 #line hidden
         }
@@ -301,16 +311,16 @@ this.BuscaPorDDANaoCadastrados("\"Teste 9999999\"", "\"Dados não encontratos\""
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Busca por Campos não associados", null, @__tags);
-#line 73
+#line 74
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 74
- testRunner.Given("que esteja com a tela de Busca de DDA aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 75
- testRunner.When(string.Format("faço uma busca avançada de DDA por dados não relacionados entre si {0}, {1}", nOMEFANTASIA, nOMECOMPLETO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.Given("que esteja com a tela de Busca de DDA aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 76
+ testRunner.When(string.Format("faço uma busca avançada de DDA por dados não relacionados entre si {0}, {1}", nOMEFANTASIA, nOMECOMPLETO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 77
  testRunner.Then(string.Format("visualizo uma mensagem de dados não encontrados no resultado da busca {0}", mENSAGEM), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             this.ScenarioCleanup();
@@ -318,10 +328,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Busca por Campos não associados, \"Teste INM 611\"", new string[] {
                 "chrome",
-                "ConsultaDeDDACT07"}, SourceLine=79)]
+                "ConsultaDeDDACT07"}, SourceLine=80)]
         public virtual void BuscaPorCamposNaoAssociados_TesteINM611()
         {
-#line 73
+#line 74
 this.BuscaPorCamposNaoAssociados("\"Teste INM 611\"", "\"Teste INM 610\"", "\"Dados não encontratos\"", ((string[])(null)));
 #line hidden
         }
@@ -336,18 +346,18 @@ this.BuscaPorCamposNaoAssociados("\"Teste INM 611\"", "\"Teste INM 610\"", "\"Da
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar relatório DDA em Excel com sucesso", null, @__tags);
-#line 83
+#line 84
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 84
- testRunner.Given(string.Format("que tenha um DDA cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}", nOMEFANTASIA, nOMECOMPLETO, cPF, aSSOCIACAO, aDMINISTRADOR, dATANASCIMENTO, nOMECONTATO, tIPOCONTATO, cONTATO, aUTORIZACAO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 85
- testRunner.When(string.Format("faço uma busca avançada por nome fantasia e nome completo {0}, {1}", nOMEFANTASIA, nOMECOMPLETO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.Given(string.Format("que tenha um DDA cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}", nOMEFANTASIA, nOMECOMPLETO, cPF, aSSOCIACAO, aDMINISTRADOR, dATANASCIMENTO, nOMECONTATO, tIPOCONTATO, cONTATO, aUTORIZACAO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 86
- testRunner.And("faço download do relatório em excel do resultado da busca", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+ testRunner.When(string.Format("faço uma busca avançada por nome fantasia e nome completo {0}, {1}", nOMEFANTASIA, nOMECOMPLETO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 87
+ testRunner.And("faço download do relatório em excel do resultado da busca", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 88
     testRunner.Then(string.Format("visualizo o download da planilha excel com resultado da busca por DDA {0}", nOMEFANTASIA), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
@@ -355,11 +365,46 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Gerar relatório DDA em Excel com sucesso, \"Teste INM 612\"", new string[] {
                 "chrome",
-                "ConsultaDeDDACT08"}, SourceLine=90)]
+                "ConsultaDeDDACT08"}, SourceLine=91)]
         public virtual void GerarRelatorioDDAEmExcelComSucesso_TesteINM612()
         {
-#line 83
+#line 84
 this.GerarRelatorioDDAEmExcelComSucesso("\"Teste INM 612\"", "\"Teste INM 612\"", "\"54635356357\"", "\"UBEM\"", "\"Sim\"", "\"10/10/1992\"", "\"Contato Teste 612\"", "\"E-mail\"", "\"teste@teste.com\"", "\"Sim\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GerarRelatorioDDAEmPDFComSucesso(string nOMEFANTASIA, string nOMECOMPLETO, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "ConsultaDeDDA"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gerar relatório DDA em PDF com sucesso", null, @__tags);
+#line 95
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line 96
+ testRunner.Given("que esteja com a tela de Busca de DDA aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 97
+ testRunner.When(string.Format("faço uma busca avançada por nome fantasia e nome completo {0}, {1}", nOMEFANTASIA, nOMECOMPLETO), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 98
+    testRunner.And("faço download do relatório em pdf do resultado da busca", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Gerar relatório DDA em PDF com sucesso, \"A DESCOBRIR\"", new string[] {
+                "chrome",
+                "ConsultaDeDDA"}, SourceLine=101)]
+        public virtual void GerarRelatorioDDAEmPDFComSucesso_ADESCOBRIR()
+        {
+#line 95
+this.GerarRelatorioDDAEmPDFComSucesso("\"A DESCOBRIR\"", "\"A DESCOBRIR\"", ((string[])(null)));
 #line hidden
         }
         

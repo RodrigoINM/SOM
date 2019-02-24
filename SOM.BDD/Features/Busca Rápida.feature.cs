@@ -137,13 +137,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Acessar Consulta de Obra pela Busca Rápida com sucesso, \"Aletha920270007\"", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Acessar Consulta de Obra pela Busca Rápida com sucesso, \"A CON JOB\"", new string[] {
                 "chrome",
                 "ConsultaRapidaCT02"}, SourceLine=27)]
-        public virtual void AcessarConsultaDeObraPelaBuscaRapidaComSucesso_Aletha920270007()
+        public virtual void AcessarConsultaDeObraPelaBuscaRapidaComSucesso_ACONJOB()
         {
 #line 21
-this.AcessarConsultaDeObraPelaBuscaRapidaComSucesso("\"Aletha920270007\"", ((string[])(null)));
+this.AcessarConsultaDeObraPelaBuscaRapidaComSucesso("\"A CON JOB\"", ((string[])(null)));
 #line hidden
         }
         

@@ -346,7 +346,7 @@ namespace SOM.BDD.Pages.Obra.DDA
             Thread.Sleep(2000);
             MouseActions.ClickATM(Browser, InpCPF);
             Thread.Sleep(2000);
-            AutomatedActions.SendDataATM(Browser, InpCPF, CPF);
+            AutomatedActions.SendData(Browser, InpCPF, CPF);
         }
 
         private void PreencherNomeCompleto(string NomeCompleto)

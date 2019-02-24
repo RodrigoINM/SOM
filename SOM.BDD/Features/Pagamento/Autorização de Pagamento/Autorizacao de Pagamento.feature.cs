@@ -324,6 +324,98 @@ this.BuscaPorDataInicialDaAPEDataFinalDaAP("\"1001404\"", "\"1003194\"", "\"1000
 #line hidden
         }
         
+        public virtual void DonwloadDoEspelhoDePagamentoEmPDF(string aPInicial, string aPFinal, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "ConsultaAutorizaçãoDePagamentoCT08"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Donwload do espelho de pagamento em PDF", null, @__tags);
+#line 76
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 77
+ testRunner.When(string.Format("faço uma busca avançada de solicitações de pedidos para pagamento por AP Inicial " +
+                        "e AP Final {0}, {1}", aPInicial, aPFinal), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 78
+ testRunner.Then("realizo o download do espelho de pagamento em PDF", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Donwload do espelho de pagamento em PDF, \"1003194\"", new string[] {
+                "chrome",
+                "ConsultaAutorizaçãoDePagamentoCT08"}, SourceLine=81)]
+        public virtual void DonwloadDoEspelhoDePagamentoEmPDF_1003194()
+        {
+#line 76
+this.DonwloadDoEspelhoDePagamentoEmPDF("\"1003194\"", "\"1003194\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void DonwloadDoEspelhoDePagamentoEmEXCEL(
+                    string aPInicial, 
+                    string aPFinal, 
+                    string lote, 
+                    string numeroDaAp, 
+                    string numeroDaLPE, 
+                    string editora, 
+                    string dataDeEmissao, 
+                    string produto, 
+                    string episodio, 
+                    string capitulo, 
+                    string dataDeExibicao, 
+                    string obra, 
+                    string autor, 
+                    string atividade, 
+                    string creditado, 
+                    string sincronismo, 
+                    string percentual, 
+                    string ar, 
+                    string autorizacao, 
+                    string valor, 
+                    string nomePlanilha, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "chrome",
+                    "ConsultaAutorizaçãoDePagamentoCT09"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Donwload do espelho de pagamento em EXCEL", null, @__tags);
+#line 85
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line 86
+    testRunner.When(string.Format("faço uma busca avançada de solicitações de pedidos para pagamento por AP Inicial " +
+                        "e AP Final {0}, {1}", aPInicial, aPFinal), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 87
+    testRunner.Then(string.Format("visualizo o aquivo com os dados {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}," +
+                        " {10}, {11}, {12}, {13}, {14}, {15}, {16} , {17} e {18} do pedido no espelho de " +
+                        "pagamento em excel", lote, numeroDaAp, numeroDaLPE, editora, dataDeEmissao, produto, episodio, capitulo, dataDeExibicao, obra, autor, atividade, creditado, sincronismo, percentual, ar, autorizacao, valor, nomePlanilha), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Donwload do espelho de pagamento em EXCEL, \"1003194\"", new string[] {
+                "chrome",
+                "ConsultaAutorizaçãoDePagamentoCT09"}, SourceLine=90)]
+        public virtual void DonwloadDoEspelhoDePagamentoEmEXCEL_1003194()
+        {
+#line 85
+this.DonwloadDoEspelhoDePagamentoEmEXCEL("\"1003194\"", "\"1003194\"", "\"1000319\"", "\"1003194\"", "\"307370\"", "\"HILDEGARD1167235435\"", "\"25/01/2019\"", "\"AVIS1816412639 OZANE1633164760\"", "\"PAULETTE436942029\"", "\"01\"", "\"10/10/2018\"", "\"JONELLE1677499510\"", "\"HIRAM1326096162\"", "\"7001\"", "\"AURA1386471269\"", "\"ABERTURA\"", "\"70\"", "\"290407\"", "\"2019010012\"", "\"47,25\"", "\"Espelho Pagamento\"", ((string[])(null)));
+#line hidden
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

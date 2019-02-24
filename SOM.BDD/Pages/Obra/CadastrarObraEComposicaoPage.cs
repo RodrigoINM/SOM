@@ -696,14 +696,15 @@ namespace SOM.BDD.Pages.Obra
             Thread.Sleep(2000);
             try
             {
-                Thread.Sleep(2000);
+                Thread.Sleep(5000);
                 ElementExtensions.IsElementVisible(BtnAdicionarComposicao, Browser);
                 MouseActions.ClickATM(Browser, BtnAdicionarComposicao);
+                Thread.Sleep(5000);
             }
             catch
             {
                 Browser.RefreshPage();
-                Thread.Sleep(4000);
+                Thread.Sleep(5000);
                 ElementExtensions.IsElementVisible(BtnAdicionarComposicao, Browser);
                 MouseActions.ClickATM(Browser, BtnAdicionarComposicao);
             }

@@ -45,11 +45,11 @@ namespace SOM.BDD.Steps.Obra
         }
 
         //Consultar detalhe de obra com fonograma
-        [Then(@"visualizo a grid com os campos ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"" preenchido com os dados do fonograma ""(.*)""")]
-        public void EntaoVisualizoAGridComOsCamposPreenchidoComOsDadosDoFonograma(string Interpretes, string ProdutorFonografico, string Submix, string ISRC, string Obra)
+        [Then(@"visualizo a grid preenchido com os dados do fonograma ""(.*)""")]
+        public void EntaoVisualizoAGridPreenchidoComOsDadosDoFonograma(string Obra)
         {
-            TelaConsultarObraPage.ValidarDadosDeFonograma(Interpretes, ProdutorFonografico, Submix, ISRC, Obra);
+            TelaConsultarObraPage.ValidarDadosDeFonograma(Obra);
         }
-        
+
     }
 }

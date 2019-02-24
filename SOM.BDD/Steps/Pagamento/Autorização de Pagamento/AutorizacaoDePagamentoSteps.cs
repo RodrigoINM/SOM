@@ -16,6 +16,7 @@ namespace SOM.BDD.Steps.Pagamento.Autorização_de_Pagamento
 
             TelaAutorizacaoDePagamentoPage = new AutorizacaoDePagamentoPage((IBrowser)browser,
                 ConfigurationManager.AppSettings["AutorizacaoDePagamentoUrl"]);
+
         }
 
         [Given(@"que esteja na tela de Autorizacao de Pagamentos")]
@@ -78,6 +79,28 @@ namespace SOM.BDD.Steps.Pagamento.Autorização_de_Pagamento
             TelaAutorizacaoDePagamentoPage.ValidarBuscaSolicitacaoPagamento(Creditado);
             TelaAutorizacaoDePagamentoPage.ValidarBuscaSolicitacaoPagamento(Valor);
         }
+
+        [Then(@"realizo o download do espelho de pagamento em PDF")]
+        public void EntaoRealizoODownloadDoEspelhoDePagamentoEmPDF()
+        {
+            TelaAutorizacaoDePagamentoPage.ValidarArquivoPDF("1003194");
+        }
+
+        [Then(@"visualizo o aquivo com os dados ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"" , ""(.*)"" e ""(.*)"" do pedido no espelho de pagamento em excel")]
+        public void EntaoVisualizoOAquivoComOsDadosEDoPedidoNoEspelhoDePagamentoEmExcel(string Lote, string NumeroDaAp, string NumeroDaLPE, string Editora, string DataDeEmissao, string Produto, string Episodio,
+            string Capitulo, string DataDeExibicao, string Obra, string Autor, string Atividade, string Creditado, string Sincronismo, string Percentual, string Ar,
+            string Autorizacao, string Valor, string NomePlanilha)
+        {
+            TelaAutorizacaoDePagamentoPage.SelecionarExcel(NumeroDaAp);
+            TelaAutorizacaoDePagamentoPage.ValidarRelatorioExcel(Lote, NumeroDaAp, NumeroDaLPE, Editora, DataDeEmissao, Produto, Episodio, Capitulo, DataDeExibicao, Obra, Autor,
+                    Atividade, Creditado, Sincronismo, Percentual, Ar, Autorizacao, Valor, NomePlanilha);
+        }
+
+        //[When(@"faco download do espelho de pagamento para ser enviado por email")]
+        //public void QuandoFacoDownloadDoEspelhoDePagamentoParaSerEnviadoPorEmail()
+        //{
+        //    TelaAutorizacaoDePagamentoPage.EnviarEspelho("1003194");
+        //}
 
     }
 }

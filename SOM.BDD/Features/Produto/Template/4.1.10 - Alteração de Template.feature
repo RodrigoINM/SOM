@@ -39,32 +39,20 @@ Cenário: Cancelar Alteração em item de template
 	Quando cancelo a alteração de um item do template 
 	Então volto a visualizar o item previamente cadastrado sem alteração
 
-#
-#@chrome @AlteracaoDeTemplateDeProdutoCT04
-#Esquema do Cenário: Inclusão de item de template em bloco já criado
-#	Dado que tenha um produto com template cadastrado
-#	E adiciono um bloco para o item de template criado <Bloco>
-#	Quando cadastro um novo item de template para o produto <Ordem>, <Titulo>, <Gravadora>, <TipoExibicao>, <TipoUtilizacao>, <SincronismoGlobo>, <Submix>, <Tempo>, <Observacao>
-#	E incluo esse item de template no bloco existente <Bloco>
-#	Então visualizo a mensagem de alteração realizada com sucesso no template <Mensagem>
-#	
-#  Exemplos:
-#      | Bloco            | Ordem | Titulo            | Interprete   | Gravadora   | TipoExibicao | TipoUtilizacao     | SincronismoGlobo | Submix   | Tempo | Observacao | Mensagem                                                          |
-#      | "Teste de Bloco" | "1"   | "TESTE INMETRICS" | "ANAVITORIA" | "SOM LIVRE" | "Gravado"    | "PE – PERFORMANCE" | "ENCERRAMENTO"   | "Submix" | "12"  | "Teste"    | "Ordenação da lista de itens da cue-sheet realizada com sucesso." |
 
-#Esquema do Cenário: Inclusão de item de template em Matéria já criada
-#      Quando incluo um <Titulo> de item de template em um <Materia>
-#      Então visualizo o <Titulo> de item de template dentro do <Materia>
-#
-#      Exemplos:
-#            | Titulo      | Materia    |
-#            | "Teste INM" | "Materia"  |
-#
-#
-#Esquema do Cenário: Retirar o item de template do bloco
-#      Quando retiro um item de template de <Titulo> de um <Bloco>
-#      Então visualizo a tela de edição com o <Titulo> fora do <Bloco>
-#
-#      Exemplos:
-#          | Titulo      | Bloco    |
-#          | "Teste INM" | "blocos" |
+@chrome @AlteracaoDeTemplateDeProdutoCT04
+Cenário: Inclusão de item de template em bloco já criado
+	Dado que tenho um produto cadastrado
+	Então Cadastro um item em um bloco já criado
+
+@chrome @AlteracaoDeTemplateDeProdutoCT05
+Cenário: Inclusão de item de template em Matéria já criada
+    Dado que tenho um produto cadastrado
+	Então Cadastro um item em uma materia já criado
+
+@chrome @AlteracaoDeTemplateDeProdutoCT06
+Cenário: Retirar o item de template do bloco
+    Dado que tenho um produto cadastrado
+	E Cadastro um item em um bloco
+	Então seleciono o bloco para ser excluido
+

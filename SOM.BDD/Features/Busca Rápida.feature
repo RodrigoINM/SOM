@@ -24,8 +24,8 @@ Esquema do Cenário: Acessar Consulta de Obra pela Busca Rápida com sucesso
 	Então visualizo a tela de detalhe da obra com sucesso <Obra>
 	  
   Exemplos:
-      | Obra              |
-      | "Aletha920270007" |
+      | Obra        |
+      | "A CON JOB" |
   
 @chrome @ConsultaRapidaCT03
 Esquema do Cenário: Acessar Consulta de Produto pela Busca Rápida com sucesso

@@ -94,22 +94,19 @@ namespace SOM.BDD.Pages
             }
         }
 
-        public void ValidarDetalheDaObraProduto(string Texto)
+        public void ValidarDetalheDaObraProduto(string Obra)
         {
-            Thread.Sleep(3000);
-            var nomeTexto = Element.Css("div[class='ibox-title'] h3");
+            Thread.Sleep(2000);
+            var nomeTexto = Element.Xpath("//h3[text()='" + Obra + "']");
             try
             {
+                Thread.Sleep(3000);
                 ElementExtensions.IsElementVisible(nomeTexto, Browser);
-                var teste = ElementExtensions.GetTexto(nomeTexto, Browser);
-                Assert.AreEqual(Texto, ElementExtensions.GetTexto(nomeTexto, Browser));
             }
             catch
             {
                 Thread.Sleep(3000);
                 ElementExtensions.IsElementVisible(nomeTexto, Browser);
-                var teste = ElementExtensions.GetTexto(nomeTexto, Browser);
-                Assert.AreEqual(Texto, ElementExtensions.GetTexto(nomeTexto, Browser));
             }
         }
     }

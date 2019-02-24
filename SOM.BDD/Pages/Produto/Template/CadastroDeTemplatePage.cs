@@ -387,6 +387,8 @@ namespace SOM.BDD.Pages.Produto.Template
             MouseActions.ClickATM(Browser, BtnCancelar);
         }
 
+
+
         public void CancelarCriacaoDeTemplate()
         {
             Thread.Sleep(2000);

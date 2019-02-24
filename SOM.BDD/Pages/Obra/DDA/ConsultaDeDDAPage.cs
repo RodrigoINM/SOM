@@ -72,11 +72,11 @@ namespace SOM.BDD.Pages.Obra.DDA
         {
             try
             {
-                MouseActions.ClickATM(Browser, InpNomeFantasia);
+                MouseActions.ClickATM(Browser, BtnShowFiltroAvancadoDDA);
             }
             catch
             {
-                MouseActions.ClickATM(Browser, BtnShowFiltroAvancadoDDA);
+                MouseActions.ClickATM(Browser, InpNomeFantasia);
             }
         }
 
@@ -159,9 +159,13 @@ namespace SOM.BDD.Pages.Obra.DDA
         {
             MouseActions.ClickATM(Browser, BtnDownloadPdf);
 
-            ElementExtensions.EsperarElemento(Element.Css("div[id='toast-container'] div[class='ng-binding ng-scope']"), Browser);
-            Assert.AreEqual("Gerando arquivo PDF, favor aguarde.", ElementExtensions.GetValorAtributo(Element.Css("div[id='toast-container'] div[class='ng-binding ng-scope']"), "textContent", Browser));
-            Thread.Sleep(1000);
+            Thread.Sleep(10000);
+
+            AutoIt.AutoItX.AutoItSetOption("WinTitleMatchMode", 2);
+            AutoIt.AutoItX.WinActivate("Google Chrome");
+            AutoIt.AutoItX.Send("{TAB}");
+            AutoIt.AutoItX.Send("{ENTER}");
+
         }
 
         public void ExcluirRelatorioPdfDeDDA()

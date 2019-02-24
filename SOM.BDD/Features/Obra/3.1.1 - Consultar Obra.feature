@@ -18,6 +18,7 @@ Esquema do Cenario: Consulta Avançada por Obra cadastrada no sistema
   Exemplos:
       | TITULO                    | SUBTITULO                    | AUTOR             | TITULOALTERNATIVO | TIPO                 | DDA            | NACIONALIDADE | DOMINIOPUBLICO |
       | "TITULO CONSULTA SIMPLES" | "SUBTITULO CONSULTA SIMPLES" | "TESTE INM Autor" | " "               | "BIBLIOTECA MUSICAL" | "KOBALT MUSIC" | "Nacional"    | "Não"          |
+      | "COAST OFF"               | "COAST OFF"                  | "KEITH KENNIFF"   | " "               | "MUSICA COMERCIAL"   | "A DESCOBRIR"  | "Nacional"    | "Não"          |
 	  
 @chrome @ConsultarObraEComposicaoCT02
 Esquema do Cenario: Consulta Simples por Obra cadastrada no sistema
@@ -27,12 +28,14 @@ Esquema do Cenario: Consulta Simples por Obra cadastrada no sistema
   Exemplos:
       | TITULO                    | AUTOR             | TIPO                 | DDA            | NACIONALIDADE | DOMINIOPUBLICO |
       | "TITULO CONSULTA SIMPLES" | "TESTE INM Autor" | "BIBLIOTECA MUSICAL" | "KOBALT MUSIC" | "Nacional"    | "Não"          |
+	  | "COAST OFF"               | "KEITH KENNIFF"   | "MUSICA COMERCIAL"   | "A DESCOBRIR"  | "Nacional"    | "Não"          |
 
 @chrome @ConsultarObraEComposicaoCT03
 Esquema do Cenario: Consultar detalhe de obra com fonograma
 	Quando faço uma busca simples por uma obra <Obra>
-    Entao visualizo a grid com os campos <Interpretes>, <Produtor_Fonografico>, <Submix>, <ISRC> preenchido com os dados do fonograma <Obra>
+    Entao visualizo a grid preenchido com os dados do fonograma <Obra>
 
   Exemplos:
-      | Obra               | Interpretes | Produtor_Fonografico | Submix     | ISRC            |
-      | "MUSICA DA HELEN1" | "ANITTA"    | "RGE"                | "FULL MIX" | "BRRGE10101010" |
+      | Obra               |
+      | "MUSICA DA HELEN1" |
+      | "COAST OFF"        |

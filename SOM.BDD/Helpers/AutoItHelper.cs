@@ -25,5 +25,13 @@ namespace SOM.BDD.Helpers
             AutoIt.AutoItX.Send("{ENTER}");
             Thread.Sleep(4000);
         }
+
+        public static void CancelarImpressao()
+        {
+            AutoIt.AutoItX.AutoItSetOption("WinTitleMatchMode", 2);
+            AutoIt.AutoItX.WinActivate("Google Chrome");
+            AutoIt.AutoItX.Send("{TAB}");
+            AutoIt.AutoItX.Send("{ENTER}");
+        }
     }
 }

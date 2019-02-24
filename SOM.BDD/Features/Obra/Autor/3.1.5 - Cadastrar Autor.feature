@@ -18,8 +18,9 @@ Contexto: Acesso à tela de Autor
     Então visualizo a <Mensagem> do Autor cadastrado com sucesso para o <NomeArtistico>
 
   Exemplos:
-      | NomeArtistico        | NomeCompleto                  | Logradouro         | Bairro  | Cidade  | CEP        | Nome        | TipoContato | Telefone     | Mensagem                        |
-      | "Teste de Autor INM" | "Teste de Autor INM Completo" | "Teste Logradouro" | "Teste" | "Teste" | "11111111" | "Teste INM" | "Telefone"  | "2133445566" | "Registro ativado com sucesso." |
+      | NomeArtistico            | NomeCompleto                  | Logradouro         | Bairro       | Cidade        | CEP        | Nome               | TipoContato | Telefone     | Mensagem                        |
+      | "Teste de Autor INM"     | "Teste de Autor INM Completo" | "Teste Logradouro" | "Teste"      | "Teste"       | "11111111" | "Teste INM"        | "Telefone"  | "2133445566" | "Registro ativado com sucesso." |
+      | "Teste de NomeArtistico" | "Teste de NomeCompleto"       | "Logradouro"       | "NovoBairro" | "CidadeTeste" | "21220560" | "Teste de Contato" | "Telefone"  | "2133445566" | "Registro ativado com sucesso." |
 
 @chrome @CadastrarAutorCT02
 Esquema do Cenario: Incluir Autor sem preenchimento dos campos obrigatorios

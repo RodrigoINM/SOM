@@ -181,6 +181,71 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
+        [TechTalk.SpecRun.ScenarioAttribute("Inclusão de item de template em bloco já criado", new string[] {
+                "chrome",
+                "AlteracaoDeTemplateDeProdutoCT04"}, SourceLine=43)]
+        public virtual void InclusaoDeItemDeTemplateEmBlocoJaCriado()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inclusão de item de template em bloco já criado", null, new string[] {
+                        "chrome",
+                        "AlteracaoDeTemplateDeProdutoCT04"});
+#line 44
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 45
+ testRunner.Given("que tenho um produto cadastrado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 46
+ testRunner.Then("Cadastro um item em um bloco já criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Inclusão de item de template em Matéria já criada", new string[] {
+                "chrome",
+                "AlteracaoDeTemplateDeProdutoCT05"}, SourceLine=48)]
+        public virtual void InclusaoDeItemDeTemplateEmMateriaJaCriada()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inclusão de item de template em Matéria já criada", null, new string[] {
+                        "chrome",
+                        "AlteracaoDeTemplateDeProdutoCT05"});
+#line 49
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 50
+    testRunner.Given("que tenho um produto cadastrado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 51
+ testRunner.Then("Cadastro um item em uma materia já criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Retirar o item de template do bloco", new string[] {
+                "chrome",
+                "AlteracaoDeTemplateDeProdutoCT06"}, SourceLine=53)]
+        public virtual void RetirarOItemDeTemplateDoBloco()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Retirar o item de template do bloco", null, new string[] {
+                        "chrome",
+                        "AlteracaoDeTemplateDeProdutoCT06"});
+#line 54
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+this.FeatureBackground();
+#line 55
+    testRunner.Given("que tenho um produto cadastrado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 56
+ testRunner.And("Cadastro um item em um bloco", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 57
+ testRunner.Then("seleciono o bloco para ser excluido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

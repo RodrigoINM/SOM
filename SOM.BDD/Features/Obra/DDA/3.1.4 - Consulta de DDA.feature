@@ -16,8 +16,9 @@ Esquema do Cenario: Busca Simples por DDA com sucesso
 	Entao visualizo os dados do DDA no resultado da busca <NOMEFANTASIA>, <NOMECOMPLETO>, <DOCUMENTO>, <ASSOCIACAO>, <TIPO>
 	  
   Exemplos:
-      | NOMEFANTASIA    | NOMECOMPLETO    | CPF           | ASSOCIACAO | ADMINISTRADOR | DATANASCIMENTO | NOMECONTATO         | TIPOCONTATO | CONTATO           | AUTORIZACAO | TIPO            | DOCUMENTO        |
-      | "Teste INM 607" | "Teste INM 607" | "54635356357" | "UBEM"     | "Sim"         | "10/10/1992"   | "Contato Teste 607" | "E-mail"    | "teste@teste.com" | "Sim"       | "Administrador" | "546.353.563-57" |
+      | NOMEFANTASIA         | NOMECOMPLETO         | CPF           | ASSOCIACAO | ADMINISTRADOR | DATANASCIMENTO | NOMECONTATO            | TIPOCONTATO | CONTATO           | AUTORIZACAO | TIPO            | DOCUMENTO        |
+      | "Teste INM 607"      | "Teste INM 607"      | "54635356357" | "UBEM"     | "Sim"         | "10/10/1992"   | "Contato Teste 607"    | "E-mail"    | "teste@teste.com" | "Sim"       | "Administrador" | "546.353.563-57" |
+      | "Teste NOMEFANTASIA" | "Teste NOMEFANTASIA" | "54635356357" | "UBEM"     | "Sim"         | "10/10/1992"   | "Contato NOMEFANTASIA" | "E-mail"    | "teste@teste.com" | "Sim"       | "Administrador" | "546.353.563-57" |
 
 @chrome @ConsultaDeDDACT02
 Esquema do Cenario: Busca avançada por Nome Fantasia com sucesso
@@ -89,14 +90,13 @@ Esquema do Cenario: Gerar relatório DDA em Excel com sucesso
   Exemplos:
       | NOMEFANTASIA    | NOMECOMPLETO    | CPF           | ASSOCIACAO | ADMINISTRADOR | DATANASCIMENTO | NOMECONTATO         | TIPOCONTATO | CONTATO           | AUTORIZACAO |
       | "Teste INM 612" | "Teste INM 612" | "54635356357" | "UBEM"     | "Sim"         | "10/10/1992"   | "Contato Teste 612" | "E-mail"    | "teste@teste.com" | "Sim"       |
-#
-#@chrome @ConsultaDeDDA
-#Esquema do Cenario: Gerar relatório DDA em PDF com sucesso
-#    Dado que tenha um DDA cadastrado <NOMEFANTASIA>, <NOMECOMPLETO>, <CPF>, <ASSOCIACAO>, <ADMINISTRADOR>, <DATANASCIMENTO>, <NOMECONTATO>, <TIPOCONTATO>, <CONTATO>, <AUTORIZACAO>
-#	Quando faço uma busca avançada por nome fantasia e nome completo <NOMEFANTASIA>, <NOMECOMPLETO>
-#    E faço download do relatório em pdf do resultado da busca
-#    Então visualizo o download da planilha pdf com resultado da busca por DDA <NOMEFANTASIA>
-#	
-#  Exemplos:
-#      | NOMEFANTASIA    | NOMECOMPLETO    | CPF           | ASSOCIACAO | ADMINISTRADOR | DATANASCIMENTO | NOMECONTATO         | TIPOCONTATO | CONTATO           | AUTORIZACAO |
-#      | "Teste INM 613" | "Teste INM 613" | "54635356357" | "UBEM"     | "Sim"         | "10/10/1992"   | "Contato Teste 613" | "E-mail"    | "teste@teste.com" | "Sim"       |
+
+@chrome @ConsultaDeDDA
+Esquema do Cenario: Gerar relatório DDA em PDF com sucesso
+	Dado que esteja com a tela de Busca de DDA aberta
+	Quando faço uma busca avançada por nome fantasia e nome completo <NOMEFANTASIA>, <NOMECOMPLETO>
+    E faço download do relatório em pdf do resultado da busca
+	
+  Exemplos:
+      | NOMEFANTASIA  | NOMECOMPLETO  |
+      | "A DESCOBRIR" | "A DESCOBRIR" |

@@ -23,8 +23,9 @@ Esquema do Cenário: Gerar download sem fechamento mensal relatório UBEM
   Entao visualizo a mensagem de que não existe fechamento UBEM para o periodo selecionado <Mensagem>
     
   Exemplos: 
-      | Mes        | Ano    | Mensagem                                            | 
-      | "Dezembro" | "2018" | "Não existe fechamento para o período selecionado." | 
+      | Mes        | Ano    | Mensagem                                            |
+      | "Dezembro" | "2018" | "Não existe fechamento para o período selecionado." |
+      | "Outubro"  | "2018" | "Não existe fechamento para o período selecionado." | 
   
 @chrome	@RelatorioUBEMCT02
 Esquema do Cenário: Consultar relatório de fechamento UBEM
@@ -32,8 +33,9 @@ Esquema do Cenário: Consultar relatório de fechamento UBEM
   Entao visualizo o link de download do relatorio de fechamento UBEM com sucesso <Associacao> <Mes> <Ano>
     
   Exemplos:
-      | Associacao       | Mes       | Ano    | 
-      | "UBEM"           | "Outubro" | "2017" | 
+      | Associacao | Mes        | Ano    |
+      | "UBEM"     | "Outubro"  | "2017" |
+      | "UBEM"     | "Novembro" | "2017" | 
   
 @chrome	@RelatorioUBEMCT03
 Esquema do Cenário: Gerar download relatório UBEM
@@ -52,8 +54,9 @@ Esquema do Cenário: Validar as informações do relatório UBEM
   Entao posso baixar o relatorio UBEM e verificar se as informacoes de <Programa>, <DataExibicao>, <Capitulo>, <Episodio>, <Genero>, <TituloDaMusica>, <TituloOriginal>, <Autor>, <DDA>, <PossuiDuplicidade>, <Sincronismo>, <Interpretes>, <Reprise>, <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao>, <Mes>, <Ano> escolhidos
     
   Exemplos:
-      | Associacao | Mes       | Ano    | Programa          | DataExibicao | Capitulo | Episodio | Genero       | TituloDaMusica | TituloOriginal | Autor          | DDA     | PossuiDuplicidade | Sincronismo | Interpretes    | Reprise | TituloRelatorio        |
-      | "UBEM"     | "Outubro" | "2017" | "JORNAL NACIONAL" | "09/10/2017" | " "      | " "      | "JORNALISMO" | "NM SYNTH 2"   | "NM SYNTH 2"   | "SACHA AMBACK" | "SIGEM" | " "               | " "         | "SACHA AMBACK" | "NÃO"   | "Planilha Mensal UBEM" |
+      | Associacao | Mes       | Ano    | Programa          | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica           | TituloOriginal | Autor                  | DDA     | PossuiDuplicidade | Sincronismo | Interpretes                                             | Reprise | TituloRelatorio        |
+      | "UBEM"     | "Outubro" | "2017" | "JORNAL NACIONAL" | "09/10/2017" | " "      | " "      | "JORNALISMO"         | "NM SYNTH 2"             | "NM SYNTH 2"   | "SACHA AMBACK"         | "SIGEM" | " "               | " "         | "SACHA AMBACK"                                          | "NÃO"   | "Planilha Mensal UBEM" |
+      | "UBEM"     | "Outubro" | "2017" | "NOVO MUNDO"      | "02/11/2017" | "700"    | " "      | "DRAMATURGIA DIÁRIA" | "CARIOCA PALACE THEME 2" | " "            | "RAFAEL LANGONI SMITH" | "SIGEM" | " "               | " "         | "PEDRO EUGENIO ARAUJO,RAFAEL LANGONI SMITH,ROGERIO VAZ" | "NÃO"   | "Planilha Mensal UBEM" |
   
   @chrome	@RelatorioUBEMCT05
  Esquema do Cenario: Gerar relatório UBEM sem fechamento mensal
@@ -70,8 +73,9 @@ Esquema do Cenario: Gerar relatório UBEM do tipo Associação todas sem fechame
     Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
 
     Exemplos:
-      | Associacao | Mes        | Ano    | Programa     | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica           | TituloOriginal | Autor                  | DDA    | PossuiDuplicidade | Sincronismo | Interpretes                                             | Reprise | TituloRelatorio         |
-      | "TODAS"    | "Novembro" | "2017" | "NOVO MUNDO" | "02/11/2017" | "700"    | " "      | "DRAMATURGIA DIÁRIA" | "CARIOCA PALACE THEME 2" | " "            | "RAFAEL LANGONI SMITH" | "DECK" | "NÃO"             | "FUNDO"     | "PEDRO EUGENIO ARAUJO,RAFAEL LANGONI SMITH,ROGERIO VAZ" | "NÃO"   | "Planilha Mensal TODAS" |
+      | Associacao | Mes        | Ano    | Programa                  | DataExibicao | Capitulo | Episodio | Genero               | TituloDaMusica           | TituloOriginal | Autor                                   | DDA                                                         | PossuiDuplicidade | Sincronismo           | Interpretes                                             | Reprise | TituloRelatorio         |
+      | "TODAS"    | "Novembro" | "2017" | "NOVO MUNDO"              | "02/11/2017" | "700"    | " "      | "DRAMATURGIA DIÁRIA" | "CARIOCA PALACE THEME 2" | " "            | "RAFAEL LANGONI SMITH"                  | "DECK"                                                      | "NÃO"             | "FUNDO"               | "PEDRO EUGENIO ARAUJO,RAFAEL LANGONI SMITH,ROGERIO VAZ" | "NÃO"   | "Planilha Mensal TODAS" |
+      | "TODAS"    | "Dezembro" | "2018" | "TESTE DRAMATURGIA TESTE" | "01/12/2018" | "10"     | " "      | "DRAMATURGIA DIÁRIA" | "TESTE 1"                | " "            | "CVCHAGAS222,CVCHAGAS222,VICTOR,VICTOR" | "SOM E LUZ,WARNER CHAPPELL,SOM E LUZ,SONY MUSIC PUBLISHING" | "NÃO"             | "AO VIVO PERFORMANCE" | "ALYNE"                                                 | "NÃO"   | "Planilha Mensal TODAS" |
 
  @chrome	@RelatorioUBEMCT07
 Esquema do Cenario: Gerar relatório UBEM do tipo Sem Associação sem fechamento mensal
@@ -79,8 +83,9 @@ Esquema do Cenario: Gerar relatório UBEM do tipo Sem Associação sem fechament
     Entao gero o relatorio UBEM e verifica se as informacoes de <Programa> <DataExibicao> <Capitulo> <Episodio> <Genero> <TituloDaMusica> <TituloOriginal> <Autor> <DDA> <PossuiDuplicidade> <Sincronismo> <Interpretes> <Reprise> <TituloRelatorio> estao sendo exibidas corretamente para a <Associacao> <Mes> <Ano> escolhidos
 
     Exemplos:
-	  | Associacao       | Mes        | Ano    | Programa           | DataExibicao | Capitulo | Episodio | Genero              | TituloDaMusica          | TituloOriginal | Autor   | DDA             | PossuiDuplicidade | Sincronismo | Interpretes | Reprise | TituloRelatorio    |
-	  | "SEM ASSOCIAÇÃO" | "Novembro" | "2017" | "TESTE VARIEDADES" | "05/11/2017" | "1"      | " "      | "VARIEDADE SEMANAL" | "MUSICA DE TESTE 5 INT" | " "            | "LUCCA" | "UNIVERSAL MGB" | "NÃO"             | "ADORNO"    | "ANITTA"    | "NÃO"   | "Planilha Mensal " |
+	  | Associacao       | Mes        | Ano    | Programa                      | DataExibicao | Capitulo | Episodio | Genero              | TituloDaMusica          | TituloOriginal | Autor               | DDA             | PossuiDuplicidade | Sincronismo | Interpretes   | Reprise | TituloRelatorio    |
+	  | "SEM ASSOCIAÇÃO" | "Novembro" | "2017" | "TESTE VARIEDADES"            | "05/11/2017" | "1"      | " "      | "VARIEDADE SEMANAL" | "MUSICA DE TESTE 5 INT" | " "            | "LUCCA"             | "UNIVERSAL MGB" | "NÃO"             | "ADORNO"    | "ANITTA"      | "NÃO"   | "Planilha Mensal " |
+	  | "SEM ASSOCIAÇÃO" | "Novembro" | "2018" | "TESTE ESPORTE OU JORNALISMO" | "05/11/2018" | "1"      | "TESTE"  | "JORNALISMO"        | "MUSICA DA MARCELLE"    | " "            | "MARCELLE MENDONCA" | "EMI SONGS"     | "NÃO"             | "ABERTURA"  | "DANIEL MUSY" | "NÃO"   | "Planilha Mensal " |
 
  @chrome	@RelatorioUBEMCT08
 Esquema do Cenario: Gerar Novo relatório UBEM Mensal tipo UBEM

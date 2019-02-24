@@ -18,6 +18,8 @@ Esquema do Cenario: Gerar download relatório ECAD sem fechamento mensal
     Exemplos:
         | Tipo     | Mes        | Ano    | Mensagem                                            |
         | "Mensal" | "Dezembro" | "2018" | "Não existe fechamento para o período selecionado." |
+        | "Mensal" | "Outubro"  | "2018" | "Não existe fechamento para o período selecionado." |
+        | "Mensal" | "Julho"    | "2018" | "Não existe fechamento para o período selecionado." |
 
 @chrome	@RelatorioECADCT02
 Esquema do Cenário: Gerar Novo relatório mensal ECAD em Excel
@@ -25,8 +27,9 @@ Esquema do Cenário: Gerar Novo relatório mensal ECAD em Excel
 	Entao gero um relatorio ECAD e verifico as informações <Programa>, <DataExibicao>, <Capitulo>, <NomedoEpisodio>, <Diretor>, <OrdemExecucao>, <TitulodaObraMusica>, <TipodeMusica>, <Autor>, <Interprete>, <Segundos>, <Classificacao>, <Compositores>, <Editora>, <Gravadora>, <Submix>, <NomePlanilha> estao sendo exibidas corretamente para o filtro <Mes>, <Ano> escolhidos
 
     Exemplos:
-		| Tipo     | Mes       | Ano    | Programa      | DataExibicao | Capitulo | NomedoEpisodio | Diretor | OrdemExecucao | TitulodaObraMusica  | TipodeMusica         | Autor   | Interprete | Segundos | Classificacao | Compositores | Editora           | Gravadora | Submix | NomePlanilha           |
-		| "Mensal" | "Outubro" | "2018" | "NOVA NOVELA" | "03/10/2018" | "2"      | " "            | " "     | "1"           | "NOVA MUSICA HELEN" | "BIBLIOTECA MUSICAL" | "TESTA" | "ANITTA"   | "10"     | "TM"          | " "          | "HELEN PRODUCOES" | " "       | " "    | "Planilha Mensal ECAD" |
+		| Tipo     | Mes       | Ano    | Programa            | DataExibicao | Capitulo | NomedoEpisodio | Diretor | OrdemExecucao | TitulodaObraMusica  | TipodeMusica         | Autor                                           | Interprete     | Segundos | Classificacao | Compositores | Editora                                 | Gravadora | Submix | NomePlanilha           |
+		| "Mensal" | "Outubro" | "2018" | "NOVA NOVELA"       | "03/10/2018" | "2"      | " "            | " "     | "1"           | "NOVA MUSICA HELEN" | "BIBLIOTECA MUSICAL" | "TESTA"                                         | "ANITTA"       | "10"     | "TM"          | " "          | "HELEN PRODUCOES"                       | " "       | " "    | "Planilha Mensal ECAD" |
+		| "Mensal" | "Agosto"  | "2018" | "VIDAS DE MANUELLA" | "01/08/2018" | "2"      | " "            | " "     | "1"           | "KINGDOM"           | "MUSICA COMERCIAL"   | "ALYNE WAITE,CARLOS A DE OLIVEIRA,JORDAM CRITZ" | "JORDAM CRITZ" | "25"     | "BK"          | " "          | "A DESCOBRIR,INDEPENDENTE,INDEPENDENTE" | "RGE"     | " "    | "Planilha Mensal ECAD" |
 
 @chrome	@RelatorioECADCT03
 Esquema do Cenario: Gerar Novo relatório Complemento ECAD em Excel
@@ -34,8 +37,9 @@ Esquema do Cenario: Gerar Novo relatório Complemento ECAD em Excel
 	Entao gero um relatorio ECAD e verifico as informações <Programa>, <DataExibicao>, <Capitulo>, <NomedoEpisodio>, <Diretor>, <OrdemExecucao>, <TitulodaObraMusica>, <TipodeMusica>, <Autor>, <Interprete>, <Segundos>, <Classificacao>, <Compositores>, <Editora>, <Gravadora>, <Submix>, <NomePlanilha> estao sendo exibidas corretamente para o filtro <Mes>, <Ano> escolhidos
 
     Exemplos:
-		| Tipo          | Mes       | Ano    | Programa          | DataExibicao | Capitulo   | NomedoEpisodio | Diretor | OrdemExecucao | TitulodaObraMusica   | TipodeMusica       | Autor                                                 | Interprete    | Segundos | Classificacao | Compositores | Editora                           | Gravadora | Submix     | NomePlanilha           |
-		| "Complemento" | "Outubro" | "2018" | "ANTENA PAULISTA" | "25/10/2018" | "10012010" | "REPRISE"      | " "     | "1"           | "MUSICA DA MARCELLE" | "MUSICA COMERCIAL" | "MARCELLE MENDONCA,MARCELLE MENDONCA,SHAKIRA MEBARAK" | "DANIEL MUSY" | "40"     | "TA"          | ""           | "EMI SONGS,SOM E LUZ,A DESCOBRIR" | "RGE"     | "FULL MIX" | "Planilha Mensal ECAD" |
+		| Tipo          | Mes        | Ano    | Programa          | DataExibicao | Capitulo   | NomedoEpisodio | Diretor | OrdemExecucao | TitulodaObraMusica   | TipodeMusica       | Autor                                                 | Interprete    | Segundos | Classificacao | Compositores | Editora                           | Gravadora | Submix     | NomePlanilha           |
+		| "Complemento" | "Outubro"  | "2018" | "ANTENA PAULISTA" | "25/10/2018" | "10012010" | "REPRISE"      | " "     | "1"           | "MUSICA DA MARCELLE" | "MUSICA COMERCIAL" | "MARCELLE MENDONCA,MARCELLE MENDONCA,SHAKIRA MEBARAK" | "DANIEL MUSY" | "40"     | "TA"          | " "          | "EMI SONGS,SOM E LUZ,A DESCOBRIR" | "RGE"     | "FULL MIX" | "Planilha Mensal ECAD" |
+		| "Complemento" | "Setembro" | "2018" | "JORNAL NACIONAL" | " "          | " "        | " "            | " "     | "1"           | "PROBLEMA SEU"       | "MUSICA COMERCIAL" | "FELIPE CORDEIRO,MANOEL CORDEIRO"                     | "ANITTA"      | "10"     | "BK"          | " "          | "A DESCOBRIR,DUBAS,DUBAS"         | " "       | " "        | "Planilha Mensal ECAD" |
 
 @chrome	@RelatorioECADCT04
 Esquema do Cenário: Gerar relatório ECAD mensal pelo filtro Produto.
@@ -138,16 +142,19 @@ Esquema do Cenario: Gerar Novo relatório mensal ECAD em PDF
 	Exemplos:
 		| Tipo     | Mes       | Ano    |
 		| "Mensal" | "Outubro" | "2017" |
+		| "Mensal" | "Outubro" | "2017" |
 
-#Esquema do Cenario: Gerar Novo relatório Complemento ECAD em PDF
-#    Quando realizo um relatorio ECAD preenchendo o campo <TipoComplemento> e <Periodo>
-#    Então visualizo o relatório com o os campos <Programa>, <DataExibicao>, <HorariodeExibicao>, <Capitulo>, <Temporada>, <NomedoEpisodio>, <Produtor>, <Diretor>, <OrdemExecucao>, <TitulodaObraMusical>, <TipodeMusica>, <Autor>, <Interprete>, <Segundos>, <Classificação>, <CompositorTrilha>, <Editora>, <Gravadora>, <ISRC> e <Submix> com todas as informações.
-#
-#    Exemplos:
-#      | Programa      | DataExibicao | HorariodeExibicao | Capitulo | Temporada | NomedoEpisodio | Produtor | Diretor | OrdemExecucao | TitulodaObraMusical | TipodeMusica     | Autor            | Interprete | Segundos | Classificação | CompositorTrilha | Editora | Gravadora | ISRC | Submix |
-#      | "NOVA NOVELA" | "03/09/2018" | ""                | "9"      | ""        | ""             | ""       | ""      | "1"           | "DOMITILA"          | "TRILHA MUSICAL" | "RAFAEL LANGONI" | "ANITTA"   | "10"     | ""            | ""               | "SIGEM" | ""        | ""   | ""     |
-#
-#
+@chrome	@RelatorioECADCT15
+Esquema do Cenario: Gerar Novo relatório Complemento ECAD em PDF
+    Quando filtro um relatorio ECAD preenchendo o campo tipo e o periodo <Tipo>, <Mes> , <Ano>
+	Então valido a tela apresentando o aquivo em PDF
+
+	Exemplos:
+		| Tipo          | Mes       | Ano    |
+		| "Complemento" | "Outubro" | "2017" |
+		| "Complemento" | "Outubro" | "2018" |
+
+
 #Esquema do Cenário: Gerar fechamento de relatório ECAD Mensal
 #    Quando realizo um relatório ECAD preenchendo o campo <TipoMensal> e <Periodo>
 #    Então visualizo o relatório com o os campos <Programa>, <DataExibicao>, <HorariodeExibicao>, <Capitulo>, <Temporada>, <NomedoEpisodio>, <Produtor>, <Diretor>, <OrdemExecucao>, <TitulodaObraMusical>, <TipodeMusica>, <Autor>, <Interprete>, <Segundos>, <Classificação>, <CompositorTrilha>, <Editora>, <Gravadora>, <ISRC> e <Submix> com todas as informações.

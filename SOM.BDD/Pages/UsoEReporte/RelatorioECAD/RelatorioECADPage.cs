@@ -344,32 +344,10 @@ namespace SOM.BDD.Pages.UsoEReporte.RelatorioECAD
             var BtnPDF = Element.Css("a[ng-click='BaixarPDF()']");
             MouseActions.ClickATM(Browser, BtnPDF);
 
-            try
-            {
-                Thread.Sleep(3000);
-                var FechamentoMensal = Element.Css("a[ng-click='AbrirModalFechamento()']");
-                Assert.IsTrue(ElementExtensions.IsClickable(FechamentoMensal, Browser));
-            }
+            Thread.Sleep(60000);
 
-            catch
-            {
-                Thread.Sleep(3000);
-                var FechamentoMensal = Element.Css("a[ng-click='AbrirModalFechamento()']");
-                Assert.IsTrue(ElementExtensions.IsClickable(FechamentoMensal, Browser));
-            }
+            AutoItHelper.CancelarImpressao();
 
-            AutoIt.AutoItX.AutoItSetOption("WinTitleMatchMode", 2);
-            AutoIt.AutoItX.WinActivate("Google Chrome");
-            AutoIt.AutoItX.Send("{TAB}");
-            AutoIt.AutoItX.Send("{ENTER}");
-
-
-            //JsActions.JavaScript(Browser, "var x = document.getElementsByClassName('cancel-button'); alert(x[0]);");
-
-            //JsActions.JavaScript(Browser, "$('//*[@id='button-strip']/paper-button[2]').click();");
-            //MouseActions.ClickATM(Browser, Element.Xpath("//*[@id='button-strip']/paper-button[2]"));
-            //KeyboardActions.Escape(Browser, Element.Xpath("//*[@id='button-strip']/paper-button[2]"));
-            //Thread.Sleep(2000);
             Browser.SwitchToLastWindow();
             CamposPDF();
 

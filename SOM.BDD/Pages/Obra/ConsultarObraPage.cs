@@ -178,22 +178,24 @@ namespace SOM.BDD.Pages.Obra
             }
         }
 
-        public void ValidarDadosDeFonograma(string Interpretes, string ProdutorFonografico, string Submix, string ISRC, string Obra)
+        public void ValidarDadosDeFonograma(string Obra)
         {
             Thread.Sleep(2000);
             MouseActions.DoubleClickATM(Browser, Element.Xpath("//td//div[text()='" + Obra + "']"));
-
-            ValidarFonograma(Interpretes);
-            ValidarFonograma(ProdutorFonografico);
-            ValidarFonograma(Submix);
-            ValidarFonograma(ISRC);
+            Thread.Sleep(5000);
+            var fonogramatext = Element.Xpath("//h4[text()='Fonograma']");
+            ElementExtensions.IsElementVisible(fonogramatext, Browser);
+            //ValidarFonograma(Interpretes);
+            //ValidarFonograma(ProdutorFonografico);
+            //ValidarFonograma(Submix);
+            //ValidarFonograma(ISRC);
         }
 
-        private void ValidarFonograma(string Valor)
-        {
-            if(Valor != "" && Valor != " ")
-                ElementExtensions.IsElementVisible(Element.Xpath("//div[@ng-repeat='item in ObraDados.Fonogramas'][1]//h5[contains (., '" + Valor + "')]"), Browser);
-        }
+        //private void ValidarFonograma(string Valor)
+        //{
+        //    if(Valor != "" && Valor != " ")
+        //        ElementExtensions.IsElementVisible(Element.Xpath("//div[@ng-repeat='item in ObraDados.Fonogramas'][1]//h5[contains (., '" + Valor + "')]"), Browser);
+        //}
         
-        }
+   }
 }
