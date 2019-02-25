@@ -67,6 +67,7 @@ Esquema do Cenario: Busca por produtos não cadastrados
   Exemplos:
       | Nome                  | Mensagem                |
       | "Produto Inexistente" | "Dados não encontratos" |
+      | "Produto nome"        | "Dados não encontratos" |
   
 @chrome	@ConsultaDeProdutoCT07
 Esquema do Cenario: Busca por Produto e Episódios não associados

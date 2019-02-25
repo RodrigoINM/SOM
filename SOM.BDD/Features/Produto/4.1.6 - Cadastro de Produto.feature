@@ -19,6 +19,7 @@ Esquema do Cenario: Cadastrar novo Produto
   Exemplos:
       | Nome                    | Episodio                  | GeneroOriginal | GeneroDireitosMusicais | AR     | GradeAtual | Atividade   | AtualizaOrigem | Midias      | CapituloObrigatorio | Mensagem                      |
       | "Titulo do Produto 500" | "Episodio do Produto 500" | "Novela"       | "DRAMATURGIA SEMANAL"  | "4135" | "Sim"      | "Atividade" | "Não"          | "GLOBONEWS" | "Não"               | "Registro salvo com sucesso." |
+	  
   
 @chrome @CadastroDeProdutoCT02
 Esquema do Cenario: Cadastrar Produto sem preenchimento de campo obrigatório

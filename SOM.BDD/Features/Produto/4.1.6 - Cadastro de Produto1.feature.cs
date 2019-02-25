@@ -129,14 +129,14 @@ this.CadastrarNovoProduto("\"Titulo do Produto 500\"", "\"Episodio do Produto 50
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastrar Produto sem preenchimento de campo obrigatório", null, @__tags);
-#line 24
+#line 25
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 25
-    testRunner.When(string.Format("cadastro um Produto sem preenchimento dos campos {0}, {1}, {2}, {3} ou {4}", nome, aR, generoDireitosMusicais, atividade, midia), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 26
+    testRunner.When(string.Format("cadastro um Produto sem preenchimento dos campos {0}, {1}, {2}, {3} ou {4}", nome, aR, generoDireitosMusicais, atividade, midia), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 27
  testRunner.Then(string.Format("visualizo os campos obrigatorios para cadastro de produto em destaque {0}, {1}, {" +
                         "2}, {3} e {4}", nome, aR, generoDireitosMusicais, atividade, midia), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
@@ -145,10 +145,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Cadastrar Produto sem preenchimento de campo obrigatório, \" \"", new string[] {
                 "chrome",
-                "CadastroDeProdutoCT02"}, SourceLine=29)]
+                "CadastroDeProdutoCT02"}, SourceLine=30)]
         public virtual void CadastrarProdutoSemPreenchimentoDeCampoObrigatorio_()
         {
-#line 24
+#line 25
 this.CadastrarProdutoSemPreenchimentoDeCampoObrigatorio("\" \"", "\" \"", "\" \"", "\" \"", "\" \"", ((string[])(null)));
 #line hidden
         }
@@ -163,15 +163,15 @@ this.CadastrarProdutoSemPreenchimentoDeCampoObrigatorio("\" \"", "\" \"", "\" \"
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancelar cadastro de Produto", null, @__tags);
-#line 33
+#line 34
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 34
+#line 35
     testRunner.When(string.Format("cancelo o cadastro de um novo produto com todos os campos preenchidos {0}, {1}, {" +
                         "2}, {3}, {4}, {5}, {6}, {7}, {8} e {9}", nome, episodio, generoOriginal, generoDireitosMusicais, aR, gradeAtual, midias, atividade, atualizaOrigem, capituloObrigatorio), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 35
+#line 36
     testRunner.Then("visualizo a tela de busca de Produto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
@@ -179,10 +179,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Cancelar cadastro de Produto, \"Titulo do Produto 501\"", new string[] {
                 "chrome",
-                "CadastroDeProdutoCT03"}, SourceLine=38)]
+                "CadastroDeProdutoCT03"}, SourceLine=39)]
         public virtual void CancelarCadastroDeProduto_TituloDoProduto501()
         {
-#line 33
+#line 34
 this.CancelarCadastroDeProduto("\"Titulo do Produto 501\"", "\"Episodio do Produto 501\"", "\"Novela\"", "\"DRAMATURGIA SEMANAL\"", "\"4135\"", "\"Sim\"", "\"Atividade\"", "\"Não\"", "\"GLOBONEWS\"", "\"Não\"", ((string[])(null)));
 #line hidden
         }
@@ -197,17 +197,17 @@ this.CancelarCadastroDeProduto("\"Titulo do Produto 501\"", "\"Episodio do Produ
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastrar novo Produto com informações de outro produto previamente cadastrado", null, @__tags);
-#line 42
+#line 43
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 43
- testRunner.Given(string.Format("que tenha um produto cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}", nome, episodio, generoOriginal, generoDireitosMusicais, aR, gradeAtual, midias, atividade, atualizaOrigem, capituloObrigatorio), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 44
+ testRunner.Given(string.Format("que tenha um produto cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}", nome, episodio, generoOriginal, generoDireitosMusicais, aR, gradeAtual, midias, atividade, atualizaOrigem, capituloObrigatorio), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 45
     testRunner.When(string.Format("tento cadastrar um novo Produto com as mesmas informações de um produto previamen" +
                         "te cadastrado {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8} e {9}", nome, episodio, generoOriginal, generoDireitosMusicais, aR, gradeAtual, midias, atividade, atualizaOrigem, capituloObrigatorio), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 45
+#line 46
     testRunner.Then(string.Format("visualizo a mensagem de que já existe um produto ativo cadastrado com esses dados" +
                         " {0}, {1}", nome, mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
@@ -217,10 +217,10 @@ this.FeatureBackground();
         [TechTalk.SpecRun.ScenarioAttribute("Cadastrar novo Produto com informações de outro produto previamente cadastrado, \"" +
             "Titulo do Produto 502\"", new string[] {
                 "chrome",
-                "CadastroDeProdutoCT04"}, SourceLine=48)]
+                "CadastroDeProdutoCT04"}, SourceLine=49)]
         public virtual void CadastrarNovoProdutoComInformacoesDeOutroProdutoPreviamenteCadastrado_TituloDoProduto502()
         {
-#line 42
+#line 43
 this.CadastrarNovoProdutoComInformacoesDeOutroProdutoPreviamenteCadastrado("\"Titulo do Produto 502\"", "\"Episodio do Produto 502\"", "\"Novela\"", "\"DRAMATURGIA SEMANAL\"", "\"4135\"", "\"Sim\"", "\"Atividade\"", "\"Não\"", "\"GLOBONEWS\"", "\"Não\"", "\"Existe um registro com esses dados cadastrado no sistema.\"", ((string[])(null)));
 #line hidden
         }

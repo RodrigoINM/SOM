@@ -21,6 +21,8 @@ Esquema do Cenário: Cadastrar capítulo
   Exemplos:
       | Produto     | Capitulo | Mensagem                           |
       | "Aleatório" | "10"     | "Registro adicionado com sucesso." |
+      | "Aleatório" | "99"     | "Registro adicionado com sucesso." |
+
   
 @chrome @CadastroDeCapituloCT02
 Esquema do Cenário: Cadastar capítulo em lote
@@ -31,7 +33,11 @@ Esquema do Cenário: Cadastar capítulo em lote
 	  
   Exemplos:
       | Produto     | Capitulo | GeracaoLote | QuantidadeCapitulos | Mensagem                           |
-      | "Aleatório" | "10"     | "Sim"       | "5"                 | "Registro adicionado com sucesso." |
+      | "Aleatório" | "10"     | "Sim"       | "2"                 | "Registro adicionado com sucesso." |
+      | "Aleatório" | "10"     | "Sim"       | "20"                | "Registro adicionado com sucesso." |
+      | "Aleatório" | "10"     | "Sim"       | "50"                | "Registro adicionado com sucesso." |
+      | "Aleatório" | "10"     | "Sim"       | "100"               | "Registro adicionado com sucesso." |
+
   
 @chrome @CadastroDeCapituloCT03
 Esquema do Cenário: Cancelar cadastro de Capítulo
@@ -43,6 +49,7 @@ Esquema do Cenário: Cancelar cadastro de Capítulo
   Exemplos:
       | Produto     | Capitulo |
       | "Aleatório" | "10"     |
+	  | "Aleatório" | "99"     |
   
 @chrome @CadastroDeCapituloCT04
 Cenário: Cadastrar capítulo sem preenchimento de campo obrigatório

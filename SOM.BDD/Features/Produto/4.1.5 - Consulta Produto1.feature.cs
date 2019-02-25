@@ -293,6 +293,16 @@ this.BuscaPorProdutosNaoCadastrados("\"Produto Inexistente\"", "\"Dados não enc
 #line hidden
         }
         
+        [TechTalk.SpecRun.ScenarioAttribute("Busca por produtos não cadastrados, \"Produto nome\"", new string[] {
+                "chrome",
+                "ConsultaDeProdutoCT06"}, SourceLine=68)]
+        public virtual void BuscaPorProdutosNaoCadastrados_ProdutoNome()
+        {
+#line 63
+this.BuscaPorProdutosNaoCadastrados("\"Produto nome\"", "\"Dados não encontratos\"", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void BuscaPorProdutoEEpisodiosNaoAssociados(string nome, string episodio, string mensagem, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -303,14 +313,14 @@ this.BuscaPorProdutosNaoCadastrados("\"Produto Inexistente\"", "\"Dados não enc
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Busca por Produto e Episódios não associados", null, @__tags);
-#line 72
+#line 73
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
-#line 73
-    testRunner.When(string.Format("faço uma busca avançada por Produto e Episódio {0}, {1}", nome, episodio), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 74
+    testRunner.When(string.Format("faço uma busca avançada por Produto e Episódio {0}, {1}", nome, episodio), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 75
     testRunner.Then(string.Format("visualizo a {0} de dados nao encontrados na busca pelo produto informado", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
@@ -318,10 +328,10 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("Busca por Produto e Episódios não associados, \"Teste INM\"", new string[] {
                 "chrome",
-                "ConsultaDeProdutoCT07"}, SourceLine=77)]
+                "ConsultaDeProdutoCT07"}, SourceLine=78)]
         public virtual void BuscaPorProdutoEEpisodiosNaoAssociados_TesteINM()
         {
-#line 72
+#line 73
 this.BuscaPorProdutoEEpisodiosNaoAssociados("\"Teste INM\"", "\"Episodio 120\"", "\"Dados não encontratos\"", ((string[])(null)));
 #line hidden
         }

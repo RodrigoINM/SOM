@@ -111,13 +111,23 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Cadastrar capítulo, \"Aleatório\"", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Cadastrar capítulo, Variant 0", new string[] {
                 "chrome",
                 "CadastroDeCapituloCT01"}, SourceLine=22)]
-        public virtual void CadastrarCapitulo_Aleatorio()
+        public virtual void CadastrarCapitulo_Variant0()
         {
 #line 15
 this.CadastrarCapitulo("\"Aleatório\"", "\"10\"", "\"Registro adicionado com sucesso.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cadastrar capítulo, Variant 1", new string[] {
+                "chrome",
+                "CadastroDeCapituloCT01"}, SourceLine=22)]
+        public virtual void CadastrarCapitulo_Variant1()
+        {
+#line 15
+this.CadastrarCapitulo("\"Aleatório\"", "\"99\"", "\"Registro adicionado com sucesso.\"", ((string[])(null)));
 #line hidden
         }
         
@@ -131,30 +141,60 @@ this.CadastrarCapitulo("\"Aleatório\"", "\"10\"", "\"Registro adicionado com su
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastar capítulo em lote", null, @__tags);
-#line 26
+#line 28
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 11
 this.FeatureBackground();
-#line 27
- testRunner.Given("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
-#line 28
- testRunner.And("que esteja na tela de cadastro de capitulos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line 29
- testRunner.When(string.Format("cadastro capitulos em lote para o produto existente {0}, {1}, {2}, {3}", produto, capitulo, geracaoLote, quantidadeCapitulos), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.Given("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 30
+ testRunner.And("que esteja na tela de cadastro de capitulos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 31
+ testRunner.When(string.Format("cadastro capitulos em lote para o produto existente {0}, {1}, {2}, {3}", produto, capitulo, geracaoLote, quantidadeCapitulos), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line 32
  testRunner.Then(string.Format("visualizo a mensagem de capitulo cadastrado com sucesso {0}", mensagem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Cadastar capítulo em lote, \"Aleatório\"", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Cadastar capítulo em lote, Variant 0", new string[] {
                 "chrome",
-                "CadastroDeCapituloCT02"}, SourceLine=33)]
-        public virtual void CadastarCapituloEmLote_Aleatorio()
+                "CadastroDeCapituloCT02"}, SourceLine=35)]
+        public virtual void CadastarCapituloEmLote_Variant0()
         {
-#line 26
-this.CadastarCapituloEmLote("\"Aleatório\"", "\"10\"", "\"Sim\"", "\"5\"", "\"Registro adicionado com sucesso.\"", ((string[])(null)));
+#line 28
+this.CadastarCapituloEmLote("\"Aleatório\"", "\"10\"", "\"Sim\"", "\"2\"", "\"Registro adicionado com sucesso.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cadastar capítulo em lote, Variant 1", new string[] {
+                "chrome",
+                "CadastroDeCapituloCT02"}, SourceLine=35)]
+        public virtual void CadastarCapituloEmLote_Variant1()
+        {
+#line 28
+this.CadastarCapituloEmLote("\"Aleatório\"", "\"10\"", "\"Sim\"", "\"20\"", "\"Registro adicionado com sucesso.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cadastar capítulo em lote, Variant 2", new string[] {
+                "chrome",
+                "CadastroDeCapituloCT02"}, SourceLine=35)]
+        public virtual void CadastarCapituloEmLote_Variant2()
+        {
+#line 28
+this.CadastarCapituloEmLote("\"Aleatório\"", "\"10\"", "\"Sim\"", "\"50\"", "\"Registro adicionado com sucesso.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cadastar capítulo em lote, Variant 3", new string[] {
+                "chrome",
+                "CadastroDeCapituloCT02"}, SourceLine=35)]
+        public virtual void CadastarCapituloEmLote_Variant3()
+        {
+#line 28
+this.CadastarCapituloEmLote("\"Aleatório\"", "\"10\"", "\"Sim\"", "\"100\"", "\"Registro adicionado com sucesso.\"", ((string[])(null)));
 #line hidden
         }
         
@@ -168,51 +208,61 @@ this.CadastarCapituloEmLote("\"Aleatório\"", "\"10\"", "\"Sim\"", "\"5\"", "\"R
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancelar cadastro de Capítulo", null, @__tags);
-#line 37
+#line 43
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 11
 this.FeatureBackground();
-#line 38
+#line 44
     testRunner.Given("que tenha um produto cadastrado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
-#line 39
+#line 45
  testRunner.And("que esteja na tela de cadastro de capitulos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
-#line 40
+#line 46
  testRunner.When(string.Format("cancelo o cadastro de um novo capitulo para o produto existente {0}, {1}", produto, capitulo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 41
+#line 47
  testRunner.Then("visualizo a tela de busca de capitulo com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Cancelar cadastro de Capítulo, \"Aleatório\"", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Cancelar cadastro de Capítulo, Variant 0", new string[] {
                 "chrome",
-                "CadastroDeCapituloCT03"}, SourceLine=44)]
-        public virtual void CancelarCadastroDeCapitulo_Aleatorio()
+                "CadastroDeCapituloCT03"}, SourceLine=50)]
+        public virtual void CancelarCadastroDeCapitulo_Variant0()
         {
-#line 37
+#line 43
 this.CancelarCadastroDeCapitulo("\"Aleatório\"", "\"10\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Cancelar cadastro de Capítulo, Variant 1", new string[] {
+                "chrome",
+                "CadastroDeCapituloCT03"}, SourceLine=50)]
+        public virtual void CancelarCadastroDeCapitulo_Variant1()
+        {
+#line 43
+this.CancelarCadastroDeCapitulo("\"Aleatório\"", "\"99\"", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Cadastrar capítulo sem preenchimento de campo obrigatório", new string[] {
                 "chrome",
-                "CadastroDeCapituloCT04"}, SourceLine=47)]
+                "CadastroDeCapituloCT04"}, SourceLine=54)]
         public virtual void CadastrarCapituloSemPreenchimentoDeCampoObrigatorio()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastrar capítulo sem preenchimento de campo obrigatório", null, new string[] {
                         "chrome",
                         "CadastroDeCapituloCT04"});
-#line 48
+#line 55
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 11
 this.FeatureBackground();
-#line 49
+#line 56
  testRunner.Given("que esteja na tela de cadastro de capitulos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
-#line 50
+#line 57
  testRunner.When("tento cadastrar um capítulo sem preencher os campos obrigatórios", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
-#line 51
+#line 58
  testRunner.Then("visualizo os campos obrigatórios de cadastro de capítulo em destaque", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
