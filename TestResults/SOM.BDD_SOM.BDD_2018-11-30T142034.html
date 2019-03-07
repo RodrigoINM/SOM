@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>SOM.BDD Test Execution Report</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript">
+            /**
+            * jQuery.fn.sortElements
+            * --------------
+            * #author James Padolsey (http://james.padolsey.com)
+            * #version 0.11
+            * #updated 18-MAR-2010
+            * #url https://raw.github.com/jamespadolsey/jQuery-Plugins/master/sortElements/jquery.sortElements.js
+            * --------------
+            * #param Function comparator:
+            *   Exactly the same behaviour as [1,2,3].sort(comparator)
+            *   
+            * #param Function getSortable
+            *   A function that should return the element that is
+            *   to be sorted. The comparator will run on the
+            *   current collection, but you may want the actual
+            *   resulting sort to occur on a parent or another
+            *   associated element.
+            *   
+            *   E.g. $('td').sortElements(comparator, function(){
+            *      return this.parentNode; 
+            *   })
+            *   
+            *   The <td>'s parent (<tr>) will be sorted instead
+            *   of the <td> itself.
+            */
+            jQuery.fn.sortElements = (function () {
+
+                var sort = [].sort;
+
+                return function (comparator, getSortable) {
+
+                    getSortable = getSortable || function () { return this; };
+
+                    var placements = this.map(function () {
+
+                        var sortElement = getSortable.call(this),
+                parentNode = sortElement.parentNode,
+
+                        // Since the element itself will change position, we have
+                        // to have some way of storing it's original position in
+                        // the DOM. The easiest way is to have a 'flag' node:
+                nextSibling = parentNode.insertBefore(
+                    document.createTextNode(''),
+                    sortElement.nextSibling
+                );
+
+                        return function () {
+
+                            if (parentNode === this) {
+                                throw new Error(
+                        "You can't sort elements if any one is a descendant of another."
+                    );
+                            }
+
+                            // Insert before flag:
+                            parentNode.insertBefore(this, nextSibling);
+                            // Remove flag:
+                            parentNode.removeChild(nextSibling);
+
+                        };
+
+                    });
+
+                    return sort.call(this, comparator).each(function (i) {
+                        placements[i].call(getSortable.call(this));
+                    });
+
+                };
+
+            })();
+        </script>
+        <script type="text/javascript">
+            jQuery.fn.setBarSizes = (function () {
+                return function (metricName, maxBarSize, min) {
+                    var max = Math.max.apply(Math, $.makeArray($(this).map(function () { return Number($(this).attr('data-sr-' + metricName)); })));
+                    var scale = 1.0;
+                    while (max > 0.0 && max <= 10.0) {
+                        scale = scale * 10.0;
+                        max = max * 10.0;
+                    }
+                    max = (Math.ceil(max / 2) * 2) / scale;
+
+                    this.each(function () {
+                        var barAnchor = $(this).find('a');
+                        var actual = $(this).attr('data-sr-' + metricName);
+                        var newHeight = Math.max(Math.round(maxBarSize * (actual - min) / (max - min)), 2);
+                        barAnchor.css({ height: newHeight });
+                    });
+
+                    var unit = "";
+                    if (metricName.substr(metricName.length - 4, 4) === "time")
+                        unit = "s";
+
+                    $('#testview .scale-min-label').each(function () {
+                        $(this).text(min.toString() + unit);
+                    });
+                    $('#testview .scale-max-label').each(function () {
+                        $(this).text(max.toString() + unit);
+                    });
+                    var mid = max / 2;
+                    $('#testview .scale-mid-label').each(function () {
+                        $(this).text(mid.toString() + unit);
+                    });
+                };
+            })();
+
+            function getComparer(metricName, isDesc) {
+                return function (a, b) {
+                    var aNumber = Number($(a).attr('data-sr-' + metricName));
+                    var bNumber = Number($(b).attr('data-sr-' + metricName));
+                    var result = aNumber > bNumber ? 1 : (aNumber < bNumber ? -1 : 0);
+                    if (isDesc)
+                        result = -1 * result;
+
+                    if (result == 0 && metricName != "order")
+                        result = getComparer("order", false)(a, b);
+
+                    return result;
+                };
+            }
+
+            var currentSort = "";
+            function doSort(allowToggleDesc) {
+                var newSort = $("input[name='barSortOrder']:checked").val();
+                if (allowToggleDesc && currentSort == newSort) {
+                    $('#barSortDesc').click();
+                    doSort(false);
+                    return;
+                }
+                currentSort = newSort;
+                $('#testview td.testview-item').sortElements(getComparer(newSort, $('#barSortDesc').is(':checked')));
+            }
+
+
+            function doSetHeights(allowSort) {
+                var selectedMetric = $("input[name='barHeight']:checked").val();
+                $('#testview td.testview-item').setBarSizes(selectedMetric, 60, 0.0);
+
+                if (allowSort && currentSort != selectedMetric) {
+                    var $radios = $("input[name='barSortOrder']");
+                    $radios.filter('[value=' + selectedMetric + ']').attr('checked', true);
+                    $("#barSortDesc").attr("checked", [true]);
+                    doSort(false);
+                }
+            }
+
+            $(document).ready(function () {
+                $("input[name='barSortOrder']").click(function () { doSort(true); return true; });
+                $("input[name='barSortDesc']").change(function () { doSort(false); });
+                $("input[name='barHeight']").change(function () { doSetHeights(true); });
+
+                doSort(false);
+                doSetHeights(false);
+
+                $("div.scrollable").css({ 'overflow': 'auto' });
+            });
+        </script>
+
+        <style type="text/css">
+            body 
+            {
+                color: #000000;
+                font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;
+                line-height: 130%;
+            }
+            h1 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 170%;
+                font-weight: bold;
+            }            
+            h2 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 130%;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }            
+            h3 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 120%;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }            
+            a.bar
+            {
+                text-decoration: none;
+                display: block;
+                line-height: 1px;
+            }
+            .description
+            {
+                font-style: italic;
+            }
+            .log 
+            {
+                width: 600px;
+                white-space: pre-wrap;
+                display: block;
+                margin: 0px;
+            }
+            .errorMessage 
+            {
+                width: 600px;
+                color: Red;
+                font-weight: bold;
+            }
+            .stackTrace 
+            {
+                width: 600px;
+                white-space: pre-wrap;
+                font-style: italic;
+                color: Red;
+                display: block;
+            }
+            table.testEvents
+            {
+                border: solid 1px #e8eef4;
+                border-collapse: collapse;
+            }
+            table.testEvents td
+            {
+                vertical-align: top;
+                padding: 5px;
+                border: solid 1px #e8eef4;
+            }
+            table.testEvents th
+            {
+                padding: 6px 5px;
+                text-align: left;
+                background-color: #e8eef4;
+                border: solid 1px #e8eef4;                
+            }
+            .comment
+            {
+                font-style: italic;
+                font-size: smaller;
+            }
+            .startupBar
+            {
+                background-color: #EEEEEE;
+                cursor: default;
+            }
+            
+            .colorSucceeded
+            {
+                background-color: #90ED7B;
+            }
+            .colorIgnored
+            {
+                background-color: #FFFF85;
+            }
+            .colorPending
+            {
+                background-color: #D47BED;
+            }
+            .colorNothingToRun
+            {
+                background-color: #CCCCFF;
+            }
+            .colorSkipped
+            {
+                background-color: #CCCCFF;
+            }
+            .colorInconclusive
+            {
+                background-color: #7BEDED;
+            }
+            .colorCleanupFailed
+            {
+                background-color: #FFCCCC;
+            }
+            .colorRandomlyFailed
+            {
+                background-color: #EDB07B;
+            }
+            .colorFailed
+            {
+                background-color: #ED5F5F;
+            }
+            .colorInitializationFailed
+            {
+                background-color: #FF0000;
+            }
+            .colorFrameworkError
+            {
+                background-color: #FF0000;
+            }
+            ul.subNodeLinks
+            {
+                padding-left: 20px;
+                margin: 0px;
+            }
+            ul.subNodeLinks li
+            {
+                list-style: none;
+            }
+            
+            /* views general */
+            div.scrollable
+            {
+                /*overflow: auto; - thsi has to be set from js, because of an IE9 bug */
+            }
+            div.viewbox
+            {
+                position: relative;
+                border: 3px solid #e8eef4;
+            }
+            div.viewbox table
+            {
+                border: 0px;
+            }
+                        
+            /* testview */
+            #testview
+            {
+                padding-top: 23px;
+            }
+            
+            table.testview-items td
+            {
+                vertical-align: bottom;
+                padding: 0px 1px 0px 1px;
+            }
+            td.right-padding, td.left-padding
+            {
+                width: 25px;
+                min-width: 25px;
+            }
+            table.testview-items a.bar
+            {
+                width: 5px;
+            }
+            table.testview-items tr.testview-items-row
+            {
+                height: 60px;
+            }
+            
+            /* scale */
+            table.vertical-scale 
+            {
+                position: absolute;
+                top: 23px;
+                left: 0px;
+                width: 100%;
+                z-index: -100;
+            }
+            table.vertical-scale td, tr.horizontal-scale td
+            {
+                font-size: 60%;
+                line-height: normal;
+            }
+            table.vertical-scale tr.scale-max, table.vertical-scale tr.scale-mid 
+            {
+                height: 30px;
+            }
+            tr.horizontal-scale, table.vertical-scale tr.scale-min 
+            {
+                height: 12px;
+            }
+            
+            td.scale-max-label, td.scale-mid-label, td.scale-min-label
+            {
+                border-top: solid 1px #E6E6E6;
+                text-align: left;
+                vertical-align: top;
+            }
+            td.scale-10-label
+            {
+                border-left: solid 1px #E6E6E6;
+                text-align: left;
+                vertical-align: bottom;
+                padding-left: 1px;
+            }
+            tr.scale-mid td, tr.scale-min td, tr.scale-max td
+            {
+                border-top: solid 1px #E6E6E6;
+            }
+           
+            
+            /* bar-control */
+            #bar-control
+            {
+                font-size: 60%;
+                line-height: normal;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+            #bar-control label
+            {
+                font-weight: bold;
+                vertical-align: middle;
+            }
+            #bar-control .option
+            {
+                vertical-align: middle;
+                text-transform: lowercase;
+            }
+            #bar-control input[type="checkbox"]
+            {
+                padding: 0 2px 0 3px;
+            }
+            #bar-control input
+            {
+                vertical-align: top;
+                height: 12px;
+                margin: 0px;
+                padding: 0px;
+            }
+            #bar-control div
+            {
+                float: right;
+                margin: 3px 5px 3px 5px;
+            }
+            
+            
+            /* timeline view */
+            #timelineview
+            {
+                padding-top: 5px;
+            }
+            table.timelineview a
+            {
+                height: 20px;
+            }
+            table.timelineview td
+            {
+                vertical-align: bottom;
+                padding: 0px 1px 0px 0px;
+                border: 0px;
+            }
+            tr.thread-items-row
+            {
+                height: 25px;
+            }
+            tr.thread-items-row td
+            {
+                vertical-align: bottom;
+            }
+            td.thread-label
+            {
+                padding: 0px 6px 0px 6px;
+                text-align: right;
+                line-height: 18px;
+                vertical-align: bottom;
+            }
+            th.thread-label
+            {
+                padding: 3px 6px 0px 6px;
+                line-height: 18px;
+                text-align: left;
+                vertical-align: bottom;
+            }
+        </style>
+	</head>
+	<body>
+        <h1>SOM.BDD Test Execution Report</h1>
+        <ul>
+            <li>Project: SOM.BDD</li>
+            <li>Configuration: SOM.BDD</li>
+            <li>Test Assemblies: SOM.BDD.dll</li>
+            <li>Start Time: 30/11/2018 14:20:45</li>
+            <li>Duration: 00:10:07.4907802</li>
+            <li>Test Threads: 1</li>
+        </ul>
+
+        <h2>Result: all tests passed</h2>
+        <table class="testEvents">
+                <tr>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                <tr>
+            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="6 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>6</td>
+    <td>6</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+    </tr>
+
+        </table>
+        
+        <h2>Test Timeline Summary</h2>
+
+        <div id="timelineview" class="viewbox">
+            <div class="scrollable">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th class="thread-label" colspan="2">thread</th>
+                    </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: NBMTZRAZEVEDO">#0</td>
+                            <td colspan="1">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 4px;" 
+                title="Inclus&#227;o de novo item - Pedido j&#225; existente para a mesma obra e sincronismo (Exceto Abertura e Tema), &quot;TESTE DE 500MB&quot; (in 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)" 
+                href="#t-1869833167.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Altera&#231;&#227;o de sincronismo - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;MUSICA DA MARCELLE&quot; (in 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)" 
+                href="#t2117453357.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Altera&#231;&#227;o de obra - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;TESTE DE 500MB&quot; (in 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)" 
+                href="#t1758358157.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 4px;" 
+                title="N&#227;o marcar para gerar pedido linhas de ABERTURA ou TEMA, &quot;TESTE DE 500MB&quot; (in 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)" 
+                href="#t-1302019514.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot; (in 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)" 
+                href="#t-1648822007.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, &quot;TESTE DE 500MB&quot; (in 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)" 
+                href="#t2134024645.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="horizontal-scale">
+                        <td>&nbsp;</td>
+                        <td class="scale-10-label">0s</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <h2>Test Result View</h2>
+        <div id="testview" class="viewbox">
+            <div id="bar-control">
+                <div id="bar-control-sort">
+                    <label>sort by:</label>
+                    <span class="option"><input type="radio" name="barSortOrder" value="exectime" />Time</span>
+                    <span class="option"><input type="radio" name="barSortOrder" value="acttime" />Act Time</span>
+                    <span class="option"><input type="radio" name="barSortOrder" value="order" />Execution</span>
+                    <span class="option"><input type="radio" name="barSortOrder" value="rescode" checked="checked" />Result</span>
+                    <span class="option"><input type="checkbox" name="barSortDesc" id="barSortDesc" checked="checked" />desc</span>
+                </div>
+                <div id="bar-control-heights">
+                    <label>heights:</label>
+                    <span class="option"><input type="radio" checked="checked" name="barHeight" value="exectime" />Time</span>
+                    <span class="option"><input type="radio" name="barHeight" value="acttime" />Act Time</span>
+                    
+                </div>
+            </div>
+            <table class="vertical-scale" cellpadding="0" cellspacing="0">
+                <tr class="scale-max">
+                    <td class="left-padding scale-max-label">&nbsp;</td>
+                    <td colspan="6">&nbsp;</td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+                <tr class="scale-mid">
+                    <td class="left-padding scale-mid-label">&nbsp;</td>
+                    <td colspan="6">&nbsp;</td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+                <tr class="scale-min">
+                    <td class="left-padding scale-min-label">&nbsp;</td>
+                    <td colspan="6">&nbsp;</td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+            </table>
+            <div class="scrollable">
+                <table class="testview-items" cellpadding="0" cellspacing="0">
+                    <tr class="testview-items-row">
+                        <td class="left-padding">&nbsp;</td>
+    <td class="testview-item" 
+        data-sr-exectime="130.6680281" data-sr-rescode="110" data-sr-order="0" data-sr-acttime="8.2">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 60px;"
+            title="Inclus&#227;o de novo item - Pedido j&#225; existente para a mesma obra e sincronismo (Exceto Abertura e Tema), &quot;TESTE DE 500MB&quot; (in 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)"
+            href="#t-1869833167.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="97.7503579" data-sr-rescode="110" data-sr-order="1" data-sr-acttime="11.125">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 45px;"
+            title="Altera&#231;&#227;o de sincronismo - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;MUSICA DA MARCELLE&quot; (in 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)"
+            href="#t2117453357.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="104.2787863" data-sr-rescode="110" data-sr-order="2" data-sr-acttime="11.986">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 48px;"
+            title="Altera&#231;&#227;o de obra - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;TESTE DE 500MB&quot; (in 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)"
+            href="#t1758358157.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="77.4552692" data-sr-rescode="110" data-sr-order="3" data-sr-acttime="3.346">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 36px;"
+            title="N&#227;o marcar para gerar pedido linhas de ABERTURA ou TEMA, &quot;TESTE DE 500MB&quot; (in 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)"
+            href="#t-1302019514.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="99.8277178" data-sr-rescode="110" data-sr-order="4" data-sr-acttime="12.512">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 46px;"
+            title="Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot; (in 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)"
+            href="#t-1648822007.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="97.3245591" data-sr-rescode="110" data-sr-order="5" data-sr-acttime="12.218">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 45px;"
+            title="Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, &quot;TESTE DE 500MB&quot; (in 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)"
+            href="#t2134024645.0">&nbsp;</a>
+    </td>
+                        <td class="right-padding">&nbsp;</td>
+                    </tr>
+                    <tr class="horizontal-scale">
+                        <td class="left-padding">&nbsp;</td>
+                        <td colspan="10">&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <h2>Feature Summary</h2>
+        <table class="testEvents">
+                <tr>
+            <th>Feature</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+    <tr>
+            <td><a href="#f1661742755">6.1.1 - Gerar pedidos de pagamento - Cue-Sheet</a></td>
+            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="6 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>6</td>
+    <td>6</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:10:07.3047184</td>
+
+    </tr>
+        </table>
+
+        <a name="error_summary" />
+        <h2>Error Summary</h2>
+        <table class="testEvents">
+                <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+        </table>
+
+        <h2>Scenario Summary</h2>
+            <a name="f1661742755" />
+            <h3>Feature: 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet</h3>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t-1869833167.0">Scenario: Inclus&#227;o de novo item - Pedido j&#225; existente para a mesma obra e sincronismo (Exceto Abertura e Tema), &quot;TESTE DE 500MB&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:10.6680281</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t2117453357.0">Scenario: Altera&#231;&#227;o de sincronismo - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;MUSICA DA MARCELLE&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:01:37.7503579</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1758358157.0">Scenario: Altera&#231;&#227;o de obra - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;TESTE DE 500MB&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:01:44.2787863</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1302019514.0">Scenario: N&#227;o marcar para gerar pedido linhas de ABERTURA ou TEMA, &quot;TESTE DE 500MB&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:01:17.4552692</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1648822007.0">Scenario: Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:01:39.8277178</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t2134024645.0">Scenario: Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, &quot;TESTE DE 500MB&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:01:37.3245591</td>
+
+                        
+                    </tr>
+            </table>
+
+        <h2>Execution Details</h2>
+            <a name="t-1869833167.0" />
+            <h3>Scenario: Inclus&#227;o de novo item - Pedido j&#225; existente para a mesma obra e sincronismo (Exceto Abertura e Tema), &quot;TESTE DE 500MB&quot; (in SOM.BDD, 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)</h3>
+                <div class="description">
+                    tags: kill_Driver, PedidosPagamentoCueSheet, chrome
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 30/11/2018 14:20:45</li>
+                <li>Execution time (sec): 130,6680281</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log"></pre>
+                        </td>
+                        <td>
+                            <!-- [Initialization: Feature - 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet] -->
+                            <pre class="log">-&gt; Using app.config</pre>
+                        </td>
+                        <td>Succeeded in 0.141s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Inclus&#227;o de novo item - Pedido j&#225; existente para a mesma obra e sincronismo (Exceto Abertura e Tema), &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,1s)</pre>
+                        </td>
+                        <td>Succeeded in 27.386s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Inclus&#227;o de novo item - Pedido j&#225; existente para a mesma obra e sincronismo (Exceto Abertura e Tema), &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetDoGeneroJornalismoPreviamenteCadastrada() (20,0s)</pre>
+                        </td>
+                        <td>Succeeded in 20.024s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que j&#225; existe pedido com os mesmos dados da cue-sheet &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;16&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Inclus&#227;o de novo item - Pedido j&#225; existente para a mesma obra e sincronismo (Exceto Abertura e Tema), &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueJaExistePedidoComOsMesmosDadosDaCue_Sheet(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;16&quot;) (41,2s)</pre>
+                        </td>
+                        <td>Succeeded in 41.232s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E incluo uma nova linha para um mesmo &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;25&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Inclus&#227;o de novo item - Pedido j&#225; existente para a mesma obra e sincronismo (Exceto Abertura e Tema), &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoIncluoUmaNovaLinhaParaUmMesmo(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;25&quot;) (8,9s)</pre>
+                        </td>
+                        <td>Succeeded in 8.895s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando confirmo a gera&#231;&#227;o de pedido para &quot;TESTE DE 500MB&quot; e &quot;ABERTURA&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Inclus&#227;o de novo item - Pedido j&#225; existente para a mesma obra e sincronismo (Exceto Abertura e Tema), &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.QuandoConfirmoAGeracaoDePedidoParaE(&quot;TESTE DE 500MB&quot;, &quot;ABERTURA&quot;) (8,2s)</pre>
+                        </td>
+                        <td>Succeeded in 8.2s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o visualizo o icone de pedido no item de cue-sheet com o pedido existente associado &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;41&quot;, &quot;16&quot;, &quot;25&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Inclus&#227;o de novo item - Pedido j&#225; existente para a mesma obra e sincronismo (Exceto Abertura e Tema), &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOIconeDePedidoNoItemDeCue_SheetComOPedidoExistenteAssociado(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;41&quot;, &quot;16&quot;, &quot;25&quot;) (24,7s)</pre>
+                        </td>
+                        <td>Succeeded in 24.671s</td>
+                    </tr>
+            </table>
+            <a name="t2117453357.0" />
+            <h3>Scenario: Altera&#231;&#227;o de sincronismo - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;MUSICA DA MARCELLE&quot; (in SOM.BDD, 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)</h3>
+                <div class="description">
+                    tags: kill_Driver, PedidosPagamentoCueSheet, chrome
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 30/11/2018 14:22:56</li>
+                <li>Execution time (sec): 97,7503579</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Altera&#231;&#227;o de sincronismo - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;MUSICA DA MARCELLE&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,0s)</pre>
+                        </td>
+                        <td>Succeeded in 25.781s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Altera&#231;&#227;o de sincronismo - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;MUSICA DA MARCELLE&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetDoGeneroJornalismoPreviamenteCadastrada() (19,2s)</pre>
+                        </td>
+                        <td>Succeeded in 19.247s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que eu tenha dois pedidos gerados para itens de cue-sheet com sincronismos diferentes &quot;ADORNO&quot; E &quot;ENCERRAMENTO&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Altera&#231;&#227;o de sincronismo - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;MUSICA DA MARCELLE&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueEuTenhaDoisPedidosGeradosParaItensDeCue_SheetComSincronismosDiferentesE(&quot;ADORNO&quot;, &quot;ENCERRAMENTO&quot;) (23,9s)</pre>
+                        </td>
+                        <td>Succeeded in 23.874s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando altero o &quot;ENCERRAMENTO&quot; para o mesmo de &quot;ADORNO&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Altera&#231;&#227;o de sincronismo - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;MUSICA DA MARCELLE&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.QuandoAlteroOParaOMesmoDe(&quot;ENCERRAMENTO&quot;, &quot;ADORNO&quot;) (11,1s)</pre>
+                        </td>
+                        <td>Succeeded in 11.125s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o visualizo o icone de pedido no item de cue-sheet com o pedido existente selecionado &quot;MUSICA DA MARCELLE&quot;, &quot;FUNDO&quot;, &quot;41&quot;, &quot;16&quot;, &quot;25&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Altera&#231;&#227;o de sincronismo - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;MUSICA DA MARCELLE&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOIconeDePedidoNoItemDeCue_SheetComOPedidoExistenteSelecionado(&quot;MUSICA DA MARCELLE&quot;, &quot;FUNDO&quot;, &quot;41&quot;, &quot;16&quot;, &quot;25&quot;) (17,6s)</pre>
+                        </td>
+                        <td>Succeeded in 17.621s</td>
+                    </tr>
+            </table>
+            <a name="t1758358157.0" />
+            <h3>Scenario: Altera&#231;&#227;o de obra - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;TESTE DE 500MB&quot; (in SOM.BDD, 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)</h3>
+                <div class="description">
+                    tags: kill_Driver, PedidosPagamentoCueSheet, chrome
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 30/11/2018 14:24:34</li>
+                <li>Execution time (sec): 104,2787863</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Altera&#231;&#227;o de obra - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (18,9s)</pre>
+                        </td>
+                        <td>Succeeded in 23.781s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Altera&#231;&#227;o de obra - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetDoGeneroJornalismoPreviamenteCadastrada() (18,7s)</pre>
+                        </td>
+                        <td>Succeeded in 18.727s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que eu tenha dois pedidos gerados para itens de cue-sheet com obras diferentes &quot;TESTE DE 500MB&quot; e &quot;MUSICA TESTE&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Altera&#231;&#227;o de obra - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueEuTenhaDoisPedidosGeradosParaItensDeCue_SheetComObrasDiferentesE(&quot;TESTE DE 500MB&quot;, &quot;MUSICA TESTE&quot;) (30,1s)</pre>
+                        </td>
+                        <td>Succeeded in 30.067s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando altero a titulo da obra &quot;MUSICA TESTE&quot; para o mesmo da obra &quot;TESTE DE 500MB&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Altera&#231;&#227;o de obra - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.QuandoAlteroATituloDaObraParaOMesmoDaObra(&quot;MUSICA TESTE&quot;, &quot;TESTE DE 500MB&quot;) (12,0s)</pre>
+                        </td>
+                        <td>Succeeded in 11.986s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o visualizo o icone de pedido no item de cue-sheet com o pedido existente associado para &quot;TESTE DE 500MB&quot;, &quot;FUNDO&quot;, &quot;41&quot;, &quot;16&quot;, &quot;25&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Altera&#231;&#227;o de obra - Pedido j&#225; existente para a mesma obra e sincronismo, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOIconeDePedidoNoItemDeCue_SheetComOPedidoExistenteAssociadoPara(&quot;TESTE DE 500MB&quot;, &quot;FUNDO&quot;, &quot;41&quot;, &quot;16&quot;, &quot;25&quot;) (19,6s)</pre>
+                        </td>
+                        <td>Succeeded in 19.608s</td>
+                    </tr>
+            </table>
+            <a name="t-1302019514.0" />
+            <h3>Scenario: N&#227;o marcar para gerar pedido linhas de ABERTURA ou TEMA, &quot;TESTE DE 500MB&quot; (in SOM.BDD, 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)</h3>
+                <div class="description">
+                    tags: kill_Driver, PedidosPagamentoCueSheet, chrome
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 30/11/2018 14:26:18</li>
+                <li>Execution time (sec): 77,4552692</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - N&#227;o marcar para gerar pedido linhas de ABERTURA ou TEMA, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (18,4s)</pre>
+                        </td>
+                        <td>Succeeded in 23.2s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - N&#227;o marcar para gerar pedido linhas de ABERTURA ou TEMA, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetDoGeneroJornalismoPreviamenteCadastrada() (18,8s)</pre>
+                        </td>
+                        <td>Succeeded in 18.805s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que possuo itens de sincronismo ABERTURA. &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;16&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - N&#227;o marcar para gerar pedido linhas de ABERTURA ou TEMA, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQuePossuoItensDeSincronismoABERTURA_(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;16&quot;) (8,5s)</pre>
+                        </td>
+                        <td>Succeeded in 8.51s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E possuo itens de sincronismo TEMA. &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;TEMA&quot;, &quot;25&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - N&#227;o marcar para gerar pedido linhas de ABERTURA ou TEMA, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoPossuoItensDeSincronismoTEMA_(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;TEMA&quot;, &quot;25&quot;) (7,7s)</pre>
+                        </td>
+                        <td>Succeeded in 7.735s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando acesso a tela de Gerar Pedido</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - N&#227;o marcar para gerar pedido linhas de ABERTURA ou TEMA, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.QuandoAcessoATelaDeGerarPedido() (3,3s)</pre>
+                        </td>
+                        <td>Succeeded in 3.346s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o n&#227;o visualizo os itens de ABERTURA &quot;ABERTURA&quot; ou TEMA &quot;TEMA&quot; selecionados. &quot;TESTE DE 500MB&quot;, &quot;16&quot;, &quot;25&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - N&#227;o marcar para gerar pedido linhas de ABERTURA ou TEMA, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.EntaoNaoVisualizoOsItensDeABERTURAOuTEMASelecionados_(&quot;ABERTURA&quot;, &quot;TEMA&quot;, &quot;TESTE DE 500MB&quot;, &quot;16&quot;, &quot;25&quot;) (15,8s)</pre>
+                        </td>
+                        <td>Succeeded in 15.759s</td>
+                    </tr>
+            </table>
+            <a name="t-1648822007.0" />
+            <h3>Scenario: Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot; (in SOM.BDD, 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)</h3>
+                <div class="description">
+                    tags: kill_Driver, PedidosPagamentoCueSheet, chrome
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 30/11/2018 14:27:36</li>
+                <li>Execution time (sec): 99,8277178</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,9s)</pre>
+                        </td>
+                        <td>Succeeded in 25.783s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetDoGeneroJornalismoPreviamenteCadastrada() (18,9s)</pre>
+                        </td>
+                        <td>Succeeded in 18.876s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que existe um pedido de ABERTURA ou TEMA para &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;16&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueExisteUmPedidoDeABERTURAOuTEMAPara(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;16&quot;) (16,2s)</pre>
+                        </td>
+                        <td>Succeeded in 16.174s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que eu tenha criado um item novo item. &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;25&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueEuTenhaCriadoUmItemNovoItem_(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;25&quot;) (8,2s)</pre>
+                        </td>
+                        <td>Succeeded in 8.175s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando acesso a tela de Gerar Pedido</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.QuandoAcessoATelaDeGerarPedido() (2,1s)</pre>
+                        </td>
+                        <td>Succeeded in 2.084s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o visualizo uma observa&#231;&#227;o informando que existe pedido v&#225;lido</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoUmaObservacaoInformandoQueExistePedidoValido() (0,3s)</pre>
+                        </td>
+                        <td>Succeeded in 0.307s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E visualizo o &#237;cone para o pedido que ser&#225; associado ap&#243;s a gera&#231;&#227;o</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOIconeParaOPedidoQueSeraAssociadoAposAGeracao() (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.043s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando seleciono o item e confirmo a gera&#231;&#227;o do pedido &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;41&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.QuandoSelecionoOItemEConfirmoAGeracaoDoPedido(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;41&quot;) (10,4s)</pre>
+                        </td>
+                        <td>Succeeded in 10.428s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o visualizo o pedido existente associado ao item de cue-sheet &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;41&quot;, &quot;16&quot;, &quot;25&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Novo item ABERTURA ou TEMA v&#225;lido em Variedades ou Jornalismo ou Esporte com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOPedidoExistenteAssociadoAoItemDeCue_Sheet(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;41&quot;, &quot;16&quot;, &quot;25&quot;) (17,8s)</pre>
+                        </td>
+                        <td>Succeeded in 17.836s</td>
+                    </tr>
+            </table>
+            <a name="t2134024645.0" />
+            <h3>Scenario: Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, &quot;TESTE DE 500MB&quot; (in SOM.BDD, 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet)</h3>
+                <div class="description">
+                    tags: kill_Driver, PedidosPagamentoCueSheet, chrome
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 30/11/2018 14:29:15</li>
+                <li>Execution time (sec): 97,3245591</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,2s)</pre>
+                        </td>
+                        <td>Succeeded in 25.126s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha uma cue-sheet do genero Dramaturgia previamente cadastrada</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetDoGeneroDramaturgiaPreviamenteCadastrada() (18,6s)</pre>
+                        </td>
+                        <td>Succeeded in 18.631s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que existe um pedido de ABERTURA ou TEMA para &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;16&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueExisteUmPedidoDeABERTURAOuTEMAPara(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;16&quot;) (15,5s)</pre>
+                        </td>
+                        <td>Succeeded in 15.486s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que eu tenha criado um item novo item. &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;25&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.DadoQueEuTenhaCriadoUmItemNovoItem_(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;25&quot;) (7,9s)</pre>
+                        </td>
+                        <td>Succeeded in 7.942s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando acesso a tela de Gerar Pedido</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.QuandoAcessoATelaDeGerarPedido() (2,0s)</pre>
+                        </td>
+                        <td>Succeeded in 2.024s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o visualizo o &#237;cone para o pedido que ser&#225; associado ap&#243;s a gera&#231;&#227;o</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOIconeParaOPedidoQueSeraAssociadoAposAGeracao() (0,2s)</pre>
+                        </td>
+                        <td>Succeeded in 0.248s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando seleciono o item e confirmo a gera&#231;&#227;o do pedido &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;41&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.QuandoSelecionoOItemEConfirmoAGeracaoDoPedido(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;41&quot;) (10,2s)</pre>
+                        </td>
+                        <td>Succeeded in 10.194s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o visualizo o pedido existente associado ao item de cue-sheet &quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;41&quot;, &quot;16&quot;, &quot;25&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, &quot;TESTE DE 500MB&quot;] -->
+                            <pre class="log">done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOPedidoExistenteAssociadoAoItemDeCue_Sheet(&quot;TESTE DE 500MB&quot;, &quot;BK – BACKGROUND&quot;, &quot;ABERTURA&quot;, &quot;41&quot;, &quot;16&quot;, &quot;25&quot;) (17,5s)</pre>
+                        </td>
+                        <td>Succeeded in 17.545s</td>
+                    </tr>
+            </table>
+	</body>
+</html>
+</a><div style='position: absolute; top:0px; right:10px; z-index: 1000; text-align: right; font-size: small; color: #FF5555'>
+Generated by an evaluation version of SpecRun.<br />
+This version can be used for evaluation purposes only.<br />
+For obtaining a registered license please visit <a href='http://www.specflow.org/plus'>http://www.specflow.org/plus</a>.
+</div>

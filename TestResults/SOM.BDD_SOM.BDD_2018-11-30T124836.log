@@ -1,0 +1,63 @@
+﻿2018-11-30T12:48:36.1692092-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-30T12:48:36.1941934-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-30T12:48:36.4600386-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-30T12:48:36.4620390-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T12:48:36.4630393-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-30T12:48:48.6181252-02:00;Thread#12;Info;starting test run
+2018-11-30T12:48:48.6361142-02:00;Thread#12;Info;Discovering target: Default
+2018-11-30T12:48:48.6381133-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#45: 3.1.3 - Cadastrar Obra e Composição - 
+#49: Inclusão de Obra com um percentual de composição inferior a 100%, "TITULO OBRA 502" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Cadastrar+Obra+e+Composi%c3%a7%c3%a3o/Scenario:Inclus%c3%a3o+de+Obra+com+um+percentual+de+composi%c3%a7%c3%a3o+inferior+a+100%25%2c+%22TITULO+OBRA+502%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #49 from normal test queue 
+Thread#0:Scheduler: considering testitem #49 for thread 0
+Thread#0:TestItem#49:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#49:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#49:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #49 for thread 0
+Thread#0:Scheduler: Test #49 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #49/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,9s)
+Thread#0:B:E que esteja com a tela de cadastro de Obras aberta
+Thread#0:T:done: CadastrarObraEComposicaoSteps.DadoQueEstejaComATelaDeCadastroDeObrasAberta() (1,2s)
+Thread#0:B:Quando cadastro uma nova obra preenchendo os campos "TITULO OBRA 502", "SUBTITULO OBRA 502", "MUSICA COMERCIAL", "TITULOALTERNATIVO OBRA 502", " ", "2018", "Sim", "Nacional", " ", "Não", "Não", "Não", "Não"
+Thread#0:T:done: CadastrarObraEComposicaoSteps.QuandoCadastroUmaNovaObraPreenchendoOsCampos("TITULO OBRA 502", "SUBTITULO OBRA 502", "MUSICA COMERCIAL", "TITULOALTERNATIVO...", " ", "2018", "Sim", "Nacional", " ", "Não", "Não", "Não", "Não") (5,8s)
+Thread#0:B:E cadastro uma nova composição com percentual inferior a 100% "TESTE INM Autor", "Teste DDA Administrador", "90"
+Thread#0:T:done: CadastrarObraEComposicaoSteps.QuandoCadastroUmaNovaComposicaoComPercentualInferiorA(100, "TESTE INM Autor", "Teste DDA Adminis...", "90") (5,1s)
+Thread#0:B:Então visualizo a mensagem de Percentual inferior a 100% ao salvar a obra "TITULO OBRA 502", "Percentual inferior a 100%."
+Thread#0:T:done: CadastrarObraEComposicaoSteps.EntaoVisualizoAMensagemDePercentualInferiorAAoSalvarAObra(100, "TITULO OBRA 502", "Percentual inferi...") (59,8s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #49/0 is finished on thread #0 as Succeeded within 100,2509908 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-30T12:50:29.7286223-02:00;Thread#12;Info;test run finished
+2018-11-30T12:50:29.7316193-02:00;Thread#12;Info;publishing test results
+2018-11-30T12:50:29.7586039-02:00;Thread#12;Info;test results published
+2018-11-30T12:50:29.7626012-02:00;Thread#12;Info;generating reports
+2018-11-30T12:50:29.7715996-02:00;Thread#12;Info;creating 1 report(s)
+2018-11-30T12:50:29.7735959-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-11-30T12:50:32.0016408-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-11-30T12:50:32.0116549-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-30T12:50:32.0136340-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T124836.html'
+2018-11-30T12:50:32.0236275-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T124836.log

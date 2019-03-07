@@ -1,0 +1,188 @@
+﻿2018-11-30T13:58:00.2245016-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-30T13:58:00.2314982-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-30T13:58:00.3484292-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-30T13:58:00.3494295-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T13:58:00.3494295-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-30T13:58:05.4626343-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-30T13:58:05.4696272-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-30T13:58:05.4706153-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T13:58:55.6732132-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-30T13:58:55.6742121-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-30T13:58:55.6862043-02:00;VSTestExecutionThread;Info;test results published
+2018-11-30T13:58:55.6872041-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-30T13:58:55.7001970-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-30T13:58:55.7001970-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-30T13:58:57.8456060-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-30T13:58:57.8536015-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-30T13:58:57.8546008-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T135800.html'
+2018-11-30T13:58:57.8645948-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T135800.log
+2018-11-30T13:58:57.8666140-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-30T13:59:03.4898401-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-30T13:59:03.4898401-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-30T13:59:03.5048307-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-30T13:59:03.5048307-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T13:59:03.5058478-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-30T13:59:13.5113375-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-30T13:59:13.5133426-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-30T13:59:13.5143368-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T14:00:41.5327942-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-30T14:00:41.5337930-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-30T14:00:41.5357912-02:00;VSTestExecutionThread;Info;test results published
+2018-11-30T14:00:41.5367910-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-30T14:00:41.5377903-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-30T14:00:41.5377903-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-30T14:00:43.3602479-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-30T14:00:43.3632468-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-30T14:00:43.3642475-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T135903.html'
+2018-11-30T14:00:43.3712412-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T135903.log
+2018-11-30T14:00:43.3732389-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-30T14:03:03.8411535-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-30T14:03:03.8411535-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-30T14:03:03.8561482-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-30T14:03:03.8571443-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T14:03:03.8581431-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-30T14:03:11.8646373-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-30T14:03:11.8666625-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-30T14:03:11.8676543-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T14:03:40.8976952-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-30T14:03:40.8986959-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-30T14:03:40.8996943-02:00;VSTestExecutionThread;Info;test results published
+2018-11-30T14:03:40.9006941-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-30T14:03:40.9016939-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-30T14:03:40.9026936-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-30T14:03:42.5964958-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-30T14:03:42.5994947-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-30T14:03:42.6004935-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T140303.html'
+2018-11-30T14:03:42.6104876-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T140303.log
+2018-11-30T14:03:42.6124862-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-30T14:04:54.9057466-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-30T14:04:54.9067464-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-30T14:04:54.9197482-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-30T14:04:54.9206724-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T14:04:54.9206724-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-30T14:05:01.9284709-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-30T14:05:01.9303935-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-30T14:05:01.9314129-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T14:05:54.6483998-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-30T14:05:54.6503989-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-30T14:05:54.6513987-02:00;VSTestExecutionThread;Info;test results published
+2018-11-30T14:05:54.6523985-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-30T14:05:54.6533968-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-30T14:05:54.6533968-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-30T14:05:56.6875278-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-30T14:05:56.6905267-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-30T14:05:56.6915265-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T140454.html'
+2018-11-30T14:05:56.6965240-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T140454.log
+2018-11-30T14:05:56.6985235-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-30T14:07:31.6673862-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-30T14:07:31.6673862-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-30T14:07:31.6813841-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-30T14:07:31.6813841-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T14:07:31.6823810-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-30T14:07:40.6889535-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-30T14:07:40.6909545-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-30T14:07:40.6919818-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T14:08:36.3472289-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-30T14:08:36.3472289-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-30T14:08:36.3483789-02:00;VSTestExecutionThread;Info;test results published
+2018-11-30T14:08:36.3490273-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-30T14:08:36.3500346-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-30T14:08:36.3502781-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-30T14:08:38.1988769-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-30T14:08:38.2338584-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-30T14:08:38.2348577-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T140731.html'
+2018-11-30T14:08:38.2478497-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T140731.log
+2018-11-30T14:08:38.2588430-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-30T14:12:30.7607211-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-30T14:12:30.7617204-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-30T14:12:30.7747151-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-30T14:12:30.7757135-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T14:12:30.7766979-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-30T14:12:42.7824834-02:00;Thread#18;Info;starting test run
+2018-11-30T14:12:42.7844913-02:00;Thread#18;Info;Discovering target: Default
+2018-11-30T14:12:42.7854925-02:00;Thread#18;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#27: 4.1.6 - Cadastro de Produto - 
+#31: Cadastrar novo Produto com informações de outro produto previamente cadastrado, "Titulo do Produto 502" - TestAssembly:SOM.BDD/Feature:4.1.6+-+Cadastro+de+Produto/Scenario:Cadastrar+novo+Produto+com+informa%c3%a7%c3%b5es+de+outro+produto+previamente+cadastrado%2c+%22Titulo+do+Produto+502%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #31 from normal test queue 
+Thread#0:Scheduler: considering testitem #31 for thread 0
+Thread#0:TestItem#31:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#31:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#31:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #31 for thread 0
+Thread#0:Scheduler: Test #31 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #31/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,8s)
+Thread#0:B:E que esteja com a tela Cadastro de Produto aberta
+Thread#0:T:done: CadastroDeProdutoSteps.DadoQueEstejaComATelaCadastroDeProdutoAberta() (1,2s)
+Thread#0:B:Dado que eu tenha um produto cadastrado "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não"
+Thread#0:T:No matching step definition found for the step. Use the following code to create one:
+Thread#0:T:        [Given(@"que eu tenha um produto cadastrado ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)""")]
+Thread#0:T:public void DadoQueEuTenhaUmProdutoCadastrado(string novela, string p1, int p2, string sim, string gLOBONEWS, string atividade, string não, string não7)
+Thread#0:T:{
+Thread#0:T:    ScenarioContext.Current.Pending();
+Thread#0:T:}
+Thread#0:B:Quando tento cadastrar um novo Produto com as mesmas informações de um produto previamente cadastrado "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não" e "Não"
+Thread#0:T:No matching step definition found for the step. Use the following code to create one:
+Thread#0:T:        [When(@"tento cadastrar um novo Produto com as mesmas informações de um produto previamente cadastrado ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"" e ""(.*)""")]
+Thread#0:T:public void QuandoTentoCadastrarUmNovoProdutoComAsMesmasInformacoesDeUmProdutoPreviamenteCadastradoE(string novela0, string p1, int p2, string sim3, string gLOBONEWS4, string atividade5, string não6, string não7)
+Thread#0:T:{
+Thread#0:T:    ScenarioContext.Current.Pending();
+Thread#0:T:}
+Thread#0:B:Então visualizo a mensagem de que já existe um produto ativo cadastrado com esses dados "Titulo do Produto 502", "Existe um registro com esses dados cadastrado no sistema."
+Thread#0:T:skipped because of previous errors
+Thread#0:T:Pending: No matching step definition found for one or more steps.
+Thread#0:T:using System;
+Thread#0:T:using TechTalk.SpecFlow;
+Thread#0:T:namespace MyNamespace
+Thread#0:T:{
+Thread#0:T:    [Binding]
+Thread#0:T:    public class StepDefinitions
+Thread#0:T:    {
+Thread#0:T:        [Given(@"que eu tenha um produto cadastrado ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)""")]
+Thread#0:T:public void DadoQueEuTenhaUmProdutoCadastrado(string novela0, string p1, int p2, string sim3, string gLOBONEWS4, string atividade5, string não6, string não7)
+Thread#0:T:{
+Thread#0:T:    ScenarioContext.Current.Pending();
+Thread#0:T:}
+Thread#0:T:        [When(@"tento cadastrar um novo Produto com as mesmas informações de um produto previamente cadastrado ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"", ""(.*)"" e ""(.*)""")]
+Thread#0:T:public void QuandoTentoCadastrarUmNovoProdutoComAsMesmasInformacoesDeUmProdutoPreviamenteCadastradoE(string novela0, string p1, int p2, string sim3, string gLOBONEWS4, string atividade5, string não6, string não7)
+Thread#0:T:{
+Thread#0:T:    ScenarioContext.Current.Pending();
+Thread#0:T:}
+Thread#0:T:    }
+Thread#0:T:}
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #31/0 is finished on thread #0 as Pending within 28,8918878 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-30T14:13:11.8309709-02:00;Thread#18;Info;test run finished
+2018-11-30T14:13:11.8329877-02:00;Thread#18;Info;publishing test results
+2018-11-30T14:13:11.8339684-02:00;Thread#18;Info;test results published
+2018-11-30T14:13:11.8339684-02:00;Thread#18;Info;generating reports
+2018-11-30T14:13:11.8349672-02:00;Thread#18;Info;creating 1 report(s)
+2018-11-30T14:13:11.8359666-02:00;Thread#18;Info;generate Report ReportTemplate.cshtml
+2018-11-30T14:13:13.5350457-02:00;Thread#18;Info;reports generated
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 1
+Skipped: 0
+Failed: 0
+2018-11-30T14:13:13.5380459-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-30T14:13:13.5380459-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T141230.html'
+2018-11-30T14:13:13.5460400-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T141230.log

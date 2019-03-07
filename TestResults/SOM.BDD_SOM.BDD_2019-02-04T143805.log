@@ -1,0 +1,65 @@
+﻿2019-02-04T14:38:05.1688220-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-02-04T14:38:05.1788174-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-02-04T14:38:05.3097408-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-02-04T14:38:05.3107424-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-02-04T14:38:05.3117562-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-02-04T14:38:19.3902115-02:00;Thread#12;Info;starting test run
+2019-02-04T14:38:19.3981892-02:00;Thread#12;Info;Discovering target: Default
+2019-02-04T14:38:19.3981892-02:00;Thread#12;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#288: 3.1.3 - Transferencia de DDA (De/Para) - 
+#293: Transferencia de DDA (De/Para) seleciono a CheckBox Excluir, "NOWA" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Transferencia+de+DDA+(De%2fPara)/Scenario:Transferencia+de+DDA+(De%2fPara)+seleciono+a+CheckBox+Excluir%2c+%22NOWA%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #293 from normal test queue 
+Thread#0:Scheduler: considering testitem #293 for thread 0
+Thread#0:TestItem#293:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#293:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#293:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #293 for thread 0
+Thread#0:Scheduler: Test #293 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #293/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (13,2s)
+Thread#0:B:Dado que a tenho um DDA disponivel para exclusão
+Thread#0:T:done: TransferênciadeDDASteps.DadoQueATenhoUmDDADisponivelParaExclusao() (9,8s)
+Thread#0:B:Quando realizo uma transferência de DDA preenchendo os campos NomeDDADe e NomeDDAPara <NomeDDADe> , "NOWA"
+Thread#0:T:done: TransferênciadeDDASteps.QuandoRealizoUmaTransferenciaDeDDAPreenchendoOsCamposNomeDDADeENomeDDAPara("<NomeDDADe>", "NOWA") (15,5s)
+Thread#0:B:E seleciono a CheckBox de exclusão de DDADe
+Thread#0:T:error: unknown error: Element <label class="onoffswitch-label" for="FalecidoDominioPublicoId">...</label> is not clickable at point (551, 215). Other element would receive the click: <div class="sweet-alert showSweetAlert visible" data-custom-class="" data-has-cancel-button="true" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="true" data-animation="pop" data-timer="null" style="display: block; margin-top: -179px;">...</div>
+Thread#0:T:  (Session info: chrome=71.0.3578.98)
+Thread#0:T:  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64)
+Thread#0:B:Então visualizo a mensagem de confirmação de exclusão de DDADe "Dados alterados com sucesso e enviados ao GMUSIC."
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #293/0 is finished on thread #0 as Failed within 46,296955 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2019-02-04T14:39:06.3821838-02:00;Thread#12;Info;test run finished
+2019-02-04T14:39:06.3831846-02:00;Thread#12;Info;publishing test results
+2019-02-04T14:39:06.5071640-02:00;Thread#12;Info;test results published
+2019-02-04T14:39:06.5091626-02:00;Thread#12;Info;generating reports
+2019-02-04T14:39:06.6052771-02:00;Thread#12;Info;creating 1 report(s)
+2019-02-04T14:39:06.6062741-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2019-02-04T14:39:10.1780957-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
+2019-02-04T14:39:10.1830881-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-02-04T14:39:10.1830881-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-02-04T143805.html'
+2019-02-04T14:39:10.1940800-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-02-04T143805.log

@@ -1,0 +1,63 @@
+﻿2019-01-26T16:59:18.2959339-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-26T16:59:18.3319339-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-26T16:59:18.4338573-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-26T16:59:18.4338573-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-26T16:59:18.4348552-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-26T16:59:25.5166146-02:00;Thread#12;Info;starting test run
+2019-01-26T16:59:25.5222927-02:00;Thread#12;Info;Discovering target: Default
+2019-01-26T16:59:25.5232916-02:00;Thread#12;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#168: 3.1.3 - Alterar Obra - 
+#170: Alterar dados do campo Tipo da obra, "BIBLIOTECA MUSICAL" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Alterar+Obra/Scenario:Alterar+dados+do+campo+Tipo+da+obra%2c+%22BIBLIOTECA+MUSICAL%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #170 from normal test queue 
+Thread#0:Scheduler: considering testitem #170 for thread 0
+Thread#0:TestItem#170:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#170:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#170:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #170 for thread 0
+Thread#0:Scheduler: Test #170 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #170/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (15,0s)
+Thread#0:B:E que esteja na tela de Obras
+Thread#0:T:done: ConsultarObraSteps.DadoQueEstejaNaTelaDeObras() (1,1s)
+Thread#0:B:Dado que esteja na tela Edição de Obra
+Thread#0:T:done: AlterarObraSteps.DadoQueEstejaNaTelaEdicaoDeObra() (45,7s)
+Thread#0:B:Quando salvo a alteração no campo "BIBLIOTECA MUSICAL"
+Thread#0:T:error: Assert.IsTrue falhou. 
+Thread#0:B:Então visualizo a mensagem de alteração da obra com sucesso "Dados alteraddos com sucesso e enviados ao GMUSIC"
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #170/0 is finished on thread #0 as Failed within 69,9226433 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2019-01-26T17:00:35.6568165-02:00;Thread#12;Info;test run finished
+2019-01-26T17:00:35.6648119-02:00;Thread#12;Info;publishing test results
+2019-01-26T17:00:35.6778067-02:00;Thread#12;Info;test results published
+2019-01-26T17:00:35.6788065-02:00;Thread#12;Info;generating reports
+2019-01-26T17:00:35.6927950-02:00;Thread#12;Info;creating 1 report(s)
+2019-01-26T17:00:35.6957939-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2019-01-26T17:00:37.1908073-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
+2019-01-26T17:00:37.1954237-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-26T17:00:37.1964272-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-26T165918.html'
+2019-01-26T17:00:37.2014434-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-26T165918.log

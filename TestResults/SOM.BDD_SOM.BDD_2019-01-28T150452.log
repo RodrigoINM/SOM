@@ -1,0 +1,63 @@
+﻿2019-01-28T15:04:52.5347828-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-28T15:04:52.5417975-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-28T15:04:52.6547311-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-28T15:04:52.6557183-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-28T15:04:52.6567106-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-28T15:04:59.7537470-02:00;Thread#12;Info;starting test run
+2019-01-28T15:04:59.7607231-02:00;Thread#12;Info;Discovering target: Default
+2019-01-28T15:04:59.7617247-02:00;Thread#12;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#213: 3.1.4 - Alterações de DDA - 
+#218: Cancelar alteração, "Teste 012" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Altera%c3%a7%c3%b5es+de+DDA/Scenario:Cancelar+altera%c3%a7%c3%a3o%2c+%22Teste+012%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #218 from normal test queue 
+Thread#0:Scheduler: considering testitem #218 for thread 0
+Thread#0:TestItem#218:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#218:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#218:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #218 for thread 0
+Thread#0:Scheduler: Test #218 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #218/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (15,2s)
+Thread#0:B:E que estou com a tela Novo Cadastro de DDA
+Thread#0:T:done: CadastroDeDDASteps.DadoQueEstouComATelaNovoCadastroDeDDA() (1,1s)
+Thread#0:B:Dado que tenho um DDA cadastrado
+Thread#0:T:done: AlteraçãodeDDAContatoSteps.DadoQueTenhoUmDDACadastrado() (9,0s)
+Thread#0:B:Quando altero a Razão Social, e realizo o cancelamento da edição "Teste 012"
+Thread#0:T:done: AlteraçãodeDDASteps.QuandoAlteroARazaoSocialERealizoOCancelamentoDaEdicao("Teste 012") (6,5s)
+Thread#0:B:Então visualizo a confirmação de cancelamento de edição do DDA
+Thread#0:T:done: AlteraçãodeDDASteps.EntaoVisualizoAConfirmacaoDeCancelamentoDeEdicaoDoDDA() (1,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #218/0 is finished on thread #0 as Succeeded within 38,3831809 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2019-01-28T15:05:38.3557854-02:00;Thread#12;Info;test run finished
+2019-01-28T15:05:38.3567847-02:00;Thread#12;Info;publishing test results
+2019-01-28T15:05:38.3667783-02:00;Thread#12;Info;test results published
+2019-01-28T15:05:38.3687779-02:00;Thread#12;Info;generating reports
+2019-01-28T15:05:38.3817703-02:00;Thread#12;Info;creating 1 report(s)
+2019-01-28T15:05:38.3827696-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2019-01-28T15:05:41.4155879-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2019-01-28T15:05:41.4194610-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-28T15:05:41.4204725-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-28T150452.html'
+2019-01-28T15:05:41.4294663-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-28T150452.log

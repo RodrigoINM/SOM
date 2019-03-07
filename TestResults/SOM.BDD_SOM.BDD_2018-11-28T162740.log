@@ -1,0 +1,35 @@
+﻿2018-11-28T15:24:40.5192197-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-28T15:24:40.5261966-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-28T15:24:40.6371351-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-28T15:24:40.6381349-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-28T15:24:40.6391519-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-28T15:24:47.7448162-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-28T15:24:47.7524790-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-28T15:24:47.7534778-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-28T15:25:46.3794780-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-28T15:25:46.3804769-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-28T15:25:46.3864737-02:00;VSTestExecutionThread;Info;test results published
+2018-11-28T15:25:46.3874734-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-28T15:25:46.3944686-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-28T15:25:46.3954684-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-28T15:25:48.6048156-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-28T15:25:48.6158099-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-28T15:25:48.6158099-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-28T152440.html'
+2018-11-28T15:25:48.6268033-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-28T152440.log
+2018-11-28T15:25:48.6298017-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-28T15:27:04.9245494-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-28T15:27:04.9255459-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-28T15:27:04.9375395-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-28T15:27:04.9390898-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-28T15:27:04.9393660-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-28T15:27:11.9453507-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-28T15:27:11.9472891-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-28T15:27:11.9482959-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-28T15:36:03.0025670-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-28T15:36:03.0035678-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-28T15:36:03.0045657-02:00;VSTestExecutionThread;Info;test results published
+2018-11-28T15:36:03.0055654-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-28T15:36:03.0065657-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-28T15:36:03.0075645-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-28T15:36:04.6857500-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-28T15:36:04.6907461-02:00;VSTestExecutionThread;Info;Adding att

@@ -1,0 +1,61 @@
+﻿2018-12-14T11:29:40.5845610-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-14T11:29:40.6384491-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-14T11:29:40.8516095-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-14T11:29:40.8537560-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-14T11:29:40.8547684-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-14T11:29:46.0261374-02:00;Thread#12;Info;starting test run
+2018-12-14T11:29:46.0374181-02:00;Thread#12;Info;Discovering target: Default
+2018-12-14T11:29:46.0374181-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#84: 6.1.2 - Alterar itens de pedido - 
+#89: Cancelar um item de pedido no detelhe do pedido, "Cancelado" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Cancelar+um+item+de+pedido+no+detelhe+do+pedido%2c+%22Cancelado%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #89 from normal test queue 
+Thread#0:Scheduler: considering testitem #89 for thread 0
+Thread#0:TestItem#89:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#89:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#89:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #89 for thread 0
+Thread#0:Scheduler: Test #89 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #89/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,3s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema "TESTE DE 500MB"
+Thread#0:T:done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema("TESTE DE 500MB") (28,1s)
+Thread#0:B:Quando cancelo um item de pedido "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoCanceloUmItemDePedido("ALYNE WAITE") (22,2s)
+Thread#0:B:Então visualizo o item do pedido com o status de cancelado "Cancelado"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOItemDoPedidoComOStatusDeCancelado("Cancelado") (3,9s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #89/0 is finished on thread #0 as Succeeded within 85,149847 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-12-14T11:31:11.9216083-02:00;Thread#12;Info;test run finished
+2018-12-14T11:31:11.9216083-02:00;Thread#12;Info;publishing test results
+2018-12-14T11:31:11.9684816-02:00;Thread#12;Info;test results published
+2018-12-14T11:31:11.9684816-02:00;Thread#12;Info;generating reports
+2018-12-14T11:31:11.9841197-02:00;Thread#12;Info;creating 1 report(s)
+2018-12-14T11:31:11.9841197-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-12-14T11:31:14.5776895-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-12-14T11:31:14.5932959-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-12-14T11:31:14.5932959-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-14T112940.html'
+2018-12-14T11:31:14.6089177-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-14T112940.log

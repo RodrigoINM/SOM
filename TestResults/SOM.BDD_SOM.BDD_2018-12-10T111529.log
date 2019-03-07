@@ -1,0 +1,61 @@
+﻿2018-12-10T11:15:29.4287876-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-10T11:15:29.4487748-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-10T11:15:29.6767100-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-10T11:15:29.6777098-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-10T11:15:29.6799347-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-10T11:15:38.8806502-02:00;Thread#12;Info;starting test run
+2018-12-10T11:15:38.9066565-02:00;Thread#12;Info;Discovering target: Default
+2018-12-10T11:15:38.9086379-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#34: 6.5.1 - Cadastro de Tabela de Preços - 
+#52: Validar não aceitação de valores negativos na tabela nacional, "DRAMATURGIA DIÁRIA" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Validar+n%c3%a3o+aceita%c3%a7%c3%a3o+de+valores+negativos+na+tabela+nacional%2c+%22DRAMATURGIA+DI%c3%81RIA%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #52 from normal test queue 
+Thread#0:Scheduler: considering testitem #52 for thread 0
+Thread#0:TestItem#52:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#52:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#52:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #52 for thread 0
+Thread#0:Scheduler: Test #52 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #52/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,4s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço "DRAMATURGIA DIÁRIA"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePreco("DRAMATURGIA DIÁRIA") (7,4s)
+Thread#0:B:Quando preencho com valor negativo no tipo de sincronização "DRAMATURGIA DIÁRIA", "-1"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorNegativoNoTipoDeSincronizacao("DRAMATURGIA DIÁRIA", "-1") (20,3s)
+Thread#0:B:Então visualizo o campo voltar a apresentar o ultimo valor valido da tabela de preço "DRAMATURGIA DIÁRIA", "-1"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoOCampoVoltarAApresentarOUltimoValorValidoDaTabelaDePreco("DRAMATURGIA DIÁRIA", "-1") (55,5s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #52/0 is finished on thread #0 as Succeeded within 114,6009339 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-12-10T11:17:34.4055091-02:00;Thread#12;Info;test run finished
+2018-12-10T11:17:34.4055091-02:00;Thread#12;Info;publishing test results
+2018-12-10T11:17:34.4367555-02:00;Thread#12;Info;test results published
+2018-12-10T11:17:34.4367555-02:00;Thread#12;Info;generating reports
+2018-12-10T11:17:34.4680024-02:00;Thread#12;Info;creating 1 report(s)
+2018-12-10T11:17:34.4680024-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-12-10T11:17:37.1865643-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-12-10T11:17:37.2021885-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-12-10T11:17:37.2021885-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-10T111529.html'
+2018-12-10T11:17:37.2178117-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-10T111529.log

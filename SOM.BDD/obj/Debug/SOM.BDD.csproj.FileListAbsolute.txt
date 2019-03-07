@@ -1,0 +1,429 @@
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\chromedriver.exe
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\geckodriver.exe
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\IEDriverServer.exe
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\FSharp.Core.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Gherkin.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Microsoft.Data.Services.Client.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Microsoft.Web.Publishing.Tasks.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\NConsoler.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Newtonsoft.Json.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\RazorEngine.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\RestSharp.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRun.exe
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRun.exe.config
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRunTestProfile.xsd
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRunTestProfile_2011_09.xsd
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\System.Web.Razor.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Common.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.dll.config
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe.config
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe.config
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.dll.config
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr20.exe
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr20.exe.config
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr40.exe
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr40.exe.config
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Interfaces.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Utils.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.CommandClient.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.Commands.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.ReadModelClient.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.VisualStudio.TestAdapter.dll.config
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll.config
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Executor.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Interfaces.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Utils.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\AutoItX3.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\AutoItX3_x64.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Default.srprofile
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll.config
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.pdb
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\AutoItX3.Assembly.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Framework.Core.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Framework.IoC.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\itextsharp.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecRun.SpecFlowPlugin.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\System.ValueTuple.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecFlow.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Common.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\WebDriver.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\WebDriver.Support.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Faker.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SimpleInjector.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Gherkin.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Framework.Core.pdb
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Framework.IoC.pdb
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\AutoItX3.Assembly.xml
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\itextsharp.xml
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\WebDriver.xml
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\WebDriver.Support.xml
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SimpleInjector.xml
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\obj\Debug\SOM.BDD.csprojResolveAssemblyReference.cache
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\obj\Debug\SOM.BDD.dll
+C:\Users\Rodrigo2\Desktop\SOM.BDD\SOM.BDD\obj\Debug\SOM.BDD.pdb
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\chromedriver.exe
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\geckodriver.exe
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\IEDriverServer.exe
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\FSharp.Core.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Gherkin.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Microsoft.Data.Services.Client.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Microsoft.Web.Publishing.Tasks.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\NConsoler.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Newtonsoft.Json.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\RazorEngine.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\RestSharp.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRun.exe
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRun.exe.config
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRunTestProfile.xsd
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRunTestProfile_2011_09.xsd
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\System.Web.Razor.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Common.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.dll.config
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe.config
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe.config
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.dll.config
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr20.exe
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr20.exe.config
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr40.exe
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr40.exe.config
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Interfaces.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Utils.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.CommandClient.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.Commands.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.ReadModelClient.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.VisualStudio.TestAdapter.dll.config
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll.config
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Executor.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Interfaces.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Utils.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\AutoItX3.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\AutoItX3_x64.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\Default.srprofile
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\AutoItX3.Assembly.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\ExcelDataReader.DataSet.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\ExcelDataReader.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\Framework.Core.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\Framework.IoC.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\itextsharp.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\Newtonsoft.Json.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SeleniumExtras.WaitHelpers.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SpecRun.SpecFlowPlugin.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\System.ValueTuple.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecFlow.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Common.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\WebDriver.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\WebDriver.Support.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\Faker.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SimpleInjector.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\Gherkin.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\Framework.Core.pdb
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\Framework.IoC.pdb
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\AutoItX3.Assembly.xml
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\ExcelDataReader.xml
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\ExcelDataReader.DataSet.xml
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\itextsharp.xml
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\Newtonsoft.Json.xml
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\WebDriver.xml
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\WebDriver.Support.xml
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SimpleInjector.xml
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\obj\Debug\SOM.BDD.csprojResolveAssemblyReference.cache
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\obj\Debug\SOM.BDD.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\obj\Debug\SOM.BDD.pdb
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\Execute.cmd
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\runtests.cmd
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll.config
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.pdb
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\chromedriver.exe
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\geckodriver.exe
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\IEDriverServer.exe
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\FSharp.Core.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Gherkin.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Microsoft.Data.Services.Client.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Microsoft.Web.Publishing.Tasks.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\NConsoler.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Newtonsoft.Json.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\RazorEngine.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\RestSharp.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRun.exe
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRun.exe.config
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRunTestProfile.xsd
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRunTestProfile_2011_09.xsd
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\System.Web.Razor.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Common.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.dll.config
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe.config
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe.config
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.dll.config
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr20.exe
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr20.exe.config
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr40.exe
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr40.exe.config
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Interfaces.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Utils.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.CommandClient.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.Commands.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.ReadModelClient.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.VisualStudio.TestAdapter.dll.config
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll.config
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Executor.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Interfaces.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Utils.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\AutoItX3.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\AutoItX3_x64.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Default.srprofile
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Execute.cmd
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\runtests.cmd
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll.config
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.pdb
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\AutoItX3.Assembly.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\ExcelDataReader.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Framework.Core.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Framework.IoC.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\itextsharp.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SeleniumExtras.WaitHelpers.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SpecRun.SpecFlowPlugin.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\System.ValueTuple.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecFlow.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.Common.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\TechTalk.SpecRun.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\WebDriver.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\WebDriver.Support.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Faker.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SimpleInjector.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Gherkin.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Framework.Core.pdb
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Framework.IoC.pdb
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\AutoItX3.Assembly.xml
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\ExcelDataReader.xml
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\itextsharp.xml
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\WebDriver.xml
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\WebDriver.Support.xml
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SimpleInjector.xml
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\pt-BR\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\obj\Debug\SOM.BDD.csprojResolveAssemblyReference.cache
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\obj\Debug\SOM.BDD.dll
+C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\obj\Debug\SOM.BDD.pdb
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\FSharp.Core.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Gherkin.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Microsoft.Data.Services.Client.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Microsoft.Web.Publishing.Tasks.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\NConsoler.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Newtonsoft.Json.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\RazorEngine.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\RestSharp.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRun.exe
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRun.exe.config
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRunTestProfile.xsd
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRunTestProfile_2011_09.xsd
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\System.Web.Razor.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Common.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.dll.config
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe.config
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe.config
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.dll.config
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr20.exe
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr20.exe.config
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr40.exe
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr40.exe.config
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Interfaces.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Utils.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.CommandClient.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.Commands.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.ReadModelClient.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.VisualStudio.TestAdapter.dll.config
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll.config
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Executor.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Interfaces.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Utils.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\AutoItX3.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\AutoItX3_x64.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\chromedriver.exe
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\geckodriver.exe
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\IEDriverServer.exe
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Default.srprofile
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Resources\ONOF 30 BL1.txt
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Execute.cmd
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Resources\Catálogo de Editoras - DDA - Erro.xlsx
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Resources\Catálogo de Editoras Autor - Erro.xlsx
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Resources\Massa.xlsx
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Resources\MASTER GUILHERME VETERANO E APRENDIZ  GUILHERME.edl
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Resources\TEMPLATE Catálogo de Editoras.xlsx
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Resources\TEMPLATE ERRO.xlsx
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Resources\Teste em branco.xlsx
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Resources\Text.docx
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\runtests.cmd
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SOM.BDD.dll.config
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SOM.BDD.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SOM.BDD.pdb
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\AutoItX3.Assembly.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\ExcelDataReader.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Framework.Core.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Framework.IoC.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\itextsharp.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SeleniumExtras.WaitHelpers.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SpecRun.SpecFlowPlugin.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\System.ValueTuple.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\TechTalk.SpecFlow.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\TechTalk.SpecRun.Common.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\TechTalk.SpecRun.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\WebDriver.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\WebDriver.Support.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Faker.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SimpleInjector.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Gherkin.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Framework.Core.pdb
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Framework.IoC.pdb
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\AutoItX3.Assembly.xml
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\ExcelDataReader.xml
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\itextsharp.xml
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\WebDriver.xml
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\WebDriver.Support.xml
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\SimpleInjector.xml
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\bin\Debug\pt-BR\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\obj\Debug\SOM.BDD.csprojResolveAssemblyReference.cache
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\obj\Debug\SOM.BDD.dll
+C:\Users\Larissa\Desktop\PROJETO ATUALIZADO\SOM.BDD\obj\Debug\SOM.BDD.pdb
+C:\GitHub\SOM\SOM.BDD\bin\Debug\chromedriver.exe
+C:\GitHub\SOM\SOM.BDD\bin\Debug\geckodriver.exe
+C:\GitHub\SOM\SOM.BDD\bin\Debug\IEDriverServer.exe
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\FSharp.Core.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Gherkin.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Microsoft.Data.Services.Client.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Microsoft.Web.Publishing.Tasks.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\NConsoler.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\Newtonsoft.Json.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\RazorEngine.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\RestSharp.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRun.exe
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRun.exe.config
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRunTestProfile.xsd
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\SpecRunTestProfile_2011_09.xsd
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\System.Web.Razor.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Common.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.dll.config
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe.config
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe.config
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.dll.config
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr20.exe
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr20.exe.config
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr40.exe
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Executor.x86.clr40.exe.config
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Interfaces.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Framework.Utils.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.CommandClient.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.Commands.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.Server.ReadModelClient.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecFlowPlusRunner\TechTalk.SpecRun.VisualStudio.TestAdapter.dll.config
+C:\GitHub\SOM\SOM.BDD\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll.config
+C:\GitHub\SOM\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Executor.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Interfaces.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\TechTalk.SpecRun.Framework.Utils.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\AutoItX3.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\AutoItX3_x64.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Default.srprofile
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Resources\ONOF 30 BL1.txt
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Execute.cmd
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Resources\Catálogo de Editoras - DDA - Erro.xlsx
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Resources\Catálogo de Editoras Autor - Erro.xlsx
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Resources\Massa.xlsx
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Resources\MASTER GUILHERME VETERANO E APRENDIZ  GUILHERME.edl
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Resources\TEMPLATE Catálogo de Editoras.xlsx
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Resources\TEMPLATE ERRO.xlsx
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Resources\Teste em branco.xlsx
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Resources\Text.docx
+C:\GitHub\SOM\SOM.BDD\bin\Debug\runtests.cmd
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SOM.BDD.dll.config
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SOM.BDD.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SOM.BDD.pdb
+C:\GitHub\SOM\SOM.BDD\bin\Debug\AutoItX3.Assembly.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\ExcelDataReader.DataSet.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\ExcelDataReader.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Framework.Core.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Framework.IoC.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\itextsharp.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Newtonsoft.Json.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SeleniumExtras.WaitHelpers.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SpecRun.SpecFlowPlugin.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\System.ValueTuple.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\TechTalk.SpecFlow.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\TechTalk.SpecRun.Common.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\TechTalk.SpecRun.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\WebDriver.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\WebDriver.Support.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Faker.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SimpleInjector.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Gherkin.dll
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Framework.Core.pdb
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Framework.IoC.pdb
+C:\GitHub\SOM\SOM.BDD\bin\Debug\AutoItX3.Assembly.xml
+C:\GitHub\SOM\SOM.BDD\bin\Debug\ExcelDataReader.xml
+C:\GitHub\SOM\SOM.BDD\bin\Debug\ExcelDataReader.DataSet.xml
+C:\GitHub\SOM\SOM.BDD\bin\Debug\itextsharp.xml
+C:\GitHub\SOM\SOM.BDD\bin\Debug\Newtonsoft.Json.xml
+C:\GitHub\SOM\SOM.BDD\bin\Debug\WebDriver.xml
+C:\GitHub\SOM\SOM.BDD\bin\Debug\WebDriver.Support.xml
+C:\GitHub\SOM\SOM.BDD\bin\Debug\SimpleInjector.xml
+C:\GitHub\SOM\SOM.BDD\bin\Debug\pt-BR\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\GitHub\SOM\SOM.BDD\obj\Debug\SOM.BDD.csprojResolveAssemblyReference.cache
+C:\GitHub\SOM\SOM.BDD\obj\Debug\SOM.BDD.dll
+C:\GitHub\SOM\SOM.BDD\obj\Debug\SOM.BDD.pdb

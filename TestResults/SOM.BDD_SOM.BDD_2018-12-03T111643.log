@@ -1,0 +1,38 @@
+﻿2018-12-03T11:16:43.1638951-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-03T11:16:43.1718887-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-03T11:16:43.3098281-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-03T11:16:43.3108162-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-03T11:16:43.3118090-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-03T11:16:53.4529330-02:00;Thread#12;Info;starting test run
+2018-12-03T11:16:53.4629102-02:00;Thread#12;Info;Discovering target: Default
+2018-12-03T11:16:53.4689070-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#34: 6.1.7 - Criar Pedido Manualmente - 
+#45: Gerar pedido manual para todos os tipos de midia a debitar, "CANAL VIVA" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22CANAL+VIVA%22
+#46: Gerar pedido manual para todos os tipos de midia a debitar, "DNI" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22DNI%22
+#47: Gerar pedido manual para todos os tipos de midia a debitar, "GLOBONEWS" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22GLOBONEWS%22
+#48: Gerar pedido manual para todos os tipos de midia a debitar, "GLOBO PLAY" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22GLOBO+PLAY%22
+#49: Gerar pedido manual para todos os tipos de midia a debitar, "GLOOB" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22GLOOB%22
+#50: Gerar pedido manual para todos os tipos de midia a debitar, "INTERNET" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22INTERNET%22
+#51: Gerar pedido manual para todos os tipos de midia a debitar, "MULTISHOW" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22MULTISHOW%22
+#52: Gerar pedido manual para todos os tipos de midia a debitar, "SPORTV" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22SPORTV%22
+#53: Gerar pedido manual para todos os tipos de midia a debitar, "TV" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22TV%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #45 from normal test queue 
+Thread#0:Scheduler: considering testitem #45 for thread 0
+Thread#0:TestItem#45:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#45:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#45:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #45 for thread 0
+Thread#0:Scheduler: Test #45 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #45/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,2s

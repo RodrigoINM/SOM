@@ -1,0 +1,40 @@
+﻿2019-02-05T10:31:00.6670814-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-02-05T10:31:00.6750777-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-02-05T10:31:00.8509766-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-02-05T10:31:00.8519759-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-02-05T10:31:00.8529780-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-02-05T10:31:11.9480400-02:00;Thread#12;Info;starting test run
+2019-02-05T10:31:11.9580349-02:00;Thread#12;Info;Discovering target: Default
+2019-02-05T10:31:11.9580349-02:00;Thread#12;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#296: 3.1.3 - Transferência de Obra (De/Para) - 
+#297: Transferência de Obra (De/Para), "ANTES DA AULA" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Transfer%c3%aancia+de+Obra+(De%2fPara)/Scenario:Transfer%c3%aancia+de+Obra+(De%2fPara)%2c+%22ANTES+DA+AULA%22
+#298: Transferencia de Autor (De/Para) com todos os campos em branco., "" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Transfer%c3%aancia+de+Obra+(De%2fPara)/Scenario:Transferencia+de+Autor+(De%2fPara)+com+todos+os+campos+em+branco.%2c+%22%22
+#299: Transferência de Obra (De/Para) com Título Obra inexistente, "kdhjf" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Transfer%c3%aancia+de+Obra+(De%2fPara)/Scenario:Transfer%c3%aancia+de+Obra+(De%2fPara)+com+T%c3%adtulo+Obra+inexistente%2c+%22kdhjf%22
+#300: Transferencia de DDA (De/Para) com Nome DDA(Para) inexistente., "NOVO AMANHECER" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Transfer%c3%aancia+de+Obra+(De%2fPara)/Scenario:Transferencia+de+DDA+(De%2fPara)+com+Nome+DDA(Para)+inexistente.%2c+%22NOVO+AMANHECER%22
+#301: Transferencia de DDA (De/Para) selecionando a checkbox excluir, "NOVO AMANHECER" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Transfer%c3%aancia+de+Obra+(De%2fPara)/Scenario:Transferencia+de+DDA+(De%2fPara)+selecionando+a+checkbox+excluir%2c+%22NOVO+AMANHECER%22
+#302: Transferencia de DDA (De/Para) com Nome DDA (De/Para) iguais., "NOVO AMANHECER" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Transfer%c3%aancia+de+Obra+(De%2fPara)/Scenario:Transferencia+de+DDA+(De%2fPara)+com+Nome+DDA+(De%2fPara)+iguais.%2c+%22NOVO+AMANHECER%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #297 from normal test queue 
+Thread#0:Scheduler: considering testitem #297 for thread 0
+Thread#0:TestItem#297:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#297:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#297:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #297 for thread 0
+Thread#0:Scheduler: Test #297 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #297/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (15,3s)
+Thread#0:B:Dado a tela transferência de Obra (De/Para) esteja aberta
+Thread#0:T:done: TransferênciadeObraDeParaSteps.DadoATelaTransferenciaDeObraDeParaEstejaAberta() (1,1s)
+Thread#0:B:Quando realizo uma Transferência de obra preenchendo os campos TituloObraDe e TituloObraPara "ANTES DA AULA" , "NOVO AMANHECER"
+Thread#0:T:done: TransferênciadeObraDeParaSteps.QuandoRealizoUmaTransferenciaDeObraPreenchendoOsCamposTituloObraDeETituloObraPara("ANTES DA AULA", "NOVO AMANHECER") (17,9s)
+Thread#0:B:Então visualizo a mensagem de transferencia de obra concluida "Dados alte

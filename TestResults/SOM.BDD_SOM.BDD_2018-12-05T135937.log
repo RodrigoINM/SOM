@@ -1,0 +1,65 @@
+﻿2018-12-05T13:59:36.8487679-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-05T13:59:36.8787509-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-05T13:59:37.1535918-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-05T13:59:37.1555918-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-05T13:59:37.1575904-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-05T13:59:42.3320840-02:00;Thread#12;Info;starting test run
+2018-12-05T13:59:42.3532734-02:00;Thread#12;Info;Discovering target: Default
+2018-12-05T13:59:42.3552725-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#34: 6.1.10 - Seleção de itens e atualização do Valor Total - 
+#37: Subtração de itens na busca por pedido - TestAssembly:SOM.BDD/Feature:6.1.10+-+Sele%c3%a7%c3%a3o+de+itens+e+atualiza%c3%a7%c3%a3o+do+Valor+Total/Scenario:Subtra%c3%a7%c3%a3o+de+itens+na+busca+por+pedido
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #37 from normal test queue 
+Thread#0:Scheduler: considering testitem #37 for thread 0
+Thread#0:TestItem#37:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#37:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#37:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #37 for thread 0
+Thread#0:Scheduler: Test #37 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #37/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,6s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema() (74,5s)
+Thread#0:B:E que esteja na aba de pagamento
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.DadoQueEstejaNaAbaDePagamento() (0,6s)
+Thread#0:B:Quando seleciono todos os itens do pedido
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.QuandoSelecionoTodosOsItensDoPedido() (0,2s)
+Thread#0:B:E retiro da selecao um item
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.QuandoRetiroDaSelecaoUmItem() (0,1s)
+Thread#0:B:Entao visualizo o valor total menos o valor do item nao selecionado
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.EntaoVisualizoOValorTotalMenosOValorDoItemNaoSelecionado() (0,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #37/0 is finished on thread #0 as Succeeded within 106,3118023 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-12-05T14:01:29.3865068-02:00;Thread#12;Info;test run finished
+2018-12-05T14:01:29.3885063-02:00;Thread#12;Info;publishing test results
+2018-12-05T14:01:29.4444724-02:00;Thread#12;Info;test results published
+2018-12-05T14:01:29.4464724-02:00;Thread#12;Info;generating reports
+2018-12-05T14:01:29.4624628-02:00;Thread#12;Info;creating 1 report(s)
+2018-12-05T14:01:29.4654705-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-12-05T14:01:31.8011359-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-12-05T14:01:31.8121293-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-12-05T14:01:31.8141283-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-05T135937.html'
+2018-12-05T14:01:31.8311180-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-05T135937.log

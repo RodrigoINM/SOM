@@ -1,0 +1,281 @@
+﻿2018-12-07T18:09:48.2950095-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-07T18:09:48.3033912-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-07T18:09:48.4422959-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-07T18:09:48.4432957-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-07T18:09:48.4442908-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-07T18:09:56.5912446-02:00;Thread#12;Info;starting test run
+2018-12-07T18:09:56.6012185-02:00;Thread#12;Info;Discovering target: Default
+2018-12-07T18:09:56.6022225-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#34: 6.5.1 - Cadastro de Tabela de Preços - 
+#40: Adicionar valor à aba Dramaturgia Diária da tabela nacional com sucesso, "DRAMATURGIA DIÁRIA" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Adicionar+valor+%c3%a0+aba+Dramaturgia+Di%c3%a1ria+da+tabela+nacional+com+sucesso%2c+%22DRAMATURGIA+DI%c3%81RIA%22
+#41: Adicionar valor à aba Dramaturgia Semanal da tabela nacional com sucesso, "DRAMATURGIA SEMANAL" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Adicionar+valor+%c3%a0+aba+Dramaturgia+Semanal+da+tabela+nacional+com+sucesso%2c+%22DRAMATURGIA+SEMANAL%22
+#42: Adicionar valor à aba Esporte da tabela nacional com sucesso, "ESPORTE" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Adicionar+valor+%c3%a0+aba+Esporte+da+tabela+nacional+com+sucesso%2c+%22ESPORTE%22
+#43: Adicionar valor à aba Jornalismo da tabela nacional com sucesso, "JORNALISMO" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Adicionar+valor+%c3%a0+aba+Jornalismo+da+tabela+nacional+com+sucesso%2c+%22JORNALISMO%22
+#44: Adicionar valor à aba Variedade Diária da tabela nacional com sucesso, "VARIEDADE DIÁRIA" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Adicionar+valor+%c3%a0+aba+Variedade+Di%c3%a1ria+da+tabela+nacional+com+sucesso%2c+%22VARIEDADE+DI%c3%81RIA%22
+#45: Adicionar valor à aba Variedade Semanal da tabela nacional com sucesso, "VARIEDADE SEMANAL" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Adicionar+valor+%c3%a0+aba+Variedade+Semanal+da+tabela+nacional+com+sucesso%2c+%22VARIEDADE+SEMANAL%22
+#46: Adicionar valor à aba Dramaturgia Diária da tabela internacional com sucesso, "DRAMATURGIA DIÁRIA" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Adicionar+valor+%c3%a0+aba+Dramaturgia+Di%c3%a1ria+da+tabela+internacional+com+sucesso%2c+%22DRAMATURGIA+DI%c3%81RIA%22
+#47: Adicionar valor à aba Dramaturgia Semanal da tabela internacional com sucesso, "DRAMATURGIA SEMANAL" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Adicionar+valor+%c3%a0+aba+Dramaturgia+Semanal+da+tabela+internacional+com+sucesso%2c+%22DRAMATURGIA+SEMANAL%22
+#48: Adicionar valor à aba Esporte da tabela internacional com sucesso, "ESPORTE" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Adicionar+valor+%c3%a0+aba+Esporte+da+tabela+internacional+com+sucesso%2c+%22ESPORTE%22
+#49: Adicionar valor à aba Jornalismo da tabela internacional com sucesso, "JORNALISMO" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Adicionar+valor+%c3%a0+aba+Jornalismo+da+tabela+internacional+com+sucesso%2c+%22JORNALISMO%22
+#50: Adicionar valor à aba Variedade Diária da tabela internacional com sucesso, "VARIEDADE DIÁRIA" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Adicionar+valor+%c3%a0+aba+Variedade+Di%c3%a1ria+da+tabela+internacional+com+sucesso%2c+%22VARIEDADE+DI%c3%81RIA%22
+#51: Adicionar valor à aba Variedade Semanal da tabela internacional com sucesso, "VARIEDADE SEMANAL" - TestAssembly:SOM.BDD/Feature:6.5.1+-+Cadastro+de+Tabela+de+Pre%c3%a7os/Scenario:Adicionar+valor+%c3%a0+aba+Variedade+Semanal+da+tabela+internacional+com+sucesso%2c+%22VARIEDADE+SEMANAL%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #40 from normal test queue 
+Thread#0:Scheduler: considering testitem #40 for thread 0
+Thread#0:TestItem#40:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#40:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#40:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #40 for thread 0
+Thread#0:Scheduler: Test #40 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #40/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,9s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço "DRAMATURGIA DIÁRIA"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePreco("DRAMATURGIA DIÁRIA") (6,9s)
+Thread#0:B:Quando preencho com valor válido os tipos de sincronização "DRAMATURGIA DIÁRIA"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorValidoOsTiposDeSincronizacao("DRAMATURGIA DIÁRIA") (2,5s)
+Thread#0:B:Então visualizo a mensagem de itens adicionados com sucesso à tabela de preço "Itens foram salvos com sucesso."
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoAMensagemDeItensAdicionadosComSucessoATabelaDePreco("Itens foram salvo...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #41 from normal test queue 
+Thread#0:Scheduler: considering testitem #41 for thread 0
+Thread#0:TestItem#41:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#41:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#41:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #41 for thread 0
+Thread#0:Scheduler: Test #41 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #40/0 is finished on thread #0 as Succeeded within 40,609651 seconds
+Thread#0: Test #41/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (18,5s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço "DRAMATURGIA SEMANAL"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePreco("DRAMATURGIA SEMANAL") (7,1s)
+Thread#0:B:Quando preencho com valor válido os tipos de sincronização "DRAMATURGIA SEMANAL"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorValidoOsTiposDeSincronizacao("DRAMATURGIA SEMANAL") (2,5s)
+Thread#0:B:Então visualizo a mensagem de itens adicionados com sucesso à tabela de preço "Itens foram salvos com sucesso."
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoAMensagemDeItensAdicionadosComSucessoATabelaDePreco("Itens foram salvo...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #42 from normal test queue 
+Thread#0:Scheduler: considering testitem #42 for thread 0
+Thread#0:TestItem#42:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#42:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#42:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #42 for thread 0
+Thread#0:Scheduler: Test #42 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #41/0 is finished on thread #0 as Succeeded within 37,3405617 seconds
+Thread#0: Test #42/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,6s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço "ESPORTE"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePreco("ESPORTE") (7,0s)
+Thread#0:B:Quando preencho com valor válido os tipos de sincronização "ESPORTE"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorValidoOsTiposDeSincronizacao("ESPORTE") (2,4s)
+Thread#0:B:Então visualizo a mensagem de itens adicionados com sucesso à tabela de preço "Itens foram salvos com sucesso."
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoAMensagemDeItensAdicionadosComSucessoATabelaDePreco("Itens foram salvo...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #43 from normal test queue 
+Thread#0:Scheduler: considering testitem #43 for thread 0
+Thread#0:TestItem#43:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#43:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#43:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #43 for thread 0
+Thread#0:Scheduler: Test #43 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #42/0 is finished on thread #0 as Succeeded within 41,1238128 seconds
+Thread#0: Test #43/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,6s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço "JORNALISMO"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePreco("JORNALISMO") (7,0s)
+Thread#0:B:Quando preencho com valor válido os tipos de sincronização "JORNALISMO"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorValidoOsTiposDeSincronizacao("JORNALISMO") (2,4s)
+Thread#0:B:Então visualizo a mensagem de itens adicionados com sucesso à tabela de preço "Itens foram salvos com sucesso."
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoAMensagemDeItensAdicionadosComSucessoATabelaDePreco("Itens foram salvo...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #44 from normal test queue 
+Thread#0:Scheduler: considering testitem #44 for thread 0
+Thread#0:TestItem#44:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#44:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#44:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #44 for thread 0
+Thread#0:Scheduler: Test #44 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #43/0 is finished on thread #0 as Succeeded within 43,1167286 seconds
+Thread#0: Test #44/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,8s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço "VARIEDADE DIÁRIA"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePreco("VARIEDADE DIÁRIA") (6,9s)
+Thread#0:B:Quando preencho com valor válido os tipos de sincronização "VARIEDADE DIÁRIA"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorValidoOsTiposDeSincronizacao("VARIEDADE DIÁRIA") (2,3s)
+Thread#0:B:Então visualizo a mensagem de itens adicionados com sucesso à tabela de preço "Itens foram salvos com sucesso."
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoAMensagemDeItensAdicionadosComSucessoATabelaDePreco("Itens foram salvo...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #45 from normal test queue 
+Thread#0:Scheduler: considering testitem #45 for thread 0
+Thread#0:TestItem#45:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#45:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#45:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #45 for thread 0
+Thread#0:Scheduler: Test #45 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #44/0 is finished on thread #0 as Succeeded within 39,3293788 seconds
+Thread#0: Test #45/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,2s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço "VARIEDADE SEMANAL"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePreco("VARIEDADE SEMANAL") (7,3s)
+Thread#0:B:Quando preencho com valor válido os tipos de sincronização "VARIEDADE SEMANAL"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorValidoOsTiposDeSincronizacao("VARIEDADE SEMANAL") (2,5s)
+Thread#0:B:Então visualizo a mensagem de itens adicionados com sucesso à tabela de preço "Itens foram salvos com sucesso."
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoAMensagemDeItensAdicionadosComSucessoATabelaDePreco("Itens foram salvo...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #46 from normal test queue 
+Thread#0:Scheduler: considering testitem #46 for thread 0
+Thread#0:TestItem#46:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#46:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#46:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #46 for thread 0
+Thread#0:Scheduler: Test #46 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #45/0 is finished on thread #0 as Succeeded within 43,1909151 seconds
+Thread#0: Test #46/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,9s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço internacional "DRAMATURGIA DIÁRIA"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePrecoInternacional("DRAMATURGIA DIÁRIA") (6,9s)
+Thread#0:B:Quando preencho com valor válido os tipos de sincronização internacionais "DRAMATURGIA DIÁRIA"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorValidoOsTiposDeSincronizacaoInternacionais("DRAMATURGIA DIÁRIA") (2,4s)
+Thread#0:B:Então visualizo a mensagem de itens adicionados com sucesso à tabela de preço "Itens foram salvos com sucesso."
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoAMensagemDeItensAdicionadosComSucessoATabelaDePreco("Itens foram salvo...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #47 from normal test queue 
+Thread#0:Scheduler: considering testitem #47 for thread 0
+Thread#0:TestItem#47:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#47:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#47:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #47 for thread 0
+Thread#0:Scheduler: Test #47 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #46/0 is finished on thread #0 as Succeeded within 40,7173145 seconds
+Thread#0: Test #47/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,8s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço internacional "DRAMATURGIA SEMANAL"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePrecoInternacional("DRAMATURGIA SEMANAL") (6,8s)
+Thread#0:B:Quando preencho com valor válido os tipos de sincronização internacionais "DRAMATURGIA SEMANAL"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorValidoOsTiposDeSincronizacaoInternacionais("DRAMATURGIA SEMANAL") (2,4s)
+Thread#0:B:Então visualizo a mensagem de itens adicionados com sucesso à tabela de preço "Itens foram salvos com sucesso."
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoAMensagemDeItensAdicionadosComSucessoATabelaDePreco("Itens foram salvo...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #48 from normal test queue 
+Thread#0:Scheduler: considering testitem #48 for thread 0
+Thread#0:TestItem#48:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#48:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#48:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #48 for thread 0
+Thread#0:Scheduler: Test #48 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #47/0 is finished on thread #0 as Succeeded within 42,2246924 seconds
+Thread#0: Test #48/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,4s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço internacional "ESPORTE"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePrecoInternacional("ESPORTE") (7,6s)
+Thread#0:B:Quando preencho com valor válido os tipos de sincronização internacionais "ESPORTE"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorValidoOsTiposDeSincronizacaoInternacionais("ESPORTE") (2,4s)
+Thread#0:B:Então visualizo a mensagem de itens adicionados com sucesso à tabela de preço "Itens foram salvos com sucesso."
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoAMensagemDeItensAdicionadosComSucessoATabelaDePreco("Itens foram salvo...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #49 from normal test queue 
+Thread#0:Scheduler: considering testitem #49 for thread 0
+Thread#0:TestItem#49:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#49:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#49:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #49 for thread 0
+Thread#0:Scheduler: Test #49 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #48/0 is finished on thread #0 as Succeeded within 41,5955959 seconds
+Thread#0: Test #49/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,4s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço internacional "JORNALISMO"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePrecoInternacional("JORNALISMO") (6,8s)
+Thread#0:B:Quando preencho com valor válido os tipos de sincronização internacionais "JORNALISMO"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorValidoOsTiposDeSincronizacaoInternacionais("JORNALISMO") (2,4s)
+Thread#0:B:Então visualizo a mensagem de itens adicionados com sucesso à tabela de preço "Itens foram salvos com sucesso."
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoAMensagemDeItensAdicionadosComSucessoATabelaDePreco("Itens foram salvo...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #50 from normal test queue 
+Thread#0:Scheduler: considering testitem #50 for thread 0
+Thread#0:TestItem#50:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#50:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#50:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #50 for thread 0
+Thread#0:Scheduler: Test #50 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #49/0 is finished on thread #0 as Succeeded within 41,9281518 seconds
+Thread#0: Test #50/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,5s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço internacional "VARIEDADE DIÁRIA"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePrecoInternacional("VARIEDADE DIÁRIA") (7,5s)
+Thread#0:B:Quando preencho com valor válido os tipos de sincronização internacionais "VARIEDADE DIÁRIA"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorValidoOsTiposDeSincronizacaoInternacionais("VARIEDADE DIÁRIA") (2,4s)
+Thread#0:B:Então visualizo a mensagem de itens adicionados com sucesso à tabela de preço "Itens foram salvos com sucesso."
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoAMensagemDeItensAdicionadosComSucessoATabelaDePreco("Itens foram salvo...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #51 from normal test queue 
+Thread#0:Scheduler: considering testitem #51 for thread 0
+Thread#0:TestItem#51:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#51:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#51:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #51 for thread 0
+Thread#0:Scheduler: Test #51 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #50/0 is finished on thread #0 as Succeeded within 42,5299194 seconds
+Thread#0: Test #51/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,7s)
+Thread#0:B:Dado que estou na tela de detalhes da tabela de preço internacional "VARIEDADE SEMANAL"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.DadoQueEstouNaTelaDeDetalhesDaTabelaDePrecoInternacional("VARIEDADE SEMANAL") (7,1s)
+Thread#0:B:Quando preencho com valor válido os tipos de sincronização internacionais "VARIEDADE SEMANAL"
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.QuandoPreenchoComValorValidoOsTiposDeSincronizacaoInternacionais("VARIEDADE SEMANAL") (2,5s)
+Thread#0:B:Então visualizo a mensagem de itens adicionados com sucesso à tabela de preço "Itens foram salvos com sucesso."
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoAMensagemDeItensAdicionadosComSucessoATabelaDePreco("Itens foram salvo...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #51/0 is finished on thread #0 as Succeeded within 38,5615521 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-12-07T18:18:09.2538647-02:00;Thread#12;Info;test run finished
+2018-12-07T18:18:09.2548654-02:00;Thread#12;Info;publishing test results
+2018-12-07T18:18:09.2668585-02:00;Thread#12;Info;test results published
+2018-12-07T18:18:09.2668585-02:00;Thread#12;Info;generating reports
+2018-12-07T18:18:09.2778556-02:00;Thread#12;Info;creating 1 report(s)
+2018-12-07T18:18:09.2798505-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-12-07T18:18:11.5237132-02:00;Thread#12;Info;reports generated
+Total: 12
+Succeeded: 12
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-12-07T18:18:11.5287111-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-12-07T18:18:11.5287111-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-07T180948.html'
+2018-12-07T18:18:11.5427043-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-07T180948.log

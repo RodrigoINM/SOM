@@ -1,0 +1,59 @@
+﻿2018-12-18T16:54:16.2725749-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-18T16:54:16.2795519-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-18T16:54:16.3894890-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-18T16:54:16.3894890-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-18T16:54:16.3904892-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-18T16:54:22.4937484-02:00;Thread#12;Info;starting test run
+2018-12-18T16:54:22.5027413-02:00;Thread#12;Info;Discovering target: Default
+2018-12-18T16:54:22.5037453-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#3: Login - 
+#4: Login SOM - TestAssembly:SOM.BDD/Feature:Login/Scenario:Login+SOM
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #4 from normal test queue 
+Thread#0:Scheduler: considering testitem #4 for thread 0
+Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #4 for thread 0
+Thread#0:Scheduler: Test #4 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #4/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que acesse o sistema
+Thread#0:T:done: LoginSteps.DadoQueAcesseOSistema() (10,4s)
+Thread#0:B:Quando logo no sistema
+Thread#0:T:done: LoginSteps.QuandoLogoNoSistema() (7,8s)
+Thread#0:B:Entao realizo login no sistema com sucesso
+Thread#0:T:error: Assert.IsTrue failed. 
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #4/0 is finished on thread #0 as Failed within 30,7837302 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-12-18T16:54:53.4922504-02:00;Thread#12;Info;test run finished
+2018-12-18T16:54:53.4932497-02:00;Thread#12;Info;publishing test results
+2018-12-18T16:54:53.4992460-02:00;Thread#12;Info;test results published
+2018-12-18T16:54:53.5002481-02:00;Thread#12;Info;generating reports
+2018-12-18T16:54:53.5092405-02:00;Thread#12;Info;creating 1 report(s)
+2018-12-18T16:54:53.5102403-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-12-18T16:54:56.1164554-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
+2018-12-18T16:54:56.1254506-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-12-18T16:54:56.1264509-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-18T165416.html'
+2018-12-18T16:54:56.1374437-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-18T165416.log

@@ -1,0 +1,61 @@
+﻿2019-02-04T15:51:56.2300678-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-02-04T15:51:56.2420614-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-02-04T15:51:56.5149056-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-02-04T15:51:56.5159054-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-02-04T15:51:56.5169052-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-02-04T15:52:06.7481464-02:00;Thread#12;Info;starting test run
+2019-02-04T15:52:06.7781309-02:00;Thread#12;Info;Discovering target: Default
+2019-02-04T15:52:06.7791311-02:00;Thread#12;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#288: 3.1.3 - Transferencia de DDA (De/Para) - 
+#295: Transferencia de DDA (De/Para) com Nome DDA (De/Para) iguais., "AMORINA" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Transferencia+de+DDA+(De%2fPara)/Scenario:Transferencia+de+DDA+(De%2fPara)+com+Nome+DDA+(De%2fPara)+iguais.%2c+%22AMORINA%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #295 from normal test queue 
+Thread#0:Scheduler: considering testitem #295 for thread 0
+Thread#0:TestItem#295:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#295:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#295:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #295 for thread 0
+Thread#0:Scheduler: Test #295 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #295/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (14,0s)
+Thread#0:B:Dado que a tela Transferência de DDA (De/Para) esteja aberta
+Thread#0:T:done: TransferênciadeDDASteps.DadoQueATelaTransferenciaDeDDADeParaEstejaAberta() (1,2s)
+Thread#0:B:Quando realizo uma Transferência preenchendo os campos NomeDDADe e NomeDDAPara "AMORINA" , "AMORINA"
+Thread#0:T:done: TransferênciadeDDASteps.QuandoRealizoUmaTransferenciaPreenchendoOsCamposNomeDDADeENomeDDAPara("AMORINA", "AMORINA") (16,1s)
+Thread#0:B:Então visualizo a mensagem de DDA, operação cancelada "Operação cancelada, não permitido fazer a transferência para o mesmo DDA."
+Thread#0:T:done: TransferênciadeDDASteps.EntaoVisualizoAMensagemDeDDAOperacaoCancelada("Operação cancelad...") (0,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #295/0 is finished on thread #0 as Succeeded within 39,5598243 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2019-02-04T15:52:48.1500194-02:00;Thread#12;Info;test run finished
+2019-02-04T15:52:48.1500194-02:00;Thread#12;Info;publishing test results
+2019-02-04T15:52:48.8639756-02:00;Thread#12;Info;test results published
+2019-02-04T15:52:48.8639756-02:00;Thread#12;Info;generating reports
+2019-02-04T15:52:49.1961496-02:00;Thread#12;Info;creating 1 report(s)
+2019-02-04T15:52:49.1961496-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2019-02-04T15:52:52.9073906-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2019-02-04T15:52:52.9230133-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-02-04T15:52:52.9230133-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-02-04T155156.html'
+2019-02-04T15:52:52.9230133-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-02-04T155156.log

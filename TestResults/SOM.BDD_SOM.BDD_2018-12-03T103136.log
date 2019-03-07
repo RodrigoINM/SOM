@@ -1,0 +1,37 @@
+﻿2018-12-03T10:31:36.3484924-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-03T10:31:36.3674830-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-03T10:31:36.5933520-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-03T10:31:36.5943523-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-03T10:31:36.5963513-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-03T10:31:45.7287670-02:00;Thread#12;Info;starting test run
+2018-12-03T10:31:45.7497526-02:00;Thread#12;Info;Discovering target: Default
+2018-12-03T10:31:45.7517526-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#34: 6.1.7 - Criar Pedido Manualmente - 
+#35: Gerar pedido manual para todos os tipos de sincronismo, "ABERTURA" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22ABERTURA%22
+#36: Gerar pedido manual para todos os tipos de sincronismo, "ABERTURA PONTUAL" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22ABERTURA+PONTUAL%22
+#37: Gerar pedido manual para todos os tipos de sincronismo, "ADORNO" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22ADORNO%22
+#38: Gerar pedido manual para todos os tipos de sincronismo, "AO VIVO ADORNO" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22AO+VIVO+ADORNO%22
+#39: Gerar pedido manual para todos os tipos de sincronismo, "AO VIVO FUNDO" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22AO+VIVO+FUNDO%22
+#40: Gerar pedido manual para todos os tipos de sincronismo, "AO VIVO FUNDO EM JORNALISMO" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22AO+VIVO+FUNDO+EM+JORNALISMO%22
+#41: Gerar pedido manual para todos os tipos de sincronismo, "AO VIVO PERFORMANCE" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22AO+VIVO+PERFORMANCE%22
+#42: Gerar pedido manual para todos os tipos de sincronismo, "ENCERRAMENTO" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22ENCERRAMENTO%22
+#43: Gerar pedido manual para todos os tipos de sincronismo, "ENCERRAMENTO PONTUAL" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22ENCERRAMENTO+PONTUAL%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #35 from normal test queue 
+Thread#0:Scheduler: considering testitem #35 for thread 0
+Thread#0:TestItem#35:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#35:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#35:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #35 for thread 0
+Thread#0:Scheduler: Test #35 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #35/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema

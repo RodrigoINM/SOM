@@ -1,0 +1,195 @@
+﻿2019-01-17T11:23:07.6441717-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-17T11:23:07.6531669-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-17T11:23:07.7920888-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-17T11:23:07.7920888-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-17T11:23:07.7930867-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-17T11:23:13.8984626-02:00;VSTestExecutionThread;Info;starting test run
+2019-01-17T11:23:13.9064413-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2019-01-17T11:23:13.9074434-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-17T11:24:38.7815246-02:00;VSTestExecutionThread;Info;test run finished
+2019-01-17T11:24:38.7825221-02:00;VSTestExecutionThread;Info;publishing test results
+2019-01-17T11:24:38.8037698-02:00;VSTestExecutionThread;Info;test results published
+2019-01-17T11:24:38.8047724-02:00;VSTestExecutionThread;Info;generating reports
+2019-01-17T11:24:38.8632372-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2019-01-17T11:24:38.8652456-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2019-01-17T11:24:42.3967229-02:00;VSTestExecutionThread;Info;reports generated
+2019-01-17T11:24:42.4077177-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-17T11:24:42.4077177-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-17T112307.html'
+2019-01-17T11:24:42.4187106-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-17T112307.log
+2019-01-17T11:24:42.4217094-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2019-01-17T11:24:46.7917622-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-17T11:24:46.7917622-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-17T11:24:46.8047733-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-17T11:24:46.8047733-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-17T11:24:46.8057549-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-17T11:25:00.8104958-02:00;VSTestExecutionThread;Info;starting test run
+2019-01-17T11:25:00.8125121-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2019-01-17T11:25:00.8135310-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-17T11:26:29.6070017-02:00;VSTestExecutionThread;Info;test run finished
+2019-01-17T11:26:29.6080015-02:00;VSTestExecutionThread;Info;publishing test results
+2019-01-17T11:26:29.6080015-02:00;VSTestExecutionThread;Info;test results published
+2019-01-17T11:26:29.6090004-02:00;VSTestExecutionThread;Info;generating reports
+2019-01-17T11:26:29.6099992-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2019-01-17T11:26:29.6109995-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2019-01-17T11:26:31.3463025-02:00;VSTestExecutionThread;Info;reports generated
+2019-01-17T11:26:31.3493019-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-17T11:26:31.3493019-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-17T112446.html'
+2019-01-17T11:26:31.3622938-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-17T112446.log
+2019-01-17T11:26:31.3642934-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2019-01-17T11:26:41.0862798-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-17T11:26:41.0872698-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-17T11:26:41.1072583-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-17T11:26:41.1082595-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-17T11:26:41.1092574-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-17T11:26:51.1148502-02:00;VSTestExecutionThread;Info;starting test run
+2019-01-17T11:26:51.1168582-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2019-01-17T11:26:51.1178864-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-17T11:29:45.9054517-02:00;VSTestExecutionThread;Info;test run finished
+2019-01-17T11:29:45.9064506-02:00;VSTestExecutionThread;Info;publishing test results
+2019-01-17T11:29:45.9074504-02:00;VSTestExecutionThread;Info;test results published
+2019-01-17T11:29:45.9084501-02:00;VSTestExecutionThread;Info;generating reports
+2019-01-17T11:29:45.9094485-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2019-01-17T11:29:45.9104478-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2019-01-17T11:29:47.6605073-02:00;VSTestExecutionThread;Info;reports generated
+2019-01-17T11:29:47.6635066-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-17T11:29:47.6645055-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-17T112641.html'
+2019-01-17T11:29:47.6725009-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-17T112641.log
+2019-01-17T11:29:47.6744995-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2019-01-17T11:29:53.7819851-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-17T11:29:53.7829835-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-17T11:29:53.7979741-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-17T11:29:53.7989767-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-17T11:29:53.8069702-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-17T11:30:02.8150795-02:00;VSTestExecutionThread;Info;starting test run
+2019-01-17T11:30:02.8170958-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2019-01-17T11:30:02.8181240-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-17T11:31:34.5321608-02:00;VSTestExecutionThread;Info;test run finished
+2019-01-17T11:31:34.5331615-02:00;VSTestExecutionThread;Info;publishing test results
+2019-01-17T11:31:34.5341617-02:00;VSTestExecutionThread;Info;test results published
+2019-01-17T11:31:34.5351601-02:00;VSTestExecutionThread;Info;generating reports
+2019-01-17T11:31:34.5351601-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2019-01-17T11:31:34.5361589-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2019-01-17T11:31:36.3140316-02:00;VSTestExecutionThread;Info;reports generated
+2019-01-17T11:31:36.3210100-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-17T11:31:36.3210100-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-17T112953.html'
+2019-01-17T11:31:36.3330204-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-17T112953.log
+2019-01-17T11:31:36.3350008-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2019-01-17T11:35:04.2900384-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-17T11:35:04.2910414-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-17T11:35:04.3030495-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-17T11:35:04.3040297-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-17T11:35:04.3050290-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-17T11:35:14.3111513-02:00;Thread#23;Info;starting test run
+2019-01-17T11:35:14.3131872-02:00;Thread#23;Info;Discovering target: Default
+2019-01-17T11:35:14.3141567-02:00;Thread#23;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#125: Validar Status Pav de Pedidos Autorizados para Pagamento - 
+#126: Alterar nacionalidade da obra para pedido com Status PAV Autorizado, "1000449" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+nacionalidade+da+obra+para+pedido+com+Status+PAV+Autorizado%2c+%221000449%22
+#127: Alterar autor da composição para que possua duplicidade de uma obra para pedido com Status PAV Autorizado, "1000109" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+autor+da+composi%c3%a7%c3%a3o+para+que+possua+duplicidade+de+uma+obra+para+pedido+com+Status+PAV+Autorizado%2c+%221000109%22
+#128: Alterar autor para pedido com Status PAV Autorizado, "1000150" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+autor+para+pedido+com+Status+PAV+Autorizado%2c+%221000150%22
+#129: Alterar porcentagem dos autores da composição de uma obra para pedido com Status PAV Autorizado, "1000457" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+porcentagem+dos+autores+da+composi%c3%a7%c3%a3o+de+uma+obra+para+pedido+com+Status+PAV+Autorizado%2c+%221000457%22
+#130: Alterar DDAs de uma obra para pedido com Status PAV Autorizado, "1000143" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+DDAs+de+uma+obra+para+pedido+com+Status+PAV+Autorizado%2c+%221000143%22
+#131: Alterar quantidade de autores de uma obra para pedido com Status PAV Autorizado, "1000448" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+quantidade+de+autores+de+uma+obra+para+pedido+com+Status+PAV+Autorizado%2c+%221000448%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #126 from normal test queue 
+Thread#0:Scheduler: considering testitem #126 for thread 0
+Thread#0:TestItem#126:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#126:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#126:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #126 for thread 0
+Thread#0:Scheduler: Test #126 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #126/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,2s)
+Thread#0:B:Quando faço uma busca pela obra associada ao pedido "MUSICA DE TESTE 4 INT"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoFacoUmaBuscaPelaObraAssociadaAoPedido("MUSICA DE TESTE 4...") (19,4s)
+Thread#0:B:E altero a nacionalidade da obra "Internacional", "Alemanha", "MUSICA DE TESTE 4 INT"
+Thread#0:T:done: StatusPavSteps.QuandoAlteroANacionalidadeDaObra("Internacional", "Alemanha", "MUSICA DE TESTE 4...") (7,5s)
+Thread#0:B:E seleciono o pedido a ser afetado pela alteracao "1000449"
+Thread#0:T:done: StatusPavSteps.QuandoSelecionoOPedidoASerAfetadoPelaAlteracao("1000449") (10,9s)
+Thread#0:B:E faço uma busca pelo pedido afetado "1000449"
+Thread#0:T:done: StatusPavSteps.QuandoFacoUmaBuscaPeloPedidoAfetado("1000449") (119,9s)
+Thread#0:B:Então visualizo que o Status Pav do pedido continua como Aprovado "Aprovado", "Internacional", "Alemanha", "MUSICA DE TESTE 4 INT", "1000449"
+Thread#0:T:done: StatusPavSteps.EntaoVisualizoQueOStatusPavDoPedidoContinuaComoAprovado("Aprovado", "Internacional", "Alemanha", "MUSICA DE TESTE 4...", "1000449") (9,7s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #127 from normal test queue 
+Thread#0:Scheduler: considering testitem #127 for thread 0
+Thread#0:TestItem#127:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#127:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#127:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #127 for thread 0
+Thread#0:Scheduler: Test #127 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #126/0 is finished on thread #0 as Succeeded within 194,1915303 seconds
+Thread#0: Test #127/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,2s)
+Thread#0:B:Quando faço uma busca pela obra associada ao pedido "OBRA TESTE 2"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoFacoUmaBuscaPelaObraAssociadaAoPedido("OBRA TESTE 2") (16,2s)
+Thread#0:B:E altero um dos autores da composição para que esteja com duplicidade "AUTOR TESTE 2"
+Thread#0:T:done: StatusPavSteps.QuandoAlteroUmDosAutoresDaComposicaoParaQueEstejaComDuplicidade("AUTOR TESTE 2") (9,7s)
+Thread#0:B:E seleciono o pedido a ser afetado pela alteracao "1000109"
+Thread#0:T:done: StatusPavSteps.QuandoSelecionoOPedidoASerAfetadoPelaAlteracao("1000109") (10,3s)
+Thread#0:B:Então visualizo que o Status Pav do pedido continua como autorizado "AUTOR TESTE 2", "OBRA TESTE 2", "Aprovado"
+Thread#0:T:done: StatusPavSteps.EntaoVisualizoQueOStatusPavDoPedidoContinuaComoAutorizado("AUTOR TESTE 2", "OBRA TESTE 2", "Aprovado") (28,9s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #128 from normal test queue 
+Thread#0:Scheduler: considering testitem #128 for thread 0
+Thread#0:TestItem#128:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#128:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#128:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #128 for thread 0
+Thread#0:Scheduler: Test #128 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #127/0 is finished on thread #0 as Succeeded within 94,543373 seconds
+Thread#0: Test #128/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,3s)
+Thread#0:B:Quando faço uma busca pela obra associada ao pedido "TESTE DE CONHECIMENTO"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoFacoUmaBuscaPelaObraAssociadaAoPedido("TESTE DE CONHECIM...") (20,3s)
+Thread#0:B:E altero os autores da obra "ROSANA SILVA", "ALYNE WAITE"
+Thread#0:T:done: StatusPavSteps.QuandoAlteroOsAutoresDaObra("ROSANA SILVA", "ALYNE WAITE") (15,1s)
+Thread#0:B:E seleciono o pedido a ser afetado pela alteracao "1000150"
+Thread#0:T:done: StatusPavSteps.QuandoSelecionoOPedidoASerAfetadoPelaAlteracao("1000150") (19,0s)
+Thread#0:B:Então visualizo que o Status Pav do pedido continua como Aprovado apos a alteração do Autor da composição "ROSANA SILVA", "ALYNE WAITE", "Aprovado", "TESTE DE CONHECIMENTO", "1000150"
+Thread#0:T:done: StatusPavSteps.EntaoVisualizoQueOStatusPavDoPedidoContinuaComoAprovadoAposAAlteracaoDoAutorDaComposicao("ROSANA SILVA", "ALYNE WAITE", "Aprovado", "TESTE DE CONHECIM...", "1000150") (40,8s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #129 from normal test queue 
+Thread#0:Scheduler: considering testitem #129 for thread 0
+Thread#0:TestItem#129:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#129:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#129:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #129 for thread 0
+Thread#0:Scheduler: Test #129 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #128/0 is finished on thread #0 as Succeeded within 119,5517635 seconds
+Thread#0: Test #129/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (23,0s)
+Thread#0:B:Quando faço uma busca pela obra associada ao pedido "CVC Vasco 2018 INT"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoFacoUmaBuscaPelaObraAssociadaAoPedido("CVC Vasco 2018 INT") (15,5s)
+Thread#0:B:E altero a porcentagem dos autores da composição "MARCELLE MENDONCA", "LUAN SANTANA", "25", "50"
+Thread#0:T:error: unknown error: Element <i class="fa fa-edit pull-right editarcomposicaoobra ng-scope" style="cursor: pointer; color: rgb(76, 76, 76);" tooltip-placement="left" uib-tooltip="Editar" ng-click="ModalComposicao(itemComp, itemComp.IdComposicao)" ng-if="PesquisaObraComposicao == false &amp;&amp; ObraDados.DscDerivacao != 'Pot-pourri/Medley'"></i> is not clickable at point (947, 487). Other element would receive the click: <div modal-render="true" tabindex="-1" role="dialog" class="modal fade ng-isolate-scope animated fadeIn in" uib-modal-animation-class="fade" modal-in-class="in" ng-style="{'z-index': 2050 + index*10, display: 'block'}" uib-modal-window="modal-window" window-class="animated fadeIn" index="0" animate="animate" modal-animation="true" style="z-index: 2050; display: block;">...</div>
+Thread#0:T:  (Session info: chrome=71.0.3578.98)
+Thread#0:T:  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+Thread#0:B:E seleciono o pedido a ser afetado pela alteracao "1000457"
+Thread#0:T:skipped because of previous errors
+Thread#0:B:Então visualizo que o Status Pav do pedido continua como Aprovado apos a alteração da porcentagem dos Autores da composição "MARCELLE MENDONCA", "25", "LUAN SANTANA", "50", "CVC Vasco 2018 INT", "1000457", "Aprovado"
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #130 from normal test queue 
+Thread#0:Scheduler: considering testitem #130 for thread 0
+Thread#0:TestItem#130:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#130:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#130:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #130 for thread 0
+Thread#0:Scheduler: Test #130 is scheduled for thread
+Thread#0:Scheduler: with test

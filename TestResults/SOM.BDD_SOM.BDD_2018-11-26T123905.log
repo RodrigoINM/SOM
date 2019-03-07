@@ -1,0 +1,145 @@
+﻿2018-11-26T12:39:05.6194559-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-26T12:39:05.6374467-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-26T12:39:05.8823059-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-26T12:39:05.8903008-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-26T12:39:05.8923018-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-26T12:39:13.0477600-02:00;Thread#12;Info;starting test run
+2018-11-26T12:39:13.0790265-02:00;Thread#12;Info;Discovering target: Default
+2018-11-26T12:39:13.0790265-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#50: 3.1.4 - Exclusa de DDA - 
+#51: Exclusão de um DDA com sucesso, "Teste INM 600" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Exclusa+de+DDA/Scenario:Exclus%c3%a3o+de+um+DDA+com+sucesso%2c+%22Teste+INM+600%22
+#52: Cancelar a exclusão do DDA com sucesso, "Teste INM 601" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Exclusa+de+DDA/Scenario:Cancelar+a+exclus%c3%a3o+do+DDA+com+sucesso%2c+%22Teste+INM+601%22
+#53: Exclusão de Endereço com sucesso, "Teste INM 602" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Exclusa+de+DDA/Scenario:Exclus%c3%a3o+de+Endere%c3%a7o+com+sucesso%2c+%22Teste+INM+602%22
+#54: Exclusão de Contato com sucesso, "Teste INM 603" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Exclusa+de+DDA/Scenario:Exclus%c3%a3o+de+Contato+com+sucesso%2c+%22Teste+INM+603%22
+#55: Exclusão de Contato que recebe autorização, "Teste INM 604" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Exclusa+de+DDA/Scenario:Exclus%c3%a3o+de+Contato+que+recebe+autoriza%c3%a7%c3%a3o%2c+%22Teste+INM+604%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #51 from normal test queue 
+Thread#0:Scheduler: considering testitem #51 for thread 0
+Thread#0:TestItem#51:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#51:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#51:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #51 for thread 0
+Thread#0:Scheduler: Test #51 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #51/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,9s)
+Thread#0:B:Dado que tenha um DDA cadastrado "Teste INM 600", "Teste INM 600", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 600", "E-mail", "teste@teste.com", "sim"
+Thread#0:T:done: ExclusaoDeDDASteps.DadoQueTenhaUmDDACadastrado("Teste INM 600", "Teste INM 600", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 600", "E-mail", "teste@teste.com", "sim") (17,1s)
+Thread#0:B:Quando faco uma busca simples por DDA "Teste INM 600"
+Thread#0:T:done: ExclusaoDeDDASteps.QuandoFacoUmaBuscaSimplesPorDDA("Teste INM 600") (0,4s)
+Thread#0:B:E excluo o DDA "Teste INM 600"
+Thread#0:T:done: ExclusaoDeDDASteps.QuandoExcluoODDA("Teste INM 600") (3,4s)
+Thread#0:B:Entao visualizo a mensagem de DDA excluido com sucesso "Registro excluído com sucesso."
+Thread#0:T:done: ExclusaoDeDDASteps.EntaoVisualizoAMensagemDeDDAExcluidoComSucesso("Registro excluído...") (0,0s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #52 from normal test queue 
+Thread#0:Scheduler: considering testitem #52 for thread 0
+Thread#0:TestItem#52:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#52:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#52:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #52 for thread 0
+Thread#0:Scheduler: Test #52 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #51/0 is finished on thread #0 as Succeeded within 48,8017707 seconds
+Thread#0: Test #52/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (23,9s)
+Thread#0:B:Dado que tenha um DDA cadastrado "Teste INM 601", "Teste INM 601", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 601", "E-mail", "teste@teste.com", "sim"
+Thread#0:T:done: ExclusaoDeDDASteps.DadoQueTenhaUmDDACadastrado("Teste INM 601", "Teste INM 601", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 601", "E-mail", "teste@teste.com", "sim") (17,2s)
+Thread#0:B:Quando faco uma busca simples por DDA "Teste INM 601"
+Thread#0:T:done: ExclusaoDeDDASteps.QuandoFacoUmaBuscaSimplesPorDDA("Teste INM 601") (0,4s)
+Thread#0:B:E cancelo a exclusão um DDA com "Teste INM 601"
+Thread#0:T:done: ExclusaoDeDDASteps.QuandoCanceloAExclusaoUmDDACom("Teste INM 601") (3,4s)
+Thread#0:B:Então visualizo o DDA no resultado da busca com sucesso "Teste INM 601"
+Thread#0:T:done: ExclusaoDeDDASteps.EntaoVisualizoODDANoResultadoDaBuscaComSucesso("Teste INM 601") (3,3s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #53 from normal test queue 
+Thread#0:Scheduler: considering testitem #53 for thread 0
+Thread#0:TestItem#53:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#53:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#53:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #53 for thread 0
+Thread#0:Scheduler: Test #53 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #52/0 is finished on thread #0 as Succeeded within 53,3314736 seconds
+Thread#0: Test #53/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,5s)
+Thread#0:B:Dado que tenha um DDA cadastrado com endereço completo "Teste INM 602", "Teste INM 602", "54635356357", "UBEM", "Sim", "10/10/1992", "Rua 10", "Centro", "Bahia", "BA", "23847238"
+Thread#0:T:done: ExclusaoDeDDASteps.DadoQueTenhaUmDDACadastradoComEnderecoCompleto("Teste INM 602", "Teste INM 602", "54635356357", "UBEM", "Sim", "10/10/1992", "Rua 10", "Centro", "Bahia", "BA", "23847238") (14,5s)
+Thread#0:B:Quando excluo um endereço do DDA "Rua 10"
+Thread#0:T:done: ExclusaoDeDDASteps.QuandoExcluoUmEnderecoDoDDA("Rua 10") (1,8s)
+Thread#0:B:Então visualizo a mensagem de endereço excluido com sucesso "Registro excluído com sucesso."
+Thread#0:T:done: ExclusaoDeDDASteps.EntaoVisualizoAMensagemDeEnderecoExcluidoComSucesso("Registro excluído...") (0,0s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #54 from normal test queue 
+Thread#0:Scheduler: considering testitem #54 for thread 0
+Thread#0:TestItem#54:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#54:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#54:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #54 for thread 0
+Thread#0:Scheduler: Test #54 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #53/0 is finished on thread #0 as Succeeded within 43,8242561 seconds
+Thread#0: Test #54/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,1s)
+Thread#0:B:Dado que tenha um DDA cadastrado com um contato "Teste INM 603", "Teste INM 603", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 603", "E-mail", "teste@teste.com", "sim"
+Thread#0:T:done: ExclusaoDeDDASteps.DadoQueTenhaUmDDACadastradoComUmContato("Teste INM 603", "Teste INM 603", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 603", "E-mail", "teste@teste.com", "sim") (10,1s)
+Thread#0:B:Quando excluo um contato do DDA "Contato Teste 603"
+Thread#0:T:done: ExclusaoDeDDASteps.QuandoExcluoUmContatoDoDDA("Contato Teste 603") (1,8s)
+Thread#0:B:Então visualizo a mensagem de contato excluido com sucesso "Registro excluído com sucesso."
+Thread#0:T:done: ExclusaoDeDDASteps.EntaoVisualizoAMensagemDeContatoExcluidoComSucesso("Registro excluído...") (0,0s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #55 from normal test queue 
+Thread#0:Scheduler: considering testitem #55 for thread 0
+Thread#0:TestItem#55:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#55:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#55:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #55 for thread 0
+Thread#0:Scheduler: Test #55 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #54/0 is finished on thread #0 as Succeeded within 36,0849032 seconds
+Thread#0: Test #55/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,2s)
+Thread#0:B:Dado que tenha um DDA cadastrado com um contato "Teste INM 604", "Teste INM 604", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 604", "E-mail", "teste@teste.com", "Não"
+Thread#0:T:done: ExclusaoDeDDASteps.DadoQueTenhaUmDDACadastradoComUmContato("Teste INM 604", "Teste INM 604", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 604", "E-mail", "teste@teste.com", "Não") (10,1s)
+Thread#0:B:Quando excluo um contato do DDA "Contato Teste 604"
+Thread#0:T:done: ExclusaoDeDDASteps.QuandoExcluoUmContatoDoDDA("Contato Teste 604") (1,8s)
+Thread#0:B:Entao visualizo uma mesnagem de critica ao tentar salvar a obra sem o contato "Não é permitido o cadastro de um DDA sem pelo menos um contato de e-mail que receba autorização."
+Thread#0:T:done: ExclusaoDeDDASteps.EntaoVisualizoUmaMesnagemDeCriticaAoTentarSalvarAObraSemOContato("Não é permitido o...") (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #55/0 is finished on thread #0 as Succeeded within 42,297943 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-26T12:42:57.9818148-02:00;Thread#12;Info;test run finished
+2018-11-26T12:42:57.9818148-02:00;Thread#12;Info;publishing test results
+2018-11-26T12:42:58.0130645-02:00;Thread#12;Info;test results published
+2018-11-26T12:42:58.0130645-02:00;Thread#12;Info;generating reports
+2018-11-26T12:42:58.0130645-02:00;Thread#12;Info;creating 1 report(s)
+2018-11-26T12:42:58.0130645-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-11-26T12:43:00.3722939-02:00;Thread#12;Info;reports generated
+Total: 5
+Succeeded: 5
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-11-26T12:43:00.4035235-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-26T12:43:00.4035235-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-26T123905.html'
+2018-11-26T12:43:00.4191481-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-26T123905.log

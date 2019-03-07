@@ -1,0 +1,104 @@
+﻿2018-11-14T21:41:53.7751979-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-14T21:41:53.8131960-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-14T21:41:53.9241155-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-14T21:41:53.9251171-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-14T21:41:53.9261174-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-14T21:42:07.0310582-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-14T21:42:07.0400515-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-14T21:42:07.0410494-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-14T21:44:48.7427287-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-14T21:44:48.7437285-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-14T21:44:48.7517230-02:00;VSTestExecutionThread;Info;test results published
+2018-11-14T21:44:48.7527237-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-14T21:44:48.7617170-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-14T21:44:48.7627173-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-14T21:44:50.8331706-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-14T21:44:50.8391679-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-14T21:44:50.8391679-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-14T214153.html'
+2018-11-14T21:44:50.8511629-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-14T214153.log
+2018-11-14T21:44:50.8541590-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-14T21:45:24.7202689-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-14T21:45:24.7202689-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-14T21:45:24.7332651-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-14T21:45:24.7342635-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-14T21:45:24.7352600-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-14T21:45:34.7409755-02:00;Thread#20;Info;starting test run
+2018-11-14T21:45:34.7428999-02:00;Thread#20;Info;Discovering target: Default
+2018-11-14T21:45:34.7438997-02:00;Thread#20;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#5: 4.1.5 - Consulta Produto - 
+#9: Busca avançada por Gênero Original, "Teste INM de Produto" - TestAssembly:SOM.BDD/Feature:4.1.5+-+Consulta+Produto/Scenario:Busca+avan%c3%a7ada+por+G%c3%aanero+Original%2c+%22Teste+INM+de+Produto%22
+#10: Busca avançada por Gênero Direitos Musicais, "Teste INM de Produto" - TestAssembly:SOM.BDD/Feature:4.1.5+-+Consulta+Produto/Scenario:Busca+avan%c3%a7ada+por+G%c3%aanero+Direitos+Musicais%2c+%22Teste+INM+de+Produto%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #9 from normal test queue 
+Thread#0:Scheduler: considering testitem #9 for thread 0
+Thread#0:TestItem#9:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#9:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#9:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #9 for thread 0
+Thread#0:Scheduler: Test #9 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #9/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,3s)
+Thread#0:B:E que esteja com a tela busca por Produto aberta
+Thread#0:T:done: ConsultaDeProdutoSteps.DadoQueEstejaComATelaBuscaPorProdutoAberta() (1,1s)
+Thread#0:B:Quando faço uma busca avançada por Produto e Gênero Original "Teste INM de Produto", "Novela"
+Thread#0:T:error: unknown error: cannot focus element
+Thread#0:T:  (Session info: chrome=70.0.3538.102)
+Thread#0:T:  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+Thread#0:B:Entao visualizo o produto no resultado da busca "Teste INM de Produto", "Episodio Teste INM de Produto", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Teste", "Não" e "Não"
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #10 from normal test queue 
+Thread#0:Scheduler: considering testitem #10 for thread 0
+Thread#0:TestItem#10:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#10:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#10:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #10 for thread 0
+Thread#0:Scheduler: Test #10 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #9/0 is finished on thread #0 as Failed within 29,0772633 seconds
+Thread#0: Test #10/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,6s)
+Thread#0:B:E que esteja com a tela busca por Produto aberta
+Thread#0:T:done: ConsultaDeProdutoSteps.DadoQueEstejaComATelaBuscaPorProdutoAberta() (1,1s)
+Thread#0:B:Quando faço uma busca avançada por Produto e Direitos Musicais "Teste INM de Produto", "DRAMATURGIA SEMANAL"
+Thread#0:T:error: unknown error: cannot focus element
+Thread#0:T:  (Session info: chrome=70.0.3538.102)
+Thread#0:T:  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+Thread#0:B:Entao visualizo o produto no resultado da busca "Teste INM de Produto", "Episodio Teste INM de Produto", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Teste", "Não" e "Não"
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #10/0 is finished on thread #0 as Failed within 30,689862 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-14T21:46:34.6639286-02:00;Thread#20;Info;test run finished
+2018-11-14T21:46:34.6649289-02:00;Thread#20;Info;publishing test results
+2018-11-14T21:46:34.6659277-02:00;Thread#20;Info;test results published
+2018-11-14T21:46:34.6669289-02:00;Thread#20;Info;generating reports
+2018-11-14T21:46:34.6679273-02:00;Thread#20;Info;creating 1 report(s)
+2018-11-14T21:46:34.6689261-02:00;Thread#20;Info;generate Report ReportTemplate.cshtml
+2018-11-14T21:46:36.3949336-02:00;Thread#20;Info;reports generated
+Total: 2
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 2
+2018-11-14T21:46:36.3979153-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-14T21:46:36.3989127-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-14T214524.html'
+2018-11-14T21:46:36.4079070-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-14T214524.log

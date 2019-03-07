@@ -1,0 +1,65 @@
+﻿2018-12-12T13:46:13.1279670-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-12T13:46:13.1469530-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-12T13:46:13.3823015-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-12T13:46:13.3853027-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-12T13:46:13.3873199-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-12T13:46:24.6058308-02:00;Thread#12;Info;starting test run
+2018-12-12T13:46:24.6248210-02:00;Thread#12;Info;Discovering target: Default
+2018-12-12T13:46:24.6268210-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#84: 6.1.2 - Alterar itens de pedido - 
+#86: Registrar Autorização, "1 item(ns) registrado(s) com sucesso." - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Registrar+Autoriza%c3%a7%c3%a3o%2c+%221+item(ns)+registrado(s)+com+sucesso.%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #86 from normal test queue 
+Thread#0:Scheduler: considering testitem #86 for thread 0
+Thread#0:TestItem#86:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#86:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#86:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #86 for thread 0
+Thread#0:Scheduler: Test #86 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #86/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,7s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema() (75,4s)
+Thread#0:B:Quando regsitro a autorizacao para um item do pedido "DDA"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoRegsitroAAutorizacaoParaUmItemDoPedido("DDA") (3,0s)
+Thread#0:B:Entao visualizo o pop up de confirmação para o DDA selecionado "DDA"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOPopUpDeConfirmacaoParaODDASelecionado("DDA") (4,3s)
+Thread#0:B:E a mensagem de sucesso apos confirmar a autorizacao do item do pedido "1 item(ns) registrado(s) com sucesso."
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoAMensagemDeSucessoAposConfirmarAAutorizacaoDoItemDoPedido("1 item(ns) regist...") (4,1s)
+Thread#0:B:E visualizo o status de autorizado para o item selecionado "Autorizado"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOStatusDeAutorizadoParaOItemSelecionado("Autorizado") (0,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #86/0 is finished on thread #0 as Succeeded within 116,8692199 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-12-12T13:48:22.4258807-02:00;Thread#12;Info;test run finished
+2018-12-12T13:48:22.4368749-02:00;Thread#12;Info;publishing test results
+2018-12-12T13:48:22.4848470-02:00;Thread#12;Info;test results published
+2018-12-12T13:48:22.4898436-02:00;Thread#12;Info;generating reports
+2018-12-12T13:48:22.5038362-02:00;Thread#12;Info;creating 1 report(s)
+2018-12-12T13:48:22.5068346-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-12-12T13:48:24.9259929-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-12-12T13:48:24.9399841-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-12-12T13:48:24.9429825-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-12T134613.html'
+2018-12-12T13:48:24.9619723-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-12T134613.log

@@ -1,0 +1,251 @@
+﻿2018-12-13T12:21:04.1859994-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-13T12:21:04.2259960-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-13T12:21:04.3389320-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-13T12:21:04.3392763-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-13T12:21:04.3402784-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-13T12:21:12.4136968-02:00;VSTestExecutionThread;Info;starting test run
+2018-12-13T12:21:12.4206953-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-12-13T12:21:12.4216955-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-13T12:25:52.2964706-02:00;VSTestExecutionThread;Info;test run finished
+2018-12-13T12:25:52.2974709-02:00;VSTestExecutionThread;Info;publishing test results
+2018-12-13T12:25:52.3882368-02:00;VSTestExecutionThread;Info;test results published
+2018-12-13T12:25:52.3892380-02:00;VSTestExecutionThread;Info;generating reports
+2018-12-13T12:25:52.3972325-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-12-13T12:25:52.3982323-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-12-13T12:25:54.7681681-02:00;VSTestExecutionThread;Info;reports generated
+2018-12-13T12:25:54.7741481-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-12-13T12:25:54.7751483-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-13T122104.html'
+2018-12-13T12:25:54.7861407-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-13T122104.log
+2018-12-13T12:25:54.7881379-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-12-13T12:27:24.6833285-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-13T12:27:24.6833285-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-13T12:27:24.6953206-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-13T12:27:24.6953206-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-13T12:27:24.6963209-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-13T12:27:30.7010352-02:00;VSTestExecutionThread;Info;starting test run
+2018-12-13T12:27:30.7030665-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-12-13T12:27:30.7040700-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-13T12:29:18.3442835-02:00;VSTestExecutionThread;Info;test run finished
+2018-12-13T12:29:18.3452824-02:00;VSTestExecutionThread;Info;publishing test results
+2018-12-13T12:29:18.3462826-02:00;VSTestExecutionThread;Info;test results published
+2018-12-13T12:29:18.3472815-02:00;VSTestExecutionThread;Info;generating reports
+2018-12-13T12:29:18.3482812-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-12-13T12:29:18.3492815-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-12-13T12:29:20.1685254-02:00;VSTestExecutionThread;Info;reports generated
+2018-12-13T12:29:20.1735234-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-12-13T12:29:20.1745227-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-13T122724.html'
+2018-12-13T12:29:20.1815179-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-13T122724.log
+2018-12-13T12:29:20.1835179-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-12-13T12:29:34.9502953-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-13T12:29:34.9512978-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-13T12:29:34.9623080-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-13T12:29:34.9633194-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-13T12:29:34.9642301-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-13T12:29:46.9778066-02:00;Thread#11;Info;starting test run
+2018-12-13T12:29:46.9798211-02:00;Thread#11;Info;Discovering target: Default
+2018-12-13T12:29:46.9808423-02:00;Thread#11;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#87: 6.1.7 - Criar Pedido Manualmente - 
+#88: Gerar pedido manual para todos os tipos de sincronismo, "ABERTURA" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22ABERTURA%22
+#89: Gerar pedido manual para todos os tipos de sincronismo, "ABERTURA PONTUAL" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22ABERTURA+PONTUAL%22
+#90: Gerar pedido manual para todos os tipos de sincronismo, "ADORNO" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22ADORNO%22
+#91: Gerar pedido manual para todos os tipos de sincronismo, "AO VIVO ADORNO" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22AO+VIVO+ADORNO%22
+#92: Gerar pedido manual para todos os tipos de sincronismo, "AO VIVO FUNDO" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22AO+VIVO+FUNDO%22
+#93: Gerar pedido manual para todos os tipos de sincronismo, "AO VIVO FUNDO EM JORNALISMO" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22AO+VIVO+FUNDO+EM+JORNALISMO%22
+#94: Gerar pedido manual para todos os tipos de sincronismo, "AO VIVO PERFORMANCE" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22AO+VIVO+PERFORMANCE%22
+#95: Gerar pedido manual para todos os tipos de sincronismo, "ENCERRAMENTO" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22ENCERRAMENTO%22
+#96: Gerar pedido manual para todos os tipos de sincronismo, "ENCERRAMENTO PONTUAL" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+sincronismo%2c+%22ENCERRAMENTO+PONTUAL%22
+#97: Gerar pedido manual para todos os tipos de midia a debitar, "GLOBONEWS" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22GLOBONEWS%22
+#98: Gerar pedido manual para todos os tipos de midia a debitar, "CANAL VIVA" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22CANAL+VIVA%22
+#99: Gerar pedido manual para todos os tipos de midia a debitar, "DNI" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22DNI%22
+#100: Gerar pedido manual para todos os tipos de midia a debitar, "TV" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22TV%22
+#101: Gerar pedido manual para todos os tipos de midia a debitar, "GLOBOPLAY" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22GLOBOPLAY%22
+#102: Gerar pedido manual para todos os tipos de midia a debitar, "GLOOB" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22GLOOB%22
+#103: Gerar pedido manual para todos os tipos de midia a debitar, "INTERNET" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22INTERNET%22
+#104: Gerar pedido manual para todos os tipos de midia a debitar, "MULTISHOW" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22MULTISHOW%22
+#105: Gerar pedido manual para todos os tipos de midia a debitar, "SPORTV" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22SPORTV%22
+#106: Gerar pedido manual para todos os tipos de midia a debitar, "CANAL INTERNACIONAL" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22CANAL+INTERNACIONAL%22
+#107: Criar Pedido sem Tabela Vigente, "CANAL INTERNACIONAL" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Criar+Pedido+sem+Tabela+Vigente%2c+%22CANAL+INTERNACIONAL%22
+#108: Todos os itens com autores contratados, "Não foi possível gerar o pedido, pois todos os autores da obra são contratados ou falecidos a mais de 70 anos." - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Todos+os+itens+com+autores+contratados%2c+%22N%c3%a3o+foi+poss%c3%advel+gerar+o+pedido%2c+pois+todos+os+autores+da+obra+s%c3%a3o+contratados+ou+falecidos+a+mais+de+70+anos.%22
+#109: Obra de domínio público, "Não é possível gerar pedido pois esta obra é de Domínio Público." - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Obra+de+dom%c3%adnio+p%c3%bablico%2c+%22N%c3%a3o+%c3%a9+poss%c3%advel+gerar+pedido+pois+esta+obra+%c3%a9+de+Dom%c3%adnio+P%c3%bablico.%22
+#110: Cadastro de Intérprete - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Cadastro+de+Int%c3%a9rprete
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #88 from normal test queue 
+Thread#0:Scheduler: considering testitem #88 for thread 0
+Thread#0:TestItem#88:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#88:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#88:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #88 for thread 0
+Thread#0:Scheduler: Test #88 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #88/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,1s)
+Thread#0:B:Dado que tenha um produto e uma obra cadastrada no sistema
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (59,0s)
+Thread#0:B:E que estou na tela de criação de pedidos
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)
+Thread#0:B:Quando crio um novo pedido manualmente "10/10/2018", "10", "GLOBONEWS" "ABERTURA"
+Thread#0:T:done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente("10/10/2018", "10", "GLOBONEWS", "ABERTURA") (14,0s)
+Thread#0:B:Entao visualizo o pedido gerado com sucesso "GLOBONEWS", "ABERTURA", "Em andamento", "Não requerido", "Não"
+Thread#0:T:done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso("GLOBONEWS", "ABERTURA", "Em andamento", "Não requerido", "Não") (0,4s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #89 from normal test queue 
+Thread#0:Scheduler: considering testitem #89 for thread 0
+Thread#0:TestItem#89:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#89:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#89:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #89 for thread 0
+Thread#0:Scheduler: Test #89 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #88/0 is finished on thread #0 as Succeeded within 101,2220889 seconds
+Thread#0: Test #89/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,4s)
+Thread#0:B:Dado que tenha um produto e uma obra cadastrada no sistema
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (57,1s)
+Thread#0:B:E que estou na tela de criação de pedidos
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)
+Thread#0:B:Quando crio um novo pedido manualmente "10/10/2018", "10", "GLOBONEWS" "ABERTURA PONTUAL"
+Thread#0:T:done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente("10/10/2018", "10", "GLOBONEWS", "ABERTURA PONTUAL") (13,4s)
+Thread#0:B:Entao visualizo o pedido gerado com sucesso "GLOBONEWS", "ABERTURA PONTUAL", "Em andamento", "Não requerido", "Não"
+Thread#0:T:done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso("GLOBONEWS", "ABERTURA PONTUAL", "Em andamento", "Não requerido", "Não") (0,6s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #90 from normal test queue 
+Thread#0:Scheduler: considering testitem #90 for thread 0
+Thread#0:TestItem#90:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#90:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#90:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #90 for thread 0
+Thread#0:Scheduler: Test #90 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #89/0 is finished on thread #0 as Succeeded within 97,3758375 seconds
+Thread#0: Test #90/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,6s)
+Thread#0:B:Dado que tenha um produto e uma obra cadastrada no sistema
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (57,0s)
+Thread#0:B:E que estou na tela de criação de pedidos
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,2s)
+Thread#0:B:Quando crio um novo pedido manualmente "10/10/2018", "10", "GLOBONEWS" "ADORNO"
+Thread#0:T:done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente("10/10/2018", "10", "GLOBONEWS", "ADORNO") (13,7s)
+Thread#0:B:Entao visualizo o pedido gerado com sucesso "GLOBONEWS", "ADORNO", "Em andamento", "Não requerido", "Não"
+Thread#0:T:done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso("GLOBONEWS", "ADORNO", "Em andamento", "Não requerido", "Não") (0,2s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #91 from normal test queue 
+Thread#0:Scheduler: considering testitem #91 for thread 0
+Thread#0:TestItem#91:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#91:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#91:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #91 for thread 0
+Thread#0:Scheduler: Test #91 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #90/0 is finished on thread #0 as Succeeded within 99,7924389 seconds
+Thread#0: Test #91/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,9s)
+Thread#0:B:Dado que tenha um produto e uma obra cadastrada no sistema
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (57,4s)
+Thread#0:B:E que estou na tela de criação de pedidos
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)
+Thread#0:B:Quando crio um novo pedido manualmente "10/10/2018", "10", "GLOBONEWS" "AO VIVO ADORNO"
+Thread#0:T:done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente("10/10/2018", "10", "GLOBONEWS", "AO VIVO ADORNO") (13,9s)
+Thread#0:B:Entao visualizo o pedido gerado com sucesso "GLOBONEWS", "AO VIVO ADORNO", "Em andamento", "Não requerido", "Não"
+Thread#0:T:done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso("GLOBONEWS", "AO VIVO ADORNO", "Em andamento", "Não requerido", "Não") (0,8s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #92 from normal test queue 
+Thread#0:Scheduler: considering testitem #92 for thread 0
+Thread#0:TestItem#92:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#92:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#92:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #92 for thread 0
+Thread#0:Scheduler: Test #92 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #91/0 is finished on thread #0 as Succeeded within 100,0388961 seconds
+Thread#0: Test #92/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,9s)
+Thread#0:B:Dado que tenha um produto e uma obra cadastrada no sistema
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (58,1s)
+Thread#0:B:E que estou na tela de criação de pedidos
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)
+Thread#0:B:Quando crio um novo pedido manualmente "10/10/2018", "10", "GLOBONEWS" "AO VIVO FUNDO"
+Thread#0:T:done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente("10/10/2018", "10", "GLOBONEWS", "AO VIVO FUNDO") (14,4s)
+Thread#0:B:Entao visualizo o pedido gerado com sucesso "GLOBONEWS", "AO VIVO FUNDO", "Em andamento", "Não requerido", "Não"
+Thread#0:T:done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso("GLOBONEWS", "AO VIVO FUNDO", "Em andamento", "Não requerido", "Não") (0,5s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #93 from normal test queue 
+Thread#0:Scheduler: considering testitem #93 for thread 0
+Thread#0:TestItem#93:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#93:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#93:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #93 for thread 0
+Thread#0:Scheduler: Test #93 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #92/0 is finished on thread #0 as Succeeded within 101,8871009 seconds
+Thread#0: Test #93/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,5s)
+Thread#0:B:Dado que tenha um produto e uma obra cadastrada no sistema
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (57,8s)
+Thread#0:B:E que estou na tela de criação de pedidos
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)
+Thread#0:B:Quando crio um novo pedido manualmente "10/10/2018", "10", "GLOBONEWS" "AO VIVO FUNDO EM JORNALISMO"
+Thread#0:T:done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente("10/10/2018", "10", "GLOBONEWS", "AO VIVO FUNDO EM ...") (14,6s)
+Thread#0:B:Entao visualizo o pedido gerado com sucesso "GLOBONEWS", "AO VIVO FUNDO EM JORNALISMO", "Em andamento", "Não requerido", "Não"
+Thread#0:T:done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso("GLOBONEWS", "AO VIVO FUNDO EM ...", "Em andamento", "Não requerido", "Não") (0,3s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #94 from normal test queue 
+Thread#0:Scheduler: considering testitem #94 for thread 0
+Thread#0:TestItem#94:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#94:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#94:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #94 for thread 0
+Thread#0:Scheduler: Test #94 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #93/0 is finished on thread #0 as Succeeded within 99,1321962 seconds
+Thread#0: Test #94/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,8s)
+Thread#0:B:Dado que tenha um produto e uma obra cadastrada no sistema
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (56,6s)
+Thread#0:B:E que estou na tela de criação de pedidos
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)
+Thread#0:B:Quando crio um novo pedido manualmente "10/10/2018", "10", "GLOBONEWS" "AO VIVO PERFORMANCE"
+Thread#0:T:done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente("10/10/2018", "10", "GLOBONEWS", "AO VIVO PERFORMANCE") (13,8s)
+Thread#0:B:Entao visualizo o pedido gerado com sucesso "GLOBONEWS", "AO VIVO PERFORMANCE", "Em andamento", "Não requerido", "Não"
+Thread#0:T:done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso("GLOBONEWS", "AO VIVO PERFORMANCE", "Em andamento", "Não requerido", "Não") (0,2s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #95 from normal test queue 
+Thread#0:Scheduler: considering testitem #95 for thread 0
+Thread#0:TestItem#95:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#95:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#95:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #95 for thread 0
+Thread#0:Scheduler: Test #95 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #94/0 is finished on thread #0 as Succeeded within 98,4361832 seconds
+Thread#0: Test #95/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,0s)
+Thread#0:B:Dado que tenha um produto e uma obra cadastrada no sistema
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (57,4s)
+Thread#0:B:E que estou na tela de criação de pedidos
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)
+Thread#0:B:Quando crio um novo pedido manualmente "10/10/2018", "10", "GLOBONEWS" "ENCERRAMENTO"
+Thread#0:T:done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente("10/10/2018", "10", "GLOBONEWS", "ENCERRAMENTO") (13,7s)
+Thread#0:B:Entao visualizo o pedido gerado com sucesso "GLOBONEWS", "ENCERRAMENTO", "Em andamento", "Não requerido", "Não"
+Thread#0:T:done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso("GLOBONEWS", "ENCERRAMENTO", "Em andamento", "Não requerido", "Não") (0,2s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #96 from normal test queue 
+Thread#0:Scheduler: considering testitem #96 for thread 0
+Thread#0:TestItem#96:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#96:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#96:ru

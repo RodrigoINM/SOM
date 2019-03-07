@@ -1,0 +1,42 @@
+﻿2018-11-14T22:33:49.2373214-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-14T22:33:49.2743001-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-14T22:33:49.3832204-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-14T22:33:49.3842197-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-14T22:33:49.3850455-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-14T22:33:57.4799489-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-14T22:33:57.4869249-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-14T22:33:57.4879270-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-14T22:34:28.0885736-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-14T22:34:28.0885736-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-14T22:34:28.0955674-02:00;VSTestExecutionThread;Info;test results published
+2018-11-14T22:34:28.0965681-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-14T22:34:28.1035629-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-14T22:34:28.1035629-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-14T22:34:30.0884565-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-14T22:34:30.0994527-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-14T22:34:30.0994527-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-14T223349.html'
+2018-11-14T22:34:30.1114505-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-14T223349.log
+2018-11-14T22:34:30.1134431-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-14T22:40:42.8016069-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-14T22:40:42.8016069-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-14T22:40:42.8136220-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-14T22:40:42.8141151-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-14T22:40:42.8150580-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-14T22:40:51.8252195-02:00;Thread#18;Info;starting test run
+2018-11-14T22:40:51.8271575-02:00;Thread#18;Info;Discovering target: Default
+2018-11-14T22:40:51.8281433-02:00;Thread#18;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#13: 4.1.6 - Cadastro de Produto - 
+#16: Cancelar cadastro de Produto, "Produto de Teste INM" - TestAssembly:SOM.BDD/Feature:4.1.6+-+Cadastro+de+Produto/Scenario:Cancelar+cadastro+de+Produto%2c+%22Produto+de+Teste+INM%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #16 from normal test queue 
+Thread#0:Scheduler: considering testitem #16 for thread 0
+Thread#0:TestItem#16:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#16:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#16:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler

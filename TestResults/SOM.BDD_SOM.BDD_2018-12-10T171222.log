@@ -1,0 +1,61 @@
+﻿2018-12-10T17:12:22.7745700-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-10T17:12:22.7825864-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-10T17:12:22.9164913-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-10T17:12:22.9174920-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-10T17:12:22.9184885-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-10T17:12:34.0526453-02:00;Thread#12;Info;starting test run
+2018-12-10T17:12:34.0636382-02:00;Thread#12;Info;Discovering target: Default
+2018-12-10T17:12:34.0636382-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#58: 6.5.2 - Alteração da tabela de preço - 
+#71: Sair da tela sem salvar alterações de valores - TestAssembly:SOM.BDD/Feature:6.5.2+-+Altera%c3%a7%c3%a3o+da+tabela+de+pre%c3%a7o/Scenario:Sair+da+tela+sem+salvar+altera%c3%a7%c3%b5es+de+valores
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #71 from normal test queue 
+Thread#0:Scheduler: considering testitem #71 for thread 0
+Thread#0:TestItem#71:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#71:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#71:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #71 for thread 0
+Thread#0:Scheduler: Test #71 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #71/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,4s)
+Thread#0:B:Dado que estou na tela de edição da tabela de preços
+Thread#0:T:done: AlterarTabelaDePrecosSteps.DadoQueEstouNaTelaDeEdicaoDaTabelaDePrecos() (3,1s)
+Thread#0:B:Quando cancelo a alteração do nome da tabela
+Thread#0:T:done: AlterarTabelaDePrecosSteps.QuandoCanceloAAlteracaoDoNomeDaTabela() (1,2s)
+Thread#0:B:Então visualizo a tela de busca por tabela de preço
+Thread#0:T:done: CadastroDeTabelaDePrecosSteps.EntaoVisualizoATelaDeBuscaPorTabelaDePreco() (0,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #71/0 is finished on thread #0 as Succeeded within 32,739477 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-12-10T17:13:07.0569691-02:00;Thread#12;Info;test run finished
+2018-12-10T17:13:07.0579694-02:00;Thread#12;Info;publishing test results
+2018-12-10T17:13:07.0689613-02:00;Thread#12;Info;test results published
+2018-12-10T17:13:07.0689613-02:00;Thread#12;Info;generating reports
+2018-12-10T17:13:07.0809554-02:00;Thread#12;Info;creating 1 report(s)
+2018-12-10T17:13:07.0819547-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-12-10T17:13:09.1811039-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-12-10T17:13:09.1881000-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-12-10T17:13:09.1890993-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-10T171222.html'
+2018-12-10T17:13:09.2010920-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-10T171222.log

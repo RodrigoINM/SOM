@@ -1,0 +1,21 @@
+﻿2019-02-04T17:54:55.1278683-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-02-04T17:54:55.1398414-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-02-04T17:54:55.2597928-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-02-04T17:54:55.2607730-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-02-04T17:54:55.2611831-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-02-04T17:55:07.4696678-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-02-04T17:55:07.4737336-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-02-04T175455.log
+2019-02-04T17:55:07.5028788-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2019-02-04T17:55:18.8931319-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-02-04T17:55:18.8941316-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-02-04T17:55:18.9101435-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-02-04T17:55:18.9111209-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-02-04T17:55:18.9111209-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+Total: 0
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2019-02-04T17:55:25.9685920-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-02-04T17:55:25.9705715-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-02-04T175518.log

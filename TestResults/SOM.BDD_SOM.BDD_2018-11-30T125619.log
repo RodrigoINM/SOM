@@ -1,0 +1,36 @@
+﻿2018-11-30T12:52:53.6614996-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-30T12:52:53.6695127-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-30T12:52:53.8084127-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-30T12:52:53.8094125-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T12:52:53.8104118-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-30T12:53:02.9156810-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-30T12:53:02.9226771-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-30T12:53:02.9236773-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T12:55:47.1796651-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-30T12:55:47.1816661-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-30T12:55:47.1926576-02:00;VSTestExecutionThread;Info;test results published
+2018-11-30T12:55:47.1936583-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-30T12:55:47.2076491-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-30T12:55:47.2076491-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-30T12:55:49.3241346-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-30T12:55:49.3336267-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-30T12:55:49.3336267-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T125253.html'
+2018-11-30T12:55:49.3476175-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-30T125253.log
+2018-11-30T12:55:49.3516166-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-30T12:56:19.4882096-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-30T12:56:19.4882096-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-30T12:56:19.5021967-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-30T12:56:19.5021967-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-30T12:56:19.5032161-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-30T12:56:30.5079593-02:00;Thread#20;Info;starting test run
+2018-11-30T12:56:30.5099663-02:00;Thread#20;Info;Discovering target: Default
+2018-11-30T12:56:30.5109666-02:00;Thread#20;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#27: 4.1.6 - Cadastro de Produto - 
+#28: Cadastrar novo Produto, "Titulo do Produto 500" - TestAssembly:SOM.BDD/Feature:4.1.6+-+Cadastro+de+Produto/Scenario:Cadastrar+novo+Produto%2c+%22Titulo+do+Produto+500%22
+#29: Cadastrar Produto sem preenchimento de campo obrigatório, " " - TestAssembly:SOM.BDD/Feature:4.1.6+-+Cadastro+de+Produto/Scenario:Cadastrar+Produto+sem+preenchimento+de+campo+obrigat%c3%b3rio%2c+%22+%22
+#30: Cancelar cadastro de Produto, "Titulo do Produto 501" - TestAssembly:SOM.BDD/Feature:4.1.6+-+Cadastro+de+Produto/Scenario:Cancelar+cadastro+de+Produto%2c+%22Titulo+do+Produto+501%22

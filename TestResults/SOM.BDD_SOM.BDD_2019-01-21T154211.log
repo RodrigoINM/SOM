@@ -1,0 +1,71 @@
+﻿2019-01-21T15:42:10.5701514-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-21T15:42:10.6431062-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-21T15:42:11.2663327-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-21T15:42:11.2683285-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-21T15:42:11.2703300-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-21T15:42:23.5311176-02:00;Thread#12;Info;starting test run
+2019-01-21T15:42:23.5779718-02:00;Thread#12;Info;Discovering target: Default
+2019-01-21T15:42:23.5779718-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#84: 6.1.2 - Alterar itens de pedido - 
+#98: Alterar porcentagem dos autores da composição de uma obra com pedido pendente, "MUSICA COMERCIAL" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Alterar+porcentagem+dos+autores+da+composi%c3%a7%c3%a3o+de+uma+obra+com+pedido+pendente%2c+%22MUSICA+COMERCIAL%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #98 from normal test queue 
+Thread#0:Scheduler: considering testitem #98 for thread 0
+Thread#0:TestItem#98:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#98:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#98:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #98 for thread 0
+Thread#0:Scheduler: Test #98 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #98/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (30,5s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema para uma obra nacional "MUSICA COMERCIAL", " ", " ", "2018", "Sim", "Nacional", " ", "Não", "Não", "Não", "Não"
+Thread#0:T:done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistemaParaUmaObraNacional("MUSICA COMERCIAL", " ", " ", "2018", "Sim", "Nacional", " ", "Não", "Não", "Não", "Não") (126,3s)
+Thread#0:B:Quando faço uma busca pela obra associada ao pedido "Obra"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoFacoUmaBuscaPelaObraAssociadaAoPedido("Obra") (7,6s)
+Thread#0:B:E altero a porcentagem dos autores da composição "Autor", "Autor2", "30", "70"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoAlteroAPorcentagemDosAutoresDaComposicao("Autor", "Autor2", "30", "70") (26,4s)
+Thread#0:B:E seleciono o pedido a ser afetado pela alteração através do produto associado "Produto"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoSelecionoOPedidoASerAfetadoPelaAlteracaoAtravesDoProdutoAssociado("Produto") (11,1s)
+Thread#0:B:E faço uma busca pelo pedido através do nome da obra associada "Obra"
+Thread#0:T:error: invalid element state: Element is not currently interactable and may not be manipulated
+Thread#0:T:  (Session info: chrome=71.0.3578.98)
+Thread#0:T:  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+Thread#0:B:Entao visualizo que os itens anteriores foram cancelados na tela de pagamento "Autor", "Autor2", "Cancelado"
+Thread#0:T:skipped because of previous errors
+Thread#0:B:E visualizo que existem novos itens a pagar com valores diferentes "Autor", "Autor2", "A Pagar"
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #98/0 is finished on thread #0 as Failed within 531,988918 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2019-01-21T15:51:17.5501022-02:00;Thread#12;Info;test run finished
+2019-01-21T15:51:17.5657254-02:00;Thread#12;Info;publishing test results
+2019-01-21T15:51:17.6438555-02:00;Thread#12;Info;test results published
+2019-01-21T15:51:17.6438555-02:00;Thread#12;Info;generating reports
+2019-01-21T15:51:17.7063568-02:00;Thread#12;Info;creating 1 report(s)
+2019-01-21T15:51:17.7063568-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2019-01-21T15:51:21.4151942-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
+2019-01-21T15:51:21.4308188-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-21T15:51:21.4308188-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-21T154211.html'
+2019-01-21T15:51:21.4464420-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-21T154211.log

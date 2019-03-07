@@ -1,0 +1,53 @@
+﻿2019-01-17T15:20:04.6514267-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-17T15:20:04.6594208-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-17T15:20:04.7703764-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-17T15:20:04.7703764-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-17T15:20:04.7713566-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-17T15:20:15.8735769-02:00;Thread#12;Info;starting test run
+2019-01-17T15:20:15.8825926-02:00;Thread#12;Info;Discovering target: Default
+2019-01-17T15:20:15.8835905-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#78: 6.1.10 - Seleção de itens e atualização do Valor Total - 
+#80: Soma de itens no detalhe do pedido - TestAssembly:SOM.BDD/Feature:6.1.10+-+Sele%c3%a7%c3%a3o+de+itens+e+atualiza%c3%a7%c3%a3o+do+Valor+Total/Scenario:Soma+de+itens+no+detalhe+do+pedido
+#81: Subtração de itens no detalhe do pedido - TestAssembly:SOM.BDD/Feature:6.1.10+-+Sele%c3%a7%c3%a3o+de+itens+e+atualiza%c3%a7%c3%a3o+do+Valor+Total/Scenario:Subtra%c3%a7%c3%a3o+de+itens+no+detalhe+do+pedido
+#82: Soma de itens na busca por pedido - TestAssembly:SOM.BDD/Feature:6.1.10+-+Sele%c3%a7%c3%a3o+de+itens+e+atualiza%c3%a7%c3%a3o+do+Valor+Total/Scenario:Soma+de+itens+na+busca+por+pedido
+#83: Subtração de itens na busca por pedido - TestAssembly:SOM.BDD/Feature:6.1.10+-+Sele%c3%a7%c3%a3o+de+itens+e+atualiza%c3%a7%c3%a3o+do+Valor+Total/Scenario:Subtra%c3%a7%c3%a3o+de+itens+na+busca+por+pedido
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #80 from normal test queue 
+Thread#0:Scheduler: considering testitem #80 for thread 0
+Thread#0:TestItem#80:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#80:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#80:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #80 for thread 0
+Thread#0:Scheduler: Test #80 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #80/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,1s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema
+Thread#0:T:error: element not visible
+Thread#0:T:  (Session info: chrome=71.0.3578.98)
+Thread#0:T:  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+Thread#0:B:E que esteja na aba de pagamento
+Thread#0:T:skipped because of previous errors
+Thread#0:B:Quando seleciono dois itens do pedido
+Thread#0:T:skipped because of previous errors
+Thread#0:B:Entao visualizo o valor total da soma dos itens selecionados
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #81 from normal test queue 
+Thread#0:Scheduler: considering testitem #81 for thread 0
+Thread#0:TestItem#81:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#81:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#81:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #81 for thread 0
+Thread#0:Scheduler: Test #81 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #80/0 is finished on thread #0 as Failed within 51,1937464 seconds

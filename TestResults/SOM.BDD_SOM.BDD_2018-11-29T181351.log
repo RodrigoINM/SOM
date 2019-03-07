@@ -1,0 +1,61 @@
+﻿2018-11-29T18:13:50.7871791-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-29T18:13:50.8031691-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-29T18:13:51.0257275-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-29T18:13:51.0277070-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-29T18:13:51.0287259-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-29T18:14:00.1681028-02:00;Thread#12;Info;starting test run
+2018-11-29T18:14:00.1840936-02:00;Thread#12;Info;Discovering target: Default
+2018-11-29T18:14:00.1850934-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#12: 5.2.1 - Cadastrar Cue-sheet - 
+#16: Validar critica para criacao de cue-sheet como reprise/rebatida, "Reprise" - TestAssembly:SOM.BDD/Feature:5.2.1+-+Cadastrar+Cue-sheet/Scenario:Validar+critica+para+criacao+de+cue-sheet+como+reprise%2frebatida%2c+%22Reprise%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #16 from normal test queue 
+Thread#0:Scheduler: considering testitem #16 for thread 0
+Thread#0:TestItem#16:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#16:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#16:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #16 for thread 0
+Thread#0:Scheduler: Test #16 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #16/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,7s)
+Thread#0:B:Dado que tenha um produto cadastrado no sistema
+Thread#0:T:done: CadastrarCueSheetSteps.DadoQueTenhaUmProdutoCadastradoNoSistema() (6,5s)
+Thread#0:B:Quando tento cadastrar uma nova cue-sheet "Reprise"
+Thread#0:T:done: CadastrarCueSheetSteps.QuandoTentoCadastrarUmaNovaCue_Sheet("Reprise") (4,4s)
+Thread#0:B:Entao visualizo uma mensagem de critica informando que o capitulo não está cadastrado como inedito "Esta cue-sheet não pode ser uma reprise pois o capítulo não está cadastrado como inédito."
+Thread#0:T:done: CadastrarCueSheetSteps.EntaoVisualizoUmaMensagemDeCriticaInformandoQueOCapituloNaoEstaCadastradoComoInedito("Esta cue-sheet nã...") (16,6s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #16/0 is finished on thread #0 as Succeeded within 55,5380128 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-29T18:14:56.3067550-02:00;Thread#12;Info;test run finished
+2018-11-29T18:14:56.3107532-02:00;Thread#12;Info;publishing test results
+2018-11-29T18:14:56.3937035-02:00;Thread#12;Info;test results published
+2018-11-29T18:14:56.3957040-02:00;Thread#12;Info;generating reports
+2018-11-29T18:14:56.4156925-02:00;Thread#12;Info;creating 1 report(s)
+2018-11-29T18:14:56.4166923-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-11-29T18:14:58.6225574-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-11-29T18:14:58.6355470-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-29T18:14:58.6375466-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-29T181351.html'
+2018-11-29T18:14:58.6535393-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-29T181351.log

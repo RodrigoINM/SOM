@@ -1,0 +1,89 @@
+﻿2018-12-13T12:21:04.1859994-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-13T12:21:04.2259960-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-13T12:21:04.3389320-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-13T12:21:04.3392763-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-13T12:21:04.3402784-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-13T12:21:12.4136968-02:00;Thread#12;Info;starting test run
+2018-12-13T12:21:12.4206953-02:00;Thread#12;Info;Discovering target: Default
+2018-12-13T12:21:12.4216955-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#84: 6.1.2 - Alterar itens de pedido - 
+#85: Alterar valor a pagar para um item de pedido, "300.00" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Alterar+valor+a+pagar+para+um+item+de+pedido%2c+%22300.00%22
+#86: Registrar Autorização, "1 item(ns) registrado(s) com sucesso." - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Registrar+Autoriza%c3%a7%c3%a3o%2c+%221+item(ns)+registrado(s)+com+sucesso.%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #85 from normal test queue 
+Thread#0:Scheduler: considering testitem #85 for thread 0
+Thread#0:TestItem#85:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#85:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#85:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #85 for thread 0
+Thread#0:Scheduler: Test #85 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #85/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,1s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema() (133,4s)
+Thread#0:B:E que esteja na aba de pagamento
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.DadoQueEstejaNaAbaDePagamento() (7,0s)
+Thread#0:B:Quando altero o valor do pagamento, a moeda e a taxa de conversão de um item do pedido "300.00", "Dólar", "3,8", "Rodrigo"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoAlteroOValorDoPagamentoAMoedaEATaxaDeConversaoDeUmItemDoPedido("300.00", "Dólar", "3,8", "Rodrigo") (0,8s)
+Thread#0:B:Então visualizo o novo valor a ser pago para o DDA do Autor na aba de pagamento "1.140,00"
+Thread#0:T:error: unknown error: Element <uib-tab-heading class="ng-scope">...</uib-tab-heading> is not clickable at point (466, 355). Other element would receive the click: <div class="spiner-example ng-scope" ng-if="LoadItemPedidoModal == true">...</div>
+Thread#0:T:  (Session info: chrome=70.0.3538.110)
+Thread#0:T:  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #86 from normal test queue 
+Thread#0:Scheduler: considering testitem #86 for thread 0
+Thread#0:TestItem#86:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#86:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#86:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #86 for thread 0
+Thread#0:Scheduler: Test #86 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #85/0 is finished on thread #0 as Failed within 166,3647755 seconds
+Thread#0: Test #86/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (23,4s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema() (71,8s)
+Thread#0:B:Quando regsitro a autorizacao para um item do pedido "DDA"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoRegsitroAAutorizacaoParaUmItemDoPedido("DDA") (3,9s)
+Thread#0:B:Entao visualizo o pop up de confirmação para o DDA selecionado "DDA"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOPopUpDeConfirmacaoParaODDASelecionado("DDA") (4,3s)
+Thread#0:B:E a mensagem de sucesso apos confirmar a autorizacao do item do pedido "1 item(ns) registrado(s) com sucesso."
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoAMensagemDeSucessoAposConfirmarAAutorizacaoDoItemDoPedido("1 item(ns) regist...") (4,8s)
+Thread#0:B:E visualizo o status de autorizado para o item selecionado "Autorizado"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOStatusDeAutorizadoParaOItemSelecionado("Autorizado") (0,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #86/0 is finished on thread #0 as Succeeded within 113,2347794 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-12-13T12:25:52.2964706-02:00;Thread#12;Info;test run finished
+2018-12-13T12:25:52.2974709-02:00;Thread#12;Info;publishing test results
+2018-12-13T12:25:52.3882368-02:00;Thread#12;Info;test results published
+2018-12-13T12:25:52.3892380-02:00;Thread#12;Info;generating reports
+2018-12-13T12:25:52.3972325-02:00;Thread#12;Info;creating 1 report(s)
+2018-12-13T12:25:52.3982323-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-12-13T12:25:54.7681681-02:00;Thread#12;Info;reports generated
+Total: 2
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
+2018-12-13T12:25:54.7741481-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-12-13T12:25:54.7751483-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-13T122104.html'
+2018-12-13T12:25:54.7861407-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-13T122104.log

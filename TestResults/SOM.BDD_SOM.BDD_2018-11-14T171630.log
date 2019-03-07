@@ -1,0 +1,101 @@
+﻿2018-11-14T17:13:09.3570167-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-14T17:13:09.3949962-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-14T17:13:09.5079305-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-14T17:13:09.5089308-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-14T17:13:09.5099497-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-14T17:13:20.6051278-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-14T17:13:20.6121244-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-14T17:13:20.6131834-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-14T17:14:39.9308867-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-14T17:14:39.9318884-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-14T17:14:39.9388817-02:00;VSTestExecutionThread;Info;test results published
+2018-11-14T17:14:39.9398815-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-14T17:14:39.9518746-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-14T17:14:39.9528734-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-14T17:14:42.4176416-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-14T17:14:42.4256375-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-14T17:14:42.4266378-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-14T171309.html'
+2018-11-14T17:14:42.4366300-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-14T171309.log
+2018-11-14T17:14:42.4396265-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-14T17:15:01.0749733-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-14T17:15:01.0759726-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-14T17:15:01.0889683-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-14T17:15:01.0899676-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-14T17:15:01.0899676-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-14T17:15:09.1023051-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-14T17:15:09.1043219-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-14T17:15:09.1053408-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-14T17:16:20.5785831-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-14T17:16:20.5805826-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-14T17:16:20.5825817-02:00;VSTestExecutionThread;Info;test results published
+2018-11-14T17:16:20.5875862-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-14T17:16:20.5885776-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-14T17:16:20.5895774-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-14T17:16:22.3371116-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-14T17:16:22.3411098-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-14T17:16:22.3421091-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-14T171501.html'
+2018-11-14T17:16:22.3759262-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-14T171501.log
+2018-11-14T17:16:22.3779271-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-14T17:16:30.2721466-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-14T17:16:30.2731557-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-14T17:16:30.2941524-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-14T17:16:30.2941524-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-14T17:16:30.2951322-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-14T17:16:43.3000060-02:00;Thread#11;Info;starting test run
+2018-11-14T17:16:43.3020140-02:00;Thread#11;Info;Discovering target: Default
+2018-11-14T17:16:43.3040112-02:00;Thread#11;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#11: 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet - 
+#14: Alteração de obra - Pedido já existente para a mesma obra e sincronismo, "TESTE DE 500MB" - TestAssembly:SOM.BDD/Feature:6.1.1+-+Gerar+pedidos+de+pagamento+-+Cue-Sheet/Scenario:Altera%c3%a7%c3%a3o+de+obra+-+Pedido+j%c3%a1+existente+para+a+mesma+obra+e+sincronismo%2c+%22TESTE+DE+500MB%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #14 from normal test queue 
+Thread#0:Scheduler: considering testitem #14 for thread 0
+Thread#0:TestItem#14:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#14:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#14:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #14 for thread 0
+Thread#0:Scheduler: Test #14 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #14/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,8s)
+Thread#0:B:E que tenha uma cue-sheet previamente cadastrada
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetPreviamenteCadastrada() (8,3s)
+Thread#0:B:Dado que eu tenha dois pedidos gerados para itens de cue-sheet com obras diferentes "TESTE DE 500MB" e "MUSICA TESTE"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueEuTenhaDoisPedidosGeradosParaItensDeCue_SheetComObrasDiferentesE("TESTE DE 500MB", "MUSICA TESTE") (39,7s)
+Thread#0:B:Quando altero a titulo da obra "MUSICA TESTE" para o mesmo da obra "TESTE DE 500MB"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.QuandoAlteroATituloDaObraParaOMesmoDaObra("MUSICA TESTE", "TESTE DE 500MB") (15,7s)
+Thread#0:B:Então visualizo o icone de pedido no item de cue-sheet com o pedido existente associado para "TESTE DE 500MB", "FUNDO" e "41"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOIconeDePedidoNoItemDeCue_SheetComOPedidoExistenteAssociadoParaE("TESTE DE 500MB", "FUNDO", "41") (2,5s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #14/0 is finished on thread #0 as Succeeded within 120,9153729 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-14T17:18:44.3465281-02:00;Thread#11;Info;test run finished
+2018-11-14T17:18:44.3475279-02:00;Thread#11;Info;publishing test results
+2018-11-14T17:18:44.3485277-02:00;Thread#11;Info;test results published
+2018-11-14T17:18:44.3495270-02:00;Thread#11;Info;generating reports
+2018-11-14T17:18:44.3505268-02:00;Thread#11;Info;creating 1 report(s)
+2018-11-14T17:18:44.3515256-02:00;Thread#11;Info;generate Report ReportTemplate.cshtml
+2018-11-14T17:18:46.1638962-02:00;Thread#11;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-11-14T17:18:46.1678920-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-14T17:18:46.1678920-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-14T171630.html'
+2018-11-14T17:18:46.1738893-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-14T171630.log

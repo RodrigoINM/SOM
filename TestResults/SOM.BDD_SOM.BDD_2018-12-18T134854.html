@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>SOM.BDD Test Execution Report</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript">
+            /**
+            * jQuery.fn.sortElements
+            * --------------
+            * #author James Padolsey (http://james.padolsey.com)
+            * #version 0.11
+            * #updated 18-MAR-2010
+            * #url https://raw.github.com/jamespadolsey/jQuery-Plugins/master/sortElements/jquery.sortElements.js
+            * --------------
+            * #param Function comparator:
+            *   Exactly the same behaviour as [1,2,3].sort(comparator)
+            *   
+            * #param Function getSortable
+            *   A function that should return the element that is
+            *   to be sorted. The comparator will run on the
+            *   current collection, but you may want the actual
+            *   resulting sort to occur on a parent or another
+            *   associated element.
+            *   
+            *   E.g. $('td').sortElements(comparator, function(){
+            *      return this.parentNode; 
+            *   })
+            *   
+            *   The <td>'s parent (<tr>) will be sorted instead
+            *   of the <td> itself.
+            */
+            jQuery.fn.sortElements = (function () {
+
+                var sort = [].sort;
+
+                return function (comparator, getSortable) {
+
+                    getSortable = getSortable || function () { return this; };
+
+                    var placements = this.map(function () {
+
+                        var sortElement = getSortable.call(this),
+                parentNode = sortElement.parentNode,
+
+                        // Since the element itself will change position, we have
+                        // to have some way of storing it's original position in
+                        // the DOM. The easiest way is to have a 'flag' node:
+                nextSibling = parentNode.insertBefore(
+                    document.createTextNode(''),
+                    sortElement.nextSibling
+                );
+
+                        return function () {
+
+                            if (parentNode === this) {
+                                throw new Error(
+                        "You can't sort elements if any one is a descendant of another."
+                    );
+                            }
+
+                            // Insert before flag:
+                            parentNode.insertBefore(this, nextSibling);
+                            // Remove flag:
+                            parentNode.removeChild(nextSibling);
+
+                        };
+
+                    });
+
+                    return sort.call(this, comparator).each(function (i) {
+                        placements[i].call(getSortable.call(this));
+                    });
+
+                };
+
+            })();
+        </script>
+        <script type="text/javascript">
+            jQuery.fn.setBarSizes = (function () {
+                return function (metricName, maxBarSize, min) {
+                    var max = Math.max.apply(Math, $.makeArray($(this).map(function () { return Number($(this).attr('data-sr-' + metricName)); })));
+                    var scale = 1.0;
+                    while (max > 0.0 && max <= 10.0) {
+                        scale = scale * 10.0;
+                        max = max * 10.0;
+                    }
+                    max = (Math.ceil(max / 2) * 2) / scale;
+
+                    this.each(function () {
+                        var barAnchor = $(this).find('a');
+                        var actual = $(this).attr('data-sr-' + metricName);
+                        var newHeight = Math.max(Math.round(maxBarSize * (actual - min) / (max - min)), 2);
+                        barAnchor.css({ height: newHeight });
+                    });
+
+                    var unit = "";
+                    if (metricName.substr(metricName.length - 4, 4) === "time")
+                        unit = "s";
+
+                    $('#testview .scale-min-label').each(function () {
+                        $(this).text(min.toString() + unit);
+                    });
+                    $('#testview .scale-max-label').each(function () {
+                        $(this).text(max.toString() + unit);
+                    });
+                    var mid = max / 2;
+                    $('#testview .scale-mid-label').each(function () {
+                        $(this).text(mid.toString() + unit);
+                    });
+                };
+            })();
+
+            function getComparer(metricName, isDesc) {
+                return function (a, b) {
+                    var aNumber = Number($(a).attr('data-sr-' + metricName));
+                    var bNumber = Number($(b).attr('data-sr-' + metricName));
+                    var result = aNumber > bNumber ? 1 : (aNumber < bNumber ? -1 : 0);
+                    if (isDesc)
+                        result = -1 * result;
+
+                    if (result == 0 && metricName != "order")
+                        result = getComparer("order", false)(a, b);
+
+                    return result;
+                };
+            }
+
+            var currentSort = "";
+            function doSort(allowToggleDesc) {
+                var newSort = $("input[name='barSortOrder']:checked").val();
+                if (allowToggleDesc && currentSort == newSort) {
+                    $('#barSortDesc').click();
+                    doSort(false);
+                    return;
+                }
+                currentSort = newSort;
+                $('#testview td.testview-item').sortElements(getComparer(newSort, $('#barSortDesc').is(':checked')));
+            }
+
+
+            function doSetHeights(allowSort) {
+                var selectedMetric = $("input[name='barHeight']:checked").val();
+                $('#testview td.testview-item').setBarSizes(selectedMetric, 60, 0.0);
+
+                if (allowSort && currentSort != selectedMetric) {
+                    var $radios = $("input[name='barSortOrder']");
+                    $radios.filter('[value=' + selectedMetric + ']').attr('checked', true);
+                    $("#barSortDesc").attr("checked", [true]);
+                    doSort(false);
+                }
+            }
+
+            $(document).ready(function () {
+                $("input[name='barSortOrder']").click(function () { doSort(true); return true; });
+                $("input[name='barSortDesc']").change(function () { doSort(false); });
+                $("input[name='barHeight']").change(function () { doSetHeights(true); });
+
+                doSort(false);
+                doSetHeights(false);
+
+                $("div.scrollable").css({ 'overflow': 'auto' });
+            });
+        </script>
+
+        <style type="text/css">
+            body 
+            {
+                color: #000000;
+                font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;
+                line-height: 130%;
+            }
+            h1 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 170%;
+                font-weight: bold;
+            }            
+            h2 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 130%;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }            
+            h3 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 120%;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }            
+            a.bar
+            {
+                text-decoration: none;
+                display: block;
+                line-height: 1px;
+            }
+            .description
+            {
+                font-style: italic;
+            }
+            .log 
+            {
+                width: 600px;
+                white-space: pre-wrap;
+                display: block;
+                margin: 0px;
+            }
+            .errorMessage 
+            {
+                width: 600px;
+                color: Red;
+                font-weight: bold;
+            }
+            .stackTrace 
+            {
+                width: 600px;
+                white-space: pre-wrap;
+                font-style: italic;
+                color: Red;
+                display: block;
+            }
+            table.testEvents
+            {
+                border: solid 1px #e8eef4;
+                border-collapse: collapse;
+            }
+            table.testEvents td
+            {
+                vertical-align: top;
+                padding: 5px;
+                border: solid 1px #e8eef4;
+            }
+            table.testEvents th
+            {
+                padding: 6px 5px;
+                text-align: left;
+                background-color: #e8eef4;
+                border: solid 1px #e8eef4;                
+            }
+            .comment
+            {
+                font-style: italic;
+                font-size: smaller;
+            }
+            .startupBar
+            {
+                background-color: #EEEEEE;
+                cursor: default;
+            }
+            
+            .colorSucceeded
+            {
+                background-color: #90ED7B;
+            }
+            .colorIgnored
+            {
+                background-color: #FFFF85;
+            }
+            .colorPending
+            {
+                background-color: #D47BED;
+            }
+            .colorNothingToRun
+            {
+                background-color: #CCCCFF;
+            }
+            .colorSkipped
+            {
+                background-color: #CCCCFF;
+            }
+            .colorInconclusive
+            {
+                background-color: #7BEDED;
+            }
+            .colorCleanupFailed
+            {
+                background-color: #FFCCCC;
+            }
+            .colorRandomlyFailed
+            {
+                background-color: #EDB07B;
+            }
+            .colorFailed
+            {
+                background-color: #ED5F5F;
+            }
+            .colorInitializationFailed
+            {
+                background-color: #FF0000;
+            }
+            .colorFrameworkError
+            {
+                background-color: #FF0000;
+            }
+            ul.subNodeLinks
+            {
+                padding-left: 20px;
+                margin: 0px;
+            }
+            ul.subNodeLinks li
+            {
+                list-style: none;
+            }
+            
+            /* views general */
+            div.scrollable
+            {
+                /*overflow: auto; - thsi has to be set from js, because of an IE9 bug */
+            }
+            div.viewbox
+            {
+                position: relative;
+                border: 3px solid #e8eef4;
+            }
+            div.viewbox table
+            {
+                border: 0px;
+            }
+                        
+            /* testview */
+            #testview
+            {
+                padding-top: 23px;
+            }
+            
+            table.testview-items td
+            {
+                vertical-align: bottom;
+                padding: 0px 1px 0px 1px;
+            }
+            td.right-padding, td.left-padding
+            {
+                width: 25px;
+                min-width: 25px;
+            }
+            table.testview-items a.bar
+            {
+                width: 5px;
+            }
+            table.testview-items tr.testview-items-row
+            {
+                height: 60px;
+            }
+            
+            /* scale */
+            table.vertical-scale 
+            {
+                position: absolute;
+                top: 23px;
+                left: 0px;
+                width: 100%;
+                z-index: -100;
+            }
+            table.vertical-scale td, tr.horizontal-scale td
+            {
+                font-size: 60%;
+                line-height: normal;
+            }
+            table.vertical-scale tr.scale-max, table.vertical-scale tr.scale-mid 
+            {
+                height: 30px;
+            }
+            tr.horizontal-scale, table.vertical-scale tr.scale-min 
+            {
+                height: 12px;
+            }
+            
+            td.scale-max-label, td.scale-mid-label, td.scale-min-label
+            {
+                border-top: solid 1px #E6E6E6;
+                text-align: left;
+                vertical-align: top;
+            }
+            td.scale-10-label
+            {
+                border-left: solid 1px #E6E6E6;
+                text-align: left;
+                vertical-align: bottom;
+                padding-left: 1px;
+            }
+            tr.scale-mid td, tr.scale-min td, tr.scale-max td
+            {
+                border-top: solid 1px #E6E6E6;
+            }
+           
+            
+            /* bar-control */
+            #bar-control
+            {
+                font-size: 60%;
+                line-height: normal;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+            #bar-control label
+            {
+                font-weight: bold;
+                vertical-align: middle;
+            }
+            #bar-control .option
+            {
+                vertical-align: middle;
+                text-transform: lowercase;
+            }
+            #bar-control input[type="checkbox"]
+            {
+                padding: 0 2px 0 3px;
+            }
+            #bar-control input
+            {
+                vertical-align: top;
+                height: 12px;
+                margin: 0px;
+                padding: 0px;
+            }
+            #bar-control div
+            {
+                float: right;
+                margin: 3px 5px 3px 5px;
+            }
+            
+            
+            /* timeline view */
+            #timelineview
+            {
+                padding-top: 5px;
+            }
+            table.timelineview a
+            {
+                height: 20px;
+            }
+            table.timelineview td
+            {
+                vertical-align: bottom;
+                padding: 0px 1px 0px 0px;
+                border: 0px;
+            }
+            tr.thread-items-row
+            {
+                height: 25px;
+            }
+            tr.thread-items-row td
+            {
+                vertical-align: bottom;
+            }
+            td.thread-label
+            {
+                padding: 0px 6px 0px 6px;
+                text-align: right;
+                line-height: 18px;
+                vertical-align: bottom;
+            }
+            th.thread-label
+            {
+                padding: 3px 6px 0px 6px;
+                line-height: 18px;
+                text-align: left;
+                vertical-align: bottom;
+            }
+        </style>
+	</head>
+	<body>
+        <h1>SOM.BDD Test Execution Report</h1>
+        <ul>
+            <li>Project: SOM.BDD</li>
+            <li>Configuration: SOM.BDD</li>
+            <li>Test Assemblies: SOM.BDD.dll</li>
+            <li>Start Time: 18/12/2018 13:49:02</li>
+            <li>Duration: 00:14:44.3378996</li>
+            <li>Test Threads: 1</li>
+        </ul>
+
+        <h2>Result: 1 failed</h2>
+        <table class="testEvents">
+                <tr>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                <tr>
+            <td>
+            89%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 177px;" 
+                           title="8 succeeded" 
+                                                   />
+                    </td>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 21px;" 
+                           title="1 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>9</td>
+    <td>8</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+    </tr>
+
+        </table>
+        
+        <h2>Test Timeline Summary</h2>
+
+        <div id="timelineview" class="viewbox">
+            <div class="scrollable">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th class="thread-label" colspan="2">thread</th>
+                    </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: NBMTZRAZEVEDO">#0</td>
+                            <td colspan="1">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 3px;" 
+                title="Alterar valor a pagar para um item de pedido, &quot;300,00&quot; (in 6.1.2 - Alterar itens de pedido)" 
+                href="#t32492657.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Validar item bloqueado para edi&#231;&#227;o quando j&#225; estiver Aprovado, &quot;300,00&quot; (in 6.1.2 - Alterar itens de pedido)" 
+                href="#t115357666.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 8px;" 
+                title="Registrar Autoriza&#231;&#227;o, &quot;1 item(ns) registrado(s) com sucesso.&quot; (in 6.1.2 - Alterar itens de pedido)" 
+                href="#t-702641394.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 4px;" 
+                title="Validar o pagamento para o Administrador com sucesso, &quot;Sim&quot; (in 6.1.2 - Alterar itens de pedido)" 
+                href="#t-861510418.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 4px;" 
+                title="Alterar o valor do DNI com sucesso, &quot;300,00&quot; (in 6.1.2 - Alterar itens de pedido)" 
+                href="#t1310032802.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 7px;" 
+                title="Cancelar um item de pedido no detelhe do pedido, &quot;Pendente&quot; (in 6.1.2 - Alterar itens de pedido)" 
+                href="#t1239222411.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 4px;" 
+                title="Cancelar um item de pedido no detelhe do pedido, &quot;Aguardando Autoriza&#231;&#227;o&quot; (in 6.1.2 - Alterar itens de pedido)" 
+                href="#t1907106758.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 5px;" 
+                title="Remover registro de Pagamento Ao Administrador com sucesso, &quot;Itens do pedido atualizados com sucesso!&quot; (in 6.1.2 - Alterar itens de pedido)" 
+                href="#t284327863.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 9px;" 
+                title="Alterar nacionalidade para obras com pedido pendente, &quot;MUSICA COMERCIAL&quot; (in 6.1.2 - Alterar itens de pedido)" 
+                href="#t-470356644.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="horizontal-scale">
+                        <td>&nbsp;</td>
+                        <td class="scale-10-label">0s</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <h2>Test Result View</h2>
+        <div id="testview" class="viewbox">
+            <div id="bar-control">
+                <div id="bar-control-sort">
+                    <label>sort by:</label>
+                    <span class="option"><input type="radio" name="barSortOrder" value="exectime" />Time</span>
+                    <span class="option"><input type="radio" name="barSortOrder" value="acttime" />Act Time</span>
+                    <span class="option"><input type="radio" name="barSortOrder" value="order" />Execution</span>
+                    <span class="option"><input type="radio" name="barSortOrder" value="rescode" checked="checked" />Result</span>
+                    <span class="option"><input type="checkbox" name="barSortDesc" id="barSortDesc" checked="checked" />desc</span>
+                </div>
+                <div id="bar-control-heights">
+                    <label>heights:</label>
+                    <span class="option"><input type="radio" checked="checked" name="barHeight" value="exectime" />Time</span>
+                    <span class="option"><input type="radio" name="barHeight" value="acttime" />Act Time</span>
+                    
+                </div>
+            </div>
+            <table class="vertical-scale" cellpadding="0" cellspacing="0">
+                <tr class="scale-max">
+                    <td class="left-padding scale-max-label">&nbsp;</td>
+                    <td colspan="9">&nbsp;</td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+                <tr class="scale-mid">
+                    <td class="left-padding scale-mid-label">&nbsp;</td>
+                    <td colspan="9">&nbsp;</td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+                <tr class="scale-min">
+                    <td class="left-padding scale-min-label">&nbsp;</td>
+                    <td colspan="9">&nbsp;</td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+            </table>
+            <div class="scrollable">
+                <table class="testview-items" cellpadding="0" cellspacing="0">
+                    <tr class="testview-items-row">
+                        <td class="left-padding">&nbsp;</td>
+    <td class="testview-item" 
+        data-sr-exectime="116.4740025" data-sr-rescode="110" data-sr-order="0" data-sr-acttime="1.402">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 49px;"
+            title="Alterar valor a pagar para um item de pedido, &quot;300,00&quot; (in 6.1.2 - Alterar itens de pedido)"
+            href="#t32492657.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="96.4396029" data-sr-rescode="110" data-sr-order="1" data-sr-acttime="0.094">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 40px;"
+            title="Validar item bloqueado para edi&#231;&#227;o quando j&#225; estiver Aprovado, &quot;300,00&quot; (in 6.1.2 - Alterar itens de pedido)"
+            href="#t115357666.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="124.4284244" data-sr-rescode="110" data-sr-order="2" data-sr-acttime="8.112">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 52px;"
+            title="Registrar Autoriza&#231;&#227;o, &quot;1 item(ns) registrado(s) com sucesso.&quot; (in 6.1.2 - Alterar itens de pedido)"
+            href="#t-702641394.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="68.2874666" data-sr-rescode="110" data-sr-order="3" data-sr-acttime="5.715">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 28px;"
+            title="Validar o pagamento para o Administrador com sucesso, &quot;Sim&quot; (in 6.1.2 - Alterar itens de pedido)"
+            href="#t-861510418.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="68.2212813" data-sr-rescode="110" data-sr-order="4" data-sr-acttime="12.832">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 28px;"
+            title="Alterar o valor do DNI com sucesso, &quot;300,00&quot; (in 6.1.2 - Alterar itens de pedido)"
+            href="#t1310032802.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="119.1840992" data-sr-rescode="110" data-sr-order="5" data-sr-acttime="8.811">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 50px;"
+            title="Cancelar um item de pedido no detelhe do pedido, &quot;Pendente&quot; (in 6.1.2 - Alterar itens de pedido)"
+            href="#t1239222411.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="81.2256896" data-sr-rescode="110" data-sr-order="7" data-sr-acttime="23.225">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 34px;"
+            title="Remover registro de Pagamento Ao Administrador com sucesso, &quot;Itens do pedido atualizados com sucesso!&quot; (in 6.1.2 - Alterar itens de pedido)"
+            href="#t284327863.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="143.8686173" data-sr-rescode="110" data-sr-order="8" data-sr-acttime="25.19">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 60px;"
+            title="Alterar nacionalidade para obras com pedido pendente, &quot;MUSICA COMERCIAL&quot; (in 6.1.2 - Alterar itens de pedido)"
+            href="#t-470356644.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="65.9262321" data-sr-rescode="440" data-sr-order="6" data-sr-acttime="0.001">
+        <a
+            class="bar colorFailed" 
+            style="height: 27px;"
+            title="Cancelar um item de pedido no detelhe do pedido, &quot;Aguardando Autoriza&#231;&#227;o&quot; (in 6.1.2 - Alterar itens de pedido)"
+            href="#t1907106758.0">&nbsp;</a>
+    </td>
+                        <td class="right-padding">&nbsp;</td>
+                    </tr>
+                    <tr class="horizontal-scale">
+                        <td class="left-padding">&nbsp;</td>
+                        <td colspan="10">&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <h2>Feature Summary</h2>
+        <table class="testEvents">
+                <tr>
+            <th>Feature</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+    <tr>
+            <td><a href="#f-865755198">6.1.2 - Alterar itens de pedido</a></td>
+            <td>
+            89%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 177px;" 
+                           title="8 succeeded" 
+                                                   />
+                    </td>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 21px;" 
+                           title="1 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>9</td>
+    <td>8</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:14:44.0554159</td>
+
+    </tr>
+        </table>
+
+        <a name="error_summary" />
+        <h2>Error Summary</h2>
+        <table class="testEvents">
+                <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                <tr>
+                    <td>
+                        <a href="#t1907106758.0">Cancelar um item de pedido no detelhe do pedido, &quot;Aguardando Autoriza&#231;&#227;o&quot; (in SOM.BDD, 6.1.2 - Alterar itens de pedido)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 199px;" 
+                           title="1 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: element not visible
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</div></td>
+                </tr>
+        </table>
+
+        <h2>Scenario Summary</h2>
+            <a name="f-865755198" />
+            <h3>Feature: 6.1.2 - Alterar itens de pedido</h3>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t32492657.0">Scenario: Alterar valor a pagar para um item de pedido, &quot;300,00&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:01:56.4740025</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t115357666.0">Scenario: Validar item bloqueado para edi&#231;&#227;o quando j&#225; estiver Aprovado, &quot;300,00&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:01:36.4396029</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-702641394.0">Scenario: Registrar Autoriza&#231;&#227;o, &quot;1 item(ns) registrado(s) com sucesso.&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:04.4284244</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-861510418.0">Scenario: Validar o pagamento para o Administrador com sucesso, &quot;Sim&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:01:08.2874666</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1310032802.0">Scenario: Alterar o valor do DNI com sucesso, &quot;300,00&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:01:08.2212813</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1239222411.0">Scenario: Cancelar um item de pedido no detelhe do pedido, &quot;Pendente&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:01:59.1840992</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1907106758.0">Scenario: Cancelar um item de pedido no detelhe do pedido, &quot;Aguardando Autoriza&#231;&#227;o&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 199px;" 
+                           title="1 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:01:05.9262321</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t284327863.0">Scenario: Remover registro de Pagamento Ao Administrador com sucesso, &quot;Itens do pedido atualizados com sucesso!&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:01:21.2256896</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-470356644.0">Scenario: Alterar nacionalidade para obras com pedido pendente, &quot;MUSICA COMERCIAL&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:23.8686173</td>
+
+                        
+                    </tr>
+            </table>
+
+        <h2>Execution Details</h2>
+            <a name="t32492657.0" />
+            <h3>Scenario: Alterar valor a pagar para um item de pedido, &quot;300,00&quot; (in SOM.BDD, 6.1.2 - Alterar itens de pedido)</h3>
+                <div class="description">
+                    tags: kill_Driver, AlterarItensDePedido, chrome, AlterarItensDePedidoCT01, Pedidos
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 18/12/2018 13:49:02</li>
+                <li>Execution time (sec): 116,4740025</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log"></pre>
+                        </td>
+                        <td>
+                            <!-- [Initialization: Feature - 6.1.2 - Alterar itens de pedido] -->
+                            <pre class="log">-&gt; Using app.config</pre>
+                        </td>
+                        <td>Succeeded in 0.139s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Alterar valor a pagar para um item de pedido, &quot;300,00&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,6s)</pre>
+                        </td>
+                        <td>Succeeded in 27.991s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um pedido previamente cadastrado no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Alterar valor a pagar para um item de pedido, &quot;300,00&quot;] -->
+                            <pre class="log">done: ExibirValorTotalDoPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema() (79,4s)</pre>
+                        </td>
+                        <td>Succeeded in 79.397s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que esteja na aba de pagamento</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Alterar valor a pagar para um item de pedido, &quot;300,00&quot;] -->
+                            <pre class="log">done: ExibirValorTotalDoPedidoSteps.DadoQueEstejaNaAbaDePagamento() (5,1s)</pre>
+                        </td>
+                        <td>Succeeded in 5.069s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando altero o valor do pagamento, a moeda e a taxa de convers&#227;o de um item do pedido &quot;300,00&quot;, &quot;D&#243;lar&quot;, &quot;3,8&quot;, &quot;Rodrigo&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Alterar valor a pagar para um item de pedido, &quot;300,00&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.QuandoAlteroOValorDoPagamentoAMoedaEATaxaDeConversaoDeUmItemDoPedido(&quot;300,00&quot;, &quot;D&#243;lar&quot;, &quot;3,8&quot;, &quot;Rodrigo&quot;) (1,4s)</pre>
+                        </td>
+                        <td>Succeeded in 1.402s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o visualizo o novo valor a ser pago para o DDA do Autor na aba de pagamento &quot;1.140,00&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Alterar valor a pagar para um item de pedido, &quot;300,00&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.EntaoVisualizoONovoValorASerPagoParaODDADoAutorNaAbaDePagamento(&quot;1.140,00&quot;) (2,3s)</pre>
+                        </td>
+                        <td>Succeeded in 2.325s</td>
+                    </tr>
+            </table>
+            <a name="t115357666.0" />
+            <h3>Scenario: Validar item bloqueado para edi&#231;&#227;o quando j&#225; estiver Aprovado, &quot;300,00&quot; (in SOM.BDD, 6.1.2 - Alterar itens de pedido)</h3>
+                <div class="description">
+                    tags: kill_Driver, AlterarItensDePedido, chrome, AlterarItensDePedidoCT02, Pedidos
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 18/12/2018 13:50:59</li>
+                <li>Execution time (sec): 96,4396029</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Validar item bloqueado para edi&#231;&#227;o quando j&#225; estiver Aprovado, &quot;300,00&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,8s)</pre>
+                        </td>
+                        <td>Succeeded in 27.692s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um pedido previamente cadastrado no sistema &quot;TESTE DE 500MB&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Validar item bloqueado para edi&#231;&#227;o quando j&#225; estiver Aprovado, &quot;300,00&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema(&quot;TESTE DE 500MB&quot;) (26,2s)</pre>
+                        </td>
+                        <td>Succeeded in 26.176s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que possua um item com status de aguardando aprovacao &quot;Aguardando Aprova&#231;&#227;o&quot;, &quot;ALYNE WAITE&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Validar item bloqueado para edi&#231;&#227;o quando j&#225; estiver Aprovado, &quot;300,00&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.DadoQuePossuaUmItemComStatusDeAguardandoAprovacao(&quot;Aguardando Aprova&#231;&#227;o&quot;, &quot;ALYNE WAITE&quot;) (40,3s)</pre>
+                        </td>
+                        <td>Succeeded in 40.262s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando tento editar esse item &quot;ALYNE WAITE&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Validar item bloqueado para edi&#231;&#227;o quando j&#225; estiver Aprovado, &quot;300,00&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.QuandoTentoEditarEsseItem(&quot;ALYNE WAITE&quot;) (0,1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.094s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo os campos de &quot;300,00&quot;, &quot;D&#243;lar&quot; e &quot;3,8&quot; bloqueados para edicao</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Validar item bloqueado para edi&#231;&#227;o quando j&#225; estiver Aprovado, &quot;300,00&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.EntaoVisualizoOsCamposDeEBloqueadosParaEdicao(&quot;300,00&quot;, &quot;D&#243;lar&quot;, &quot;3,8&quot;) (2,1s)</pre>
+                        </td>
+                        <td>Succeeded in 2.123s</td>
+                    </tr>
+            </table>
+            <a name="t-702641394.0" />
+            <h3>Scenario: Registrar Autoriza&#231;&#227;o, &quot;1 item(ns) registrado(s) com sucesso.&quot; (in SOM.BDD, 6.1.2 - Alterar itens de pedido)</h3>
+                <div class="description">
+                    tags: kill_Driver, AlterarItensDePedido, chrome, AlterarItensDePedidoCT03, Pedidos
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 18/12/2018 13:52:35</li>
+                <li>Execution time (sec): 124,4284244</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Registrar Autoriza&#231;&#227;o, &quot;1 item(ns) registrado(s) com sucesso.&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,7s)</pre>
+                        </td>
+                        <td>Succeeded in 26.521s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um pedido previamente cadastrado no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Registrar Autoriza&#231;&#227;o, &quot;1 item(ns) registrado(s) com sucesso.&quot;] -->
+                            <pre class="log">done: ExibirValorTotalDoPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema() (80,2s)</pre>
+                        </td>
+                        <td>Succeeded in 80.237s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando regsitro a autorizacao para um item do pedido &quot;ALYNE WAITE&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Registrar Autoriza&#231;&#227;o, &quot;1 item(ns) registrado(s) com sucesso.&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.QuandoRegsitroAAutorizacaoParaUmItemDoPedido(&quot;ALYNE WAITE&quot;) (8,1s)</pre>
+                        </td>
+                        <td>Succeeded in 8.112s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pop up de confirma&#231;&#227;o para o DDA selecionado &quot;ALYNE WAITE&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Registrar Autoriza&#231;&#227;o, &quot;1 item(ns) registrado(s) com sucesso.&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.EntaoVisualizoOPopUpDeConfirmacaoParaODDASelecionado(&quot;ALYNE WAITE&quot;) (4,3s)</pre>
+                        </td>
+                        <td>Succeeded in 4.294s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E a mensagem de sucesso apos confirmar a autorizacao do item do pedido &quot;1 item(ns) registrado(s) com sucesso.&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Registrar Autoriza&#231;&#227;o, &quot;1 item(ns) registrado(s) com sucesso.&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.EntaoAMensagemDeSucessoAposConfirmarAAutorizacaoDoItemDoPedido(&quot;1 item(ns) regist...&quot;) (5,1s)</pre>
+                        </td>
+                        <td>Succeeded in 5.102s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E visualizo o status de autorizado para o item selecionado &quot;Autorizado&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Registrar Autoriza&#231;&#227;o, &quot;1 item(ns) registrado(s) com sucesso.&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.EntaoVisualizoOStatusDeAutorizadoParaOItemSelecionado(&quot;Autorizado&quot;) (0,1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.078s</td>
+                    </tr>
+            </table>
+            <a name="t-861510418.0" />
+            <h3>Scenario: Validar o pagamento para o Administrador com sucesso, &quot;Sim&quot; (in SOM.BDD, 6.1.2 - Alterar itens de pedido)</h3>
+                <div class="description">
+                    tags: kill_Driver, AlterarItensDePedido, chrome, AlterarItensDePedidoCT04, Pedidos
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 18/12/2018 13:54:40</li>
+                <li>Execution time (sec): 68,2874666</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Validar o pagamento para o Administrador com sucesso, &quot;Sim&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,9s)</pre>
+                        </td>
+                        <td>Succeeded in 25.782s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um pedido previamente cadastrado no sistema &quot;TESTE DE 500MB&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Validar o pagamento para o Administrador com sucesso, &quot;Sim&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema(&quot;TESTE DE 500MB&quot;) (26,0s)</pre>
+                        </td>
+                        <td>Succeeded in 26.053s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando fa&#231;o o pagamento ao Administrador &quot;ALYNE WAITE&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Validar o pagamento para o Administrador com sucesso, &quot;Sim&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.QuandoFacoOPagamentoAoAdministrador(&quot;ALYNE WAITE&quot;) (5,7s)</pre>
+                        </td>
+                        <td>Succeeded in 5.715s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o visualizo a mensagem de sucesso ap&#243;s confirmar o pagamento ao administrador &quot;Itens do pedido atualizados com sucesso!&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Validar o pagamento para o Administrador com sucesso, &quot;Sim&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.EntaoVisualizoAMensagemDeSucessoAposConfirmarOPagamentoAoAdministrador(&quot;Itens do pedido a...&quot;) (8,4s)</pre>
+                        </td>
+                        <td>Succeeded in 8.362s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E visualizo o campo de pagar ao administrador preenchido &quot;ALYNE WAITE&quot;, &quot;Sim&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Validar o pagamento para o Administrador com sucesso, &quot;Sim&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.EntaoVisualizoOCampoDePagarAoAdministradorPreenchido(&quot;ALYNE WAITE&quot;, &quot;Sim&quot;) (2,3s)</pre>
+                        </td>
+                        <td>Succeeded in 2.257s</td>
+                    </tr>
+            </table>
+            <a name="t1310032802.0" />
+            <h3>Scenario: Alterar o valor do DNI com sucesso, &quot;300,00&quot; (in SOM.BDD, 6.1.2 - Alterar itens de pedido)</h3>
+                <div class="description">
+                    tags: kill_Driver, AlterarItensDePedido, chrome, AlterarItensDePedidoCT05, Pedidos
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 18/12/2018 13:55:48</li>
+                <li>Execution time (sec): 68,2212813</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Alterar o valor do DNI com sucesso, &quot;300,00&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,6s)</pre>
+                        </td>
+                        <td>Succeeded in 26.525s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um pedido previamente cadastrado no sistema &quot;TESTE DE 500MB&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Alterar o valor do DNI com sucesso, &quot;300,00&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema(&quot;TESTE DE 500MB&quot;) (26,4s)</pre>
+                        </td>
+                        <td>Succeeded in 26.405s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando adiciono um item de DNI no pedido</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Alterar o valor do DNI com sucesso, &quot;300,00&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.QuandoAdicionoUmItemDeDNINoPedido() (9,7s)</pre>
+                        </td>
+                        <td>Succeeded in 9.704s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E insiro um valor para o campo de pagamento do DNI &quot;DNI&quot;, &quot;300,00&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Alterar o valor do DNI com sucesso, &quot;300,00&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.QuandoInsiroUmValorParaOCampoDePagamentoDoDNI(&quot;DNI&quot;, &quot;300,00&quot;) (3,1s)</pre>
+                        </td>
+                        <td>Succeeded in 3.128s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o o valor do item de DNI atualizado &quot;Item de pedido alterado com sucesso.&quot;, &quot;DNI&quot;, &quot;300,00&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Alterar o valor do DNI com sucesso, &quot;300,00&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.EntaoOValorDoItemDeDNIAtualizado(&quot;Item de pedido al...&quot;, &quot;DNI&quot;, &quot;300,00&quot;) (2,4s)</pre>
+                        </td>
+                        <td>Succeeded in 2.369s</td>
+                    </tr>
+            </table>
+            <a name="t1239222411.0" />
+            <h3>Scenario: Cancelar um item de pedido no detelhe do pedido, &quot;Pendente&quot; (in SOM.BDD, 6.1.2 - Alterar itens de pedido)</h3>
+                <div class="description">
+                    tags: kill_Driver, AlterarItensDePedido, chrome, AlterarItensDePedidoCT06, Pedidos
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 18/12/2018 13:56:56</li>
+                <li>Execution time (sec): 119,1840992</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Cancelar um item de pedido no detelhe do pedido, &quot;Pendente&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,5s)</pre>
+                        </td>
+                        <td>Succeeded in 26.363s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um pedido previamente cadastrado no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Cancelar um item de pedido no detelhe do pedido, &quot;Pendente&quot;] -->
+                            <pre class="log">done: ExibirValorTotalDoPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema() (81,7s)</pre>
+                        </td>
+                        <td>Succeeded in 81.701s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando cancelo um item de pedido para um autor &quot;Total de itens cancelados: 1&quot;, &quot;Pendente&quot;, &quot;Autor&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Cancelar um item de pedido no detelhe do pedido, &quot;Pendente&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.QuandoCanceloUmItemDePedidoParaUmAutor(&quot;Total de itens ca...&quot;, &quot;Pendente&quot;, &quot;Autor&quot;) (8,8s)</pre>
+                        </td>
+                        <td>Succeeded in 8.811s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o visualizo o item do pedido com o status de cancelado &quot;Cancelado&quot;, &quot;Autor&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Cancelar um item de pedido no detelhe do pedido, &quot;Pendente&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.EntaoVisualizoOItemDoPedidoComOStatusDeCancelado(&quot;Cancelado&quot;, &quot;Autor&quot;) (0,2s)</pre>
+                        </td>
+                        <td>Succeeded in 0.157s</td>
+                    </tr>
+            </table>
+            <a name="t1907106758.0" />
+            <h3>Scenario: Cancelar um item de pedido no detelhe do pedido, &quot;Aguardando Autoriza&#231;&#227;o&quot; (in SOM.BDD, 6.1.2 - Alterar itens de pedido)</h3>
+                <div class="description">
+                    tags: kill_Driver, AlterarItensDePedido, chrome, AlterarItensDePedidoCT06, Pedidos
+                </div>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 18/12/2018 13:58:55</li>
+                <li>Execution time (sec): 65,9262321</li>
+                <li>Thread: #0</li>
+                <li>Error: element not visible
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Cancelar um item de pedido no detelhe do pedido, &quot;Aguardando Autoriza&#231;&#227;o&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,7s)</pre>
+                        </td>
+                        <td>Succeeded in 26.604s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um pedido previamente cadastrado no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Cancelar um item de pedido no detelhe do pedido, &quot;Aguardando Autoriza&#231;&#227;o&quot;] -->
+                            <pre class="log">error: element not visible
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</pre>
+                                <div class="errorMessage">element not visible
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</div>
+                                <pre class="stackTrace">OpenQA.Selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   em OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   em OpenQA.Selenium.Remote.RemoteWebElement.Click()
+   em Framework.Core.FrameworkActions.MouseActions.ClickATM[T](T browser, Element elemento) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\Framework.Core\FrameworkActions\MouseActions.cs:linha 64
+   em SOM.BDD.Pages.Obra.CadastrarObraEComposicaoPage.CadastrarAutorComposicao(String NomeAutor) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Pages\Obra\CadastrarObraEComposicaoPage.cs:linha 524
+   em SOM.BDD.Pages.Obra.CadastrarObraEComposicaoPage.CadastrarAutorRandomico(String Numero) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Pages\Obra\CadastrarObraEComposicaoPage.cs:linha 518
+   em SOM.BDD.Pages.Obra.CadastrarObraEComposicaoPage.CadastrarComposicaoManualmente(String Percentual, String Numero) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Pages\Obra\CadastrarObraEComposicaoPage.cs:linha 433
+   em SOM.BDD.Steps.Pagamento.Pedido.ExibirValorTotalDoPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Steps\Pagamento\Pedido\6.1.10-ExibirValorTotalDoPedidoSteps.cs:linha 46
+   em lambda_method(Closure , IContextManager )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_2_AlterarItensDePedidoFeature.ScenarioCleanup()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_2_AlterarItensDePedidoFeature.CancelarUmItemDePedidoNoDetelheDoPedido(String statusDeAprovacao, String statusFinal, String mensagem, String autor, String[] exampleTags) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Features\Pagamento\Pedido\6.1.2 - Alterar Item Pedido.feature:linha 72
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_2_AlterarItensDePedidoFeature.CancelarUmItemDePedidoNoDetelheDoPedido_AguardandoAutorizacao() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Features\Pagamento\Pedido\6.1.2 - Alterar Item Pedido.feature:linha 69
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType)</pre>
+                        </td>
+                        <td>Failed in 39.246s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando cancelo um item de pedido para um autor &quot;Total de itens cancelados: 1&quot;, &quot;Aguardando Autoriza&#231;&#227;o&quot;, &quot;Autor2&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Cancelar um item de pedido no detelhe do pedido, &quot;Aguardando Autoriza&#231;&#227;o&quot;] -->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.001s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o visualizo o item do pedido com o status de cancelado &quot;Cancelado&quot;, &quot;Autor2&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Cancelar um item de pedido no detelhe do pedido, &quot;Aguardando Autoriza&#231;&#227;o&quot;] -->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.006s</td>
+                    </tr>
+            </table>
+            <a name="t284327863.0" />
+            <h3>Scenario: Remover registro de Pagamento Ao Administrador com sucesso, &quot;Itens do pedido atualizados com sucesso!&quot; (in SOM.BDD, 6.1.2 - Alterar itens de pedido)</h3>
+                <div class="description">
+                    tags: kill_Driver, AlterarItensDePedido, chrome, AlterarItensDePedidoCT07, Pedidos
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 18/12/2018 14:00:01</li>
+                <li>Execution time (sec): 81,2256896</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Remover registro de Pagamento Ao Administrador com sucesso, &quot;Itens do pedido atualizados com sucesso!&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,0s)</pre>
+                        </td>
+                        <td>Succeeded in 26.815s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um pedido previamente cadastrado no sistema &quot;TESTE DE 500MB&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Remover registro de Pagamento Ao Administrador com sucesso, &quot;Itens do pedido atualizados com sucesso!&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema(&quot;TESTE DE 500MB&quot;) (27,0s)</pre>
+                        </td>
+                        <td>Succeeded in 26.995s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando removo o registro de pagamento ao administrador &quot;ALYNE WAITE&quot;, &quot;Itens do pedido atualizados com sucesso!&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Remover registro de Pagamento Ao Administrador com sucesso, &quot;Itens do pedido atualizados com sucesso!&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.QuandoRemovoORegistroDePagamentoAoAdministrador(&quot;ALYNE WAITE&quot;, &quot;Itens do pedido a...&quot;) (23,2s)</pre>
+                        </td>
+                        <td>Succeeded in 23.225s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Ent&#227;o visualizo a mensagem de altera&#231;&#227;o realizada com sucesso ao remover o registro de pagamento ao administrador &quot;Itens do pedido atualizados com sucesso!&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Remover registro de Pagamento Ao Administrador com sucesso, &quot;Itens do pedido atualizados com sucesso!&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.EntaoVisualizoAMensagemDeAlteracaoRealizadaComSucessoAoRemoverORegistroDePagamentoAoAdministrador(&quot;Itens do pedido a...&quot;) (4,1s)</pre>
+                        </td>
+                        <td>Succeeded in 4.083s</td>
+                    </tr>
+            </table>
+            <a name="t-470356644.0" />
+            <h3>Scenario: Alterar nacionalidade para obras com pedido pendente, &quot;MUSICA COMERCIAL&quot; (in SOM.BDD, 6.1.2 - Alterar itens de pedido)</h3>
+                <div class="description">
+                    tags: kill_Driver, AlterarItensDePedido, chrome, AlterarItensDePedidoCT08, Obra
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 18/12/2018 14:01:23</li>
+                <li>Execution time (sec): 143,8686173</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Alterar nacionalidade para obras com pedido pendente, &quot;MUSICA COMERCIAL&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,0s)</pre>
+                        </td>
+                        <td>Succeeded in 25.879s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um pedido previamente cadastrado no sistema para uma obra nacional &quot;MUSICA COMERCIAL&quot;, &quot; &quot;, &quot; &quot;, &quot;2018&quot;, &quot;Sim&quot;, &quot;Nacional&quot;, &quot; &quot;, &quot;N&#227;o&quot;, &quot;N&#227;o&quot;, &quot;N&#227;o&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Alterar nacionalidade para obras com pedido pendente, &quot;MUSICA COMERCIAL&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistemaParaUmaObraNacional(&quot;MUSICA COMERCIAL&quot;, &quot; &quot;, &quot; &quot;, &quot;2018&quot;, &quot;Sim&quot;, &quot;Nacional&quot;, &quot; &quot;, &quot;N&#227;o&quot;, &quot;N&#227;o&quot;, &quot;N&#227;o&quot;, &quot;N&#227;o&quot;) (82,0s)</pre>
+                        </td>
+                        <td>Succeeded in 82.06s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando altero a nacionalidade da obra para internacional &quot;Internacional&quot;, &quot;Alemanha&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Alterar nacionalidade para obras com pedido pendente, &quot;MUSICA COMERCIAL&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.QuandoAlteroANacionalidadeDaObraParaInternacional(&quot;Internacional&quot;, &quot;Alemanha&quot;) (16,2s)</pre>
+                        </td>
+                        <td>Succeeded in 16.167s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E seleciono o pedido a ser afetado pela alteracao</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Alterar nacionalidade para obras com pedido pendente, &quot;MUSICA COMERCIAL&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.QuandoSelecionoOPedidoASerAfetadoPelaAlteracao() (9,0s)</pre>
+                        </td>
+                        <td>Succeeded in 9.022s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo que os itens do pedido foram cancelados</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Alterar nacionalidade para obras com pedido pendente, &quot;MUSICA COMERCIAL&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.EntaoVisualizoQueOsItensDoPedidoForamCancelados() (8,4s)</pre>
+                        </td>
+                        <td>Succeeded in 8.388s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E visualizo que foram criados outros itens com o valor referente a tabela de preco internacional</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Alterar nacionalidade para obras com pedido pendente, &quot;MUSICA COMERCIAL&quot;] -->
+                            <pre class="log">done: AlterarItemPedidoSteps.EntaoVisualizoQueForamCriadosOutrosItensComOValorReferenteATabelaDePrecoInternacional() (2,2s)</pre>
+                        </td>
+                        <td>Succeeded in 2.235s</td>
+                    </tr>
+            </table>
+	</body>
+</html>
+</a><div style='position: absolute; top:0px; right:10px; z-index: 1000; text-align: right; font-size: small; color: #FF5555'>
+Generated by an evaluation version of SpecRun.<br />
+This version can be used for evaluation purposes only.<br />
+For obtaining a registered license please visit <a href='http://www.specflow.org/plus'>http://www.specflow.org/plus</a>.
+</div>

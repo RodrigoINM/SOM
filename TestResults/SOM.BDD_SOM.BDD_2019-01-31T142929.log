@@ -1,0 +1,61 @@
+﻿2019-01-31T14:29:28.6382554-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-31T14:29:28.7564729-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-31T14:29:29.0665907-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-31T14:29:29.0675886-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-31T14:29:29.0685874-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-31T14:29:40.4952627-02:00;Thread#12;Info;starting test run
+2019-01-31T14:29:40.5091677-02:00;Thread#12;Info;Discovering target: Default
+2019-01-31T14:29:40.5101731-02:00;Thread#12;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#279: 3.1.3 - Buscar Mídia - 
+#282: Buscar Mídia pelo filtro Ativa. - TestAssembly:SOM.BDD/Feature:3.1.3+-+Buscar+M%c3%addia/Scenario:Buscar+M%c3%addia+pelo+filtro+Ativa.
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #282 from normal test queue 
+Thread#0:Scheduler: considering testitem #282 for thread 0
+Thread#0:TestItem#282:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#282:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#282:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #282 for thread 0
+Thread#0:Scheduler: Test #282 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #282/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (24,0s)
+Thread#0:B:E que esteja na tela consultar mídia
+Thread#0:T:done: AlterarMidiaSteps.DadoQueEstejaNaTelaConsultarMidia() (1,1s)
+Thread#0:B:Quando realizo uma busca com filtro Ativa
+Thread#0:T:done: BuscarMídiaSteps.QuandoRealizoUmaBuscaComFiltroAtiva() (4,9s)
+Thread#0:B:Então visualizo a grid com os campos Midia, Ar e Ativa preenchidos com todas as mídias.
+Thread#0:T:done: BuscarMídiaSteps.EntaoVisualizoAGridComOsCamposMidiaArEAtivaPreenchidosComTodasAsMidias_() (4,7s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #282/0 is finished on thread #0 as Succeeded within 41,9782609 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2019-01-31T14:30:24.4205457-02:00;Thread#12;Info;test run finished
+2019-01-31T14:30:24.4225448-02:00;Thread#12;Info;publishing test results
+2019-01-31T14:30:24.5707771-02:00;Thread#12;Info;test results published
+2019-01-31T14:30:24.6128164-02:00;Thread#12;Info;generating reports
+2019-01-31T14:30:24.6837979-02:00;Thread#12;Info;creating 1 report(s)
+2019-01-31T14:30:24.6847981-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2019-01-31T14:30:28.3610805-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2019-01-31T14:30:28.3670783-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-31T14:30:28.3678270-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-31T142929.html'
+2019-01-31T14:30:28.4010754-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-31T142929.log

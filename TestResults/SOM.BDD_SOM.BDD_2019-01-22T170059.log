@@ -1,0 +1,38 @@
+﻿2019-01-22T16:58:41.4410480-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-22T16:58:41.4480446-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-22T16:58:41.5636993-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-22T16:58:41.5636993-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-22T16:58:41.5646991-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-22T16:58:50.6524906-02:00;VSTestExecutionThread;Info;starting test run
+2019-01-22T16:58:50.6614853-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2019-01-22T16:58:50.6614853-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-22T17:00:50.0856813-02:00;VSTestExecutionThread;Info;test run finished
+2019-01-22T17:00:50.0866811-02:00;VSTestExecutionThread;Info;publishing test results
+2019-01-22T17:00:50.0926784-02:00;VSTestExecutionThread;Info;test results published
+2019-01-22T17:00:50.0936772-02:00;VSTestExecutionThread;Info;generating reports
+2019-01-22T17:00:50.1006719-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2019-01-22T17:00:50.1006719-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2019-01-22T17:00:52.0276821-02:00;VSTestExecutionThread;Info;reports generated
+2019-01-22T17:00:52.0356780-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-22T17:00:52.0356780-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-22T165841.html'
+2019-01-22T17:00:52.0486732-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-22T165841.log
+2019-01-22T17:00:52.0546668-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2019-01-22T17:00:59.6738965-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-22T17:00:59.6738965-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-22T17:00:59.6868889-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-22T17:00:59.6868889-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-22T17:00:59.6878887-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-22T17:01:06.6932902-02:00;Thread#19;Info;starting test run
+2019-01-22T17:01:06.6937418-02:00;Thread#19;Info;Discovering target: Default
+2019-01-22T17:01:06.6947532-02:00;Thread#19;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#101: 6.1.3 - Consultar Pedido - 
+#102: Busca simples por numero, "1001404" - TestAssembly:SOM.BDD/Feature:6.1.3+-+Consultar+Pedido/Scenario:Busca+simples+por+numero%2c+%221001404%22
+#103: Busca por Obra, "1001404" - TestAssembly:SOM.BDD/Feature:6.1.3+-+Consultar+Pedido/Scenario:Busca+por+Obra%2c+%221001404%22
+#104: Busca por Número, "1001404" - TestAssembly:SOM.BDD/Feature:6.1.3+-+Consultar+Pedido/Scenario:Busca+por+N%c3%bamero%2c+%221001404%22
+#105: Busca por Produto, "1001404" - TestAssembly:SOM.BDD/Feature:6.1.3+-+Consultar+Pedido/Scenario:Busca+por+Produto%2c+%221001404%22
+#106: Busca Period

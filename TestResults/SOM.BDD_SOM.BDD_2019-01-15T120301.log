@@ -1,0 +1,41 @@
+﻿2019-01-15T12:03:01.7424041-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-15T12:03:01.7543986-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-15T12:03:01.8913196-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-15T12:03:01.8923221-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-15T12:03:01.8933187-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-15T12:03:08.0076100-02:00;Thread#12;Info;starting test run
+2019-01-15T12:03:08.0166038-02:00;Thread#12;Info;Discovering target: Default
+2019-01-15T12:03:08.0176031-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#125: Validar Status Pav de Pedidos Autorizados para Pagamento - 
+#126: Alterar nacionalidade da obra para pedido com Status PAV Autorizado, "1000457" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+nacionalidade+da+obra+para+pedido+com+Status+PAV+Autorizado%2c+%221000457%22
+#127: Alterar autor para pedido com Status PAV Autorizado, "1000457" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+autor+para+pedido+com+Status+PAV+Autorizado%2c+%221000457%22
+#128: Alterar porcentagem dos autores da composição de uma obra para pedido com Status PAV Autorizado, "1000457" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+porcentagem+dos+autores+da+composi%c3%a7%c3%a3o+de+uma+obra+para+pedido+com+Status+PAV+Autorizado%2c+%221000457%22
+#129: Alterar DDAs de uma obra para pedido com Status PAV Autorizado, "1000457" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+DDAs+de+uma+obra+para+pedido+com+Status+PAV+Autorizado%2c+%221000457%22
+#130: Alterar quantidade de autores de uma obra para pedido com Status PAV Autorizado, "1000448" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+quantidade+de+autores+de+uma+obra+para+pedido+com+Status+PAV+Autorizado%2c+%221000448%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #126 from normal test queue 
+Thread#0:Scheduler: considering testitem #126 for thread 0
+Thread#0:TestItem#126:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#126:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#126:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #126 for thread 0
+Thread#0:Scheduler: Test #126 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #126/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (24,8s)
+Thread#0:B:Quando faço uma busca pela obra associada ao pedido "CVC Vasco 2018 INT"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoFacoUmaBuscaPelaObraAssociadaAoPedido("CVC Vasco 2018 INT") (60,7s)
+Thread#0:B:E altero a nacionalidade da obra "Internacional", "Alemanha", "CVC Vasco 2018 INT"
+Thread#0:T:done: StatusPavSteps.QuandoAlteroANacionalidadeDaObra("Internacional", "Alemanha", "CVC Vasco 2018 INT") (6,7s)
+Thread#0:B:E seleciono o pedido a ser afetado pela alteracao "1000457"
+Thread#0:T:done: StatusPavSteps.QuandoSelecionoOPedidoASerAfetadoPelaAlteracao("1000457") (48,0s)
+Thread

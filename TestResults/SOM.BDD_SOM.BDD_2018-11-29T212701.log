@@ -1,0 +1,36 @@
+﻿2018-11-29T21:22:33.0343761-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-29T21:22:33.0420562-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-29T21:22:33.1590115-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-29T21:22:33.1596837-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-29T21:22:33.1606863-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-29T21:22:45.2721692-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-29T21:22:45.2801814-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-29T21:22:45.2816435-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-29T21:24:40.0079135-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-29T21:24:40.0089137-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-29T21:24:40.0159098-02:00;VSTestExecutionThread;Info;test results published
+2018-11-29T21:24:40.0169092-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-29T21:24:40.0249046-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-29T21:24:40.0249046-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-29T21:24:42.1602384-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-29T21:24:42.1682348-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-29T21:24:42.1682348-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-29T212233.html'
+2018-11-29T21:24:42.1792277-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-29T212233.log
+2018-11-29T21:24:42.1902210-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-29T21:27:01.8387407-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-29T21:27:01.8387407-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-29T21:27:01.8537369-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-29T21:27:01.8547376-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-29T21:27:01.8557313-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-29T21:27:14.8614426-02:00;Thread#21;Info;starting test run
+2018-11-29T21:27:14.8634589-02:00;Thread#21;Info;Discovering target: Default
+2018-11-29T21:27:14.8644867-02:00;Thread#21;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#19: 4.1.5 - Consulta Produto - 
+#20: Busca Simples por produto Produto, "Episodio do Produto 511" - TestAssembly:SOM.BDD/Feature:4.1.5+-+Consulta+Produto/Scenario:Busca+Simples+por+produto+Produto%2c+%22Episodio+do+Produto+511%22
+#21: Busca avançada por Nome do Produto, "Titulo do Produto 510" - TestAssembly:SOM.BDD/Feature:4.1.5+-+Consulta+Produto/Scenario:Busca+avan%c3%a7ada+por+Nome+do+Produto%2c+%22Titulo+do+Produto+510%22
+#22: Busca avançada por Episódio, "Titulo do Produto 509" - TestAssembly:SOM.BDD/Feature:4.1.5+-+Consulta+Produto/Scenario:Busca+avan%c3%a7ada+por+Epis%c3%b3dio%2c+%22Titu

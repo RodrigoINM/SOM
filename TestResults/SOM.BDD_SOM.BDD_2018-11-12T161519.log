@@ -1,0 +1,399 @@
+﻿2018-11-12T15:42:58.5260003-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-12T15:42:58.5329973-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-12T15:42:58.6489306-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-12T15:42:58.6489306-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T15:42:58.6502010-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-12T15:43:12.7520888-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-12T15:43:12.7601039-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-12T15:43:12.7610845-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T15:44:02.2950070-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-12T15:44:02.2970061-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-12T15:44:02.3109974-02:00;VSTestExecutionThread;Info;test results published
+2018-11-12T15:44:02.3119986-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-12T15:44:02.3279885-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-12T15:44:02.3289892-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-12T15:44:05.3144624-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-12T15:44:05.3234576-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-12T15:44:05.3234576-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T154258.html'
+2018-11-12T15:44:05.3324528-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T154258.log
+2018-11-12T15:44:05.3354507-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-12T15:46:24.2924388-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-12T15:46:24.2924388-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-12T15:46:24.3074275-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-12T15:46:24.3074275-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T15:46:24.3084287-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-12T15:46:37.3130548-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-12T15:46:37.3150917-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-12T15:46:37.3160649-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T15:47:16.3927787-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-12T15:47:16.3937775-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-12T15:47:16.3947768-02:00;VSTestExecutionThread;Info;test results published
+2018-11-12T15:47:16.3957762-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-12T15:47:16.3977752-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-12T15:47:16.3987741-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-12T15:47:18.3294548-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-12T15:47:18.3324542-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-12T15:47:18.3324542-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T154624.html'
+2018-11-12T15:47:18.3404482-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T154624.log
+2018-11-12T15:47:18.3424473-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-12T15:47:28.3678341-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-12T15:47:28.3678341-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-12T15:47:28.3858427-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-12T15:47:28.3998317-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T15:47:28.4008124-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-12T15:47:33.4090691-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-12T15:47:33.4110826-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-12T15:47:33.4121043-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T15:50:11.4272046-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-12T15:50:11.4292032-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-12T15:50:11.4302034-02:00;VSTestExecutionThread;Info;test results published
+2018-11-12T15:50:11.4332028-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-12T15:50:11.4342007-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-12T15:50:11.4352005-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-12T15:50:13.5729255-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-12T15:50:13.5759239-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-12T15:50:13.5759239-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T154728.html'
+2018-11-12T15:50:13.5849205-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T154728.log
+2018-11-12T15:50:13.5979111-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-12T15:57:40.6392720-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-12T15:57:40.6402718-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-12T15:57:40.6542831-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-12T15:57:40.6548075-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T15:57:40.6554658-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-12T15:57:46.6664573-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-12T15:57:46.6684783-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-12T15:57:46.6695019-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T16:00:28.1126829-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-12T16:00:28.1136832-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-12T16:00:28.1146820-02:00;VSTestExecutionThread;Info;test results published
+2018-11-12T16:00:28.1156827-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-12T16:00:28.1166816-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-12T16:00:28.1166816-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-12T16:00:29.9499009-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-12T16:00:29.9529002-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-12T16:00:29.9578973-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T155740.html'
+2018-11-12T16:00:29.9648925-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T155740.log
+2018-11-12T16:00:29.9668925-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-12T16:10:35.2631359-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-12T16:10:35.2631359-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-12T16:10:35.2781475-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-12T16:10:35.2781475-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T16:10:35.2791267-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-12T16:10:44.2856507-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-12T16:10:44.2875719-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-12T16:10:44.2885735-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T16:11:22.5884913-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-12T16:11:22.5894911-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-12T16:11:22.5904918-02:00;VSTestExecutionThread;Info;test results published
+2018-11-12T16:11:22.5914897-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-12T16:11:22.5924891-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-12T16:11:22.5924891-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-12T16:11:24.5666768-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-12T16:11:24.5696742-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-12T16:11:24.5706731-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T161035.html'
+2018-11-12T16:11:24.5846667-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T161035.log
+2018-11-12T16:11:24.5876628-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-12T16:11:45.1501156-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-12T16:11:45.1501156-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-12T16:11:45.1661051-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-12T16:11:45.1661051-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T16:11:45.1671048-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-12T16:11:56.1742405-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-12T16:11:56.1761551-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-12T16:11:56.1771563-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T16:12:34.8186052-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-12T16:12:34.8196059-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-12T16:12:34.8206038-02:00;VSTestExecutionThread;Info;test results published
+2018-11-12T16:12:34.8206038-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-12T16:12:34.8216031-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-12T16:12:34.8226033-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-12T16:12:36.6434433-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-12T16:12:36.6464445-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-12T16:12:36.6474414-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T161145.html'
+2018-11-12T16:12:36.6534401-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T161145.log
+2018-11-12T16:12:36.6574355-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-12T16:15:19.0487642-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-12T16:15:19.0497645-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-12T16:15:19.0647588-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-12T16:15:19.0657568-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T16:15:19.0657568-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-12T16:15:29.0727818-02:00;Thread#28;Info;starting test run
+2018-11-12T16:15:29.0747888-02:00;Thread#28;Info;Discovering target: Default
+2018-11-12T16:15:29.0757886-02:00;Thread#28;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#19: Cadastrar Autor - 
+#20: Incluir Autor, "Teste de Autor INM" - TestAssembly:SOM.BDD/Feature:Cadastrar+Autor/Scenario:Incluir+Autor%2c+%22Teste+de+Autor+INM%22
+#21: Incluir Autor sem preenchimento dos campos obrigatorios, "" - TestAssembly:SOM.BDD/Feature:Cadastrar+Autor/Scenario:Incluir+Autor+sem+preenchimento+dos+campos+obrigatorios%2c+%22%22
+#22: Incluir dois autores com dados iguais, "Teste de Autor INM" - TestAssembly:SOM.BDD/Feature:Cadastrar+Autor/Scenario:Incluir+dois+autores+com+dados+iguais%2c+%22Teste+de+Autor+INM%22
+#23: Incluir um endereco sem preenchimento de campos obrigatórios, "Teste de Autor" - TestAssembly:SOM.BDD/Feature:Cadastrar+Autor/Scenario:Incluir+um+endereco+sem+preenchimento+de+campos+obrigat%c3%b3rios%2c+%22Teste+de+Autor%22
+#24: Incluir um contato sem preenchimento de campos obrigatórios, "Teste de Autor" - TestAssembly:SOM.BDD/Feature:Cadastrar+Autor/Scenario:Incluir+um+contato+sem+preenchimento+de+campos+obrigat%c3%b3rios%2c+%22Teste+de+Autor%22
+#25: Incluir tipos de contato, Variant 0 - TestAssembly:SOM.BDD/Feature:Cadastrar+Autor/Scenario:Incluir+tipos+de+contato%2c+Variant+0
+#26: Incluir tipos de contato, Variant 1 - TestAssembly:SOM.BDD/Feature:Cadastrar+Autor/Scenario:Incluir+tipos+de+contato%2c+Variant+1
+#27: Incluir tipos de contato, Variant 2 - TestAssembly:SOM.BDD/Feature:Cadastrar+Autor/Scenario:Incluir+tipos+de+contato%2c+Variant+2
+#28: Incluir mais de um contato, "Teste De Contato 01" - TestAssembly:SOM.BDD/Feature:Cadastrar+Autor/Scenario:Incluir+mais+de+um+contato%2c+%22Teste+De+Contato+01%22
+#30: Incluir Autor falecido há 70 anos, "Teste de Autor INM" - TestAssembly:SOM.BDD/Feature:Cadastrar+Autor/Scenario:Incluir+Autor+falecido+h%c3%a1+70+anos%2c+%22Teste+de+Autor+INM%22
+#31: Incluir Autor falecido há mais de 70 anos, "Teste de Autor INM" - TestAssembly:SOM.BDD/Feature:Cadastrar+Autor/Scenario:Incluir+Autor+falecido+h%c3%a1+mais+de+70+anos%2c+%22Teste+de+Autor+INM%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #20 from normal test queue 
+Thread#0:Scheduler: considering testitem #20 for thread 0
+Thread#0:TestItem#20:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#20:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#20:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #20 for thread 0
+Thread#0:Scheduler: Test #20 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #20/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (18,0s)
+Thread#0:B:E que esteja na tela de cadastro Autor
+Thread#0:T:done: CadastrarAutorSteps.DadoQueEstejaNaTelaDeCadastroAutor() (1,1s)
+Thread#0:B:Quando cadastro um novo autor com os campos "Teste de Autor INM" e "Teste de Autor INM Completo"
+Thread#0:T:done: CadastrarAutorSteps.QuandoCadastroUmNovoAutorComOsCamposE("Teste de Autor INM", "Teste de Autor IN...") (1,4s)
+Thread#0:B:E informo os dados de endereco: "Teste Logradouro", "Teste", "Teste" e "11111111"
+Thread#0:T:done: CadastrarAutorSteps.QuandoInformoOsDadosDeEnderecoE("Teste Logradouro", "Teste", "Teste", "11111111") (5,7s)
+Thread#0:B:E informo os dados de contato: "Teste INM", "Telefone" e "2133445566"
+Thread#0:T:done: CadastrarAutorSteps.QuandoInformoOsDadosDeContatoE("Teste INM", "Telefone", "2133445566") (4,7s)
+Thread#0:B:Então visualizo a "Registro ativado com sucesso." do Autor cadastrado com sucesso para o "Teste de Autor INM"
+Thread#0:T:done: CadastrarAutorSteps.EntaoVisualizoADoAutorCadastradoComSucessoParaO("Registro ativado ...", "Teste de Autor INM") (2,4s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #21 from normal test queue 
+Thread#0:Scheduler: considering testitem #21 for thread 0
+Thread#0:TestItem#21:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#21:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#21:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #21 for thread 0
+Thread#0:Scheduler: Test #21 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #20/0 is finished on thread #0 as Succeeded within 44,3994902 seconds
+Thread#0: Test #21/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,9s)
+Thread#0:B:E que esteja na tela de cadastro Autor
+Thread#0:T:done: CadastrarAutorSteps.DadoQueEstejaNaTelaDeCadastroAutor() (1,1s)
+Thread#0:B:Quando tento cadastrar um autor sem informar o ""
+Thread#0:T:done: CadastrarAutorSteps.QuandoTentoCadastrarUmAutorSemInformarO("") (2,2s)
+Thread#0:B:Entao visualizo o campo em destaque do cadastro de autor
+Thread#0:T:done: CadastrarAutorSteps.EntaoVisualizoOCampoEmDestaqueDoCadastroDeAutor() (0,2s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #22 from normal test queue 
+Thread#0:Scheduler: considering testitem #22 for thread 0
+Thread#0:TestItem#22:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#22:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#22:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #22 for thread 0
+Thread#0:Scheduler: Test #22 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #21/0 is finished on thread #0 as Succeeded within 29,6182543 seconds
+Thread#0: Test #22/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,3s)
+Thread#0:B:E que esteja na tela de cadastro Autor
+Thread#0:T:done: CadastrarAutorSteps.DadoQueEstejaNaTelaDeCadastroAutor() (1,1s)
+Thread#0:B:Quando cadastro um autor com "Teste de Autor INM" e "Teste de Autor INM Completo"
+Thread#0:T:done: CadastrarAutorSteps.QuandoCadastroUmAutorComE("Teste de Autor INM", "Teste de Autor IN...") (4,9s)
+Thread#0:B:E tento cadastrar um novo autor com os mesmos dados de "Teste de Autor INM" e "Teste de Autor INM Completo"
+Thread#0:T:done: CadastrarAutorSteps.QuandoTentoCadastrarUmNovoAutorComOsMesmosDadosDeE("Teste de Autor INM", "Teste de Autor IN...") (1,8s)
+Thread#0:B:Entao visualizo a "Existe um registro com esses dados cadastrado no sistema." que ja existe um autor "Teste de Autor INM" cadastrados com esses dados
+Thread#0:T:done: CadastrarAutorSteps.EntaoVisualizoAQueJaExisteUmAutorCadastradosComEssesDados("Existe um registr...", "Teste de Autor INM") (7,5s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #23 from normal test queue 
+Thread#0:Scheduler: considering testitem #23 for thread 0
+Thread#0:TestItem#23:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#23:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#23:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #23 for thread 0
+Thread#0:Scheduler: Test #23 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #22/0 is finished on thread #0 as Succeeded within 47,1692845 seconds
+Thread#0: Test #23/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,2s)
+Thread#0:B:E que esteja na tela de cadastro Autor
+Thread#0:T:done: CadastrarAutorSteps.DadoQueEstejaNaTelaDeCadastroAutor() (1,1s)
+Thread#0:B:Quando realizo um cadastro de autor com os campos "Teste de Autor" e "Teste Nome"
+Thread#0:T:done: CadastrarAutorSteps.QuandoRealizoUmCadastroDeAutorComOsCamposE("Teste de Autor", "Teste Nome") (1,5s)
+Thread#0:B:E tento adicionar um endereco sem preencher os campos " ", " ", " " e " "
+Thread#0:T:done: CadastrarAutorSteps.QuandoTentoAdicionarUmEnderecoSemPreencherOsCamposE(" ", " ", " ", " ") (4,0s)
+Thread#0:B:Entao visualizo os campos em destaque
+Thread#0:T:done: CadastrarAutorSteps.EntaoVisualizoOsCamposEmDestaque() (0,3s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #24 from normal test queue 
+Thread#0:Scheduler: considering testitem #24 for thread 0
+Thread#0:TestItem#24:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#24:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#24:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #24 for thread 0
+Thread#0:Scheduler: Test #24 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #23/0 is finished on thread #0 as Succeeded within 33,253851 seconds
+Thread#0: Test #24/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,7s)
+Thread#0:B:E que esteja na tela de cadastro Autor
+Thread#0:T:done: CadastrarAutorSteps.DadoQueEstejaNaTelaDeCadastroAutor() (1,1s)
+Thread#0:B:Quando cadastro um novo autor com "Teste de Autor" e "Teste Nome"
+Thread#0:T:done: CadastrarAutorSteps.QuandoCadastroUmNovoAutorComE("Teste de Autor", "Teste Nome") (1,1s)
+Thread#0:B:E tento adicionar um contato sem preencher o campos " "
+Thread#0:T:done: CadastrarAutorSteps.QuandoTentoAdicionarUmContatoSemPreencherOCampos(" ") (2,1s)
+Thread#0:B:Entao visualizo o campo Nome da aba de contato em destaque
+Thread#0:T:done: CadastrarAutorSteps.EntaoVisualizoOCampoNomeDaAbaDeContatoEmDestaque() (0,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #25 from normal test queue 
+Thread#0:Scheduler: considering testitem #25 for thread 0
+Thread#0:TestItem#25:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#25:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#25:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #25 for thread 0
+Thread#0:Scheduler: Test #25 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #24/0 is finished on thread #0 as Succeeded within 32,313303 seconds
+Thread#0: Test #25/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,6s)
+Thread#0:B:E que esteja na tela de cadastro Autor
+Thread#0:T:done: CadastrarAutorSteps.DadoQueEstejaNaTelaDeCadastroAutor() (1,1s)
+Thread#0:B:Quando cadastro um autor preenchendo os campos de "Teste de Autor INM" e "Teste Nome"
+Thread#0:T:done: CadastrarAutorSteps.QuandoCadastroUmAutorPreenchendoOsCamposDeE("Teste de Autor INM", "Teste Nome") (1,1s)
+Thread#0:B:Quando incluir um novo contato com "Nome1","Telefone" e "2134352617"
+Thread#0:T:done: CadastrarAutorSteps.QuandoIncluirUmNovoContatoComE("Nome1", "Telefone", "2134352617") (4,7s)
+Thread#0:B:Então visualizo a "Registro ativado com sucesso." do Autor cadastrado com sucesso para o "Teste de Autor INM"
+Thread#0:T:done: CadastrarAutorSteps.EntaoVisualizoADoAutorCadastradoComSucessoParaO("Registro ativado ...", "Teste de Autor INM") (2,4s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #26 from normal test queue 
+Thread#0:Scheduler: considering testitem #26 for thread 0
+Thread#0:TestItem#26:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#26:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#26:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #26 for thread 0
+Thread#0:Scheduler: Test #26 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #25/0 is finished on thread #0 as Succeeded within 42,7850251 seconds
+Thread#0: Test #26/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,9s)
+Thread#0:B:E que esteja na tela de cadastro Autor
+Thread#0:T:done: CadastrarAutorSteps.DadoQueEstejaNaTelaDeCadastroAutor() (1,1s)
+Thread#0:B:Quando cadastro um autor preenchendo os campos de "Teste de Autor INM" e "Teste Nome"
+Thread#0:T:done: CadastrarAutorSteps.QuandoCadastroUmAutorPreenchendoOsCamposDeE("Teste de Autor INM", "Teste Nome") (1,0s)
+Thread#0:B:Quando incluir um novo contato com "Nome2","Celular" e "21824262728"
+Thread#0:T:done: CadastrarAutorSteps.QuandoIncluirUmNovoContatoComE("Nome2", "Celular", "21824262728") (4,7s)
+Thread#0:B:Então visualizo a "Registro ativado com sucesso." do Autor cadastrado com sucesso para o "Teste de Autor INM"
+Thread#0:T:done: CadastrarAutorSteps.EntaoVisualizoADoAutorCadastradoComSucessoParaO("Registro ativado ...", "Teste de Autor INM") (2,4s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #27 from normal test queue 
+Thread#0:Scheduler: considering testitem #27 for thread 0
+Thread#0:TestItem#27:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#27:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#27:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #27 for thread 0
+Thread#0:Scheduler: Test #27 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #26/0 is finished on thread #0 as Succeeded within 41,2794491 seconds
+Thread#0: Test #27/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,1s)
+Thread#0:B:E que esteja na tela de cadastro Autor
+Thread#0:T:done: CadastrarAutorSteps.DadoQueEstejaNaTelaDeCadastroAutor() (1,1s)
+Thread#0:B:Quando cadastro um autor preenchendo os campos de "Teste de Autor INM" e "Teste Nome"
+Thread#0:T:done: CadastrarAutorSteps.QuandoCadastroUmAutorPreenchendoOsCamposDeE("Teste de Autor INM", "Teste Nome") (1,0s)
+Thread#0:B:Quando incluir um novo contato com "Nome3","Email" e "Teste@teste.com.br"
+Thread#0:T:done: CadastrarAutorSteps.QuandoIncluirUmNovoContatoComE("Nome3", "Email", "Teste@teste.com.br") (5,0s)
+Thread#0:B:Então visualizo a "Registro ativado com sucesso." do Autor cadastrado com sucesso para o "Teste de Autor INM"
+Thread#0:T:done: CadastrarAutorSteps.EntaoVisualizoADoAutorCadastradoComSucessoParaO("Registro ativado ...", "Teste de Autor INM") (2,4s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #28 from normal test queue 
+Thread#0:Scheduler: considering testitem #28 for thread 0
+Thread#0:TestItem#28:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#28:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#28:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #28 for thread 0
+Thread#0:Scheduler: Test #28 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #27/0 is finished on thread #0 as Succeeded within 41,4647516 seconds
+Thread#0: Test #28/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,4s)
+Thread#0:B:E que esteja na tela de cadastro Autor
+Thread#0:T:done: CadastrarAutorSteps.DadoQueEstejaNaTelaDeCadastroAutor() (1,1s)
+Thread#0:B:Dado que no cadastramento de um novo autor preencho os campo "Teste De Contato 01" e "Teste Nome"
+Thread#0:T:done: CadastrarAutorSteps.DadoQueNoCadastramentoDeUmNovoAutorPreenchoOsCampoE("Teste De Contato 01", "Teste Nome") (1,3s)
+Thread#0:B:Quando incluir um contato com "Contato","Telefone" e "2134352617"
+Thread#0:T:done: CadastrarAutorSteps.QuandoIncluirUmContatoComE("Contato", "Telefone", "2134352617") (3,4s)
+Thread#0:B:E incluir mais um contato "Celular" e "21824262728"
+Thread#0:T:done: CadastrarAutorSteps.QuandoIncluirMaisUmContatoE("Celular", "21824262728") (2,8s)
+Thread#0:B:Entao visualizo os "Contato" cadastrados com sucesso na aba de contatos do autor
+Thread#0:T:done: CadastrarAutorSteps.EntaoVisualizoOsCadastradosComSucessoNaAbaDeContatosDoAutor("Contato") (1,3s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #30 from normal test queue 
+Thread#0:Scheduler: considering testitem #30 for thread 0
+Thread#0:TestItem#30:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#30:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#30:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #30 for thread 0
+Thread#0:Scheduler: Test #30 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #28/0 is finished on thread #0 as Succeeded within 36,5903925 seconds
+Thread#0: Test #30/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,1s)
+Thread#0:B:E que esteja na tela de cadastro Autor
+Thread#0:T:done: CadastrarAutorSteps.DadoQueEstejaNaTelaDeCadastroAutor() (1,1s)
+Thread#0:B:Quando crio um Autor informando "Teste de Autor INM" e "Teste de Autor INM Completo"
+Thread#0:T:done: CadastrarAutorSteps.QuandoCrioUmAutorInformandoE("Teste de Autor INM", "Teste de Autor IN...") (1,4s)
+Thread#0:B:E preencho o campo de Ano Falecimento "1948" igual a 70 anos
+Thread#0:T:done: CadastrarAutorSteps.QuandoPreenchoOCampoDeAnoFalecimentoIgualAAnos("1948", 70) (0,2s)
+Thread#0:B:Entao visualizo o ano de falecimento do autor cadastrado como não
+Thread#0:T:error: O Autor pesquisado não se encontra na tabela de resultados.
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #31 from normal test queue 
+Thread#0:Scheduler: considering testitem #31 for thread 0
+Thread#0:TestItem#31:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#31:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#31:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #31 for thread 0
+Thread#0:Scheduler: Test #31 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #30/0 is finished on thread #0 as Failed within 39,5239364 seconds
+Thread#0: Test #31/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,3s)
+Thread#0:B:E que esteja na tela de cadastro Autor
+Thread#0:T:done: CadastrarAutorSteps.DadoQueEstejaNaTelaDeCadastroAutor() (1,1s)
+Thread#0:B:Quando crio um Autor informando "Teste de Autor INM" e "Teste de Autor INM Completo"
+Thread#0:T:done: CadastrarAutorSteps.QuandoCrioUmAutorInformandoE("Teste de Autor INM", "Teste de Autor IN...") (1,5s)
+Thread#0:B:E preencho o campo de Ano Falecimento "1946" acima de 70 anos
+Thread#0:T:done: CadastrarAutorSteps.QuandoPreenchoOCampoDeAnoFalecimentoAcimaDeAnos("1946", 70) (0,2s)
+Thread#0:B:Entao visualizo o ano de falecimento do autor cadastrado como sim
+Thread#0:T:done: CadastrarAutorSteps.EntaoVisualizoOAnoDeFalecimentoDoAutorCadastradoComoSim() (4,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #31/0 is finished on thread #0 as Succeeded within 38,9766324 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-12T16:22:36.6451200-02:00;Thread#28;Info;test run finished
+2018-11-12T16:22:36.6471191-02:00;Thread#28;Info;publishing test results
+2018-11-12T16:22:36.6481184-02:00;Thread#28;Info;test results published
+2018-11-12T16:22:36.6491191-02:00;Thread#28;Info;generating reports
+2018-11-12T16:22:36.6501175-02:00;Thread#28;Info;creating 1 report(s)
+2018-11-12T16:22:36.6511168-02:00;Thread#28;Info;generate Report ReportTemplate.cshtml
+2018-11-12T16:22:38.7027367-02:00;Thread#28;Info;reports generated
+Total: 11
+Succeeded: 10
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
+2018-11-12T16:22:38.7057365-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-12T16:22:38.7087312-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T161519.html'
+2018-11-12T16:22:38.7177306-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T161519.log

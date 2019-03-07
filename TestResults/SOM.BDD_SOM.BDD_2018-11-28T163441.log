@@ -1,0 +1,63 @@
+﻿2018-11-28T16:34:41.2742728-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-28T16:34:41.2932093-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-28T16:34:41.5015918-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-28T16:34:41.5038437-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-28T16:34:41.5054971-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-28T16:34:50.7183587-02:00;Thread#12;Info;starting test run
+2018-11-28T16:34:50.7373503-02:00;Thread#12;Info;Discovering target: Default
+2018-11-28T16:34:50.7393498-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#20: 4.1.6 - Cadastro de Produto - 
+#21: Cadastrar novo Produto, "Titulo do Produto 500" - TestAssembly:SOM.BDD/Feature:4.1.6+-+Cadastro+de+Produto/Scenario:Cadastrar+novo+Produto%2c+%22Titulo+do+Produto+500%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #21 from normal test queue 
+Thread#0:Scheduler: considering testitem #21 for thread 0
+Thread#0:TestItem#21:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#21:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#21:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #21 for thread 0
+Thread#0:Scheduler: Test #21 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #21/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,3s)
+Thread#0:B:E que esteja com a tela Cadastro de Produto aberta
+Thread#0:T:done: CadastroDeProdutoSteps.DadoQueEstejaComATelaCadastroDeProdutoAberta() (1,2s)
+Thread#0:B:Quando cadastro um novo Produto preenchendo os campos "Titulo do Produto 500", "Episodio do Produto 500", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não" e "Não"
+Thread#0:T:done: CadastroDeProdutoSteps.QuandoCadastroUmNovoProdutoPreenchendoOsCamposE("Titulo do Produto...", "Episodio do Produ...", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não") (2,3s)
+Thread#0:B:Então visualizo a "Registro salvo com sucesso." de cadastro de produto realizado com sucesso
+Thread#0:T:done: CadastroDeProdutoSteps.EntaoVisualizoADeCadastroDeProdutoRealizadoComSucesso("Registro salvo co...") (5,6s)
+Thread#0:B:E visualizo os campos "Titulo do Produto 500", "Episodio do Produto 500", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não" e "Não" cadastrados no detalhe do produto
+Thread#0:T:done: CadastroDeProdutoSteps.EntaoVisualizoOsCamposECadastradosNoDetalheDoProduto("Titulo do Produto...", "Episodio do Produ...", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não") (11,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #21/0 is finished on thread #0 as Succeeded within 45,5853382 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-28T16:35:36.9251405-02:00;Thread#12;Info;test run finished
+2018-11-28T16:35:36.9421307-02:00;Thread#12;Info;publishing test results
+2018-11-28T16:35:37.0420734-02:00;Thread#12;Info;test results published
+2018-11-28T16:35:37.0440725-02:00;Thread#12;Info;generating reports
+2018-11-28T16:35:37.0570659-02:00;Thread#12;Info;creating 1 report(s)
+2018-11-28T16:35:37.0590645-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-11-28T16:35:39.4616678-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-11-28T16:35:39.4756615-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-28T16:35:39.4826571-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-28T163441.html'
+2018-11-28T16:35:39.4956514-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-28T163441.log

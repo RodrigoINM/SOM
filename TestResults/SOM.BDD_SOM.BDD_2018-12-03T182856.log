@@ -1,0 +1,63 @@
+﻿2018-12-03T18:28:55.8674254-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-03T18:28:55.8964087-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-03T18:28:56.1682525-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-03T18:28:56.1722507-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-03T18:28:56.1742521-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-03T18:29:02.3656374-02:00;Thread#12;Info;starting test run
+2018-12-03T18:29:02.3830824-02:00;Thread#12;Info;Discovering target: Default
+2018-12-03T18:29:02.3830824-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#34: 6.1.7 - Criar Pedido Manualmente - 
+#44: Gerar pedido manual para todos os tipos de midia a debitar, "GLOBONEWS" - TestAssembly:SOM.BDD/Feature:6.1.7+-+Criar+Pedido+Manualmente/Scenario:Gerar+pedido+manual+para+todos+os+tipos+de+midia+a+debitar%2c+%22GLOBONEWS%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #44 from normal test queue 
+Thread#0:Scheduler: considering testitem #44 for thread 0
+Thread#0:TestItem#44:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#44:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#44:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #44 for thread 0
+Thread#0:Scheduler: Test #44 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #44/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,5s)
+Thread#0:B:Dado que tenha um produto e uma obra cadastrada no sistema
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (57,0s)
+Thread#0:B:E que estou na tela de criação de pedidos
+Thread#0:T:done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)
+Thread#0:B:Quando crio um novo pedido manualmente "10/10/2018", "10", "GLOBONEWS" "ABERTURA"
+Thread#0:T:done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente("10/10/2018", "10", "GLOBONEWS", "ABERTURA") (13,8s)
+Thread#0:B:Entao visualizo o pedido gerado com sucesso "GLOBONEWS", "ABERTURA", "Em andamento", "Não requerido", "Não"
+Thread#0:T:done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso("GLOBONEWS", "ABERTURA", "Em andamento", "Não requerido", "Não") (65,7s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #44/0 is finished on thread #0 as Succeeded within 166,3636213 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-12-03T18:31:49.4497657-02:00;Thread#12;Info;test run finished
+2018-12-03T18:31:49.4653894-02:00;Thread#12;Info;publishing test results
+2018-12-03T18:31:49.5435078-02:00;Thread#12;Info;test results published
+2018-12-03T18:31:49.5435078-02:00;Thread#12;Info;generating reports
+2018-12-03T18:31:49.5591314-02:00;Thread#12;Info;creating 1 report(s)
+2018-12-03T18:31:49.5591314-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-12-03T18:31:51.9964625-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-12-03T18:31:52.0121067-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-12-03T18:31:52.0121067-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-03T182856.html'
+2018-12-03T18:31:52.0277126-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-03T182856.log

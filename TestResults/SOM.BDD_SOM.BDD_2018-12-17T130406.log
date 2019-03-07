@@ -1,0 +1,195 @@
+﻿2018-12-17T13:04:06.5513080-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-17T13:04:06.5882670-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-17T13:04:06.7002028-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-17T13:04:06.7012021-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-17T13:04:06.7019970-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-17T13:04:20.8073911-02:00;Thread#12;Info;starting test run
+2018-12-17T13:04:20.8163862-02:00;Thread#12;Info;Discovering target: Default
+2018-12-17T13:04:20.8175656-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#84: 6.1.2 - Alterar itens de pedido - 
+#85: Alterar valor a pagar para um item de pedido, "300,00" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Alterar+valor+a+pagar+para+um+item+de+pedido%2c+%22300%2c00%22
+#86: Validar item bloqueado para edição quando já estiver Aprovado, "300,00" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Validar+item+bloqueado+para+edi%c3%a7%c3%a3o+quando+j%c3%a1+estiver+Aprovado%2c+%22300%2c00%22
+#87: Registrar Autorização, "1 item(ns) registrado(s) com sucesso." - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Registrar+Autoriza%c3%a7%c3%a3o%2c+%221+item(ns)+registrado(s)+com+sucesso.%22
+#88: Validar o pagamento para o Administrador com sucesso, "Sim" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Validar+o+pagamento+para+o+Administrador+com+sucesso%2c+%22Sim%22
+#89: Alterar o valor do DNI com sucesso, "300,00" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Alterar+o+valor+do+DNI+com+sucesso%2c+%22300%2c00%22
+#90: Cancelar um item de pedido no detelhe do pedido, "Pendente" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Cancelar+um+item+de+pedido+no+detelhe+do+pedido%2c+%22Pendente%22
+#91: Cancelar um item de pedido no detelhe do pedido, "Aguardando Autorização" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Cancelar+um+item+de+pedido+no+detelhe+do+pedido%2c+%22Aguardando+Autoriza%c3%a7%c3%a3o%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #85 from normal test queue 
+Thread#0:Scheduler: considering testitem #85 for thread 0
+Thread#0:TestItem#85:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#85:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#85:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #85 for thread 0
+Thread#0:Scheduler: Test #85 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #85/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,1s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema
+Thread#0:T:error: unknown error: Element <a ng-click="VerificaSeExisteAlteracaoComposicao(ObraDados)" ng-disabled="Pesquisa" class="btn btn-link collapsed cadastrarobra" style="color: rgb(178, 193, 94); padding: 3px;" uib-tooltip="Salvar" tooltip-placement="top">...</a> is not clickable at point (1289, 97). Other element would receive the click: <div modal-render="true" tabindex="-1" role="dialog" class="modal fade ng-isolate-scope animated fadeIn in" uib-modal-animation-class="fade" modal-in-class="in" ng-style="{'z-index': 2050 + index*10, display: 'block'}" uib-modal-window="modal-window" window-class="animated fadeIn" index="0" animate="animate" modal-animation="true" style="z-index: 2050; display: block;">...</div>
+Thread#0:T:  (Session info: chrome=71.0.3578.98)
+Thread#0:T:  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+Thread#0:B:E que esteja na aba de pagamento
+Thread#0:T:skipped because of previous errors
+Thread#0:B:Quando altero o valor do pagamento, a moeda e a taxa de conversão de um item do pedido "300,00", "Dólar", "3,8", "Rodrigo"
+Thread#0:T:skipped because of previous errors
+Thread#0:B:Então visualizo o novo valor a ser pago para o DDA do Autor na aba de pagamento "1.140,00"
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #86 from normal test queue 
+Thread#0:Scheduler: considering testitem #86 for thread 0
+Thread#0:TestItem#86:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#86:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#86:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #86 for thread 0
+Thread#0:Scheduler: Test #86 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #85/0 is finished on thread #0 as Failed within 87,2467263 seconds
+Thread#0: Test #86/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,6s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema "TESTE DE 500MB"
+Thread#0:T:done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema("TESTE DE 500MB") (27,2s)
+Thread#0:B:E que possua um item com status de aguardando aprovacao "Aguardando Aprovação", "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.DadoQuePossuaUmItemComStatusDeAguardandoAprovacao("Aguardando Aprovação", "ALYNE WAITE") (30,7s)
+Thread#0:B:Quando tento editar esse item "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoTentoEditarEsseItem("ALYNE WAITE") (0,1s)
+Thread#0:B:Entao visualizo os campos de "300,00", "Dólar" e "3,8" bloqueados para edicao
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOsCamposDeEBloqueadosParaEdicao("300,00", "Dólar", "3,8") (2,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #87 from normal test queue 
+Thread#0:Scheduler: considering testitem #87 for thread 0
+Thread#0:TestItem#87:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#87:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#87:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #87 for thread 0
+Thread#0:Scheduler: Test #87 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #86/0 is finished on thread #0 as Succeeded within 85,7371107 seconds
+Thread#0: Test #87/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,2s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema() (114,7s)
+Thread#0:B:Quando regsitro a autorizacao para um item do pedido "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoRegsitroAAutorizacaoParaUmItemDoPedido("ALYNE WAITE") (6,7s)
+Thread#0:B:Entao visualizo o pop up de confirmação para o DDA selecionado "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOPopUpDeConfirmacaoParaODDASelecionado("ALYNE WAITE") (4,3s)
+Thread#0:B:E a mensagem de sucesso apos confirmar a autorizacao do item do pedido "1 item(ns) registrado(s) com sucesso."
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoAMensagemDeSucessoAposConfirmarAAutorizacaoDoItemDoPedido("1 item(ns) regist...") (4,1s)
+Thread#0:B:E visualizo o status de autorizado para o item selecionado "Autorizado"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOStatusDeAutorizadoParaOItemSelecionado("Autorizado") (0,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #88 from normal test queue 
+Thread#0:Scheduler: considering testitem #88 for thread 0
+Thread#0:TestItem#88:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#88:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#88:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #88 for thread 0
+Thread#0:Scheduler: Test #88 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #87/0 is finished on thread #0 as Succeeded within 155,9916253 seconds
+Thread#0: Test #88/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,7s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema "TESTE DE 500MB"
+Thread#0:T:done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema("TESTE DE 500MB") (28,1s)
+Thread#0:B:Quando faço o pagamento ao Administrador "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoFacoOPagamentoAoAdministrador("ALYNE WAITE") (5,6s)
+Thread#0:B:Então visualizo a mensagem de sucesso após confirmar o pagamento ao administrador "Itens do pedido atualizados com sucesso!"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoAMensagemDeSucessoAposConfirmarOPagamentoAoAdministrador("Itens do pedido a...") (8,4s)
+Thread#0:B:E visualizo o campo de pagar ao administrador preenchido "ALYNE WAITE", "Sim"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOCampoDePagarAoAdministradorPreenchido("ALYNE WAITE", "Sim") (2,2s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #89 from normal test queue 
+Thread#0:Scheduler: considering testitem #89 for thread 0
+Thread#0:TestItem#89:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#89:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#89:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #89 for thread 0
+Thread#0:Scheduler: Test #89 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #88/0 is finished on thread #0 as Succeeded within 72,0397559 seconds
+Thread#0: Test #89/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,1s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema "TESTE DE 500MB"
+Thread#0:T:done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema("TESTE DE 500MB") (27,8s)
+Thread#0:B:Quando adiciono um item de DNI no pedido
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoAdicionoUmItemDeDNINoPedido() (9,9s)
+Thread#0:B:E insiro um valor para o campo de pagamento do DNI "DNI", "300,00"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoInsiroUmValorParaOCampoDePagamentoDoDNI("DNI", "300,00") (3,0s)
+Thread#0:B:Então o valor do item de DNI atualizado "Item de pedido alterado com sucesso.", "DNI", "300,00"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoOValorDoItemDeDNIAtualizado("Item de pedido al...", "DNI", "300,00") (2,3s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #90 from normal test queue 
+Thread#0:Scheduler: considering testitem #90 for thread 0
+Thread#0:TestItem#90:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#90:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#90:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #90 for thread 0
+Thread#0:Scheduler: Test #90 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #89/0 is finished on thread #0 as Succeeded within 70,1277973 seconds
+Thread#0: Test #90/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,2s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema "TESTE DE 500MB"
+Thread#0:T:done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema("TESTE DE 500MB") (27,2s)
+Thread#0:B:Quando cancelo um item de pedido "Total de itens cancelados: 1", "Pendente", "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoCanceloUmItemDePedido("Total de itens ca...", "Pendente", "ALYNE WAITE") (10,1s)
+Thread#0:B:Então visualizo o item do pedido com o status de cancelado "Cancelado", "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOItemDoPedidoComOStatusDeCancelado("Cancelado", "ALYNE WAITE") (0,2s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #91 from normal test queue 
+Thread#0:Scheduler: considering testitem #91 for thread 0
+Thread#0:TestItem#91:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#91:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#91:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #91 for thread 0
+Thread#0:Scheduler: Test #91 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #90/0 is finished on thread #0 as Succeeded within 63,6416659 seconds
+Thread#0: Test #91/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,4s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema "TESTE DE 500MB"
+Thread#0:T:done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema("TESTE DE 500MB") (27,6s)
+Thread#0:B:Quando cancelo um item de pedido "Total de itens cancelados: 1", "Aguardando Autorização", "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoCanceloUmItemDePedido("Total de itens ca...", "Aguardando Autori...", "ALYNE WAITE") (16,4s)
+Thread#0:B:Então visualizo o item do pedido com o status de cancelado "Cancelado", "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOItemDoPedidoComOStatusDeCancelado("Cancelado", "ALYNE WAITE") (0,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #91/0 is finished on thread #0 as Succeeded within 71,6196083 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-12-17T13:14:27.4862829-02:00;Thread#12;Info;test run finished
+2018-12-17T13:14:27.4882815-02:00;Thread#12;Info;publishing test results
+2018-12-17T13:14:27.4962755-02:00;Thread#12;Info;test results published
+2018-12-17T13:14:27.4972757-02:00;Thread#12;Info;generating reports
+2018-12-17T13:14:27.5042723-02:00;Thread#12;Info;creating 1 report(s)
+2018-12-17T13:14:27.5052707-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-12-17T13:14:29.4873899-02:00;Thread#12;Info;reports generated
+Total: 7
+Succeeded: 6
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
+2018-12-17T13:14:29.4933671-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-12-17T13:14:29.4933671-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-17T130406.html'
+2018-12-17T13:14:29.5003637-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-12-17T130406.log

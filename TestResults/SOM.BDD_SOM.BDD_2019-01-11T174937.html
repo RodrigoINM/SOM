@@ -1,0 +1,3165 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>SOM.BDD Test Execution Report</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript">
+            /**
+            * jQuery.fn.sortElements
+            * --------------
+            * #author James Padolsey (http://james.padolsey.com)
+            * #version 0.11
+            * #updated 18-MAR-2010
+            * #url https://raw.github.com/jamespadolsey/jQuery-Plugins/master/sortElements/jquery.sortElements.js
+            * --------------
+            * #param Function comparator:
+            *   Exactly the same behaviour as [1,2,3].sort(comparator)
+            *   
+            * #param Function getSortable
+            *   A function that should return the element that is
+            *   to be sorted. The comparator will run on the
+            *   current collection, but you may want the actual
+            *   resulting sort to occur on a parent or another
+            *   associated element.
+            *   
+            *   E.g. $('td').sortElements(comparator, function(){
+            *      return this.parentNode; 
+            *   })
+            *   
+            *   The <td>'s parent (<tr>) will be sorted instead
+            *   of the <td> itself.
+            */
+            jQuery.fn.sortElements = (function () {
+
+                var sort = [].sort;
+
+                return function (comparator, getSortable) {
+
+                    getSortable = getSortable || function () { return this; };
+
+                    var placements = this.map(function () {
+
+                        var sortElement = getSortable.call(this),
+                parentNode = sortElement.parentNode,
+
+                        // Since the element itself will change position, we have
+                        // to have some way of storing it's original position in
+                        // the DOM. The easiest way is to have a 'flag' node:
+                nextSibling = parentNode.insertBefore(
+                    document.createTextNode(''),
+                    sortElement.nextSibling
+                );
+
+                        return function () {
+
+                            if (parentNode === this) {
+                                throw new Error(
+                        "You can't sort elements if any one is a descendant of another."
+                    );
+                            }
+
+                            // Insert before flag:
+                            parentNode.insertBefore(this, nextSibling);
+                            // Remove flag:
+                            parentNode.removeChild(nextSibling);
+
+                        };
+
+                    });
+
+                    return sort.call(this, comparator).each(function (i) {
+                        placements[i].call(getSortable.call(this));
+                    });
+
+                };
+
+            })();
+        </script>
+        <script type="text/javascript">
+            jQuery.fn.setBarSizes = (function () {
+                return function (metricName, maxBarSize, min) {
+                    var max = Math.max.apply(Math, $.makeArray($(this).map(function () { return Number($(this).attr('data-sr-' + metricName)); })));
+                    var scale = 1.0;
+                    while (max > 0.0 && max <= 10.0) {
+                        scale = scale * 10.0;
+                        max = max * 10.0;
+                    }
+                    max = (Math.ceil(max / 2) * 2) / scale;
+
+                    this.each(function () {
+                        var barAnchor = $(this).find('a');
+                        var actual = $(this).attr('data-sr-' + metricName);
+                        var newHeight = Math.max(Math.round(maxBarSize * (actual - min) / (max - min)), 2);
+                        barAnchor.css({ height: newHeight });
+                    });
+
+                    var unit = "";
+                    if (metricName.substr(metricName.length - 4, 4) === "time")
+                        unit = "s";
+
+                    $('#testview .scale-min-label').each(function () {
+                        $(this).text(min.toString() + unit);
+                    });
+                    $('#testview .scale-max-label').each(function () {
+                        $(this).text(max.toString() + unit);
+                    });
+                    var mid = max / 2;
+                    $('#testview .scale-mid-label').each(function () {
+                        $(this).text(mid.toString() + unit);
+                    });
+                };
+            })();
+
+            function getComparer(metricName, isDesc) {
+                return function (a, b) {
+                    var aNumber = Number($(a).attr('data-sr-' + metricName));
+                    var bNumber = Number($(b).attr('data-sr-' + metricName));
+                    var result = aNumber > bNumber ? 1 : (aNumber < bNumber ? -1 : 0);
+                    if (isDesc)
+                        result = -1 * result;
+
+                    if (result == 0 && metricName != "order")
+                        result = getComparer("order", false)(a, b);
+
+                    return result;
+                };
+            }
+
+            var currentSort = "";
+            function doSort(allowToggleDesc) {
+                var newSort = $("input[name='barSortOrder']:checked").val();
+                if (allowToggleDesc && currentSort == newSort) {
+                    $('#barSortDesc').click();
+                    doSort(false);
+                    return;
+                }
+                currentSort = newSort;
+                $('#testview td.testview-item').sortElements(getComparer(newSort, $('#barSortDesc').is(':checked')));
+            }
+
+
+            function doSetHeights(allowSort) {
+                var selectedMetric = $("input[name='barHeight']:checked").val();
+                $('#testview td.testview-item').setBarSizes(selectedMetric, 60, 0.0);
+
+                if (allowSort && currentSort != selectedMetric) {
+                    var $radios = $("input[name='barSortOrder']");
+                    $radios.filter('[value=' + selectedMetric + ']').attr('checked', true);
+                    $("#barSortDesc").attr("checked", [true]);
+                    doSort(false);
+                }
+            }
+
+            $(document).ready(function () {
+                $("input[name='barSortOrder']").click(function () { doSort(true); return true; });
+                $("input[name='barSortDesc']").change(function () { doSort(false); });
+                $("input[name='barHeight']").change(function () { doSetHeights(true); });
+
+                doSort(false);
+                doSetHeights(false);
+
+                $("div.scrollable").css({ 'overflow': 'auto' });
+            });
+        </script>
+
+        <style type="text/css">
+            body 
+            {
+                color: #000000;
+                font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;
+                line-height: 130%;
+            }
+            h1 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 170%;
+                font-weight: bold;
+            }            
+            h2 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 130%;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }            
+            h3 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 120%;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }            
+            a.bar
+            {
+                text-decoration: none;
+                display: block;
+                line-height: 1px;
+            }
+            .description
+            {
+                font-style: italic;
+            }
+            .log 
+            {
+                width: 600px;
+                white-space: pre-wrap;
+                display: block;
+                margin: 0px;
+            }
+            .errorMessage 
+            {
+                width: 600px;
+                color: Red;
+                font-weight: bold;
+            }
+            .stackTrace 
+            {
+                width: 600px;
+                white-space: pre-wrap;
+                font-style: italic;
+                color: Red;
+                display: block;
+            }
+            table.testEvents
+            {
+                border: solid 1px #e8eef4;
+                border-collapse: collapse;
+            }
+            table.testEvents td
+            {
+                vertical-align: top;
+                padding: 5px;
+                border: solid 1px #e8eef4;
+            }
+            table.testEvents th
+            {
+                padding: 6px 5px;
+                text-align: left;
+                background-color: #e8eef4;
+                border: solid 1px #e8eef4;                
+            }
+            .comment
+            {
+                font-style: italic;
+                font-size: smaller;
+            }
+            .startupBar
+            {
+                background-color: #EEEEEE;
+                cursor: default;
+            }
+            
+            .colorSucceeded
+            {
+                background-color: #90ED7B;
+            }
+            .colorIgnored
+            {
+                background-color: #FFFF85;
+            }
+            .colorPending
+            {
+                background-color: #D47BED;
+            }
+            .colorNothingToRun
+            {
+                background-color: #CCCCFF;
+            }
+            .colorSkipped
+            {
+                background-color: #CCCCFF;
+            }
+            .colorInconclusive
+            {
+                background-color: #7BEDED;
+            }
+            .colorCleanupFailed
+            {
+                background-color: #FFCCCC;
+            }
+            .colorRandomlyFailed
+            {
+                background-color: #EDB07B;
+            }
+            .colorFailed
+            {
+                background-color: #ED5F5F;
+            }
+            .colorInitializationFailed
+            {
+                background-color: #FF0000;
+            }
+            .colorFrameworkError
+            {
+                background-color: #FF0000;
+            }
+            ul.subNodeLinks
+            {
+                padding-left: 20px;
+                margin: 0px;
+            }
+            ul.subNodeLinks li
+            {
+                list-style: none;
+            }
+            
+            /* views general */
+            div.scrollable
+            {
+                /*overflow: auto; - thsi has to be set from js, because of an IE9 bug */
+            }
+            div.viewbox
+            {
+                position: relative;
+                border: 3px solid #e8eef4;
+            }
+            div.viewbox table
+            {
+                border: 0px;
+            }
+                        
+            /* testview */
+            #testview
+            {
+                padding-top: 23px;
+            }
+            
+            table.testview-items td
+            {
+                vertical-align: bottom;
+                padding: 0px 1px 0px 1px;
+            }
+            td.right-padding, td.left-padding
+            {
+                width: 25px;
+                min-width: 25px;
+            }
+            table.testview-items a.bar
+            {
+                width: 5px;
+            }
+            table.testview-items tr.testview-items-row
+            {
+                height: 60px;
+            }
+            
+            /* scale */
+            table.vertical-scale 
+            {
+                position: absolute;
+                top: 23px;
+                left: 0px;
+                width: 100%;
+                z-index: -100;
+            }
+            table.vertical-scale td, tr.horizontal-scale td
+            {
+                font-size: 60%;
+                line-height: normal;
+            }
+            table.vertical-scale tr.scale-max, table.vertical-scale tr.scale-mid 
+            {
+                height: 30px;
+            }
+            tr.horizontal-scale, table.vertical-scale tr.scale-min 
+            {
+                height: 12px;
+            }
+            
+            td.scale-max-label, td.scale-mid-label, td.scale-min-label
+            {
+                border-top: solid 1px #E6E6E6;
+                text-align: left;
+                vertical-align: top;
+            }
+            td.scale-10-label
+            {
+                border-left: solid 1px #E6E6E6;
+                text-align: left;
+                vertical-align: bottom;
+                padding-left: 1px;
+            }
+            tr.scale-mid td, tr.scale-min td, tr.scale-max td
+            {
+                border-top: solid 1px #E6E6E6;
+            }
+           
+            
+            /* bar-control */
+            #bar-control
+            {
+                font-size: 60%;
+                line-height: normal;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+            #bar-control label
+            {
+                font-weight: bold;
+                vertical-align: middle;
+            }
+            #bar-control .option
+            {
+                vertical-align: middle;
+                text-transform: lowercase;
+            }
+            #bar-control input[type="checkbox"]
+            {
+                padding: 0 2px 0 3px;
+            }
+            #bar-control input
+            {
+                vertical-align: top;
+                height: 12px;
+                margin: 0px;
+                padding: 0px;
+            }
+            #bar-control div
+            {
+                float: right;
+                margin: 3px 5px 3px 5px;
+            }
+            
+            
+            /* timeline view */
+            #timelineview
+            {
+                padding-top: 5px;
+            }
+            table.timelineview a
+            {
+                height: 20px;
+            }
+            table.timelineview td
+            {
+                vertical-align: bottom;
+                padding: 0px 1px 0px 0px;
+                border: 0px;
+            }
+            tr.thread-items-row
+            {
+                height: 25px;
+            }
+            tr.thread-items-row td
+            {
+                vertical-align: bottom;
+            }
+            td.thread-label
+            {
+                padding: 0px 6px 0px 6px;
+                text-align: right;
+                line-height: 18px;
+                vertical-align: bottom;
+            }
+            th.thread-label
+            {
+                padding: 3px 6px 0px 6px;
+                line-height: 18px;
+                text-align: left;
+                vertical-align: bottom;
+            }
+        </style>
+	</head>
+	<body>
+        <h1>SOM.BDD Test Execution Report</h1>
+        <ul>
+            <li>Project: SOM.BDD</li>
+            <li>Configuration: SOM.BDD</li>
+            <li>Test Assemblies: SOM.BDD.dll</li>
+            <li>Start Time: 11/01/2019 17:49:42</li>
+            <li>Duration: 00:49:14.7997293</li>
+            <li>Test Threads: 1</li>
+        </ul>
+
+        <h2>Result: 4 failed</h2>
+        <table class="testEvents">
+                <tr>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                <tr>
+            <td>
+            78%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 155px;" 
+                           title="14 succeeded" 
+                                                   />
+                    </td>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 43px;" 
+                           title="4 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>18</td>
+    <td>14</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+    </tr>
+
+        </table>
+        
+        <h2>Test Timeline Summary</h2>
+
+        <div id="timelineview" class="viewbox">
+            <div class="scrollable">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th class="thread-label" colspan="2">thread</th>
+                    </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: NBMTZRAZEVEDO">#0</td>
+                            <td colspan="2">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 3px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 3px;" 
+                title="Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t1442352420.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 5px;" 
+                title="Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA PONTUAL&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t-1566107076.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Gerar pedido manual para todos os tipos de sincronismo, &quot;ADORNO&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t1964271012.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO ADORNO&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t1426289537.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t32843071.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO EM JORNALISMO&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t-462817156.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 5px;" 
+                title="Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO PERFORMANCE&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t-40272791.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 5px;" 
+                title="Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t-1029208118.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 5px;" 
+                title="Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO PONTUAL&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t-1223856252.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 7px;" 
+                title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBONEWS&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t-2122853110.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 5px;" 
+                title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;CANAL VIVA&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t-112342716.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;DNI&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t-1900813757.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 6px;" 
+                title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;TV&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t-547080500.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBOPLAY&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t1178065270.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 5px;" 
+                title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOOB&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t817932684.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 6px;" 
+                title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;INTERNET&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t-258283802.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 10px;" 
+                title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;MULTISHOW&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t1738986992.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 6px;" 
+                title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;SPORTV&quot; (in 6.1.7 - Criar Pedido Manualmente)" 
+                href="#t1663646175.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="horizontal-scale">
+                        <td>&nbsp;</td>
+                            <td class="scale-10-label" style="width: 70px;min-width: 70px;">0s</td>
+                        <td class="scale-10-label">1642s</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <h2>Test Result View</h2>
+        <div id="testview" class="viewbox">
+            <div id="bar-control">
+                <div id="bar-control-sort">
+                    <label>sort by:</label>
+                    <span class="option"><input type="radio" name="barSortOrder" value="exectime" />Time</span>
+                    <span class="option"><input type="radio" name="barSortOrder" value="acttime" />Act Time</span>
+                    <span class="option"><input type="radio" name="barSortOrder" value="order" />Execution</span>
+                    <span class="option"><input type="radio" name="barSortOrder" value="rescode" checked="checked" />Result</span>
+                    <span class="option"><input type="checkbox" name="barSortDesc" id="barSortDesc" checked="checked" />desc</span>
+                </div>
+                <div id="bar-control-heights">
+                    <label>heights:</label>
+                    <span class="option"><input type="radio" checked="checked" name="barHeight" value="exectime" />Time</span>
+                    <span class="option"><input type="radio" name="barHeight" value="acttime" />Act Time</span>
+                    
+                </div>
+            </div>
+            <table class="vertical-scale" cellpadding="0" cellspacing="0">
+                <tr class="scale-max">
+                    <td class="left-padding scale-max-label">&nbsp;</td>
+                    <td colspan="18">&nbsp;</td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+                <tr class="scale-mid">
+                    <td class="left-padding scale-mid-label">&nbsp;</td>
+                    <td colspan="18">&nbsp;</td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+                <tr class="scale-min">
+                    <td class="left-padding scale-min-label">&nbsp;</td>
+                    <td colspan="18">&nbsp;</td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+            </table>
+            <div class="scrollable">
+                <table class="testview-items" cellpadding="0" cellspacing="0">
+                    <tr class="testview-items-row">
+                        <td class="left-padding">&nbsp;</td>
+    <td class="testview-item" 
+        data-sr-exectime="160.2117265" data-sr-rescode="110" data-sr-order="0" data-sr-acttime="25.255">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 38px;"
+            title="Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t1442352420.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="171.7238096" data-sr-rescode="110" data-sr-order="1" data-sr-acttime="28.805">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 41px;"
+            title="Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA PONTUAL&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t-1566107076.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="155.4573945" data-sr-rescode="110" data-sr-order="2" data-sr-acttime="23.923">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 37px;"
+            title="Gerar pedido manual para todos os tipos de sincronismo, &quot;ADORNO&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t1964271012.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="176.2336707" data-sr-rescode="110" data-sr-order="3" data-sr-acttime="28.28">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 42px;"
+            title="Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO ADORNO&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t1426289537.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="161.0050124" data-sr-rescode="110" data-sr-order="4" data-sr-acttime="20.162">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 38px;"
+            title="Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t32843071.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="164.9357203" data-sr-rescode="110" data-sr-order="5" data-sr-acttime="35.884">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 39px;"
+            title="Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO EM JORNALISMO&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t-462817156.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="146.5590983" data-sr-rescode="110" data-sr-order="6" data-sr-acttime="19.791">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 35px;"
+            title="Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO PERFORMANCE&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t-40272791.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="132.1947671" data-sr-rescode="110" data-sr-order="7" data-sr-acttime="14.453">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 31px;"
+            title="Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t-1029208118.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="147.4288442" data-sr-rescode="110" data-sr-order="8" data-sr-acttime="19.302">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 35px;"
+            title="Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO PONTUAL&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t-1223856252.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="169.3676973" data-sr-rescode="110" data-sr-order="9" data-sr-acttime="26.088">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 40px;"
+            title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBONEWS&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t-2122853110.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="150.8460273" data-sr-rescode="110" data-sr-order="11" data-sr-acttime="21.805">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 36px;"
+            title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;DNI&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t-1900813757.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="158.4360096" data-sr-rescode="110" data-sr-order="13" data-sr-acttime="28.758">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 38px;"
+            title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBOPLAY&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t1178065270.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="156.0855978" data-sr-rescode="110" data-sr-order="14" data-sr-acttime="21.001">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 37px;"
+            title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOOB&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t817932684.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="160.2342762" data-sr-rescode="110" data-sr-order="17" data-sr-acttime="30.737">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 38px;"
+            title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;SPORTV&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t1663646175.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="156.2764693" data-sr-rescode="440" data-sr-order="10" data-sr-acttime="31.004">
+        <a
+            class="bar colorFailed" 
+            style="height: 37px;"
+            title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;CANAL VIVA&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t-112342716.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="168.318307" data-sr-rescode="440" data-sr-order="12" data-sr-acttime="35.231">
+        <a
+            class="bar colorFailed" 
+            style="height: 40px;"
+            title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;TV&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t-547080500.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="166.2031996" data-sr-rescode="440" data-sr-order="15" data-sr-acttime="28.598">
+        <a
+            class="bar colorFailed" 
+            style="height: 39px;"
+            title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;INTERNET&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t-258283802.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="253.0103192" data-sr-rescode="440" data-sr-order="16" data-sr-acttime="79.76">
+        <a
+            class="bar colorFailed" 
+            style="height: 60px;"
+            title="Gerar pedido manual para todos os tipos de midia a debitar, &quot;MULTISHOW&quot; (in 6.1.7 - Criar Pedido Manualmente)"
+            href="#t1738986992.0">&nbsp;</a>
+    </td>
+                        <td class="right-padding">&nbsp;</td>
+                    </tr>
+                    <tr class="horizontal-scale">
+                        <td class="left-padding">&nbsp;</td>
+                        <td colspan="10">&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <h2>Feature Summary</h2>
+        <table class="testEvents">
+                <tr>
+            <th>Feature</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+    <tr>
+            <td><a href="#f-661942413">6.1.7 - Criar Pedido Manualmente</a></td>
+            <td>
+            78%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 155px;" 
+                           title="14 succeeded" 
+                                                   />
+                    </td>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 43px;" 
+                           title="4 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>18</td>
+    <td>14</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:49:14.5279469</td>
+
+    </tr>
+        </table>
+
+        <a name="error_summary" />
+        <h2>Error Summary</h2>
+        <table class="testEvents">
+                <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                <tr>
+                    <td>
+                        <a href="#t-112342716.0">Gerar pedido manual para todos os tipos de midia a debitar, &quot;CANAL VIVA&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 199px;" 
+                           title="1 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#t-547080500.0">Gerar pedido manual para todos os tipos de midia a debitar, &quot;TV&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 199px;" 
+                           title="1 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#t-258283802.0">Gerar pedido manual para todos os tipos de midia a debitar, &quot;INTERNET&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 199px;" 
+                           title="1 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#t1738986992.0">Gerar pedido manual para todos os tipos de midia a debitar, &quot;MULTISHOW&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 199px;" 
+                           title="1 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: The HTTP request to the remote WebDriver server for URL http://localhost:49661/session/c614579191ee709172257a259fdf7304/element/0.29178380009315874-11/elements timed out after 60 seconds. -&gt; A solicita&#231;&#227;o foi anulada: O tempo limite da opera&#231;&#227;o foi atingido.</div></td>
+                </tr>
+        </table>
+
+        <h2>Scenario Summary</h2>
+            <a name="f-661942413" />
+            <h3>Feature: 6.1.7 - Criar Pedido Manualmente</h3>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t1442352420.0">Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:40.2117265</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1566107076.0">Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA PONTUAL&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:51.7238096</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1964271012.0">Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;ADORNO&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:35.4573945</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1426289537.0">Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO ADORNO&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:56.2336707</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t32843071.0">Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:41.0050124</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-462817156.0">Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO EM JORNALISMO&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:44.9357203</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-40272791.0">Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO PERFORMANCE&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:26.5590983</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1029208118.0">Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:12.1947671</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1223856252.0">Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO PONTUAL&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:27.4288442</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-2122853110.0">Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBONEWS&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:49.3676973</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-112342716.0">Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;CANAL VIVA&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 199px;" 
+                           title="1 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:36.2764693</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1900813757.0">Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;DNI&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:30.8460273</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-547080500.0">Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;TV&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 199px;" 
+                           title="1 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:48.3183070</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1178065270.0">Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBOPLAY&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:38.4360096</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t817932684.0">Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOOB&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:36.0855978</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-258283802.0">Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;INTERNET&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 199px;" 
+                           title="1 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:46.2031996</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1738986992.0">Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;MULTISHOW&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            0%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorFailed" 
+                           style="width: 199px;" 
+                           title="1 failed" 
+                                                          href="#error_summary"
+                        />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:04:13.0103192</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1663646175.0">Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;SPORTV&quot;</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+        <table class="timelineview" cellpadding="0" cellspacing="0">
+            <tr>
+                    <td>
+                        <a class="bar colorSucceeded" 
+                           style="width: 199px;" 
+                           title="1 succeeded" 
+                                                   />
+                    </td>
+            </tr>
+            
+        </table>
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:02:40.2342762</td>
+
+                        
+                    </tr>
+            </table>
+
+        <h2>Execution Details</h2>
+            <a name="t1442352420.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT01
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 17:49:42</li>
+                <li>Execution time (sec): 160,2117265</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log"></pre>
+                        </td>
+                        <td>
+                            <!-- [Initialization: Feature - 6.1.7 - Criar Pedido Manualmente] -->
+                            <pre class="log">-&gt; Using app.config</pre>
+                        </td>
+                        <td>Succeeded in 0.161s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,1s)</pre>
+                        </td>
+                        <td>Succeeded in 27.461s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (96,2s)</pre>
+                        </td>
+                        <td>Succeeded in 96.225s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,3s)</pre>
+                        </td>
+                        <td>Succeeded in 1.318s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot; &quot;ABERTURA&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot;, &quot;ABERTURA&quot;) (25,2s)</pre>
+                        </td>
+                        <td>Succeeded in 25.255s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;GLOBONEWS&quot;, &quot;ABERTURA&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;GLOBONEWS&quot;, &quot;ABERTURA&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (9,6s)</pre>
+                        </td>
+                        <td>Succeeded in 9.649s</td>
+                    </tr>
+            </table>
+            <a name="t-1566107076.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA PONTUAL&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT01
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 17:52:22</li>
+                <li>Execution time (sec): 171,7238096</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA PONTUAL&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (18,7s)</pre>
+                        </td>
+                        <td>Succeeded in 23.594s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA PONTUAL&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (108,8s)</pre>
+                        </td>
+                        <td>Succeeded in 108.816s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA PONTUAL&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,3s)</pre>
+                        </td>
+                        <td>Succeeded in 1.331s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot; &quot;ABERTURA PONTUAL&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA PONTUAL&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot;, &quot;ABERTURA PONTUAL&quot;) (28,8s)</pre>
+                        </td>
+                        <td>Succeeded in 28.805s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;GLOBONEWS&quot;, &quot;ABERTURA PONTUAL&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ABERTURA PONTUAL&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;GLOBONEWS&quot;, &quot;ABERTURA PONTUAL&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (9,0s)</pre>
+                        </td>
+                        <td>Succeeded in 9.041s</td>
+                    </tr>
+            </table>
+            <a name="t1964271012.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;ADORNO&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT01
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 17:55:14</li>
+                <li>Execution time (sec): 155,4573945</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ADORNO&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,6s)</pre>
+                        </td>
+                        <td>Succeeded in 27.434s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ADORNO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (92,5s)</pre>
+                        </td>
+                        <td>Succeeded in 92.524s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ADORNO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (2,1s)</pre>
+                        </td>
+                        <td>Succeeded in 2.105s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot; &quot;ADORNO&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ADORNO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot;, &quot;ADORNO&quot;) (23,9s)</pre>
+                        </td>
+                        <td>Succeeded in 23.923s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;GLOBONEWS&quot;, &quot;ADORNO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ADORNO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;GLOBONEWS&quot;, &quot;ADORNO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (9,3s)</pre>
+                        </td>
+                        <td>Succeeded in 9.306s</td>
+                    </tr>
+            </table>
+            <a name="t1426289537.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO ADORNO&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT01
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 17:57:50</li>
+                <li>Execution time (sec): 176,2336707</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO ADORNO&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,8s)</pre>
+                        </td>
+                        <td>Succeeded in 27.635s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO ADORNO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (110,3s)</pre>
+                        </td>
+                        <td>Succeeded in 110.33s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO ADORNO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)</pre>
+                        </td>
+                        <td>Succeeded in 1.125s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot; &quot;AO VIVO ADORNO&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO ADORNO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot;, &quot;AO VIVO ADORNO&quot;) (28,3s)</pre>
+                        </td>
+                        <td>Succeeded in 28.28s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;GLOBONEWS&quot;, &quot;AO VIVO ADORNO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO ADORNO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;GLOBONEWS&quot;, &quot;AO VIVO ADORNO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (8,7s)</pre>
+                        </td>
+                        <td>Succeeded in 8.736s</td>
+                    </tr>
+            </table>
+            <a name="t32843071.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT01
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 18:00:46</li>
+                <li>Execution time (sec): 161,0050124</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,9s)</pre>
+                        </td>
+                        <td>Succeeded in 26.831s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (102,9s)</pre>
+                        </td>
+                        <td>Succeeded in 102.924s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)</pre>
+                        </td>
+                        <td>Succeeded in 1.122s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot; &quot;AO VIVO FUNDO&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot;, &quot;AO VIVO FUNDO&quot;) (20,2s)</pre>
+                        </td>
+                        <td>Succeeded in 20.162s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;GLOBONEWS&quot;, &quot;AO VIVO FUNDO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;GLOBONEWS&quot;, &quot;AO VIVO FUNDO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (9,8s)</pre>
+                        </td>
+                        <td>Succeeded in 9.831s</td>
+                    </tr>
+            </table>
+            <a name="t-462817156.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO EM JORNALISMO&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT01
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 18:03:27</li>
+                <li>Execution time (sec): 164,9357203</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO EM JORNALISMO&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,3s)</pre>
+                        </td>
+                        <td>Succeeded in 26.041s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO EM JORNALISMO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (92,1s)</pre>
+                        </td>
+                        <td>Succeeded in 92.117s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO EM JORNALISMO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)</pre>
+                        </td>
+                        <td>Succeeded in 1.07s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot; &quot;AO VIVO FUNDO EM JORNALISMO&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO EM JORNALISMO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot;, &quot;AO VIVO FUNDO EM ...&quot;) (35,9s)</pre>
+                        </td>
+                        <td>Succeeded in 35.884s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;GLOBONEWS&quot;, &quot;AO VIVO FUNDO EM JORNALISMO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO FUNDO EM JORNALISMO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;GLOBONEWS&quot;, &quot;AO VIVO FUNDO EM ...&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (9,7s)</pre>
+                        </td>
+                        <td>Succeeded in 9.695s</td>
+                    </tr>
+            </table>
+            <a name="t-40272791.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO PERFORMANCE&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT01
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 18:06:12</li>
+                <li>Execution time (sec): 146,5590983</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO PERFORMANCE&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (24,4s)</pre>
+                        </td>
+                        <td>Succeeded in 29.326s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO PERFORMANCE&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (83,9s)</pre>
+                        </td>
+                        <td>Succeeded in 83.851s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO PERFORMANCE&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,4s)</pre>
+                        </td>
+                        <td>Succeeded in 1.368s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot; &quot;AO VIVO PERFORMANCE&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO PERFORMANCE&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot;, &quot;AO VIVO PERFORMANCE&quot;) (19,8s)</pre>
+                        </td>
+                        <td>Succeeded in 19.791s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;GLOBONEWS&quot;, &quot;AO VIVO PERFORMANCE&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;AO VIVO PERFORMANCE&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;GLOBONEWS&quot;, &quot;AO VIVO PERFORMANCE&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (12,0s)</pre>
+                        </td>
+                        <td>Succeeded in 11.989s</td>
+                    </tr>
+            </table>
+            <a name="t-1029208118.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT01
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 18:08:38</li>
+                <li>Execution time (sec): 132,1947671</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,7s)</pre>
+                        </td>
+                        <td>Succeeded in 27.447s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (77,8s)</pre>
+                        </td>
+                        <td>Succeeded in 77.763s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,2s)</pre>
+                        </td>
+                        <td>Succeeded in 1.154s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot; &quot;ENCERRAMENTO&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot;, &quot;ENCERRAMENTO&quot;) (14,5s)</pre>
+                        </td>
+                        <td>Succeeded in 14.453s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;GLOBONEWS&quot;, &quot;ENCERRAMENTO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;GLOBONEWS&quot;, &quot;ENCERRAMENTO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (11,2s)</pre>
+                        </td>
+                        <td>Succeeded in 11.238s</td>
+                    </tr>
+            </table>
+            <a name="t-1223856252.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO PONTUAL&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT01
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 18:10:50</li>
+                <li>Execution time (sec): 147,4288442</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO PONTUAL&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,6s)</pre>
+                        </td>
+                        <td>Succeeded in 27.349s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO PONTUAL&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (89,6s)</pre>
+                        </td>
+                        <td>Succeeded in 89.581s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO PONTUAL&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,3s)</pre>
+                        </td>
+                        <td>Succeeded in 1.311s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot; &quot;ENCERRAMENTO PONTUAL&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO PONTUAL&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot;, &quot;ENCERRAMENTO PONTUAL&quot;) (19,3s)</pre>
+                        </td>
+                        <td>Succeeded in 19.302s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;GLOBONEWS&quot;, &quot;ENCERRAMENTO PONTUAL&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de sincronismo, &quot;ENCERRAMENTO PONTUAL&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;GLOBONEWS&quot;, &quot;ENCERRAMENTO PONTUAL&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (9,8s)</pre>
+                        </td>
+                        <td>Succeeded in 9.784s</td>
+                    </tr>
+            </table>
+            <a name="t-2122853110.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBONEWS&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT02
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 18:13:18</li>
+                <li>Execution time (sec): 169,3676973</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBONEWS&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (23,8s)</pre>
+                        </td>
+                        <td>Succeeded in 28.545s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBONEWS&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (103,9s)</pre>
+                        </td>
+                        <td>Succeeded in 103.889s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBONEWS&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)</pre>
+                        </td>
+                        <td>Succeeded in 1.125s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot; &quot;ABERTURA&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBONEWS&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBONEWS&quot;, &quot;ABERTURA&quot;) (26,1s)</pre>
+                        </td>
+                        <td>Succeeded in 26.088s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;GLOBONEWS&quot;, &quot;ABERTURA&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBONEWS&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;GLOBONEWS&quot;, &quot;ABERTURA&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (9,5s)</pre>
+                        </td>
+                        <td>Succeeded in 9.526s</td>
+                    </tr>
+            </table>
+            <a name="t-112342716.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;CANAL VIVA&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT02
+                </div>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 11/01/2019 18:16:07</li>
+                <li>Execution time (sec): 156,2764693</li>
+                <li>Thread: #0</li>
+                <li>Error: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;CANAL VIVA&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,9s)</pre>
+                        </td>
+                        <td>Succeeded in 27.833s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;CANAL VIVA&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (96,0s)</pre>
+                        </td>
+                        <td>Succeeded in 96.024s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;CANAL VIVA&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)</pre>
+                        </td>
+                        <td>Succeeded in 1.135s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;CANAL VIVA&quot; &quot;ABERTURA PONTUAL&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;CANAL VIVA&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;CANAL VIVA&quot;, &quot;ABERTURA PONTUAL&quot;) (31,0s)</pre>
+                        </td>
+                        <td>Succeeded in 31.004s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;CANAL VIVA&quot;, &quot;ABERTURA PONTUAL&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;CANAL VIVA&quot;] -->
+                            <pre class="log">error: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</pre>
+                                <div class="errorMessage">no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverException: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.get_WindowHandles()
+   em Framework.Core.Browsers.BrowserBase.SwitchToLastWindow() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\Framework.Core\Browsers\BrowserBase.cs:linha 139
+   em SOM.BDD.Pages.Pagamento.Pedido.CriarPedidoManualmentePage.TrocarAbaBrowser() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Pages\Pagamento\Pedido\CriarPedidoManualmentePage.cs:linha 133
+   em SOM.BDD.Steps.Pagamento.Pedido.CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(String MidiaADebitar, String Sincronismo, String Status, String StatusPav, String Reprise) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Steps\Pagamento\Pedido\6.1.7-CriarPedidoManualmenteSteps.cs:linha 55
+   em lambda_method(Closure , IContextManager , String , String , String , String , String )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.ScenarioCleanup()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.GerarPedidoManualParaTodosOsTiposDeMidiaADebitar(String midiaADebitar, String sincronismo, String dataExibicao, String interprete, String tempo, String status, String statusPav, String reprise, String[] exampleTags) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Features\Pagamento\Pedido\6.1.7 - Criar Pedido Manualmente.feature:linha 36
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.GerarPedidoManualParaTodosOsTiposDeMidiaADebitar_CANALVIVA() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Features\Pagamento\Pedido\6.1.7 - Criar Pedido Manualmente.feature:linha 32
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType)</pre>
+                        </td>
+                        <td>Failed in 0.277s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log"></pre>
+                        </td>
+                        <td>
+                            <!-- [Cleanup: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;CANAL VIVA&quot;] -->
+                            <pre class="log"></pre>
+                                <div class="errorMessage">no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverException: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.Close()
+   em Framework.Core.Browsers.BrowserBase.Fechar() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\Framework.Core\Browsers\BrowserBase.cs:linha 79
+   em SOM.BDD.Hooks.FeatureHook.FecharDriver() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Hooks\FeatureHook.cs:linha 61
+   em SOM.BDD.Hooks.FeatureHook.ExcluirMassas() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Hooks\FeatureHook.cs:linha 74
+   em lambda_method(Closure , IContextManager )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.InvokeHook(IBindingInvoker invoker, IHookBinding hookBinding, HookType hookType)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireEvents(HookType hookType)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireScenarioEvents(HookType bindingEvent)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnScenarioEnd()
+   em TechTalk.SpecFlow.TestRunner.OnScenarioEnd()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.ScenarioTearDown()
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType)</pre>
+                        </td>
+                        <td>Failed in 0.002s</td>
+                    </tr>
+            </table>
+            <a name="t-1900813757.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;DNI&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT02
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 18:18:44</li>
+                <li>Execution time (sec): 150,8460273</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log"></pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;DNI&quot;] -->
+                            <pre class="log">warning: The previous ScenarioContext was not disposed.</pre>
+                        </td>
+                        <td>Succeeded in 4.787s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;DNI&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,0s)</pre>
+                        </td>
+                        <td>Succeeded in 21.955s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;DNI&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (90,3s)</pre>
+                        </td>
+                        <td>Succeeded in 90.296s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;DNI&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)</pre>
+                        </td>
+                        <td>Succeeded in 1.113s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;DNI&quot; &quot;ADORNO&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;DNI&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;DNI&quot;, &quot;ADORNO&quot;) (21,8s)</pre>
+                        </td>
+                        <td>Succeeded in 21.805s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;DNI&quot;, &quot;ADORNO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;DNI&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;DNI&quot;, &quot;ADORNO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (10,7s)</pre>
+                        </td>
+                        <td>Succeeded in 10.709s</td>
+                    </tr>
+            </table>
+            <a name="t-547080500.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;TV&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT02
+                </div>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 11/01/2019 18:21:14</li>
+                <li>Execution time (sec): 168,318307</li>
+                <li>Thread: #0</li>
+                <li>Error: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;TV&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,4s)</pre>
+                        </td>
+                        <td>Succeeded in 27.145s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;TV&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (104,4s)</pre>
+                        </td>
+                        <td>Succeeded in 104.358s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;TV&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,3s)</pre>
+                        </td>
+                        <td>Succeeded in 1.326s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;TV&quot; &quot;AO VIVO ADORNO&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;TV&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;TV&quot;, &quot;AO VIVO ADORNO&quot;) (35,2s)</pre>
+                        </td>
+                        <td>Succeeded in 35.231s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;TV&quot;, &quot;AO VIVO ADORNO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;TV&quot;] -->
+                            <pre class="log">error: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</pre>
+                                <div class="errorMessage">no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverException: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.get_WindowHandles()
+   em Framework.Core.Browsers.BrowserBase.SwitchToLastWindow() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\Framework.Core\Browsers\BrowserBase.cs:linha 139
+   em SOM.BDD.Pages.Pagamento.Pedido.CriarPedidoManualmentePage.TrocarAbaBrowser() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Pages\Pagamento\Pedido\CriarPedidoManualmentePage.cs:linha 133
+   em SOM.BDD.Steps.Pagamento.Pedido.CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(String MidiaADebitar, String Sincronismo, String Status, String StatusPav, String Reprise) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Steps\Pagamento\Pedido\6.1.7-CriarPedidoManualmenteSteps.cs:linha 55
+   em lambda_method(Closure , IContextManager , String , String , String , String , String )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.ScenarioCleanup()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.GerarPedidoManualParaTodosOsTiposDeMidiaADebitar(String midiaADebitar, String sincronismo, String dataExibicao, String interprete, String tempo, String status, String statusPav, String reprise, String[] exampleTags) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Features\Pagamento\Pedido\6.1.7 - Criar Pedido Manualmente.feature:linha 36
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.GerarPedidoManualParaTodosOsTiposDeMidiaADebitar_TV() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Features\Pagamento\Pedido\6.1.7 - Criar Pedido Manualmente.feature:linha 32
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType)</pre>
+                        </td>
+                        <td>Failed in 0.249s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log"></pre>
+                        </td>
+                        <td>
+                            <!-- [Cleanup: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;TV&quot;] -->
+                            <pre class="log"></pre>
+                                <div class="errorMessage">no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverException: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.Close()
+   em Framework.Core.Browsers.BrowserBase.Fechar() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\Framework.Core\Browsers\BrowserBase.cs:linha 79
+   em SOM.BDD.Hooks.FeatureHook.FecharDriver() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Hooks\FeatureHook.cs:linha 61
+   em SOM.BDD.Hooks.FeatureHook.ExcluirMassas() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Hooks\FeatureHook.cs:linha 74
+   em lambda_method(Closure , IContextManager )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.InvokeHook(IBindingInvoker invoker, IHookBinding hookBinding, HookType hookType)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireEvents(HookType hookType)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireScenarioEvents(HookType bindingEvent)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnScenarioEnd()
+   em TechTalk.SpecFlow.TestRunner.OnScenarioEnd()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.ScenarioTearDown()
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType)</pre>
+                        </td>
+                        <td>Failed in 0.003s</td>
+                    </tr>
+            </table>
+            <a name="t1178065270.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBOPLAY&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT02
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 18:24:03</li>
+                <li>Execution time (sec): 158,4360096</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log"></pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBOPLAY&quot;] -->
+                            <pre class="log">warning: The previous ScenarioContext was not disposed.</pre>
+                        </td>
+                        <td>Succeeded in 4.769s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBOPLAY&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,1s)</pre>
+                        </td>
+                        <td>Succeeded in 21.104s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBOPLAY&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (93,5s)</pre>
+                        </td>
+                        <td>Succeeded in 93.503s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBOPLAY&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,3s)</pre>
+                        </td>
+                        <td>Succeeded in 1.345s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBOPLAY&quot; &quot;AO VIVO FUNDO&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBOPLAY&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOBOPLAY&quot;, &quot;AO VIVO FUNDO&quot;) (28,8s)</pre>
+                        </td>
+                        <td>Succeeded in 28.758s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;GLOBOPLAY&quot;, &quot;AO VIVO FUNDO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOBOPLAY&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;GLOBOPLAY&quot;, &quot;AO VIVO FUNDO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (8,8s)</pre>
+                        </td>
+                        <td>Succeeded in 8.783s</td>
+                    </tr>
+            </table>
+            <a name="t817932684.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOOB&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT02
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 18:26:41</li>
+                <li>Execution time (sec): 156,0855978</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOOB&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,3s)</pre>
+                        </td>
+                        <td>Succeeded in 26.272s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOOB&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (97,8s)</pre>
+                        </td>
+                        <td>Succeeded in 97.843s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOOB&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)</pre>
+                        </td>
+                        <td>Succeeded in 1.106s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOOB&quot; &quot;AO VIVO FUNDO EM JORNALISMO&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOOB&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;GLOOB&quot;, &quot;AO VIVO FUNDO EM ...&quot;) (21,0s)</pre>
+                        </td>
+                        <td>Succeeded in 21.001s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;GLOOB&quot;, &quot;AO VIVO FUNDO EM JORNALISMO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;GLOOB&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;GLOOB&quot;, &quot;AO VIVO FUNDO EM ...&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (9,7s)</pre>
+                        </td>
+                        <td>Succeeded in 9.742s</td>
+                    </tr>
+            </table>
+            <a name="t-258283802.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;INTERNET&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT02
+                </div>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 11/01/2019 18:29:17</li>
+                <li>Execution time (sec): 166,2031996</li>
+                <li>Thread: #0</li>
+                <li>Error: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;INTERNET&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,3s)</pre>
+                        </td>
+                        <td>Succeeded in 26.16s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;INTERNET&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (109,8s)</pre>
+                        </td>
+                        <td>Succeeded in 109.845s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;INTERNET&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,3s)</pre>
+                        </td>
+                        <td>Succeeded in 1.346s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;INTERNET&quot; &quot;AO VIVO PERFORMANCE&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;INTERNET&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;INTERNET&quot;, &quot;AO VIVO PERFORMANCE&quot;) (28,6s)</pre>
+                        </td>
+                        <td>Succeeded in 28.598s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;INTERNET&quot;, &quot;AO VIVO PERFORMANCE&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;INTERNET&quot;] -->
+                            <pre class="log">error: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</pre>
+                                <div class="errorMessage">no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverException: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.get_WindowHandles()
+   em Framework.Core.Browsers.BrowserBase.SwitchToLastWindow() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\Framework.Core\Browsers\BrowserBase.cs:linha 139
+   em SOM.BDD.Pages.Pagamento.Pedido.CriarPedidoManualmentePage.TrocarAbaBrowser() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Pages\Pagamento\Pedido\CriarPedidoManualmentePage.cs:linha 133
+   em SOM.BDD.Steps.Pagamento.Pedido.CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(String MidiaADebitar, String Sincronismo, String Status, String StatusPav, String Reprise) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Steps\Pagamento\Pedido\6.1.7-CriarPedidoManualmenteSteps.cs:linha 55
+   em lambda_method(Closure , IContextManager , String , String , String , String , String )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.ScenarioCleanup()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.GerarPedidoManualParaTodosOsTiposDeMidiaADebitar(String midiaADebitar, String sincronismo, String dataExibicao, String interprete, String tempo, String status, String statusPav, String reprise, String[] exampleTags) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Features\Pagamento\Pedido\6.1.7 - Criar Pedido Manualmente.feature:linha 36
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.GerarPedidoManualParaTodosOsTiposDeMidiaADebitar_INTERNET() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Features\Pagamento\Pedido\6.1.7 - Criar Pedido Manualmente.feature:linha 32
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType)</pre>
+                        </td>
+                        <td>Failed in 0.248s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log"></pre>
+                        </td>
+                        <td>
+                            <!-- [Cleanup: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;INTERNET&quot;] -->
+                            <pre class="log"></pre>
+                                <div class="errorMessage">no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverException: no such session
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.Close()
+   em Framework.Core.Browsers.BrowserBase.Fechar() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\Framework.Core\Browsers\BrowserBase.cs:linha 79
+   em SOM.BDD.Hooks.FeatureHook.FecharDriver() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Hooks\FeatureHook.cs:linha 61
+   em SOM.BDD.Hooks.FeatureHook.ExcluirMassas() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Hooks\FeatureHook.cs:linha 74
+   em lambda_method(Closure , IContextManager )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.InvokeHook(IBindingInvoker invoker, IHookBinding hookBinding, HookType hookType)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireEvents(HookType hookType)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireScenarioEvents(HookType bindingEvent)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnScenarioEnd()
+   em TechTalk.SpecFlow.TestRunner.OnScenarioEnd()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.ScenarioTearDown()
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType)</pre>
+                        </td>
+                        <td>Failed in 0.004s</td>
+                    </tr>
+            </table>
+            <a name="t1738986992.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;MULTISHOW&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT02
+                </div>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 11/01/2019 18:32:03</li>
+                <li>Execution time (sec): 253,0103192</li>
+                <li>Thread: #0</li>
+                <li>Error: The HTTP request to the remote WebDriver server for URL http://localhost:49661/session/c614579191ee709172257a259fdf7304/element/0.29178380009315874-11/elements timed out after 60 seconds. -&gt; A solicita&#231;&#227;o foi anulada: O tempo limite da opera&#231;&#227;o foi atingido.</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log"></pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;MULTISHOW&quot;] -->
+                            <pre class="log">warning: The previous ScenarioContext was not disposed.</pre>
+                        </td>
+                        <td>Succeeded in 4.79s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;MULTISHOW&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,2s)</pre>
+                        </td>
+                        <td>Succeeded in 22.194s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;MULTISHOW&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (105,0s)</pre>
+                        </td>
+                        <td>Succeeded in 104.999s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;MULTISHOW&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)</pre>
+                        </td>
+                        <td>Succeeded in 1.121s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;MULTISHOW&quot; &quot;ENCERRAMENTO&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;MULTISHOW&quot;] -->
+                            <pre class="log">error: The HTTP request to the remote WebDriver server for URL http://localhost:49661/session/c614579191ee709172257a259fdf7304/element/0.29178380009315874-11/elements timed out after 60 seconds.</pre>
+                                <div class="errorMessage">The HTTP request to the remote WebDriver server for URL http://localhost:49661/session/c614579191ee709172257a259fdf7304/element/0.29178380009315874-11/elements timed out after 60 seconds. -&gt; A solicita&#231;&#227;o foi anulada: O tempo limite da opera&#231;&#227;o foi atingido.</div>
+                                <pre class="stackTrace">OpenQA.Selenium.WebDriverException: The HTTP request to the remote WebDriver server for URL http://localhost:49661/session/c614579191ee709172257a259fdf7304/element/0.29178380009315874-11/elements timed out after 60 seconds. ---&gt; System.Net.WebException: A solicita&#231;&#227;o foi anulada: O tempo limite da opera&#231;&#227;o foi atingido.
+   em System.Net.HttpWebRequest.GetResponse()
+   em OpenQA.Selenium.Remote.HttpCommandExecutor.MakeHttpRequest(HttpRequestInfo requestInfo)
+   --- Fim do rastreamento de pilha de exce&#231;&#245;es internas ---
+   em OpenQA.Selenium.Remote.HttpCommandExecutor.MakeHttpRequest(HttpRequestInfo requestInfo)
+   em OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)
+   em OpenQA.Selenium.Remote.DriverServiceCommandExecutor.Execute(Command commandToExecute)
+   em OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   em OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   em OpenQA.Selenium.Remote.RemoteWebElement.FindElements(String mechanism, String value)
+   em OpenQA.Selenium.Remote.RemoteWebElement.FindElementsByXPath(String xpath)
+   em OpenQA.Selenium.By.&lt;&gt;c__DisplayClass19_0.&lt;XPath&gt;b__1(ISearchContext context)
+   em OpenQA.Selenium.By.FindElements(ISearchContext context)
+   em OpenQA.Selenium.Remote.RemoteWebElement.FindElements(By by)
+   em OpenQA.Selenium.Support.UI.SelectElement.SelectByText(String text, Boolean partialMatch)
+   em Framework.Core.FrameworkActions.MouseActions.SelectElementATM[T](T browser, Element elemento, String texto) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\Framework.Core\FrameworkActions\MouseActions.cs:linha 52
+   em SOM.BDD.Pages.Pagamento.Pedido.CriarPedidoManualmentePage.SelecionarMidiaADebitar(String Valor) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Pages\Pagamento\Pedido\CriarPedidoManualmentePage.cs:linha 70
+   em SOM.BDD.Pages.Pagamento.Pedido.CriarPedidoManualmentePage.CadastrarPedidoManual(String Obra, String DataExibicao, String Tempo, String MidiaADebitar, String Sincronismo) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Pages\Pagamento\Pedido\CriarPedidoManualmentePage.cs:linha 118
+   em SOM.BDD.Steps.Pagamento.Pedido.CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(String DataExibicao, String Tempo, String MidiaADebitar, String Sincronismo) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Steps\Pagamento\Pedido\6.1.7-CriarPedidoManualmenteSteps.cs:linha 63
+   em lambda_method(Closure , IContextManager , String , String , String , String )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.ScenarioCleanup()
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.GerarPedidoManualParaTodosOsTiposDeMidiaADebitar(String midiaADebitar, String sincronismo, String dataExibicao, String interprete, String tempo, String status, String statusPav, String reprise, String[] exampleTags) na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Features\Pagamento\Pedido\6.1.7 - Criar Pedido Manualmente.feature:linha 36
+   em SOM.BDD.Features.Pagamento.Pedido._6_1_7_CriarPedidoManualmenteFeature.GerarPedidoManualParaTodosOsTiposDeMidiaADebitar_MULTISHOW() na C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\Features\Pagamento\Pedido\6.1.7 - Criar Pedido Manualmente.feature:linha 32
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestAssemblyExecutor.ExecuteTestNodeTask(TestNode testNode, ITaskExecutor task, TraceEventType eventType)</pre>
+                        </td>
+                        <td>Failed in 79.76s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;MULTISHOW&quot;, &quot;ENCERRAMENTO&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;MULTISHOW&quot;] -->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.004s</td>
+                    </tr>
+            </table>
+            <a name="t1663646175.0" />
+            <h3>Scenario: Gerar pedido manual para todos os tipos de midia a debitar, &quot;SPORTV&quot; (in SOM.BDD, 6.1.7 - Criar Pedido Manualmente)</h3>
+                <div class="description">
+                    tags: kill_Driver, CriarPedidoManual, Pedidos, chrome, CriarPedidoManualCT02
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 11/01/2019 18:36:16</li>
+                <li>Execution time (sec): 160,2342762</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que esteja logado no sistema SOM</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;SPORTV&quot;] -->
+                            <pre class="log">done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,1s)</pre>
+                        </td>
+                        <td>Succeeded in 25.844s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado que tenha um produto e uma obra cadastrada no sistema</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;SPORTV&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueTenhaUmProdutoEUmaObraCadastradaNoSistema() (93,7s)</pre>
+                        </td>
+                        <td>Succeeded in 93.717s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E que estou na tela de cria&#231;&#227;o de pedidos</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;SPORTV&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.DadoQueEstouNaTelaDeCriacaoDePedidos() (1,1s)</pre>
+                        </td>
+                        <td>Succeeded in 1.121s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando crio um novo pedido manualmente &quot;10/10/2018&quot;, &quot;10&quot;, &quot;SPORTV&quot; &quot;ENCERRAMENTO PONTUAL&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;SPORTV&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.QuandoCrioUmNovoPedidoManualmente(&quot;10/10/2018&quot;, &quot;10&quot;, &quot;SPORTV&quot;, &quot;ENCERRAMENTO PONTUAL&quot;) (30,7s)</pre>
+                        </td>
+                        <td>Succeeded in 30.737s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao visualizo o pedido gerado com sucesso &quot;SPORTV&quot;, &quot;ENCERRAMENTO PONTUAL&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Gerar pedido manual para todos os tipos de midia a debitar, &quot;SPORTV&quot;] -->
+                            <pre class="log">done: CriarPedidoManualmenteSteps.EntaoVisualizoOPedidoGeradoComSucesso(&quot;SPORTV&quot;, &quot;ENCERRAMENTO PONTUAL&quot;, &quot;Em andamento&quot;, &quot;N&#227;o requerido&quot;, &quot;N&#227;o&quot;) (8,7s)</pre>
+                        </td>
+                        <td>Succeeded in 8.655s</td>
+                    </tr>
+            </table>
+	</body>
+</html>
+</a><div style='position: absolute; top:0px; right:10px; z-index: 1000; text-align: right; font-size: small; color: #FF5555'>
+Generated by an evaluation version of SpecRun.<br />
+This version can be used for evaluation purposes only.<br />
+For obtaining a registered license please visit <a href='http://www.specflow.org/plus'>http://www.specflow.org/plus</a>.
+</div>

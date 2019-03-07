@@ -1,0 +1,65 @@
+﻿2018-11-12T14:23:13.5256504-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-12T14:23:13.5326302-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-12T14:23:13.6435636-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-12T14:23:13.6445634-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-12T14:23:13.6455627-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-12T14:23:18.7460832-02:00;Thread#12;Info;starting test run
+2018-11-12T14:23:18.7528143-02:00;Thread#12;Info;Discovering target: Default
+2018-11-12T14:23:18.7538136-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#19: Cadastrar Autor - 
+#24: Incluir um contato sem preenchimento de campos obrigatórios, "Teste de Autor" - TestAssembly:SOM.BDD/Feature:Cadastrar+Autor/Scenario:Incluir+um+contato+sem+preenchimento+de+campos+obrigat%c3%b3rios%2c+%22Teste+de+Autor%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #24 from normal test queue 
+Thread#0:Scheduler: considering testitem #24 for thread 0
+Thread#0:TestItem#24:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#24:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#24:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #24 for thread 0
+Thread#0:Scheduler: Test #24 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #24/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (23,2s)
+Thread#0:B:E que esteja na tela de cadastro Autor
+Thread#0:T:done: CadastrarAutorSteps.DadoQueEstejaNaTelaDeCadastroAutor() (1,1s)
+Thread#0:B:Quando cadastro um novo autor com "Teste de Autor" e "Teste Nome"
+Thread#0:T:done: CadastrarAutorSteps.QuandoCadastroUmNovoAutorComE("Teste de Autor", "Teste Nome") (3,7s)
+Thread#0:B:E tento adicionar um contato sem preencher o campos " "
+Thread#0:T:error: invalid element state: Element is not currently interactable and may not be manipulated
+Thread#0:T:  (Session info: chrome=70.0.3538.77)
+Thread#0:T:  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+Thread#0:B:Entao visualizo o campo Nome da aba de contato em destaque
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #24/0 is finished on thread #0 as Failed within 35,8786591 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-12T14:23:54.8063573-02:00;Thread#12;Info;test run finished
+2018-11-12T14:23:54.8073571-02:00;Thread#12;Info;publishing test results
+2018-11-12T14:23:54.8143523-02:00;Thread#12;Info;test results published
+2018-11-12T14:23:54.8143523-02:00;Thread#12;Info;generating reports
+2018-11-12T14:23:54.8213479-02:00;Thread#12;Info;creating 1 report(s)
+2018-11-12T14:23:54.8213479-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-11-12T14:23:56.9945588-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
+2018-11-12T14:23:57.0005565-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-12T14:23:57.0005565-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T142313.html'
+2018-11-12T14:23:57.0105496-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-12T142313.log

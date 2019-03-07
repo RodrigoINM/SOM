@@ -1,0 +1,38 @@
+﻿2018-12-07T11:41:51.0910857-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-07T11:41:51.1030578-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-07T11:41:51.2620439-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-07T11:41:51.2630437-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-07T11:41:51.2639702-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-07T11:42:00.5314371-02:00;Thread#12;Info;starting test run
+2018-12-07T11:42:00.5707881-02:00;Thread#12;Info;Discovering target: Default
+2018-12-07T11:42:00.5707881-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#40: 6.1.10 - Seleção de itens e atualização do Valor Total - 
+#41: Seleção de um item - TestAssembly:SOM.BDD/Feature:6.1.10+-+Sele%c3%a7%c3%a3o+de+itens+e+atualiza%c3%a7%c3%a3o+do+Valor+Total/Scenario:Sele%c3%a7%c3%a3o+de+um+item
+#42: Soma de itens no detalhe do pedido - TestAssembly:SOM.BDD/Feature:6.1.10+-+Sele%c3%a7%c3%a3o+de+itens+e+atualiza%c3%a7%c3%a3o+do+Valor+Total/Scenario:Soma+de+itens+no+detalhe+do+pedido
+#43: Subtração de itens no detalhe do pedido - TestAssembly:SOM.BDD/Feature:6.1.10+-+Sele%c3%a7%c3%a3o+de+itens+e+atualiza%c3%a7%c3%a3o+do+Valor+Total/Scenario:Subtra%c3%a7%c3%a3o+de+itens+no+detalhe+do+pedido
+#44: Soma de itens na busca por pedido - TestAssembly:SOM.BDD/Feature:6.1.10+-+Sele%c3%a7%c3%a3o+de+itens+e+atualiza%c3%a7%c3%a3o+do+Valor+Total/Scenario:Soma+de+itens+na+busca+por+pedido
+#45: Subtração de itens na busca por pedido - TestAssembly:SOM.BDD/Feature:6.1.10+-+Sele%c3%a7%c3%a3o+de+itens+e+atualiza%c3%a7%c3%a3o+do+Valor+Total/Scenario:Subtra%c3%a7%c3%a3o+de+itens+na+busca+por+pedido
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #41 from normal test queue 
+Thread#0:Scheduler: considering testitem #41 for thread 0
+Thread#0:TestItem#41:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#41:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#41:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #41 for thread 0
+Thread#0:Scheduler: Test #41 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #41/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,1s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema
+Thread#0:T:error: unknown error: Element <a ng-click="adicionarComposicao()" ng-disabled="ComposicaoModal" class="btn btn-link collapsed pull-right composicaoobra" style="color: rgb(178, 193, 94); padding: 0px; font-size: 22px; margin-left: 5px;" uib-tooltip="Salvar" tooltip-placement="top">...</a> is not clickable at point (1052, 596). Other element would receive the click: <div modal-render="true" tabindex="-1" role="dialog" class="modal fade ng-isolate-scope animated fadeIn in" uib-modal-animation-class="fade" modal-in-class="in" ng-style="{'z-index': 2050 + index*10, display: 'block'}" uib-modal-window="modal-window" window-class="animated fadeIn" size="lg" index="1" animate="animate" modal-animation="true" style="z-index: 2060; display: block;">...</div>
+Thread#0:T:  (Session info: chrome=70.0.3538.110)
+Thread#0:T:  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 

@@ -1,0 +1,43 @@
+﻿2019-01-14T11:30:35.8377832-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-14T11:30:35.8447803-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-14T11:30:35.9547338-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-14T11:30:35.9557224-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-14T11:30:35.9567142-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-14T11:30:48.0607685-02:00;Thread#12;Info;starting test run
+2019-01-14T11:30:48.0696120-02:00;Thread#12;Info;Discovering target: Default
+2019-01-14T11:30:48.0705955-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#84: 6.1.2 - Alterar itens de pedido - 
+#85: Alterar valor a pagar para um item de pedido, "300,00" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Alterar+valor+a+pagar+para+um+item+de+pedido%2c+%22300%2c00%22
+#89: Alterar o valor do DNI com sucesso, "300,00" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Alterar+o+valor+do+DNI+com+sucesso%2c+%22300%2c00%22
+#96: Alterar obra para Dominio Publico com pedido pendente, "MUSICA COMERCIAL" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Alterar+obra+para+Dominio+Publico+com+pedido+pendente%2c+%22MUSICA+COMERCIAL%22
+#97: Alterar obra para Blacklist com pedido pendente, "MUSICA COMERCIAL" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Alterar+obra+para+Blacklist+com+pedido+pendente%2c+%22MUSICA+COMERCIAL%22
+#98: Alterar porcentagem dos autores da composição de uma obra com pedido pendente, "MUSICA COMERCIAL" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Alterar+porcentagem+dos+autores+da+composi%c3%a7%c3%a3o+de+uma+obra+com+pedido+pendente%2c+%22MUSICA+COMERCIAL%22
+#99: Alterar os Autores da composição de uma obra com pedido pendente, "MUSICA COMERCIAL" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Alterar+os+Autores+da+composi%c3%a7%c3%a3o+de+uma+obra+com+pedido+pendente%2c+%22MUSICA+COMERCIAL%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #85 from normal test queue 
+Thread#0:Scheduler: considering testitem #85 for thread 0
+Thread#0:TestItem#85:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#85:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#85:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #85 for thread 0
+Thread#0:Scheduler: Test #85 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #85/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (17,4s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema
+Thread#0:T:error: The HTTP request to the remote WebDriver server for URL http://localhost:60709/session/3acf528c5b4d724fba7435ddd19a57ae/element timed out after 60 seconds.
+Thread#0:B:E que esteja na aba de pagamento
+Thread#0:T:skipped because of previous errors
+Thread#0:B:Quando altero o valor do pagamento, a moeda e a taxa de conversão de um item do pedido "300,00", "Dólar", "3,8", "Rodrigo"
+Thread#0:T:skipped because of previous errors
+Thread#0:B:Então visualizo o novo valor a ser pago para o DDA do Autor na aba de pagamento "1.140,00"
+Thread#0:T:sk

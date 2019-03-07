@@ -1,0 +1,63 @@
+﻿2018-11-13T18:52:10.1346449-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-13T18:52:10.1516342-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-13T18:52:10.3585170-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-13T18:52:10.3605161-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-13T18:52:10.3615149-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-13T18:52:15.5162203-02:00;Thread#12;Info;starting test run
+2018-11-13T18:52:15.5321939-02:00;Thread#12;Info;Discovering target: Default
+2018-11-13T18:52:15.5341912-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#11: 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet - 
+#13: Alteração de sincronismo - Pedido já existente para a mesma obra e sincronismo, "MUSICA DA MARCELLE" - TestAssembly:SOM.BDD/Feature:6.1.1+-+Gerar+pedidos+de+pagamento+-+Cue-Sheet/Scenario:Altera%c3%a7%c3%a3o+de+sincronismo+-+Pedido+j%c3%a1+existente+para+a+mesma+obra+e+sincronismo%2c+%22MUSICA+DA+MARCELLE%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #13 from normal test queue 
+Thread#0:Scheduler: considering testitem #13 for thread 0
+Thread#0:TestItem#13:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#13:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#13:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #13 for thread 0
+Thread#0:Scheduler: Test #13 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #13/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,2s)
+Thread#0:B:E que tenha uma cue-sheet previamente cadastrada
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetPreviamenteCadastrada() (1,1s)
+Thread#0:B:Dado que eu tenha dois pedidos gerados para itens de cue-sheet com sincronismos diferentes "ADORNO" E "ENCERRAMENTO"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueEuTenhaDoisPedidosGeradosParaItensDeCue_SheetComSincronismosDiferentesE("ADORNO", "ENCERRAMENTO") (16,6s)
+Thread#0:B:Quando altero o "ENCERRAMENTO" para o mesmo de "ADORNO"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.QuandoAlteroOParaOMesmoDe("ENCERRAMENTO", "ADORNO") (8,5s)
+Thread#0:B:Então visualizo o icone de pedido no item de cue-sheet com o pedido existente associado para "MUSICA DA MARCELLE", "FUNDO" e "41"
+Thread#0:T:error: The HTTP request to the remote WebDriver server for URL http://localhost:59059/session/ade390b689f98087cc463a6b6b3443ea/element timed out after 60 seconds.
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #13/0 is finished on thread #0 as Failed within 207,4952185 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-13T18:55:43.5969458-02:00;Thread#12;Info;test run finished
+2018-11-13T18:55:43.5989445-02:00;Thread#12;Info;publishing test results
+2018-11-13T18:55:43.6299273-02:00;Thread#12;Info;test results published
+2018-11-13T18:55:43.6309257-02:00;Thread#12;Info;generating reports
+2018-11-13T18:55:43.6419205-02:00;Thread#12;Info;creating 1 report(s)
+2018-11-13T18:55:43.6439201-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-11-13T18:55:46.3338454-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
+2018-11-13T18:55:46.3578312-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-13T18:55:46.3588315-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-13T185210.html'
+2018-11-13T18:55:46.3718244-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-13T185210.log

@@ -1,0 +1,121 @@
+﻿2018-11-23T15:31:25.6796562-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-23T15:31:25.6866518-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-23T15:31:25.7985868-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-23T15:31:25.7995912-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-23T15:31:25.8002369-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-23T15:31:36.9010432-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-23T15:31:36.9090419-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-23T15:31:36.9100417-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-23T15:32:12.6237372-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-23T15:32:12.6247379-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-23T15:32:12.6317350-02:00;VSTestExecutionThread;Info;test results published
+2018-11-23T15:32:12.6327338-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-23T15:32:12.6407283-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-23T15:32:12.6407283-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-23T15:32:14.8954472-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-23T15:32:14.9024232-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-23T15:32:14.9024232-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-23T153125.html'
+2018-11-23T15:32:14.9124168-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-23T153125.log
+2018-11-23T15:32:14.9154310-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-23T15:32:43.6356510-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-23T15:32:43.6366508-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-23T15:32:43.6476675-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-23T15:32:43.6486654-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-23T15:32:43.6496554-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-23T15:32:48.6547788-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-23T15:32:48.6568022-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-23T15:32:48.6578230-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-23T15:33:24.1490785-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-23T15:33:24.1510771-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-23T15:33:24.1530762-02:00;VSTestExecutionThread;Info;test results published
+2018-11-23T15:33:24.1540751-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-23T15:33:24.1550749-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-23T15:33:24.1560746-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-23T15:33:25.8688390-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-23T15:33:25.8738365-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-23T15:33:25.8738365-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-23T153243.html'
+2018-11-23T15:33:25.8818310-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-23T153243.log
+2018-11-23T15:33:25.8838445-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-23T15:34:21.8548972-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-23T15:34:21.8548972-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-23T15:34:21.8669117-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-23T15:34:21.8678985-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-23T15:34:21.8688884-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-23T15:34:26.8817559-02:00;Thread#18;Info;starting test run
+2018-11-23T15:34:26.8836728-02:00;Thread#18;Info;Discovering target: Default
+2018-11-23T15:34:26.8846731-02:00;Thread#18;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#38: 3.1.3 - Cadastrar Obra e Composição - 
+#39: Inclusão de Obra sem composição, "TITULO OBRA 500" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Cadastrar+Obra+e+Composi%c3%a7%c3%a3o/Scenario:Inclus%c3%a3o+de+Obra+sem+composi%c3%a7%c3%a3o%2c+%22TITULO+OBRA+500%22
+#40: Inclusão de Obra com um percentual de composição 100%, "TITULO OBRA 501" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Cadastrar+Obra+e+Composi%c3%a7%c3%a3o/Scenario:Inclus%c3%a3o+de+Obra+com+um+percentual+de+composi%c3%a7%c3%a3o+100%25%2c+%22TITULO+OBRA+501%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #39 from normal test queue 
+Thread#0:Scheduler: considering testitem #39 for thread 0
+Thread#0:TestItem#39:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#39:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#39:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #39 for thread 0
+Thread#0:Scheduler: Test #39 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #39/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,2s)
+Thread#0:B:E que esteja com a tela de cadastro de Obras aberta
+Thread#0:T:done: CadastrarObraEComposicaoSteps.DadoQueEstejaComATelaDeCadastroDeObrasAberta() (1,1s)
+Thread#0:B:Quando tento cadastrar uma obra sem informar uma composição "TITULO OBRA 500", "SUBTITULO OBRA 500", "MUSICA COMERCIAL", "TITULOALTERNATIVO OBRA 500", " ", "2018", "Sim", "Nacional", " ", "Não", "Não", "Não", "Não"
+Thread#0:T:done: CadastrarObraEComposicaoSteps.QuandoTentoCadastrarUmaObraSemInformarUmaComposicao("TITULO OBRA 500", "SUBTITULO OBRA 500", "MUSICA COMERCIAL", "TITULOALTERNATIVO...", " ", "2018", "Sim", "Nacional", " ", "Não", "Não", "Não", "Não") (5,2s)
+Thread#0:B:Entao visualizo a mensagem de que ao menos uma composição da obra deve ser cadastrada "TITULO OBRA 500", "Ao menos uma composição da obra deve ser cadastrada."
+Thread#0:T:done: CadastrarObraEComposicaoSteps.EntaoVisualizoAMensagemDeQueAoMenosUmaComposicaoDaObraDeveSerCadastrada("TITULO OBRA 500", "Ao menos uma comp...") (10,5s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #40 from normal test queue 
+Thread#0:Scheduler: considering testitem #40 for thread 0
+Thread#0:TestItem#40:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#40:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#40:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #40 for thread 0
+Thread#0:Scheduler: Test #40 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #39/0 is finished on thread #0 as Succeeded within 41,7551683 seconds
+Thread#0: Test #40/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (18,2s)
+Thread#0:B:E que esteja com a tela de cadastro de Obras aberta
+Thread#0:T:done: CadastrarObraEComposicaoSteps.DadoQueEstejaComATelaDeCadastroDeObrasAberta() (1,1s)
+Thread#0:B:Quando tento cadastrar uma obra sem informar uma composição "TITULO OBRA 501", "SUBTITULO OBRA 501", "MUSICA COMERCIAL", "TITULOALTERNATIVO OBRA 501", " ", "2018", "Sim", "Nacional", " ", "Não", "Não", "Não", "Não"
+Thread#0:T:done: CadastrarObraEComposicaoSteps.QuandoTentoCadastrarUmaObraSemInformarUmaComposicao("TITULO OBRA 501", "SUBTITULO OBRA 501", "MUSICA COMERCIAL", "TITULOALTERNATIVO...", " ", "2018", "Sim", "Nacional", " ", "Não", "Não", "Não", "Não") (4,7s)
+Thread#0:B:E incluo uma composicao com um unico ator com percentual de 100% "TESTE INM Autor", "Teste DDA Administrador", "100"
+Thread#0:T:done: CadastrarObraEComposicaoSteps.QuandoIncluoUmaComposicaoComUmUnicoAtorComPercentualDe(100, "TESTE INM Autor", "Teste DDA Adminis...", "100") (3,5s)
+Thread#0:B:Entao visualizo todas as informacoes cadastradas de obra com sucesso "TITULO OBRA 501", "SUBTITULO OBRA 501", "MUSICA COMERCIAL", "TITULOALTERNATIVO OBRA 501", " ", "2018", "Sim", "Nacional", " ", "Não", "Não", "Não", "Não", "TESTE INM Autor", "Teste DDA Administrador", "100"
+Thread#0:T:done: CadastrarObraEComposicaoSteps.EntaoVisualizoTodasAsInformacoesCadastradasDeObraComSucesso("TITULO OBRA 501", "SUBTITULO OBRA 501", "MUSICA COMERCIAL", "TITULOALTERNATIVO...", " ", "2018", "Sim", "Nacional", " ", "Não", "Não", "Não", "Não", "TESTE INM Autor", "Teste DDA Adminis...", "100") (0,8s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #40/0 is finished on thread #0 as Succeeded within 33,3728064 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-23T15:35:42.1535442-02:00;Thread#18;Info;test run finished
+2018-11-23T15:35:42.1545439-02:00;Thread#18;Info;publishing test results
+2018-11-23T15:35:42.1555437-02:00;Thread#18;Info;test results published
+2018-11-23T15:35:42.1565430-02:00;Thread#18;Info;generating reports
+2018-11-23T15:35:42.1575423-02:00;Thread#18;Info;creating 1 report(s)
+2018-11-23T15:35:42.1575423-02:00;Thread#18;Info;generate Report ReportTemplate.cshtml
+2018-11-23T15:35:43.9631866-02:00;Thread#18;Info;reports generated
+Total: 2
+Succeeded: 2
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-11-23T15:35:43.9671871-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-23T15:35:43.9671871-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-23T153421.html'
+2018-11-23T15:35:43.9761814-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-23T153421.log

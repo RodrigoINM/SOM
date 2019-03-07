@@ -1,0 +1,191 @@
+﻿2018-11-29T19:48:36.3670244-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-29T19:48:36.3750404-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-29T19:48:36.4829585-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-29T19:48:36.4839583-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-29T19:48:36.4841892-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-29T19:48:47.5898082-02:00;Thread#12;Info;starting test run
+2018-11-29T19:48:47.5967862-02:00;Thread#12;Info;Discovering target: Default
+2018-11-29T19:48:47.5977841-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#34: 6.1.1 - Gerar pedidos de pagamento - Cue-Sheet - 
+#35: Inclusão de novo item - Pedido já existente para a mesma obra e sincronismo (Exceto Abertura e Tema), "TESTE DE 500MB" - TestAssembly:SOM.BDD/Feature:6.1.1+-+Gerar+pedidos+de+pagamento+-+Cue-Sheet/Scenario:Inclus%c3%a3o+de+novo+item+-+Pedido+j%c3%a1+existente+para+a+mesma+obra+e+sincronismo+(Exceto+Abertura+e+Tema)%2c+%22TESTE+DE+500MB%22
+#36: Alteração de sincronismo - Pedido já existente para a mesma obra e sincronismo, "MUSICA DA MARCELLE" - TestAssembly:SOM.BDD/Feature:6.1.1+-+Gerar+pedidos+de+pagamento+-+Cue-Sheet/Scenario:Altera%c3%a7%c3%a3o+de+sincronismo+-+Pedido+j%c3%a1+existente+para+a+mesma+obra+e+sincronismo%2c+%22MUSICA+DA+MARCELLE%22
+#37: Alteração de obra - Pedido já existente para a mesma obra e sincronismo, "TESTE DE 500MB" - TestAssembly:SOM.BDD/Feature:6.1.1+-+Gerar+pedidos+de+pagamento+-+Cue-Sheet/Scenario:Altera%c3%a7%c3%a3o+de+obra+-+Pedido+j%c3%a1+existente+para+a+mesma+obra+e+sincronismo%2c+%22TESTE+DE+500MB%22
+#38: Não marcar para gerar pedido linhas de ABERTURA ou TEMA, "TESTE DE 500MB" - TestAssembly:SOM.BDD/Feature:6.1.1+-+Gerar+pedidos+de+pagamento+-+Cue-Sheet/Scenario:N%c3%a3o+marcar+para+gerar+pedido+linhas+de+ABERTURA+ou+TEMA%2c+%22TESTE+DE+500MB%22
+#39: Novo item ABERTURA ou TEMA válido em Variedades ou Jornalismo ou Esporte com pedido existente, "TESTE DE 500MB" - TestAssembly:SOM.BDD/Feature:6.1.1+-+Gerar+pedidos+de+pagamento+-+Cue-Sheet/Scenario:Novo+item+ABERTURA+ou+TEMA+v%c3%a1lido+em+Variedades+ou+Jornalismo+ou+Esporte+com+pedido+existente%2c+%22TESTE+DE+500MB%22
+#40: Novo item ABERTURA ou TEMA em Dramaturgia com pedido existente, "TESTE DE 500MB" - TestAssembly:SOM.BDD/Feature:6.1.1+-+Gerar+pedidos+de+pagamento+-+Cue-Sheet/Scenario:Novo+item+ABERTURA+ou+TEMA+em+Dramaturgia+com+pedido+existente%2c+%22TESTE+DE+500MB%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #35 from normal test queue 
+Thread#0:Scheduler: considering testitem #35 for thread 0
+Thread#0:TestItem#35:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#35:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#35:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #35 for thread 0
+Thread#0:Scheduler: Test #35 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #35/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,9s)
+Thread#0:B:Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada com data de exibição dentro do período de um ano
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetDoGeneroJornalismoPreviamenteCadastradaComDataDeExibicaoDentroDoPeriodoDeUmAno() (14,3s)
+Thread#0:B:E que já existe pedido com os mesmos dados da cue-sheet "TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "16"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueJaExistePedidoComOsMesmosDadosDaCue_Sheet("TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "16") (15,9s)
+Thread#0:B:E incluo uma nova linha para um mesmo "TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "25"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoIncluoUmaNovaLinhaParaUmMesmo("TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "25") (7,9s)
+Thread#0:B:Quando confirmo a geração de pedido para "TESTE DE 500MB" e "ABERTURA"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.QuandoConfirmoAGeracaoDePedidoParaE("TESTE DE 500MB", "ABERTURA") (6,1s)
+Thread#0:B:Então visualizo o icone de pedido no item de cue-sheet com o pedido existente associado "TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "41", "16", "25"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOIconeDePedidoNoItemDeCue_SheetComOPedidoExistenteAssociado("TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "41", "16", "25") (23,5s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #36 from normal test queue 
+Thread#0:Scheduler: considering testitem #36 for thread 0
+Thread#0:TestItem#36:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#36:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#36:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #36 for thread 0
+Thread#0:Scheduler: Test #36 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #35/0 is finished on thread #0 as Succeeded within 93,3383008 seconds
+Thread#0: Test #36/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,7s)
+Thread#0:B:Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada com data de exibição dentro do período de um ano
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetDoGeneroJornalismoPreviamenteCadastradaComDataDeExibicaoDentroDoPeriodoDeUmAno() (14,9s)
+Thread#0:B:E que eu tenha dois pedidos gerados para itens de cue-sheet com sincronismos diferentes "ADORNO" E "ENCERRAMENTO"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueEuTenhaDoisPedidosGeradosParaItensDeCue_SheetComSincronismosDiferentesE("ADORNO", "ENCERRAMENTO") (23,2s)
+Thread#0:B:Quando altero o "ENCERRAMENTO" para o mesmo de "ADORNO"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.QuandoAlteroOParaOMesmoDe("ENCERRAMENTO", "ADORNO") (10,7s)
+Thread#0:B:Então visualizo o icone de pedido no item de cue-sheet com o pedido existente selecionado "MUSICA DA MARCELLE", "FUNDO", "41", "16", "25"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOIconeDePedidoNoItemDeCue_SheetComOPedidoExistenteSelecionado("MUSICA DA MARCELLE", "FUNDO", "41", "16", "25") (17,7s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #37 from normal test queue 
+Thread#0:Scheduler: considering testitem #37 for thread 0
+Thread#0:TestItem#37:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#37:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#37:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #37 for thread 0
+Thread#0:Scheduler: Test #37 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #36/0 is finished on thread #0 as Succeeded within 91,1238483 seconds
+Thread#0: Test #37/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,9s)
+Thread#0:B:Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada com data de exibição dentro do período de um ano
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetDoGeneroJornalismoPreviamenteCadastradaComDataDeExibicaoDentroDoPeriodoDeUmAno() (14,3s)
+Thread#0:B:E que eu tenha dois pedidos gerados para itens de cue-sheet com obras diferentes "TESTE DE 500MB" e "MUSICA TESTE"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueEuTenhaDoisPedidosGeradosParaItensDeCue_SheetComObrasDiferentesE("TESTE DE 500MB", "MUSICA TESTE") (30,3s)
+Thread#0:B:Quando altero a titulo da obra "MUSICA TESTE" para o mesmo da obra "TESTE DE 500MB"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.QuandoAlteroATituloDaObraParaOMesmoDaObra("MUSICA TESTE", "TESTE DE 500MB") (11,7s)
+Thread#0:B:Então visualizo o icone de pedido no item de cue-sheet com o pedido existente associado para "TESTE DE 500MB", "FUNDO", "41", "16", "25"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOIconeDePedidoNoItemDeCue_SheetComOPedidoExistenteAssociadoPara("TESTE DE 500MB", "FUNDO", "41", "16", "25") (17,5s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #38 from normal test queue 
+Thread#0:Scheduler: considering testitem #38 for thread 0
+Thread#0:TestItem#38:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#38:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#38:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #38 for thread 0
+Thread#0:Scheduler: Test #38 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #37/0 is finished on thread #0 as Succeeded within 99,6210354 seconds
+Thread#0: Test #38/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,5s)
+Thread#0:B:Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada com data de exibição dentro do período de um ano
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetDoGeneroJornalismoPreviamenteCadastradaComDataDeExibicaoDentroDoPeriodoDeUmAno() (14,8s)
+Thread#0:B:E que possuo itens de sincronismo ABERTURA. "TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "16"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQuePossuoItensDeSincronismoABERTURA_("TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "16") (8,1s)
+Thread#0:B:E possuo itens de sincronismo TEMA. "TESTE DE 500MB", "BK – BACKGROUND", "TEMA", "25"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoPossuoItensDeSincronismoTEMA_("TESTE DE 500MB", "BK – BACKGROUND", "TEMA", "25") (8,3s)
+Thread#0:B:Quando acesso a tela de Gerar Pedido
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.QuandoAcessoATelaDeGerarPedido() (3,4s)
+Thread#0:B:Então não visualizo os itens de ABERTURA "ABERTURA" ou TEMA "TEMA" selecionados. "TESTE DE 500MB", "16", "25"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.EntaoNaoVisualizoOsItensDeABERTURAOuTEMASelecionados_("ABERTURA", "TEMA", "TESTE DE 500MB", "16", "25") (15,8s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #39 from normal test queue 
+Thread#0:Scheduler: considering testitem #39 for thread 0
+Thread#0:TestItem#39:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#39:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#39:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #39 for thread 0
+Thread#0:Scheduler: Test #39 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #38/0 is finished on thread #0 as Succeeded within 75,028519 seconds
+Thread#0: Test #39/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,8s)
+Thread#0:B:Dado que tenha uma cue-sheet do genero jornalismo previamente cadastrada com data de exibição dentro do período de um ano
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetDoGeneroJornalismoPreviamenteCadastradaComDataDeExibicaoDentroDoPeriodoDeUmAno() (14,2s)
+Thread#0:B:E que existe um pedido de ABERTURA ou TEMA para "TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "16"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueExisteUmPedidoDeABERTURAOuTEMAPara("TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "16") (15,1s)
+Thread#0:B:E que eu tenha criado um item novo item. "TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "25"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueEuTenhaCriadoUmItemNovoItem_("TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "25") (7,9s)
+Thread#0:B:Quando acesso a tela de Gerar Pedido
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.QuandoAcessoATelaDeGerarPedido() (2,1s)
+Thread#0:B:Então visualizo uma observação informando que existe pedido válido
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoUmaObservacaoInformandoQueExistePedidoValido() (0,4s)
+Thread#0:B:E visualizo o ícone para o pedido que será associado após a geração
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOIconeParaOPedidoQueSeraAssociadoAposAGeracao() (0,0s)
+Thread#0:B:Quando seleciono o item e confirmo a geração do pedido "TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "41"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.QuandoSelecionoOItemEConfirmoAGeracaoDoPedido("TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "41") (10,2s)
+Thread#0:B:Então visualizo o pedido existente associado ao item de cue-sheet "TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "41", "16", "25"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOPedidoExistenteAssociadoAoItemDeCue_Sheet("TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "41", "16", "25") (17,7s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #40 from normal test queue 
+Thread#0:Scheduler: considering testitem #40 for thread 0
+Thread#0:TestItem#40:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#40:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#40:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #40 for thread 0
+Thread#0:Scheduler: Test #40 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #39/0 is finished on thread #0 as Succeeded within 94,3985599 seconds
+Thread#0: Test #40/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,5s)
+Thread#0:B:Dado que tenha uma cue-sheet do genero Dramaturgia previamente cadastrada
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueTenhaUmaCue_SheetDoGeneroDramaturgiaPreviamenteCadastrada() (13,9s)
+Thread#0:B:E que existe um pedido de ABERTURA ou TEMA para "TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "16"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueExisteUmPedidoDeABERTURAOuTEMAPara("TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "16") (17,4s)
+Thread#0:B:E que eu tenha criado um item novo item. "TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "25"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.DadoQueEuTenhaCriadoUmItemNovoItem_("TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "25") (7,9s)
+Thread#0:B:Quando acesso a tela de Gerar Pedido
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.QuandoAcessoATelaDeGerarPedido() (2,0s)
+Thread#0:B:Então visualizo o ícone para o pedido que será associado após a geração
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOIconeParaOPedidoQueSeraAssociadoAposAGeracao() (0,2s)
+Thread#0:B:Quando seleciono o item e confirmo a geração do pedido "TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "41"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.QuandoSelecionoOItemEConfirmoAGeracaoDoPedido("TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "41") (10,2s)
+Thread#0:B:Então visualizo o pedido existente associado ao item de cue-sheet "TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "41", "16", "25"
+Thread#0:T:done: GerarPedidosDePagamentoCueSheetSteps.EntaoVisualizoOPedidoExistenteAssociadoAoItemDeCue_Sheet("TESTE DE 500MB", "BK – BACKGROUND", "ABERTURA", "41", "16", "25") (17,7s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #40/0 is finished on thread #0 as Succeeded within 95,9719741 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-29T19:57:57.3202355-02:00;Thread#12;Info;test run finished
+2018-11-29T19:57:57.3212353-02:00;Thread#12;Info;publishing test results
+2018-11-29T19:57:57.3282309-02:00;Thread#12;Info;test results published
+2018-11-29T19:57:57.3292297-02:00;Thread#12;Info;generating reports
+2018-11-29T19:57:57.3412238-02:00;Thread#12;Info;creating 1 report(s)
+2018-11-29T19:57:57.3422245-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-11-29T19:57:59.6101742-02:00;Thread#12;Info;reports generated
+Total: 6
+Succeeded: 6
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-11-29T19:57:59.6211494-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-29T19:57:59.6221505-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-29T194836.html'
+2018-11-29T19:57:59.6321441-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-29T194836.log

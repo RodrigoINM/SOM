@@ -1,0 +1,241 @@
+﻿2018-11-26T17:29:57.8158153-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-26T17:29:57.8231114-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-26T17:29:57.9395876-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-26T17:29:57.9405855-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-26T17:29:57.9405855-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-26T17:30:09.0513649-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-26T17:30:09.0613416-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-26T17:30:09.0623414-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-26T17:31:03.6533993-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-26T17:31:03.6543991-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-26T17:31:03.6613957-02:00;VSTestExecutionThread;Info;test results published
+2018-11-26T17:31:03.6623950-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-26T17:31:03.6693897-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-26T17:31:03.6703895-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-26T17:31:06.3305981-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-26T17:31:06.3375951-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-26T17:31:06.3385949-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-26T172957.html'
+2018-11-26T17:31:06.3505871-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-26T172957.log
+2018-11-26T17:31:06.3535864-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-26T17:31:52.5457858-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-26T17:31:52.5467851-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-26T17:31:52.5597790-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-26T17:31:52.5607760-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-26T17:31:52.5607760-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-26T17:32:05.5664817-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-26T17:32:05.5674805-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-26T17:32:05.5674805-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-26T17:33:09.4340730-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-26T17:33:09.4360725-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-26T17:33:09.4360725-02:00;VSTestExecutionThread;Info;test results published
+2018-11-26T17:33:09.4370714-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-26T17:33:09.4380707-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-26T17:33:09.4390704-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-26T17:33:11.6369531-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-26T17:33:11.6409522-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-26T17:33:11.6419520-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-26T173152.html'
+2018-11-26T17:33:11.6519442-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-26T173152.log
+2018-11-26T17:33:11.6539452-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-26T17:33:22.0770292-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-26T17:33:22.0770292-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-26T17:33:22.0940194-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-26T17:33:22.0950187-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-26T17:33:22.0960194-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-26T17:33:27.1027379-02:00;Thread#12;Info;starting test run
+2018-11-26T17:33:27.1037153-02:00;Thread#12;Info;Discovering target: Default
+2018-11-26T17:33:27.1037153-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#50: 3.1.4 - Consulta de DDA - 
+#51: Busca Simples por DDA com sucesso, "Teste INM 607" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Consulta+de+DDA/Scenario:Busca+Simples+por+DDA+com+sucesso%2c+%22Teste+INM+607%22
+#52: Busca avançada por Nome Fantasia com sucesso, "Teste INM 608" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Consulta+de+DDA/Scenario:Busca+avan%c3%a7ada+por+Nome+Fantasia+com+sucesso%2c+%22Teste+INM+608%22
+#53: Busca avançada por Tipo com sucesso, "Teste INM 609" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Consulta+de+DDA/Scenario:Busca+avan%c3%a7ada+por+Tipo+com+sucesso%2c+%22Teste+INM+609%22
+#54: Busca avançada por Associação com sucesso, "Teste INM 610" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Consulta+de+DDA/Scenario:Busca+avan%c3%a7ada+por+Associa%c3%a7%c3%a3o+com+sucesso%2c+%22Teste+INM+610%22
+#55: Busca avançada por Nome Completo / Razão social com sucesso com sucesso, "Teste INM 611" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Consulta+de+DDA/Scenario:Busca+avan%c3%a7ada+por+Nome+Completo+%2f+Raz%c3%a3o+social+com+sucesso+com+sucesso%2c+%22Teste+INM+611%22
+#56: Busca por DDA não cadastrados, "Teste 9999999" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Consulta+de+DDA/Scenario:Busca+por+DDA+n%c3%a3o+cadastrados%2c+%22Teste+9999999%22
+#57: Busca por Campos não associados, "Teste INM 611" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Consulta+de+DDA/Scenario:Busca+por+Campos+n%c3%a3o+associados%2c+%22Teste+INM+611%22
+#58: Gerar relatório DDA em Excel com sucesso, "Teste INM 612" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Consulta+de+DDA/Scenario:Gerar+relat%c3%b3rio+DDA+em+Excel+com+sucesso%2c+%22Teste+INM+612%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #51 from normal test queue 
+Thread#0:Scheduler: considering testitem #51 for thread 0
+Thread#0:TestItem#51:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#51:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#51:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #51 for thread 0
+Thread#0:Scheduler: Test #51 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #51/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (23,4s)
+Thread#0:B:Dado que tenha um DDA cadastrado "Teste INM 607", "Teste INM 607", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 607", "E-mail", "teste@teste.com", "Sim"
+Thread#0:T:done: ExclusaoDeDDASteps.DadoQueTenhaUmDDACadastrado("Teste INM 607", "Teste INM 607", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 607", "E-mail", "teste@teste.com", "Sim") (16,3s)
+Thread#0:B:Quando faco uma busca simples por DDA "Teste INM 607"
+Thread#0:T:done: ExclusaoDeDDASteps.QuandoFacoUmaBuscaSimplesPorDDA("Teste INM 607") (0,4s)
+Thread#0:B:Entao visualizo os dados do DDA no resultado da busca "Teste INM 607", "Teste INM 607", "546.353.563-57", "UBEM", "Administrador"
+Thread#0:T:done: ConsultaDeDDASteps.EntaoVisualizoOsDadosDoDDANoResultadoDaBusca("Teste INM 607", "Teste INM 607", "546.353.563-57", "UBEM", "Administrador") (3,5s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #52 from normal test queue 
+Thread#0:Scheduler: considering testitem #52 for thread 0
+Thread#0:TestItem#52:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#52:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#52:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #52 for thread 0
+Thread#0:Scheduler: Test #52 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #51/0 is finished on thread #0 as Succeeded within 51,5771804 seconds
+Thread#0: Test #52/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,7s)
+Thread#0:B:Dado que tenha um DDA cadastrado "Teste INM 608", "Teste INM 608", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 608", "E-mail", "teste@teste.com", "Sim"
+Thread#0:T:done: ExclusaoDeDDASteps.DadoQueTenhaUmDDACadastrado("Teste INM 608", "Teste INM 608", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 608", "E-mail", "teste@teste.com", "Sim") (16,5s)
+Thread#0:B:Quando faço uma busca avançada por nome fantasia de DDA "Teste INM 608"
+Thread#0:T:done: ConsultaDeDDASteps.QuandoFacoUmaBuscaAvancadaPorNomeFantasiaDeDDA("Teste INM 608") (0,5s)
+Thread#0:B:Entao visualizo os dados do DDA no resultado da busca "Teste INM 608", "Teste INM 608", "546.353.563-57", "UBEM", "Administrador"
+Thread#0:T:done: ConsultaDeDDASteps.EntaoVisualizoOsDadosDoDDANoResultadoDaBusca("Teste INM 608", "Teste INM 608", "546.353.563-57", "UBEM", "Administrador") (3,5s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #53 from normal test queue 
+Thread#0:Scheduler: considering testitem #53 for thread 0
+Thread#0:TestItem#53:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#53:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#53:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #53 for thread 0
+Thread#0:Scheduler: Test #53 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #52/0 is finished on thread #0 as Succeeded within 47,138559 seconds
+Thread#0: Test #53/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,3s)
+Thread#0:B:Dado que tenha um DDA cadastrado "Teste INM 609", "Teste INM 609", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 609", "E-mail", "teste@teste.com", "Sim"
+Thread#0:T:done: ExclusaoDeDDASteps.DadoQueTenhaUmDDACadastrado("Teste INM 609", "Teste INM 609", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 609", "E-mail", "teste@teste.com", "Sim") (16,8s)
+Thread#0:B:Quando faço uma busca avançada por nome fantasia e tipo de DDA "Teste INM 609", "Grupo Editorial"
+Thread#0:T:done: ConsultaDeDDASteps.QuandoFacoUmaBuscaAvancadaPorNomeFantasiaETipoDeDDA("Teste INM 609", "Grupo Editorial") (0,6s)
+Thread#0:B:Entao visualizo os dados do DDA no resultado da busca "Teste INM 609", "Teste INM 609", "546.353.563-57", "UBEM", "Administrador"
+Thread#0:T:done: ConsultaDeDDASteps.EntaoVisualizoOsDadosDoDDANoResultadoDaBusca("Teste INM 609", "Teste INM 609", "546.353.563-57", "UBEM", "Administrador") (3,5s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #54 from normal test queue 
+Thread#0:Scheduler: considering testitem #54 for thread 0
+Thread#0:TestItem#54:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#54:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#54:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #54 for thread 0
+Thread#0:Scheduler: Test #54 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #53/0 is finished on thread #0 as Succeeded within 45,2096425 seconds
+Thread#0: Test #54/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (18,5s)
+Thread#0:B:Dado que tenha um DDA cadastrado "Teste INM 610", "Teste INM 610", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 610", "E-mail", "teste@teste.com", "Sim"
+Thread#0:T:done: ExclusaoDeDDASteps.DadoQueTenhaUmDDACadastrado("Teste INM 610", "Teste INM 610", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 610", "E-mail", "teste@teste.com", "Sim") (16,6s)
+Thread#0:B:Quando faço uma busca avançada por nome fantasia e associação "Teste INM 610", "UBEM"
+Thread#0:T:done: ConsultaDeDDASteps.QuandoFacoUmaBuscaAvancadaPorNomeFantasiaEAssociacao("Teste INM 610", "UBEM") (0,6s)
+Thread#0:B:Entao visualizo os dados do DDA no resultado da busca "Teste INM 610", "Teste INM 610", "546.353.563-57", "UBEM", "Administrador"
+Thread#0:T:done: ConsultaDeDDASteps.EntaoVisualizoOsDadosDoDDANoResultadoDaBusca("Teste INM 610", "Teste INM 610", "546.353.563-57", "UBEM", "Administrador") (3,5s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #55 from normal test queue 
+Thread#0:Scheduler: considering testitem #55 for thread 0
+Thread#0:TestItem#55:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#55:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#55:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #55 for thread 0
+Thread#0:Scheduler: Test #55 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #54/0 is finished on thread #0 as Succeeded within 44,2699184 seconds
+Thread#0: Test #55/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (18,0s)
+Thread#0:B:Dado que tenha um DDA cadastrado "Teste INM 611", "Teste INM 611", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 611", "E-mail", "teste@teste.com", "Sim"
+Thread#0:T:done: ExclusaoDeDDASteps.DadoQueTenhaUmDDACadastrado("Teste INM 611", "Teste INM 611", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 611", "E-mail", "teste@teste.com", "Sim") (16,8s)
+Thread#0:B:Quando faço uma busca avançada por nome fantasia e nome completo "Teste INM 611", "Teste INM 611"
+Thread#0:T:done: ConsultaDeDDASteps.QuandoFacoUmaBuscaAvancadaPorNomeFantasiaENomeCompleto("Teste INM 611", "Teste INM 611") (0,7s)
+Thread#0:B:Entao visualizo os dados do DDA no resultado da busca "Teste INM 611", "Teste INM 611", "546.353.563-57", "UBEM", "Administrador"
+Thread#0:T:done: ConsultaDeDDASteps.EntaoVisualizoOsDadosDoDDANoResultadoDaBusca("Teste INM 611", "Teste INM 611", "546.353.563-57", "UBEM", "Administrador") (3,5s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #56 from normal test queue 
+Thread#0:Scheduler: considering testitem #56 for thread 0
+Thread#0:TestItem#56:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#56:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#56:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #56 for thread 0
+Thread#0:Scheduler: Test #56 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #55/0 is finished on thread #0 as Succeeded within 43,9426096 seconds
+Thread#0: Test #56/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,0s)
+Thread#0:B:Dado que esteja com a tela de Busca de DDA aberta
+Thread#0:T:done: ConsultaDeDDASteps.DadoQueEstejaComATelaDeBuscaDeDDAAberta() (1,2s)
+Thread#0:B:Quando faço uma busca avançada por um DDA que não esteja cadastrado no sistema "Teste 9999999"
+Thread#0:T:done: ConsultaDeDDASteps.QuandoFacoUmaBuscaAvancadaPorUmDDAQueNaoEstejaCadastradoNoSistema("Teste 9999999") (0,6s)
+Thread#0:B:Entao visualizo uma mensagem de dados não encontrados no resultado da busca "Dados não encontratos"
+Thread#0:T:done: ConsultaDeDDASteps.EntaoVisualizoUmaMensagemDeDadosNaoEncontradosNoResultadoDaBusca("Dados não encontr...") (0,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #57 from normal test queue 
+Thread#0:Scheduler: considering testitem #57 for thread 0
+Thread#0:TestItem#57:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#57:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#57:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #57 for thread 0
+Thread#0:Scheduler: Test #57 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #56/0 is finished on thread #0 as Succeeded within 27,7854846 seconds
+Thread#0: Test #57/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (23,6s)
+Thread#0:B:Dado que esteja com a tela de Busca de DDA aberta
+Thread#0:T:done: ConsultaDeDDASteps.DadoQueEstejaComATelaDeBuscaDeDDAAberta() (1,3s)
+Thread#0:B:Quando faço uma busca avançada de DDA por dados não relacionados entre si "Teste INM 611", "Teste INM 610"
+Thread#0:T:done: ConsultaDeDDASteps.QuandoFacoUmaBuscaAvancadaDeDDAPorDadosNaoRelacionadosEntreSi("Teste INM 611", "Teste INM 610") (0,9s)
+Thread#0:B:Entao visualizo uma mensagem de dados não encontrados no resultado da busca "Dados não encontratos"
+Thread#0:T:done: ConsultaDeDDASteps.EntaoVisualizoUmaMensagemDeDadosNaoEncontradosNoResultadoDaBusca("Dados não encontr...") (0,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #58 from normal test queue 
+Thread#0:Scheduler: considering testitem #58 for thread 0
+Thread#0:TestItem#58:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#58:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#58:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #58 for thread 0
+Thread#0:Scheduler: Test #58 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #57/0 is finished on thread #0 as Succeeded within 32,8139878 seconds
+Thread#0: Test #58/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,6s)
+Thread#0:B:Dado que tenha um DDA cadastrado "Teste INM 612", "Teste INM 612", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 612", "E-mail", "teste@teste.com", "Sim"
+Thread#0:T:done: ExclusaoDeDDASteps.DadoQueTenhaUmDDACadastrado("Teste INM 612", "Teste INM 612", "54635356357", "UBEM", "Sim", "10/10/1992", "Contato Teste 612", "E-mail", "teste@teste.com", "Sim") (16,5s)
+Thread#0:B:Quando faço uma busca avançada por nome fantasia e nome completo "Teste INM 612", "Teste INM 612"
+Thread#0:T:done: ConsultaDeDDASteps.QuandoFacoUmaBuscaAvancadaPorNomeFantasiaENomeCompleto("Teste INM 612", "Teste INM 612") (0,7s)
+Thread#0:B:E faço download do relatório em excel do resultado da busca
+Thread#0:T:done: ConsultaDeDDASteps.QuandoFacoDownloadDoRelatorioEmExcelDoResultadoDaBusca() (1,3s)
+Thread#0:B:Então visualizo o download da planilha com resultado da busca "Teste INM 612"
+Thread#0:T:done: ConsultaDeDDASteps.EntaoVisualizoODownloadDaPlanilhaComResultadoDaBusca("Teste INM 612") (5,4s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #58/0 is finished on thread #0 as Succeeded within 48,661528 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-26T17:39:08.6605386-02:00;Thread#12;Info;test run finished
+2018-11-26T17:39:08.6615384-02:00;Thread#12;Info;publishing test results
+2018-11-26T17:39:08.6625387-02:00;Thread#12;Info;test results published
+2018-11-26T17:39:08.6635380-02:00;Thread#12;Info;generating reports
+2018-11-26T17:39:08.6645373-02:00;Thread#12;Info;creating 1 report(s)
+2018-11-26T17:39:08.6655366-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-11-26T17:39:11.0962485-02:00;Thread#12;Info;reports generated
+Total: 8
+Succeeded: 8
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-11-26T17:39:11.1022490-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-26T17:39:11.1032460-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-26T173322.html'
+2018-11-26T17:39:11.1252346-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-26T173322.log

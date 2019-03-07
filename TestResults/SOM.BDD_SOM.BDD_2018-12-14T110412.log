@@ -1,0 +1,101 @@
+﻿2018-12-14T11:04:11.2408503-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-12-14T11:04:11.3345951-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-12-14T11:04:11.6314483-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-12-14T11:04:12.2876705-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-12-14T11:04:12.3501469-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-12-14T11:04:25.8049578-02:00;Thread#13;Info;starting test run
+2018-12-14T11:04:25.8205819-02:00;Thread#13;Info;Discovering target: Default
+2018-12-14T11:04:25.8205819-02:00;Thread#13;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#84: 6.1.2 - Alterar itens de pedido - 
+#85: Alterar valor a pagar para um item de pedido, "300.00" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Alterar+valor+a+pagar+para+um+item+de+pedido%2c+%22300.00%22
+#86: Validar item bloqueado para edição quando já estiver Aprovado, "300.00" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Validar+item+bloqueado+para+edi%c3%a7%c3%a3o+quando+j%c3%a1+estiver+Aprovado%2c+%22300.00%22
+#87: Registrar Autorização, "1 item(ns) registrado(s) com sucesso." - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Registrar+Autoriza%c3%a7%c3%a3o%2c+%221+item(ns)+registrado(s)+com+sucesso.%22
+#88: Validar o pagamento para o Administrador com sucesso, "Sim" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Validar+o+pagamento+para+o+Administrador+com+sucesso%2c+%22Sim%22
+#89: Cancelar um item de pedido no detelhe do pedido, "Cancelado" - TestAssembly:SOM.BDD/Feature:6.1.2+-+Alterar+itens+de+pedido/Scenario:Cancelar+um+item+de+pedido+no+detelhe+do+pedido%2c+%22Cancelado%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #85 from normal test queue 
+Thread#0:Scheduler: considering testitem #85 for thread 0
+Thread#0:TestItem#85:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#85:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#85:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #85 for thread 0
+Thread#0:Scheduler: Test #85 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #85/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (23,1s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema() (107,9s)
+Thread#0:B:E que esteja na aba de pagamento
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.DadoQueEstejaNaAbaDePagamento() (11,0s)
+Thread#0:B:Quando altero o valor do pagamento, a moeda e a taxa de conversão de um item do pedido "300.00", "Dólar", "3,8", "Rodrigo"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoAlteroOValorDoPagamentoAMoedaEATaxaDeConversaoDeUmItemDoPedido("300.00", "Dólar", "3,8", "Rodrigo") (1,1s)
+Thread#0:B:Então visualizo o novo valor a ser pago para o DDA do Autor na aba de pagamento "1.140,00"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoONovoValorASerPagoParaODDADoAutorNaAbaDePagamento("1.140,00") (2,3s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #86 from normal test queue 
+Thread#0:Scheduler: considering testitem #86 for thread 0
+Thread#0:TestItem#86:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#86:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#86:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #86 for thread 0
+Thread#0:Scheduler: Test #86 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #85/0 is finished on thread #0 as Succeeded within 151,5400115 seconds
+Thread#0: Test #86/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (18,3s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema "TESTE DE 500MB"
+Thread#0:T:done: AlterarItemPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema("TESTE DE 500MB") (25,5s)
+Thread#0:B:E que possua um item com status de aguardando aprovacao "Aguardando Aprovação", "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.DadoQuePossuaUmItemComStatusDeAguardandoAprovacao("Aguardando Aprovação", "ALYNE WAITE") (42,3s)
+Thread#0:B:Quando tento editar esse item "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoTentoEditarEsseItem("ALYNE WAITE") (0,1s)
+Thread#0:B:Entao visualizo os campos de "300.00", "Dólar" e "3,8" bloqueados para edicao
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOsCamposDeEBloqueadosParaEdicao("300.00", "Dólar", "3,8") (2,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #87 from normal test queue 
+Thread#0:Scheduler: considering testitem #87 for thread 0
+Thread#0:TestItem#87:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#87:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#87:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #87 for thread 0
+Thread#0:Scheduler: Test #87 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #86/0 is finished on thread #0 as Succeeded within 93,4148791 seconds
+Thread#0: Test #87/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,0s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema
+Thread#0:T:done: ExibirValorTotalDoPedidoSteps.DadoQueTenhaUmPedidoPreviamenteCadastradoNoSistema() (77,4s)
+Thread#0:B:Quando regsitro a autorizacao para um item do pedido "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoRegsitroAAutorizacaoParaUmItemDoPedido("ALYNE WAITE") (8,2s)
+Thread#0:B:Entao visualizo o pop up de confirmação para o DDA selecionado "ALYNE WAITE"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOPopUpDeConfirmacaoParaODDASelecionado("ALYNE WAITE") (4,2s)
+Thread#0:B:E a mensagem de sucesso apos confirmar a autorizacao do item do pedido "1 item(ns) registrado(s) com sucesso."
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoAMensagemDeSucessoAposConfirmarAAutorizacaoDoItemDoPedido("1 item(ns) regist...") (4,0s)
+Thread#0:B:E visualizo o status de autorizado para o item selecionado "Autorizado"
+Thread#0:T:done: AlterarItemPedidoSteps.EntaoVisualizoOStatusDeAutorizadoParaOItemSelecionado("Autorizado") (0,0s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #88 from normal test queue 
+Thread#0:Scheduler: considering testitem #88 for thread 0
+Thread#0:TestItem#88:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#88:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#88:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #88 for thread 0
+Thread#0:Scheduler: Test #88 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #87/0 is finished on thread #0 as Succeeded within 119,9743091 seconds
+Thread#0: Test #88/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,3s)
+Thread#0:B:Dado que tenha um pedido previamente cadastrado no sistema "TESTE DE 500MB"
+Thread#

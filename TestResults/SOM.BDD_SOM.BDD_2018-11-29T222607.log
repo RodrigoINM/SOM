@@ -1,0 +1,159 @@
+﻿2018-11-29T22:23:41.8025509-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-29T22:23:41.8095657-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-29T22:23:41.9234820-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-29T22:23:41.9244813-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-29T22:23:41.9254783-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-29T22:23:56.0200886-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-29T22:23:56.0270842-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-29T22:23:56.0280840-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-29T22:24:42.1896803-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-29T22:24:42.1906806-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-29T22:24:42.1986760-02:00;VSTestExecutionThread;Info;test results published
+2018-11-29T22:24:42.1996762-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-29T22:24:42.2066709-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-29T22:24:42.2066709-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-29T22:24:44.2115243-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-29T22:24:44.2195183-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-29T22:24:44.2195183-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-29T222341.html'
+2018-11-29T22:24:44.2295133-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-29T222341.log
+2018-11-29T22:24:44.2335105-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-29T22:24:48.2805257-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-29T22:24:48.2815264-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-29T22:24:48.2955172-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-29T22:24:48.2965165-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-29T22:24:48.2965165-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-29T22:24:59.3017160-02:00;VSTestExecutionThread;Info;starting test run
+2018-11-29T22:24:59.3036377-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2018-11-29T22:24:59.3046328-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-29T22:25:56.3421522-02:00;VSTestExecutionThread;Info;test run finished
+2018-11-29T22:25:56.3431520-02:00;VSTestExecutionThread;Info;publishing test results
+2018-11-29T22:25:56.3441518-02:00;VSTestExecutionThread;Info;test results published
+2018-11-29T22:25:56.3451511-02:00;VSTestExecutionThread;Info;generating reports
+2018-11-29T22:25:56.3461509-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2018-11-29T22:25:56.3471488-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2018-11-29T22:25:58.1042794-02:00;VSTestExecutionThread;Info;reports generated
+2018-11-29T22:25:58.1072778-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-29T22:25:58.1082771-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-29T222448.html'
+2018-11-29T22:25:58.1132736-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-29T222448.log
+2018-11-29T22:25:58.1152727-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2018-11-29T22:26:07.9173909-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-29T22:26:07.9183921-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-29T22:26:07.9314046-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-29T22:26:07.9324030-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-29T22:26:07.9333823-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-29T22:26:19.9383648-02:00;Thread#11;Info;starting test run
+2018-11-29T22:26:19.9403840-02:00;Thread#11;Info;Discovering target: Default
+2018-11-29T22:26:19.9414029-02:00;Thread#11;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#12: 5.2.1 - Cadastrar Cue-sheet - 
+#14: Validar campo Capítulo obrigatório - TestAssembly:SOM.BDD/Feature:5.2.1+-+Cadastrar+Cue-sheet/Scenario:Validar+campo+Cap%c3%adtulo+obrigat%c3%b3rio
+#16: Validar critica para criacao de cue-sheet como reprise/rebatida, "Reprise" - TestAssembly:SOM.BDD/Feature:5.2.1+-+Cadastrar+Cue-sheet/Scenario:Validar+critica+para+criacao+de+cue-sheet+como+reprise%2frebatida%2c+%22Reprise%22
+#17: Validar critica para criacao de cue-sheet como reprise/rebatida, "Rebatida" - TestAssembly:SOM.BDD/Feature:5.2.1+-+Cadastrar+Cue-sheet/Scenario:Validar+critica+para+criacao+de+cue-sheet+como+reprise%2frebatida%2c+%22Rebatida%22
+#18: Cancelar criação de cue-sheet sem arquivo de importação - TestAssembly:SOM.BDD/Feature:5.2.1+-+Cadastrar+Cue-sheet/Scenario:Cancelar+cria%c3%a7%c3%a3o+de+cue-sheet+sem+arquivo+de+importa%c3%a7%c3%a3o
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #14 from normal test queue 
+Thread#0:Scheduler: considering testitem #14 for thread 0
+Thread#0:TestItem#14:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#14:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#14:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #14 for thread 0
+Thread#0:Scheduler: Test #14 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #14/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,8s)
+Thread#0:B:Dado que tenha um produto cadastrado no sistema com capitulo obrigatório
+Thread#0:T:done: CadastrarCueSheetSteps.DadoQueTenhaUmProdutoCadastradoNoSistemaComCapituloObrigatorio() (11,2s)
+Thread#0:B:Quando tento cadastrar uma cue-sheet sem informar o capitulo
+Thread#0:T:done: CadastrarCueSheetSteps.QuandoTentoCadastrarUmaCue_SheetSemInformarOCapitulo() (6,8s)
+Thread#0:B:Entao visualizo o campo Capitulo em destaque para o preenchimento obrigatorio
+Thread#0:T:done: CadastrarCueSheetSteps.EntaoVisualizoOCampoCapituloEmDestaqueParaOPreenchimentoObrigatorio() (0,0s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #16 from normal test queue 
+Thread#0:Scheduler: considering testitem #16 for thread 0
+Thread#0:TestItem#16:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#16:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#16:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #16 for thread 0
+Thread#0:Scheduler: Test #16 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #14/0 is finished on thread #0 as Succeeded within 44,4885922 seconds
+Thread#0: Test #16/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,7s)
+Thread#0:B:Dado que tenha um produto cadastrado no sistema
+Thread#0:T:done: CadastrarCueSheetSteps.DadoQueTenhaUmProdutoCadastradoNoSistema() (8,6s)
+Thread#0:B:Quando tento cadastrar uma nova cue-sheet "Reprise"
+Thread#0:T:done: CadastrarCueSheetSteps.QuandoTentoCadastrarUmaNovaCue_Sheet("Reprise") (6,8s)
+Thread#0:B:Entao visualizo uma mensagem de critica informando que o capitulo não está cadastrado como inedito "Esta cue-sheet não pode ser uma reprise pois o capítulo não está cadastrado como inédito."
+Thread#0:T:done: CadastrarCueSheetSteps.EntaoVisualizoUmaMensagemDeCriticaInformandoQueOCapituloNaoEstaCadastradoComoInedito("Esta cue-sheet nã...") (4,3s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #17 from normal test queue 
+Thread#0:Scheduler: considering testitem #17 for thread 0
+Thread#0:TestItem#17:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#17:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#17:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #17 for thread 0
+Thread#0:Scheduler: Test #17 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #16/0 is finished on thread #0 as Succeeded within 45,5230889 seconds
+Thread#0: Test #17/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,9s)
+Thread#0:B:Dado que tenha um produto cadastrado no sistema
+Thread#0:T:done: CadastrarCueSheetSteps.DadoQueTenhaUmProdutoCadastradoNoSistema() (8,5s)
+Thread#0:B:Quando tento cadastrar uma nova cue-sheet "Rebatida"
+Thread#0:T:done: CadastrarCueSheetSteps.QuandoTentoCadastrarUmaNovaCue_Sheet("Rebatida") (7,0s)
+Thread#0:B:Entao visualizo uma mensagem de critica informando que o capitulo não está cadastrado como inedito "Esta cue-sheet não pode ser uma rebatida pois o capítulo não está cadastrado como inédito."
+Thread#0:T:done: CadastrarCueSheetSteps.EntaoVisualizoUmaMensagemDeCriticaInformandoQueOCapituloNaoEstaCadastradoComoInedito("Esta cue-sheet nã...") (4,3s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #18 from normal test queue 
+Thread#0:Scheduler: considering testitem #18 for thread 0
+Thread#0:TestItem#18:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#18:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#18:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #18 for thread 0
+Thread#0:Scheduler: Test #18 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #17/0 is finished on thread #0 as Succeeded within 44,762088 seconds
+Thread#0: Test #18/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,1s)
+Thread#0:B:Dado que tenha um produto cadastrado no sistema
+Thread#0:T:done: CadastrarCueSheetSteps.DadoQueTenhaUmProdutoCadastradoNoSistema() (8,3s)
+Thread#0:B:Quando tento cadastrar uma nova cue-sheet sem importar um arquivo com os itens da cue-sheet
+Thread#0:T:done: CadastrarCueSheetSteps.QuandoTentoCadastrarUmaNovaCue_SheetSemImportarUmArquivoComOsItensDaCue_Sheet() (6,7s)
+Thread#0:B:Entao visualizo o campo de importar arquivo em destaque ao não criar a cue-sheet sem fazer a importação
+Thread#0:T:done: CadastrarCueSheetSteps.EntaoVisualizoOCampoDeImportarArquivoEmDestaqueAoNaoCriarACue_SheetSemFazerAImportacao() (2,2s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #18/0 is finished on thread #0 as Succeeded within 42,3368168 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-29T22:29:17.2110405-02:00;Thread#11;Info;test run finished
+2018-11-29T22:29:17.2170326-02:00;Thread#11;Info;publishing test results
+2018-11-29T22:29:17.2200315-02:00;Thread#11;Info;test results published
+2018-11-29T22:29:17.2210308-02:00;Thread#11;Info;generating reports
+2018-11-29T22:29:17.2220315-02:00;Thread#11;Info;creating 1 report(s)
+2018-11-29T22:29:17.2230294-02:00;Thread#11;Info;generate Report ReportTemplate.cshtml
+2018-11-29T22:29:18.9621407-02:00;Thread#11;Info;reports generated
+Total: 4
+Succeeded: 4
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-11-29T22:29:18.9651395-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-29T22:29:18.9651395-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-29T222607.html'
+2018-11-29T22:29:18.9711359-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-29T222607.log

@@ -1,0 +1,79 @@
+﻿2019-01-21T18:04:08.6930139-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-21T18:04:08.7000124-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-21T18:04:08.8199414-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-21T18:04:08.8209412-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-21T18:04:08.8219433-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-21T18:04:18.9011217-02:00;Thread#12;Info;starting test run
+2019-01-21T18:04:18.9078057-02:00;Thread#12;Info;Discovering target: Default
+2019-01-21T18:04:18.9087943-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#156: 3.1.4 - Cadastro de DDA - 
+#157: Cadastro de DDA com sucesso, "Teste INM 605" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Cadastro+de+DDA/Scenario:Cadastro+de+DDA+com+sucesso%2c+%22Teste+INM+605%22
+#158: Cadastro de DDA sem Contato para autorização, "Teste INM 606" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Cadastro+de+DDA/Scenario:Cadastro+de+DDA+sem+Contato+para+autoriza%c3%a7%c3%a3o%2c+%22Teste+INM+606%22
+#159: Cadastrar DDA sem preenchimento de campo obrigatório, " " - TestAssembly:SOM.BDD/Feature:3.1.4+-+Cadastro+de+DDA/Scenario:Cadastrar+DDA+sem+preenchimento+de+campo+obrigat%c3%b3rio%2c+%22+%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #157 from normal test queue 
+Thread#0:Scheduler: considering testitem #157 for thread 0
+Thread#0:TestItem#157:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#157:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#157:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #157 for thread 0
+Thread#0:Scheduler: Test #157 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #157/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #158 from normal test queue 
+Thread#0:Scheduler: considering testitem #158 for thread 0
+Thread#0:TestItem#158:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#158:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#158:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #158 for thread 0
+Thread#0:Scheduler: Test #158 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #157/0 is finished on thread #0 as InitializationFailed within 0,2071317 seconds
+Thread#0: Test #158/0 is started on thread #0
+Thread#0:T:warning: The previous FeatureContext was not disposed.
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #159 from normal test queue 
+Thread#0:Scheduler: considering testitem #159 for thread 0
+Thread#0:TestItem#159:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#159:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#159:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #159 for thread 0
+Thread#0:Scheduler: Test #159 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #158/0 is finished on thread #0 as InitializationFailed within 0,0070139 seconds
+Thread#0: Test #159/0 is started on thread #0
+Thread#0:T:warning: The previous FeatureContext was not disposed.
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #159/0 is finished on thread #0 as InitializationFailed within 0,0049774 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2019-01-21T18:04:19.3457840-02:00;Thread#12;Info;test run finished
+2019-01-21T18:04:19.3464484-02:00;Thread#12;Info;publishing test results
+2019-01-21T18:04:19.3529789-02:00;Thread#12;Info;test results published
+2019-01-21T18:04:19.3535523-02:00;Thread#12;Info;generating reports
+2019-01-21T18:04:19.3595719-02:00;Thread#12;Info;creating 1 report(s)
+2019-01-21T18:04:19.3605717-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2019-01-21T18:04:21.3464563-02:00;Thread#12;Info;reports generated
+Total: 3
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 3
+2019-01-21T18:04:21.3514655-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-21T18:04:21.3516591-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-21T180408.html'
+2019-01-21T18:04:21.3624929-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-21T180408.log

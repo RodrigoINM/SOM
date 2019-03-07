@@ -1,0 +1,69 @@
+﻿2019-01-14T20:07:16.8852234-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-14T20:07:16.8922246-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-14T20:07:17.0067562-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-14T20:07:17.0067562-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-14T20:07:17.0077523-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-14T20:07:26.1126906-02:00;Thread#12;Info;starting test run
+2019-01-14T20:07:26.1206664-02:00;Thread#12;Info;Discovering target: Default
+2019-01-14T20:07:26.1206664-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#125: Validar Status Pav de Pedidos Autorizados para Pagamento - 
+#130: Alterar quantidade de autores de uma obra para pedido com Status PAV Autorizado, "1000448" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+quantidade+de+autores+de+uma+obra+para+pedido+com+Status+PAV+Autorizado%2c+%221000448%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #130 from normal test queue 
+Thread#0:Scheduler: considering testitem #130 for thread 0
+Thread#0:TestItem#130:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#130:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#130:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #130 for thread 0
+Thread#0:Scheduler: Test #130 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #130/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,7s)
+Thread#0:B:Quando faço uma busca pela obra associada ao pedido "MUSICA DE TESTE 2"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoFacoUmaBuscaPelaObraAssociadaAoPedido("MUSICA DE TESTE 2") (6,2s)
+Thread#0:B:E diminuo a porcentagem de um Autor "LUAN SANTANA", "30"
+Thread#0:T:done: StatusPavSteps.QuandoDiminuoAPorcentagemDeUmAutor("LUAN SANTANA", "30") (8,6s)
+Thread#0:B:E acrescento um novo Autor a composição com o percentual restante "MARCELLE MENDONCA", "WARNER CHAPPELL", "30"
+Thread#0:T:error: unknown error: Element <a class="btn composicaoobra" style="font-size: 13px; margin-right: 5px; cursor: pointer; padding: 5px;" uib-tooltip="Adicionar composição" tooltip-placement="bottom" ng-click="ModalComposicao(false)">...</a> is not clickable at point (957, 356). Other element would receive the click: <div class="spiner-example ng-scope" ng-if="ComposicaoModal == true">...</div>
+Thread#0:T:  (Session info: chrome=71.0.3578.98)
+Thread#0:T:  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+Thread#0:B:E seleciono o pedido a ser afetado pela alteracao "1000448"
+Thread#0:T:skipped because of previous errors
+Thread#0:B:E faço uma busca pelo pedido afetado "1000448"
+Thread#0:T:skipped because of previous errors
+Thread#0:B:Então visualizo que o Status Pav do pedido continua como autorizado "LUAN SANTANA", "MARCELLE MENDONCA", "60", "MUSICA DE TESTE 2", "1000448", "Aprovado"
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #130/0 is finished on thread #0 as Failed within 41,5954747 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2019-01-14T20:08:07.9213469-02:00;Thread#12;Info;test run finished
+2019-01-14T20:08:07.9223481-02:00;Thread#12;Info;publishing test results
+2019-01-14T20:08:07.9283430-02:00;Thread#12;Info;test results published
+2019-01-14T20:08:07.9293423-02:00;Thread#12;Info;generating reports
+2019-01-14T20:08:07.9403375-02:00;Thread#12;Info;creating 1 report(s)
+2019-01-14T20:08:07.9403375-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2019-01-14T20:08:10.0186014-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
+2019-01-14T20:08:10.0245996-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-14T20:08:10.0245996-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-14T200717.html'
+2019-01-14T20:08:10.0315934-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-14T200717.log

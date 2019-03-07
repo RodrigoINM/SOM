@@ -1,0 +1,91 @@
+﻿2019-01-26T16:35:58.8635240-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-26T16:35:58.9174934-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-26T16:35:59.0554135-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-26T16:35:59.0554135-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-26T16:35:59.0564142-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-26T16:36:09.1688271-02:00;VSTestExecutionThread;Info;starting test run
+2019-01-26T16:36:09.1768048-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2019-01-26T16:36:09.1778055-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-26T16:36:30.1577647-02:00;VSTestExecutionThread;Info;test run finished
+2019-01-26T16:36:30.1597643-02:00;VSTestExecutionThread;Info;publishing test results
+2019-01-26T16:36:30.2494220-02:00;VSTestExecutionThread;Info;test results published
+2019-01-26T16:36:30.2494220-02:00;VSTestExecutionThread;Info;generating reports
+2019-01-26T16:36:30.4054762-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2019-01-26T16:36:30.4064760-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2019-01-26T16:36:33.9229980-02:00;VSTestExecutionThread;Info;reports generated
+2019-01-26T16:36:33.9279951-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-26T16:36:33.9289953-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-26T163559.html'
+2019-01-26T16:36:33.9346268-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-26T163559.log
+2019-01-26T16:36:33.9376280-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2019-01-26T16:36:36.8554353-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-26T16:36:36.8554353-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-26T16:36:36.8694270-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-26T16:36:36.8704469-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-26T16:36:36.8704469-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-26T16:36:48.8749942-02:00;VSTestExecutionThread;Info;starting test run
+2019-01-26T16:36:48.8754192-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2019-01-26T16:36:48.8761400-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-26T16:38:07.5416543-02:00;VSTestExecutionThread;Info;test run finished
+2019-01-26T16:38:07.5426532-02:00;VSTestExecutionThread;Info;publishing test results
+2019-01-26T16:38:07.5426532-02:00;VSTestExecutionThread;Info;test results published
+2019-01-26T16:38:07.5436548-02:00;VSTestExecutionThread;Info;generating reports
+2019-01-26T16:38:07.5436548-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2019-01-26T16:38:07.5446518-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2019-01-26T16:38:08.8073647-02:00;VSTestExecutionThread;Info;reports generated
+2019-01-26T16:38:08.8093642-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-26T16:38:08.8103817-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-26T163636.html'
+2019-01-26T16:38:08.8153610-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-26T163636.log
+2019-01-26T16:38:08.8173583-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2019-01-26T16:47:55.5884508-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-26T16:47:55.5884508-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-26T16:47:55.5982442-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-26T16:47:55.5992244-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-26T16:47:55.6002228-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-26T16:48:09.6251781-02:00;Thread#21;Info;starting test run
+2019-01-26T16:48:09.6251781-02:00;Thread#21;Info;Discovering target: Default
+2019-01-26T16:48:09.6261088-02:00;Thread#21;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#168: 3.1.3 - Alterar Obra - 
+#170: Alterar dados do campo Tipo da obra, "BIBLIOTECA MUSICAL" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Alterar+Obra/Scenario:Alterar+dados+do+campo+Tipo+da+obra%2c+%22BIBLIOTECA+MUSICAL%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #170 from normal test queue 
+Thread#0:Scheduler: considering testitem #170 for thread 0
+Thread#0:TestItem#170:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#170:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#170:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #170 for thread 0
+Thread#0:Scheduler: Test #170 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #170/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #170/0 is finished on thread #0 as Failed within 0,5168052 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2019-01-26T16:48:10.2617963-02:00;Thread#21;Info;test run finished
+2019-01-26T16:48:10.2624947-02:00;Thread#21;Info;publishing test results
+2019-01-26T16:48:10.2632221-02:00;Thread#21;Info;test results published
+2019-01-26T16:48:10.2638463-02:00;Thread#21;Info;generating reports
+2019-01-26T16:48:10.2648512-02:00;Thread#21;Info;creating 1 report(s)
+2019-01-26T16:48:10.2648512-02:00;Thread#21;Info;generate Report ReportTemplate.cshtml
+2019-01-26T16:48:11.4495519-02:00;Thread#21;Info;reports generated
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
+2019-01-26T16:48:11.4515487-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-26T16:48:11.4515487-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-26T164755.html'
+2019-01-26T16:48:11.4577424-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-26T164755.log

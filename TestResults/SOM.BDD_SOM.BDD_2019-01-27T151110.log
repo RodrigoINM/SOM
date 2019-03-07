@@ -1,0 +1,73 @@
+﻿2019-01-27T14:32:56.9098764-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-27T14:32:56.9188725-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-27T14:32:57.0497988-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-27T14:32:57.0497988-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-27T14:32:57.0507967-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-27T14:33:02.1959527-02:00;VSTestExecutionThread;Info;starting test run
+2019-01-27T14:33:02.2029517-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2019-01-27T14:33:02.2039687-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-27T14:35:03.6800227-02:00;VSTestExecutionThread;Info;test run finished
+2019-01-27T14:35:03.6810272-02:00;VSTestExecutionThread;Info;publishing test results
+2019-01-27T14:35:03.7549157-02:00;VSTestExecutionThread;Info;test results published
+2019-01-27T14:35:03.7559173-02:00;VSTestExecutionThread;Info;generating reports
+2019-01-27T14:35:03.8854697-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2019-01-27T14:35:03.8854697-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2019-01-27T14:35:07.1669125-02:00;VSTestExecutionThread;Info;reports generated
+2019-01-27T14:35:07.1716912-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-27T14:35:07.1726905-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-27T143257.html'
+2019-01-27T14:35:07.1807064-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-27T143257.log
+2019-01-27T14:35:07.1900824-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2019-01-27T14:35:52.5848632-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-27T14:35:52.5858601-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-27T14:35:52.5998552-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-27T14:35:52.6008531-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-27T14:35:52.6018543-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-27T14:36:01.6082504-02:00;VSTestExecutionThread;Info;starting test run
+2019-01-27T14:36:01.6082504-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2019-01-27T14:36:01.6096430-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-27T14:37:53.1522797-02:00;VSTestExecutionThread;Info;test run finished
+2019-01-27T14:37:53.1522797-02:00;VSTestExecutionThread;Info;publishing test results
+2019-01-27T14:37:53.1532823-02:00;VSTestExecutionThread;Info;test results published
+2019-01-27T14:37:53.1542811-02:00;VSTestExecutionThread;Info;generating reports
+2019-01-27T14:37:53.1542811-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2019-01-27T14:37:53.1552856-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2019-01-27T14:37:54.4257224-02:00;VSTestExecutionThread;Info;reports generated
+2019-01-27T14:37:54.4297205-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-27T14:37:54.4307194-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-27T143552.html'
+2019-01-27T14:37:54.4372219-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-27T143552.log
+2019-01-27T14:37:54.4382198-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2019-01-27T15:03:32.8792135-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-27T15:03:32.8792135-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-27T15:03:32.8912081-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-27T15:03:32.8922274-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-27T15:03:32.8922274-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-27T15:03:42.9169434-02:00;VSTestExecutionThread;Info;starting test run
+2019-01-27T15:03:42.9169434-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2019-01-27T15:03:42.9179464-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-27T15:05:20.7875254-02:00;VSTestExecutionThread;Info;test run finished
+2019-01-27T15:05:20.7885242-02:00;VSTestExecutionThread;Info;publishing test results
+2019-01-27T15:05:20.7895226-02:00;VSTestExecutionThread;Info;test results published
+2019-01-27T15:05:20.7895226-02:00;VSTestExecutionThread;Info;generating reports
+2019-01-27T15:05:20.7905243-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2019-01-27T15:05:20.7915250-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2019-01-27T15:05:22.2828645-02:00;VSTestExecutionThread;Info;reports generated
+2019-01-27T15:05:22.2858638-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-27T15:05:22.2858638-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-27T150332.html'
+2019-01-27T15:05:22.3135997-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-27T150332.log
+2019-01-27T15:05:22.3156015-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2019-01-27T15:11:10.8574297-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-27T15:11:10.8584290-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-27T15:11:10.8714224-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-27T15:11:10.8714224-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-27T15:11:10.8724208-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-27T15:11:22.8774901-02:00;Thread#4;Info;starting test run
+2019-01-27T15:11:22.8774901-02:00;Thread#4;Info;Discovering target: Default
+2019-01-27T15:11:22.8789471-02:00;Thread#4;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#168: 3.1.3 - Alterar Composição - 
+#173: Alterar dados da obra com criação de novo DDA com associação, "UBEM" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Alterar+Composi%c3%a7%c3%a3o/Scenario:Alterar+dados+da+obra+com+cria%c3%a7%c3%a3o+de+novo+DDA+com+associa%c3%a7%c3%a3o%2c+%22UBEM%22
+#174: Alterar dados da obra com criação de novo DDA com associação, "SEM ASSOCIAÇÃO" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Alterar+Composi%c3%a7%c3%a3o/Scenario:Alterar+dados+da+obra+com+cria%c3%a7%c3%a3o+de+novo+DDA+com+associa%c3%a7%c3%a3o%2c+%22

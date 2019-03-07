@@ -1,0 +1,65 @@
+﻿2019-01-14T16:33:38.8975197-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-14T16:33:38.9235046-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-14T16:33:39.1723618-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-14T16:33:39.1743618-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-14T16:33:39.1763609-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-14T16:33:52.3304344-02:00;Thread#12;Info;starting test run
+2019-01-14T16:33:52.3466169-02:00;Thread#12;Info;Discovering target: Default
+2019-01-14T16:33:52.3486188-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#125: Validar Status Pav de Pedidos Autorizados para Pagamento - 
+#126: Alterar nacionalidade da obra para pedido com Status PAV Autorizado, "1000457" - TestAssembly:SOM.BDD/Feature:Validar+Status+Pav+de+Pedidos+Autorizados+para+Pagamento/Scenario:Alterar+nacionalidade+da+obra+para+pedido+com+Status+PAV+Autorizado%2c+%221000457%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #126 from normal test queue 
+Thread#0:Scheduler: considering testitem #126 for thread 0
+Thread#0:TestItem#126:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#126:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#126:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #126 for thread 0
+Thread#0:Scheduler: Test #126 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #126/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (22,2s)
+Thread#0:B:Quando faço uma busca pela obra associada ao pedido "CVC Vasco 2018 INT"
+Thread#0:T:done: AlterarItemPedidoSteps.QuandoFacoUmaBuscaPelaObraAssociadaAoPedido("CVC Vasco 2018 INT") (6,6s)
+Thread#0:B:E altero a nacionalidade da obra "Internacional", "Alemanha", "CVC Vasco 2018 INT"
+Thread#0:T:done: StatusPavSteps.QuandoAlteroANacionalidadeDaObra("Internacional", "Alemanha", "CVC Vasco 2018 INT") (6,8s)
+Thread#0:B:E seleciono o pedido a ser afetado pela alteracao "1000457"
+Thread#0:T:done: StatusPavSteps.QuandoSelecionoOPedidoASerAfetadoPelaAlteracao("1000457") (9,3s)
+Thread#0:B:E faço uma busca pelo pedido afetado "1000457"
+Thread#0:T:done: StatusPavSteps.QuandoFacoUmaBuscaPeloPedidoAfetado("1000457") (19,7s)
+Thread#0:B:Então visualizo que o Status Pav do pedido continua como Aprovado "Aprovado", "Internacional", "Alemanha", "CVC Vasco 2018 INT", "1000457"
+Thread#0:T:done: StatusPavSteps.EntaoVisualizoQueOStatusPavDoPedidoContinuaComoAprovado("Aprovado", "Internacional", "Alemanha", "CVC Vasco 2018 INT", "1000457") (12,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #126/0 is finished on thread #0 as Succeeded within 84,8875132 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2019-01-14T16:35:17.8274369-02:00;Thread#12;Info;test run finished
+2019-01-14T16:35:17.8294341-02:00;Thread#12;Info;publishing test results
+2019-01-14T16:35:17.8604160-02:00;Thread#12;Info;test results published
+2019-01-14T16:35:17.8624165-02:00;Thread#12;Info;generating reports
+2019-01-14T16:35:17.8784069-02:00;Thread#12;Info;creating 1 report(s)
+2019-01-14T16:35:17.8913998-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2019-01-14T16:35:20.3105760-02:00;Thread#12;Info;reports generated
+Total: 1
+Succeeded: 1
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2019-01-14T16:35:20.3255670-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-14T16:35:20.3275675-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-14T163339.html'
+2019-01-14T16:35:20.3415565-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-14T163339.log

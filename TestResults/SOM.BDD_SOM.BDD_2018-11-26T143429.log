@@ -1,0 +1,53 @@
+﻿2018-11-26T14:34:29.5110260-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-26T14:34:29.5340129-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-26T14:34:29.8168492-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-26T14:34:29.8188487-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-26T14:34:29.8218476-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-26T14:34:37.9793524-02:00;Thread#12;Info;starting test run
+2018-11-26T14:34:37.9954408-02:00;Thread#12;Info;Discovering target: Default
+2018-11-26T14:34:37.9975220-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#46: 3.1.4 - Cadastro de DDA - 
+#48: Cadastro de DDA sem Contato para autorização, "Teste INM 606" - TestAssembly:SOM.BDD/Feature:3.1.4+-+Cadastro+de+DDA/Scenario:Cadastro+de+DDA+sem+Contato+para+autoriza%c3%a7%c3%a3o%2c+%22Teste+INM+606%22
+#49: Cadastrar DDA sem preenchimento de campo obrigatório, " " - TestAssembly:SOM.BDD/Feature:3.1.4+-+Cadastro+de+DDA/Scenario:Cadastrar+DDA+sem+preenchimento+de+campo+obrigat%c3%b3rio%2c+%22+%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #48 from normal test queue 
+Thread#0:Scheduler: considering testitem #48 for thread 0
+Thread#0:TestItem#48:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#48:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#48:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #48 for thread 0
+Thread#0:Scheduler: Test #48 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #48/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,5s)
+Thread#0:B:E que estou com a tela Novo Cadastro de DDA
+Thread#0:T:done: CadastroDeDDASteps.DadoQueEstouComATelaNovoCadastroDeDDA() (1,1s)
+Thread#0:B:Quando cadastro um novo DDA "Teste INM 606", "Teste INM 606", "54635356357", "UBEM", "Sim", "10/10/1992"
+Thread#0:T:done: CadastroDeDDASteps.QuandoCadastroUmNovoDDA("Teste INM 606", "Teste INM 606", "54635356357", "UBEM", "Sim", "10/10/1992") (6,5s)
+Thread#0:B:Entao visualizo uma mensagem de critica ao salvar a obra sem o contato "Não é permitido o cadastro de um DDA sem pelo menos um contato de e-mail que receba autorização."
+Thread#0:T:done: CadastroDeDDASteps.EntaoVisualizoUmaMensagemDeCriticaAoSalvarAObraSemOContato("Não é permitido o...") (1,9s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #49 from normal test queue 
+Thread#0:Scheduler: considering testitem #49 for thread 0
+Thread#0:TestItem#49:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#49:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#49:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #49 for thread 0
+Thread#0:Scheduler: Test #49 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #48/0 is finished on thread #0 as Succeeded within 34,8758298 seconds
+Thread#0: Test #49/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,0s)
+Thread#0:B:E que estou com a tela Novo Cadastro de DDA
+Thread#0:T:done: CadastroDeDDASteps.DadoQueEstouComATelaNovoCadastroDeDDA() (1,1s)
+Thre

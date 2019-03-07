@@ -1,0 +1,83 @@
+﻿2019-01-31T11:48:15.0657444-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-31T11:48:15.0727578-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-31T11:48:15.1846762-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-31T11:48:15.1846762-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-31T11:48:15.1856755-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-31T11:48:29.3029053-02:00;VSTestExecutionThread;Info;starting test run
+2019-01-31T11:48:29.3119001-02:00;VSTestExecutionThread;Info;Discovering target: Default
+2019-01-31T11:48:29.3128999-02:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-31T11:48:51.8017173-02:00;VSTestExecutionThread;Info;test run finished
+2019-01-31T11:48:51.8027227-02:00;VSTestExecutionThread;Info;publishing test results
+2019-01-31T11:48:51.9094000-02:00;VSTestExecutionThread;Info;test results published
+2019-01-31T11:48:51.9094000-02:00;VSTestExecutionThread;Info;generating reports
+2019-01-31T11:48:51.9950265-02:00;VSTestExecutionThread;Info;creating 1 report(s)
+2019-01-31T11:48:51.9960333-02:00;VSTestExecutionThread;Info;generate Report ReportTemplate.cshtml
+2019-01-31T11:48:57.0036970-02:00;VSTestExecutionThread;Info;reports generated
+2019-01-31T11:48:57.0086954-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-31T11:48:57.0096929-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-31T114815.html'
+2019-01-31T11:48:57.0150491-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-31T114815.log
+2019-01-31T11:48:57.0180499-02:00;VSTestExecutionThread;Info;SpecFlow+Runner execution finished
+2019-01-31T11:49:15.7908289-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2019-01-31T11:49:15.7908289-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Larissa\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-01-31T11:49:15.8038312-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-01-31T11:49:15.8048323-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2019-01-31T11:49:15.8058121-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2019-01-31T11:49:20.8254493-02:00;Thread#15;Info;starting test run
+2019-01-31T11:49:20.8254493-02:00;Thread#15;Info;Discovering target: Default
+2019-01-31T11:49:20.8268825-02:00;Thread#15;Info;Discovering tests from assembly: C:\Users\Larissa\Desktop\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#276: 3.1.3 - Cadastrar Mídia - 
+#278: Cadastrar Mídia Ativa., "NOVO TESTE" - TestAssembly:SOM.BDD/Feature:3.1.3+-+Cadastrar+M%c3%addia/Scenario:Cadastrar+M%c3%addia+Ativa.%2c+%22NOVO+TESTE%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #278 from normal test queue 
+Thread#0:Scheduler: considering testitem #278 for thread 0
+Thread#0:TestItem#278:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#278:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#278:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #278 for thread 0
+Thread#0:Scheduler: Test #278 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #278/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (12,8s)
+Thread#0:B:E que esteja na tela de cadastrar midia
+Thread#0:T:done: CadastrarMidiaSteps.DadoQueEstejaNaTelaDeCadastrarMidia() (1,0s)
+Thread#0:B:Quando cadastrar uma Mídia preenchendo o campo "NOVO TESTE"
+Thread#0:T:done: CadastrarMidiaSteps.QuandoCadastrarUmaMidiaPreenchendoOCampo("NOVO TESTE") (1,7s)
+Thread#0:B:Então seleciono o campo ativar midia
+Thread#0:T:error: no such window: target window already closed
+Thread#0:T:from unknown error: web view not found
+Thread#0:T:  (Session info: chrome=71.0.3578.98)
+Thread#0:T:  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #278/0 is finished on thread #0 as Failed within 38,5021323 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2019-01-31T11:49:59.4556668-02:00;Thread#15;Info;test run finished
+2019-01-31T11:49:59.4556668-02:00;Thread#15;Info;publishing test results
+2019-01-31T11:49:59.4566689-02:00;Thread#15;Info;test results published
+2019-01-31T11:49:59.4576840-02:00;Thread#15;Info;generating reports
+2019-01-31T11:49:59.4586670-02:00;Thread#15;Info;creating 1 report(s)
+2019-01-31T11:49:59.4586670-02:00;Thread#15;Info;generate Report ReportTemplate.cshtml
+2019-01-31T11:50:00.8654690-02:00;Thread#15;Info;reports generated
+Total: 1
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1
+2019-01-31T11:50:00.8684702-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2019-01-31T11:50:00.8687963-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-31T114915.html'
+2019-01-31T11:50:00.8743154-02:00;VSTestExecutionThread;Info;Log file: file:///C:\Users\Larissa\Desktop\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2019-01-31T114915.log

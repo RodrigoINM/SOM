@@ -1,0 +1,177 @@
+﻿2018-11-28T18:06:34.9599340-02:00;VSTestExecutionThread;Info;SpecFlow+Runner 1.8.5 execution started
+2018-11-28T18:06:34.9669501-02:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Rodrigo2\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.8.5\tools\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2018-11-28T18:06:35.0758886-02:00;VSTestExecutionThread;Info;SpecRun Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2018-11-28T18:06:35.0758886-02:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+2018-11-28T18:06:35.0768678-02:00;VSTestExecutionThread;Info;Profile: SOM.BDD
+2018-11-28T18:06:40.1940587-02:00;Thread#12;Info;starting test run
+2018-11-28T18:06:40.2010338-02:00;Thread#12;Info;Discovering target: Default
+2018-11-28T18:06:40.2020341-02:00;Thread#12;Info;Discovering tests from assembly: C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\SOM.BDD\bin\Debug\SOM.BDD.dll
+Appdomain Disposed
+Test Suite Dump
+#0: SOM.BDD/SOM.BDD - 
+#1: Default - 
+#2: SOM.BDD - 
+#12: 4.1.5 - Consulta Produto - 
+#13: Busca Simples por produto Produto, "Titulo do Produto 511" - TestAssembly:SOM.BDD/Feature:4.1.5+-+Consulta+Produto/Scenario:Busca+Simples+por+produto+Produto%2c+%22Titulo+do+Produto+511%22
+#14: Busca avançada por Nome do Produto, "Titulo do Produto 510" - TestAssembly:SOM.BDD/Feature:4.1.5+-+Consulta+Produto/Scenario:Busca+avan%c3%a7ada+por+Nome+do+Produto%2c+%22Titulo+do+Produto+510%22
+#15: Busca avançada por Episódio, "Titulo do Produto 509" - TestAssembly:SOM.BDD/Feature:4.1.5+-+Consulta+Produto/Scenario:Busca+avan%c3%a7ada+por+Epis%c3%b3dio%2c+%22Titulo+do+Produto+509%22
+#16: Busca avançada por Gênero Original, "Titulo do Produto 508" - TestAssembly:SOM.BDD/Feature:4.1.5+-+Consulta+Produto/Scenario:Busca+avan%c3%a7ada+por+G%c3%aanero+Original%2c+%22Titulo+do+Produto+508%22
+#17: Busca avançada por Gênero Direitos Musicais, "Titulo do Produto 507" - TestAssembly:SOM.BDD/Feature:4.1.5+-+Consulta+Produto/Scenario:Busca+avan%c3%a7ada+por+G%c3%aanero+Direitos+Musicais%2c+%22Titulo+do+Produto+507%22
+#18: Busca por produtos não cadastrados, "Produto Inexistente" - TestAssembly:SOM.BDD/Feature:4.1.5+-+Consulta+Produto/Scenario:Busca+por+produtos+n%c3%a3o+cadastrados%2c+%22Produto+Inexistente%22
+#19: Busca por Produto e Episódios não associados, "Teste INM" - TestAssembly:SOM.BDD/Feature:4.1.5+-+Consulta+Produto/Scenario:Busca+por+Produto+e+Epis%c3%b3dios+n%c3%a3o+associados%2c+%22Teste+INM%22
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #13 from normal test queue 
+Thread#0:Scheduler: considering testitem #13 for thread 0
+Thread#0:TestItem#13:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#13:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#13:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #13 for thread 0
+Thread#0:Scheduler: Test #13 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for SOM.BDD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Thread#0: Test #13/0 is started on thread #0
+Thread#0:T:-> Using app.config
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (19,1s)
+Thread#0:B:Dado que eu tenha um produto cadastrado "Titulo do Produto 511", "Episodio do Produto 511", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não"
+Thread#0:T:done: CadastroDeProdutoSteps.DadoQueEuTenhaUmProdutoCadastrado("Titulo do Produto...", "Episodio do Produ...", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não") (9,1s)
+Thread#0:B:Quando faço uma busca simples pelo produto "Titulo do Produto 511"
+Thread#0:T:done: ConsultaDeProdutoSteps.QuandoFacoUmaBuscaSimplesPeloProduto("Titulo do Produto...") (3,2s)
+Thread#0:B:Entao visualizo o produto no resultado da busca "Titulo do Produto 511", "Episodio do Produto 511", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não" e "Não"
+Thread#0:T:done: ConsultaDeProdutoSteps.EntaoVisualizoOProdutoNoResultadoDaBuscaE("Titulo do Produto...", "Episodio do Produ...", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não") (10,2s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #14 from normal test queue 
+Thread#0:Scheduler: considering testitem #14 for thread 0
+Thread#0:TestItem#14:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#14:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#14:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #14 for thread 0
+Thread#0:Scheduler: Test #14 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #13/0 is finished on thread #0 as Succeeded within 47,2263971 seconds
+Thread#0: Test #14/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (18,7s)
+Thread#0:B:Dado que eu tenha um produto cadastrado "Titulo do Produto 510", "Episodio do Produto 510", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não"
+Thread#0:T:done: CadastroDeProdutoSteps.DadoQueEuTenhaUmProdutoCadastrado("Titulo do Produto...", "Episodio do Produ...", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não") (9,0s)
+Thread#0:B:Quando faço uma busca avançada por Produto "Titulo do Produto 510"
+Thread#0:T:done: ConsultaDeProdutoSteps.QuandoFacoUmaBuscaAvancadaPorProduto("Titulo do Produto...") (3,2s)
+Thread#0:B:Entao visualizo o produto no resultado da busca "Titulo do Produto 510", "Episodio do Produto 510", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não" e "Não"
+Thread#0:T:done: ConsultaDeProdutoSteps.EntaoVisualizoOProdutoNoResultadoDaBuscaE("Titulo do Produto...", "Episodio do Produ...", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não") (11,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #15 from normal test queue 
+Thread#0:Scheduler: considering testitem #15 for thread 0
+Thread#0:TestItem#15:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#15:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#15:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #15 for thread 0
+Thread#0:Scheduler: Test #15 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #14/0 is finished on thread #0 as Succeeded within 46,8929118 seconds
+Thread#0: Test #15/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,1s)
+Thread#0:B:Dado que eu tenha um produto cadastrado "Titulo do Produto 509", "Episodio do Produto 509", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não"
+Thread#0:T:done: CadastroDeProdutoSteps.DadoQueEuTenhaUmProdutoCadastrado("Titulo do Produto...", "Episodio do Produ...", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não") (9,4s)
+Thread#0:B:Quando faço uma busca avançada por Produto e Episódio "Titulo do Produto 509", "Episodio do Produto 509"
+Thread#0:T:done: ConsultaDeProdutoSteps.QuandoFacoUmaBuscaAvancadaPorProdutoEEpisodio("Titulo do Produto...", "Episodio do Produ...") (3,3s)
+Thread#0:B:Entao visualizo o produto no resultado da busca "Titulo do Produto 509", "Episodio do Produto 509", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não" e "Não"
+Thread#0:T:done: ConsultaDeProdutoSteps.EntaoVisualizoOProdutoNoResultadoDaBuscaE("Titulo do Produto...", "Episodio do Produ...", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não") (10,9s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #16 from normal test queue 
+Thread#0:Scheduler: considering testitem #16 for thread 0
+Thread#0:TestItem#16:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#16:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#16:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #16 for thread 0
+Thread#0:Scheduler: Test #16 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #15/0 is finished on thread #0 as Succeeded within 48,6737082 seconds
+Thread#0: Test #16/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,0s)
+Thread#0:B:Dado que eu tenha um produto cadastrado "Titulo do Produto 508", "Episodio do Produto 508", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não"
+Thread#0:T:done: CadastroDeProdutoSteps.DadoQueEuTenhaUmProdutoCadastrado("Titulo do Produto...", "Episodio do Produ...", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não") (9,0s)
+Thread#0:B:Quando faço uma busca avançada por Produto e Gênero Original "Titulo do Produto 508", "Novela"
+Thread#0:T:done: ConsultaDeProdutoSteps.QuandoFacoUmaBuscaAvancadaPorProdutoEGeneroOriginal("Titulo do Produto...", "Novela") (3,1s)
+Thread#0:B:Entao visualizo o produto no resultado da busca "Titulo do Produto 508", "Episodio do Produto 508", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não" e "Não"
+Thread#0:T:done: ConsultaDeProdutoSteps.EntaoVisualizoOProdutoNoResultadoDaBuscaE("Titulo do Produto...", "Episodio do Produ...", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não") (10,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #17 from normal test queue 
+Thread#0:Scheduler: considering testitem #17 for thread 0
+Thread#0:TestItem#17:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#17:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#17:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #17 for thread 0
+Thread#0:Scheduler: Test #17 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #16/0 is finished on thread #0 as Succeeded within 50,3046844 seconds
+Thread#0: Test #17/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,7s)
+Thread#0:B:Dado que eu tenha um produto cadastrado "Titulo do Produto 507", "Episodio do Produto 507", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não"
+Thread#0:T:done: CadastroDeProdutoSteps.DadoQueEuTenhaUmProdutoCadastrado("Titulo do Produto...", "Episodio do Produ...", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não") (9,2s)
+Thread#0:B:Quando faço uma busca avançada por Produto e Direitos Musicais "Titulo do Produto 507", "DRAMATURGIA SEMANAL"
+Thread#0:T:done: ConsultaDeProdutoSteps.QuandoFacoUmaBuscaAvancadaPorProdutoEDireitosMusicais("Titulo do Produto...", "DRAMATURGIA SEMANAL") (3,1s)
+Thread#0:B:Entao visualizo o produto no resultado da busca "Titulo do Produto 507", "Episodio do Produto 507", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não" e "Não"
+Thread#0:T:done: ConsultaDeProdutoSteps.EntaoVisualizoOProdutoNoResultadoDaBuscaE("Titulo do Produto...", "Episodio do Produ...", "Novela", "DRAMATURGIA SEMANAL", "4135", "Sim", "GLOBONEWS", "Atividade", "Não", "Não") (11,2s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #18 from normal test queue 
+Thread#0:Scheduler: considering testitem #18 for thread 0
+Thread#0:TestItem#18:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#18:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#18:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #18 for thread 0
+Thread#0:Scheduler: Test #18 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #17/0 is finished on thread #0 as Succeeded within 49,2678648 seconds
+Thread#0: Test #18/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (20,4s)
+Thread#0:B:Quando faço uma busca avançada por Produto "Produto Inexistente"
+Thread#0:T:done: ConsultaDeProdutoSteps.QuandoFacoUmaBuscaAvancadaPorProduto("Produto Inexistente") (3,2s)
+Thread#0:B:Então visualizo a "Dados não encontratos" de dados nao encontrados na busca pelo produto informado
+Thread#0:T:done: ConsultaDeProdutoSteps.EntaoVisualizoADeDadosNaoEncontradosNaBuscaPeloProdutoInformado("Dados não encontr...") (0,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: testitem #19 from normal test queue 
+Thread#0:Scheduler: considering testitem #19 for thread 0
+Thread#0:TestItem#19:testItemMatchesCurrentTestThread:UnSpecific
+Thread#0:TestItem#19:runsOnOneOtherThreadSpecific:False
+Thread#0:TestItem#19:runsOnOneOtherThreadUnspecific:False
+Thread#0:Scheduler: using testitem #19 for thread 0
+Thread#0:Scheduler: Test #19 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #18/0 is finished on thread #0 as Succeeded within 30,8876209 seconds
+Thread#0: Test #19/0 is started on thread #0
+Thread#0:B:Dado que esteja logado no sistema SOM
+Thread#0:T:done: LoginSteps.DadoQueEstejaLogadoNoSistemaSOM() (21,7s)
+Thread#0:B:Quando faço uma busca avançada por Produto e Episódio "Teste INM", "Episodio 120"
+Thread#0:T:done: ConsultaDeProdutoSteps.QuandoFacoUmaBuscaAvancadaPorProdutoEEpisodio("Teste INM", "Episodio 120") (3,3s)
+Thread#0:B:Então visualizo a "Dados não encontratos" de dados nao encontrados na busca pelo produto informado
+Thread#0:T:done: ConsultaDeProdutoSteps.EntaoVisualizoADeDadosNaoEncontradosNaBuscaPeloProdutoInformado("Dados não encontr...") (0,1s)
+Thread#0:Scheduler: get next test for thread 0
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread
+Thread#0: Test #19/0 is finished on thread #0 as Succeeded within 30,2367042 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread -1
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+2018-11-28T18:11:43.9110750-02:00;Thread#12;Info;test run finished
+2018-11-28T18:11:43.9120758-02:00;Thread#12;Info;publishing test results
+2018-11-28T18:11:43.9190709-02:00;Thread#12;Info;test results published
+2018-11-28T18:11:43.9190709-02:00;Thread#12;Info;generating reports
+2018-11-28T18:11:43.9280661-02:00;Thread#12;Info;creating 1 report(s)
+2018-11-28T18:11:43.9280661-02:00;Thread#12;Info;generate Report ReportTemplate.cshtml
+2018-11-28T18:11:46.0443608-02:00;Thread#12;Info;reports generated
+Total: 7
+Succeeded: 7
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 0
+2018-11-28T18:11:46.0513756-02:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2018-11-28T18:11:46.0523740-02:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\SOM.TESTES.BDD\SOMWeb - Testes Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-28T180635.html'
+2018-11-28T18:11:46.0623507-02:00;VSTestExecutionThread;Info;Log file: file:///C:\SOM.TESTES.BDD\SOMWeb%20-%20Testes%20Integardos\SOURCECODE\SOM.BDD\TestResults\SOM.BDD_SOM.BDD_2018-11-28T180635.log
