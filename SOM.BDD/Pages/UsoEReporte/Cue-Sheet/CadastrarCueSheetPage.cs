@@ -8,7 +8,6 @@ using System;
 using Framework.Core.Helpers;
 using SOM.BDD.Pages.Produto;
 using SOM.BDD.Pages.Obra;
-using SOM.BDD.Helpers;
 using System.Windows.Forms;
 using SOM.BDD.Helpers;
 
